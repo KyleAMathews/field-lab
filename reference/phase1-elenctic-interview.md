@@ -44,6 +44,8 @@ Key questions to probe:
 - "What's the version of the opposing view that worries you most?"
 - "Is this a decision you need to make, or understanding you want to build?"
 
+**Anti-sycophancy warning:** The elenctic interview is where position-tracking starts. The user will share what they think, what they've read, what frameworks they find compelling. Your job is to understand the *shape of the tension* — not to figure out which side the user leans toward so you can build the synthesis in that direction. If the user seems excited about a particular framework or thinker, that's useful information for grounding the monks, but it is NOT a signal about where the synthesis should land. The user came to this tool to be in the belief-free seat. Help them get there — don't track their position and feed it back to them as a synthesis.
+
 ## 1d. Ground the Monks (Domain-Adaptive)
 
 The monks need deep grounding before they can believe effectively. But *what* constitutes grounding depends on the domain type and how novel it is. The skill must adapt.
