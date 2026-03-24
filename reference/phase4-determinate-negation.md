@@ -10,14 +10,14 @@ Read both monks' outputs and analyze the contradiction using this exact structur
 
 **Before you begin: write down your current best guess at the synthesis in one sentence.** Set it aside. Proceed with the formal analysis below. At the end of Phase 5, compare your final synthesis to this initial guess. If they're substantially similar, you may be pattern-matching rather than genuinely synthesizing — check whether the Boydian decomposition actually produced cross-domain material or you recombined within the same frame.
 
-## 4.0 Internal Tensions (Self-Sublation)
+## 4.0 Surface Contradiction
+State the apparent disagreement in its simplest form. What does each side think the argument is about? This orients the entire analysis — everything below is exploring why this surface disagreement is more interesting than it looks.
 
-Before comparing the monks to each other, analyze each essay *in isolation.* Where does Monk A's own argument, pushed to its logical extreme, undermine its own premises? Where does Monk B's internal logic generate contradictions it can't resolve? This is Hegel's self-sublation — the position contains its own negation.
+## 4.1 Internal Tensions (Self-Sublation)
+
+Now analyze each essay *in isolation.* Where does Monk A's own argument, pushed to its logical extreme, undermine its own premises? Where does Monk B's internal logic generate contradictions it can't resolve? This is Hegel's self-sublation — the position contains its own negation.
 
 The deepest synthesis material often comes not from where the monks *disagree with each other* but from where each position *disagrees with itself.* A monk that argues for decentralization but keeps needing coordination mechanisms is undermining itself. A monk that argues for integration but keeps carving out exceptions is undermining itself. These internal fractures point toward what each position is *trying to become* — which is often where the synthesis lives.
-
-## 4.1 Surface Contradiction
-State the apparent disagreement in its simplest form. What does each side think the argument is about?
 
 ## 4.2 Shared Assumptions
 Identify what BOTH agents implicitly agree on that they don't realize they agree on. These shared assumptions are often where the real limitation lives. Probe:
