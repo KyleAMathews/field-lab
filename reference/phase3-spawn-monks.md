@@ -29,18 +29,20 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Present both outputs to the user** with a brief re-explanation of what they're looking at and what to do with it:
+**Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead:
 
-> Here are two essays — each one fully committed to one side of the tension we've been discussing. They're called "Electric Monks" because their job is to *believe* these positions so you don't have to. That frees you to read both and notice the *structure* of the disagreement from the outside.
+> Both monks have written their essays (saved to files if you want to read them). Here's the structural summary:
 >
-> **A few important things as you read:**
-> - **These will get things wrong.** The monks are working from what I told them, and I may have gotten your situation wrong, or they may have made assumptions that don't match your reality. That's expected — especially in this first round.
-> - **Correct them freely.** If a monk says something that's off-base, tell me. "That's not how it works" or "they're missing that..." — these corrections are the most valuable input in the entire process. The synthesis can only be as good as the positions it's built on.
-> - **The first round is the least insightful.** Think of it as calibration. Each subsequent round gets sharper, more specific, and more tuned to what you actually care about. The real breakthroughs usually come in rounds 2 and 3, once the process has dug past the obvious framing into the deeper tensions.
-> - **Add anything that occurs to you.** New ideas, things neither monk mentioned, gut feelings you can't fully articulate — all of it is useful. You know your situation better than any of us.
+> **Monk A** argued [2-3 sentence summary of the core claim, key evidence, and most interesting move].
+>
+> **Monk B** argued [2-3 sentence summary of the core claim, key evidence, and most interesting move].
+>
+> **Where they diverged:** [1-2 sentences on the key structural difference — not just "they disagreed about X" but what conceptual frame each used].
+>
+> **Anything surprising:** [Note if a monk made an unexpected move, cited evidence you didn't anticipate, or took the position somewhere the user might not have expected].
 
 Then ask:
-1. Do these capture the positions accurately?
+1. Does this capture the positions accurately, or is either monk missing something important about how this actually works?
 2. **"Is there a claim either monk makes that should be tested against evidence neither has considered?"** — This is the second high-leverage intervention point. In testing, users identified claims that sounded plausible but collapsed under scrutiny when tested against comparison classes the monks didn't consider. Catching this before synthesis prevents the entire downstream analysis from being built on an untested assumption.
 
 If the user identifies a testable claim, run a targeted research agent to check it. This is cheap (~25-50K tokens) and can fundamentally change the quality of the synthesis.
