@@ -37,16 +37,21 @@ The skill works with any coding agent that supports subagent spawning and web se
 
 ### Setup
 
-Create a directory to collect your dialectics. Each dialectic gets its own subdirectory — the skill generates several files (context briefing, monk essays, structural analysis, synthesis, dialectic queue).
+Create a directory to collect your dialectics (e.g., `dialectics/`). Each dialectic gets its own subdirectory — the skill generates several files per round, all prefixed with the round number for easy navigation.
 
 ```
 dialectics/
 ├── tanstack-vs-nextjs/
-│   ├── context_briefing.md
-│   ├── monk_a_output.md
-│   ├── monk_b_output.md
-│   ├── determinate_negation.md
-│   ├── sublation.md
+│   ├── round_1_context_briefing.md
+│   ├── round_1_monk_a.md
+│   ├── round_1_monk_b.md
+│   ├── round_1_determinate_negation.md
+│   ├── round_1_sublation.md
+│   ├── round_1_validation.md
+│   ├── round_2_monk_a.md
+│   ├── round_2_monk_b.md
+│   ├── round_2_determinate_negation.md
+│   ├── round_2_sublation.md
 │   └── dialectic_queue.md
 ├── agent-governance/
 │   └── ...
@@ -106,7 +111,7 @@ Two separate AI agents — each in a fresh, isolated context — write fully com
 
 The orchestrator analyzes both essays to find: where each position's own logic undermines itself (self-sublation), what both sides implicitly agree on without realizing it (shared assumptions), and the *specific* way each position fails — not "it's wrong" but "it fails in THIS way, which points toward THIS thing that's missing."
 
-Then comes Boyd's destructive deduction: shatter both arguments into atomic parts, break the correspondence between each position and its constituents, and scatter them into what Boyd calls a "sea of anarchy." Then the creative induction: find common qualities, attributes, or operations among the scattered parts to build cross-domain connections that were invisible when the parts were trapped inside their original positions. In Round 2+, lateral creativity interventions (compressed conflicts, random Wikipedia domain injection, metaphor generation) inject genuinely external material before the decomposition, so it gets shattered and recombined alongside the monks' material.
+Then comes Boyd's destructive deduction: shatter both arguments into atomic parts, break the correspondence between each position and its constituents, and scatter them into what Boyd calls a "sea of anarchy." Then the creative induction: find common qualities, attributes, or operations among the scattered parts to build cross-domain connections that were invisible when the parts were trapped inside their original positions. Lateral creativity interventions (compressed conflicts, random Wikipedia domain injection, metaphor generation) inject genuinely external material before the decomposition, so it gets shattered and recombined alongside the monks' material.
 
 ### Phase 5: Sublation (Aufhebung) — synthesize something neither side could reach
 

@@ -46,7 +46,7 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 **The user may want to queue multiple directions.** A dialectic can branch — Round 2 pursues direction A, Round 3 pursues direction B (starting from the Round 2 synthesis), or Round 3 forks back to the Round 1 synthesis to pursue direction C independently. The orchestrator should track which contradictions have been explored and which are queued.
 
-**Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present it to the user between rounds.
+**Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
 
 ## Running Recursive Rounds
 

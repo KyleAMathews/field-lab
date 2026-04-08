@@ -105,7 +105,7 @@ You need to know the domain well enough to:
 
 ## 1e. Write the Context Briefing Document
 
-**Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `context_briefing.md`).
+**Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `round_1_context_briefing.md`). Write the full briefing to the file — present only a concise summary to the user at the confirmation step (1f).
 
 For **external-research domains**, this covers:
 - Key evidence, sources, and arguments from all sides

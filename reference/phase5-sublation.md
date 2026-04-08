@@ -82,11 +82,11 @@ Identify what NEW contradictions this sublation generates. A genuine sublation i
 
 End with an explicit model update: "Before this dialectic, the assumption was X. The contradiction between A and B revealed Y. The updated model is Z, because..."
 
-**Save the complete Phase 4 and Phase 5 output to files** (e.g., `determinate_negation.md` and `sublation.md`). This keeps a clean record and allows you to pass file references or condensed summaries to validation agents rather than inlining the full text.
+**Save the complete Phase 4 and Phase 5 output to files** (e.g., `round_1_determinate_negation.md` and `round_1_sublation.md`). This keeps a clean record and allows you to pass file references or condensed summaries to validation agents rather than inlining the full text.
 
 ## Present the Synthesis to the User
 
-Before sending to the monks for validation, **present the synthesis to the user.** Remind them:
+Before sending to the monks for validation, **present a summary of the synthesis to the user** — the core move (what was cancelled, preserved, elevated), the model update, and the new contradictions it generates. The full text is in the file; what the user needs here is the shape of the synthesis so they can judge whether it rings true or feels like compromise. Remind them:
 
 > Here's my synthesis. Remember — this is where your judgment is most valuable. Does this ring true? Does it miss something? Is there a part that feels like hand-waving or compromise rather than genuine insight? Push back on anything that doesn't land. I'd rather revise now than validate something that's off.
 

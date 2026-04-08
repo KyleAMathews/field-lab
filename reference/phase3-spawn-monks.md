@@ -29,7 +29,7 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead:
+**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`). **Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead:
 
 > Both monks have written their essays (saved to files if you want to read them). Here's the structural summary:
 >

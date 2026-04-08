@@ -64,7 +64,7 @@ You (Orchestrator)
 │   └── User checkpoint: "Is there evidence or a comparison class both monks missed?"
 ├── Phase 4: Determinate Negation (you — structural analysis, saved to file)
 │   ├── 4.0: Internal tensions — where does each monk's own logic undermine itself?
-│   ├── 4.5: Lateral creativity (Round 2+ only) — compressed conflicts, random domain, metaphors
+│   ├── 4.5: Lateral creativity — compressed conflicts, random domain, metaphors
 │   ├── 4.6: Boydian decomposition (destructive deduction) — shatter into "sea of anarchy," find cross-domain connections (creative induction)
 │   └── Same-arrangement test + emergent structure test
 ├── Phase 5: Sublation / Aufhebung (you — synthesis, saved to file)
@@ -87,6 +87,10 @@ The user can intervene at any point — correcting a monk's framing, redirecting
 
 **CRITICAL: Before executing each phase, you MUST read its reference doc in full.** The summaries below are orientation only — they do not contain the detailed instructions, prompts, templates, or failure modes you need to execute correctly. Context drift (forgetting nuance in later rounds) is the most common failure mode of this skill. Reading the reference doc fresh each time is the fix.
 
+**Output principle: write full content to files, present only summaries to the user.** Every phase produces substantial analytical output — essays, negation analyses, lateral material, syntheses, validation feedback. Write all of this to files. When presenting to the user, give a concise structural summary (2-5 sentences per major section) that orients them and supports their decision-making at checkpoints. The user can always read the full files if they want depth; what they need from you is the shape of the analysis, not the full text. This applies to every user-facing checkpoint in the process.
+
+**File organization:** Create a dedicated directory for each dialectic's output files. First check if a `dialectic/` or `dialectics/` directory already exists (common in codebases that run multiple dialectics) — if so, create a subdirectory there. If not, create a new directory with a descriptive name (e.g., `dialectic-react-state-management/`). Prefix every file with its round number: `round_1_context_briefing.md`, `round_1_monk_a.md`, `round_1_determinate_negation.md`, `round_2_monk_a.md`, etc. This keeps multi-round dialectics navigable and prevents file collisions across rounds.
+
 ### Phase 1: Elenctic Interview + Research
 **Read `reference/phase1-elenctic-interview.md` before executing.**
 
@@ -105,12 +109,12 @@ Spawn both monks as separate subagent sessions. Check for hedging, degenerate fr
 ### Phase 4: Determinate Negation
 **Read `reference/phase4-determinate-negation.md` before executing.**
 
-You perform this yourself (not a subagent). Analyze internal tensions in each essay, then the surface contradiction, shared assumptions, determinate negation, hidden question, Boydian decomposition, and sublation criteria. Write your initial synthesis guess first — compare at the end to check for pattern-matching. **In Round 2+**, includes lateral creativity interventions: compressed conflict generation (oxymorons), random domain injection via Wikipedia's random article API, and a non-propositional pause (three metaphors). **HARD STOP at the end of Phase 4** — present the full analysis to the user and get their response before proceeding to synthesis. This is the highest-leverage correction point in the entire process.
+You perform this yourself (not a subagent). Analyze internal tensions in each essay, then the surface contradiction, shared assumptions, determinate negation, hidden question, Boydian decomposition, and sublation criteria. Write your initial synthesis guess first — compare at the end to check for pattern-matching. Includes lateral creativity interventions: compressed conflict generation (oxymorons), random domain injection via Wikipedia's random article API, and a non-propositional pause (three metaphors). Write all Phase 4 output to file. **HARD STOP at the end of Phase 4** — present a concise summary of the analysis to the user (hidden question, key decomposition insights, sublation criteria) and get their response before proceeding to synthesis. This is the highest-leverage correction point in the entire process.
 
 ### Phase 5: Sublation (Aufhebung)
 **Read `reference/phase5-sublation.md` before executing.**
 
-Generate the synthesis: cancel both positions as complete truths, preserve the genuine insight in each, elevate to a new concept that transforms the question. **Reversibility check (Boyd):** trace each claim back to specific atomic parts from the decomposition — untraceable claims need scrutiny. **Same-arrangement test:** verify the synthesis isn't one monk's structure wearing the other's vocabulary. Apply the abduction test. Check for compromise failure modes — including **analytical capture** (adopting one monk's epistemology to reframe the other) and **level reduction** (dissolving a higher-category claim into lower-category terms). Present to the user before validation. **In Round 2+**, begins with a De Bono provocation + movement extraction to disrupt premature pattern-matching.
+Generate the synthesis: cancel both positions as complete truths, preserve the genuine insight in each, elevate to a new concept that transforms the question. **Reversibility check (Boyd):** trace each claim back to specific atomic parts from the decomposition — untraceable claims need scrutiny. **Same-arrangement test:** verify the synthesis isn't one monk's structure wearing the other's vocabulary. Apply the abduction test. Check for compromise failure modes — including **analytical capture** (adopting one monk's epistemology to reframe the other) and **level reduction** (dissolving a higher-category claim into lower-category terms). Write full synthesis to file; present a summary to the user before validation. **In Round 2+**, begins with a De Bono provocation + movement extraction to disrupt premature pattern-matching.
 
 ### Phase 6: Validation by the Electric Monks
 **Read `reference/phase6-validation.md` before executing.**
@@ -490,4 +494,4 @@ The final deliverable should include:
    - Which contradictions were deferred and why
    - For multi-round dialectics, show the branching structure: which rounds built on which syntheses
 
-Write these as markdown files in the output directory. Include a `README.md` or `index.md` linking all output files in order so the full dialectical trace is navigable. The queue file (`dialectic_queue.md`) serves as both a session artifact and a starting point for future sessions.
+Write these as markdown files in the dialectic's output directory (see file organization guidance above). Prefix all files with their round number (`round_1_`, `round_2_`, etc.). Include a `README.md` or `index.md` linking all output files in order so the full dialectical trace is navigable. The queue file (`dialectic_queue.md`) serves as both a session artifact and a starting point for future sessions.

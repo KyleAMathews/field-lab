@@ -2,7 +2,7 @@
 
 This is the structural analysis phase. You (the orchestrator) perform this yourself — do NOT delegate to a subagent, because you need to maintain continuity with the elenctic interview and your domain research.
 
-**Context management:** By this point your context contains the full elenctic interview, research results, both essays, and any supplementary research. If context is getting large, **summarize the research and essays into their structural essences before beginning analysis.** You need the *shape* of the arguments — the ontological claims, the key evidence, the failure diagnoses — not every word. Write your Phase 4 analysis to a file (`determinate_negation.md`) as you go, so you can reference it cleanly in Phase 5 and pass it to validation agents later.
+**Context management:** By this point your context contains the full elenctic interview, research results, both essays, and any supplementary research. If context is getting large, **summarize the research and essays into their structural essences before beginning analysis.** You need the *shape* of the arguments — the ontological claims, the key evidence, the failure diagnoses — not every word. Write your full Phase 4 analysis to a file (`round_N_determinate_negation.md`) as you go, so you can reference it cleanly in Phase 5 and pass it to validation agents later. When you reach the user checkpoint (4.8), present only a concise summary — the full analysis is in the file.
 
 Read both monks' outputs and analyze the contradiction using this exact structure.
 
@@ -41,9 +41,9 @@ It IS:
 ## 4.4 The Hidden Question
 Articulate the deeper question the contradiction is ACTUALLY about — the question neither agent asked because they were both too committed to their answers. This should reframe the entire debate in a way that makes both positions legible as partial truths.
 
-## 4.5 Lateral Creativity Interventions (Round 2+ Only)
+## 4.5 Lateral Creativity Interventions
 
-**Skip this section in Round 1.** Round 1 is calibration — the conceptual space isn't well-mapped yet and lateral injection is noise. In Round 2+, where the synthesis is being pushed past its own limits, is where the vocabulary runs out and these interventions have the highest marginal value.
+Lateral interventions surface vocabulary and structural frames that within-domain analysis cannot produce. In later rounds the value compounds — the synthesis is pushing past its own limits and the vocabulary is running out — but the cross-domain material is high-leverage from the start.
 
 The dialectic processes everything through propositional structural analysis. That channel is powerful but it can only recombine existing conceptual vocabulary — it cannot generate *new* vocabulary. The following interventions force the mind to process the problem through channels it wasn't using.
 
@@ -121,9 +121,9 @@ Before attempting synthesis, specify what it must accomplish:
 
 ## 4.8 Present the Negation to the User — STOP HERE
 
-**Do NOT proceed to Phase 5 without presenting the full Phase 4 analysis to the user and getting their response.** This is a hard stop, not a suggested checkpoint.
+**Do NOT proceed to Phase 5 without presenting your Phase 4 analysis to the user and getting their response.** This is a hard stop, not a suggested checkpoint.
 
-Present the determinate negation, hidden question, lateral material (if Round 2+), Boydian decomposition, and sublation criteria. Then ask:
+The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the most surprising decomposition insights, and the sublation criteria. Orient the user so they can judge the direction, not drown them in the full analytical text. Then ask:
 
 > Here's my structural analysis of the contradiction. Before I attempt synthesis, I want your judgment on this:
 > - **Did I identify the right hidden question?** Or is the real tension somewhere else?

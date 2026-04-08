@@ -206,7 +206,7 @@ If you choose sustained juxtaposition, **articulate what the juxtaposition revea
 
 ## Refine the Synthesis
 
-After collecting monk validation and auditor feedback, the orchestrator usually has several concrete improvements that could strengthen the synthesis before moving to recursion. **Do not just dump all the feedback on the user.** Digest it, identify the actionable improvements, and present them one at a time.
+After collecting monk validation and auditor feedback, the orchestrator usually has several concrete improvements that could strengthen the synthesis before moving to recursion. **Write the full validation and auditor output to a file** (e.g., `round_1_validation.md`). **Do not just dump all the feedback on the user.** Digest it, identify the actionable improvements, and present them one at a time as concise summaries.
 
 **Process:**
 
