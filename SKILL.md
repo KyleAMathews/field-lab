@@ -7,7 +7,7 @@ description: An Electric Monk engine — two subagents believe fully committed p
 
 An **artificial belief system** for building deeper understanding through productive contradiction.
 
-Two subagent sessions — the Electric Monks — *believe* fully committed positions so you don't have to. A third (the orchestrator) performs structural analysis of their contradiction and generates a synthesis (Aufhebung) that transforms the question itself. The user orchestrates from a belief-free position, freed from the cognitive load of holding either position.
+Two subagent sessions — the Electric Monks — *believe* fully committed positions so you don't have to. A third (the orchestrator) performs structural analysis of their contradiction and generates a **palette of structurally-distinct candidates** for where the contradiction lands — synthesis (Hegel), juxtaposition (Adorno), ground-condition (Schumacher), framing-dissolution (Foucault), undecidable (Derrida). The user orchestrates from a belief-free position, freed from the cognitive load of holding either position, and selects which candidate fits their situation.
 
 **Why this works:** The bottleneck in human reasoning isn't intelligence — it's *belief.* Once you believe a position, you can't simultaneously hold its negation at full strength. You hedge, you steelman weakly, you unconsciously bias the comparison. The Electric Monks carry the belief load at full conviction, which frees you to operate in the space above belief — analyzing the *structure* of the contradiction rather than being inside either side. In Boyd's terms: outsourcing belief work leads to faster transients. Each dialectical cycle is a reorientation that would take weeks of natural thinking, compressed into minutes because you carry zero belief inertia.
 
@@ -67,15 +67,18 @@ You (Orchestrator)
 │   ├── 4.5: Lateral creativity — compressed conflicts, random domain, metaphors
 │   ├── 4.6: Boydian decomposition (destructive deduction) — shatter into "sea of anarchy," find cross-domain connections (creative induction)
 │   └── Same-arrangement test + emergent structure test
-├── Phase 5: Sublation / Aufhebung (you — synthesis, saved to file)
-│   ├── Provocation + movement (Round 2+ only) — disrupt premature pattern-matching
-│   ├── Reversibility check: trace each claim back to decomposition parts
-│   └── Abduction test: does synthesis make the original contradiction *predictable*?
-├── Phase 6: Validation (Monks A & B evaluate — were they elevated or defeated?)
-│   ├── Adversarial check: would the hardest-hit monk actually accept this?
-│   ├── Hostile Auditor: fresh agent, strongest model, sole job is to find flaws
-│   ├── Sustained juxtaposition: sometimes refusing to synthesize is the right move
-│   └── Refine: present improvements individually to user, incorporate accepted ones
+├── Phase 5: Palette of Candidates (S always; J/G/F/U conditional on misfit lens firings)
+│   ├── Candidates written in parallel by decorrelated subagents (no sight of siblings)
+│   ├── S (Synthesis) — orchestrator writes; classical Aufhebung with reversibility/abduction/closure tests
+│   ├── J (Juxtaposition) — fires when position-protection or synthesis-residue lenses caught a shared interest or dropped parts
+│   ├── G (Ground condition) — fires when briefing residue caught a concrete fact or level-shift is plausible
+│   ├── F (Framing dissolution) — fires when Lens C surfaced a fossil framing serving a constituency
+│   ├── U (Undecidable-centered) — fires when Lens D caught a word both sides use oppositely
+│   └── Present palette side-by-side; no ranking, no recommendation — user is the judge
+├── Phase 6: Validation of the Palette (user picks which candidates to validate)
+│   ├── Each candidate validated on its own terms with a candidate-specific monk prompt
+│   ├── Hostile Auditor per candidate (no sight of siblings) — attacks each candidate's internal standard
+│   └── Refine surviving candidates one at a time; user accepts, combines, or reopens Phase 4
 └── Phase 7: Recursion — propose 2-4 directions, user chooses (default: at least once)
     ├── Queue unexplored contradictions as the user's orientation library
     └── Repeat from Phase 2 (or Phase 1 if new research needed) on chosen direction
@@ -111,15 +114,15 @@ Spawn both monks as separate subagent sessions. Check for hedging, degenerate fr
 
 You perform this yourself (not a subagent). Analyze internal tensions in each essay, then the surface contradiction, shared assumptions, **position protection (4.2.5 — Ricoeur)**, determinate negation, hidden question, lateral creativity, Boydian decomposition, **misfit register (4.6.5)**, and sublation criteria. Write your initial synthesis guess first — compare at the end to check for pattern-matching. Lateral creativity interventions: compressed conflict generation (oxymorons), random domain injection via Wikipedia's random article API, non-propositional pause (three metaphors). The **misfit register** captures friction-with-the-frame that the synthesis will *not* resolve — briefing residue, synthesis residue (Adorno), framing genealogy (Foucault), undecidables (Derrida) — and writes to a per-round file plus a persistent `misfit_register.md` at the dialectic root. Before the register lenses, check `reference/misfit-patterns-watchlist.md` for previously-seen cross-domain patterns. Write all Phase 4 output to file. **HARD STOP at the end of Phase 4** — present a concise summary (hidden question, key decomposition insights, sublation criteria, 1-2 highest-signal misfits) and get the user's response before proceeding to synthesis. This is the highest-leverage correction point in the entire process.
 
-### Phase 5: Sublation (Aufhebung)
+### Phase 5: Palette of Candidates
 **Read `reference/phase5-sublation.md` before executing.**
 
-Generate the synthesis: cancel both positions as complete truths, preserve the genuine insight in each, elevate to a new concept that transforms the question. **Reversibility check (Boyd):** trace each claim back to specific atomic parts from the decomposition — untraceable claims need scrutiny. **Same-arrangement test:** verify the synthesis isn't one monk's structure wearing the other's vocabulary. Apply the abduction test. Check for compromise failure modes — including **analytical capture** (adopting one monk's epistemology to reframe the other) and **level reduction** (dissolving a higher-category claim into lower-category terms). Write full synthesis to file; present a summary to the user before validation. **In Round 2+**, begins with a De Bono provocation + movement extraction to disrupt premature pattern-matching.
+Generate a **palette of structurally-distinct candidates**, not a single synthesis. The classical Aufhebung (cancel/preserve/elevate) biases toward smoothing differences into one unified answer — often boring, sometimes wrong. The palette preserves the angles the research / belief / decomposition phases produced. **S (Synthesis) is always drafted** by the orchestrator with abduction test, reversibility check (Boyd), closure property, and failure-mode tests (analytical capture, level reduction). **J/G/F/U are drafted conditionally** based on which misfit-register lenses fired non-trivially: J (Juxtaposition) when 4.2.5 surfaced a disguised shared interest; G (Ground condition) when Lens A caught briefing residue or a level-shift is plausible; F (Framing dissolution) when Lens C surfaced a fossil framing; U (Undecidable) when Lens D caught a word loaded oppositely by both monks. Each candidate is written by a separate subagent with only its own lens material — no sight of sibling drafts (decorrelation is the point). Each candidate has its own internal standard. Present all candidates side-by-side to the user. **Do NOT rank, judge, or recommend** — the user is belief-free and in the judging seat.
 
-### Phase 6: Validation by the Electric Monks
+### Phase 6: Validation of the Palette
 **Read `reference/phase6-validation.md` before executing.**
 
-Send condensed summary to both monks for validation (elevated vs. defeated). Run adversarial check — including the **proponent test** (would the hardest-hit monk say "you've done exactly the thing I warned against"?). Deploy the hostile auditor (every round) — auditor now includes a **reversibility check** (can each synthesis claim trace to material in the essays?) and **same-arrangement test**. **Sustained juxtaposition** is a legitimate alternative when the contradiction is more productive held open than resolved. On failure, **partial salvage** — identify which parts cohere, add new material, iterate (Boyd's approach is surgical, not demolition). Present improvements to user one at a time, not as a list. Revise synthesis before proceeding to recursion.
+User selects which palette candidate(s) to validate. Each candidate is validated **on its own terms** with a candidate-specific monk prompt (S: elevated vs. defeated; J: productive vs. evasive; G: orthogonal vs. same-axis; F: genealogy correct and constituency real; U: loadings genuinely opposite and refusal genuine). Each candidate gets its own **hostile auditor** with no sight of sibling candidates — each auditor attacks its candidate's internal standard. No tournament, no winner. User picks one, combines two (explicitly named), drops all and reopens Phase 4, or holds the palette open as the round's output. Present improvements one at a time per surviving candidate.
 
 ### Phase 7: Recursion
 **Read `reference/phase7-recursion.md` before executing.**
@@ -204,9 +207,10 @@ Based on three test runs across different domains (normative/institutional, busi
 | Phase 1 supplementary research (user-triggered) | 0-50K tokens | Common — users frequently identify gaps. Budget for it. |
 | Phase 1d briefing synthesis | ~5K tokens | Orchestrator work |
 | Phase 3 monk essays (with briefing) | 25-45K tokens | Two monks, 2-3 targeted searches each |
-| Phase 4-5 analysis + synthesis | 15-30K tokens | Orchestrator inline work |
-| Phase 6 monk validation | 12-25K tokens | Two monks, strongest model |
-| Phase 6 hostile auditor | 5-15K tokens | One agent, strongest model. Reads essays + synthesis only. |
+| Phase 4 analysis + misfit register | 15-25K tokens | Orchestrator inline work |
+| Phase 5 palette (S + 1-3 non-S candidates) | 20-40K tokens | Parallel decorrelated subagents; cost scales with candidate count |
+| Phase 6 monk validation per candidate | 12-25K tokens | Two monks per candidate, strongest model |
+| Phase 6 hostile auditor per candidate | 5-15K tokens | One agent per candidate, strongest model. Reads essays + single candidate only. |
 | Phase 7 recursive round | 25-50K tokens | Often most valuable |
 | Orchestrator overhead | 20-30K tokens | Interview, transitions, presentation |
 | **Total (one round + recursion)** | **~300-400K tokens** | Median ~300K without supplementary research |
