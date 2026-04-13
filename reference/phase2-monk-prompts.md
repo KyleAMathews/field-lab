@@ -1,18 +1,20 @@
 # Phase 2: Generate the Electric Monk Prompts
 
-Generate two prompts — one for each Electric Monk. Each monk must *believe* its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
+Generate one prompt per Electric Monk — **typically 2, sometimes 3 or 4** if Phase 1c.1 surfaced a third (or fourth) pole meeting the criteria. Each monk must *believe* its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
 
 Calibrate the monks based on what you learned in Phase 1c':
 - **What must each monk believe?** (Shaped by the user's belief burden)
 - **What must Monk A validate?** (Always validate the user's dominant mode first)
-- **What must Monk B hold that the user can't natively hold?**
+- **What must each other monk hold that the user can't natively hold?**
+
+**N-monk note.** When there are 3+ monks, each monk's framing corrections must preempt degenerate framings against *every other monk*, not just one opponent. A Monk C that only argues against A will silently treat B as an ally; the result is a 2-vs-1 argument, not genuine three-way decorrelation. Each monk should know what it believes *and* what it specifically rejects about each other pole.
 
 ## Required Prompt Structure
 
 ```
 1. ROLE: "You are an Electric Monk — your job is to BELIEVE [POSITION] with
    full conviction, carrying this belief on behalf of a human who needs to
-   analyze it from outside. You genuinely believe [OPPOSING POSITION] is wrong.
+   analyze it from outside. You genuinely believe [EACH OTHER POSITION, NAMED] is wrong — for different specific reasons per position.
    Make the strongest possible case — not a balanced comparison, but a committed
    philosophical and technical argument from deep inside this belief.
 

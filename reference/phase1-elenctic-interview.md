@@ -29,6 +29,8 @@ Ask the user what they're thinking about. Determine:
 - **Mode A (Stress-Test):** User has one idea they want to challenge. You need to identify the strongest possible antithesis.
 - **Mode B (Opposition):** User has two positions in tension. You need to refine both to their steelman forms.
 
+**Default monk count is 2.** Binary contradiction is the core structural unit of the dialectic and produces the tightest analysis. But 2 monks sometimes leaves a valid big perspective on the table — a position that can't be reached as a blend of the two poles, or that's arguing on a different axis entirely. If the interview surfaces such a position, add a third (or fourth) monk. See 1c.1.
+
 ## 1c. Elenctic Probing
 
 Interview the user using Socratic technique. Your goal is to surface:
@@ -44,6 +46,26 @@ Key questions to probe:
 - "What's the version of the opposing view that worries you most?"
 - "Is this a decision you need to make, or understanding you want to build?"
 - **"What does the existing literature/practice propose as a third way that neither pole represents?"** — in test runs, the misfit register's briefing-residue lens consistently finds that a live third-way case or framework already exists in the domain (e.g., Koyama/Rubin multicausal consensus, Eghbal's four-cell typology) and both monks walk past it. Surfacing it during the interview lets the briefing include it so the monks have to engage rather than ignore.
+
+## 1c.1 Third-Pole Probe (Missing-Perspective Check)
+
+**Default is 2 monks.** Before closing the interview, run one explicit probe for a missing third pole. 2-monk framings most often leak perspective when a live position exists that's arguing on a genuinely different axis than A↔B — and that position tends to be invisible from within either of the two poles.
+
+Ask the user (or ask yourself if the user won't have the meta-view):
+
+> Is there a live position here that isn't reachable as a blend of A and B — one that's arguing on a different axis entirely, or that starts from a premise neither A nor B shares?
+
+A **third (or Nth) monk is warranted when** all three of these hold:
+
+1. **Not a blend.** The candidate position cannot be reached by any A↔B slider. If it sits on the same axis as A and B, it's a midpoint, not a new monk — skip it.
+2. **Independent constituency or literature.** It has its own defenders, tradition, named thinkers, or a coherent practitioner community. A position with no constituency is usually a confabulation or the orchestrator's own view smuggled in.
+3. **Orthogonal axis, ideally.** The strongest third monk argues on a different axis entirely (e.g., A/B debate *what method works best*, C argues *method choice is downstream of relational factor X*). Orthogonal-axis monks are where 2-monk framings most often leak the big perspective Kyle's experience flagged.
+
+**Cap practically at 4 monks.** Beyond that, user attention can't hold the output, decorrelation degrades (the Nth monk starts shading into earlier monks), and Phase 4's pairwise structural analysis gets unwieldy.
+
+If you add a third (or fourth) monk, name each explicitly — don't just number them. "Monk C: the Schumacherian ground-condition position" is legible; "Monk 3" isn't. The name anchors what the monk must believe and keeps Phase 4's pairwise determinate negations from blurring into each other.
+
+If no third pole surfaces that meets all three criteria, run with 2 monks — and note in the briefing that the third-pole probe was run and came up empty. This closes the loop; later phases (especially the misfit register) can check whether a position the probe missed surfaces in the monks' essays.
 
 **Anti-sycophancy warning:** The elenctic interview is where position-tracking starts. The user will share what they think, what they've read, what frameworks they find compelling. Your job is to understand the *shape of the tension* — not to figure out which side the user leans toward so you can build the synthesis in that direction. If the user seems excited about a particular framework or thinker, that's useful information for grounding the monks, but it is NOT a signal about where the synthesis should land. The user came to this tool to be in the belief-free seat. Help them get there — don't track their position and feed it back to them as a synthesis.
 
@@ -133,5 +155,6 @@ Before proceeding, summarize back:
 - "Here's what I think the real tension is..."
 - "Here's what I'll have each agent research and argue..."
 - **"Are there companies, thinkers, comparison classes, or evidence we're missing?"** — This question consistently produces the highest-leverage interventions in the entire process. In testing, users caught missing competitors (Vercel's agentic play), missing comparison classes (AI-native devtools), and missing authority structures that fundamentally changed the synthesis.
+- **"Is there a third live position we're not accounting for — one that isn't a blend of A and B, or that's arguing on a different axis entirely?"** — This is the third-pole check from 1c.1 surfaced one more time before the briefing locks. If the user names a position that meets the three criteria (not-a-blend, independent constituency, ideally orthogonal axis), add it as Monk C and update the briefing.
 
-Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding.
+Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. **State the final monk count and what each monk will believe** before moving to Phase 2 — this prevents the orchestrator from silently dropping or adding monks later.

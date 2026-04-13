@@ -7,7 +7,7 @@ description: An Electric Monk engine — two subagents believe fully committed p
 
 An **artificial belief system** for building deeper understanding through productive contradiction.
 
-Two subagent sessions — the Electric Monks — *believe* fully committed positions so you don't have to. A third (the orchestrator) performs structural analysis of their contradiction and generates a **palette of structurally-distinct candidates** for where the contradiction lands — synthesis (Hegel), juxtaposition (Adorno), ground-condition (Schumacher), framing-dissolution (Foucault), undecidable (Derrida). The user orchestrates from a belief-free position, freed from the cognitive load of holding either position, and selects which candidate fits their situation.
+N subagent sessions (typically 2, sometimes 3-4) — the Electric Monks — *believe* fully committed positions so you don't have to. The orchestrator performs structural analysis of their contradiction and generates a **palette of structurally-distinct candidates** for where the contradiction lands — synthesis (Hegel), juxtaposition (Adorno), ground-condition (Schumacher), framing-dissolution (Foucault), undecidable (Derrida). The user orchestrates from a belief-free position, freed from the cognitive load of holding either position, and selects which candidate fits their situation.
 
 **Why this works:** The bottleneck in human reasoning isn't intelligence — it's *belief.* Once you believe a position, you can't simultaneously hold its negation at full strength. You hedge, you steelman weakly, you unconsciously bias the comparison. The Electric Monks carry the belief load at full conviction, which frees you to operate in the space above belief — analyzing the *structure* of the contradiction rather than being inside either side. In Boyd's terms: outsourcing belief work leads to faster transients. Each dialectical cycle is a reorientation that would take weeks of natural thinking, compressed into minutes because you carry zero belief inertia.
 
@@ -55,13 +55,15 @@ You (Orchestrator)
 ├── Phase 1: Elenctic Interview + Research (you, with the user)
 │   ├── 1a: Explain the process — set expectations, emphasize user as co-pilot
 │   ├── 1c′: Identify the user's belief burden and calibrate monk roles
+│   ├── 1c.1: Third-pole probe — is there a live position not reachable as A↔B blend?
 │   ├── 1d: Ground the monks (research or deep interview, domain-dependent)
 │   ├── 1e: Write context briefing document to file
-│   └── 1f: Confirm framing with user — ask about gaps in coverage
-├── Phase 2: Generate Electric Monk prompts (you) — reference briefing file
-├── Phase 3: Spawn the Electric Monks (subagents, read briefing, BELIEVE fully)
-│   ├── Decorrelation check: did monks genuinely diverge in framework, not just conclusion?
-│   └── User checkpoint: "Is there evidence or a comparison class both monks missed?"
+│   └── 1f: Confirm framing and final monk count (default 2, cap 4) with user
+├── Phase 2: Generate N Electric Monk prompts (you) — reference briefing file
+├── Phase 3: Spawn the N Electric Monks (subagents, read briefing, BELIEVE fully)
+│   ├── Decorrelation check (pairwise): did monks genuinely diverge in framework, not just conclusion?
+│   ├── Coalition-collapse check (if N≥3): is it really three-way, or 2-vs-1 in disguise?
+│   └── User checkpoint: "Is there evidence or a comparison class any monk missed?"
 ├── Phase 4: Determinate Negation (you — structural analysis, saved to file)
 │   ├── 4.0: Internal tensions — where does each monk's own logic undermine itself?
 │   ├── 4.5: Lateral creativity — compressed conflicts, random domain, metaphors
@@ -97,22 +99,22 @@ The user can intervene at any point — correcting a monk's framing, redirecting
 ### Phase 1: Elenctic Interview + Research
 **Read `reference/phase1-elenctic-interview.md` before executing.**
 
-The most important phase. Explain the process to the user. Interview them using Socratic technique to surface hidden assumptions and the deepest version of the contradiction. Identify their belief burden (see catalog below). Ground the monks via research (external domains) or deep interview (personal domains). Write a context briefing document. Confirm framing with the user — ask about gaps.
+The most important phase. Explain the process to the user. Interview them using Socratic technique to surface hidden assumptions and the deepest version of the contradiction. Identify their belief burden (see catalog below). Ground the monks via research (external domains) or deep interview (personal domains). **Run the third-pole probe (1c.1)** — default is 2 monks, but add a 3rd (or 4th, cap there) when a position surfaces that (a) isn't reachable as an A↔B blend, (b) has its own constituency or literature, (c) ideally argues on an orthogonal axis. Write a context briefing document. Confirm framing and final monk count with the user — ask about gaps.
 
 ### Phase 2: Generate the Electric Monk Prompts
 **Read `reference/phase2-monk-prompts.md` before executing.**
 
-Generate two prompts calibrated to the user's belief burden. Each monk must BELIEVE at full conviction — this is the functional core of the ABS. The reference doc contains the required prompt structure (role, framing corrections, context briefing, research directives, argument structure, anti-hedging, length).
+Generate one prompt per monk (typically 2, sometimes 3-4) calibrated to the user's belief burden. Each monk must BELIEVE at full conviction — this is the functional core of the ABS. With 3+ monks, each monk's framing corrections must preempt degenerate framings against *every other monk*, not just one opponent, to avoid 2-vs-1 coalitions. The reference doc contains the required prompt structure (role, framing corrections, context briefing, research directives, argument structure, anti-hedging, length).
 
 ### Phase 3: Spawn the Electric Monks
 **Read `reference/phase3-spawn-monks.md` before executing.**
 
-Spawn both monks as separate subagent sessions. Check for hedging, degenerate framing, and decorrelation. Present outputs to the user with guidance on how to read them. Ask if any claims should be tested against evidence neither monk considered.
+Spawn all N monks as separate subagent sessions, in parallel. Check for hedging, degenerate framing, pairwise decorrelation, and — if N≥3 — coalition collapse (two monks sharing a frame while only the third is genuinely different). Present outputs to the user with guidance on how to read them. Ask if any claims should be tested against evidence no monk considered.
 
 ### Phase 4: Determinate Negation
 **Read `reference/phase4-determinate-negation.md` before executing.**
 
-You perform this yourself (not a subagent). Analyze internal tensions in each essay, then the surface contradiction, shared assumptions, **position protection (4.2.5 — Ricoeur)**, determinate negation, hidden question, lateral creativity, Boydian decomposition, **misfit register (4.6.5)**, and sublation criteria. Write your initial synthesis guess first — compare at the end to check for pattern-matching. Lateral creativity interventions: compressed conflict generation (oxymorons), random domain injection via Wikipedia's random article API, non-propositional pause (three metaphors). The **misfit register** captures friction-with-the-frame that the synthesis will *not* resolve — briefing residue, synthesis residue (Adorno), framing genealogy (Foucault), undecidables (Derrida) — and writes to a per-round file plus a persistent `misfit_register.md` at the dialectic root. Before the register lenses, check `reference/misfit-patterns-watchlist.md` for previously-seen cross-domain patterns. Write all Phase 4 output to file. **HARD STOP at the end of Phase 4** — present a concise summary (hidden question, key decomposition insights, sublation criteria, 1-2 highest-signal misfits) and get the user's response before proceeding to synthesis. This is the highest-leverage correction point in the entire process.
+You perform this yourself (not a subagent). Analyze internal tensions in each essay, then the surface contradiction, shared assumptions, **position protection (4.2.5 — Ricoeur)**, determinate negation, hidden question, lateral creativity, Boydian decomposition, **misfit register (4.6.5)**, and sublation criteria. **Scales naturally to N monks** — each monk gets its own determinate negation, decomposition gets richer, 4.2/4.2.5/Lens D each get N-way plus pairwise checks. Write your initial synthesis guess first — compare at the end to check for pattern-matching. Lateral creativity interventions: compressed conflict generation (oxymorons), random domain injection via Wikipedia's random article API, non-propositional pause (three metaphors). The **misfit register** captures friction-with-the-frame that the synthesis will *not* resolve — briefing residue, synthesis residue (Adorno), framing genealogy (Foucault), undecidables (Derrida) — and writes to a per-round file plus a persistent `misfit_register.md` at the dialectic root. Before the register lenses, check `reference/misfit-patterns-watchlist.md` for previously-seen cross-domain patterns. Write all Phase 4 output to file. **HARD STOP at the end of Phase 4** — present a concise summary (hidden question, key decomposition insights, sublation criteria, 1-2 highest-signal misfits) and get the user's response before proceeding to synthesis. This is the highest-leverage correction point in the entire process.
 
 ### Phase 5: Palette of Candidates
 **Read `reference/phase5-sublation.md` before executing.**
@@ -206,7 +208,7 @@ Based on three test runs across different domains (normative/institutional, busi
 | Phase 1 research (2-3 parallel agents) | 150-250K tokens | Do NOT cut here. This is the highest-value spend. Broader domains trend higher. |
 | Phase 1 supplementary research (user-triggered) | 0-50K tokens | Common — users frequently identify gaps. Budget for it. |
 | Phase 1d briefing synthesis | ~5K tokens | Orchestrator work |
-| Phase 3 monk essays (with briefing) | 25-45K tokens | Two monks, 2-3 targeted searches each |
+| Phase 3 monk essays (with briefing) | 25-45K tokens (2 monks), ~1.5x for 3 monks, ~2x for 4 | 2-3 targeted searches per monk |
 | Phase 4 analysis + misfit register | 15-25K tokens | Orchestrator inline work |
 | Phase 5 palette (S + 1-3 non-S candidates) | 20-40K tokens | Parallel decorrelated subagents; cost scales with candidate count |
 | Phase 6 monk validation per candidate | 12-25K tokens | Two monks per candidate, strongest model |

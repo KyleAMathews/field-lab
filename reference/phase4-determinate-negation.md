@@ -2,6 +2,16 @@
 
 This is the structural analysis phase. You (the orchestrator) perform this yourself — do NOT delegate to a subagent, because you need to maintain continuity with the elenctic interview and your domain research.
 
+**N-monk scaling.** The default is 2 monks but Phase 1c.1 may have added a 3rd or 4th. The machinery below scales naturally — each monk gets its own determinate negation, the Boydian decomposition gets richer (more atomic parts in the "sea of anarchy"), and most lenses work N-way without rewrite. A few specific adjustments with 3+ monks:
+
+- **4.2 Shared Assumptions:** Ask "what do *all N* monks share that none realize they share?" Then separately note any *pairwise* assumptions that two monks share but the third doesn't — pairwise coalitions are themselves a structural finding, sometimes the main one.
+- **4.2.5 Position Protection:** Run the protection analysis per monk. Then ask whether there's a disguised shared interest *all N* tacitly need (the strongest finding) — or only a pairwise subset (the next strongest).
+- **4.3 Determinate Negation:** One per monk. Failures should be complementary across *all N*, not just pairwise — if Monk A's failure is only complementary to B's and not to C's, the triangle isn't closing and one monk may be redundant.
+- **Lens D (undecidable):** Check each candidate undecidable word across all N monks. The strongest undecidables are loaded differently by *every* monk; pairwise-opposite loadings are weaker but still worth naming.
+- **4.5b Random domain injection:** Unchanged — cross-domain material doesn't scale with monk count.
+
+Where the doc below says "both monks" or "each agent" read it as "every monk" when N>2.
+
 **Context management:** By this point your context contains the full elenctic interview, research results, both essays, and any supplementary research. If context is getting large, summarize research and essays into their structural essences before beginning analysis. You need the *shape* of the arguments — the ontological claims, the key evidence, the failure diagnoses — not every word. Write your full Phase 4 analysis to `round_N_determinate_negation.md` as you go. When you reach the user checkpoint (4.9), present only a concise summary.
 
 Read both monks' outputs and analyze using this exact structure.
