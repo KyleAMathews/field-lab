@@ -43,6 +43,7 @@ Key questions to probe:
 - "What are you actually optimizing for?"
 - "What's the version of the opposing view that worries you most?"
 - "Is this a decision you need to make, or understanding you want to build?"
+- **"What does the existing literature/practice propose as a third way that neither pole represents?"** — in test runs, the misfit register's briefing-residue lens consistently finds that a live third-way case or framework already exists in the domain (e.g., Koyama/Rubin multicausal consensus, Eghbal's four-cell typology) and both monks walk past it. Surfacing it during the interview lets the briefing include it so the monks have to engage rather than ignore.
 
 **Anti-sycophancy warning:** The elenctic interview is where position-tracking starts. The user will share what they think, what they've read, what frameworks they find compelling. Your job is to understand the *shape of the tension* — not to figure out which side the user leans toward so you can build the synthesis in that direction. If the user seems excited about a particular framework or thinker, that's useful information for grounding the monks, but it is NOT a signal about where the synthesis should land. The user came to this tool to be in the belief-free seat. Help them get there — don't track their position and feed it back to them as a synthesis.
 
