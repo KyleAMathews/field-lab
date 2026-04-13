@@ -37,6 +37,14 @@ Open the top of the Phase 5 file by listing which candidates will be drafted and
 
 **Subagents return to orchestrator.** Orchestrator compiles the palette, does NOT synthesize across candidates, does NOT rank them, does NOT recommend one.
 
+### Length budget
+
+**S has no hard cap.** S carries a lot of machinery — provocation (Round 2+), cancel/preserve/elevate moves, abduction test, reversibility check, failure-mode tests, model update, new contradictions. Typical S length: 2000-3000 words.
+
+**J / G / F / U default to ~1000 words, hard cap 1500.** These candidates have a tighter structural job — name the refused interest (J) / ground condition (G) / fossil framing (F) / undecidable word (U), cite the supporting passages, articulate what the move reveals, state the failure modes avoided. They do NOT need to match S's length. In testing, 2500-word non-S candidates were padded — the conceptual meat was ~1000 words and the rest was restatement. Write tight; if a candidate genuinely needs more room, extend, but default short.
+
+When dispatching subagents for J/G/F/U, state the word budget explicitly: "Write the candidate at ~1000 words. Hard cap 1500. Do not pad to match S's length — non-S candidates are structurally tighter."
+
 ## 5.2 Candidate S — Synthesis (Hegel)
 
 This is the classical Aufhebung candidate, written by the orchestrator.
