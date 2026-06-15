@@ -91,11 +91,11 @@ Generate 5-7 compressed conflicts. Select the 2-3 most resonant ones to guide sy
 
 **Why this works:** The oxymoron format holds the contradiction as a *unit* rather than resolving it. It encodes the tension in a form that resists premature resolution — exactly what you want before synthesis.
 
-### 4.5b Random Domain Injection
+### 4.5b Donor Recruitment for the Sea of Anarchy
 
-Inject a domain completely unrelated to the dialectic and **force yourself to find structural isomorphisms** between the core tensions from 4.3-4.4 and that domain.
+Boyd's snowmobile is built from four shattered domains (skis, outboard motor, handlebars, treads), each chosen for the *operation* it contributes. Two monk-positions plus one skimmed article is too thin a sea. This step **recruits donor domains** that get decomposed alongside the monks in 4.6 at equal depth — not garnished on afterward. Recruit from two streams:
 
-**Use Wikipedia for genuine randomness.** The orchestrator picking a "random" domain actually filters through the orchestrator's own conceptual habits. **Use curl (via bash) to fetch random articles** — WebFetch/fetch tools return 403 errors on Wikipedia:
+**Random donors (novelty / anti-habit).** The orchestrator picking a "random" domain filters through its own conceptual habits. Wikipedia's randomness is genuinely external. **Use curl (via bash)** — WebFetch/fetch tools return 403 on Wikipedia:
 
 ```bash
 curl -s "https://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=50&format=json"
@@ -106,9 +106,13 @@ To get extracts for promising ones:
 curl -s "https://en.wikipedia.org/w/api.php?action=query&titles=ARTICLE_TITLE&prop=extracts&exintro=true&explaintext=true&format=json"
 ```
 
-Scan titles, fetch short extracts for the ones maximally distant from the current dialectic's domain with enough conceptual density (not stubs). Typically 5-8 out of 50 will have enough substance — pick the 2-3 richest to force isomorphisms on. For each, spend 2-3 paragraphs forcing connections. Most will be noise — you're looking for the one connection that illuminates something within-domain recombination missed.
+Scan titles, fetch extracts for the ones maximally distant from the dialectic's domain with enough conceptual density (not stubs). Typically 5–8 of 50 have substance.
 
-**Why this works:** This is Boyd's cross-domain step made mandatory. The Boydian decomposition says "look for cross-domain connections" but doesn't force them, so the orchestrator defaults to within-domain recombination. Domain distance correlates with novelty of output.
+**Functional donors (operation-targeted).** For each determinate-negation "missing thing" from 4.3, recruit one domain that takes that operation or capacity *seriously on its own terms*. If Monk A's failure reveals a missing capacity for "repair-in-place," recruit a domain where that is central (wound healing, software hot-patching, coral-reef recovery). This is the snowmobile logic — donors chosen for the function they contribute. One special case: when a monk makes a claim that *resists* analytical treatment, recruit a domain that takes that claim seriously on its own terms (4.6 step 5 verifies this happened).
+
+**Pool size:** the N monks **+ ~3–5 donors**, weighted toward functional donors with 1–2 random donors for anti-habit novelty. Each donor is a first-class domain entering 4.6's decomposition at the **same depth as the monk positions** — not a 2–3 paragraph isomorphism garnish. List the donors in the 4.6 domain manifest. The actual isomorphism-finding moves to 4.6 step 3, where donors are already decomposed as peers.
+
+**Why this works:** Boyd's cross-domain step made mandatory *and* multi-domain. Domain distance correlates with novelty; functional targeting correlates with relevance — you want both. Within-domain recombination cannot produce new vocabulary; a deep, functionally-targeted sea can.
 
 ### 4.5c Non-Propositional Pause
 
@@ -120,12 +124,23 @@ Keep this to 2 paragraphs maximum. Extract 3-5 structural observations from the 
 
 **Now shatter both positions — AND the lateral material from 4.5 — into their atomic parts.** This is Boyd's *destructive deduction*: break the correspondence between each domain and its constituents, producing "many constituents swimming in a sea of anarchy."
 
+**Heisenberg check (observer perturbs observed).** The act of analysis bends the positions toward synthesis — you start reading each monk as already half-reconciled with the other. Before shattering, verify you are decomposing what each monk *actually committed to* (its testimony in the essay), not a pre-smoothed version your analysis has nudged toward the middle. This is Boyd's second pillar made operational: observation disturbs the observed.
+
 Concretely:
 1. **Identify the generic space** — the abstract relational structure both positions share. Both assume a particular unit of analysis, a particular causal model, a particular temporal frame. This shared structure is the skeleton they're both building on, and often the thing the synthesis needs to transcend.
-2. **List the atomic components** of both positions AND the lateral material — individual claims, mechanisms, evidence, assumptions, metaphors, principles — stripped of which agent or domain said them. Don't organize by position or source. Create an unstructured collection. This is Boyd's "sea of anarchy."
-3. **Find common qualities, attributes, or operations** (Boyd's exact phrase) among parts that came from different positions AND different domains. What mechanisms from A illuminate evidence from B? What random domain isomorphisms from 4.5b connect to principles from either monk? The highest-value connections are typically between lateral material and monk material.
-4. **Ask: what material from adjacent domains** might connect to these liberated parts? Boyd is clear: the result must NOT use the parts in the same arrangement as any original domain — if you've merely reassembled one monk's structure with different vocabulary, you haven't created anything.
-5. **Epistemological diversity check:** If one monk claims that something *resists* analytical/propositional treatment (love, wisdom, quality of attention, aesthetic judgment, faith, embodied knowledge), specifically search for domains where that claim is taken seriously *on its own terms* — virtue ethics, contemplative traditions, care ethics, aesthetic philosophy, phenomenology. If all your cross-domain material is itself analytical, the synthesis will dissolve the higher-order claim into lower-order terms.
+2. **Construct the sea of anarchy.** First write a **domain manifest** — an explicit list of every domain in the pool as peers: `[Monk A, Monk B, (Monk C…), donor1, donor2, donor3…]` (donors recruited in 4.5b). Every entry on the manifest gets decomposed to the **same depth** — this is the guard against the monk-primary habit of shattering the essays thoroughly and skimming the donors. Then **list the atomic components** of every domain on the manifest — claims, mechanisms, evidence, assumptions, metaphors, principles, operations — stripped of which monk or donor said them.
+
+   **Tag each part with a calibration estimate.** Independent of how confidently the monk asserted it: is this part well-supported (cite-backable, mechanistically sound) or a rhetorical reach? Mark each `[solid]` / `[plausible]` / `[reach]`. The monks argue at full conviction by design; calibration is *per-part*, and the synthesis weights by it (Phase 5), not by rhetorical force.
+
+   **Anti-tidiness check (genuine destruction).** The result must be a genuinely *unstructured* collection — Boyd's "sea of anarchy." If your parts already sit in neat thematic groups, or are organized by which domain they came from, you have smuggled in a structure and the destructive step has failed. A clean taxonomy is itself an imported frame. Scramble it: provenance forgotten, no pre-categorization.
+3. **Find common qualities, attributes, *or operations* (Boyd's exact phrase) — as three explicit passes.** Boyd names three distinct search targets; run each, don't collapse them:
+   - **Qualities** — shared static properties (both are fragile; both self-reinforce; both decay without input).
+   - **Attributes** — shared relational or contextual features (both depend on a boundary; both presuppose an observer; both are scale-sensitive).
+   - **Operations** — shared *functions* / dynamics / what the part *does* (both propagate; both gate flow; both convert one form into another). **This is the highest-yield pass and the one most often skipped** — the snowmobile is an operations recombination (gliding + propulsion + steering), not an appearance recombination. Run it explicitly even when qualities/attributes already produced hits.
+
+   The highest-value connections are typically between donor material and monk material. This is where the isomorphism-forcing happens — the donors are already decomposed as peers (from 4.5b + the manifest), so you are connecting liberated parts, not bolting a domain on.
+4. **Recombine — not in the same arrangement.** Build connections among the liberated parts. Boyd is explicit: the result must NOT use the parts in the same arrangement as any original domain — if you've merely reassembled one monk's structure with different vocabulary, you haven't created anything. (Donors are recruited up front in 4.5b; if the decomposition reveals a *missing* operation that no donor on the manifest covers, recruit one more functional donor now and decompose it to equal depth before proceeding.)
+5. **Epistemological diversity verification.** If a monk claims something *resists* analytical/propositional treatment (love, wisdom, quality of attention, aesthetic judgment, faith, embodied knowledge), confirm the manifest includes at least one functional donor that takes that claim seriously *on its own terms* — virtue ethics, contemplative traditions, care ethics, aesthetic philosophy, phenomenology. If every donor is itself analytical, the synthesis will dissolve the higher-order claim into lower-order terms (the level-reduction failure). If missing, recruit one now and decompose it.
 
 **Emergent structure test:** The synthesis must have organizational properties that exist in *neither* input. If every element of your synthesis is attributable to one monk or the other, you've recombined, not created.
 
@@ -180,6 +195,21 @@ Keep lines under 150 chars. Future cross-dialectic passes will grep across these
 - Converting a misfit into a synthesis criterion (that's resolving it; defeats the purpose)
 - Inflating the lenses with forced finds (zero items is a valid answer per lens)
 
+## 4.6.6 Loss Audit — Single-Monk High-Value Ideas
+
+The misfit register (4.6.5) captures frame-level *friction* the synthesis will leave un-resolved. This pass captures the opposite failure: high-value *content* the synthesis will smooth away. Empirically, blending multiple model outputs drops most good ideas that appeared in only *one* output — the "hidden profile" problem (Stasser & Titus): groups over-sample shared information and lose what only one member held. The palette (Phase 5) is a partial guard; this pass makes it explicit.
+
+**Procedure:**
+1. **Extract single-monk ideas.** Scan the atomic parts list (4.6 step 2) for high-value ideas — mechanisms, observations, failure modes, reframes — appearing in **only one** monk. These "spiky" ideas are most at risk of being smoothed away.
+2. **Score provenance-blind.** Rate each for "useful, non-obvious, worth keeping" *without* reference to which monk produced it. Default: dispatch 2–3 fresh blind-judge subagents (no position, no sight of any synthesis) to score the stripped ideas — this removes the single-informed-seat bias. Minimum fallback: the orchestrator scores with provenance stripped. Use the 4.6-step-2 calibration tags as a second axis: **value × calibration.**
+3. **Coverage requirement.** Each high-value idea must be either (a) carried into a Phase 5 candidate, or (b) **consciously dropped with a one-line reason** logged to `misfit_register.md`. Silent dropping is the failure this pass exists to prevent. A high-value + low-calibration idea is carried as a *flagged hypothesis* that must earn evidence (the Phase 5 reversibility-repair path), not asserted.
+
+**Boundary with the misfit register — do not conflate:**
+- Loss-audit items are *absorbable high-value content* — smoothing them away is the bug, so **recover** them. Test: "would carrying this in make the synthesis *better*?"
+- Misfit-register items are *frame-level friction* — forcing them to fit falsifies the synthesis, so **preserve** them un-resolved. Test: "would absorbing this *falsify* the synthesis?"
+
+**Write the output** to `round_N_loss_audit.md`: each single-monk idea, its value × calibration score, and its disposition (carried-to-S / carried-to-J / dropped + reason).
+
 ## 4.7 Sublation Criteria
 Before synthesis, specify what it must accomplish:
 - Preserve [specific insight from A]
@@ -202,6 +232,7 @@ The full Phase 4 analysis is already written to file — the user can read it th
 > - **Did I miss anything in the decomposition?** New connections, evidence, or angles that should be in the mix before I synthesize?
 > - **Are the sublation criteria right?** What must the synthesis preserve that I haven't listed?
 > - **Do the flagged misfits look right,** or am I missing a bigger one?
+> - **Are the recovered high-value ideas right,** and do the conscious drops look correct — or did I smooth away something that should be carried?
 >
 > This is the highest-leverage correction point — it's much harder to fix the synthesis after I've committed to a direction.
 
