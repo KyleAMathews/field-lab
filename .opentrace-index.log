@@ -1,0 +1,11 @@
+Opening database at /Users/kylemathews/programs/hegelian-dialectic-skill/.opentrace/index.db ...
+Indexing /Users/kylemathews/programs/hegelian-dialectic-skill ...
+  Scanning directory tree
+  Scanned 12 nodes, 0 parseable files
+  Processing 0 files
+  Extracted 0 classes, 0 functions, 0 variables from 0 files
+  Resolving calls from 0 callers, 0 derivations
+  Resolved 0 calls, 0 derivations
+  0 nodes, 0 relationships, 0 files, 0 classes, 0 functions
+  Saved 12 nodes, 11 relationships
+Done in 0.1s.

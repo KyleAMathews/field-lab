@@ -25,7 +25,8 @@ The dialectic skill is already architected against both failure modes — full-c
   - *Functional donors* — for each determinate-negation "missing thing" from 4.3, recruit one domain that takes that **operation** seriously (the snowmobile's donors were chosen for the function each contributes).
 - Target **N monks + ~3–5 donors**, and require **each donor decomposed to the same depth as the monk positions** — full domains entering the sea, not garnish.
 - Unify the three currently-scattered domain sources — 4.5b (random), 4.6-step-4 ("adjacent domains"), 4.6-step-5 ("epistemological diversity") — into the single donor concept. The epistemological-diversity rule (recruit domains that take a resists-analysis claim seriously) becomes a *special case* of functional-donor recruitment.
-**Note:** the random/functional split was the one explicit design fork; resolved as "both, unified."
+- **Domain manifest (enforcement artifact):** the first instruction of `4.6` step 2 writes a manifest listing every domain in the pool — `[Monk A, Monk B, …, donor1, donor2, …]` — as **peers**, each to be decomposed to equal depth. This makes "which domains are in the sea, all decomposed equally" an explicit checklist rather than a prose hope, guarding against the monk-primary habit (thoroughly shatter the essays, skim the donors). **No renumber:** the manifest lives inside the existing 4.6 step 2; section numbers and cross-references are untouched.
+**Notes:** the random/functional split was the first design fork, resolved as "both, unified." The pool-structure fork (manifest vs. full restructure vs. pure prose) resolved as "manifest, no renumber."
 
 ### #2 — Operationalize Heisenberg (the dead pillar)
 **Where:** `4.6` opening + `reference/phase5-sublation.md` (synthesis).
@@ -79,6 +80,6 @@ The dialectic skill is already architected against both failure modes — full-c
 - These are markdown/instruction edits to a mature, battle-tested skill. Risk is wording that misfires at runtime, not code regressions. Validation is a careful read-through + ideally one live dialectic run comparing before/after on the determinate-negation and synthesis artifacts.
 
 ## Out of scope
-- No restructure into a named "Sea of Anarchy" construction phase (considered; rejected as too much blast radius for the gain).
+- No restructure into a separately-numbered "Sea of Anarchy" construction phase with a renumber cascade (considered; rejected as too much blast radius for the gain — the enforcement it would provide is captured by the in-place domain manifest in #1).
 - No RL/training-based confidence calibration (not applicable to a prompt-level orchestration skill).
 - No changes to the README beyond reflecting the above once the reference docs land.
