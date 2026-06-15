@@ -237,7 +237,11 @@ Separating criteria from synthesis prevents pattern-matching to a pre-formed com
 
 **Do NOT proceed to Phase 5 without presenting your Phase 4 analysis to the user and getting their response.** This is a hard stop, not a suggested checkpoint.
 
-The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the most surprising decomposition insights, the sublation criteria, and **1-2 highest-signal misfits from the register** (not all of them — just the ones that might change the user's response). Then ask:
+The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the most surprising decomposition insights, the sublation criteria, and **1-2 highest-signal misfits from the register** (not all of them — just the ones that might change the user's response).
+
+**Prime the donor domains.** The user is expert in the home domain but the donors are deliberately distant — by the time the summary leans on "kinetic quenching," "restite," "ubiquity–authorship inverse coupling," or "the metastable Form-V target," an unprimed user cannot evaluate the recombination, and this is the highest-leverage correction point in the whole process. So for each donor whose vocabulary appears in the surfaced insights, include a **crisp, directed primer — 2-4 sentences** explaining *exactly the borrowed mechanism* (not the whole field) in terms of the user's problem. You earned the right to write a tight primer rather than a generic one: you did the blind research and you know which connection you're drawing, so prime only the slice the isomorphism actually uses. A user who can't follow the donor can't tell you the isomorphism is forced — which is precisely the `[fit: reach]` check you most need them to run.
+
+Then ask:
 
 > Here's my structural analysis of the contradiction. Before I attempt synthesis:
 > - **Did I identify the right hidden question?** Or is the real tension somewhere else?
