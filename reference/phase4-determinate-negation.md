@@ -111,18 +111,16 @@ Scan titles, fetch extracts for the ones maximally distant from the dialectic's 
 **Functional donors (operation-targeted, recruited *blind*).** The trap: if you pick these yourself you know the home domain, so you reach for its nearest neighbors — a strategy problem pulls "central-bank independence" and "TCP/IP," which are adjacent fields in a costume, not cross-domain injections. Relevance without distance is recombination, not creation. Defeat the bias by recruiting blind:
 
 1. **Write a domain-neutral structural brief.** Render each determinate-negation "missing thing" (4.3) as an abstract *relational pattern* with **every home-domain noun stripped** — no industry, company, product, or technology words. E.g. "a mechanism by which a part keeps its function after being absorbed into a larger whole whose survival does not depend on that part" — *not* "how an acquired team keeps its mandate." Then re-read: if a stranger could name the home domain from your brief, it still leaks — strip again. This gate is load-bearing; a leaked brief re-infects the recruiter with your bias.
-2. **Assemble a broad diversity menu to bounce from.** A long, grouped palette spanning the breadth of human knowledge — a *stimulus list, not a closed set*; the recruiter should range beyond it where a better-fitting distant field exists. Generate it fresh each round (optionally seed entries from random Wikipedia categories to fight habit), *without reference to the problem*. Span at least these meta-domains:
-   - **Physical & earth sciences:** mechanics, thermodynamics, optics, acoustics, fluid dynamics, materials science, crystallography, metallurgy, geology/petrology, seismology, meteorology, oceanography, celestial mechanics
-   - **Formal & computational:** topology, graph theory, game theory, information theory, control theory, logic, cryptography, distributed systems, compilers
-   - **Social & institutional:** property/contract/constitutional law, jurisprudence, markets, monetary policy, mechanism design, diplomacy/statecraft, military strategy, urban planning, public administration
-   - **Cultural & symbolic:** linguistics, semiotics, folklore, mythology, anthropology, archaeology, historiography, theology & comparative religion, ritual studies
-   - **Arts & craft:** music theory & performance, architecture, poetics, theater, film, typography, ceramics, textiles, woodworking, culinary/food science, perfumery, horology
-   - **Embodied practice:** navigation/seamanship, aviation, surgery, sport, martial arts, mountaineering, falconry
-   - **Commerce & operations:** logistics, supply chain, actuarial/insurance, accounting/auditing, agriculture/husbandry
-   - **Life sciences** *(the lazy default — capped at one pick total; see step 3)*: ecology, evolution, immunology, neuroscience, mycology, epidemiology
-3. **Dispatch the blind recruiter** with ONLY the structural briefs + the menu (no problem, no home domain, no monk essays). Put these hard constraints in its prompt:
-   - **Maximum meta-domain diversity is the PRIMARY objective** — not a tiebreaker applied after fit. Across all picks, span the widest possible range.
-   - **At most ONE pick from the default-attractor meta-domain.** Life sciences (biology/ecology/medicine) read as the most mechanistically legible and are the lazy default — cap them at one across all patterns.
+2. **Fetch the field palette from Wikipedia — don't hand-curate it.** A hand-written menu is partial and carries the orchestrator's bias (the exact thing we're fighting). Use Wikipedia's *Outline of academic disciplines* as an authoritative, comprehensive taxonomy; the blind recruiter (step 3) fetches it directly:
+
+   ```bash
+   curl -s "https://en.wikipedia.org/w/api.php?action=parse&page=Outline_of_academic_disciplines&prop=sections&format=json"
+   ```
+
+   Every discipline comes back as a section heading, grouped under five top-level meta-domains: **Humanities** (1), **Social science** (2), **Natural science** (3, splitting into Physical science 3.1 and Life science 3.2), **Formal science** (4), **Applied science** (5). The recruiter ranges across as many of the five branches as possible. (Optionally also fetch a few random Wikipedia articles — as in the random-donor stream — to surface fields the academic outline thins out, e.g. crafts and folk practices.)
+3. **Dispatch the blind recruiter** with ONLY the structural briefs + the fetched palette (no problem, no home domain, no monk essays). Put these hard constraints in its prompt:
+   - **Maximum meta-domain diversity is the PRIMARY objective** — not a tiebreaker applied after fit. Across all picks, span the widest possible range of the five branches.
+   - **At most ONE pick from the Life science branch (3.2) and its children.** Biology/ecology/medicine read as the most mechanistically legible and are the lazy default — cap them at one across all patterns.
    - **Over-generate: 4 candidate domains per pattern,** each naming a *specific technical concept* from that field plus one sentence on the structural match. No vague "law handles this" — name *adverse possession*, *ratio decidendi*, *littoral drift*, *Schenkerian reduction*.
    - **No two picks from the same broad field;** if a field repeats across patterns, flag it and offer a swap.
 
