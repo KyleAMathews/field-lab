@@ -126,6 +126,23 @@ You need to know the domain well enough to:
 - Write **framing corrections** that steer monks away from shallow takes
 - Identify the **deepest available contradiction**
 
+## 1d.5 Blind Structural Reconnaissance (Discovering the Domain's Hidden Structure)
+
+By now you (the orchestrator) know the home domain — and that knowledge carries the home frame's blind spots. The whole pipeline is home-frame-bound until Phase 4's cross-domain donors arrive, which is part of *why* dialectics tend to converge on the user's prior: by the time foreignness shows up, the home frame has already shaped the fault line, the monks, and the negations. This step injects an outsider's structural eye *early* — not to feed the monks foreign vocabulary (that comes later, on purpose), but to help **you** see the domain's deep structure before you lock what the monks will fight about.
+
+**Mechanism (blind, like the 4.5b donor recruiter):**
+
+1. **Write an abstract structural sketch of the tension** — the same stripping as a donor brief: every home-domain noun, acronym, named standard, and single-field term of art removed, leaving the bare relational shape (e.g. "two positions that each treat a shared substrate as the thing to optimize, disagreeing over whether control should be centralized or emergent"). You are the leaker and can't see your own leak; the analyst's leak check (below) is the real gate.
+2. **Dispatch a blind structural analyst** with ONLY the sketch (no home domain, no user material, no monk plan). Have it:
+   - **Leak check first:** name the single domain this sketch most smells like. If it can name your actual home field (or flags any leaked term), re-strip and re-dispatch.
+   - Then report, purely from the structure: **what the shape presupposes** (assumptions baked into this *kind* of tension that insiders stop seeing); **candidate deepest axes** (where structures of this shape usually really split, often beneath the surface debate); **candidate orthogonal third poles** (axes a two-pole framing would miss).
+3. **Use the output to sharpen, not to seed.** Fold it into your choice of the deepest contradiction (1c/1d) and re-run the third-pole probe (1c.1) before the briefing locks. A surfaced axis or third pole only enters if it also meets 1c.1's criteria (not-a-blend, independent constituency, ideally orthogonal).
+
+**Hard guardrails:**
+- The analyst is **blind** — it shapes *your map and fault-line choice only*. Its raw cross-domain vocabulary does **not** enter the monk briefing (1e) by default; feeding it to the monks is the opt-in experiment below.
+- It does **not** pre-pick Phase-4 donors — donor selection stays with the blind recruiter at 4.5b. At most, note structural patterns worth revisiting there.
+- Treat its output structurally, not as an answer (same anti-sycophancy as everywhere): one more input to interrogate, not a frame to converge on.
+
 ## 1e. Write the Context Briefing Document
 
 **Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `round_1_context_briefing.md`). Write the full briefing to the file — present only a concise summary to the user at the confirmation step (1f).
@@ -147,6 +164,16 @@ For **personal/values domains**, this covers:
 For **mixed domains**, both sections.
 
 Both monks will read this file before writing. For personal domains this is especially important — it gives the monks the user's actual situation rather than letting them argue from generic positions. A monk that believes "you should prioritize your career" in the abstract is useless. A monk that believes "given your specific history of X, your constraint of Y, and the fact that stakeholder Z can actually handle Q — you should prioritize your career *because*..." is an Electric Monk doing its job.
+
+### 1e (experimental) — Cross-Domain Monk Enrichment [OPT-IN, default OFF]
+
+**Status: experimental — leave OFF unless the user explicitly opts in to trial it.** By default the briefing stays home-grounded: the monks argue from the domain's own material, which keeps their positions genuine, independent, and *uncorrelated* — and that is exactly what gives Phase 4 sharp determinate negations to shatter. This option trades some of that for an earlier attack on home-frame lock-in.
+
+**When enabled:** weave 1–2 cross-domain framings surfaced by 1d.5 into the briefing — as *analogies the monks may reason with*, not positions they must hold, and framings only (not full donor decompositions; that is Phase 4's job).
+
+**Why it's gated — and instrumented, not just toggled:** shared cross-domain framing can **correlate the monks** (their arguments converge in texture even with opposing poles) and **pre-fill the gaps** (shrinking the determinate negation that is the dialectic's engine). So the trial must produce evidence:
+- At Phase 4, log to `round_N_determinate_negation.md` whether the negations came out **sharp and complementary** or **homogenized / shrunken**, and whether the monks stayed genuinely opposed. (Phase 4 stage A re-states this prompt at 4.3 so you don't have to remember it from here.)
+- Comparison protocol: run an enriched round, record the negation quality; over several runs compare against home-grounded rounds. Watch-criterion: *did early enrichment loosen the home frame without blurring the monks?* If negations consistently degrade, the experiment has failed and the default stands.
 
 ## 1f. Confirm with the User
 
