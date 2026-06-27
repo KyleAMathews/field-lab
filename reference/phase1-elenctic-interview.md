@@ -165,15 +165,13 @@ For **mixed domains**, both sections.
 
 Both monks will read this file before writing. For personal domains this is especially important — it gives the monks the user's actual situation rather than letting them argue from generic positions. A monk that believes "you should prioritize your career" in the abstract is useless. A monk that believes "given your specific history of X, your constraint of Y, and the fact that stakeholder Z can actually handle Q — you should prioritize your career *because*..." is an Electric Monk doing its job.
 
-### 1e (experimental) — Cross-Domain Monk Enrichment [OPT-IN, default OFF]
+### 1e.1 Cross-Domain Monk Enrichment
 
-**Status: experimental — leave OFF unless the user explicitly opts in to trial it.** By default the briefing stays home-grounded: the monks argue from the domain's own material, which keeps their positions genuine, independent, and *uncorrelated* — and that is exactly what gives Phase 4 sharp determinate negations to shatter. This option trades some of that for an earlier attack on home-frame lock-in.
+Weave 1–2 cross-domain framings surfaced by 1d.5 into the briefing — as *analogies the monks may reason with*, not positions they must hold, and framings only (not full donor decompositions; that is Phase 4's job). **This is on by default.** Test runs bear it out: bringing an outsider frame in early loosens the home-frame lock-in that otherwise makes the monks — and the synthesis — converge on the prior, and when kept to framings it does so *without* blunting the determinate negations.
 
-**When enabled:** weave 1–2 cross-domain framings surfaced by 1d.5 into the briefing — as *analogies the monks may reason with*, not positions they must hold, and framings only (not full donor decompositions; that is Phase 4's job).
+**Go light or skip when the monks are grounded in the user's own material** (personal/values domains). There the grounding *is* the user's specific history, constraints, and stakeholders; cross-domain analogies can muddy positions that should stay rooted in that. Enrichment earns its keep most in external-research and conceptual domains.
 
-**Why it's gated — and instrumented, not just toggled:** shared cross-domain framing can **correlate the monks** (their arguments converge in texture even with opposing poles) and **pre-fill the gaps** (shrinking the determinate negation that is the dialectic's engine). So the trial must produce evidence:
-- At Phase 4, log to `round_N_determinate_negation.md` whether the negations came out **sharp and complementary** or **homogenized / shrunken**, and whether the monks stayed genuinely opposed. (Phase 4 stage A re-states this prompt at 4.3 so you don't have to remember it from here.)
-- Comparison protocol: run an enriched round, record the negation quality; over several runs compare against home-grounded rounds. Watch-criterion: *did early enrichment loosen the home frame without blurring the monks?* If negations consistently degrade, the experiment has failed and the default stands.
+**Standing guard (the risk is real and domain-dependent).** Enrichment can still **correlate the monks** (arguments converge in texture even with opposing poles) or **pre-fill the gaps** (shrinking the determinate negation that is the dialectic's engine). So Phase 4 stage A (4.3) checks each round whether the negations came out sharp and complementary or homogenized; if a round's come back blurred, that's the enrichment muddying — dial it back or skip it for that domain. (Not an open experiment anymore — early enrichment has proven net-positive; this is the ongoing safeguard that keeps it honest per-domain.)
 
 ## 1f. Confirm with the User
 
