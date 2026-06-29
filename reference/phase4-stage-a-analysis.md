@@ -59,6 +59,12 @@ If 4.2.5 surfaced a disguised shared interest, the determinate negation of each 
 ## 4.4 The Hidden Question
 Articulate the deeper question the contradiction is ACTUALLY about — the question neither agent asked because they were both too committed to their answers. This should reframe the entire debate in a way that makes both positions legible as partial truths.
 
+**Draw the hidden-question 2×2 (mandatory).** **See `reference/quadrant-diagrams.md`.** This is the highest-value 2×2 in the dialectic: put **axis 1 = the surface debate (4.0)** and **axis 2 = the hidden question's axis (this section)**, then place each monk. Two payoffs:
+- **The quadrant a monk ignores is its determinate negation (4.3) made visual** — the monk is fighting along axis 1 and is blind to axis 2, so the quadrants it can't see name what's missing from its worldview.
+- **The under-occupied quadrant is a synthesis / third-pole candidate** — carry it into 4.7's sublation criteria and Phase 5.
+
+Honesty rule (it bites hardest here, where the pull toward a tidy reframe is strongest): if axis 2 doesn't earn its place — the monks really do sit on one line — *say so* rather than manufacturing a hidden axis. A forced hidden-question 2×2 invents a reframe the evidence doesn't support; an honest "this contradiction is genuinely 1-D" strengthens the undecidable lens (4.6.5) and tells you the tension is real.
+
 ---
 
 **Before moving on:** write your 4.0–4.4 analysis to `round_N_determinate_negation.md`. Then read `reference/phase4-stage-b-lateral.md`.
