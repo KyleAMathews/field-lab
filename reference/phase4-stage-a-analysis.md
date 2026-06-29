@@ -54,6 +54,8 @@ It IS:
 
 If 4.2.5 surfaced a disguised shared interest, the determinate negation of each monk may read: "fails to see that its position is a local variation of a shared interest it cannot examine — specifically [the interest]."
 
+**Enrichment guard (Phase 1 wove cross-domain framings into the briefing, 1e.1 — on by default).** Sanity-check that the negations came out **sharp and complementary**, not **homogenized / shrunken**, and that the monks stayed genuinely opposed rather than converging in texture. If they came back blurred, the enrichment muddied this round — note it in `round_N_determinate_negation.md` and dial enrichment back (or skip it) for this domain next round. If enrichment was skipped this round (e.g. a personal/values domain), skip this check.
+
 ## 4.4 The Hidden Question
 Articulate the deeper question the contradiction is ACTUALLY about — the question neither agent asked because they were both too committed to their answers. This should reframe the entire debate in a way that makes both positions legible as partial truths.
 
