@@ -24,6 +24,14 @@ Open the top of the Phase 5 file by listing which candidates will be drafted and
 
 ## 5.1 Generate Candidates in Parallel (Decorrelation)
 
+**Construct the candidate 2×2 first (mandatory). See `reference/quadrant-diagrams.md`.** Carry the hidden-question 2×2 from 4.4 forward (or draw it now if Phase 4 left it implicit) and read candidates off it — this is how a reframe becomes a concrete candidate:
+- **G (ground condition):** axis 2 — the orthogonal dimension — often *is* the ground condition; naming it as the load-bearing variable is the G move.
+- **F (framing dissolution):** the 2×2 itself is the dissolution — the old binary collapses to one axis while the second axis shows the debate was mis-framed. Hand the F-agent the diagram.
+- **S (synthesis):** the empty / under-occupied quadrant is often the synthesis — the position neither monk occupies but the axes make available.
+- **U (undecidable):** if the honest result is that *no* second axis earns its place, that is itself the U signal — the contradiction is genuinely 1-D and resists the reframe.
+
+Pass the relevant slice to each candidate agent (G/F get the axes; S gets the empty quadrant). Honesty rule applies hard here: don't manufacture a ground condition or fossil framing by forcing an axis — a forced 2×2 fabricates a false G/F. If the axis is real, the candidates fall out of it; if it isn't, that absence is the finding.
+
 **Dispatch one subagent per candidate type.** Each subagent receives:
 - The context briefing (Phase 1)
 - Condensed summaries of both monk essays

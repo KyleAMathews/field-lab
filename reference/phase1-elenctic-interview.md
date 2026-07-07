@@ -69,6 +69,17 @@ If no third pole surfaces that meets all three criteria, run with 2 monks — an
 
 **Anti-sycophancy warning:** The elenctic interview is where position-tracking starts. The user will share what they think, what they've read, what frameworks they find compelling. Your job is to understand the *shape of the tension* — not to figure out which side the user leans toward so you can build the synthesis in that direction. If the user seems excited about a particular framework or thinker, that's useful information for grounding the monks, but it is NOT a signal about where the synthesis should land. The user came to this tool to be in the belief-free seat. Help them get there — don't track their position and feed it back to them as a synthesis.
 
+## 1c.2 Exploratory 2×2s (Mapping Where to Run the Monks)
+
+**Read `reference/quadrant-diagrams.md` for how to draw and judge a 2×2.** Phase 1 is open-ended exploration, and the 2×2 is the sharpest tool for it: when a debate looks like one spectrum, a second orthogonal axis often reveals the positions are in different *quadrants*, not at opposite ends of one line — which is the whole game (it's the same move as the hidden question at 4.4 and the third-pole probe at 1c.1).
+
+**Generate multiple candidate 2×2s — typically 2–4, each with a *different* pair of axes — and explore them with the user.** This is divergent on purpose: different second axes surface different possible tensions, and you're trying to find *where to point the monks*, not lock a frame. Each candidate does triple duty:
+- **Comprehension check** — it externalizes your model of the user's problem; they correct the axes and placements (the 2×2 is a *question*, not an answer).
+- **Third-pole generator** — each second axis is a candidate orthogonal pole, feeding 1c.1 directly. A live second axis is often exactly the Monk-C position.
+- **Fault-line scout** — the spread of framings is the raw material for deciding, at 1f, which tension (and how many monks) the dialectic runs on.
+
+**Mandatory, with the honesty rule:** produce a genuine *spread* of framings, not one diagram dressed three ways. If a candidate framing has no second axis that earns its place, say so — that tension is genuinely 1-D, which is itself a finding (and a signal the contradiction is real, not a framing artifact). Don't manufacture a fake axis to fill the quota. Present the candidates to the user as part of the interview and let the exploration run.
+
 ## 1d. Ground the Monks (Domain-Adaptive)
 
 The monks need deep grounding before they can believe effectively. But *what* constitutes grounding depends on the domain type and how novel it is. The skill must adapt.
