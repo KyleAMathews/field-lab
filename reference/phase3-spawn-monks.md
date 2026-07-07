@@ -1,5 +1,7 @@
 # Phase 3: Spawn the Electric Monks
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.1 surfaced additional poles. Use `claude -p` (or your environment's equivalent for spawning an independent agent) so each gets a clean context with full belief commitment.
 
 ```bash

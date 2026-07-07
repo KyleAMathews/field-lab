@@ -1,5 +1,7 @@
 # Phase 4: Determinate Negation
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 This is the structural analysis phase. You (the orchestrator) perform this yourself — do NOT delegate to a subagent, because you need to maintain continuity with the elenctic interview and your domain research.
 
 ## This phase is staged — read one stage file at a time

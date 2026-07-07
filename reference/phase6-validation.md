@@ -1,5 +1,7 @@
 # Phase 6: Validation of the Palette
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 Phase 6 validates the palette from Phase 5. The user selects which candidate(s) to validate — typically one or two, not all. Each selected candidate is validated **on its own terms** against its own internal standard, by the monks and by a hostile auditor.
 
 **No tournament, no winner, no Borda count.** The user judges which candidate fits their situation. The monks and auditor produce structural critiques per candidate, not rankings across candidates.

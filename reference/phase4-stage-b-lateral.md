@@ -1,5 +1,7 @@
 # Phase 4 — Stage B: Lateral Creativity Interventions (4.5)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *This stage builds the "sea of anarchy" you will shatter in Stage C: compressed conflicts, a multi-domain donor pool recruited blind, and a non-propositional pause. Do this BEFORE the Boydian decomposition so the new material becomes atomic parts in the decomposition rather than an afterthought.*
 
 ## 4.5 Lateral Creativity Interventions

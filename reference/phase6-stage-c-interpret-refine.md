@@ -1,5 +1,7 @@
 # Phase 6 — Stage C: Interpret + Refine (6.4, 6.5, 6.6)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *With monk validations (Stage A) and auditor reports (Stage B) in hand, interpret each candidate on its own terms, then help the user refine the palette. Do not cross-rank candidates.*
 
 ## 6.4 Interpreting the Results — Per Candidate

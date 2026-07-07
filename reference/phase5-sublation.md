@@ -1,5 +1,7 @@
 # Phase 5: Palette of Candidates
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 Phase 5 generates a **palette of structurally-distinct Phase-5 candidates**, not a single synthesis. Each candidate has a different posture toward the contradiction — synthesize it, juxtapose it, ground it out, dissolve the frame, or center the undecidable term. The user picks or combines; the orchestrator does NOT rank, judge, or tournament.
 
 **Why a palette:** Hegel's Aufhebung (cancel/preserve/elevate) structurally biases toward smoothing differences into a single unified answer. That's often boring and sometimes wrong — the real value of the dialectic up to this point (research, belief, decomposition, misfit registration) is in generating *many angles*, and Phase 5 has been squandering that by collapsing back to one. The palette preserves the angles.

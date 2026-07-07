@@ -1,5 +1,7 @@
 # Phase 7: Recursion — Where the Real Value Lives
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 **Recursion is not optional cleanup. It is the engine of the skill.** The first round produces a synthesis. The recursive rounds force that synthesis to confront its own limitations, generating increasingly powerful mental models. Each cycle compresses understanding upward. In test runs, a React/Vue dialectic went from "corporate lab vs. independent auteur" → "the Layer Thesis" → "co-evolutionary arms race." An institutional identity dialectic went from "enforcement vs. freedom" → "practice-based identity" → "nucleation as formation mechanism" → then surfaced a third-level tension that reframed everything. In both cases, the recursive rounds produced the most valuable insights.
 
 **When transitioning to recursion, tell the user:**

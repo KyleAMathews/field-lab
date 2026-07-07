@@ -1,5 +1,7 @@
 # Phase 4 — Stage C: Boydian Decomposition + Registers (4.6, 4.6.5, 4.6.6)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *This stage is the destructive heart of the phase: shatter every domain in the pool (monks + donors from Stage B) into atomic parts, find cross-domain connections, recombine into something with emergent structure, then instrument what the synthesis will leave un-resolved (misfit register) and what it would smooth away (loss audit).*
 
 ## 4.6 Boydian Decomposition (Destruction Phase)

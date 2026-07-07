@@ -1,5 +1,7 @@
 # Phase 4 — Stage A: Core Analysis (4.0–4.4)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *Read the framing in `reference/phase4-determinate-negation.md` first if you haven't. This stage finds the collision: the surface contradiction, each position's self-sublation, the shared assumptions, position protection, the determinate negations, and the hidden question.*
 
 ## 4.0 Surface Contradiction

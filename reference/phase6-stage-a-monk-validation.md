@@ -1,5 +1,7 @@
 # Phase 6 — Stage A: Monk Validation (6.2)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *For each candidate the user selected (6.0), send the candidate-type-specific prompt below to both monks. Apply only the sub-section matching the candidate you're validating.*
 
 ## 6.2 Monk Validation — Per Candidate

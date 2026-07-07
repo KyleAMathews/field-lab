@@ -1,5 +1,7 @@
 # Phase 4 — Stage D: Sublation Criteria + User Checkpoint (4.7, 4.9)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *The final stage of Phase 4: state what the synthesis must accomplish, then HARD STOP and present a concise summary to the user. This is the highest-leverage correction point in the entire process — do not skip the stop.*
 
 ## 4.7 Sublation Criteria

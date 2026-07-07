@@ -1,5 +1,7 @@
 # Phase 6 — Stage B: Hostile Auditor (6.3)
 
+**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+
 *For each candidate under validation, spawn one hostile auditor using the candidate-type-specific prompt below. Apply only the sub-section matching the candidate you're auditing.*
 
 ## 6.3 Hostile Auditor — Per Candidate
