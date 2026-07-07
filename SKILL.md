@@ -93,6 +93,15 @@ The user can intervene at any point — correcting a monk's framing, redirecting
 
 **CRITICAL: Before executing each phase, you MUST read its reference doc in full.** The summaries below are orientation only — they do not contain the detailed instructions, prompts, templates, or failure modes you need to execute correctly. Context drift (forgetting nuance in later rounds) is the most common failure mode of this skill. Reading the reference doc fresh each time is the fix.
 
+**The Completion Gate (mandatory at every phase and stage boundary).** Before you read the next phase/stage file — or tell the user you're moving on — run the completion gate for the phase/stage you are in. This is the fix for the most common orchestration failure: advancing with tasks half-done.
+
+1. **Enumerate.** List every required task and deliverable of the phase/stage you just did, as an explicit numbered checklist. Each phase/stage file ends with its own gate checklist — use it. If a phase has no printed list, enumerate from its numbered steps.
+2. **Attest, item by item.** For each item, mark ✅ done or ❌ not done and cite concrete evidence — the file and what you wrote to it, the artifact produced, the check you ran. "Started," "roughly," "will do next phase," or silence = ❌, not ✅.
+3. **Gate.** All ✅ → proceed. Any ❌ or partial → **STOP. You may not advance.** Complete it now, or ask the user for explicit permission to skip *that specific item*.
+4. **Only the user waives an item.** An explicit user "yes, skip X" is the only thing that authorizes advancing with X undone. Your own judgment that a step "probably doesn't matter," running low on context or time, or eagerness to reach the synthesis are NOT permission — surface the ❌ item to the user and let them decide.
+
+Show the checklist to the user (don't run it silently) so they can see the phase actually closed before the next one opens.
+
 **Output principle: write full content to files, present only summaries to the user.** Every phase produces substantial analytical output — essays, negation analyses, lateral material, syntheses, validation feedback. Write all of this to files. When presenting to the user, give a concise structural summary (2-5 sentences per major section) that orients them and supports their decision-making at checkpoints. The user can always read the full files if they want depth; what they need from you is the shape of the analysis, not the full text. This applies to every user-facing checkpoint in the process.
 
 **File organization:** Create a dedicated directory for each dialectic's output files. First check if a `dialectic/` or `dialectics/` directory already exists (common in codebases that run multiple dialectics) — if so, create a subdirectory there. If not, create a new directory with a descriptive name (e.g., `dialectic-react-state-management/`). Prefix every file with its round number: `round_1_context_briefing.md`, `round_1_monk_a.md`, `round_1_determinate_negation.md`, `round_2_monk_a.md`, etc. This keeps multi-round dialectics navigable and prevents file collisions across rounds.

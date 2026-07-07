@@ -48,6 +48,13 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 **Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
 
+**Completion gate — enumerate & attest before launching the next round or stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] Idea burst (5–8 candidate contradictions) generated **first**, read, and only then clustered — not skipped or combined with clustering
+- [ ] Burst clustered into 2–4 candidate directions
+- [ ] Directions presented to the user as a menu (orchestrator proposes, user chooses) — no unilateral direction pick
+- [ ] Queue written/updated in `dialectic_queue.md` with each contradiction's source round and status
+- [ ] On stopping instead: final state of the dialectic queue presented to the user (explored / open / deferred)
+
 ## Running Recursive Rounds
 
 Each recursive cycle follows Boyd's full cycle: the previous synthesis is a Structure that must be Unstructured (destructive deduction — shatter it into atomic parts, break the correspondence between the concept and its constituents) and Restructured (creative induction — find cross-domain connections to synthesize something new). Boyd proves this isn't just a good idea — the Second Law guarantees that any inward-oriented refinement of the existing synthesis will increase entropy. Recursive rounds often need **new research and fresh agents** because the system must open itself to outside material or face increasing mismatch.

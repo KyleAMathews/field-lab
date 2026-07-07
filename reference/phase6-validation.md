@@ -33,4 +33,8 @@ Use the strongest available model with extended thinking for all validation agen
 
 ---
 
-Once the user has selected candidates (6.0) and you've set the model (6.1), read `reference/phase6-stage-a-monk-validation.md` and begin.
+**Completion gate — enumerate & attest before Stage A (see SKILL.md → The Completion Gate):**
+- [ ] 6.0: user has selected which candidate(s) go into validation (not the orchestrator's guess — the user's pick, or an explicit deferral you resolved by the stated default)
+- [ ] 6.1: strongest model with extended thinking set for validation agents
+
+Like Phase 4, Phase 6 is staged — **run the completion gate at each A→B→C stage boundary**, not only at the end. Once 6.0 and 6.1 are ✅, read `reference/phase6-stage-a-monk-validation.md` and begin.

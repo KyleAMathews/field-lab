@@ -81,4 +81,12 @@ Keep this to 2 paragraphs maximum. Extract 3-5 structural observations from the 
 
 ---
 
-**Before moving on:** write your 4.5 output — the compressed conflicts, the donor pool (with the domain manifest you'll carry into 4.6) and per-donor research, and the metaphor observations — to `round_N_determinate_negation.md`. Then read `reference/phase4-stage-c-decomposition.md`.
+**Completion gate — enumerate & attest before Stage C (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] 4.5a compressed conflicts (oxymorons) generated
+- [ ] 4.5b donor pool recruited **blind** — brief provenance lock + register tags; recruiter read the Outline itself; final set selected under the blind rules (negation coverage, ≥3 unrelated meta-domains, register spread on both axes)
+- [ ] Distance veto applied (no home field or its neighbor); domain manifest written for carry into 4.6
+- [ ] Each donor researched for its own technical vocabulary
+- [ ] 4.5c three metaphors written; 3–5 structural observations extracted
+- [ ] All 4.5 output written to `round_N_determinate_negation.md`
+
+Then read `reference/phase4-stage-c-decomposition.md`.

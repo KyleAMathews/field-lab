@@ -67,4 +67,13 @@ Honesty rule (it bites hardest here, where the pull toward a tidy reframe is str
 
 ---
 
-**Before moving on:** write your 4.0–4.4 analysis to `round_N_determinate_negation.md`. Then read `reference/phase4-stage-b-lateral.md`.
+**Completion gate — enumerate & attest before Stage B (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] 4.0 surface contradiction stated
+- [ ] 4.1 internal tensions (self-sublation) for each essay
+- [ ] 4.2 shared assumptions (N-way + any pairwise, with 3+ monks)
+- [ ] 4.2.5 position protection per monk, with citations, written to the misfit register; watchlist checked
+- [ ] 4.3 determinate negation per monk (specific + complementary); enrichment guard run (sharp vs. homogenized)
+- [ ] 4.4 hidden question articulated **and** the mandatory hidden-question 2×2 drawn (or honestly recorded as genuinely 1-D)
+- [ ] All 4.0–4.4 output written to `round_N_determinate_negation.md`
+
+Then read `reference/phase4-stage-b-lateral.md`.

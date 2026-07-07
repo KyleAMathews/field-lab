@@ -22,6 +22,8 @@ The framing in *this* index applies to every stage. Section numbers are continuo
 
 Writing each stage to file as you finish it is not optional bookkeeping — it is what makes the staging safe. If context is compacted between stages, the completed work survives on disk.
 
+**Each stage ends with a completion gate** (enumerate its deliverables, attest ✅/❌ with evidence, stop on any ❌ unless the user waives it — see SKILL.md → The Completion Gate). Stage boundaries inside Phase 4 are where work is most often left half-done, precisely because they're not user-facing — run the gate at every A→B→C→D hop, not only at the 4.9 hard stop.
+
 ## Framing that applies to all stages
 
 **N-monk scaling.** The default is 2 monks but Phase 1c.1 may have added a 3rd or 4th. The machinery below scales naturally — each monk gets its own determinate negation, the Boydian decomposition gets richer (more atomic parts in the "sea of anarchy"), and most lenses work N-way without rewrite. A few specific adjustments with 3+ monks:

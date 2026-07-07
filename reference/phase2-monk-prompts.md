@@ -71,3 +71,12 @@ Calibrate the monks based on what you learned in Phase 1c':
 ```
 
 **Why full belief is non-negotiable:** This is an artificial belief system, not a debate exercise. The user's cognitive agility depends on the monks carrying 100% of the belief load. When both monks believe fully, the user can operate in the belief-free space between them — analyzing the *structure* of the contradiction, spotting shared assumptions, finding cross-domain connections. When a monk hedges ("both sides have merit"), the user is pulled back into belief-space, their transients slow, and the dialectic degrades into a book report.
+
+---
+
+**Completion gate — enumerate & attest before Phase 3 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] One prompt drafted per monk (matching the final monk count set in Phase 1)
+- [ ] Each prompt carries all seven required sections (role, framing corrections, context briefing, research directives, argument structure, anti-hedging, length)
+- [ ] Each monk is calibrated to the user's belief burden (Monk A validates the user's dominant mode)
+- [ ] With 3+ monks: each monk's framing corrections preempt degenerate framings against *every other* pole (no silent 2-vs-1 coalition)
+- [ ] Prompts written to file (`round_N_monk_<x>_prompt.md`)

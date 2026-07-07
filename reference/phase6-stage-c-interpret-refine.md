@@ -59,3 +59,12 @@ Then ask the user, per surviving candidate: "Incorporate this improvement? Or ta
 - When the user rejects a candidate that the monks and auditor approved, do not capitulate. Say: "the monks and auditor both found this structurally sound — [specific points]. Are you sure the issue isn't [specific alternative reading]?" The user's judgment takes priority, but fold only after the case has been made.
 - When the user proposes a new framework during refinement, it enters Phase 7 as decomposition material, NOT as the answer Phase 5 should have produced.
 - Do NOT track the user's preferences across candidates and use them to bias the next round. The user is belief-free; treat each round's candidate selection as local to that round.
+
+---
+
+**Completion gate — enumerate & attest before Phase 7 / stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] 6.4: each candidate interpreted on its own terms (no cross-ranking)
+- [ ] Full validation + auditor output written to `round_N_validation_<candidate>.md` per candidate
+- [ ] 6.5: for each surviving candidate, the ONE most worthwhile improvement identified
+- [ ] Improvements presented to the user **one candidate at a time**, with a response received before moving to the next (this user-response item is not self-waivable)
+- [ ] The round's outcome recorded (candidate chosen / two combined + named / palette held open / Phase 4 reopened)

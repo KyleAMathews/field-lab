@@ -52,3 +52,13 @@ Then ask:
 2. **"Is there a claim either monk makes that should be tested against evidence neither has considered?"** — This is the second high-leverage intervention point. In testing, users identified claims that sounded plausible but collapsed under scrutiny when tested against comparison classes the monks didn't consider. Catching this before synthesis prevents the entire downstream analysis from being built on an untested assumption.
 
 If the user identifies a testable claim, run a targeted research agent to check it. This is cheap (~25-50K tokens) and can fundamentally change the quality of the synthesis.
+
+---
+
+**Completion gate — enumerate & attest before Phase 4 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] All N monks spawned as separate subagent sessions, in parallel
+- [ ] Each essay checked for hedging and degenerate framing (re-run any monk that hedged)
+- [ ] Pairwise decorrelation checked; with N≥3, coalition-collapse check run (no two monks sharing one frame)
+- [ ] All monk essays written to files (`round_N_monk_<x>.md`)
+- [ ] Structural summary presented to the user; both high-leverage questions asked (accuracy check + testable-claim check)
+- [ ] Any user-identified testable claim researched before proceeding

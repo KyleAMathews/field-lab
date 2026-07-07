@@ -98,4 +98,13 @@ The misfit register (4.6.5) captures frame-level *friction* the synthesis will l
 
 ---
 
-**Before moving on:** confirm you've written `round_N_misfits.md`, `round_N_loss_audit.md`, the `misfit_register.md` appends, and the full decomposition into `round_N_determinate_negation.md`. Then read `reference/phase4-stage-d-criteria.md`.
+**Completion gate — enumerate & attest before Stage D (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] 4.6: domain manifest listed; every domain (monks + donors) decomposed to **equal depth**
+- [ ] Atomic parts calibration-tagged (monk parts `[solid/plausible/reach]`; donor parts `[fit:]`); anti-tidiness check passed (genuinely unstructured)
+- [ ] Qualities / attributes / **operations** run as three explicit passes (operations pass not skipped)
+- [ ] Recombinations built "not in the same arrangement," each `[fit:]`-tagged; emergent-structure + same-arrangement tests run
+- [ ] 4.6.5: all four lenses run (+ 4.2.5 protection), each cited → `round_N_misfits.md` and appended to `misfit_register.md`
+- [ ] 4.6.6: loss audit — single-monk high-value ideas scored provenance-blind, each with a disposition → `round_N_loss_audit.md`
+- [ ] Full decomposition written into `round_N_determinate_negation.md`
+
+Then read `reference/phase4-stage-d-criteria.md`.

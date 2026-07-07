@@ -214,4 +214,9 @@ If U is genuinely strong, say so.
 
 ---
 
-**Before moving on:** append each auditor's output to the matching `round_N_validation_<candidate>.md`. Then read `reference/phase6-stage-c-interpret-refine.md`.
+**Completion gate — enumerate & attest before Stage C (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] One hostile auditor spawned per candidate under validation, each reading **only** its own candidate + the monk essays + domain context (no sight of sibling candidates or the Phase 4 analysis)
+- [ ] Each auditor used the candidate-type-specific prompt (S/J/G/F/U)
+- [ ] Each auditor's output appended to the matching `round_N_validation_<candidate>.md`
+
+Then read `reference/phase6-stage-c-interpret-refine.md`.

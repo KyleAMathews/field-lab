@@ -194,3 +194,16 @@ Before proceeding, summarize back:
 - **"Is there a third live position we're not accounting for — one that isn't a blend of A and B, or that's arguing on a different axis entirely?"** — This is the third-pole check from 1c.1 surfaced one more time before the briefing locks. If the user names a position that meets the three criteria (not-a-blend, independent constituency, ideally orthogonal axis), add it as Monk C and update the briefing.
 
 Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. **State the final monk count and what each monk will believe** before moving to Phase 2 — this prevents the orchestrator from silently dropping or adding monks later.
+
+---
+
+**Completion gate — enumerate & attest before Phase 2 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] 1a–1b: elenctic interview run; deepest version of the contradiction surfaced
+- [ ] 1c: belief burden identified (see catalog)
+- [ ] 1c.1: third-pole probe run; final monk count decided (2 default; 3–4 only on the criteria)
+- [ ] 1c.2: multiple exploratory 2×2s generated and explored with the user (or honestly recorded as 1-D)
+- [ ] 1d: monks grounded — external research **or** deep personal interview, as the domain requires
+- [ ] 1d.5: blind structural reconnaissance run; fault-line choice sharpened against it
+- [ ] 1e.1: 1–2 cross-domain framings woven into the briefing (or consciously skipped for a personal/values domain — state which)
+- [ ] Context briefing written to `round_N_context_briefing.md`
+- [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user

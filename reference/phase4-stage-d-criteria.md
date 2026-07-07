@@ -36,4 +36,11 @@ Then ask:
 
 ---
 
+**Completion gate — enumerate & attest before Phase 5 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] 4.7 sublation criteria written (preserve A / preserve B / dissolve shared assumption / answer hidden question) — kept separate from the misfits
+- [ ] Initial synthesis guess (written back in Stage A) compared against the finished decomposition for pattern-matching
+- [ ] 4.9 concise summary prepared: hidden question, key negations, surprising decomposition insights, sublation criteria, 1–2 highest-signal misfits
+- [ ] A crisp directed primer written for each distant donor whose vocabulary appears in the summary
+- [ ] **HARD STOP honored** — summary presented to the user and their response received (this item is NOT self-waivable; only the user can release it)
+
 This is the end of Phase 4. After the user responds at the 4.9 checkpoint, proceed to Phase 5 (`reference/phase5-sublation.md`).

@@ -141,4 +141,8 @@ Evaluate honestly:
 
 ---
 
-**Before moving on:** write each candidate's monk-validation output to `round_N_validation_<candidate>.md` (e.g. `round_N_validation_S.md`). Then read `reference/phase6-stage-b-hostile-auditor.md`.
+**Completion gate — enumerate & attest before Stage B (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+- [ ] Every candidate under validation got its candidate-specific monk validation (S: elevated vs. defeated; J: productive vs. evasive; G: orthogonal vs. same-axis; F: genealogy/constituency; U: loadings genuinely opposite)
+- [ ] Each candidate's output written to `round_N_validation_<candidate>.md`
+
+Then read `reference/phase6-stage-b-hostile-auditor.md`.
