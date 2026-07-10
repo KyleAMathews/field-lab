@@ -38,7 +38,7 @@ Concretely:
 
 This pass instruments where the frame scraped. You are NOT trying to escape the frame here; you are capturing friction for later aggregate rereading. Most items here will go un-resolved by the synthesis. That is correct. **A misfit that gets resolved has stopped being a misfit — it has become synthesis material.** The register's value is the *un-resolved residue.*
 
-The premise: most dialectics are single-loop — they enrich within a stable frame, and that is correct. Frame-level (double-loop) work happens on a longer cycle by periodically rereading the accumulated misfit register across many dialectics. This round, you only need to instrument where the frame scraped.
+The premise: most dialectics are single-loop — they enrich within a stable frame, and that is correct. Frame-level (double-loop) work happens on a longer cycle by periodically rereading the accumulated `tension` pages (and `reference/misfit-patterns-watchlist.md`) across many dialectics. This round, you only need to instrument where the frame scraped.
 
 Run four lenses here (position-protection already ran at 4.2.5 and is written to the same register). For each, produce 0-5 items. Zero is a valid answer. Err toward fewer, higher-signal misfits. **Each misfit must include a citation: briefing line, monk passage, or atomic-parts-list item it refers to.** Uncited misfits are high-risk for confabulation and should be dropped unless the citation can be produced.
 
@@ -65,18 +65,18 @@ Is there a **word both Monks use with opposite meanings**? A term that appears p
 Name the word. Cite one passage from each Monk where the opposite loadings are visible. Do not try to resolve it.
 
 ### Write the register
-Two files:
+Each misfit is recorded two ways:
 
-**`round_N_misfits.md`** — full text of the four lenses above (plus the 4.2.5 position-protection material), with reasoning.
+**`round_N_misfits.md`** — full text of the four lenses above (plus the 4.2.5 position-protection material), with reasoning. (Per-round working file, unchanged.)
 
-**`misfit_register.md`** (at dialectic root, created if absent, appended to every round) — one line per misfit, with citation token:
+**A `tension` page per misfit, in the wiki** (via the gardener — see `reference/dialectic-wiki.md`). Tension pages **replace the old persistent `misfit_register.md`**: each misfit becomes an interlinked, orchestrator-only page holding the contradiction, its hidden question, a pointer to the negation, and cross-links to the `concept`/`position`/`source` pages it sits *between* (those links are the semi-lattice edges a flat register file threw away). Seed each page with the terse one-liner + citation token, which becomes its summary and gap-tag:
 ```
-R1/protection: both positions need yard to be one coherent design-object [monk_a:L42, monk_b:L28]
-R1/briefing: no back door to yard — access not addressed by either position [briefing:L15]
-R1/undecidable: "enclosure" — Monk A = walls; Monk B = canopy/screens [monk_a:L31, monk_b:L44]
+protection: both positions need yard to be one coherent design-object [monk_a:L42, monk_b:L28]
+briefing: no back door to yard — access not addressed by either position [briefing:L15]
+undecidable: "enclosure" — Monk A = walls; Monk B = canopy/screens [monk_a:L31, monk_b:L44]
 ```
 
-Keep lines under 150 chars. Future cross-dialectic passes will grep across these files; terseness matters.
+Keep the summary line under 150 chars — future cross-dialectic passes grep across tension pages; terseness matters.
 
 **Anti-patterns to avoid:**
 - Listing everything that didn't make the synthesis (too noisy — filter for *structural* misfits, not arbitrary omissions)
@@ -90,7 +90,7 @@ The misfit register (4.6.5) captures frame-level *friction* the synthesis will l
 **Procedure:**
 1. **Extract single-monk ideas.** Scan the atomic parts list (4.6 step 2) for high-value ideas — mechanisms, observations, failure modes, reframes — appearing in **only one** monk. These "spiky" ideas are most at risk of being smoothed away.
 2. **Score provenance-blind.** Rate each for "useful, non-obvious, worth keeping" *without* reference to which monk produced it. Default: dispatch 2–3 fresh blind-judge subagents (no position, no sight of any synthesis) to score the stripped ideas — this removes the single-informed-seat bias. Minimum fallback: the orchestrator scores with provenance stripped. Use the 4.6-step-2 calibration tags as a second axis: **value × calibration.**
-3. **Coverage requirement.** Each high-value idea must be either (a) carried into a Phase 5 candidate, or (b) **consciously dropped with a one-line reason** logged to `misfit_register.md`. Silent dropping is the failure this pass exists to prevent. A high-value + low-calibration idea is carried as a *flagged hypothesis* that must earn evidence (the Phase 5 reversibility-repair path), not asserted.
+3. **Coverage requirement.** Each high-value idea must be either (a) carried into a Phase 5 candidate, or (b) **consciously dropped with a one-line reason** logged with its disposition to `round_N_loss_audit.md`. Silent dropping is the failure this pass exists to prevent. A high-value + low-calibration idea is carried as a *flagged hypothesis* that must earn evidence (the Phase 5 reversibility-repair path), not asserted.
 
 **Boundary with the misfit register — do not conflate:**
 - Loss-audit items are *absorbable high-value content* — smoothing them away is the bug, so **recover** them. Test: "would carrying this in make the synthesis *better*?"
@@ -105,7 +105,7 @@ The misfit register (4.6.5) captures frame-level *friction* the synthesis will l
 - [ ] Atomic parts calibration-tagged (monk parts `[solid/plausible/reach]`; donor parts `[fit:]`); anti-tidiness check passed (genuinely unstructured)
 - [ ] Qualities / attributes / **operations** run as three explicit passes (operations pass not skipped)
 - [ ] Recombinations built "not in the same arrangement," each `[fit:]`-tagged; emergent-structure + same-arrangement tests run
-- [ ] 4.6.5: all four lenses run (+ 4.2.5 protection), each cited → `round_N_misfits.md` and appended to `misfit_register.md`
+- [ ] 4.6.5: all four lenses run (+ 4.2.5 protection), each cited → `round_N_misfits.md` and written as `tension` pages in the wiki (via the gardener)
 - [ ] 4.6.6: loss audit — single-monk high-value ideas scored provenance-blind, each with a disposition → `round_N_loss_audit.md`
 - [ ] Full decomposition written into `round_N_determinate_negation.md`
 

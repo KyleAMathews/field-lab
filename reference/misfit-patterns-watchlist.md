@@ -1,10 +1,10 @@
 # Misfit Patterns Watchlist
 
-This file accumulates cross-dialectic structural patterns seen in the misfit register (Phase 4.2.5 and 4.6.5). Patterns are promoted here when the same *shape* of misfit has surfaced in 3+ independent dialectics.
+This file accumulates cross-dialectic structural patterns seen across dialectics' `tension` pages (Phase 4.2.5 and 4.6.5 — tension pages replaced the old `misfit_register.md`). Patterns are promoted here when the same *shape* of misfit has surfaced in 3+ independent dialectics. This watchlist remains a single curated file (it *is* the cross-dialectic memory); the per-dialectic instances live as `tension` pages in each dialectic's wiki.
 
-**How to use this file:** At 4.2.5 and 4.6.5, skim this list. If one of these patterns applies to the current dialectic, note it explicitly in the register — convergent evidence across independent domains is itself a structural finding. Don't force-fit. If the pattern's shape genuinely doesn't apply, move on.
+**How to use this file:** At 4.2.5 and 4.6.5, skim this list. If one of these patterns applies to the current dialectic, note it explicitly on the tension page — convergent evidence across independent domains is itself a structural finding. Don't force-fit. If the pattern's shape genuinely doesn't apply, move on.
 
-**How patterns get added:** After a cross-dialectic review (typically once ~5 dialectics have accumulated misfit registers), shapes that appear in 3+ independent runs get named and added here with their observed instances. Remove patterns if they stop reappearing across subsequent runs.
+**How patterns get added:** After a cross-dialectic review (typically once ~5 dialectics have accumulated `tension` pages), shapes that appear in 3+ independent runs get named and added here with their observed instances. Remove patterns if they stop reappearing across subsequent runs.
 
 ---
 
