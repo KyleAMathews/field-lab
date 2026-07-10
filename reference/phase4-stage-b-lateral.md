@@ -69,6 +69,8 @@ Scan titles, fetch extracts for the ones maximally distant from the dialectic's 
 
    **Equal depth means equal — and the bias makes its last stand here.** The legibility habit reappears at the research step: you will be tempted to deeply research the donor you already half-understand and wave the foreign one through "conceptually, without deep research" — or drop it outright. That silently re-stacks the sea toward what you already know and defeats the entire blind pipeline. The *distant, less-legible* donor is the one most likely to carry genuinely new vocabulary, so it earns equal or *more* research time, never less. If a donor is too unfamiliar to research, that is exactly why it belongs in the sea — not a reason to discard it.
 
+**Ingest the donor research into the wiki.** Hand each finalized donor's field-accurate writeup to the **gardener** → a `donor` page (`reference/dialectic-wiki.md`): the field's own vocabulary and mechanisms, tagged with meta-domain, epistemological register, and its `[fit:]` calibration. This is some of the most novel cross-domain material the skill produces — persisting it lets a later round re-shatter the donor without re-recruiting it, and it is prime re-grounding material. `donor` pages are orchestrator-side (they feed the decomposition and synthesis) and are **not** placed in monk briefs.
+
 One special case the blind brief handles naturally: when a monk makes a claim that *resists* analytical treatment, the abstract pattern will pull domains that take that kind of claim seriously on their own terms (4.6 step 5 verifies this happened).
 
 **Pool size:** the N monks **+ ~3–5 donors**, weighted toward functional donors with 1–2 random donors for anti-habit novelty. Each donor is a first-class domain entering 4.6's decomposition at the **same depth as the monk positions** — not a 2–3 paragraph isomorphism garnish. List the donors in the 4.6 domain manifest. The actual isomorphism-finding moves to 4.6 step 3, where donors are already decomposed as peers.
@@ -88,6 +90,7 @@ Keep this to 2 paragraphs maximum. Extract 3-5 structural observations from the 
 - [ ] 4.5b donor pool recruited **blind** — brief provenance lock + register tags; recruiter read the Outline itself; final set selected under the blind rules (negation coverage, ≥3 unrelated meta-domains, register spread on both axes)
 - [ ] Distance veto applied (no home field or its neighbor); domain manifest written for carry into 4.6
 - [ ] Each donor researched for its own technical vocabulary
+- [ ] Donor research ingested by the gardener as `donor` pages (meta-domain + register + `[fit:]` tags)
 - [ ] 4.5c three metaphors written; 3–5 structural observations extracted
 - [ ] All 4.5 output written to `round_N_determinate_negation.md`
 

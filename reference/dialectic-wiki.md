@@ -10,6 +10,7 @@ Every wiki page declares a `type` in its frontmatter. The type sets whether the 
 
 - **`concept`** — an idea, mechanism, framework, or pattern. *Monk-safe.*
 - **`source` / `entity`** — a thinker, article, company, dataset, or piece of evidence. *Monk-safe.*
+- **`donor`** — a blind-recruited cross-domain field (Phase 4.5b) with its own technical vocabulary and mechanisms, tagged with meta-domain + epistemological register + `[fit:]` calibration. *Orchestrator-side* — feeds the decomposition and synthesis; **not placed in monk briefs** (donors are introduced *after* the monks, and feeding them raw would homogenize the monks; the only monk-facing donor channel is the deliberate, controlled Phase 1e.1 enrichment). Reusable across rounds — a later round can re-shatter a donor without re-recruiting it.
 - **`position`** — a committed stance (what a monk believes). Prior monk essays are kept as **immutable snapshots** so drift across re-runs stays visible. *Orchestrator-facing (drift-tracking) — **never placed in a monk brief**: a monk must not see another monk's position, and monks argue fresh from the factual substrate, not from prior essays.*
 - **`tension`** — a **contradiction**: the home for a misfit. A tension page holds (a) the contradiction itself — two-or-more things in the space that won't reconcile, i.e. what the skill elsewhere calls a *misfit*; (b) the **hidden question** underneath it (from 4.4); (c) a **pointer to the determinate negation** that worked it; and (d) **cross-links** to the `concept`/`position`/`source` pages the tension sits *between* — those links are the semi-lattice edges. Tension pages **replace `misfit_register.md`** (a flat register loses the links to what each tension sits between). They serve two structural roles: they are orchestrator-only (a monk must never see the collision it is meant to walk into blind), and their cross-links form the **navigation graph for recursion** — picking the next contradiction to work is following a link to an adjacent tension page. The tension pages *are* the dialectic queue / idea maze. *Orchestrator-only.*
 - **`synthesis`** — a candidate resolution (S/J/G/F/U from Phase 5). *Orchestrator-only.*
@@ -33,7 +34,7 @@ The wiki is durable, organized background memory: it lets the orchestrator offlo
 
 - **"Persistent" is an optimization, not a correctness requirement.** The gardener's real state is the wiki *on disk*. A compacted or freshly-spawned gardener re-grounds by reading the wiki. Resume the same agent when the environment allows (it remembers in-flight cross-links), but correctness never depends on its conversation memory. This keeps it robust on long dialectics. (See SKILL.md → Environment Mapping for how to resume it.)
 - **Staging directory.** Research drafts land in `<dialectic-dir>/staging/` — transient handoff space, not the wiki. The orchestrator moves only paths through its context; the gardener reads and ingests, then clears (or archives) the staged drafts so staging never masquerades as the wiki.
-- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source` pages only — never `position` (decorrelation: a monk must not see another monk's stance), `tension`, or `synthesis`. Firewall enforcement lives in one place (see `reference/refinement-loop.md`).
+- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source` pages only — never `position` (decorrelation: a monk must not see another monk's stance), `donor`, `tension`, or `synthesis`. Firewall enforcement lives in one place (see `reference/refinement-loop.md`).
 - **Two levels of contradiction-spotting.** The gardener flags *surface* contradictions from research ("source X ⊥ source Y") as candidate `tension` pages — seeds. The orchestrator does the *deep* determinate negation (Phase 4). Gardener seeds, orchestrator deepens.
 - **Signal division.** The gardener maintains the *coverage* state (did this ingest add new pages? what is still flagged unknown?) → this feeds the "new facts" signal of the maturity gate. The orchestrator keeps the hidden-question ledger. Cross-edges are shared.
 - **Cost, honestly.** The gardener is a second long-running agent on an already token-heavy skill. The trade — clean orchestrator context over tokens — is deliberate, not free.
@@ -44,6 +45,7 @@ The wiki is durable, organized background memory: it lets the orchestrator offlo
 
 The gardener ingests not only research but **the dialectic's own outputs**, which are just as information-rich:
 - **Monk essays → `position` pages** (Phase 3) — each monk's committed stance as an immutable per-round snapshot, cross-linked to the `concept`/`source` pages it draws on.
+- **Blind donor research → `donor` pages** (Phase 4.5b) — the field-accurate vocabulary and mechanisms of each recruited cross-domain donor; some of the most novel material the skill produces.
 - **The determinate negation → cross-edges + `tension` pages** (Phase 4) — the `[fit:]`-tagged recombinations become `relates-to` links among `concept`/`position` pages (these cross-edges *are* the semi-lattice — the skill's core structural output, and what later rounds build on); the misfits become `tension` pages.
 - **Phase 5 candidates → `synthesis` pages.**
 
@@ -51,13 +53,23 @@ In every case the gardener **distills and links** — the full text stays in the
 
 **Lint** (periodically, or on orchestrator request): fix broken cross-links, merge duplicate pages, prune stale ones, and reconcile pages that have drifted out of sync. This is the maintenance pass that keeps a compounding wiki navigable rather than accreting cruft.
 
+## Ingest cadence
+
+Hand each phase's output to the gardener **as it is produced** — each is enforced by that phase's completion gate, so a phase cannot close until its output is ingested:
+
+- **Phase 1** — research → `concept`/`source` pages
+- **Phase 3** — monk essays → `position` pages
+- **Phase 4.5b** — blind donor research → `donor` pages
+- **Phase 4.6** — the decomposition's `[fit:]` recombinations → cross-edges; notable atomic parts → `concept` pages
+- **Phase 5** — palette candidates → `synthesis` pages
+
 ## Orchestrator ↔ gardener protocol
 
 The orchestrator coordinates with the gardener through a small set of requests. It never writes the wiki; it asks the gardener to.
 
 - **Ingest** — "here are these staged draft paths; ingest them." → gardener returns a short summary of pages created/updated and any **candidate tensions** it spotted (for the orchestrator to confirm and deepen).
 - **Re-ground the orchestrator** — "summarize the current wiki state" or "give me the pages on «topic»." → gardener returns an organized summary so the orchestrator can page context back in after compaction, without re-reading everything. Durable memory the orchestrator can reload is one of the wiki's main jobs.
-- **Assemble a monk brief** — "give me pole A's monk-safe brief, plus the evidence pole A walked past last round." → gardener returns a firewall-clean brief (`concept`/`source` pages only — never `position`/`tension`/`synthesis`; per-pole ignored-evidence surfaced).
+- **Assemble a monk brief** — "give me pole A's monk-safe brief, plus the evidence pole A walked past last round." → gardener returns a firewall-clean brief (`concept`/`source` pages only — never `position`/`donor`/`tension`/`synthesis`; per-pole ignored-evidence surfaced).
 - **Record** — "record this as a `tension` / `synthesis` page" or "append this loop-ledger entry." → gardener writes it and updates `log.md`.
 - **Report coverage** — "what's the current open-gaps / coverage state?" → gardener reports what's still flagged unknown (feeds the "new facts" signal).
 

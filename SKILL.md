@@ -52,6 +52,13 @@ You are the **orchestrator**. You conduct the elenctic interview, identify the u
 
 The skill runs **three agent roles**. **You (the orchestrator)** coordinate and reason — and you **read the research**, because you need it to run the interview, write framing corrections, and converse with the user. A persistent **gardener** turns that research into **durable, organized background memory**: the research wiki (`reference/dialectic-wiki.md`) — typed, cross-linked pages serving three consumers: the monks' briefings, future research runs (so you don't re-research what's already known), and *you*, when your context compacts and you need to re-ground. **Spawn the gardener before research and keep it for the whole dialectic** so research is organized into the wiki as it arrives. The gardener does the wiki bookkeeping (typing, cross-linking, index, dedup, lint) so you don't burn context on librarian work, and it assembles firewall-clean **monk briefs** (monks never see `tension`/`synthesis` pages). **Research subagents** write page drafts to a staging directory (`reference/research-subagent-prompt.md`); you read them for the conversation, and the gardener ingests them into the wiki.
 
+**Ingest cadence — hand each phase's output to the gardener as it's produced.** Each hand-off is enforced by that phase's completion gate (you can't close the phase until its output is ingested), so hold the whole rhythm up front rather than rediscovering it phase by phase:
+- **Phase 1** — research → `concept`/`source` pages
+- **Phase 3** — monk essays → `position` pages
+- **Phase 4.5b** — blind donor research → `donor` pages
+- **Phase 4.6** — the decomposition's `[fit:]` recombinations → cross-edges; notable atomic parts → `concept` pages
+- **Phase 5** — palette candidates → `synthesis` pages
+
 ```
 You (Orchestrator)
 ├── Phase 1: Elenctic Interview + Research (you, with the user)
