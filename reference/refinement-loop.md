@@ -43,9 +43,9 @@ Re-running monks is where the skill's decorrelation apparatus (blind parallel sp
 - Monks stay blind to each other and to all synthesis-leaning material.
 - This *preserves* (or increases) decorrelation rather than eroding it.
 
-**The firewall (a spawn-time rule).** The **gardener assembles every monk brief** — as wiki-owner it filters by page type, so enforcement lives in one place. A monk brief pulls **only the factual/positional layer** and **never** the analytical layer:
-- **Allowed:** the round anchor, a closure-passing framing of the contradiction, and `concept` / `source` / `position` pages.
-- **Never:** the determinate negation, the hidden-question ledger/analysis, `tension` pages, and any `synthesis` candidates or synthesis-leaning corrections.
+**The firewall (a spawn-time rule).** The **gardener assembles every monk brief** — as wiki-owner it filters by page type, so enforcement lives in one place. A monk brief pulls **only the factual substrate** and **never** positions or the analytical layer:
+- **Allowed:** the round anchor, a closure-passing framing of the contradiction, and `concept` / `source` pages.
+- **Never:** `position` pages (a monk must not see another monk's stance — that collapses decorrelation; monks argue fresh from the factual substrate, not from prior essays), the determinate negation, the hidden-question ledger/analysis, `tension` pages, and any `synthesis` candidates or synthesis-leaning corrections.
 
 **The closure test** governs whether the evolved working question may re-pole a monk: *can a monk still argue one side of it at full conviction?* A working question that sharpened into a better fight **passes** — safe to re-pole. A working question that has drifted toward where the synthesis is heading **fails** — it is "a synthesis wearing a question mark" — and stays orchestrator-only. The determinate negation and the syntheses always fail this test.
 
