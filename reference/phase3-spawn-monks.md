@@ -35,7 +35,7 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead (scale to N monks):
+**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener → `position` pages** (`reference/dialectic-wiki.md`): each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Immutable per-round snapshots make monk *drift* visible when you re-run monks in the refinement loop. **Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead (scale to N monks):
 
 > The monks have written their essays (saved to files if you want to read them). Here's the structural summary:
 >
@@ -62,5 +62,6 @@ If the user identifies a testable claim, run a targeted research agent to check 
 - [ ] Each essay checked for hedging and degenerate framing (re-run any monk that hedged)
 - [ ] Pairwise decorrelation checked; with N≥3, coalition-collapse check run (no two monks sharing one frame)
 - [ ] All monk essays written to files (`round_N_monk_<x>.md`)
+- [ ] Monk essays ingested by the gardener as `position` pages (immutable per-round snapshots, cross-linked)
 - [ ] Structural summary presented to the user; both high-leverage questions asked (accuracy check + testable-claim check)
 - [ ] Any user-identified testable claim researched before proceeding

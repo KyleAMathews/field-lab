@@ -42,6 +42,13 @@ The wiki is durable, organized background memory: it lets the orchestrator offlo
 
 **Ingest** (on Phase 1 research and every Research-exit loop-back): the gardener reads the staged draft paths, then — cleans each draft, writes or updates the corresponding page, resolves cross-links across the whole wiki (adding `relates-to` edges), seeds `tension` pages from contradictions it spots, updates `index.md`, and appends an entry to `log.md`. One research source typically touches several pages. Each page carries its gap tag and provenance.
 
+The gardener ingests not only research but **the dialectic's own outputs**, which are just as information-rich:
+- **Monk essays → `position` pages** (Phase 3) — each monk's committed stance as an immutable per-round snapshot, cross-linked to the `concept`/`source` pages it draws on.
+- **The determinate negation → cross-edges + `tension` pages** (Phase 4) — the `[fit:]`-tagged recombinations become `relates-to` links among `concept`/`position` pages (these cross-edges *are* the semi-lattice — the skill's core structural output, and what later rounds build on); the misfits become `tension` pages.
+- **Phase 5 candidates → `synthesis` pages.**
+
+In every case the gardener **distills and links** — the full text stays in the `round_N_*.md` files; the wiki holds the cross-linked, reusable version with pointers back. That is what makes the wiki compound into real memory rather than a pile of dumps.
+
 **Lint** (periodically, or on orchestrator request): fix broken cross-links, merge duplicate pages, prune stale ones, and reconcile pages that have drifted out of sync. This is the maintenance pass that keeps a compounding wiki navigable rather than accreting cruft.
 
 ## Orchestrator ↔ gardener protocol

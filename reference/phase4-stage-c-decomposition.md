@@ -83,6 +83,10 @@ Keep the summary line under 150 chars — future cross-dialectic passes grep acr
 - Converting a misfit into a synthesis criterion (that's resolving it; defeats the purpose)
 - Inflating the lenses with forced finds (zero items is a valid answer per lens)
 
+### Ingest the decomposition into the wiki
+
+Hand the Boydian decomposition to the **gardener** (`reference/dialectic-wiki.md`), which persists the reusable structure: the `[fit:]`-tagged recombinations become **cross-links** among `concept`/`position` pages — **these cross-edges *are* the semi-lattice**, the skill's core structural output and exactly what later rounds build on — and any notable atomic parts that aren't yet pages become new `concept` pages. Distill and link: the full decomposition stays in `round_N_determinate_negation.md`; the wiki holds the cross-linked, reusable version with pointers back. (The misfits were already written as `tension` pages above.)
+
 ## 4.6.6 Loss Audit — Single-Monk High-Value Ideas
 
 The misfit register (4.6.5) captures frame-level *friction* the synthesis will leave un-resolved. This pass captures the opposite failure: high-value *content* the synthesis will smooth away. Empirically, blending multiple model outputs drops most good ideas that appeared in only *one* output — the "hidden profile" problem (Stasser & Titus): groups over-sample shared information and lose what only one member held. The palette (Phase 5) is a partial guard; this pass makes it explicit.
@@ -105,6 +109,7 @@ The misfit register (4.6.5) captures frame-level *friction* the synthesis will l
 - [ ] Atomic parts calibration-tagged (monk parts `[solid/plausible/reach]`; donor parts `[fit:]`); anti-tidiness check passed (genuinely unstructured)
 - [ ] Qualities / attributes / **operations** run as three explicit passes (operations pass not skipped)
 - [ ] Recombinations built "not in the same arrangement," each `[fit:]`-tagged; emergent-structure + same-arrangement tests run
+- [ ] Decomposition ingested by the gardener — `[fit:]` recombinations as cross-edges, notable atomic parts as `concept` pages
 - [ ] 4.6.5: all four lenses run (+ 4.2.5 protection), each cited → `round_N_misfits.md` and written as `tension` pages in the wiki (via the gardener)
 - [ ] 4.6.6: loss audit — single-monk high-value ideas scored provenance-blind, each with a disposition → `round_N_loss_audit.md`
 - [ ] Full decomposition written into `round_N_determinate_negation.md`

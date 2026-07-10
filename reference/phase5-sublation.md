@@ -210,12 +210,15 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 **Save each candidate** to `round_N_candidate_[S|J|G|F|U].md`. Save the full Phase 4 determinate negation to `round_N_determinate_negation.md` (already done). Do NOT save a single `round_N_sublation.md` — there is no single sublation.
 
+**Hand the candidates to the gardener → `synthesis` pages** (`reference/dialectic-wiki.md`): each candidate becomes a `synthesis` page (its central move + the lens that earned it + a pointer to the candidate file), cross-linked to the `tension` it resolves and the `position`/`concept` pages it draws on. This is what a later round reads when it builds on — or shatters — this synthesis.
+
 **Completion gate — enumerate & attest before Phase 6 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
 - [ ] Candidate 2×2 constructed first (4.4 hidden-question 2×2 carried forward)
 - [ ] S drafted by the orchestrator with all internal standards run: abduction test, three-layer reversibility check, precision-vs-grip, calibration weighting, closure, model update, failure-mode tests
 - [ ] For each of J/G/F/U: **either** drafted (because its lens fired non-trivially) **or** explicitly recorded as not-fired with the reason — no silent omissions
 - [ ] Each non-S candidate written by a separate subagent with only its own lens material (no sight of sibling drafts)
 - [ ] Every drafted candidate saved to `round_N_candidate_<x>.md`
+- [ ] Candidates ingested by the gardener as `synthesis` pages (cross-linked to the tension they resolve)
 - [ ] Palette presented side-by-side with no ranking / recommendation; user invited to pick, combine, or reopen Phase 4
 
 **Present the palette to the user** as a structural summary. For each candidate that was drafted, give:
