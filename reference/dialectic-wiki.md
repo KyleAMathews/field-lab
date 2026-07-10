@@ -1,0 +1,68 @@
+# The Dialectic Wiki
+
+The dialectic maintains a persistent, compounding **research wiki** — the knowledge substrate everything else reads from. It is a Karpathy-style ["LLM Wiki"](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): interlinked markdown pages, each a typed unit, cross-linked to the others. It is a **graph, not a hierarchy** — the cross-links between pages *are* the semi-lattice the skill is trying to build ("A City is Not a Tree"), and a graph can hold contradictions a tree cannot. The wiki is written by **one agent only — the gardener** — and it **compounds across rounds**: Round 2 builds on Round 1's pages, it does not reset. It lives in the dialectic's output directory alongside the existing `round_N_*.md` files, which are unchanged.
+
+This doc defines the wiki's page types, its special files, the three agent roles, the gardener's operations, the orchestrator↔gardener protocol, and the per-round control log.
+
+## Page types
+
+Every wiki page declares a `type` in its frontmatter. The type sets whether the page is **monk-safe** (may appear in a monk's briefing) or **orchestrator-only** (must never reach a monk — see the firewall in `reference/phase4.5-refinement-loop.md`).
+
+- **`concept`** — an idea, mechanism, framework, or pattern. *Monk-safe.*
+- **`source` / `entity`** — a thinker, article, company, dataset, or piece of evidence. *Monk-safe.*
+- **`position`** — a committed stance (what a monk believes). Prior monk essays are kept as **immutable snapshots** so drift across re-runs stays visible. *Monk-safe.*
+- **`tension`** — a **contradiction**: the home for a misfit. A tension page holds (a) the contradiction itself — two-or-more things in the space that won't reconcile, i.e. what the skill elsewhere calls a *misfit*; (b) the **hidden question** underneath it (from 4.4); (c) a **pointer to the determinate negation** that worked it; and (d) **cross-links** to the `concept`/`position`/`source` pages the tension sits *between* — those links are the semi-lattice edges. Tension pages **replace `misfit_register.md`** (a flat register loses the links to what each tension sits between). They serve two structural roles: they are orchestrator-only (a monk must never see the collision it is meant to walk into blind), and their cross-links form the **navigation graph for recursion** — picking the next contradiction to work is following a link to an adjacent tension page. The tension pages *are* the dialectic queue / idea maze. *Orchestrator-only.*
+- **`synthesis`** — a candidate resolution (S/J/G/F/U from Phase 5). *Orchestrator-only.*
+
+Every page is tagged with the **gap/question that triggered it** (the intent tag — what were we trying to answer) and its **provenance** (which agent/round surfaced it).
+
+## Special files
+
+- **`index.md`** — the catalog of pages, plus a **current-focus pointer**: which tension is being worked right now. (This is the one thing "rounds" gave for free — a sense of "where am I" — made explicit.)
+- **`log.md`** — a chronological operations record for the whole dialectic: every ingest, lint, monk spawn, negation, synthesis, and loop decision, in order. The per-round control log (below) is `log.md` specialized to a single contradiction.
+
+## The three roles
+
+The wiki exists to keep the orchestrator's context clean. Three roles, strictly separated:
+
+- **Research subagents** (ephemeral, parallel, blind to each other) — do targeted research, **write page-shaped draft files to a staging directory, and return only the paths** (never the content — that keeps the orchestrator's context clean). They never touch the wiki. Their output contract is `reference/research-subagent-prompt.md`.
+- **Gardener** (persistent, single writer) — **reads the draft files from staging** and ingests them into the wiki; resolves cross-links; seeds `tension` pages; maintains `index.md` and `log.md`; and periodically lints. Single writer ⇒ parallel research agents never clobber each other or the index.
+- **Orchestrator** (you) — coordinates: **collects draft paths and hands them to the gardener**, requests views (e.g. a monk-safe brief), and keeps its own context on the dialectic. It passes paths, never draft content, and never writes the wiki itself.
+
+## The gardener
+
+- **"Persistent" is an optimization, not a correctness requirement.** The gardener's real state is the wiki *on disk*. A compacted or freshly-spawned gardener re-grounds by reading the wiki. Resume the same agent when the environment allows (it remembers in-flight cross-links), but correctness never depends on its conversation memory. This keeps it robust on long dialectics. (See SKILL.md → Environment Mapping for how to resume it.)
+- **Staging directory.** Research drafts land in `<dialectic-dir>/staging/` — transient handoff space, not the wiki. The orchestrator moves only paths through its context; the gardener reads and ingests, then clears (or archives) the staged drafts so staging never masquerades as the wiki.
+- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source`/`position` pages only, never `tension`/`synthesis`. Firewall enforcement lives in one place (see `reference/phase4.5-refinement-loop.md`).
+- **Two levels of contradiction-spotting.** The gardener flags *surface* contradictions from research ("source X ⊥ source Y") as candidate `tension` pages — seeds. The orchestrator does the *deep* determinate negation (Phase 4). Gardener seeds, orchestrator deepens.
+- **Signal division.** The gardener maintains the *coverage* state (did this ingest add new pages? what is still flagged unknown?) → this feeds the "new facts" signal of the maturity gate. The orchestrator keeps the hidden-question ledger. Cross-edges are shared.
+- **Cost, honestly.** The gardener is a second long-running agent on an already token-heavy skill. The trade — clean orchestrator context over tokens — is deliberate, not free.
+
+## Operations
+
+**Ingest** (on Phase 1 research and every Research-exit loop-back): the gardener reads the staged draft paths, then — cleans each draft, writes or updates the corresponding page, resolves cross-links across the whole wiki (adding `relates-to` edges), seeds `tension` pages from contradictions it spots, updates `index.md`, and appends an entry to `log.md`. One research source typically touches several pages. Each page carries its gap tag and provenance.
+
+**Lint** (periodically, or on orchestrator request): fix broken cross-links, merge duplicate pages, prune stale ones, and reconcile pages that have drifted out of sync. This is the maintenance pass that keeps a compounding wiki navigable rather than accreting cruft.
+
+## Orchestrator ↔ gardener protocol
+
+The orchestrator coordinates with the gardener through a small set of requests. It never writes the wiki; it asks the gardener to.
+
+- **Ingest** — "here are these staged draft paths; ingest them." → gardener returns a short summary of pages created/updated and any **candidate tensions** it spotted (for the orchestrator to confirm and deepen).
+- **Assemble a monk brief** — "give me pole A's monk-safe brief, plus the evidence pole A walked past last round." → gardener returns a firewall-clean brief (`concept`/`source`/`position` pages only; per-pole ignored-evidence surfaced).
+- **Record** — "record this as a `tension` / `synthesis` page" or "append this loop-ledger entry." → gardener writes it and updates `log.md`.
+- **Report coverage** — "what's the current open-gaps / coverage state?" → gardener reports what's still flagged unknown (feeds the "new facts" signal).
+
+## The per-round control log
+
+`round_N_dialectic_log.md` — the loop-control state for one contradiction. Mostly **pointers into the wiki**; it is `log.md` specialized to the round's contradiction.
+
+| Section | Lifecycle | Purpose |
+|---|---|---|
+| **Anchor** | frozen, never overwritten | The round's starting contradiction, verbatim. Round 1 = the original felt tension in the user's own words; later rounds = the Phase-7 contradiction it launched from. Plus a one-line **lineage pointer** ("launched from Round 2's synthesis"). |
+| **Working question** | living; revisions are **diffs the user ratifies** | The current evolved framing. The orchestrator never silently rewrites it (anti-sycophancy / no laundered goal-drift). Carries the closure flag: "still a live two-sided contradiction? Y/N". |
+| **Hidden-question ledger** | append-only | One line per pass: what the hidden question was (from 4.4), whether it moved vs. last pass, on which axis. The settledness signal made legible. |
+| **Loop ledger** | append-only | One line per inner-loop pass: operator used (Research / Refine / Re-split), what it added, iteration count. Feeds the diminishing-returns read. |
+| **Open gaps** | living | Current reading of the three signals: what's unknown (coverage), what cross-edges are still forming (structure), whether the hidden question is still moving (framing). Distinct from the cross-round Phase-7 queue. |
+
+**Drift protocol (the scent fix).** At the top of each loop pass the orchestrator (1) reads the control log + the last pass's negation + the user's corrections and writes the **delta**, then (2) **re-reads the whole control log fresh** as grounding before continuing. The second read is the actual scent-fix — re-injection at loop-top counteracts the context-window pressure that caused drift in the first place. Writing without re-reading builds the anchor and then never looks at it.
