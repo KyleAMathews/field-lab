@@ -25,9 +25,9 @@ Every page is tagged with the **gap/question that triggered it** (the intent tag
 
 The wiki exists to keep the orchestrator's context clean. Three roles, strictly separated:
 
-- **Research subagents** (ephemeral, parallel, blind to each other) — do targeted research, **write page-shaped draft files to a staging directory, and return only the paths** (never the content — that keeps the orchestrator's context clean). They never touch the wiki. Their output contract is `reference/research-subagent-prompt.md`.
+- **Research subagents** (ephemeral, parallel, blind to each other) — do targeted research and **write page-shaped draft files to a staging directory, returning their paths**. The orchestrator reads those files for the live conversation; the gardener ingests them into the wiki. (Drafting to files, not inline prose, keeps them durable and gardener-ingestible.) They never touch the wiki. Their output contract is `reference/research-subagent-prompt.md`.
 - **Gardener** (persistent, single writer) — **reads the draft files from staging** and ingests them into the wiki; resolves cross-links; seeds `tension` pages; maintains `index.md` and `log.md`; and periodically lints. Single writer ⇒ parallel research agents never clobber each other or the index.
-- **Orchestrator** (you) — coordinates: **collects draft paths and hands them to the gardener**, requests views (e.g. the context briefing, a monk brief), and keeps its own context on the dialectic. It passes paths, never draft content; it never writes the wiki; and it **never reads raw research drafts** — it reads only the gardener's curated artifacts (the context briefing, monk briefs). Spawn the gardener at the very start, before any research.
+- **Orchestrator** (you) — coordinates: reads the research (needed for the live conversation), hands the draft paths to the gardener for ingestion, and requests views from it (a monk brief, or a re-grounding summary after context loss). It doesn't do the wiki bookkeeping itself — the gardener does, so the orchestrator doesn't burn context on librarian work. Spawn the gardener at the very start, before any research.
 
 ## The gardener
 
@@ -49,7 +49,7 @@ The wiki exists to keep the orchestrator's context clean. Three roles, strictly 
 The orchestrator coordinates with the gardener through a small set of requests. It never writes the wiki; it asks the gardener to.
 
 - **Ingest** — "here are these staged draft paths; ingest them." → gardener returns a short summary of pages created/updated and any **candidate tensions** it spotted (for the orchestrator to confirm and deepen).
-- **Assemble the context briefing** — "assemble the Phase 1 context briefing from the wiki." → gardener returns the curated briefing built from the research pages. The orchestrator then weaves in the user-sourced interview material (values, constraints, stakeholders) it holds legitimately. This is what the orchestrator reads — never the raw drafts.
+- **Re-ground the orchestrator** — "summarize the current wiki state" or "give me the pages on «topic»." → gardener returns an organized summary so the orchestrator can page context back in after compaction, without re-reading everything. Durable memory the orchestrator can reload is one of the wiki's main jobs.
 - **Assemble a monk brief** — "give me pole A's monk-safe brief, plus the evidence pole A walked past last round." → gardener returns a firewall-clean brief (`concept`/`source`/`position` pages only; per-pole ignored-evidence surfaced).
 - **Record** — "record this as a `tension` / `synthesis` page" or "append this loop-ledger entry." → gardener writes it and updates `log.md`.
 - **Report coverage** — "what's the current open-gaps / coverage state?" → gardener reports what's still flagged unknown (feeds the "new facts" signal).

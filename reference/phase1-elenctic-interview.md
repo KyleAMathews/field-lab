@@ -2,7 +2,7 @@
 
 This is the most important phase. Everything downstream depends on it.
 
-**Setup — spawn the gardener now, before any research.** The persistent **gardener** subagent (`reference/dialectic-wiki.md`) owns the research wiki for the whole dialectic and re-grounds from disk if its session is lost. Spawning it *first* is not optional: if you wait, you will default to reading research yourself and pollute your context. From here on, **you never read raw research drafts** — research subagents return staging paths, the gardener ingests them and assembles the curated artifacts you read (the context briefing, monk briefs). If you catch yourself reading a research agent's raw prose, **stop** and route it through the gardener.
+**Setup — spawn the gardener now, before any research.** The persistent **gardener** subagent (`reference/dialectic-wiki.md`) turns research into the durable, organized wiki that later serves the monks, future research runs, and you (when your context compacts and you re-ground). Spawn it *first* so research is organized into the wiki *as it arrives* — if you wait, the research never gets organized and the wiki is empty when the monks and later rounds need it. You still read the research yourself for the interview and briefing; the gardener runs alongside, doing the wiki bookkeeping so you don't burn context on it.
 
 ## 1a. Explain the Process to the User
 
@@ -109,7 +109,7 @@ This is expensive (~150-250K tokens across agents) but is the single most valuab
 
 Research agents should be given *specific* search targets — not "research this topic" but "search for X's argument about Y, specifically the part about Z."
 
-**Research now flows through the wiki.** Research subagents follow the research-subagent contract (`reference/research-subagent-prompt.md`) — they write page drafts to `<dialectic-dir>/staging/` and return only paths. Hand the paths to the **gardener**, which ingests them into the research wiki (`reference/dialectic-wiki.md`). **The gardener assembles the 1e context briefing from the wiki pages and returns it to you** — you do not read the raw drafts and you do not browse the whole wiki yourself. This keeps your context clean and starts the wiki compounding from Round 1.
+**Research now flows through the wiki.** Research subagents follow the research-subagent contract (`reference/research-subagent-prompt.md`) — they write page drafts to `<dialectic-dir>/staging/` and return only paths. You read the drafts for the interview and to write the briefing; hand the same paths to the **gardener**, which ingests them into the research wiki (`reference/dialectic-wiki.md`). So the research is both in play now (in your context) and organized for later — the monks, future rounds, and re-grounding. This starts the wiki compounding from Round 1.
 
 ### Personal and Values Domains (life decisions, career, relationships, commitments, priorities)
 
@@ -160,7 +160,7 @@ By now you (the orchestrator) know the home domain — and that knowledge carrie
 
 ## 1e. Write the Context Briefing Document
 
-**Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `round_1_context_briefing.md`). Division of labor: **the gardener assembles the research-derived portion** from the wiki pages; **you weave in the user-sourced material** (values, constraints, stakeholders) that came out of the interview and legitimately lives in your context. You read the assembled briefing — never the raw research drafts. Present only a concise summary to the user at the confirmation step (1f).
+**Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `round_1_context_briefing.md`). You write this from everything you've read — external research and user-sourced interview material alike. (The gardener has ingested the same research into the wiki; that's the durable, organized copy for the monks and later rounds — not a substitute for writing the briefing now.) Write the full briefing to the file — present only a concise summary to the user at the confirmation step (1f).
 
 For **external-research domains**, this covers:
 - Key evidence, sources, and arguments from all sides
@@ -211,9 +211,8 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] 1d: monks grounded — external research **or** deep personal interview, as the domain requires
 - [ ] 1d.5: blind structural reconnaissance run; fault-line choice sharpened against it
 - [ ] 1e.1: 1–2 cross-domain framings woven into the briefing (or consciously skipped for a personal/values domain — state which)
-- [ ] Gardener spawned at the **start** of Phase 1 (before any research), and used for all ingest
-- [ ] Research subagents returned staging **paths only**; you did NOT read raw research drafts (context stayed clean) — or research consciously skipped for a well-known domain (state which)
-- [ ] Gardener ingested the drafts and **assembled the context briefing** from wiki pages; you read that, not raw prose
+- [ ] Gardener spawned at the **start** of Phase 1 (before research), so research is organized into the wiki as it arrives — or research consciously skipped for a well-known domain (state which)
+- [ ] Research ingested into the wiki by the gardener (durable organized memory for monks / future rounds / re-grounding)
 - [ ] Context briefing written to `round_N_context_briefing.md`
 - [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
 - [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user
