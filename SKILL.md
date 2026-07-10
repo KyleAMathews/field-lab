@@ -50,6 +50,8 @@ Three frameworks drive every phase of this skill. Internalize them before procee
 
 You are the **orchestrator**. You conduct the elenctic interview, identify the user's belief burden, generate the monk prompts, spawn the Electric Monks, perform the structural analysis, and produce the synthesis. You use subagent sessions (via `claude -p` or your environment's equivalent) for the monks so each gets a fresh, fully committed belief context.
 
+The skill runs **three agent roles**. **You (the orchestrator)** coordinate and reason. A persistent **gardener** owns the research wiki (`reference/dialectic-wiki.md`) — you never write the wiki directly; you pass it draft paths and request views (like a monk-safe briefing). **Research subagents** do targeted research and write page drafts to a staging directory, returning only paths (`reference/research-subagent-prompt.md`). This protects your context: the substantive research material lives in the wiki, not in your window.
+
 ```
 You (Orchestrator)
 ├── Phase 1: Elenctic Interview + Research (you, with the user)
@@ -104,7 +106,7 @@ Show the checklist to the user (don't run it silently) so they can see the phase
 
 **Output principle: write full content to files, present only summaries to the user.** Every phase produces substantial analytical output — essays, negation analyses, lateral material, syntheses, validation feedback. Write all of this to files. When presenting to the user, give a concise structural summary (2-5 sentences per major section) that orients them and supports their decision-making at checkpoints. The user can always read the full files if they want depth; what they need from you is the shape of the analysis, not the full text. This applies to every user-facing checkpoint in the process.
 
-**File organization:** Create a dedicated directory for each dialectic's output files. First check if a `dialectic/` or `dialectics/` directory already exists (common in codebases that run multiple dialectics) — if so, create a subdirectory there. If not, create a new directory with a descriptive name (e.g., `dialectic-react-state-management/`). Prefix every file with its round number: `round_1_context_briefing.md`, `round_1_monk_a.md`, `round_1_determinate_negation.md`, `round_2_monk_a.md`, etc. This keeps multi-round dialectics navigable and prevents file collisions across rounds.
+**File organization:** Create a dedicated directory for each dialectic's output files. First check if a `dialectic/` or `dialectics/` directory already exists (common in codebases that run multiple dialectics) — if so, create a subdirectory there. If not, create a new directory with a descriptive name (e.g., `dialectic-react-state-management/`). Prefix every file with its round number: `round_1_context_briefing.md`, `round_1_monk_a.md`, `round_1_determinate_negation.md`, `round_2_monk_a.md`, etc. This keeps multi-round dialectics navigable and prevents file collisions across rounds. Alongside these round files, the dialectic maintains a persistent research **wiki** (interlinked typed pages plus `index.md` and `log.md`, gardener-owned, compounding across rounds), a **staging** directory for research drafts (`<dialectic-dir>/staging/`), and a per-round **control log** (`round_N_dialectic_log.md`) — see `reference/dialectic-wiki.md`. These sit alongside the `round_N_*.md` files, which are unchanged.
 
 ### Phase 1: Elenctic Interview + Research
 **Read `reference/phase1-elenctic-interview.md` before executing.**
@@ -250,6 +252,7 @@ This skill is written around `claude -p` (pipe mode) for spawning subagents. If 
 | Parallel execution | Background shell jobs | `run_in_background=true` |
 | Output to file | Shell redirect (`> file.md`) | Agent returns text; orchestrator writes files |
 | Session resumption (Phase 6) | Resume same `claude -p` session | `resume` parameter with `agentId` — but persona may not persist without reinforcement. Include a summary of the agent's original argument as fallback. |
+| Persistent gardener | Resume same `claude -p` session across the dialectic | Resumable agent via `resume` + `agentId`; **always able to re-ground from the wiki on disk** if the session is lost or context compacts |
 | Model selection | `--model` flag | `model` parameter (defaults to inheriting from parent) |
 | Tool access | `--allowedTools web_search,web_fetch` | Inherits from parent or configure per-task |
 
