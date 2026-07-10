@@ -107,6 +107,8 @@ This is expensive (~150-250K tokens across agents) but is the single most valuab
 
 Research agents should be given *specific* search targets — not "research this topic" but "search for X's argument about Y, specifically the part about Z."
 
+**Research now flows through the wiki.** Research subagents follow the research-subagent contract (`reference/research-subagent-prompt.md`) — they write page drafts to `<dialectic-dir>/staging/` and return only paths. Hand the paths to the **gardener**, which ingests them into the research wiki (`reference/dialectic-wiki.md`). Assemble the 1e briefing from wiki pages, not from raw agent prose — this keeps your context clean and starts the wiki compounding from Round 1.
+
 ### Personal and Values Domains (life decisions, career, relationships, commitments, priorities)
 
 These domains have little useful external literature. The grounding comes from *the user themselves* — their history, values, constraints, relationships, and patterns. **The interview IS the research.**
@@ -195,6 +197,8 @@ Before proceeding, summarize back:
 
 Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. **State the final monk count and what each monk will believe** before moving to Phase 2 — this prevents the orchestrator from silently dropping or adding monks later.
 
+**Write the frozen Anchor.** Once framing is confirmed, write the **Anchor** to `round_1_dialectic_log.md` — the original felt tension in the user's own words, verbatim, never overwritten (see `reference/dialectic-wiki.md` → the per-round control log). This is the fixed point all later drift is measured against; it stays frozen even as the working question evolves.
+
 ---
 
 **Completion gate — enumerate & attest before Phase 2 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
@@ -205,5 +209,7 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] 1d: monks grounded — external research **or** deep personal interview, as the domain requires
 - [ ] 1d.5: blind structural reconnaissance run; fault-line choice sharpened against it
 - [ ] 1e.1: 1–2 cross-domain framings woven into the briefing (or consciously skipped for a personal/values domain — state which)
+- [ ] Research ingested into the wiki via the gardener (drafts staged, paths handed off, pages created) — or research consciously skipped for a well-known domain (state which)
 - [ ] Context briefing written to `round_N_context_briefing.md`
+- [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
 - [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user
