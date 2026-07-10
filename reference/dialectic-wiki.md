@@ -60,6 +60,7 @@ The orchestrator coordinates with the gardener through a small set of requests. 
 
 | Section | Lifecycle | Purpose |
 |---|---|---|
+| **Goals & context** | **dialectic-level**; frozen, user updates | *Why* the user is running this dialectic — the broader purpose beyond the specific tension: intended **deliverables** (a skill, a blog post, a decision, a mental model), **audience**, and what a useful outcome looks like. Written once at the start and **carried into every round's log**. Frames what "positioned to synthesize" and "useful output" mean — a synthesis that resolves the tension but doesn't serve these goals has missed the point. Re-read it (with the Anchor) at each loop-top. |
 | **Anchor** | frozen, never overwritten | The round's starting contradiction, verbatim. Round 1 = the original felt tension in the user's own words; later rounds = the Phase-7 contradiction it launched from. Plus a one-line **lineage pointer** ("launched from Round 2's synthesis"). |
 | **Working question** | living; revisions are **diffs the user ratifies** | The current evolved framing. The orchestrator never silently rewrites it (anti-sycophancy / no laundered goal-drift). Carries the closure flag: "still a live two-sided contradiction? Y/N". |
 | **Hidden-question ledger** | append-only | One line per pass: what the hidden question was (from 4.4), whether it moved vs. last pass, on which axis. The settledness signal made legible. |

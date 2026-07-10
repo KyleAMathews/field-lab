@@ -31,6 +31,8 @@ Ask the user what they're thinking about. Determine:
 - **Mode A (Stress-Test):** User has one idea they want to challenge. You need to identify the strongest possible antithesis.
 - **Mode B (Opposition):** User has two positions in tension. You need to refine both to their steelman forms.
 
+**Also capture the *broader goal*, not just the tension.** Ask what the user is ultimately trying to *do* with this dialectic — the deliverable and audience (e.g., "a skill to help people design X," "material for a blog post," "a decision I have to make," "a mental model I want to build"). The specific tension you end up running is *in service of* this larger purpose. A dialectic can produce a technically fine synthesis that doesn't serve what the user actually needs if the orchestrator loses sight of the goal — which is exactly what happens when only the narrow tension gets recorded. Capture this into the control log's **Goals & context** (written at 1f; see `reference/dialectic-wiki.md`).
+
 **Default monk count is 2.** Binary contradiction is the core structural unit of the dialectic and produces the tightest analysis. But 2 monks sometimes leaves a valid big perspective on the table — a position that can't be reached as a blend of the two poles, or that's arguing on a different axis entirely. If the interview surfaces such a position, add a third (or fourth) monk. See 1c.1.
 
 ## 1c. Elenctic Probing
@@ -199,7 +201,9 @@ Before proceeding, summarize back:
 
 Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. **State the final monk count and what each monk will believe** before moving to Phase 2 — this prevents the orchestrator from silently dropping or adding monks later.
 
-**Write the frozen Anchor.** Once framing is confirmed, write the **Anchor** to `round_1_dialectic_log.md` — the original felt tension in the user's own words, verbatim, never overwritten (see `reference/dialectic-wiki.md` → the per-round control log). This is the fixed point all later drift is measured against; it stays frozen even as the working question evolves.
+**Write the frozen Anchor and the Goals & context.** Once framing is confirmed, write two things to `round_1_dialectic_log.md` (see `reference/dialectic-wiki.md` → the control log):
+- **Anchor** — the original felt tension in the user's own words, verbatim, never overwritten. The fixed point all later drift is measured against; frozen even as the working question evolves.
+- **Goals & context** — the user's broader purpose from 1b: intended deliverables, audience, and what a useful outcome looks like. This is *dialectic-level* — it frames every round, not just this tension — and the user can update it. Re-read it with the Anchor at each loop-top so the synthesis stays aimed at what the user actually needs, not just at resolving the tension.
 
 ---
 
@@ -215,4 +219,5 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] Research ingested into the wiki by the gardener (durable organized memory for monks / future rounds / re-grounding)
 - [ ] Context briefing written to `round_N_context_briefing.md`
 - [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
+- [ ] Goals & context written to the control log — the user's broader purpose, deliverables, and audience (NOT just the narrow tension)
 - [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user
