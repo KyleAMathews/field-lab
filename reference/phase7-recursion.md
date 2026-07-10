@@ -2,6 +2,8 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
+**Inner loop vs. outer loop.** Two loops run, and they are different. The **inner loop** (Phase 4.5) matures *this* contradiction on its frozen anchor *before* the first synthesis — its operators are Research / Refine / Re-split. **Phase 7 is the outer loop:** it jumps *after* a synthesis to a queued *different* contradiction. Discriminator: **re-split stays on the same frozen anchor; Phase 7 moves to a different queued contradiction.** Don't blur them — a re-split is not a new round, and a new round is not a re-split.
+
 **Recursion is not optional cleanup. It is the engine of the skill.** The first round produces a synthesis. The recursive rounds force that synthesis to confront its own limitations, generating increasingly powerful mental models. Each cycle compresses understanding upward. In test runs, a React/Vue dialectic went from "corporate lab vs. independent auteur" → "the Layer Thesis" → "co-evolutionary arms race." An institutional identity dialectic went from "enforcement vs. freedom" → "practice-based identity" → "nucleation as formation mechanism" → then surfaced a third-level tension that reframed everything. In both cases, the recursive rounds produced the most valuable insights.
 
 **When transitioning to recursion, tell the user:**
@@ -58,6 +60,8 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 - [ ] On stopping instead: final state of the dialectic queue presented to the user (explored / open / deferred)
 
 ## Running Recursive Rounds
+
+**The wiki compounds across rounds; the control log is per-round.** The research wiki does **not** reset between rounds — Round 2 builds on Round 1's pages (the space is interconnected; see `reference/dialectic-wiki.md`). But each new round opens a **new control log** (`round_N_dialectic_log.md`) whose **Anchor** is the contradiction this round launched from, carrying a one-line **lineage pointer** back to the synthesis that spawned it. Write that anchor at the start of the round, before re-spawning monks. This is also why later rounds get sharper rather than merely different — the walk deepens as the wiki compounds.
 
 Each recursive cycle follows Boyd's full cycle: the previous synthesis is a Structure that must be Unstructured (destructive deduction — shatter it into atomic parts, break the correspondence between the concept and its constituents) and Restructured (creative induction — find cross-domain connections to synthesize something new). Boyd proves this isn't just a good idea — the Second Law guarantees that any inward-oriented refinement of the existing synthesis will increase entropy. Recursive rounds often need **new research and fresh agents** because the system must open itself to outside material or face increasing mismatch.
 
