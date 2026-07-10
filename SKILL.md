@@ -72,6 +72,10 @@ You (Orchestrator)
 │   ├── 4.6: Boydian decomposition — domain manifest, shatter into "sea of anarchy," qualities/attributes/operations passes, calibration tags
 │   ├── 4.6.6: Loss audit — recover high-value single-monk ideas (hidden-profile guard)
 │   └── Same-arrangement test + emergent structure test
+├── Refinement Loop — the 4.9 router (you + user)
+│   ├── Maturity gate: hidden-question settledness + new cross-edges + new facts
+│   ├── Four exits: Proceed / Research / Refine / Re-split (orchestrator recommends, user decides)
+│   └── Firewall on monk re-spawn (gardener assembles per-pole briefs)
 ├── Phase 5: Palette of Candidates (S always; J/G/F/U conditional on misfit lens firings)
 │   ├── Candidates written in parallel by decorrelated subagents (no sight of siblings)
 │   ├── S (Synthesis) — orchestrator writes; classical Aufhebung with reversibility/abduction/closure tests
@@ -90,6 +94,8 @@ You (Orchestrator)
 ```
 
 The user can intervene at any point — correcting a monk's framing, redirecting research, rejecting a compromise-shaped synthesis. The user never has to *believe* anything — that's the monks' job.
+
+**Two loops run.** The **inner loop** (the 4.9 refinement-loop router) matures the current contradiction before synthesis; the **outer loop** (Phase 7) recurses to a new contradiction after one. The discriminator: re-split stays on the round's frozen anchor; Phase 7 moves to a different queued contradiction.
 
 ## Phases: Summary and Reference
 
@@ -325,7 +331,7 @@ John Boyd's "Dialectic Engine": **destructive deduction** (shatter existing conc
 
 Together: "any inward-oriented and continued effort to improve the match-up of concept with observed reality will only increase the degree of mismatch." The lateral creativity interventions (Phase 4.5) and the requirement for new research in recursive rounds aren't nice-to-have — they're the structural response to a thermodynamic necessity.
 
-**Boyd's verification step — reversibility:** After creative induction, Boyd requires checking internal consistency by tracing back to the original constituents. Those constituents are three-layered (per 4.6): the atomic parts, the *quality/attribute/operation* connection that joins them, and the `[fit:]` tag on the resulting recombination. If you cannot reverse directions — if a synthesis claim doesn't trace to identifiable parts, names no connection, or stands on a `[fit: reach]` connection — the ideas don't hold together without contradiction at that claim. But partial failure doesn't mean you reject the whole structure: identify which parts and connections cohere, add new material, and try again.
+**Boyd's verification step — reversibility:** After creative induction, Boyd requires checking internal consistency by tracing back to the original constituents. Those constituents are three-layered (per 4.6): the atomic parts, the *quality/attribute/operation* connection that joins them, and the `[fit:]` tag on the resulting recombination. If you cannot reverse directions — if a synthesis claim doesn't trace to identifiable parts, names no connection, or stands on a `[fit: reach]` connection — the ideas don't hold together without contradiction at that claim. But partial failure doesn't mean you reject the whole structure: identify which parts and connections cohere, add new material, and try again. The operational home of "positioned to synthesize" is the **refinement-loop maturity gate (at the 4.9 checkpoint)**: when the hidden question stops moving and the decomposition stops yielding new cross-edges, the reversibility material has stabilized enough to attempt synthesis.
 
 Boyd's cycle: **Structure → Unstructure → Restructure** → repeat endlessly at higher and broader levels of elaboration. The alternating entropy increase (destruction) and decrease (creation) form a control mechanism that drives toward deeper understanding.
 

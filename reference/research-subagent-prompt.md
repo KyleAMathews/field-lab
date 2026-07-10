@@ -1,6 +1,6 @@
 # Research Subagent Prompt Contract
 
-When the dialectic needs research — during Phase 1 grounding, and on every **Research** exit of the Phase 4.5 loop — the orchestrator spawns targeted research subagents. This doc is their standard output contract.
+When the dialectic needs research — during Phase 1 grounding, and on every **Research** exit of the refinement loop (the 4.9 router) — the orchestrator spawns targeted research subagents. This doc is their standard output contract.
 
 The **gardener consumes drafts in this exact format**, so the contract *is* the interface between the research subagents and the gardener. Research subagents write page-shaped drafts to the staging directory and return only paths; the orchestrator hands those paths to the gardener, which ingests them into the wiki (`reference/dialectic-wiki.md`). A research subagent never touches the wiki itself and never returns page content to the orchestrator (that would defeat the point — keeping raw research out of the orchestrator's context).
 

@@ -36,7 +36,7 @@ Then ask:
 
 **Anti-sycophancy at this checkpoint:** When the user provides input here, evaluate it structurally, not socially. Do NOT say "this is excellent material." Instead: What does this material do to the decomposition? Does it challenge the hidden question? Does it open a new domain for cross-connection? Does it actually change anything, or is it confirming what the analysis already found? If the user shares a framework they're excited about, it enters the mix as one more input to be shattered and recombined — not as the answer the synthesis should converge on. The user is in the belief-free seat. Do not try to locate their position and build toward it.
 
-**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger**, then read `reference/phase4.5-refinement-loop.md` and run the **four-exit router**: Proceed / Research / Refine / Re-split. The 4.9 stop is no longer a straight line into synthesis — Phase 5 is only the *Proceed* exit, taken when the hidden question has settled and the signals (new cross-edges, new facts) are quiet. The other three exits loop back to mature the contradiction before synthesizing. You recommend an exit; the user chooses.
+**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger**, then read `reference/refinement-loop.md` and run the **four-exit router**: Proceed / Research / Refine / Re-split. The 4.9 stop is no longer a straight line into synthesis — Phase 5 is only the *Proceed* exit, taken when the hidden question has settled and the signals (new cross-edges, new facts) are quiet. The other three exits loop back to mature the contradiction before synthesizing. You recommend an exit; the user chooses.
 
 ---
 
@@ -47,6 +47,6 @@ Then ask:
 - [ ] A crisp directed primer written for each distant donor whose vocabulary appears in the summary
 - [ ] **HARD STOP honored** — summary presented to the user and their response received (this item is NOT self-waivable; only the user can release it)
 - [ ] Hidden question written to the control log's hidden-question ledger this pass
-- [ ] `reference/phase4.5-refinement-loop.md` read and the four-exit router run (Phase 5 only on the Proceed exit)
+- [ ] `reference/refinement-loop.md` read and the four-exit router run (Phase 5 only on the Proceed exit)
 
-This is the end of Phase 4. After the user responds at the 4.9 checkpoint, run the refinement-loop router (`reference/phase4.5-refinement-loop.md`). Proceed to Phase 5 (`reference/phase5-sublation.md`) only on the router's **Proceed** exit; otherwise loop back per the chosen exit.
+This is the end of Phase 4. After the user responds at the 4.9 checkpoint, run the refinement-loop router (`reference/refinement-loop.md`). Proceed to Phase 5 (`reference/phase5-sublation.md`) only on the router's **Proceed** exit; otherwise loop back per the chosen exit.

@@ -6,7 +6,7 @@ This doc defines the wiki's page types, its special files, the three agent roles
 
 ## Page types
 
-Every wiki page declares a `type` in its frontmatter. The type sets whether the page is **monk-safe** (may appear in a monk's briefing) or **orchestrator-only** (must never reach a monk — see the firewall in `reference/phase4.5-refinement-loop.md`).
+Every wiki page declares a `type` in its frontmatter. The type sets whether the page is **monk-safe** (may appear in a monk's briefing) or **orchestrator-only** (must never reach a monk — see the firewall in `reference/refinement-loop.md`).
 
 - **`concept`** — an idea, mechanism, framework, or pattern. *Monk-safe.*
 - **`source` / `entity`** — a thinker, article, company, dataset, or piece of evidence. *Monk-safe.*
@@ -33,7 +33,7 @@ The wiki exists to keep the orchestrator's context clean. Three roles, strictly 
 
 - **"Persistent" is an optimization, not a correctness requirement.** The gardener's real state is the wiki *on disk*. A compacted or freshly-spawned gardener re-grounds by reading the wiki. Resume the same agent when the environment allows (it remembers in-flight cross-links), but correctness never depends on its conversation memory. This keeps it robust on long dialectics. (See SKILL.md → Environment Mapping for how to resume it.)
 - **Staging directory.** Research drafts land in `<dialectic-dir>/staging/` — transient handoff space, not the wiki. The orchestrator moves only paths through its context; the gardener reads and ingests, then clears (or archives) the staged drafts so staging never masquerades as the wiki.
-- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source`/`position` pages only, never `tension`/`synthesis`. Firewall enforcement lives in one place (see `reference/phase4.5-refinement-loop.md`).
+- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source`/`position` pages only, never `tension`/`synthesis`. Firewall enforcement lives in one place (see `reference/refinement-loop.md`).
 - **Two levels of contradiction-spotting.** The gardener flags *surface* contradictions from research ("source X ⊥ source Y") as candidate `tension` pages — seeds. The orchestrator does the *deep* determinate negation (Phase 4). Gardener seeds, orchestrator deepens.
 - **Signal division.** The gardener maintains the *coverage* state (did this ingest add new pages? what is still flagged unknown?) → this feeds the "new facts" signal of the maturity gate. The orchestrator keeps the hidden-question ledger. Cross-edges are shared.
 - **Cost, honestly.** The gardener is a second long-running agent on an already token-heavy skill. The trade — clean orchestrator context over tokens — is deliberate, not free.

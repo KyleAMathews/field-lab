@@ -2,7 +2,7 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-**⛔ Entry condition:** Phase 5 begins **only** when the Phase 4.5 refinement-loop router returned the **Proceed** exit — i.e. the hidden question has settled and the signals (new cross-edges, new facts) are quiet. If you arrived here by any other path — straight from Phase 4 without running the router, or after a Research/Refine/Re-split pass — **stop** and run the router (`reference/phase4.5-refinement-loop.md`). Synthesizing an immature contradiction is the failure the loop exists to prevent.
+**⛔ Entry condition:** Phase 5 begins **only** when the refinement-loop router (the 4.9 gate) returned the **Proceed** exit — i.e. the hidden question has settled and the signals (new cross-edges, new facts) are quiet. If you arrived here by any other path — straight from Phase 4 without running the router, or after a Research/Refine/Re-split pass — **stop** and run the router (`reference/refinement-loop.md`). Synthesizing an immature contradiction is the failure the loop exists to prevent.
 
 Phase 5 generates a **palette of structurally-distinct Phase-5 candidates**, not a single synthesis. Each candidate has a different posture toward the contradiction — synthesize it, juxtapose it, ground it out, dissolve the frame, or center the undecidable term. The user picks or combines; the orchestrator does NOT rank, judge, or tournament.
 

@@ -1,4 +1,4 @@
-# Phase 4.5: The Refinement Loop (the 4.9 router)
+# The Refinement Loop (the 4.9 router)
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
