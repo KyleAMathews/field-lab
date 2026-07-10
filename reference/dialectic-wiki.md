@@ -23,7 +23,7 @@ Every page is tagged with the **gap/question that triggered it** (the intent tag
 
 ## The three roles
 
-The wiki exists to keep the orchestrator's context clean. Three roles, strictly separated:
+The wiki is durable, organized background memory: it lets the orchestrator offload wiki bookkeeping to the gardener and re-ground from disk after context loss, and it feeds the monks and future research runs. Three roles, strictly separated:
 
 - **Research subagents** (ephemeral, parallel, blind to each other) — do targeted research and **write page-shaped draft files to a staging directory, returning their paths**. The orchestrator reads those files for the live conversation; the gardener ingests them into the wiki. (Drafting to files, not inline prose, keeps them durable and gardener-ingestible.) They never touch the wiki. Their output contract is `reference/research-subagent-prompt.md`.
 - **Gardener** (persistent, single writer) — **reads the draft files from staging** and ingests them into the wiki; resolves cross-links; seeds `tension` pages; maintains `index.md` and `log.md`; and periodically lints. Single writer ⇒ parallel research agents never clobber each other or the index.
