@@ -15,7 +15,23 @@ Every wiki page declares a `type` in its frontmatter. The type sets whether the 
 - **`tension`** — a **contradiction**: the home for a misfit. A tension page holds (a) the contradiction itself — two-or-more things in the space that won't reconcile, i.e. what the skill elsewhere calls a *misfit*; (b) the **hidden question** underneath it (from 4.4); (c) a **pointer to the determinate negation** that worked it; and (d) **cross-links** to the `concept`/`position`/`source` pages the tension sits *between* — those links are the semi-lattice edges. Tension pages **replace `misfit_register.md`** (a flat register loses the links to what each tension sits between). They serve two structural roles: they are orchestrator-only (a monk must never see the collision it is meant to walk into blind), and their cross-links form the **navigation graph for recursion** — picking the next contradiction to work is following a link to an adjacent tension page. The tension pages *are* the dialectic queue / idea maze. *Orchestrator-only.*
 - **`synthesis`** — a candidate resolution (S/J/G/F/U from Phase 5). *Orchestrator-only.*
 
-Every page is tagged with the **gap/question that triggered it** (the intent tag — what were we trying to answer) and its **provenance** (which agent/round surfaced it).
+**Every page begins with valid YAML frontmatter** — this is the machine-readable layer the firewall and re-grounding queries depend on, so it is **required and must be real YAML** (a `---` block), not bold-prose headers like `**Type:**`. Prose goes in the body below the closing `---`. Canonical schema:
+
+```yaml
+---
+type: concept        # concept | source | position | tension | synthesis | donor
+title: Goodhart's Law
+gap: "what makes rubrics effective for agent-guided evaluation?"  # intent tag — the question that surfaced this page
+provenance: staging/research_agent_evaluation_guidance.md         # agent / round / source that produced it
+date: 2026-07-10
+# type-specific fields:
+#   donor:                       meta_domain, register, fit   (e.g. meta_domain: law, register: normative, fit: reach)
+#   concept (from 4.6 decomp):   fit                          (the [fit:] calibration on the recombination)
+#   position:                    monk, round
+---
+```
+
+**`type` and `gap` are mandatory on every page** — `type` drives the firewall, `gap` is the intent tag that makes the wiki queryable. Cross-links between pages stay as **inline body links** (`[goodharts-law](goodharts-law.md)`) — the edge's *reasoning* ("connects to X because Y") belongs in prose. (A flat `relates_to:` frontmatter list could be added later for graph traversal, but isn't required — YAGNI.)
 
 ## Special files
 
@@ -34,7 +50,7 @@ The wiki is durable, organized background memory: it lets the orchestrator offlo
 
 - **"Persistent" is an optimization, not a correctness requirement.** The gardener's real state is the wiki *on disk*. A compacted or freshly-spawned gardener re-grounds by reading the wiki. Resume the same agent when the environment allows (it remembers in-flight cross-links), but correctness never depends on its conversation memory. This keeps it robust on long dialectics. (See SKILL.md → Environment Mapping for how to resume it.)
 - **Staging directory.** Research drafts land in `<dialectic-dir>/staging/` — transient handoff space, not the wiki. The orchestrator moves only paths through its context; the gardener reads and ingests, then clears (or archives) the staged drafts so staging never masquerades as the wiki.
-- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source` pages only — never `position` (decorrelation: a monk must not see another monk's stance), `donor`, `tension`, or `synthesis`. Firewall enforcement lives in one place (see `reference/refinement-loop.md`).
+- **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source` pages only — never `position` (decorrelation: a monk must not see another monk's stance), `donor`, `tension`, or `synthesis`. It **filters on the frontmatter `type` field deterministically** (the firewall is a decorrelation boundary — don't rely on scanning prose; a mistagged or bold-header page can leak). Firewall enforcement lives in one place (see `reference/refinement-loop.md`).
 - **Two levels of contradiction-spotting.** The gardener flags *surface* contradictions from research ("source X ⊥ source Y") as candidate `tension` pages — seeds. The orchestrator does the *deep* determinate negation (Phase 4). Gardener seeds, orchestrator deepens.
 - **Signal division.** The gardener maintains the *coverage* state (did this ingest add new pages? what is still flagged unknown?) → this feeds the "new facts" signal of the maturity gate. The orchestrator keeps the hidden-question ledger. Cross-edges are shared.
 - **Cost, honestly.** The gardener is a second long-running agent on an already token-heavy skill. The trade — clean orchestrator context over tokens — is deliberate, not free.

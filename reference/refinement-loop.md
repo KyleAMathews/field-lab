@@ -43,7 +43,7 @@ Re-running monks is where the skill's decorrelation apparatus (blind parallel sp
 - Monks stay blind to each other and to all synthesis-leaning material.
 - This *preserves* (or increases) decorrelation rather than eroding it.
 
-**The firewall (a spawn-time rule).** The **gardener assembles every monk brief** — as wiki-owner it filters by page type, so enforcement lives in one place. A monk brief pulls **only the factual substrate** and **never** positions or the analytical layer:
+**The firewall (a spawn-time rule).** The **gardener assembles every monk brief** — as wiki-owner it filters by the frontmatter `type` field (deterministically — this is a decorrelation boundary, so filter on the parsed field, not on scanning prose), so enforcement lives in one place. A monk brief pulls **only the factual substrate** and **never** positions or the analytical layer:
 - **Allowed:** the round anchor, a closure-passing framing of the contradiction, and `concept` / `source` pages.
 - **Never:** `position` pages (a monk must not see another monk's stance — that collapses decorrelation; monks argue fresh from the factual substrate, not from prior essays), `donor` pages (cross-domain material introduced after the monks — feeding it to them homogenizes the monks; the only monk-facing donor channel is the controlled Phase 1e.1 enrichment), the determinate negation, the hidden-question ledger/analysis, `tension` pages, and any `synthesis` candidates or synthesis-leaning corrections.
 
