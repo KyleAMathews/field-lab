@@ -154,7 +154,7 @@ User selects which palette candidate(s) to validate. Each candidate is validated
 ### Phase 7: Recursion
 **Read `reference/phase7-recursion.md` before executing.**
 
-Recursion is the engine of the skill — the first round is calibration. **You MUST generate an idea burst (5-8 candidates) before clustering into directions** — do not skip this step, it is what prevents predictable/obvious recursion directions. Then cluster into 2-4 directions as a menu. Fresh agents are usually better than resumed sessions. New research is often essential as each synthesis opens new conceptual domains. Default: recurse at least once. Track the dialectic queue in a file.
+Recursion is the engine of the skill — the first round is calibration. **You MUST generate an idea burst (5-8 candidates) before clustering into directions** — do not skip this step, it is what prevents predictable/obvious recursion directions. Then cluster into 2-4 directions as a menu. Fresh agents are usually better than resumed sessions. New research is often essential as each synthesis opens new conceptual domains. Default: recurse at least once. Track the dialectic queue in a file. **Treat the queue as an open-ended population** (Lehman & Stanley / POET): admit contradictions on a minimal criterion (not-too-trivial, not-too-solved), select by novelty over resolvability, and **transfer each synthesis against the other queued tensions** — a stepping stone from one contradiction often unlocks another, the direct antidote to a dialectic drifting back to the user's prior.
 
 ## Belief Burden Catalog
 

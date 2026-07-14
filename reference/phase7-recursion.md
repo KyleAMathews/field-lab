@@ -54,10 +54,26 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 **Completion gate — enumerate & attest before launching the next round or stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
 - [ ] Idea burst (5–8 candidate contradictions) generated **first**, read, and only then clustered — not skipped or combined with clustering
+- [ ] Round's synthesis **transferred** against the other queued tensions (tried for dissolve/reframe/sharpen) before the next direction was chosen
+- [ ] Candidate directions cleared the **minimal criterion** (not-too-trivial, not-too-solved vs. existing wiki `tension`/`synthesis` pages) and were selected by **novelty**, not resolvability
 - [ ] Burst clustered into 2–4 candidate directions
 - [ ] Directions presented to the user as a menu (orchestrator proposes, user chooses) — no unilateral direction pick
 - [ ] Queue written/updated in `dialectic_queue.md` with each contradiction's source round and status
 - [ ] On stopping instead: final state of the dialectic queue presented to the user (explored / open / deferred)
+
+## Treat the Queue as a Population, Not a To-Do List (open-endedness)
+
+The dialectic is an *open-ended* engine — the value is divergence, not convergence on one answer (Lehman & Stanley; POET). Three disciplines keep the recursion trailblazing rather than spinning or confirming priors:
+
+**Transfer between tensions — the anti-prior-confirmation engine.** Before picking the next direction, **try the round's synthesis against every *other* contradiction in the queue.** Does it dissolve, reframe, or sharpen one of them? POET's core finding is that a stepping stone found solving problem A is what unlocks a stuck problem B — a synthesis bred on A and applied to a *distant* queued B is exactly the move that escapes A's prior-confirming local optimum. If a synthesis strongly addresses a queued tension, either it resolves that tension (record it and close the queue item) or it seeds that tension's next round as fresh material. Do the transfer pass *before* choosing the next direction — the result often changes which direction is most fertile.
+
+**Minimal-criterion admission (not-too-trivial, not-too-solved).** A contradiction earns a place in the queue only if it clears a weak band, not a strong objective:
+- *Not too trivial* — a monk could defend each pole at full conviction (a one-sided or merely verbal disagreement doesn't qualify).
+- *Not already solved* — check the wiki's `tension` and `synthesis` pages; a contradiction an existing synthesis already dissolves is not new. (This is POET's "not too easy / not too hard" band, ported to idea-space.)
+
+**Select by novelty, not by resolvability.** Among admitted directions, prefer the one *most distant from what the wiki has already explored* — the one that opens a new region — over the one that looks most tractable or most obviously next. Ranking by "easiest to resolve" is the objective-trap; ranking by novelty is what sustains open-endedness. (The idea burst below already casts a wide net — this is the rule for *selecting* among the burst.)
+
+**Deferred (future directions, not built yet):** run the wiki as a MAP-Elites *illuminating* archive (one elite synthesis per niche of a descriptor space, scored by downstream-contradiction fecundity; empty cells = an explore-here signal), and add open-endedness *meters* (an ANNECS analog counting novel-and-then-solved tensions; a Picbreeder re-search diagnostic — a synthesis you *can't* reach by targeting it was a genuine stepping stone). Powerful, but they need a descriptor space and scaffolding — revisit once the loop mechanics are settled.
 
 ## Running Recursive Rounds
 
