@@ -21,13 +21,7 @@ Separating criteria from synthesis prevents pattern-matching to a pre-formed com
 
 The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the most surprising decomposition insights, the sublation criteria, and **1-2 highest-signal misfits from the register** (not all of them — just the ones that might change the user's response).
 
-**Introduce the donor domains gently.** The user is expert in the home domain but the donors are deliberately distant. Raw donor research is allowed to be dense because it serves decomposition; it is **not** suitable introduction copy. For every donor that materially supports a surfaced insight, finish the separate on-ramp scaffold prepared in Stage B using Stage C's calibrated recombinations, and preserve this order:
-
-1. start from something this user demonstrably knows;
-2. show one concrete phenomenon in the donor field with no unexplained jargon;
-3. explain the borrowed mechanism in ordinary language;
-4. only then name at most three native terms, defining each inline; and
-5. map the mechanism home, give the `[fit:]` calibration, and state where the analogy breaks.
+**Introduce the donor domains gently.** The user is expert in the home domain but the donors are deliberately distant. Raw donor research is allowed to be dense because it serves decomposition; it is **not** suitable introduction copy. For every donor that materially supports a surfaced insight, **finish the on-ramp scaffold prepared in Stage B** (`reference/phase4-stage-b-lateral.md` → "build a separate user on-ramp scaffold"): its steps 1–4 (familiar bridge → concrete donor scene → plain-language mechanism → ≤3 native terms defined inline) were already drafted there. Now complete the **reserved step 5** using Stage C's calibrated recombinations — map the mechanism home, give the `[fit:]` calibration, and state where the analogy breaks — and **present the full scaffold in that 1→5 order, one donor at a time.** (Presenting the whole on-ramp, not just the transfer, is what lets the user judge whether the donor is genuinely load-bearing or a `[fit: reach]`.)
 
 Assume zero prior knowledge of the donor and high general intelligence. Do not open with a taxonomy, notation, compressed formal definition, or a stack of technical nouns such as “kinetic quenching,” “restite,” and “metastable Form-V target.” Do not merely put parentheses around jargon and call it explained. Use the user's interview material as a **bridge**, not as proof that the analogy fits; personalization must not upgrade the calibration. Present each donor separately rather than packing several into a table. A user who cannot picture the donor phenomenon cannot judge whether its transfer is illuminating or forced — precisely the `[fit: reach]` check needed at this stop.
 
