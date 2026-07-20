@@ -20,7 +20,7 @@ The framing in *this* index applies to every stage. Section numbers are continuo
 | A | `reference/phase4-stage-a-analysis.md` | 4.0–4.4 | Find the collision |
 | B | `reference/phase4-stage-b-lateral.md` | 4.5a/b/c | Build the sea (donor pipeline) |
 | C | `reference/phase4-stage-c-decomposition.md` | 4.6, 4.6.5, 4.6.6 | Shatter, recombine, instrument |
-| D | `reference/phase4-stage-d-criteria.md` | 4.7, 4.9 | Sublation criteria + HARD STOP + the four-exit refinement-loop router (`reference/refinement-loop.md`) |
+| D | `reference/phase4-stage-d-criteria.md` | 4.7, 4.9 | Sublation criteria + HARD STOP + the frontier reading (`reference/frontier-overlay.md`) + the four-exit refinement-loop router (`reference/refinement-loop.md`) |
 
 Writing each stage to file as you finish it is not optional bookkeeping — it is what makes the staging safe. If context is compacted between stages, the completed work survives on disk.
 
