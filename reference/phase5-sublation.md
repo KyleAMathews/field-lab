@@ -219,12 +219,14 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 - [ ] Each non-S candidate written by a separate subagent with only its own lens material (no sight of sibling drafts)
 - [ ] Every drafted candidate saved to `round_N_candidate_<x>.md`
 - [ ] Candidates ingested by the gardener as `synthesis` pages (cross-linked to the tension they resolve)
+- [ ] Each candidate carries a one-line frontier flag (groove/frontier vs. the blind-expected resolution); flags are descriptive, not a ranking
 - [ ] Palette presented side-by-side with no ranking / recommendation; user invited to pick, combine, or reopen Phase 4
 
 **Present the palette to the user** as a structural summary. For each candidate that was drafted, give:
 - The candidate's **central move** in 2-3 sentences
 - The **lens that earned it** (why this candidate is in the palette)
 - The **new contradiction** the candidate generates (if any — not all candidates need to be fertile in the same way)
+- A one-line **frontier flag** (`reference/frontier-overlay.md`): read this candidate against the pass's blind-expectation probe — `[groove — matches the expected "…"]` or `[frontier — diverges from the expected "…"]`. This is a descriptive scan aid, **not a ranking** — do not order or recommend candidates by it. (Reuse the same blind expectation from 4.9; the setup is unchanged within a pass. If the working question changed since 4.9, re-run the probe.)
 
 Format the presentation so the user can see the palette side-by-side. **Do not rank. Do not recommend. Do not say "I think S is strongest."** The user is the judge; the orchestrator's job is to make each candidate as strong as it can be on its own terms.
 
