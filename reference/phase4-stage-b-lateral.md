@@ -71,6 +71,18 @@ Scan titles, fetch extracts for the ones maximally distant from the dialectic's 
 
 **Ingest the donor research into the wiki.** Hand each finalized donor's field-accurate writeup to the **gardener** → a `donor` page (`reference/dialectic-wiki.md`): the field's own vocabulary and mechanisms, tagged with meta-domain, epistemological register, and its `[fit:]` calibration. This is some of the most novel cross-domain material the skill produces — persisting it lets a later round re-shatter the donor without re-recruiting it, and it is prime re-grounding material. `donor` pages are orchestrator-side (they feed the decomposition and synthesis) and are **not** placed in monk briefs.
 
+**After blindness has done its job, build a separate user on-ramp scaffold.** The field-accurate research above is optimized for decomposition, not comprehension. Do not paste it into the Phase 4 report or compress it into a denser mini-encyclopedia. The sighted orchestrator now knows both the donor and the user, so draft a short translation layer for each finalized donor. Keep this layer separate from the donor page so personalization cannot leak backward into recruitment or research. At this stage, write the bridge, scene, mechanism, and vocabulary; **do not assign the final transfer or `[fit:]` calibration yet** — Stage C's decomposition must earn those.
+
+Write for an intelligent beginner in this donor field. Use this sequence:
+
+1. **Familiar bridge.** Begin with 1–2 sentences anchored in something the user has actually demonstrated they understand — their work, vocabulary, history, interests, or a concrete example from the interview. Do not infer a personality type or flatter them. The bridge should reduce the number of new things they must learn at once.
+2. **Concrete donor scene.** Describe one real, imaginable case inside the donor field before abstracting it. Let the user see what happens there. The first paragraph should contain **no unexplained native jargon, symbols, or taxonomies**.
+3. **Plain-language mechanism.** State the useful operation in ordinary language: “the interesting move is…” or equivalent. Explain the phenomenon on its own terms before mapping it home.
+4. **Native vocabulary, second.** Only now introduce at most **three** technical terms, each defined inline in plain language. The terms preserve the donor's generative precision; they are not the entrance fee.
+5. **Reserve the transfer and limit.** Note the candidate connection that caused recruitment, but leave the final home-problem transfer, `[fit:]` calibration, and analogy limit for Stage D after decomposition. Personalization changes the route into the idea, not the donor's meaning or assessed fit.
+
+Aim for roughly **120–220 words in 2–4 short paragraphs per surfaced donor**. Use more space when the field is especially foreign; “crisp” must not mean “compressed until only an expert can parse it.” In user-facing material, present donors one at a time under descriptive headings. Do not collapse several foreign fields into a dense comparison table unless the user explicitly asks for one.
+
 One special case the blind brief handles naturally: when a monk makes a claim that *resists* analytical treatment, the abstract pattern will pull domains that take that kind of claim seriously on their own terms (4.6 step 5 verifies this happened).
 
 **Pool size:** the N monks **+ ~3–5 donors**, weighted toward functional donors with 1–2 random donors for anti-habit novelty. Each donor is a first-class domain entering 4.6's decomposition at the **same depth as the monk positions** — not a 2–3 paragraph isomorphism garnish. List the donors in the 4.6 domain manifest. The actual isomorphism-finding moves to 4.6 step 3, where donors are already decomposed as peers.
@@ -91,6 +103,7 @@ Keep this to 2 paragraphs maximum. Extract 3-5 structural observations from the 
 - [ ] Distance veto applied (no home field or its neighbor); domain manifest written for carry into 4.6
 - [ ] Each donor researched for its own technical vocabulary
 - [ ] Donor research ingested by the gardener as `donor` pages (meta-domain + register + `[fit:]` tags)
+- [ ] A separate user on-ramp scaffold written for each finalized donor (familiar bridge → concrete scene → plain mechanism → ≤3 defined terms; final transfer + limit reserved for post-decomposition calibration); raw donor research not reused as user-facing copy
 - [ ] 4.5c three metaphors written; 3–5 structural observations extracted
 - [ ] All 4.5 output written to `round_N_determinate_negation.md`
 
