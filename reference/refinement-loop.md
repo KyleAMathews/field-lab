@@ -17,6 +17,8 @@ Phase 4 ends at the 4.9 HARD STOP. Historically that checkpoint had two exits �
 
 **Your recommendation to the user must include:** the three signal readings, the gap you diagnosed, the recommended exit, and *how the next pass would be framed*.
 
+Include the pass's **frontier reading** (`reference/frontier-overlay.md`) as diagnostic evidence — especially a **collapse** (the monks reached but the negation drained to a groove), which is a strong signal that the tension is *not* ready to synthesize even if the other signals are quiet. This informs your recommendation only; it never decides the exit — the user does. (A frontier reading of "groove" is not by itself a reason to keep looping: the user may want the standard answer.)
+
 ## The maturity gate (three signals)
 
 The **hidden-question settledness check is the primary fork.** Read the hidden question from 4.4 (the mandatory hidden-question 2×2) and compare it against the previous pass, tracked in the control log's **hidden-question ledger** (`reference/dialectic-wiki.md` → control log).
@@ -54,7 +56,7 @@ Re-running monks is where the skill's decorrelation apparatus (blind parallel sp
 ## Drift protocol (the scent fix)
 
 At the top of **each** loop pass:
-1. Read the control log + the last pass's negation + the user's corrections, and write the **delta** (what changed: working question, hidden-question ledger line, loop-ledger line, open gaps).
+1. Read the control log + the last pass's negation + the user's corrections, and write the **delta** (what changed: working question, hidden-question ledger line, frontier-ledger line, loop-ledger line, open gaps).
 2. **Re-read the whole control log fresh** as grounding before continuing.
 
 The second read is the actual scent-fix — re-injection at loop-top counteracts the context-window pressure that causes drift. Writing the log without re-reading it builds the anchor and then never looks at it.
@@ -65,5 +67,5 @@ The second read is the actual scent-fix — re-injection at loop-top counteracts
 - [ ] The three signals computed and **shown to the user** (hidden-question movement, new cross-edges, new facts)
 - [ ] The gap diagnosed and an exit recommended, including how the next pass would be framed
 - [ ] The **user chose the exit** — not the orchestrator (this user-decision item is not self-waivable)
-- [ ] Control log updated this pass: hidden-question ledger line + loop-ledger line + open gaps (drift protocol run: delta written, then whole log re-read)
+- [ ] Control log updated this pass: hidden-question ledger line + frontier-ledger line + loop-ledger line + open gaps (drift protocol run: delta written, then whole log re-read)
 - [ ] On a Refine/Re-split exit: the monk brief was assembled by the gardener (firewall-clean; per-pole ignored-evidence for Refine); on Re-split, the working question passed the closure test
