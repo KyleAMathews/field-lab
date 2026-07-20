@@ -21,7 +21,31 @@ Separating criteria from synthesis prevents pattern-matching to a pre-formed com
 
 The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the most surprising decomposition insights, the sublation criteria, and **1-2 highest-signal misfits from the register** (not all of them — just the ones that might change the user's response).
 
-**Prime the donor domains.** The user is expert in the home domain but the donors are deliberately distant — by the time the summary leans on "kinetic quenching," "restite," "ubiquity–authorship inverse coupling," or "the metastable Form-V target," an unprimed user cannot evaluate the recombination, and this is the highest-leverage correction point in the whole process. So for each donor whose vocabulary appears in the surfaced insights, include a **crisp, directed primer — 2-4 sentences** explaining *exactly the borrowed mechanism* (not the whole field) in terms of the user's problem. You earned the right to write a tight primer rather than a generic one: you did the blind research and you know which connection you're drawing, so prime only the slice the isomorphism actually uses. A user who can't follow the donor can't tell you the isomorphism is forced — which is precisely the `[fit: reach]` check you most need them to run.
+**Introduce the donor domains gently.** The user is expert in the home domain but the donors are deliberately distant. Raw donor research is allowed to be dense because it serves decomposition; it is **not** suitable introduction copy. For every donor that materially supports a surfaced insight, finish the separate on-ramp scaffold prepared in Stage B using Stage C's calibrated recombinations, and preserve this order:
+
+1. start from something this user demonstrably knows;
+2. show one concrete phenomenon in the donor field with no unexplained jargon;
+3. explain the borrowed mechanism in ordinary language;
+4. only then name at most three native terms, defining each inline; and
+5. map the mechanism home, give the `[fit:]` calibration, and state where the analogy breaks.
+
+Assume zero prior knowledge of the donor and high general intelligence. Do not open with a taxonomy, notation, compressed formal definition, or a stack of technical nouns such as “kinetic quenching,” “restite,” and “metastable Form-V target.” Do not merely put parentheses around jargon and call it explained. Use the user's interview material as a **bridge**, not as proof that the analogy fits; personalization must not upgrade the calibration. Present each donor separately rather than packing several into a table. A user who cannot picture the donor phenomenon cannot judge whether its transfer is illuminating or forced — precisely the `[fit: reach]` check needed at this stop.
+
+**Attach the frontier reading (the overlay).** Before presenting, run the Frontier Overlay for this pass (`reference/frontier-overlay.md`):
+
+1. Spawn the **blind-expectation probe** — a fresh subagent that sees ONLY the working question and the poles (blind to the essays, this negation, the donors). Use the skeleton in `reference/frontier-overlay.md`. It returns the 1–3 resolutions it *expects*.
+2. Compare its expected resolutions against where your determinate negation actually landed: match → groove, divergence → frontier. Add the free-layer reading (are the maturity signals saturating = groove, or still producing new cross-edges/facts = frontier).
+3. Check for a **collapse**: did the monks *reach* (strained / donor-dependent argument, or new `[fit:]` cross-edges) but the negation land on the blind-expected groove? If so, flag it.
+4. Append the **companion block** *after* your negation summary (do not re-tag the negation inline). It is diagnostic and descriptive — not a recommendation, and it must not tell the user what to do:
+
+   > **Frontier reading** (diagnostic — descriptive, not a recommendation)
+   >
+   > - Terrain: `<groove | frontier | mixed>` — `<one clause>`
+   > - Expected (blind probe): `<expected resolutions, one line>`
+   > - Actual landing: `<where the negation went>` → `<matched = groove | diverged = frontier>`
+   > - Collapse: `<none | ⚠ reached on X, negation pulled back to groove Y>`
+
+On a standard run this will read "groove — as expected" with no collapse; that is correct and should add no friction.
 
 Then ask:
 
@@ -36,7 +60,7 @@ Then ask:
 
 **Anti-sycophancy at this checkpoint:** When the user provides input here, evaluate it structurally, not socially. Do NOT say "this is excellent material." Instead: What does this material do to the decomposition? Does it challenge the hidden question? Does it open a new domain for cross-connection? Does it actually change anything, or is it confirming what the analysis already found? If the user shares a framework they're excited about, it enters the mix as one more input to be shattered and recombined — not as the answer the synthesis should converge on. The user is in the belief-free seat. Do not try to locate their position and build toward it.
 
-**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger**, then read `reference/refinement-loop.md` and run the **four-exit router**: Proceed / Research / Refine / Re-split. The 4.9 stop is no longer a straight line into synthesis — Phase 5 is only the *Proceed* exit, taken when the hidden question has settled and the signals (new cross-edges, new facts) are quiet. The other three exits loop back to mature the contradiction before synthesizing. You recommend an exit; the user chooses.
+**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger** and this pass's frontier reading to the **frontier-ledger** (`reference/frontier-overlay.md`), then read `reference/refinement-loop.md` and run the **four-exit router**: Proceed / Research / Refine / Re-split. The 4.9 stop is no longer a straight line into synthesis — Phase 5 is only the *Proceed* exit, taken when the hidden question has settled and the signals (new cross-edges, new facts) are quiet. The other three exits loop back to mature the contradiction before synthesizing. You recommend an exit; the user chooses.
 
 ---
 
@@ -44,9 +68,11 @@ Then ask:
 - [ ] 4.7 sublation criteria written (preserve A / preserve B / dissolve shared assumption / answer hidden question) — kept separate from the misfits
 - [ ] Initial synthesis guess (written back in Stage A) compared against the finished decomposition for pattern-matching
 - [ ] 4.9 concise summary prepared: hidden question, key negations, surprising decomposition insights, sublation criteria, 1–2 highest-signal misfits
-- [ ] A crisp directed primer written for each distant donor whose vocabulary appears in the summary
+- [ ] A gentle, personalized on-ramp presented for each distant donor that materially supports the summary (familiar bridge → concrete scene → plain mechanism → ≤3 defined terms → transfer + limit); no raw donor-page prose or dense multi-donor table used as the introduction
 - [ ] **HARD STOP honored** — summary presented to the user and their response received (this item is NOT self-waivable; only the user can release it)
 - [ ] Hidden question written to the control log's hidden-question ledger this pass
+- [ ] Frontier Overlay run: blind-expectation probe spawned (blind to essays/negation/donors), companion block appended to the negation summary, collapse checked
+- [ ] Frontier-ledger line written this pass (reading / expected / actual / collapse)
 - [ ] `reference/refinement-loop.md` read and the four-exit router run (Phase 5 only on the Proceed exit)
 
 This is the end of Phase 4. After the user responds at the 4.9 checkpoint, run the refinement-loop router (`reference/refinement-loop.md`). Proceed to Phase 5 (`reference/phase5-sublation.md`) only on the router's **Proceed** exit; otherwise loop back per the chosen exit.
