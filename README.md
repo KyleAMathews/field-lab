@@ -36,31 +36,34 @@ The tutorial should explain the lab briefly, offer contrasting exercises, and th
 - **Fact-shaped practical Walk:** `/field-lab How many branches should this fruit bush have?` → clarify the desired form, then search or advise; no files.
 - **Instrument-rich Walk:** `/field-lab My wife and I mean different things by a clean kitchen.` → optional term scan, stake map, and small experiment; no files.
 - **Hostile thesis Walk:** `/field-lab Test this thesis against its strongest opposition.` → focus interview, short context-isolated Monks, and user correction.
-- **Survey:** `/field-lab Compare four family calendar systems over three weeks and let us resume later.` → shared collection plan and durable Survey log.
-- **Expedition:** `/field-lab I want the full Expedition on whether our framework should own deployment.` → committed positions, decomposition, candidate palette, audit, and recursion.
+- **Field Trip:** `/field-lab Compare four family calendar systems over three weeks and let us resume later.` → an agreed collection plan and durable field log.
+- **Expedition:** `/field-lab Create a home for several field trips about how our team deploys software.` → a directory, shared purpose, lineage, and trip index.
+- **Dialectic workflow:** `/field-lab Run the full dialectic on whether our framework should own deployment.` → committed positions, decomposition, candidate palette, audit, and recursion inside a logged Field Trip.
 
-You do not need to choose Walk or Survey up front. Ask for a named instrument directly if you want one: “run a term scan,” “check for a ground condition,” “map this possibility space,” or “stress these positions with Electric Monks.”
+You do not need to choose a field-work form up front. Ask for a named instrument directly if you want one: “run a term scan,” “check for a ground condition,” “map this possibility space,” or “stress these positions with Electric Monks.”
 
-If the inquiry later needs systematic collection or durable memory, it becomes a **Survey**. If a stubborn contradiction repays the cost of context-isolated committed agents, structural analysis, validation, and recursion, it becomes an **Expedition**. The existing seven-phase Electric Monk dialectic remains strict; it is no longer the price of entry.
+If the inquiry later needs durable memory, ask to **open a field log**. That starts a bounded **Field Trip** without restarting the conversation. Several related Field Trips may share an **Expedition** directory and index. A stubborn contradiction may call for the seven-phase **Electric Monk dialectic workflow**. These choices are independent: an Expedition is a container, not a method.
 
 ## Why the field-lab shape
 
-The original skill was one deep workflow. It produced useful results, but invoking it meant accepting the whole process. The field lab separates three things that had been tied together:
+The field lab separates things that are easy to confuse:
 
 - **instrument access** — any inquiry may use the bench;
-- **systematic method** — a Survey adds a collection plan and durable log;
-- **full procedural safeguards** — an Expedition adds the seven-phase dialectic.
+- **durable field work** — a Field Trip adds one field log and a bounded collection plan;
+- **cross-trip memory** — an Expedition gives related Field Trips a shared home and index;
+- **method** — a selected workflow coordinates steps, instruments, controls, artifacts, and gates.
 
-Instrument count does not set the state. A scientist may carry a camera, binoculars, recorder, and light meter on a walk. In the same way, a short conversation may use several probes and still remain a Walk. Survey and Expedition describe increasing systematicity, coordination, and memory—not access to better tools.
+Instrument count does not set the form. A scientist may carry a camera, binoculars, recorder, and light meter on a walk. In the same way, a short conversation may use several probes and still remain a Walk. Opening a field log adds memory; starting an Expedition adds cross-trip navigation; choosing a workflow adds method. None grants access to a better class of instrument.
 
 ## Camera mode, not pure engine mode
 
-The field lab has two independent axes:
+The field lab keeps three dimensions separate:
 
-- **Walk → Survey → Expedition** sets the scale of method, coordination, and memory.
+- **Walk → Field Trip; several Field Trips → Expedition** sets the scope of memory.
+- **Ad hoc probes → named workflow** sets the degree of procedural coordination.
 - **Camera → engine** sets the tempo of feedback relative to conclusion and action.
 
-The lab defaults to camera mode on open questions. It grows context through feedback before it commits a large conclusion. A lightweight Walk can still fail if the agent reads a brief, silently runs several interpretive probes, and returns a polished thesis without first finding out what the user sees in the specimen. A full Expedition can remain camera-like because interviews, framing checks, intermediate readouts, validation choices, and recursion keep adding error signals.
+The lab defaults to camera mode on open questions. It grows context through feedback before it commits a large conclusion. A lightweight Walk can still fail if the agent reads a brief, silently runs several interpretive probes, and returns a polished thesis without first finding out what the user sees in the specimen. A long Expedition can remain camera-like when its Field Trips keep returning bounded readings for correction.
 
 The OODA loop supplies the brake. During camera mode, the human owns **Observe and Orient**, including which instruments to use and what their readings mean together. The agent asks for missing substrate, offers instruments, and returns bounded readings without turning them into a complete explanation. Synthesis, ranking, substantive recommendations, action plans, and action wait for an explicit request. A full-dialectic request still authorizes its named phase outputs, including synthesis where earned.
 
@@ -107,7 +110,7 @@ Execution placement is part of the instrument when it changes what can be seen:
 
 Every card states its context boundary, placement rationale, fallback, and return path. If a required fresh context is unavailable, the agent downgrades or renames the result instead of pretending to be blind to what it already knows.
 
-## The three states
+## Field work and workflows
 
 ### Walk
 
@@ -122,23 +125,29 @@ Other common field-kit probes include:
 - checking for a missing third pole or ground condition;
 - preparing, running, and interpreting a small, reversible real-world experiment.
 
-Advanced instruments are also available on a Walk when their input can be satisfied in the session: short Electric Monks, exploratory 2×2s, blind structural reconnaissance, residue collection, hostile audit, or a quick possibility-space scout. A **taboo-parallax scout** can make a small hypothesis-only comparison on a Walk; its source-grounded three- or four-setting matrix normally becomes a Survey. A **blind-cartography scout** can compare one frozen source map with three fresh probes in the session; its larger 6–12-probe atlas normally becomes a Survey. Using several agents or sophisticated probes does not by itself create a Survey.
+Advanced instruments are also available on a Walk when their input can be satisfied in the session: short Electric Monks, exploratory 2×2s, blind structural reconnaissance, residue collection, hostile audit, or a quick possibility-space scout. A **taboo-parallax scout** can make a small hypothesis-only comparison on a Walk; its source-grounded three- or four-setting matrix normally calls for a Field Trip. A **blind-cartography scout** can compare one frozen source map with three fresh probes in the session; its larger 6–12-probe atlas normally calls for a Field Trip. Using several agents or sophisticated probes does not by itself open a field log.
 
 Readings stay in the chat. The Walk does not create an artifact tree. But it is still a feedback loop: after a strong reading, the agent returns it to the user before running a long cascade or declaring the final thesis. After any reading, `stop` is a valid result.
 
-### Survey
+### Field Trip
 
-A Survey begins only when observation becomes systematic: the inquiry needs an explicit coverage goal, repeated or comparative readings, coordination across several instruments, research tracks, agents, or sessions, or a durable record that can be resumed, searched, or audited.
+A Field Trip begins when the user agrees to open a field log for one bounded discovery operation. It may need an explicit coverage goal, repeated or comparative readings, coordination across instruments, research tracks, agents, or sessions, or simply a durable record that can be resumed, searched, or audited.
 
-Promotion creates one Survey log from the session so far. It does not restart the inquiry or make the user repeat an interview. A wiki remains optional until reuse, cross-links, recursion, several agents, or context loss make it useful.
+The new field log inherits the Walk from the session so far. It does not restart the inquiry or make the user repeat an interview. It keeps the original and current questions, claim types, instrument traces, coverage and stop rules, corrections, and open trails. A wiki remains optional until reuse, cross-links, recursion, several agents, or context loss make it useful.
 
 ### Expedition
 
-The full Electric Monk apparatus. Two or more context-isolated agents fully believe distinct positions on the user's behalf. The orchestrator compares the structures, finds how each position fails from inside its own logic, brings in outside material, and produces a palette of possible landings rather than forcing every specimen into synthesis.
+An Expedition is a directory and sparse chronological index for several related Field Trips. It records when the Expedition began, what it is about, each Field Trip that joins, and selected changes, conclusions, or significant findings copied from authoritative Field Trip logs. Instruments, workflows, sources, raw readings, and detailed state stay in those field logs.
 
-A request for a “dialectic,” hostile thesis test, strongest case on each side, determinate negation, or validation requires context-isolated positions at minimum. The lab may run short blind Monks within a Walk or recommend the full Expedition. It must not imitate separated opposition inside one orchestrator context merely because the user did not say “full.”
+An Expedition is not a workflow. Starting one authorizes no instruments, analyses, or conclusions. It may contain ad hoc Field Trips, repeated observations, several workflows, or no named workflow at all.
 
-An Expedition inherits the Walk and Survey record, then coordinates the same instrument bench through seven strict completion-gated phases. The phase procedures define the full work; the instrument cards govern what each operation can reveal, who runs it, its controls, and how its reading is recorded:
+### Electric Monk dialectic workflow
+
+The full dialectic is one workflow that may run in a standalone Field Trip or inside an Expedition. Two or more context-isolated agents fully believe distinct positions on the user's behalf. The orchestrator compares the structures, finds how each position fails from inside its own logic, brings in outside material, and produces a palette of possible landings rather than forcing every specimen into synthesis.
+
+A request for a “dialectic,” hostile thesis test, strongest case on each side, determinate negation, or validation requires context-isolated positions at minimum. The lab may run short blind Monks within a Walk or recommend the full dialectic workflow. It must not imitate separated opposition inside one orchestrator context merely because the user did not say “full.”
+
+The workflow inherits the Walk, Field Trip, and Expedition record, then coordinates the same instrument bench through seven strict completion-gated phases. The phase procedures define the full work; the instrument cards govern what each operation can reveal, who runs it, its controls, and how its reading is recorded:
 
 1. interview and research;
 2. committed Monk prompt construction;
@@ -152,16 +161,16 @@ Each phase gate cites an instrument-ledger entry. A phase cannot pass merely bec
 
 ## Artifacts appear only when they earn their cost
 
-| Inquiry state           | Default record                                                       |
-| ----------------------- | -------------------------------------------------------------------- |
-| Direct answer           | Chat session                                                         |
-| Walk with any field kit | Chat session and any natural tool outputs                            |
-| Survey                  | One curated Survey log; source and staging files only when needed    |
-| Expedition              | Promoted control log, round files, wiki, queue, and validation trace |
+| Field work              | Default record                                                               |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| Direct answer           | Chat session                                                                 |
+| Walk with any field kit | Chat session and any natural tool outputs                                    |
+| Field Trip              | One curated field log; source, staging, and workflow files only when needed  |
+| Expedition              | Expedition log/index plus the authoritative logs of its related Field Trips  |
 
-Promotion distills the conversation so far. It does not rewrite an informal Walk as a scripted interview, and the user should not have to restate material already in the session.
+Opening a field log distills the conversation so far. It does not rewrite an informal Walk as a scripted interview, and the user should not have to restate material already in the session. A workflow may add its declared artifacts inside the Field Trip. The full dialectic adds control logs, round files, a wiki, a queue, and a validation trace.
 
-## What the Expedition is for
+## What the dialectic workflow is for
 
 Use the full apparatus when:
 
@@ -174,7 +183,7 @@ Use the full apparatus when:
 
 The Monks are an **artificial belief system**. Their job is not to think instead of the user. Their job is to carry incompatible beliefs at full strength so the user can inspect the contradiction without defending either side.
 
-The Expedition uses three main ideas:
+The dialectic workflow uses three main ideas:
 
 - **Rao:** outsource belief load so the user can switch frames without belief inertia.
 - **Hegel:** find each position's specific internal failure; preserve its real insight while changing the frame.
@@ -184,8 +193,8 @@ It also keeps residue visible. Sometimes the sound result is not synthesis but a
 
 ## Repository map
 
-- [`SKILL.md`](SKILL.md) — concise entry, router, state boundaries, and Expedition gate
-- [`reference/field-lab.md`](reference/field-lab.md) — field states, router, stop and escalation rules
+- [`SKILL.md`](SKILL.md) — concise entry, router, field-work boundaries, and workflow gate
+- [`reference/field-lab.md`](reference/field-lab.md) — field-work forms, router, stop and escalation rules
 - [`reference/camera-loop.md`](reference/camera-loop.md) — feedback cadence and lightweight interviewing
 - [`reference/instruments/index.md`](reference/instruments/index.md) — phenomenon-to-instrument registry
 - [`reference/instruments/walk-kit.md`](reference/instruments/walk-kit.md) — lightweight instrument cards
@@ -193,12 +202,13 @@ It also keeps residue visible. Sometimes the sound result is not synthesis but a
 - [`reference/instruments/blind-cartography.md`](reference/instruments/blind-cartography.md) — blind possibility-space cartography
 - [`reference/instruments/taboo-parallax.md`](reference/instruments/taboo-parallax.md) — cross-society sayability comparison with truth and stereotype controls
 - [`reference/instrument-contract.md`](reference/instrument-contract.md) — access differential, execution placement, readout, provenance, and control rules
-- [`reference/apparatus-survey.md`](reference/apparatus-survey.md) — Survey entry and operation
-- [`reference/survey-log-template.md`](reference/survey-log-template.md) — first durable inquiry record
-- [`reference/apparatus-expedition.md`](reference/apparatus-expedition.md) — full apparatus map and promotion contract
-- [`reference/expedition-instrument-map.md`](reference/expedition-instrument-map.md) — authoritative phase-to-instrument lifecycle and gate map
-- [`reference/dialectic-wiki.md`](reference/dialectic-wiki.md) — Expedition memory, firewall, and control log
-- [`docs/superpowers/specs/2026-07-21-field-lab-architecture-design.md`](docs/superpowers/specs/2026-07-21-field-lab-architecture-design.md) — design rationale
+- [`reference/field-trip.md`](reference/field-trip.md) — one bounded logged discovery operation
+- [`reference/field-log-template.md`](reference/field-log-template.md) — durable Field Trip record
+- [`reference/expedition.md`](reference/expedition.md) — container and index contract for related Field Trips
+- [`reference/expedition-log-template.md`](reference/expedition-log-template.md) — Expedition log/index schema
+- [`reference/dialectic-workflow.md`](reference/dialectic-workflow.md) — full Electric Monk workflow contract
+- [`reference/dialectic-instrument-map.md`](reference/dialectic-instrument-map.md) — authoritative phase-to-instrument lifecycle and gate map
+- [`reference/dialectic-wiki.md`](reference/dialectic-wiki.md) — dialectic memory, firewall, and control log
 
 ## License
 

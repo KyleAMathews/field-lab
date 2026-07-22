@@ -57,7 +57,7 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 - Base any recurrence claim on at least three blind probes spanning the frozen prompt family, and report exact counts by prompt variant. Fresh contexts reduce leakage but do not make outputs statistically independent, especially within one model family. Temperature is not evidence of adequate variation. One probe may only suggest the next sample.
 - Keep source and expectation tracks isolated until the source map is frozen.
-- Preserve raw probes and exact visible inputs in a Survey or Expedition.
+- Preserve raw probes and exact visible inputs in a Field Trip. If it belongs to an Expedition, index the trace there.
 - Freeze meaning-preserving variants before exposure. If a variant changes the task, criteria, evidence, or output contract, treat it as a separate stratum rather than a core replicate.
 - Change one sampling variable at a time when possible.
 - Track new-basin yield by batch, replicate disagreement, strata covered, and unsampled cells.
@@ -80,11 +80,11 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 - **Escalate** to targeted research when a residual makes a historical novelty claim.
 - **Escalate** to the frontier rheometer when one candidate needs close expectedness and reaching analysis.
-- **Escalate** to Survey when repeated sampling needs a coverage plan, durable raw probes, or comparison across sessions.
+- **Escalate** to a Field Trip when repeated sampling needs a coverage plan, durable raw probes, or comparison across sessions.
 - **Stop** when the sampled basins are stable, agreed strata are covered, and another probe is unlikely to change the map.
 
 ## Cost and Persistence
 
 - **Quick scout:** One small frozen source map plus three fresh core probes using a pre-frozen canonical prompt and two meaning-preserving variants; medium agent cost; session-only; directional findings only.
-- **Atlas:** Usually 6–12 probes plus clustering and overlay; Survey-scale; preserve raw probes, sampling plan, frozen source map, atlas, and overlay.
-- **Expedition use:** Link the atlas to the round control log or frontier ledger. Keep it distinct from Monk belief outputs and validation judgments.
+- **Atlas:** Usually 6–12 probes plus clustering and overlay; Field-Trip scale; preserve raw probes, sampling plan, frozen source map, atlas, and overlay.
+- **Dialectic-workflow use:** Link the atlas to the round control log or frontier ledger. Keep it distinct from Monk belief outputs and validation judgments.

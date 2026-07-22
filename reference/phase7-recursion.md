@@ -2,6 +2,8 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
+**⛔ Phase-opening check:** After the re-entry check, present the Phase 7 opening card and wait for the user's Phase 7 go-ahead before generating or clustering recursive directions. A passed validation gate does not start another round.
+
 **Inner loop vs. outer loop.** Two loops run, and they are different. The **inner loop** (the 4.9 refinement-loop router, `reference/refinement-loop.md`) matures _this_ contradiction on its frozen anchor _before_ the first synthesis — its operators are Research / Refine / Re-split. **Phase 7 is the outer loop:** it jumps _after_ a synthesis to a queued _different_ contradiction. Discriminator: **re-split stays on the same frozen anchor; Phase 7 moves to a different queued contradiction.** Don't blur them — a re-split is not a new round, and a new round is not a re-split.
 
 ## Phase 7 instruments: `tension-statement` and `third-pole`
@@ -58,7 +60,7 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 **The user may want to queue multiple directions.** A dialectic can branch — Round 2 pursues direction A, Round 3 pursues direction B (starting from the Round 2 synthesis), or Round 3 forks back to the Round 1 synthesis to pursue direction C independently. The orchestrator should track which contradictions have been explored and which are queued.
 
-**Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
+**Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). Every item records `recorded-at`; every status change records `status-updated-at` and its user or workflow pointer. This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
 
 **Completion gate — enumerate & attest before launching the next round or stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
 
@@ -90,7 +92,7 @@ The dialectic is an _open-ended_ engine — the value is divergence, not converg
 
 **The wiki compounds across rounds; the control log is per-round.** The research wiki does **not** reset between rounds — Round 2 builds on Round 1's pages (the space is interconnected; see `reference/dialectic-wiki.md`). But each new round opens a **new control log** (`round_N_dialectic_log.md`) whose **Anchor** is the contradiction this round launched from, carrying a one-line **lineage pointer** back to the synthesis that spawned it. Write that anchor at the start of the round, before re-spawning monks. This is also why later rounds get sharper rather than merely different — the walk deepens as the wiki compounds.
 
-Every recursive round starts again at Phase 1 and runs the full Expedition instrument map and completion gates. Inherit valid prior readings with their actual execution traces, rerun instruments whose specimen or required context changed, and never jump from a chosen Phase 7 direction straight to Monk spawning.
+Every recursive round starts again at Phase 1 and runs the full dialectic instrument map and completion gates. Inherit valid prior readings with their actual execution traces, rerun instruments whose specimen or required context changed, and never jump from a chosen Phase 7 direction straight to Monk spawning.
 
 Each recursive cycle follows Boyd's full cycle: the previous synthesis is a Structure that must be Unstructured (destructive deduction — shatter it into atomic parts, break the correspondence between the concept and its constituents) and Restructured (creative induction — find cross-domain connections to synthesize something new). Boyd proves this isn't just a good idea — the Second Law guarantees that any inward-oriented refinement of the existing synthesis will increase entropy. Recursive rounds often need **new research and fresh agents** because the system must open itself to outside material or face increasing mismatch.
 

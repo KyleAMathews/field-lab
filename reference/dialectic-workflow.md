@@ -1,0 +1,131 @@
+# Electric Monk Dialectic Workflow
+
+The Electric Monk dialectic is one user-selected workflow in the Field Lab. “Run a dialectic,” “use the dialectic,” and “the output is a dialectic” select it unless the user explicitly asks for a quick, short, lightweight, or sketch treatment. Do not require the adjective “full” or ask the user to choose it twice. It coordinates context-isolated committed positions, research, determinate negation, outside material, plural candidate construction, validation, and recursion through seven completion-gated phases.
+
+The workflow runs within a Field Trip, which may stand alone or belong to an Expedition. It is not itself an Expedition. If the user selects the dialectic during an unlogged Walk, its declared durable trace includes opening a Field Trip and field log; state that before creating files.
+
+Selecting the workflow reserves its scheduled instruments and declared artifacts. It does not start them, authorize a phase-sized batch, permit silent passage through user checkpoints, or authorize an expedition-wide conclusion or unrelated action. The user starts each numbered phase through its opening gate. Walk instruments remain available, but each unscheduled run still requires user selection.
+
+## Entry contract
+
+1. Acknowledge the user's direct request or explain why the full workflow may repay its cost.
+2. Give this compact map of the whole workflow before using tools or creating artifacts. Adapt the words, not the seven moves:
+   1. **Frame and ground** — confirm the real tension, test missing axes, and gather only the research it needs.
+   2. **Prepare the Monks** — freeze separate full-conviction briefs for the committed positions.
+   3. **Run the Monks** — collect the context-isolated positions and check what belief stress changed.
+   4. **Break the positions open** — find each position's internal failure, preserve residue, and test outside structures.
+   5. **Build a candidate palette** — produce several distinct possible landings, including synthesis where earned.
+   6. **Stress-test selected candidates** — let the positions and fresh hostile readers probe what each candidate loses.
+   7. **Choose whether to recurse** — surface the next contradictions and let the user choose whether another round is useful.
+3. Tell the user that the workflow opens a Field Trip and field log, uses separate agents, and may take several checkpoints. Say that no phase will begin until its opening card is accepted.
+4. Read [dialectic-instrument-map.md](dialectic-instrument-map.md) and the current phase file. Present the Phase 1 opening card under the gate below, then **stop**. Do not create files, spawn the gardener, search, prepare an instrument, or run an instrument before the user starts Phase 1.
+5. After the user starts Phase 1, locate the session record, current field log, and Expedition log if one exists.
+6. If no field log exists, read [field-log-template.md](field-log-template.md) and open one as part of the workflow's declared artifact set. Timestamp the Field Trip and round control log under their contracts.
+7. Preserve these fields into the Field Trip log and `round_1_dialectic_log.md`:
+   - original question, session provenance, and field lineage;
+   - goal, audience, and useful outcome;
+   - workflow-selection pointer;
+   - instruments already used, including each actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace;
+   - key readings with kinds and support;
+   - loaded terms, current tensions, open gaps, and working question.
+8. Ask only for gaps. Do not repeat answered interview questions.
+9. Create a narrow workflow artifact directory and staging directory within the Field Trip. Dispatch the gardener to initialize the wiki in the background before new research, then continue Phase 1 without waiting for its startup response; the workflow's several agents, cross-links, validation trace, and likely recursion cross the graph-memory threshold.
+
+If the workflow inherits prior readings, copy what actually ran. A correlated fallback remains correlated unless rerun under the full card. Adoption never launders an old reading into a stronger epistemic state.
+
+## Non-linear workflow
+
+The seven phases provide order, but not a blind pipeline. Phase 4 hard-stops for user correction and may proceed, research, refine, or re-split. Phase 5 accepts only a user-selected proceed route. Phase 7 opens new contradictions and branches; it is not another polishing pass on the same candidate.
+
+Some instruments span phases. Preserve their lifecycle: preparation freezes inputs and controls; only the later observation completes the reading. `belief-stress`, for example, is prepared in Phase 2 and completed in Phase 3.
+
+## Phase-opening gate
+
+Run this gate before **every numbered phase**, including Phase 1. A passed completion gate closes the prior phase; it does not open the next one.
+
+1. **Place the user.** Say `We are at Phase N of 7` and give the phase's aim in one sentence.
+2. **Show the bench.** List the scheduled instruments for this phase by name. For each, add a short parenthetical explanation of what it measures and why it may help here. Mark conditional instruments as conditional. This is a preview, not the instrument handshake and not a claim that any instrument is running.
+3. **Show the work.** Name the expected readout, durable artifacts, use of subagents or outside research, and a rough cost or time band. If cost depends on a later choice, say so.
+4. **Describe the next checkpoint.** Say what the user will see before more work runs. Never describe the entire phase as one uninterrupted batch.
+5. **Pause.** Ask whether to start this phase and stop. A prior workflow choice, completion gate, or “continue” given before this card is not the phase-start go-ahead.
+6. **Record the start.** After the user agrees, record the opening card, promised checkpoint, and user-message pointer in the round control log before doing phase work.
+
+After the user starts the phase, announce each instrument or tightly coupled cluster with its normal handshake just before it runs. Return its bounded reading at the phase's stated checkpoint. Do not compress the opening card and the first instrument run into one response.
+
+If a phase has internal stages, apply the same rule at any stage that introduces a new long-running subagent batch, outside research pass, or materially different instrument cluster: preview the work and cost, then pause. Short mechanical stages may proceed under the numbered phase's go-ahead, but still need their instrument handshakes and promised readouts.
+
+## Phase map
+
+| Phase | Main instruments | Required reference |
+| ----- | ---------------- | ------------------ |
+| 1 | `focus-interview`, `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, `neutral-control` | [phase1-elenctic-interview.md](phase1-elenctic-interview.md) |
+| 2 | prepare `belief-stress` | [phase2-monk-prompts.md](phase2-monk-prompts.md) |
+| 3 | complete `belief-stress`; compare `neutral-control` | [phase3-spawn-monks.md](phase3-spawn-monks.md) |
+| 4 | `fracture-scan`, `residue-collect`, conditional `frame-projector`, `defamiliarize`, `donor-perturb`, `structural-recombine`, `loss-audit`, `negative-transfer`, `frontier-rheometer` | [phase4-determinate-negation.md](phase4-determinate-negation.md) and linked stages |
+| 5 | `candidate-spectrograph` | [phase5-sublation.md](phase5-sublation.md) |
+| 6 | `position-preservation`, `hostile-assay`, conditional `framing-sensitivity` | [phase6-validation.md](phase6-validation.md) |
+| 7 | `tension-statement`, `third-pole` | [phase7-recursion.md](phase7-recursion.md) |
+
+The `atlas` runs throughout. Read each phase file and the full card for its named instruments just before use. The phase procedure, instrument card, and common contract are jointly binding; satisfy the stricter rule.
+
+## Roles and firewall
+
+- **Orchestrator:** interviews, reads research, frames positions, performs structural work, and works with the user.
+- **Monks:** fresh, context-isolated agents that fully believe one position. They never see sibling positions or orchestrator-only tension and synthesis material. Context isolation does not remove shared-model correlation.
+- **Research agents:** answer narrow gaps and write staging drafts when durable research is needed.
+- **Gardener:** background, sole writer of the dialectic wiki; ingests, links, lints, re-grounds, and assembles firewall-clean Monk briefs from disk. Its dispatch is asynchronous unless the very next operation needs one of those outputs.
+
+Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or round control logs. Keep immutable position snapshots, typed page classes, staged handoffs, append-only ledgers, and the rule that workflow gates cannot pass until required material is ingested.
+
+## Structural safeguards
+
+- Calibrate Monk roles with [belief-burden-catalog.md](belief-burden-catalog.md) without announcing a type.
+- Correct degenerate framings before spawning Monks.
+- Check that Monks differ in framework, not merely conclusion.
+- Mark what belief stress may have induced.
+- Preserve claim kinds through decomposition and candidate construction.
+- Keep misfits, recoverable loss-audit items, and candidate obligations distinct.
+- Keep residue available rather than forcing it into synthesis.
+- Admit candidate bands only when prior readings earn them; keep sibling drafts hidden and never rank the palette.
+- Validate each selected candidate on its own structural claim with position-preservation and context-isolated hostile checks.
+- Recurse only through a live new contradiction, with queue status and lineage preserved.
+
+## Completion Gate
+
+Apply this gate at every phase and stage boundary:
+
+1. **Enumerate.** List every required task, deliverable, and scheduled instrument from the phase or stage checklist and [dialectic-instrument-map.md](dialectic-instrument-map.md).
+2. **Start audit.** Cite the phase-opening card, promised checkpoint, and the user's phase-start pointer. A workflow-selection pointer or prior completion gate is not a substitute.
+3. **Instrument audit.** For each scheduled instrument, cite its ledger entry and attest `recorded-at`, any known `observed-at`, authorization, lifecycle state, actual seat and contexts, fallback, access delta, typed readings, calibration or control, artifact risk, unmeasured remainder, trace, and user-feedback state. Attest that later interpretation remains outside the raw readout.
+4. **Attest.** Mark every procedural and instrument item ✅ or ❌ with concrete evidence.
+5. **Gate.** Proceed only when all items are ✅. Plausible prose is not evidence that an instrument ran.
+6. **Waiver.** Only the user may waive a named deliverable. A waiver cannot manufacture blindness, independence, support, confidence, or a completed lifecycle.
+
+Show the checklist to the user before advancing.
+
+## Reference order
+
+Read each file in full immediately before executing it. Run its completion gate before reading the next one.
+
+1. [Dialectic instrument map](dialectic-instrument-map.md)
+2. [Phase 1: interview and research](phase1-elenctic-interview.md)
+3. [Phase 2: Monk prompts](phase2-monk-prompts.md)
+4. [Phase 3: spawn Monks](phase3-spawn-monks.md)
+5. [Phase 4: determinate negation](phase4-determinate-negation.md), its linked stages, and the [refinement loop](refinement-loop.md)
+6. [Phase 5: candidate palette](phase5-sublation.md)
+7. [Phase 6: validation](phase6-validation.md)
+8. [Phase 7: recursion](phase7-recursion.md)
+
+## Main outputs
+
+The workflow leaves a navigable trace rather than a single forced answer:
+
+- committed positions and their evidence;
+- an instrument ledger with authorization, lifecycle, execution, controls, typed readings, artifacts, and unmeasured remainders;
+- determinate negation and hidden questions;
+- decomposition, cross-links, residue, loss-audit dispositions, and transfer controls;
+- a plural candidate palette and candidate-local validation;
+- any model update the user requested or a named phase produced, recorded as before, after, and because; otherwise open questions remain open;
+- a branching queue of explored, open, and deferred contradictions with lineage.
+
+Full analysis belongs in workflow files. User checkpoints present the bounded reading or choice at hand. If the Field Trip belongs to an Expedition, first record any significant change, conclusion, or finding in the authoritative field log, then copy only that timestamped entry and its source pointer into the Expedition log.

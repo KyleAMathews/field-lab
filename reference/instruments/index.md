@@ -1,6 +1,6 @@
 # Instrument Registry
 
-Offer instruments by the phenomenon, not by the prestige of the method, and let the user select. Execution seat is part of the reading, not merely a speed choice. Every card returns a bounded reading, not a general explanation or recommendation. Read [the contract](../instrument-contract.md) before creating or changing a card. Inside an Expedition, use the [phase-to-instrument map](../expedition-instrument-map.md); phase procedures and cards are jointly binding.
+Offer instruments by the phenomenon, not by the prestige of the method, and let the user select. Execution seat is part of the reading, not merely a speed choice. Every card returns a bounded reading, not a general explanation or recommendation. Read [the contract](../instrument-contract.md) before creating or changing a card. Inside the full dialectic workflow, use the [phase-to-instrument map](../dialectic-instrument-map.md); phase procedures and cards are jointly binding.
 
 ## Walk field kit
 
@@ -23,8 +23,8 @@ Walk instruments and advanced instruments are available in every field-work stat
 
 Two advanced instruments have named Walk-scale forms:
 
-- **Taboo parallax:** a hypothesis-only scout can run on a Walk; the source-grounded three- or four-setting comparison normally becomes a Survey.
-- **Blind cartography:** a frozen source map plus three fresh probes can remain a session-only Walk scout; the 6–12-probe atlas normally becomes a Survey.
+- **Taboo parallax:** a hypothesis-only scout can run on a Walk; the source-grounded three- or four-setting comparison normally opens a Field Trip.
+- **Blind cartography:** a frozen source map plus three fresh probes can remain a session-only Walk scout; the 6–12-probe atlas normally opens a Field Trip.
 
 These are typical scales, not access rules. Keep either run on a Walk when it remains bounded and session-only; promote when collection becomes systematic or needs durable memory.
 

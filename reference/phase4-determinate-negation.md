@@ -2,9 +2,11 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
+**⛔ Phase-opening check:** After the re-entry check, present the Phase 4 opening card and wait for the user's Phase 4 go-ahead. Preview each later stage that introduces a new research or subagent batch and pause again before it runs.
+
 This is the structural analysis phase. You (the orchestrator) perform this yourself — do NOT delegate to a subagent, because you need to maintain continuity with the elenctic interview and your domain research.
 
-Phase 4 is also an instrument sequence. Read `reference/expedition-instrument-map.md` and each named card before its stage:
+Phase 4 is also an instrument sequence. Read `reference/dialectic-instrument-map.md` and each named card before its stage:
 
 | Stage | Instruments                                                                  |
 | ----- | ---------------------------------------------------------------------------- |

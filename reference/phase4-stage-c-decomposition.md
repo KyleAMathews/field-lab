@@ -99,7 +99,7 @@ Keep the summary line under 150 chars — future cross-dialectic passes grep acr
 
 ### Ingest the decomposition into the wiki
 
-Hand the Boydian decomposition to the **gardener** (`reference/dialectic-wiki.md`), which persists the reusable structure: the `[fit:]`-tagged recombinations become **cross-links** among `concept`/`position` pages — **these cross-edges _are_ the semi-lattice**, the skill's core structural output and exactly what later rounds build on — and any notable atomic parts that aren't yet pages become new `concept` pages. Distill and link: the full decomposition stays in `round_N_determinate_negation.md`; the wiki holds the cross-linked, reusable version with pointers back. (The misfits were already written as `tension` pages above.)
+Hand the Boydian decomposition to the **gardener in the background** (`reference/dialectic-wiki.md`) and continue all independent Stage C work. Do not wait at dispatch; synchronize only when a later operation needs the new links or the Stage C gate has no other unfinished items. The gardener persists the reusable structure: the `[fit:]`-tagged recombinations become **cross-links** among `concept`/`position` pages — **these cross-edges _are_ the semi-lattice**, the skill's core structural output and exactly what later rounds build on — and any notable atomic parts that aren't yet pages become new `concept` pages. Distill and link: the full decomposition stays in `round_N_determinate_negation.md`; the wiki holds the cross-linked, reusable version with pointers back. (The misfits were already written as `tension` pages above.)
 
 ## 4.6.6 Loss Audit — Single-Monk High-Value Ideas
 

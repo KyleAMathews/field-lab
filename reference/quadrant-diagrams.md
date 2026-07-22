@@ -1,10 +1,21 @@
-# Quadrant Diagrams (2×2s) — Primer
+# Quadrant Diagrams (2×2s) — Frame Projector Procedure
 
-A 2×2 is the dialectic's core move made visual. Its best use (ribbonfarm, "How to draw and judge quadrant diagrams"; Rao, _Art of Gig_) is **conflict de-escalation**: when two positions argue over a single spectrum, adding a second, _orthogonal_ axis often shows they sit in different **quadrants**, not at opposite ends of one line. That is exactly what the dialectic hunts for (the hidden question at 4.4, the orthogonal third pole at 1c.1, the F/G palette candidates). This primer is referenced from Phase 1, Phase 4, and Phase 5, where drawing a 2×2 is **mandatory** — see the honesty rule below for what "mandatory" actually requires.
+A 2×2 is the dialectic's core move made visual. Its best use follows Venkatesh Rao's [“How to Draw and Judge Quadrant Diagrams”](https://ribbonfarm.com/2009/04/20/how-to-draw-and-judge-quadrant-diagrams/): find four interesting clusters in ambiguous phenomenology, discover two lines that separate them, and test the structure by whether evocative labels and suitable examples make the clusters recognizable. In a dialectic this can de-escalate conflict by showing that apparent opponents occupy different quadrants rather than opposite ends of one line.
 
-## Start from the tension, not the dimensions
+## Contents
 
-Do **not** begin by hunting for "the two most important dimensions." Begin from the _argument the 2×2 needs to resolve_. The first axis is the live tension (the surface debate). The second axis is the one that, once added, turns "opposing positions on one line" into "different quadrants." If you can't name the argument it's resolving, you're drawing a taxonomy, not a 2×2.
+- [Bound the specimen](#bound-the-specimen)
+- [What kind of claim are you making?](#what-kind-of-claim-are-you-making)
+- [Rao sequence](#rao-sequence)
+- [Choose the label mode](#choose-the-label-mode)
+- [Rendering contract](#rendering-contract)
+- [Divergent and convergent use](#divergent-and-convergent-use)
+- [Judging tests](#judging-tests)
+- [Honesty rule](#honesty-rule)
+
+## Bound the specimen
+
+Begin from the argument or territory the 2×2 should clarify. This bounds the phenomenology; it does **not** supply the axes in advance. Do not begin by hunting for “the two most important dimensions” or by drawing two favored lines and filling their boxes. If no argument, field, or ambiguous body of material can be named, stop: there is no specimen to project.
 
 ## What kind of claim are you making?
 
@@ -16,42 +27,115 @@ Axes get their authority three different ways — be honest about which:
 
 In a dialectic the axes are almost always **conceptual or artistic, never statistical.** The load-bearing warning: **do not dress an artistic axis up as a measured fact.** "Maturity" or "alignment" plotted as if data is a rhetorical trick, not a finding.
 
-## How to draw one
+## Rao sequence
 
-1. Name **axis 1** = the live tension / surface debate.
-2. Find **axis 2** = a dimension genuinely _independent_ of axis 1 (see orthogonality test). This is the hard, valuable step.
-3. Label all four quadrants — each must name a real, distinct thing.
-4. Place the actors/positions (the monks, the user's options, the stakeholders).
-5. Read the **empty or under-occupied quadrant** — it's usually where the insight, the synthesis, or the missing pole lives.
+Show the work in this order. Preserve the stages in the raw readout instead of reverse-engineering them from the final diagram.
 
-ASCII template (render diagrams inline and in the round files):
+### 1. Inventory the phenomenology
+
+List the observations, cases, behaviors, positions, images, terms, or scenarios that make the specimen feel varied but patterned. Aim for enough items to expose repeated shapes—usually 8–20 for a serious run. Type every item by provenance: observation, user testimony, source claim, generated example, analogy, or hypothesis. Do not let generated examples masquerade as observed members.
+
+### 2. Form candidate clusters before axes
+
+Group the items into four interesting, internally coherent clusters without naming axes yet. Give each a temporary handle and show:
+
+- its member items and strongest prototype;
+- what holds the cluster together;
+- uncertain members, overlaps, and outliers;
+- empty or weak clusters that may show the material is not ready for a 2×2.
+
+When exploration is the goal, produce 2–4 meaningfully different candidate four-cluster partitions. Do not present one partition with cosmetic relabeling.
+
+### 3. Discover separating lines
+
+For each candidate partition, propose two spectra or watersheds that separate the four clusters. In a dialectic, test whether one line clarifies the surface tension and whether the other reveals a genuinely independent distinction; do not assume the stated tension must survive unchanged as axis 1.
+
+Show why each line separates the observed clusters, where it fails, and whether the two lines have useful “chemistry”: together they should make the clusters clearer than either line alone. Reject an axis pair when it merely describes one diagonal, leaves two cells impossible by definition, or was chosen because its words sound important.
+
+### 4. Choose evocative cluster labels
+
+Name the cluster, not its coordinates. A label such as `high control / low perspective` only repeats the axes. Prefer a noun, archetype, metaphor, or scenario name that picks out a fuzzy but coherent prototype and suggests more structure than a feature list.
+
+For each cluster, show 2–3 label candidates, the naming mode, and why the retained label fits its members. Keep the four labels in one broad style unless a deliberate mismatch reveals something. Do not smuggle praise, blame, causality, or a preferred answer into one label.
+
+### 5. Render, repopulate, and test
+
+Draw the complete diagram, then place the inventory items back into it. Every occupied cell needs at least one relevant member or example; use 1–2 representative examples in the diagram and list additional members below. Mark a cell `[empty]` or `[under-occupied]` only after searching the inventory and relevant source material, not because no example came immediately to mind.
+
+If the examples do not fit their labels, several items drift across borders, or the labels collapse when examples are removed, return to clustering or the separating lines. Do not polish the names around a broken structure.
+
+### 6. Return the readout
+
+Return these blocks in order:
+
+1. **Phenomenology inventory** with claim kinds and provenance.
+2. **Candidate clusters** with members, prototypes, overlaps, and outliers.
+3. **Candidate separators** with independence, chemistry, and failure notes.
+4. **Label workshop** with alternatives, naming mode, and retained labels.
+5. **Rendered 2×2(s)** with examples and empty-cell status.
+6. **Calibration** covering source limits, axis claim type, confidence, orthogonality, and what remains unmeasured.
+
+The inventory, clusters, axes, and labels are instrument readings. Do not turn them into a recommendation or choose the winning map for the user.
+
+## Choose the label mode
+
+Match labels and supporting material to the specimen:
+
+| Material | Prefer | Required support |
+| --- | --- | --- |
+| Conceptual and context-free | Metaphysical category or dominant attribute | Coherent conceptual argument |
+| Conceptual and historically specific | Rich scenario or possible-world name | A short imagined story or what-if |
+| Experienced but abstract | Metaphor or calibration image | The pattern of experience the metaphor preserves |
+| Experienced and specific | Archetype or prototype | Real people, events, places, practices, or cases |
+
+When using an abstract label for experienced and specific material, map it back to concrete examples. When unsure, prefer the more evocative coherent label over structural coordinates, but never let wit outrun the cluster's members.
+
+## Rendering contract
+
+Whenever a phase or instrument says to draw, produce, present, or return a 2×2, render a complete monospaced ASCII or box-drawing diagram **inline for the user and in any durable artifact**. A title followed by `axis A × axis B: label, label, label, label`, four bullets, or a Markdown table is not a rendered 2×2 and does not satisfy a completion gate.
+
+Every candidate map must show:
+
+1. both named axes and both semantic poles of each axis;
+2. visible horizontal and vertical directions;
+3. four bounded cells, each with its own label;
+4. at least one relevant example or observed member in every occupied cell—normally 1–2 representative placements—or an explicit `[empty]` / `[under-occupied]` mark;
+5. the axis claim type, second-axis confidence, source pointers for placements, and orthogonality result immediately below the diagram.
+
+If several candidate maps are generated, draw **every map separately**. Do not compress the set into one-line summaries. If labels are too long, use short cell names or `Q1`–`Q4` inside the diagram and give a legend below; never remove the axes or boxes to save space.
+
+Template:
 
 ```
-                       axis-2: HIGH
-        ┌──────────────────────┬──────────────────────┐
-        │ top-left quadrant     │ top-right quadrant    │
-        │ <label> — <who/what>  │ <label> — <who/what>  │
- axis-1 ├──────────────────────┼──────────────────────┤  axis-1
-  LOW   │ bottom-left quadrant  │ bottom-right quadrant │  HIGH
-        │ <label> — <who/what>  │ <label> — <who/what>  │
-        └──────────────────────┴──────────────────────┘
-                       axis-2: LOW
+                              Y: <pole +>
+                                  ↑
+              ┌───────────────────┬───────────────────┐
+              │ <top-left label>  │ <top-right label> │
+              │ <who/what/empty>  │ <who/what/empty>  │
+ X: <pole −> ←├───────────────────┼───────────────────┤→ X: <pole +>
+              │ <bottom-left>     │ <bottom-right>    │
+              │ <who/what/empty>  │ <who/what/empty>  │
+              └───────────────────┴───────────────────┘
+                                  ↓
+                              Y: <pole −>
 ```
 
-(Name the axes with real poles, not "high/low" — e.g. "control: centralized ↔ emergent.")
+Name the axes with real poles, not bare “high/low”—for example, `control: centralized ↔ emergent`. Use high/low only when the measured variable itself is named.
 
-## Divergent vs. convergent use
+## Divergent and convergent use
 
-The same tool is used two opposite ways. **Early (exploration):** generate _several_ candidate 2×2s with different axis pairs to map the space of possible tensions — you're surveying where the real fight is, not committing to a frame. **Later (analysis/synthesis):** draw the _single_ targeted diagram the analysis has earned, to locate a blind spot or construct a resolution. Don't converge early or sprawl late.
+The same tool is used two opposite ways. **Early (exploration):** generate several candidate clusterings and separating-line pairs to map the space of possible tensions—you are locating the real fight, not committing to a frame. **Later (analysis/synthesis):** use the accumulated phenomenology to draw the single targeted diagram the analysis has earned. Do not converge early or sprawl late.
 
 ## Judging tests
 
 - **Orthogonality** — are the axes actually independent, or secretly correlated (a diagonal in a costume)? If every real case lands on one diagonal and the off-diagonal quadrants are empty _for the same reason_, your two axes are one axis.
+- **Cluster precedence** — were clusters found in the phenomenology before the axes, or were examples recruited to decorate preselected boxes?
+- **Evocative recognition** — do the labels evoke fuzzy but coherent prototypes, or merely restate coordinates? Can relevant examples be named without special pleading?
 - **All four meaningful** — does each quadrant name a real, distinct thing someone could occupy? A quadrant that's "impossible by definition" means the axes aren't independent.
 - **The telling empty quadrant** — an empty quadrant that's empty _for an interesting reason_ is the payoff (the unexplored synthesis, the missing third pole). An empty quadrant that's empty because the axis was forced is a defect.
 - **Does it resolve the argument?** — go back to the tension you started from. Does placing the positions in quadrants actually de-escalate the fight, or just relabel it?
 
-## The honesty rule (what the eligibility check means)
+## Honesty rule
 
 When a phase calls for an eligibility check, **test whether a plausible second axis exists before calling `frame-projector`**. This does not mean “always draw a clean four-box diagram.” Forcing a 2×2 where the axes do not earn it imports false structure, the exact failure the skill guards against elsewhere (4.6 anti-tidiness, Adorno's non-identity, and this skill's documented pull toward too-elegant resolutions). A 2×2 is a **hypothesis to test, not a truth to assert.**
 
