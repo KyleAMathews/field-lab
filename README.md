@@ -1,4 +1,4 @@
-# Dialectic — a field lab for thinking with AI
+# Field Lab — thinking with AI
 
 _The Electric Monks are named after Douglas Adams' machines built to believe things for you._
 
@@ -11,13 +11,13 @@ Every inquiry begins as a **Walk**. A direct answer is a complete and successful
 Install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills) so the skill and its reference files stay together. It supports Claude Code, Codex, and other agents:
 
 ```bash
-npx skills add KyleAMathews/hegelian-dialectic-skill
+npx skills add KyleAMathews/field-lab
 ```
 
 Add `-g` for a global install. Then invoke the skill in an ordinary question:
 
 ```text
-/dialectic Why do I keep putting off this small migration?
+/field-lab Why do I keep putting off this small migration?
 ```
 
 ## First time? Take the tutorial
@@ -25,19 +25,19 @@ Add `-g` for a global install. Then invoke the skill in an ordinary question:
 Before bringing a difficult question, try a guided, low-stakes tour of the bench:
 
 ```text
-/dialectic I want to test the instruments in this field lab. Briefly explain how it works, then give me a few easy, low-stakes exercises for instruments that produce different kinds of readings. Let me choose what to try and guide me through one at a time.
+/field-lab I want to test the instruments in this field lab. Briefly explain how it works, then give me a few easy, low-stakes exercises for instruments that produce different kinds of readings. Let me choose what to try and guide me through one at a time.
 ```
 
 The tutorial should explain the lab briefly, offer contrasting exercises, and then follow the same rules as ordinary use: you select each instrument; the agent announces it; the instrument returns a bounded reading; and you decide what the readings mean together.
 
 ## Quick examples
 
-- **Off-the-cuff question:** `/dialectic Why do moths fly toward porch lights?` → direct answer, no visible method.
-- **Fact-shaped practical Walk:** `/dialectic How many branches should this fruit bush have?` → clarify the desired form, then search or advise; no files.
-- **Instrument-rich Walk:** `/dialectic My wife and I mean different things by a clean kitchen.` → optional term scan, stake map, and small experiment; no files.
-- **Hostile thesis Walk:** `/dialectic Test this thesis against its strongest opposition.` → focus interview, short context-isolated Monks, and user correction.
-- **Survey:** `/dialectic Compare four family calendar systems over three weeks and let us resume later.` → shared collection plan and durable Survey log.
-- **Expedition:** `/dialectic I want the full Expedition on whether our framework should own deployment.` → committed positions, decomposition, candidate palette, audit, and recursion.
+- **Off-the-cuff question:** `/field-lab Why do moths fly toward porch lights?` → direct answer, no visible method.
+- **Fact-shaped practical Walk:** `/field-lab How many branches should this fruit bush have?` → clarify the desired form, then search or advise; no files.
+- **Instrument-rich Walk:** `/field-lab My wife and I mean different things by a clean kitchen.` → optional term scan, stake map, and small experiment; no files.
+- **Hostile thesis Walk:** `/field-lab Test this thesis against its strongest opposition.` → focus interview, short context-isolated Monks, and user correction.
+- **Survey:** `/field-lab Compare four family calendar systems over three weeks and let us resume later.` → shared collection plan and durable Survey log.
+- **Expedition:** `/field-lab I want the full Expedition on whether our framework should own deployment.` → committed positions, decomposition, candidate palette, audit, and recursion.
 
 You do not need to choose Walk or Survey up front. Ask for a named instrument directly if you want one: “run a term scan,” “check for a ground condition,” “map this possibility space,” or “stress these positions with Electric Monks.”
 

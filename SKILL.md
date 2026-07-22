@@ -1,9 +1,9 @@
 ---
-name: dialectic
+name: field-lab
 description: "An always-available field lab for thinking with AI. Use it for any question, from an off-the-cuff factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when they are enough. For nontrivial inquiry, begin with a camera-mode Walk: interview lightly, offer useful instruments, and run only instruments the user selects. Return bounded readings rather than explaining, synthesizing, or acting beyond what an instrument measures. Promote only when the work needs a systematic Survey or the full Electric Monk Expedition."
 ---
 
-# Dialectic Field Lab
+# Field Lab
 
 Treat every inquiry as field work. Start with the smallest useful feedback loop, carry the whole instrument bench, and add persistence only when it earns its cost.
 
