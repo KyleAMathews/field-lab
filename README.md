@@ -2,6 +2,8 @@
 
 **A kit of instruments for seeing more with an LLM before you decide what it means.**
 
+![A cartoon field party and two brass Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
+
 ## Install
 
 Install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills) so the skill and its instruments stay together. It supports Claude Code, Codex, and other agents:
