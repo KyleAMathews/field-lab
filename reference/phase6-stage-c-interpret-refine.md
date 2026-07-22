@@ -2,13 +2,14 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-*With monk validations (Stage A) and auditor reports (Stage B) in hand, interpret each candidate on its own terms, then help the user refine the palette. Do not cross-rank candidates.*
+_With monk validations (Stage A) and auditor reports (Stage B) in hand, interpret each candidate on its own terms, then help the user refine the palette. Do not cross-rank candidates._
 
 ## 6.4 Interpreting the Results — Per Candidate
 
 Each candidate's validation is interpreted on its own terms. Do NOT cross-rank candidates.
 
 ### S interpretation
+
 - **Both monks feel elevated:** S is valid. Belief was transformed, not defeated.
 - **One monk feels defeated:** S is biased toward the other side. Revise S or drop it from the palette.
 - **Both monks feel defeated:** S killed both beliefs without replacing. Probably compromise. Drop S or reopen Phase 4 for this candidate.
@@ -16,32 +17,43 @@ Each candidate's validation is interpreted on its own terms. Do NOT cross-rank c
 - **Auditor proposes harder contradiction:** This is a high-value Phase 7 recursion target.
 
 ### J interpretation
+
 - **Both monks say the juxtaposition is PRODUCTIVE:** J is valid.
 - **Either monk says it's EVASIVE:** Check whether the monk's critique is structural or is itself protecting the shared interest J surfaced. If the latter, the critique is evidence J is right.
 - **Auditor says the "reveal" is just restating the contradiction:** Revise J or drop.
 - **Auditor says zones are a convenient fiction:** If J relies on local sovereignty, this may be fatal. Re-examine.
 
 ### G interpretation
+
 - **Both monks say the ground condition dissolves the debate:** G is valid.
 - **Either monk says G operationalizes a higher-level factor as a lower-level mechanism:** G has enacted level-reduction. Drop or revise.
 - **Either monk says G is on the same axis in disguise:** G hasn't earned its slot.
 - **Auditor says "why was it missed" explanation is confabulation:** Check carefully — this is a common G failure mode.
 
 ### F interpretation
+
 - **Both monks say the genealogy and reframed question are correct:** F is valid.
 - **Either monk challenges the historical claim:** Check the claim. If F's genealogy is sloppy, F fails.
 - **Auditor says the constituency is scapegoat, not load-bearing:** Revise or drop.
 - **Auditor says the refocused question has its own fossil:** This is a Phase 7 recursion target — F exposed one frame, the recursion may need to expose the next.
 
 ### U interpretation
+
 - **Both monks recognize the opposite loadings:** U has identified something real.
 - **Either monk says "we're using the word about different referents":** U is disambiguation, not undecidability. Drop or reframe.
 - **Auditor says U secretly privileges one loading:** Revise to make the refusal-to-resolve genuine.
 - **U survives intact:** The undecidable is itself the finding for this round. It enters Phase 7 as the object, not as a problem to resolve.
 
+## 6.4.1 Framing-Sensitivity Control
+
+Before accepting a surviving candidate whose validity may depend on a loaded term, pole order, prompt form, or model family, announce and run `framing-sensitivity`. Freeze one decision-relevant claim, change one framing variable at a time, and give each controlled variant to a fresh context without sibling outputs. Record what remained stable and what moved.
+
+If no surviving result has a decision-relevant framing dependency, record `framing-sensitivity: not called` with the reason. An orchestrator self-check after seeing all results is correlated and must be labeled as such; it is not a controlled repeat.
+
 ## 6.5 Refining the Palette
 
 After validation, the user picks among:
+
 - **Accept a single candidate** and proceed to Phase 7 with that candidate as the round's output
 - **Combine two candidates** — explicitly name how they combine (e.g., "S for the central move, J for what S drops") rather than collapsing J into S
 - **Drop all candidates** and reopen Phase 4 — the decomposition didn't produce a candidate that fits
@@ -50,6 +62,7 @@ After validation, the user picks among:
 **Write the full validation and auditor output to files** — one per candidate (e.g., `round_N_validation_S.md`, `round_N_validation_J.md`).
 
 **Do not dump all feedback on the user.** For each candidate that survived validation, present:
+
 - A 2-3 sentence summary of what the monks and auditor said
 - The ONE concrete improvement (if any) most worth making
 
@@ -65,8 +78,11 @@ Then ask the user, per surviving candidate: "Incorporate this improvement? Or ta
 ---
 
 **Completion gate — enumerate & attest before Phase 7 / stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+
 - [ ] 6.4: each candidate interpreted on its own terms (no cross-ranking)
 - [ ] Full validation + auditor output written to `round_N_validation_<candidate>.md` per candidate
 - [ ] 6.5: for each surviving candidate, the ONE most worthwhile improvement identified
 - [ ] Improvements presented to the user **one candidate at a time**, with a response received before moving to the next (this user-response item is not self-waivable)
 - [ ] The round's outcome recorded (candidate chosen / two combined + named / palette held open / Phase 4 reopened)
+- [ ] `framing-sensitivity` run for every decision-relevant framing dependency, with isolated variants and stable/sensitive findings recorded; or explicitly not called with a reason
+- [ ] Phase 6 instrument ledger contains complete raw `position-preservation`, `hostile-assay`, and any `framing-sensitivity` readouts with authorization, typed readings, calibration or controls, trace paths, artifact risks, unmeasured remainders, and user corrections; user decisions and the orchestrator's disposition remain outside the readouts

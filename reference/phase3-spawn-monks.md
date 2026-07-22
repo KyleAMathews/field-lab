@@ -2,7 +2,11 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.1 surfaced additional poles. Use `claude -p` (or your environment's equivalent for spawning an independent agent) so each gets a clean context with full belief commitment.
+## Instrument lifecycle: run and read `belief-stress`
+
+Phase 3 executes the prepared `belief-stress` instrument under its parallel-subagent contract. Each Monk sees its own full-conviction prompt and the shared neutral substrate, but not sibling positions or outputs. After all essays return, compare their structures with the Phase 1 `neutral-control`: mark what was already visible, what belief stress exposed, and what the perturbation may have induced. Append the full belief-stress readout before presenting the structural summary.
+
+Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.1 surfaced additional poles. Use the host's subagent mechanism so each gets a clean context with full belief commitment.
 
 ```bash
 # Example for Claude Code (scales to N monks):
@@ -19,15 +23,17 @@ Run all monks in parallel if your environment supports it.
 **For recursive rounds (Phase 7):** See Phase 7 for guidance — recursive rounds may or may not need new research depending on whether the new contradiction opens new conceptual domains.
 
 **After both complete:** Read both outputs carefully. Check:
-- Did each monk actually *believe* fully, or did it hedge? (A hedging monk has failed its core function.)
+
+- Did each monk actually _believe_ fully, or did it hedge? (A hedging monk has failed its core function.)
 - Did the framing corrections work, or did a monk fall into the degenerate framing?
 - Are the arguments grounded in specific evidence (from the briefing or their own searches)?
 
-**Decorrelation check:** Verify the monks actually diverged. The skill's value comes from *structurally uncorrelated* exploration of the problem space. Check pairwise across all monks:
-- Do the monks cite *different* evidence, or substantially overlapping sources?
-- Do they frame the problem using *different* conceptual vocabularies?
-- Do their unstated assumptions *diverge*, or do they share the same background framework?
-- Would a reader recognize these as genuinely *different perspectives,* or the same perspective with different conclusions bolted on?
+**Decorrelation check:** Verify the monks actually diverged. The skill's value comes from _structurally uncorrelated_ exploration of the problem space. Check pairwise across all monks:
+
+- Do the monks cite _different_ evidence, or substantially overlapping sources?
+- Do they frame the problem using _different_ conceptual vocabularies?
+- Do their unstated assumptions _diverge_, or do they share the same background framework?
+- Would a reader recognize these as genuinely _different perspectives,_ or the same perspective with different conclusions bolted on?
 
 **With 3+ monks, check for coalition collapse.** The failure mode is two monks sharing a frame while only the third is genuinely different — this is a 2-vs-1 argument masquerading as three-way dialectic. If C is clearly orthogonal but A and B have collapsed onto the same axis, the third-pole probe worked but the A/B decorrelation didn't; reformulate A or B before proceeding. If any two monks' framings blur into each other, cut to 2 monks rather than ship degraded decorrelation.
 
@@ -35,9 +41,9 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener → `position` pages** (`reference/dialectic-wiki.md`): each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Immutable per-round snapshots make monk *drift* visible when you re-run monks in the refinement loop. **Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead (scale to N monks):
+**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener → `position` pages** (`reference/dialectic-wiki.md`): each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. The essays and position pages are the raw `belief-stress` reading. Keep the next structural summary labeled as Phase 3 interpretation outside the instrument ledger. Give the user a quick orientation instead of dumping the essays (scale to N monks):
 
-> The monks have written their essays (saved to files if you want to read them). Here's the structural summary:
+> The monks have written their essays (saved to files if you want to read them). The essays are the instrument reading; here is the separate Phase 3 structural summary:
 >
 > **Monk A** argued [2-3 sentence summary of the core claim, key evidence, and most interesting move].
 >
@@ -47,17 +53,19 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 >
 > **Where they diverged:** [describe the structural differences pairwise — what conceptual frame each used. With 3+ monks, note which pair diverged most and which least — the pair that diverged least is a decorrelation risk].
 >
-> **Anything surprising:** [Note if a monk made an unexpected move, cited evidence you didn't anticipate, or took the position somewhere the user might not have expected].
+> **Other recorded moves:** [List further claims or evidence with pointers and claim kinds. Do not filter them by what the agent finds surprising or important].
 
 Then ask:
+
 1. Does this capture the positions accurately, or is either monk missing something important about how this actually works?
 2. **"Is there a claim either monk makes that should be tested against evidence neither has considered?"** — This is the second high-leverage intervention point. In testing, users identified claims that sounded plausible but collapsed under scrutiny when tested against comparison classes the monks didn't consider. Catching this before synthesis prevents the entire downstream analysis from being built on an untested assumption.
 
-If the user identifies a testable claim, run a targeted research agent to check it. This is cheap (~25-50K tokens) and can fundamentally change the quality of the synthesis.
+If the user identifies a testable claim, offer a targeted research pass and state what it would measure. Run it only if the user selects it. Its sourced findings remain a raw reading; later synthesis may cite them but must not be folded into the instrument ledger.
 
 ---
 
 **Completion gate — enumerate & attest before Phase 4 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+
 - [ ] All N monks spawned as separate subagent sessions, in parallel
 - [ ] Each essay checked for hedging and degenerate framing (re-run any monk that hedged)
 - [ ] Pairwise decorrelation checked; with N≥3, coalition-collapse check run (no two monks sharing one frame)
@@ -65,3 +73,5 @@ If the user identifies a testable claim, run a targeted research agent to check 
 - [ ] Monk essays ingested by the gardener as `position` pages (immutable per-round snapshots, cross-linked)
 - [ ] Structural summary presented to the user; both high-leverage questions asked (accuracy check + testable-claim check)
 - [ ] Any user-identified testable claim researched before proceeding
+- [ ] `belief-stress` readout records authorization, actual parallel contexts, essay traces, access delta, typed raw readings, hedging/decorrelation control, artifact risk, unmeasured remainder, and user correction; any correlated fallback remains downgraded and later interpretation is separate
+- [ ] `neutral-control` comparison records which structures predated belief stress, which appeared only under commitment, and which remain unsupported or possibly induced

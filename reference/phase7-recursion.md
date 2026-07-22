@@ -2,7 +2,11 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-**Inner loop vs. outer loop.** Two loops run, and they are different. The **inner loop** (the 4.9 refinement-loop router, `reference/refinement-loop.md`) matures *this* contradiction on its frozen anchor *before* the first synthesis — its operators are Research / Refine / Re-split. **Phase 7 is the outer loop:** it jumps *after* a synthesis to a queued *different* contradiction. Discriminator: **re-split stays on the same frozen anchor; Phase 7 moves to a different queued contradiction.** Don't blur them — a re-split is not a new round, and a new round is not a re-split.
+**Inner loop vs. outer loop.** Two loops run, and they are different. The **inner loop** (the 4.9 refinement-loop router, `reference/refinement-loop.md`) matures _this_ contradiction on its frozen anchor _before_ the first synthesis — its operators are Research / Refine / Re-split. **Phase 7 is the outer loop:** it jumps _after_ a synthesis to a queued _different_ contradiction. Discriminator: **re-split stays on the same frozen anchor; Phase 7 moves to a different queued contradiction.** Don't blur them — a re-split is not a new round, and a new round is not a re-split.
+
+## Phase 7 instruments: `tension-statement` and `third-pole`
+
+Announce `tension-statement` before converting the idea burst into candidate directions. Each proposed direction must name two sound demands, the condition that makes them collide, and the mechanism of conflict; a topic or weakness alone is not a recursive contradiction. Then run `third-pole` across the clustered directions to test whether the menu omits an independent axis or constituency. A clear “none found” is a valid reading. Record both instruments before the user chooses.
 
 **Recursion is not optional cleanup. It is the engine of the skill.** The first round produces a synthesis. The recursive rounds force that synthesis to confront its own limitations, generating increasingly powerful mental models. Each cycle compresses understanding upward. In test runs, a React/Vue dialectic went from "corporate lab vs. independent auteur" → "the Layer Thesis" → "co-evolutionary arms race." An institutional identity dialectic went from "enforcement vs. freedom" → "practice-based identity" → "nucleation as formation mechanism" → then surfaced a third-level tension that reframed everything. In both cases, the recursive rounds produced the most valuable insights.
 
@@ -11,37 +15,41 @@
 > That was Round 1. Here's something important: **that round was the least insightful we'll get.** It was calibration — getting the broad shape of the tension on the table. Each subsequent round gets sharper, more specific to your actual situation, and more likely to surface something genuinely new. The process is like focusing a lens — each round tightens the resolution. Ready for Round 2?
 
 **The default should be to recurse at least once.** Only stop if:
+
 - The synthesis generated no significant new contradictions (rare if the sublation is genuine — a real Aufhebung is fertile)
 - The user explicitly wants to stop
 - The new contradictions are outside the scope of what the user cares about
 
 ## Proposing Recursive Directions
 
-After Phase 6 validation, the orchestrator has rich material for identifying where the dialectic could go next. **The orchestrator proposes directions — the user chooses.** A genuine sublation is fertile: it typically generates multiple new contradictions, not just one. The dialectic *branches*.
+After Phase 6 validation, the orchestrator has rich material for identifying where the dialectic could go next. **The orchestrator proposes directions — the user chooses.** A genuine sublation is fertile: it typically generates multiple new contradictions, not just one. The dialectic _branches_.
 
 Sources for recursive contradictions:
+
 - **New contradictions identified in Phase 5** — every genuine sublation generates these
 - **Convergent critiques from validation agents** — when both agents independently identify the same weakness, that weakness IS a candidate contradiction
 - **The user's intervention** — often the most powerful source. The user sees something both agents and the orchestrator missed.
 - **Unresolved tensions the synthesis names but doesn't engage** — the synthesis may acknowledge a deeper problem without solving it
 
 **Be creative about what kinds of contradictions you propose.** They don't have to be two sides of the same question at a higher level. They can be:
-- A tension *within* the synthesis itself (the synthesis says X, but X requires Y, and Y conflicts with the synthesis's own premises)
-- A tension between the synthesis and the *domain's actual power structure* (the synthesis is intellectually right but doesn't engage how decisions actually get made)
+
+- A tension _within_ the synthesis itself (the synthesis says X, but X requires Y, and Y conflicts with the synthesis's own premises)
+- A tension between the synthesis and the _domain's actual power structure_ (the synthesis is intellectually right but doesn't engage how decisions actually get made)
 - A tension between what the synthesis recommends and what's actually feasible given constraints the first round abstracted away
-- A meta-tension about the *kind of answer* the dialectic produced (e.g., "our synthesis is a theory — but does the domain need a theory or a mechanism?")
+- A meta-tension about the _kind of answer_ the dialectic produced (e.g., "our synthesis is a theory — but does the domain need a theory or a mechanism?")
 
 ## Present a Menu, Not a Decision
 
 **YOU MUST DO THE IDEA BURST BEFORE PROPOSING DIRECTIONS.** This is the most commonly skipped step in the entire skill, and skipping it visibly degrades the quality of recursive directions. When the orchestrator jumps straight to "here are 2-3 directions," it proposes whatever's most obvious from the synthesis — which is almost always a safe, predictable next step rather than the genuinely fertile contradiction that would produce the best next round. The idea burst is what prevents this.
 
-**Do not skip this step. Do not abbreviate it. Do not combine it with direction-clustering.** Generate the burst first, read it, *then* cluster.
+**Do not skip this step. Do not abbreviate it. Do not combine it with direction-clustering.** Generate the burst first, read it, _then_ cluster.
 
-Generate a **burst of 5-8 candidate concepts/directions** — not just contradictions but concrete mechanisms, architectural patterns, novel framings, and open vulnerabilities that the synthesis makes newly conceivable. Cast a wide net first: the value is in the *density* of the newly opened conceptual space. Include material from monk defeasibility responses (Phase 6, question 5), auditor output, and your own structural analysis. The burst should contain ideas that surprise you — if every item is predictable from the synthesis, you're not casting wide enough.
+Generate a **burst of 5-8 candidate concepts/directions** — not just contradictions but concrete mechanisms, architectural patterns, novel framings, and open vulnerabilities that the synthesis makes newly conceivable. Cast a wide net first and include material from monk defeasibility responses (Phase 6, question 5), auditor output, and your own structural analysis. Preserve the source and claim kind of each candidate; breadth is useful, but novelty is not a validity test.
 
 Then **cluster the burst into 2-4 coherent directions**, each briefly described as a contradiction worth exploring. Several candidate concepts often point at the same underlying tension from different angles. For example:
 
 > The synthesis generated three fertile contradictions:
+>
 > 1. **The formation problem:** The synthesis says identity should live in shared practice — but who forms the practitioners? (internal tension)
 > 2. **The authority problem:** The synthesis argues from historical theology, but decisions are made by prophetic authority — does this synthesis engage the actual power structure? (synthesis vs. domain reality)
 > 3. **The scalability problem:** Nucleation works for small communities — does it survive contact with a 30,000-student institution? (synthesis vs. feasibility)
@@ -53,66 +61,75 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 **Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
 
 **Completion gate — enumerate & attest before launching the next round or stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+
 - [ ] Idea burst (5–8 candidate contradictions) generated **first**, read, and only then clustered — not skipped or combined with clustering
 - [ ] Round's synthesis **transferred** against the other queued tensions (tried for dissolve/reframe/sharpen) before the next direction was chosen
-- [ ] Candidate directions cleared the **minimal criterion** (not-too-trivial, not-too-solved vs. existing wiki `tension`/`synthesis` pages) and were selected by **novelty**, not resolvability
+- [ ] Candidate directions cleared the **minimal criterion** (not-too-trivial, not-too-solved vs. existing wiki `tension`/`synthesis` pages); the user selected the next direction without an agent novelty ranking
 - [ ] Burst clustered into 2–4 candidate directions
 - [ ] Directions presented to the user as a menu (orchestrator proposes, user chooses) — no unilateral direction pick
 - [ ] Queue written/updated in `dialectic_queue.md` with each contradiction's source round and status
 - [ ] On stopping instead: final state of the dialectic queue presented to the user (explored / open / deferred)
+- [ ] `tension-statement` raw readout records authorization, the structure and failure test of each proposed direction, calibration, artifact risk, unmeasured remainder, and trace; `third-pole` records an orthogonal direction or “none found” under the same fields; user choice and later interpretation remain separate
 
 ## Treat the Queue as a Population, Not a To-Do List (open-endedness)
 
-The dialectic is an *open-ended* engine — the value is divergence, not convergence on one answer (Lehman & Stanley; POET). Three disciplines keep the recursion trailblazing rather than spinning or confirming priors:
+The dialectic is an _open-ended_ engine — the value is divergence, not convergence on one answer (Lehman & Stanley; POET). Three disciplines keep the recursion trailblazing rather than spinning or confirming priors:
 
-**Transfer between tensions — the anti-prior-confirmation engine.** Before picking the next direction, **try the round's synthesis against every *other* contradiction in the queue.** Does it dissolve, reframe, or sharpen one of them? POET's core finding is that a stepping stone found solving problem A is what unlocks a stuck problem B — a synthesis bred on A and applied to a *distant* queued B is exactly the move that escapes A's prior-confirming local optimum. If a synthesis strongly addresses a queued tension, either it resolves that tension (record it and close the queue item) or it seeds that tension's next round as fresh material. Do the transfer pass *before* choosing the next direction — the result often changes which direction is most fertile.
+**Transfer between tensions — the anti-prior-confirmation engine.** Before picking the next direction, **try the round's synthesis against every _other_ contradiction in the queue.** Does it dissolve, reframe, or sharpen one of them? POET's core finding is that a stepping stone found solving problem A is what unlocks a stuck problem B — a synthesis bred on A and applied to a _distant_ queued B is exactly the move that escapes A's prior-confirming local optimum. If a synthesis strongly addresses a queued tension, either it resolves that tension (record it and close the queue item) or it seeds that tension's next round as fresh material. Do the transfer pass _before_ choosing the next direction — the result often changes which direction is most fertile.
 
 **Minimal-criterion admission (not-too-trivial, not-too-solved).** A contradiction earns a place in the queue only if it clears a weak band, not a strong objective:
-- *Not too trivial* — a monk could defend each pole at full conviction (a one-sided or merely verbal disagreement doesn't qualify).
-- *Not already solved* — check the wiki's `tension` and `synthesis` pages; a contradiction an existing synthesis already dissolves is not new. (This is POET's "not too easy / not too hard" band, ported to idea-space.)
 
-**Select by novelty, not by resolvability.** Among admitted directions, prefer the one *most distant from what the wiki has already explored* — the one that opens a new region — over the one that looks most tractable or most obviously next. Ranking by "easiest to resolve" is the objective-trap; ranking by novelty is what sustains open-endedness. (The idea burst below already casts a wide net — this is the rule for *selecting* among the burst.)
+- _Not too trivial_ — a monk could defend each pole at full conviction (a one-sided or merely verbal disagreement doesn't qualify).
+- _Not already solved_ — check the wiki's `tension` and `synthesis` pages; a contradiction an existing synthesis already dissolves is not new. (This is POET's "not too easy / not too hard" band, ported to idea-space.)
 
-**Deferred (future directions, not built yet):** run the wiki as a MAP-Elites *illuminating* archive (one elite synthesis per niche of a descriptor space, scored by downstream-contradiction fecundity; empty cells = an explore-here signal), and add open-endedness *meters* (an ANNECS analog counting novel-and-then-solved tensions; a Picbreeder re-search diagnostic — a synthesis you *can't* reach by targeting it was a genuine stepping stone). Powerful, but they need a descriptor space and scaffolding — revisit once the loop mechanics are settled.
+**Let the user select the direction.** Show how each admitted direction differs from what the wiki has already explored, what evidence supports it, and what remains unmeasured. Do not turn distance, novelty, or tractability into an automatic ranking. Those are readings the user may weigh, not steering rules for the agent.
+
+**Deferred (future directions, not built yet):** run the wiki as a MAP-Elites _illuminating_ archive (one elite synthesis per niche of a descriptor space, scored by downstream-contradiction fecundity; empty cells = an explore-here signal), and add open-endedness _meters_ (an ANNECS analog counting novel-and-then-solved tensions; a Picbreeder re-search diagnostic — a synthesis you _can't_ reach by targeting it was a genuine stepping stone). Powerful, but they need a descriptor space and scaffolding — revisit once the loop mechanics are settled.
 
 ## Running Recursive Rounds
 
 **The wiki compounds across rounds; the control log is per-round.** The research wiki does **not** reset between rounds — Round 2 builds on Round 1's pages (the space is interconnected; see `reference/dialectic-wiki.md`). But each new round opens a **new control log** (`round_N_dialectic_log.md`) whose **Anchor** is the contradiction this round launched from, carrying a one-line **lineage pointer** back to the synthesis that spawned it. Write that anchor at the start of the round, before re-spawning monks. This is also why later rounds get sharper rather than merely different — the walk deepens as the wiki compounds.
 
+Every recursive round starts again at Phase 1 and runs the full Expedition instrument map and completion gates. Inherit valid prior readings with their actual execution traces, rerun instruments whose specimen or required context changed, and never jump from a chosen Phase 7 direction straight to Monk spawning.
+
 Each recursive cycle follows Boyd's full cycle: the previous synthesis is a Structure that must be Unstructured (destructive deduction — shatter it into atomic parts, break the correspondence between the concept and its constituents) and Restructured (creative induction — find cross-domain connections to synthesize something new). Boyd proves this isn't just a good idea — the Second Law guarantees that any inward-oriented refinement of the existing synthesis will increase entropy. Recursive rounds often need **new research and fresh agents** because the system must open itself to outside material or face increasing mismatch.
 
-**New research in recursion is often essential.** Boyd's Gödelian argument applies directly: you cannot determine the consistency of a synthesis from within the same conceptual system that produced it — you must appeal to systems outside it. Each synthesis opens a new conceptual space that the original research didn't cover. In the 7-cycle agent identity dialectic, successive rounds pulled in Gödel's incompleteness theorem, Coasean transaction cost theory, jurisprudential concepts, witness obligation patterns, and N-of-M quorum systems — none of which were in the original research. The synthesis *created the space* for this new material to enter: the destructive deduction liberates parts that can now connect with material from outside the original domains, which is exactly Boyd's creative induction in action.
+**New research in recursion is often essential.** Boyd's Gödelian argument applies directly: you cannot determine the consistency of a synthesis from within the same conceptual system that produced it — you must appeal to systems outside it. Each synthesis opens a new conceptual space that the original research didn't cover. In the 7-cycle agent identity dialectic, successive rounds pulled in Gödel's incompleteness theorem, Coasean transaction cost theory, jurisprudential concepts, witness obligation patterns, and N-of-M quorum systems — none of which were in the original research. The synthesis _created the space_ for this new material to enter: the destructive deduction liberates parts that can now connect with material from outside the original domains, which is exactly Boyd's creative induction in action.
 
 When to research in recursion:
+
 - The new contradiction involves concepts, mechanisms, or domains that weren't in the original research
 - The Boydian decomposition (Phase 4.6) reveals that adjacent-domain material would enable cross-domain connections
 - An agent or the user identifies a specific factual or theoretical gap
 
 When research is unnecessary:
-- The recursive contradiction is a tension *within* the existing synthesis that can be argued from material already in play
+
+- The recursive contradiction is a tension _within_ the existing synthesis that can be argued from material already in play
 - The round is primarily about clarifying or sequencing, not reconceptualizing
 
-**Fresh agents are usually better than resumed sessions for recursion.** The recursive round is a *new* dialectic — the contradiction has shifted, the conceptual space has evolved. Agents carrying forward their full conviction from the previous round may be trapped in their original framing. Fresh agents given the accumulated context (prior essays, structural analysis, sublation, validation critiques) plus the new contradiction can engage the evolved question without legacy commitment to positions that have already been sublated. This also brings fresh perspectives — different reasoning paths, different analogies, different ways of committing to the new positions.
+**Fresh agents are usually better than resumed sessions for recursion.** The recursive round is a _new_ dialectic — the contradiction has shifted, the conceptual space has evolved. Agents carrying forward their full conviction from the previous round may be trapped in their original framing. Fresh agents given the accumulated context (prior essays, structural analysis, sublation, validation critiques) plus the new contradiction can engage the evolved question without legacy commitment to positions that have already been sublated. This also brings fresh perspectives — different reasoning paths, different analogies, different ways of committing to the new positions.
 
 **Practical guidance:**
+
 - **Re-read the relevant phase reference doc before executing it in Round 2+.** Context drift is the most common failure mode in later rounds — the orchestrator starts cutting corners on exactly the steps that matter most. Before each phase, read its reference doc fresh from `reference/phase{N}-*.md`.
 - **Pass all prior context** (both essays, structural analysis, sublation, validation critiques) to new agents as background
 - **Include targeted research directives** if the new contradiction opens new domains — 2-3 specific searches per agent, just as in Round 1
 - **Use 1000-1500 word essays** — the conceptual space is richer, agents can be tighter
-- **Validation can be abbreviated** — a quick check that both agents feel elevated, or skip if time-constrained
+- **Run the full Phase 6 validation gate in every recursive round.** Time pressure does not waive position-preservation or hostile validation. Only the user may waive a named Phase 6 item; record that waiver and leave every unwaived item required.
 - Recursive rounds are faster than Round 1 even with research (~2-3 min vs ~20 min) because agents have dense context and need only targeted searches, not broad domain surveys
 
 ## Inward-Orientation Check
 
-Boyd proves that any closed system's inward-oriented refinement *necessarily* increases mismatch — the Second Law guarantees it. In the dialectic, this manifests when later rounds start feeling like *polish* rather than *destruction*. If the orchestrator is refining the existing synthesis rather than shattering it against a new contradiction, the system is closing.
+Boyd proves that any closed system's inward-oriented refinement _necessarily_ increases mismatch — the Second Law guarantees it. In the dialectic, this manifests when later rounds start feeling like _polish_ rather than _destruction_. If the orchestrator is refining the existing synthesis rather than shattering it against a new contradiction, the system is closing.
 
-**Diagnostic:** Are you importing new material from outside the synthesis's conceptual domain in this round? Or are you rearranging material already in play? If the Boydian decomposition in this round uses only parts already present in the previous synthesis, you're operating inward. The synthesis will feel more polished but will be *less* true — entropy is increasing even though it looks neater.
+**Diagnostic:** Are you importing new material from outside the synthesis's conceptual domain in this round? Or are you rearranging material already in play? If the Boydian decomposition in this round uses only parts already present in the previous synthesis, you're operating inward. The synthesis will feel more polished but will be _less_ true — entropy is increasing even though it looks neater.
 
 **This is not always a problem.** Sometimes you're trying to ship something, not endlessly shatter. Refinement rounds have their place — tightening a synthesis before presenting it, resolving ambiguities, making it actionable. The check is a diagnostic, not a prohibition. But if you're refining because you've run out of ideas for what to shatter it against, that's the entropy signal. Either inject new external material (Phase 4.5 lateral interventions) or stop — you've reached the current ceiling.
 
 ## When to Stop
 
 The system gets richer not by converging on a final answer but by accumulating resolved contradictions that form increasingly nuanced understanding. Stop when:
+
 - The queued contradictions are becoming less productive (diminishing returns)
 - The latest synthesis surfaces a contradiction that requires fundamentally different expertise or information than you have access to
 - The user has what they need
@@ -121,4 +138,4 @@ The system gets richer not by converging on a final answer but by accumulating r
 
 When stopping, present the user with the **final state of the dialectic queue** — which contradictions were explored, which remain open, and which were deferred. This is a map of the intellectual territory: the resolved contradictions form the new understanding, and the open contradictions are starting points for future sessions.
 
-See **Worked Examples → Example 3** in the main SKILL.md for a 7-cycle dialectic showing how each round pulls in cross-domain material — Boyd's prediction in action.
+One prior seven-cycle run moved from agent identity to naming, metacognition, governance, pedagogy, evidence, and finally trust in verification. The point is not that every inquiry should run seven rounds. It is that each live synthesis can expose a contradiction whose proper vocabulary lies outside the starting domain. New external material is the guard against recursion becoming mere polish.

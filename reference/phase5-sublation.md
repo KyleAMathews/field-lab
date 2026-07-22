@@ -4,9 +4,13 @@
 
 **⛔ Entry condition:** Phase 5 begins **only** when the refinement-loop router (the 4.9 gate) returned the **Proceed** exit — i.e. the hidden question has settled and the signals (new cross-edges, new facts) are quiet. If you arrived here by any other path — straight from Phase 4 without running the router, or after a Research/Refine/Re-split pass — **stop** and run the router (`reference/refinement-loop.md`). Synthesizing an immature contradiction is the failure the loop exists to prevent.
 
+## Phase 5 instrument: `candidate-spectrograph`
+
+Phase 5 is the Expedition procedure for `candidate-spectrograph`. Announce it before selecting candidate bands. Preserve its hybrid execution: the orchestrator writes S with full Phase 4 continuity; separate fresh subagents write each earned J/G/F/U band without seeing sibling drafts; the orchestrator compiles without ranking or blending. If isolated writers are unavailable, the result is a correlated short palette, not the full spectrograph, and the gate must retain that downgrade.
+
 Phase 5 generates a **palette of structurally-distinct Phase-5 candidates**, not a single synthesis. Each candidate has a different posture toward the contradiction — synthesize it, juxtapose it, ground it out, dissolve the frame, or center the undecidable term. The user picks or combines; the orchestrator does NOT rank, judge, or tournament.
 
-**Why a palette:** Hegel's Aufhebung (cancel/preserve/elevate) structurally biases toward smoothing differences into a single unified answer. That's often boring and sometimes wrong — the real value of the dialectic up to this point (research, belief, decomposition, misfit registration) is in generating *many angles*, and Phase 5 has been squandering that by collapsing back to one. The palette preserves the angles.
+**Why a palette:** Hegel's Aufhebung (cancel/preserve/elevate) structurally biases toward smoothing differences into a single unified answer. That's often boring and sometimes wrong — the real value of the dialectic up to this point (research, belief, decomposition, misfit registration) is in generating _many angles_, and Phase 5 has been squandering that by collapsing back to one. The palette preserves the angles.
 
 **No ranking, no winner.** The user is belief-free and in the judging seat. Orchestrator's job is to produce maximally distinct candidates so the user has real options.
 
@@ -14,13 +18,13 @@ Phase 5 generates a **palette of structurally-distinct Phase-5 candidates**, not
 
 Five candidate types exist. **S is always drafted.** The others are drafted **conditionally** based on which misfit-register lenses fired non-trivially in 4.2.5 / 4.6.5:
 
-| Candidate | Posture | Fires when |
-|---|---|---|
-| **S — Synthesis** (Hegel) | Cancel/preserve/elevate into a new concept that transforms the question | Always drafted |
-| **J — Juxtaposition** (Adorno / Derrida / Koestler) | Refuse unification; hold the contradiction open; zones have locally-sovereign logics | 4.2.5 surfaced a disguised shared interest, OR Lens B found parts the synthesis will smooth over |
-| **G — Ground condition** (Lens A / Schumacher) | A specific material fact or higher-level factor makes the debate moot; resolution lives at a different level of being | Lens A caught concrete briefing residue, OR the domain plausibly has a level-shift resolution (love/attention/character/relationship/physical constraint) |
-| **F — Framing dissolution** (Foucault) | The debate is a fossil of an earlier conflict serving a specific constituency; the actual decision-makers face a different-shaped question | Lens C surfaced a fossil framing |
-| **U — Undecidable-centered** (Derrida) | Name the word both sides use oppositely as the real object; refuse to resolve it | Lens D caught a strong undecidable |
+| Candidate                                           | Posture                                                                                                                                    | Fires when                                                                                                                                                |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **S — Synthesis** (Hegel)                           | Cancel/preserve/elevate into a new concept that transforms the question                                                                    | Always drafted                                                                                                                                            |
+| **J — Juxtaposition** (Adorno / Derrida / Koestler) | Refuse unification; hold the contradiction open; zones have locally-sovereign logics                                                       | 4.2.5 surfaced a disguised shared interest, OR Lens B found parts the synthesis will smooth over                                                          |
+| **G — Ground condition** (Lens A / Schumacher)      | A specific material fact or higher-level factor makes the debate moot; resolution lives at a different level of being                      | Lens A caught concrete briefing residue, OR the domain plausibly has a level-shift resolution (love/attention/character/relationship/physical constraint) |
+| **F — Framing dissolution** (Foucault)              | The debate is a fossil of an earlier conflict serving a specific constituency; the actual decision-makers face a different-shaped question | Lens C surfaced a fossil framing                                                                                                                          |
+| **U — Undecidable-centered** (Derrida)              | Name the word both sides use oppositely as the real object; refuse to resolve it                                                           | Lens D caught a strong undecidable                                                                                                                        |
 
 Open the top of the Phase 5 file by listing which candidates will be drafted and why, citing the specific lens findings. If only S fires (all other lenses were "no visible misfit"), draft only S. Don't force candidates the register didn't earn.
 
@@ -28,15 +32,17 @@ Open the top of the Phase 5 file by listing which candidates will be drafted and
 
 ## 5.1 Generate Candidates in Parallel (Decorrelation)
 
-**Construct the candidate 2×2 first (mandatory). See `reference/quadrant-diagrams.md`.** Carry the hidden-question 2×2 from 4.4 forward (or draw it now if Phase 4 left it implicit) and read candidates off it — this is how a reframe becomes a concrete candidate:
-- **G (ground condition):** axis 2 — the orthogonal dimension — often *is* the ground condition; naming it as the load-bearing variable is the G move.
+**Use the candidate 2×2 when `frame-projector` completed in Phase 4. See `reference/quadrant-diagrams.md`.** Carry that hidden-question 2×2 forward and read candidates off it—this is how a supported reframe becomes a concrete candidate. If Phase 4 recorded the instrument as contraindicated, preserve that one-dimensional result; do not rerun it to force a candidate.
+
+- **G (ground condition):** axis 2 — the orthogonal dimension — often _is_ the ground condition; naming it as the load-bearing variable is the G move.
 - **F (framing dissolution):** the 2×2 itself is the dissolution — the old binary collapses to one axis while the second axis shows the debate was mis-framed. Hand the F-agent the diagram.
 - **S (synthesis):** the empty / under-occupied quadrant is often the synthesis — the position neither monk occupies but the axes make available.
-- **U (undecidable):** if the honest result is that *no* second axis earns its place, that is itself the U signal — the contradiction is genuinely 1-D and resists the reframe.
+- **U (undecidable):** if the honest result is that _no_ second axis earns its place, that is itself the U signal — the contradiction is genuinely 1-D and resists the reframe.
 
 Pass the relevant slice to each candidate agent (G/F get the axes; S gets the empty quadrant). Honesty rule applies hard here: don't manufacture a ground condition or fossil framing by forcing an axis — a forced 2×2 fabricates a false G/F. If the axis is real, the candidates fall out of it; if it isn't, that absence is the finding.
 
 **Dispatch one subagent per candidate type.** Each subagent receives:
+
 - The context briefing (Phase 1)
 - Condensed summaries of both monk essays
 - The Phase 4 determinate negation, hidden question, sublation criteria (for S) and atomic parts list
@@ -64,6 +70,7 @@ This is the classical Aufhebung candidate, written by the orchestrator.
 ### Provocation Before Synthesis (Round 2+ Only)
 
 **Skip this in Round 1.** In Round 2+, before writing S, apply one De Bono provocation to disrupt premature pattern-matching:
+
 - "PO, the contradiction doesn't exist."
 - "PO, both monks are arguing the same position."
 - "PO, the synthesis was obvious from the start and we wasted our time."
@@ -81,9 +88,10 @@ Then apply movement techniques (extract a principle, focus on the difference, sp
 
 **Abduction test.** If someone heard S first, would they predict the approximate shape of both monks' positions? If yes, genuine reframing. If no, likely just compromise. Aim for propositional-conditional-creative abduction (a genuinely new concept or structural principle), accept conditional-creative (new relationship between known concepts) if it resolves the contradiction, push harder if only selective.
 
-**Reversibility check (Boyd) — repair, don't reject.** Boyd's verification traces the created whole back to its *constituents* — and after 4.6 the constituents are not a flat parts list. They are three layers, so reverse each major claim to all three:
+**Reversibility check (Boyd) — repair, don't reject.** Boyd's verification traces the created whole back to its _constituents_ — and after 4.6 the constituents are not a flat parts list. They are three layers, so reverse each major claim to all three:
+
 1. **Atomic part(s)** — does the claim trace to specific parts from the decomposition (4.6 step 2)?
-2. **The connection** — which *quality / attribute / operation* (4.6 step 3) joins those parts into this claim? Name it. A claim that traces to real parts but names no q/a/o connection is a bare assertion, not a recombination — the operations layer is the one that most often fails silently.
+2. **The connection** — which _quality / attribute / operation_ (4.6 step 3) joins those parts into this claim? Name it. A claim that traces to real parts but names no q/a/o connection is a bare assertion, not a recombination — the operations layer is the one that most often fails silently.
 3. **The `[fit:]` tag** — is the recombination the claim sits on load-bearing (`[fit: solid]`), or is its spine a `[fit: reach]` connection (4.6 step 4)? A claim whose parts are `[solid]` but whose connection is `[fit: reach]` **fails reversibility** even though the parts are real — this is exactly what the `[fit:]` tags exist to catch, and reversing only to parts waves it through.
 
 When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's instruction is to repair: keep the parts and connections that cohere, add new material (recruit a new donor domain or do fresh research to earn a stronger connection), and re-derive. Loop up to 3 times. After that, the untraceable or `[fit: reach]`-spined claim either earns its own evidence as a genuine new insight (kept, explicitly flagged as net-new) or is cut. Also run the "not the same arrangement" test: structurally, is S just one monk's architecture wearing the other's vocabulary? That fails.
@@ -102,8 +110,8 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 - "Combine the best of A and B" — compromise
 - "It depends on context" — surrender
 - Policy recommendations — not reconceptualization
-- **Analytical capture** — S adopts one monk's epistemological framework to reframe the other's claims. Test: does S translate one monk's language into the other's terms? If Monk A says "love" and S says "meta-cognitive capacity for empathetic attunement," S was captured by Monk B's epistemology. LLMs are *systematically* biased toward this — language-prediction engines operationalize things; when the dialectic is about whether operationalization is sufficient, the orchestrator is the worst possible judge.
-- **Level reduction** — if a monk made a categorically different *kind* of claim (not different degree), does S engage at its level? A synthesis that translates Level 4 claims into Level 3 terms *enacts the error the dialectic was about.* Test: would the higher-level monk say "you've done exactly what I warned against"?
+- **Analytical capture** — S adopts one monk's epistemological framework to reframe the other's claims. Test: does S translate one monk's language into the other's terms? If Monk A says "love" and S says "meta-cognitive capacity for empathetic attunement," S was captured by Monk B's epistemology. LLMs are _systematically_ biased toward this — language-prediction engines operationalize things; when the dialectic is about whether operationalization is sufficient, the orchestrator is the worst possible judge.
+- **Level reduction** — if a monk made a categorically different _kind_ of claim (not different degree), does S engage at its level? A synthesis that translates Level 4 claims into Level 3 terms _enacts the error the dialectic was about._ Test: would the higher-level monk say "you've done exactly what I warned against"?
 
 ## 5.3 Candidate J — Sustained Juxtaposition (Adorno / Derrida / Koestler)
 
@@ -115,7 +123,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 1. **Name what both positions tacitly share** that neither can examine (from 4.2.5 position-protection, or from the shared assumption in 4.2). J's central move is refusing to let this shared interest win by default.
 2. **Name the specific atomic parts** S would drop (from Lens B) and show why they matter.
-3. **Articulate what the juxtaposition reveals** that neither pole alone sees and that S would smooth over. "Both are partly right" is not enough — describe what becomes visible *only* when both are held without resolution.
+3. **Articulate what the juxtaposition reveals** that neither pole alone sees and that S would smooth over. "Both are partly right" is not enough — describe what becomes visible _only_ when both are held without resolution.
 4. **Preserve local sovereignty.** If the domain has natural zones (different contexts, scales, stakeholders), name where each monk's logic reigns locally and why the global unification is what's wrong.
 5. **Name the hidden cost of synthesizing.** What gets lost if the contradiction is resolved? Often this is the real answer.
 
@@ -127,7 +135,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 ### J failure modes
 
-- "Both are right in their own way" — that's surrender, not juxtaposition. J must name what the juxtaposition *reveals* that unification hides.
+- "Both are right in their own way" — that's surrender, not juxtaposition. J must name what the juxtaposition _reveals_ that unification hides.
 - Resolving the tension under a different name. If the zones-have-local-logics candidate resolves into "here's the meta-principle that tells you which zone applies," that's S with extra steps.
 - Performative irresolution. Refusing to resolve without saying what the refusal reveals is empty.
 
@@ -146,7 +154,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 ### G internal standards
 
-- **Not-the-horizontal-embedding test.** G must not be S with a new top-level concept bolted on. Test: does G's ground condition sit on the *same axis* as the original debate (stronger-A, stronger-B, a blend)? If yes, it's horizontal, not vertical. G only earns its slot if the ground condition is genuinely on a different axis.
+- **Not-the-horizontal-embedding test.** G must not be S with a new top-level concept bolted on. Test: does G's ground condition sit on the _same axis_ as the original debate (stronger-A, stronger-B, a blend)? If yes, it's horizontal, not vertical. G only earns its slot if the ground condition is genuinely on a different axis.
 - **The level-reduction risk.** If G's ground condition itself resists analytical treatment (love, attention, quality), G must describe it on its own terms, not operationalize it. Operationalizing a Level-4 factor to make it legible to Level-3 methods is the same failure as analytical capture in S.
 - **Concrete enough to act on.** If G's ground condition is so general it applies to any debate, it isn't a ground condition — it's a platitude.
 
@@ -160,14 +168,14 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 **Fires when:** Lens C surfaced a fossil framing serving a specific constituency that isn't the actual decision-maker.
 
-**Posture:** The debate doesn't need resolving; it needs stepping out of. The current binary is a fossil of an earlier professional conflict in an adjacent field, persisting because specific constituencies (magazines, disciplinary specialists, tech media, policy advocacy networks) have stakes in the debate remaining stateable in *these* terms. The actual decision-maker (this family, this developer, this historian) faces a different-shaped decision entirely.
+**Posture:** The debate doesn't need resolving; it needs stepping out of. The current binary is a fossil of an earlier professional conflict in an adjacent field, persisting because specific constituencies (magazines, disciplinary specialists, tech media, policy advocacy networks) have stakes in the debate remaining stateable in _these_ terms. The actual decision-maker (this family, this developer, this historian) faces a different-shaped decision entirely.
 
 ### F must
 
 1. **Name the fossil.** Which earlier conflict, era, or discursive formation birthed this binary? When?
 2. **Name the constituency the framing serves.** Magazines? Disciplinary specialists? A vendor ecosystem? Policy advocates? Be specific.
 3. **Contrast with the actual decision-maker's situation.** What question are they actually facing? Usually it's not the framed binary but something the framed binary obscures.
-4. **Propose the reframed question.** Not "the synthesis" — the *different question* the decision-maker should be asking.
+4. **Propose the reframed question.** Not "the synthesis" — the _different question_ the decision-maker should be asking.
 
 ### F internal standards
 
@@ -191,19 +199,19 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 1. **Name the word.** Cite the exact passage in each monk where the opposite loading is visible.
 2. **Map both loadings.** What is Monk A claiming the word means? What is Monk B claiming? Where do the loadings overlap, and where do they diverge irreconcilably?
-3. **Refuse to pick a loading.** U's move is specifically *not* adjudicating. If U ends with "and the correct meaning of the word is X," it has collapsed to S.
+3. **Refuse to pick a loading.** U's move is specifically _not_ adjudicating. If U ends with "and the correct meaning of the word is X," it has collapsed to S.
 4. **Articulate what the undecidability does.** Which decisions become clearer once you see that the word is doing contradictory work? Sometimes the undecidability is the whole finding — naming it precisely is the output.
 
 ### U internal standards
 
 - **The word must be specific.** "Engagement," "scale," "quality," "freedom," "design." If U is operating on a concept-cluster rather than a single term, it's probably really F or G.
 - **Both loadings must be cited.** One passage per monk, minimum, showing the opposite usages. Uncited undecidables are orchestrator confabulation.
-- **No resolution.** The test that U is genuine: a reader finishes U and is *less* sure which meaning is correct, not more. If U makes the word more decidable, it has failed.
+- **No resolution.** The test that U is genuine: a reader finishes U and is _less_ sure which meaning is correct, not more. If U makes the word more decidable, it has failed.
 
 ### U failure modes
 
 - Semantic hand-wringing. "Words are slippery" is not U — U names the specific term and what its opposite loadings reveal.
-- Finding an undecidable that is really two different words. If A and B use "engagement" to mean different things because they're talking about different referents, that's disambiguation, not undecidability. U requires the *same* referent being loaded oppositely.
+- Finding an undecidable that is really two different words. If A and B use "engagement" to mean different things because they're talking about different referents, that's disambiguation, not undecidability. U requires the _same_ referent being loaded oppositely.
 - Collapsing U into "and therefore we need a new word" — that's S.
 
 ## 5.7 Save and Present the Palette
@@ -213,7 +221,8 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 **Hand the candidates to the gardener → `synthesis` pages** (`reference/dialectic-wiki.md`): each candidate becomes a `synthesis` page (its central move + the lens that earned it + a pointer to the candidate file), cross-linked to the `tension` it resolves and the `position`/`concept` pages it draws on. This is what a later round reads when it builds on — or shatters — this synthesis.
 
 **Completion gate — enumerate & attest before Phase 6 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
-- [ ] Candidate 2×2 constructed first (4.4 hidden-question 2×2 carried forward)
+
+- [ ] Completed Phase 4 candidate 2×2 carried forward, or its one-dimensional `frame-projector` contraindication preserved without forcing a diagram
 - [ ] S drafted by the orchestrator with all internal standards run: abduction test, three-layer reversibility check, precision-vs-grip, calibration weighting, closure, model update, failure-mode tests
 - [ ] For each of J/G/F/U: **either** drafted (because its lens fired non-trivially) **or** explicitly recorded as not-fired with the reason — no silent omissions
 - [ ] Each non-S candidate written by a separate subagent with only its own lens material (no sight of sibling drafts)
@@ -221,8 +230,10 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 - [ ] Candidates ingested by the gardener as `synthesis` pages (cross-linked to the tension they resolve)
 - [ ] Each candidate carries a one-line frontier flag (groove/frontier vs. the blind-expected resolution); flags are descriptive, not a ranking
 - [ ] Palette presented side-by-side with no ranking / recommendation; user invited to pick, combine, or reopen Phase 4
+- [ ] `candidate-spectrograph` raw readout records authorization, earned generated bands, actual executor and context per band, fallback, access delta, distinctness control, artifact risk, unmeasured remainder, candidate trace paths, and user feedback; ranking and synthesis remain outside the readout
 
 **Present the palette to the user** as a structural summary. For each candidate that was drafted, give:
+
 - The candidate's **central move** in 2-3 sentences
 - The **lens that earned it** (why this candidate is in the palette)
 - The **new contradiction** the candidate generates (if any — not all candidates need to be fertile in the same way)
@@ -236,7 +247,7 @@ Conclude with:
 >
 > Remember: your judgment is the point here. The monks are belief-committed and the orchestrator has spent a lot of token budget on this decomposition, but the question of which candidate fits your actual situation is one only you can answer.
 
-**Anti-sycophancy when receiving feedback:** When the user picks a candidate or rejects the whole palette, do not capitulate or celebrate. If the user picks S, it is not because S was "the right answer" — it is because it fit their situation. If the user picks J and later says "actually I think S is closer," that is the dialectic working. If the user rejects the palette, examine *which specific move* in each candidate failed — don't just promise to try harder. If the user provides a new framework or insight, it enters the decomposition as material to be stress-tested in the next round, not as the answer the candidates should have reached.
+**Anti-sycophancy when receiving feedback:** When the user picks a candidate or rejects the whole palette, do not capitulate or celebrate. If the user picks S, it is not because S was "the right answer" — it is because it fit their situation. If the user picks J and later says "actually I think S is closer," that is the dialectic working. If the user rejects the palette, examine _which specific move_ in each candidate failed — don't just promise to try harder. If the user provides a new framework or insight, it enters the decomposition as material to be stress-tested in the next round, not as the answer the candidates should have reached.
 
 ## 5.8 Model Selection
 

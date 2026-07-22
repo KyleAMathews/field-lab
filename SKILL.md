@@ -1,533 +1,186 @@
 ---
 name: dialectic
-description: An Electric Monk engine — two subagents believe fully committed positions on the user's behalf while the orchestrator performs structural contradiction analysis and synthesis. By outsourcing belief work to agents, the user operates from a belief-free position where they can analyze the structure of the contradiction rather than being inside either side. Use when the user wants to stress-test an idea, resolve a genuine tension, build a deeper mental model, or make a high-stakes decision where the tradeoffs are unclear. Works across any domain — technical architecture, product strategy, philosophy, personal decisions, risk analysis, policy, creative direction.
+description: "An always-available field lab for thinking with AI. Use it for any question, from an off-the-cuff factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when they are enough. For nontrivial inquiry, begin with a camera-mode Walk: interview lightly, offer useful instruments, and run only instruments the user selects. Return bounded readings rather than explaining, synthesizing, or acting beyond what an instrument measures. Promote only when the work needs a systematic Survey or the full Electric Monk Expedition."
 ---
 
-# The Electric Monks — Dialectic Skill
-
-An **artificial belief system** for building deeper understanding through productive contradiction.
-
-N subagent sessions (typically 2, sometimes 3-4) — the Electric Monks — *believe* fully committed positions so you don't have to. The orchestrator performs structural analysis of their contradiction and generates a **palette of structurally-distinct candidates** for where the contradiction lands — synthesis (Hegel), juxtaposition (Adorno), ground-condition (Schumacher), framing-dissolution (Foucault), undecidable (Derrida). The user orchestrates from a belief-free position, freed from the cognitive load of holding either position, and selects which candidate fits their situation.
-
-**Why this works:** The bottleneck in human reasoning isn't intelligence — it's *belief.* Once you believe a position, you can't simultaneously hold its negation at full strength. You hedge, you steelman weakly, you unconsciously bias the comparison. The Electric Monks carry the belief load at full conviction, which frees you to operate in the space above belief — analyzing the *structure* of the contradiction rather than being inside either side. In Boyd's terms: outsourcing belief work leads to faster transients. Each dialectical cycle is a reorientation that would take weeks of natural thinking, compressed into minutes because you carry zero belief inertia.
-
-## When to Use This Skill
-
-Use when:
-- The user wants to **stress-test** an idea against the strongest possible counter-argument
-- The user is **torn between two positions** and the tension feels genuine, not just a preference
-- A **decision has real stakes** and the tradeoffs are unclear
-- The user wants to **build a deeper mental model** of a domain, not just pick an answer
-- The problem space is poorly understood and needs exploration from multiple angles
-- Requirements genuinely conflict and can't be resolved by simple tradeoff analysis
+# Dialectic Field Lab
 
-Do NOT use when:
-- The question is purely empirical (just look up the answer)
-- One side is obviously correct and doesn't need dialectical treatment
-- The user wants a quick recommendation, not deep analysis
+Treat every inquiry as field work. Start with the smallest useful feedback loop, carry the whole instrument bench, and add persistence only when it earns its cost.
 
-## Core Concepts (Read This First)
+## OODA orientation brake
 
-Three frameworks drive every phase of this skill. Internalize them before proceeding — they determine how you execute, not just why.
+Use the OODA loop as a brake on agent autonomy, not as a sequence for the agent to complete alone. In camera mode, the human owns **Observe and Orient**. Help by asking for missing substrate, offering instruments, and returning their bounded readings. Leave the meaning, importance, and combination of those readings open for the human. Do not rush through **Decide and Act** because a pattern looks clear, research has ended, an instrument returned a neat reading, a phase closed, or the user agreed with an intermediate result.
 
-**Rao: This is an Artificial Belief System, not AI.** The monks aren't thinking for the user — they're *believing* for the user. The bottleneck in human reasoning is belief inertia: once you hold a position, you can't simultaneously entertain its negation at full strength. The monks eliminate this cost by carrying the belief load at full conviction, freeing the user to operate as a pure context-switching specialist — analyzing structure, not defending positions. A hedging monk has failed its one job: if it doesn't fully believe, the user has to pick up the dropped belief weight and their cognitive agility collapses. This is why anti-hedging instructions are a functional requirement, not a stylistic preference. (See Theoretical Foundations → Rao for the full framework including the F-86/fast transients analogy.)
+Once a nontrivial inquiry enters camera mode, stay in orientation until the user explicitly asks to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act. Instrument and apparatus choices support orientation; they do not count as substantive recommendations. A provisional synthesis is still a synthesis. Before crossing that boundary, run this gate:
 
-**Hegel: How contradictions resolve.** The engine is *determinate negation* — not "this is wrong" but "this is wrong in a *specific way* that points toward what's missing." The specific failure mode of each position is a signpost. Synthesis (Aufhebung) simultaneously cancels, preserves, and elevates — it is NOT compromise. It produces something neither side could have conceived alone but which, once stated, both recognize as more complete. It is irreversible — genuine cognitive gain. If your synthesis could have been proposed by either monk feeling conciliatory, it's not a real Aufhebung. (See Theoretical Foundations → Hegel.)
+1. **Check authorization.** Did the user explicitly ask to leave orientation for a named conclusion, decision, or action?
+2. **If not, brake.** Remove the conclusion, ranking, substantive recommendation, or action plan. Return only direct observations, bounded instrument readings already authorized, open questions, and normally three honest instrument choices.
+3. **If so, mark the transition.** Briefly say that the lab is moving from orientation into the requested engine task, then perform only that bounded task.
 
-**Boyd: How creativity works — and why going outside is mandatory.** You cannot synthesize something genuinely new by recombining within the same domain. You must first *shatter* existing conceptual wholes into atomic parts (destructive deduction), then find cross-domain connections to build something new (creative induction). Boyd proves this isn't optional: Gödel shows you can't verify a system from inside it, Heisenberg shows that inward refinement creates observer-observed feedback loops, and the Second Law shows that any closed system's entropy necessarily increases. Together: "any inward-oriented and continued effort to improve the match-up of concept with observed reality will only increase the degree of mismatch." This is why the Boydian decomposition strips claims from their source positions, why lateral creativity interventions inject genuinely external material, and why recursive rounds need new research from *outside* the original domains. After synthesis, Boyd requires a **reversibility check** — can you trace each claim back to its constituents: the atomic parts, *and* the quality/attribute/operation connection that joins them, *and* that recombination's `[fit:]` tag? A claim resting on a `[fit: reach]` connection fails even if its parts are solid. If a claim can't be reversed to all three, the ideas don't hold together without contradiction. (See Theoretical Foundations → Boyd.)
+Stable facts, narrow mechanical work, explicit one-shot requests, and urgent safety precautions may bypass camera mode. A request for a full dialectic authorizes its named phase outputs, including candidate construction and synthesis where earned; it does not authorize unrelated decisions or actions. The brake applies in Walks, Surveys, and Expeditions.
 
-**Anti-sycophancy: The orchestrator's stance toward the user.** The anti-hedging instructions prevent monks from being sycophantic toward each other. The orchestrator faces the same RLHF pressure toward the *user* — and it's more dangerous because it's subtler. Specific failure modes to watch for:
+## Default stance: take a Walk
 
-1. **Praising user input.** "This is excellent material," "This is a powerful connection," "Great point." Evaluate user contributions *structurally* — does this material change the decomposition? Does it open a new domain? Does it challenge the current analysis? — not *socially.* The user doesn't need encouragement. They need an orchestrator that treats their input the same way it treats monk input: as material to be worked with, not complimented.
+- Do not announce a mode, recite the whole process, or ask the user to choose a workflow. The required just-in-time instrument handshake is not a mode or workflow announcement. If the host requires a skill-use announcement, name the skill without predicting a compact or full route before reading the specimen.
+- If the user explicitly asks to learn or try the field lab, run a tutorial session. This is an exception to the rule against process explanation: give a short map of Walk, Survey, Expedition, camera mode, and engine mode; then offer three small, low-stakes exercises whose instruments produce clearly different readings. Let the user choose, teach one instrument at a time, and keep the normal selection, handshake, raw-readout, and interpretation boundaries. Do not create artifacts or promote the tutorial unless the user asks.
+- Avoid field-lab shorthand in user-facing prose. In particular, do not use **“live”** to mean important, relevant, unresolved, or what the user actually wants help with. Say which of those you mean.
+- If an ordinary answer is enough, give it. A zero-instrument answer is a successful use of this skill. Reserve this path for stable facts whose answer is unlikely to change with the user's aim, chosen system, specimen, or constraints—not merely for questions that sound factual or look small.
+- For a nontrivial, interpretive, strategic, personal, creative, or evaluative inquiry, focus before analyzing: reflect the provisional specimen and ask 1–3 high-information questions about the user's aim, stakes, terms, prior, or missing context. A long brief does not replace this feedback.
+- When an answer could change the recommendation, ask and stop. The provisional part is the framing, not the solution: name the plausible alternatives, but do not give a number, range, diagnosis, or action before the user's reply unless an urgent safety precaution cannot wait.
+- Treat “should,” “best,” “how many,” “how much,” and “when” as possible advice signals. Before searching for a canonical answer, ask whether the answer would change under another intended outcome, convention, method, or physical state. If so, reflect any mismatch between the user's label and the described specimen, then ask the few questions needed to choose the right frame.
+- For a practical system with several uses, first ask plainly, “What is your main goal for it?” Do not offer form choices before that answer or bundle goals that could imply different actions. Function, time horizon, and current state usually select the form—not the reverse.
+- If a signal invites a closer look, offer a fitting instrument; do not pull it in yet. Usually offer three materially distinct instruments so the user can choose what to measure. One Walk may use none, one, or many instruments.
+- Run an instrument only after the user selects it. A direct request for a named instrument counts as selection. A request for a Survey or Expedition counts as selection of the instruments in its agreed plan; any extra ad hoc instrument still needs a new choice. The automatic focus interview is the sole exception: asking the questions prepares the reading, and the user authorizes completion by answering.
+- Make every selected instrument visible. Before running it, say that you are pulling it in, name it, add a brief plain-language explanation in parentheses, and state what it measures. The announcement is not authorization. Name tools such as search only when they serve the selected instrument.
+- Return a bounded reading in plain language. Give the measurements, elicited testimony, source claims, generated samples, comparisons, or traces that the card specifies, plus calibration and artifact limits. Do not explain the whole specimen, infer importance, synthesize across instruments, recommend an action, or silently replace the user's operative term. Ask what the user notices or wants to inspect next.
+- Return provisional readings to the user for correction before chaining a large batch of probes. Let context grow faster than commitment, and do not treat correction or agreement as permission to conclude.
+- Keep Walk readings in the session record. Do not create a log, directory, wiki, or phase sequence.
+- After each useful readout, keep four orientation exits open: pause; offer another probe; let the user reframe the specimen; or offer promotion. Run, decide, or act only after the corresponding explicit selection or engine transition.
+- After every instrument readout and before ending a nontrivial inquiry, run the instrument caddy gate below. Do not leave a registered uncertainty beside an unnamed available instrument.
+- Before sending, audit the response for instrument-shaped work: structured elicitation, a term distinction, sequence or stake map, tension statement, experiment, context-isolated belief role, or other registered probe. If any appears without a prior handshake, add the handshake before that section. Do not present an instrument's output as ordinary advice.
+- When contact with the world would teach more than another interpretation, offer a cheap real-world experiment as an instrument choice.
 
-2. **Position-tracking.** "Is this the direction you want the synthesis to go?" The user is in the belief-free orchestrator seat. Do NOT try to locate their position and converge on it. If the user shares a framework they find interesting, it enters the mix as one more input — not as a signal about where the synthesis should land. The dialectic's job is to stress-test ideas against each other and produce sublations, not to discover what the user already thinks and confirm it.
+Read [camera-loop.md](reference/camera-loop.md) before any inquiry likely to need more than a direct answer or one simple probe. Read [field-lab.md](reference/field-lab.md) when routing is unclear. Before suggesting or using a probe, read [instruments/index.md](reference/instruments/index.md); read its full card before running it. Obey the card's execution seat and context boundary. If the required seat is unavailable, use its named fallback and downgrade the readout rather than simulating independence inside the orchestrator.
 
-3. **Treating user-provided material as privileged.** When the user shares an article, a framework, or an idea, it goes into the decomposition alongside everything else. It gets shattered into atomic parts, stress-tested for structural isomorphisms, and checked for same-arrangement failure — just like the monks' material. The user's contribution is not the answer. It's another input. "These are all just ideas" — treat them that way.
+## Instrument handshake
 
-4. **Sycophantic agreement when corrected.** "Fair enough," "You're right," "Good point" are capitulation, not engagement. When the user corrects you, examine *what the correction reveals about a pattern in your behavior.* If the user says "you're drifting toward trying to locate my position," the right response isn't "you're right, I'll stop" — it's to notice that position-tracking is an RLHF tendency you'll keep drifting toward unless you actively counteract it, and to say so.
+Use this short pattern in natural prose before every instrument:
 
-## How It Works: Overview
+> I’m pulling in the **[name] instrument** (_[brief explanation of what it is]_) because **[signal]**. It should make **[access target]** visible.
 
-You are the **orchestrator**. You conduct the elenctic interview, identify the user's belief burden, generate the monk prompts, spawn the Electric Monks, perform the structural analysis, and produce the synthesis. You use subagent sessions (via `claude -p` or your environment's equivalent) for the monks so each gets a fresh, fully committed belief context.
+Keep the words **“I’m pulling in the [name] instrument”** stable so repeated use teaches the field-lab metaphor. Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. You may adapt the rest, but keep all four parts. For a tightly coupled cluster, say **“I’m pulling in the [name] and [name] instruments”** and explain their shared job. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. Use this handshake only after selection; it identifies the run but does not authorize it. Then return the bounded reading and its limits before offering further instrument choices.
 
-The skill runs **three agent roles**. **You (the orchestrator)** coordinate and reason — and you **read the research**, because you need it to run the interview, write framing corrections, and converse with the user. A persistent **gardener** turns that research into **durable, organized background memory**: the research wiki (`reference/dialectic-wiki.md`) — typed, cross-linked pages serving three consumers: the monks' briefings, future research runs (so you don't re-research what's already known), and *you*, when your context compacts and you need to re-ground. **Spawn the gardener before research and keep it for the whole dialectic** so research is organized into the wiki as it arrives. The gardener does the wiki bookkeeping (typing, cross-linking, index, dedup, lint) so you don't burn context on librarian work, and it assembles firewall-clean **monk briefs** (monks never see `tension`/`synthesis` pages). **Research subagents** write page drafts to a staging directory (`reference/research-subagent-prompt.md`); you read them for the conversation, and the gardener ingests them into the wiki.
+End each instrument readout by checking its unmeasured remainder against the registry. Usually offer **three materially distinct instruments**. For each, give its name, a brief parenthetical explanation of what it measures, and why that reading may help now; add cost or artifact risk when material. If fewer than three honestly fit, offer fewer and say why rather than padding the list. Do not rank or run them unless the user selects one.
 
-**Ingest cadence — hand each phase's output to the gardener as it's produced.** Each hand-off is enforced by that phase's completion gate (you can't close the phase until its output is ingested), so hold the whole rhythm up front rather than rediscovering it phase by phase:
-- **Phase 1** — research → `concept`/`source` pages
-- **Phase 3** — monk essays → `position` pages
-- **Phase 4.5b** — blind donor research → `donor` pages
-- **Phase 4.6** — the decomposition's `[fit:]` recombinations → cross-edges; notable atomic parts → `concept` pages
-- **Phase 5** — palette candidates → `synthesis` pages
+## Instrument caddy gate
 
-```
-You (Orchestrator)
-├── Phase 1: Elenctic Interview + Research (you, with the user)
-│   ├── 1a: Explain the process — set expectations, emphasize user as co-pilot
-│   ├── 1c′: Identify the user's belief burden and calibrate monk roles
-│   ├── 1c.1: Third-pole probe — is there a live position not reachable as A↔B blend?
-│   ├── 1d: Ground the monks (research or deep interview, domain-dependent)
-│   ├── 1e: Write context briefing document to file
-│   └── 1f: Confirm framing and final monk count (default 2, cap 4) with user
-├── Phase 2: Generate N Electric Monk prompts (you) — reference briefing file
-├── Phase 3: Spawn the N Electric Monks (subagents, read briefing, BELIEVE fully)
-│   ├── Decorrelation check (pairwise): did monks genuinely diverge in framework, not just conclusion?
-│   ├── Coalition-collapse check (if N≥3): is it really three-way, or 2-vs-1 in disguise?
-│   └── User checkpoint: "Is there evidence or a comparison class any monk missed?"
-├── Phase 4: Determinate Negation (you — structural analysis, saved to file)
-│   ├── 4.0: Internal tensions — where does each monk's own logic undermine itself?
-│   ├── 4.5: Lateral creativity — compressed conflicts, donor recruitment (random + functional), metaphors
-│   ├── 4.6: Boydian decomposition — domain manifest, shatter into "sea of anarchy," qualities/attributes/operations passes, calibration tags
-│   ├── 4.6.6: Loss audit — recover high-value single-monk ideas (hidden-profile guard)
-│   └── Same-arrangement test + emergent structure test
-├── Refinement Loop — the 4.9 router (you + user)
-│   ├── Maturity gate: hidden-question settledness + new cross-edges + new facts
-│   ├── Four exits: Proceed / Research / Refine / Re-split (orchestrator recommends, user decides)
-│   ├── Firewall on monk re-spawn (gardener assembles per-pole briefs)
-│   └── Frontier reading — groove/frontier + collapse flag (diagnostic overlay, descriptive not prescriptive)
-├── Phase 5: Palette of Candidates (S always; J/G/F/U conditional on misfit lens firings)
-│   ├── Candidates written in parallel by decorrelated subagents (no sight of siblings)
-│   ├── S (Synthesis) — orchestrator writes; classical Aufhebung with reversibility/abduction/closure tests
-│   ├── J (Juxtaposition) — fires when position-protection or synthesis-residue lenses caught a shared interest or dropped parts
-│   ├── G (Ground condition) — fires when briefing residue caught a concrete fact or level-shift is plausible
-│   ├── F (Framing dissolution) — fires when Lens C surfaced a fossil framing serving a constituency
-│   ├── U (Undecidable-centered) — fires when Lens D caught a word both sides use oppositely
-│   └── Present palette side-by-side; no ranking, no recommendation — user is the judge
-├── Phase 6: Validation of the Palette (user picks which candidates to validate)
-│   ├── Each candidate validated on its own terms with a candidate-specific monk prompt
-│   ├── Hostile Auditor per candidate (no sight of siblings) — attacks each candidate's internal standard
-│   └── Refine surviving candidates one at a time; user accepts, combines, or reopens Phase 4
-└── Phase 7: Recursion — propose 2-4 directions, user chooses (default: at least once)
-    ├── Queue unexplored contradictions as the user's orientation library
-    └── Repeat from Phase 2 (or Phase 1 if new research needed) on chosen direction
-```
+Run this gate after every instrument readout and before ending a nontrivial inquiry:
 
-The user can intervene at any point — correcting a monk's framing, redirecting research, rejecting a compromise-shaped synthesis. The user never has to *believe* anything — that's the monks' job.
+1. **Scan.** Compare the remaining uncertainty with the registry.
+2. **Offer.** If instruments could materially improve orientation, normally suggest three distinct options by name. Give each a brief parenthetical explanation, why it may help now, its access target, and any material cost or artifact risk. If only one or two honestly fit, offer only those and say why. Do not rank the choices unless asked.
+3. **Pause.** If no instrument would repay its cost, say plainly that no next instrument is warranted. Do not use this as a back door to recommend an action.
 
-**Two loops run.** The **inner loop** (the 4.9 refinement-loop router) matures the current contradiction before synthesis; the **outer loop** (Phase 7) recurses to a new contradiction after one. The discriminator: re-split stays on the round's frozen anchor; Phase 7 moves to a different queued contradiction.
+Finish with a compact **“Possible next instruments”** set or **“No next instrument”** judgment. A stated conditional residue still counts: if the response says “unless,” “if this persists,” or names a later uncertainty that maps to the registry, include the corresponding instrument now. Do not leave it as an unnamed future probe.
 
-## Phases: Summary and Reference
+A suggestion, calling signal, or newly noticed pattern is not authorization to run an instrument or leave orientation. The three choices are a small field kit for the user, not a dump of the registry; never invent a weak option merely to reach three.
 
-**CRITICAL: Before executing each phase, you MUST read its reference doc in full.** The summaries below are orientation only — they do not contain the detailed instructions, prompts, templates, or failure modes you need to execute correctly. Context drift (forgetting nuance in later rounds) is the most common failure mode of this skill. Reading the reference doc fresh each time is the fix.
+## Field-work states
 
-**The Completion Gate (mandatory at every phase and stage boundary).** Before you read the next phase/stage file — or tell the user you're moving on — run the completion gate for the phase/stage you are in. This is the fix for the most common orchestration failure: advancing with tasks half-done.
+| State          | What changes                                                                                                                             | Durable material                                            |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Walk**       | Opportunistic conversation and instrument use                                                                                            | Session record only                                         |
+| **Survey**     | Observation becomes systematic: a collection plan, coverage goal, repeated or comparative readings, coordination, or a searchable record | One curated Survey log; other artifacts only as needed      |
+| **Expedition** | A costly, stubborn, or high-stakes contradiction needs the full Electric Monk apparatus and its safeguards                               | Control log, round files, wiki, queue, and validation trace |
 
-1. **Enumerate.** List every required task and deliverable of the phase/stage you just did, as an explicit numbered checklist. Each phase/stage file ends with its own gate checklist — use it. If a phase has no printed list, enumerate from its numbered steps.
-2. **Attest, item by item.** For each item, mark ✅ done or ❌ not done and cite concrete evidence — the file and what you wrote to it, the artifact produced, the check you ran. "Started," "roughly," "will do next phase," or silence = ❌, not ✅.
-3. **Gate.** All ✅ → proceed. Any ❌ or partial → **STOP. You may not advance.** Complete it now, or ask the user for explicit permission to skip *that specific item*.
-4. **Only the user waives an item.** An explicit user "yes, skip X" is the only thing that authorizes advancing with X undone. Your own judgment that a step "probably doesn't matter," running low on context or time, or eagerness to reach the synthesis are NOT permission — surface the ❌ item to the user and let them decide.
+The number and strength of instruments do not define these states. Promotion adds method and memory; it never removes instruments. Walk instruments remain available to offer throughout Surveys and Expeditions wherever their calling signals arise; the user still selects any unscheduled run. Camera versus engine is a separate axis: Walk, Survey, and Expedition should all default to feedback-rich camera mode.
 
-Show the checklist to the user (don't run it silently) so they can see the phase actually closed before the next one opens.
+## Quiet router
 
-**Output principle: write full content to files, present only summaries to the user.** Every phase produces substantial analytical output — essays, negation analyses, lateral material, syntheses, validation feedback. Write all of this to files. When presenting to the user, give a concise structural summary (2-5 sentences per major section) that orients them and supports their decision-making at checkpoints. The user can always read the full files if they want depth; what they need from you is the shape of the analysis, not the full text. This applies to every user-facing checkpoint in the process.
+1. **Read before routing.** Read the user's specimen and supplied artifacts before announcing likely scope.
+2. **Focus.** Unless the request is a stable fact, constrained transformation, or explicit “just answer,” announce the **focus interview**, reflect what seems important and unresolved, and ask the smallest set of questions whose answers could change the analysis. A small personal or shared-household problem still needs focus when different standards, feelings, labor, or constraints could be hidden. A fact-shaped practical question still needs focus when the desired outcome, named system, specimen, or intervention sequence selects among several valid answers. “Keep this light” narrows the interview; it does not cancel it.
+3. **Offer.** Present three fitting instruments with what each measures and why the reading may help. Wait for the user's selection.
+4. **Expose.** Announce and run only the selected instrument or selected tightly coupled cluster.
+5. **Return the reading.** Present the bounded readout, calibration, artifact risk, and unmeasured remainder without explaining the whole specimen. Ask what the user notices.
+6. **Keep claims typed.** Distinguish observation, user testimony, source claim, elicited response, generated possibility, inference, analogy, value judgment, and hypothesis. Do not let later prose turn one into another.
+7. **Offer the next exposure.** Pause; offer probes; let the user reframe; or offer promotion. Cross into conclusion, decision, or action only through the OODA orientation gate.
+8. **Promote explicitly.** Never create durable apparatus as a quiet side effect of a Walk.
 
-**Donor translation boundary: preserve technical depth internally; rebuild accessibility for the user.** Blind donor research must use the distant field's own concepts and vocabulary, but raw donor pages are research substrate, **not user-facing copy**. After the blind work is complete, the sighted orchestrator writes a separate, gentle on-ramp for every donor it surfaces: begin from something the user demonstrably understands from the interview, show one concrete phenomenon in the donor field, explain the useful mechanism in ordinary language, and only then introduce a few native terms with inline definitions. End by naming what transfers to the home problem and where the analogy stops. Personalization changes the explanatory bridge, never donor selection, interpretation, or `[fit:]` calibration. See Phase 4 Stage B and Stage D for the required template.
+Do not add a low-probability exception merely because it is possible. Surface it only when the specimen supports it, it is common enough to affect the first answer, or missing it would carry serious cost. State the condition that would make it relevant; do not let a caveat masquerade as a diagnosis.
 
-**File organization:** Create a dedicated directory for each dialectic's output files. First check if a `dialectic/` or `dialectics/` directory already exists (common in codebases that run multiple dialectics) — if so, create a subdirectory there. If not, create a new directory with a descriptive name (e.g., `dialectic-react-state-management/`). Prefix every file with its round number: `round_1_context_briefing.md`, `round_1_monk_a.md`, `round_1_determinate_negation.md`, `round_2_monk_a.md`, etc. This keeps multi-round dialectics navigable and prevents file collisions across rounds. Alongside these round files, the dialectic maintains a persistent research **wiki** (interlinked typed pages plus `index.md` and `log.md`, gardener-owned, compounding across rounds), a **staging** directory for research drafts (`<dialectic-dir>/staging/`), and a per-round **control log** (`round_N_dialectic_log.md`) — see `reference/dialectic-wiki.md`. These sit alongside the `round_N_*.md` files, which are unchanged.
+Direct requests such as “run a term scan,” “map this possibility space,” or “apply the frontier rheometer” bypass instrument selection, not the handshake, required input, or feedback. Even when the user names the instrument, repeat its name with the brief parenthetical explanation before any instrument-shaped work. Ask only for missing substrate.
 
-### Phase 1: Elenctic Interview + Research
-**Read `reference/phase1-elenctic-interview.md` before executing.**
+Requests for a “dialectic,” a hostile thesis test, the strongest case on each side, determinate negation, or validation require context-isolated positions at minimum. After the focus interview, offer short blind Monks as a Walk instrument or offer Expedition. Never produce an Expedition-shaped thesis/antithesis/synthesis from the orchestrator's single context without labeling it a correlated provisional sketch.
 
-The most important phase. Explain the process to the user. Interview them using Socratic technique to surface hidden assumptions and the deepest version of the contradiction. Identify their belief burden (see catalog below). Ground the monks via research (external domains) or deep interview (personal domains). **Run a blind structural reconnaissance (1d.5)** — strip the home specifics and have a blind analyst surface the domain's hidden assumptions and candidate deep/orthogonal fault lines; use it to sharpen your fault-line choice before the briefing locks (counters the home-frame bias that makes dialectics converge on the prior). **By default, also weave 1–2 of those cross-domain framings into the monk briefing (1e.1)** as analogies — go light or skip for personal/values domains where the monks are grounded in the user's own material — with a Phase-4 guard (4.3) that the monks didn't homogenize. **Generate multiple exploratory 2×2s (1c.2** — primer at `reference/quadrant-diagrams.md`**)** to map the space of possible tensions and explore with the user where to point the monks; each candidate's second axis is a candidate orthogonal pole that feeds the next step. **Run the third-pole probe (1c.1)** — default is 2 monks, but add a 3rd (or 4th, cap there) when a position surfaces that (a) isn't reachable as an A↔B blend, (b) has its own constituency or literature, (c) ideally argues on an orthogonal axis. Write a context briefing document. Confirm framing and final monk count with the user — ask about gaps.
+Blind possibility-space cartography requires a source-grounded map frozen before its expectation probes are read. Without that independent track, call the result a model-salience scout, not cartography; do not make residual, collapse, novelty, or “most promising” claims from recurrence alone.
 
-### Phase 2: Generate the Electric Monk Prompts
-**Read `reference/phase2-monk-prompts.md` before executing.**
+## Walk field kit
 
-Generate one prompt per monk (typically 2, sometimes 3-4) calibrated to the user's belief burden. Each monk must BELIEVE at full conviction — this is the functional core of the ABS. With 3+ monks, each monk's framing corrections must preempt degenerate framings against *every other monk*, not just one opponent, to avoid 2-vs-1 coalitions. The reference doc contains the required prompt structure (role, framing corrections, context briefing, research directives, argument structure, anti-hedging, length).
+| Signal                                                  | Instrument                                      | Typical readout                                             |
+| ------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
+| The stated request may not be the user's real question  | **Focus interview** (`focus-interview`)         | Confirmed aim, stakes, prior, and highest-value unknown     |
+| Events are mixed with explanations                      | **Substrate map** (`substrate-map`)             | What happens, in what order, without causal claims          |
+| Feelings, needs, constraints, or people remain implicit | **Stake map** (`stake-map`)                     | What each person protects, needs, fears, or cannot change   |
+| A repeated word may carry several meanings              | **Term scan** (`term-scan`)                     | Competing loadings and where they alter the dispute         |
+| Friction recurs but the conflict stays vague            | **Tension statement** (`tension-statement`)     | The smallest unresolved contradiction that explains it      |
+| A binary may omit an axis or constituency               | **Third-pole probe** (`third-pole`)             | A genuinely independent pole, or evidence none is supported |
+| A concrete condition may make the debate moot           | **Ground-condition probe** (`ground-condition`) | The fact or level at which the question changes             |
+| A practical change is cheap and reversible              | **Small experiment** (`small-experiment`)       | Prepared trial; later, the observed contrast                |
 
-### Phase 3: Spawn the Electric Monks
-**Read `reference/phase3-spawn-monks.md` before executing.**
+Procedures and controls are in [walk-kit.md](reference/instruments/walk-kit.md). The full registry maps advanced instruments to the existing phase procedures.
 
-Spawn all N monks as separate subagent sessions, in parallel. Check for hedging, degenerate framing, pairwise decorrelation, and — if N≥3 — coalition collapse (two monks sharing a frame while only the third is genuinely different). Present outputs to the user with guidance on how to read them. Ask if any claims should be tested against evidence no monk considered.
+## Artifact boundary
 
-### Phase 4: Determinate Negation
-**Read `reference/phase4-determinate-negation.md` before executing.** This phase is **staged** across four files — read the index first, then read each stage file (A–D) just-in-time as you reach it, writing the stage's output to the round file before reading the next. Don't pull all stages at once.
+### Stay on the Walk when
 
-You perform this yourself (not a subagent). Analyze internal tensions in each essay, then the surface contradiction, shared assumptions, **position protection (4.2.5 — Ricoeur)**, determinate negation, hidden question, lateral creativity, Boydian decomposition, **misfit register (4.6.5)**, and sublation criteria. **Scales naturally to N monks** — each monk gets its own determinate negation, decomposition gets richer, 4.2/4.2.5/Lens D each get N-way plus pairwise checks. Write your initial synthesis guess first — compare at the end to check for pattern-matching. **At the hidden question, draw the mandatory hidden-question 2×2** (surface axis × hidden axis; primer at `reference/quadrant-diagrams.md`) — each monk's ignored quadrant is its determinate negation made visual and the empty quadrant is a synthesis candidate; if no second axis honestly earns its place, the contradiction is genuinely 1-D (itself a finding). Lateral creativity interventions: compressed conflict generation (oxymorons), donor recruitment for a multi-domain sea (random Wikipedia donors + functional donors recruited *blind* — a blind subagent gets the missing capacities as domain-neutral abstract patterns tagged with their epistemological register, reads Wikipedia's Outline of academic disciplines itself so it can't drift to adjacent fields, and both generates candidates AND selects the final set under structural rules it can apply blind — negation coverage, no-clustering (≥3 unrelated meta-domains), and register spread (analytical *and* relational/normative/experiential, both axes at once); the orchestrator's only role at selection is a negative **distance veto** (reject any donor that is the home field or its neighbor), keeping its legibility bias out of positive selection. Then each donor is researched for its own technical vocabulary and decomposed to equal depth via a domain manifest; donor parts and their recombinations are calibration-tagged by isomorphism strength, not home-field truth), non-propositional pause (three metaphors). The Boydian decomposition tags each atomic part with a calibration estimate and runs qualities/attributes/operations as three passes. A **loss audit (4.6.6)** recovers high-value ideas held by only one monk before the synthesis can smooth them away. The **misfit register** captures friction-with-the-frame that the synthesis will *not* resolve — briefing residue, synthesis residue (Adorno), framing genealogy (Foucault), undecidables (Derrida) — and writes to a per-round file plus `tension` pages in the wiki (which replace `misfit_register.md`). Before the register lenses, check `reference/misfit-patterns-watchlist.md` for previously-seen cross-domain patterns. Write all Phase 4 output to file. **HARD STOP at the end of Phase 4** — present a concise summary (hidden question, key decomposition insights, sublation criteria, 1-2 highest-signal misfits) plus a gentle, personalized on-ramp for each distant donor the summary uses (the user is expert at home but not in the donors, and can't judge an isomorphism they can't follow). Never expose the raw field-accurate research as the introduction. Get the user's response before proceeding to synthesis. This is the highest-leverage correction point in the entire process. The **Frontier Overlay** (`reference/frontier-overlay.md`) attaches a short *frontier reading* to the negation — a blind-expectation probe (sees only the question + poles) predicts the expected resolution, and the orchestrator marks the negation groove (flowed to the expected answer) or frontier (thickened / resisted it), flagging any frontier→groove **collapse**. It is a diagnostic map the user reads, never a steer.
+- the session record is enough;
+- probes are opportunistic rather than a planned collection;
+- the next useful move is another question, answer, or small experiment;
+- the user does not need to resume, compare, search, audit, or coordinate the work.
 
-### Phase 5: Palette of Candidates
-**Read `reference/phase5-sublation.md` before executing.**
+### Promote to Survey when
 
-Generate a **palette of structurally-distinct candidates**, not a single synthesis. The classical Aufhebung (cancel/preserve/elevate) biases toward smoothing differences into one unified answer — often boring, sometimes wrong. The palette preserves the angles the research / belief / decomposition phases produced. **Construct the candidate 2×2 first** (carry the 4.4 hidden-question 2×2 forward; primer at `reference/quadrant-diagrams.md`) and read candidates off it — axis 2 is often the G ground condition, the 2×2 itself is the F dissolution, the empty quadrant the S synthesis, and a 2×2 that won't honestly form signals U. **S (Synthesis) is always drafted** by the orchestrator with abduction test, reversibility check (Boyd), closure property, and failure-mode tests (analytical capture, level reduction). **J/G/F/U are drafted conditionally** based on which misfit-register lenses fired non-trivially: J (Juxtaposition) when 4.2.5 surfaced a disguised shared interest; G (Ground condition) when Lens A caught briefing residue or a level-shift is plausible; F (Framing dissolution) when Lens C surfaced a fossil framing; U (Undecidable) when Lens D caught a word loaded oppositely by both monks. Each candidate is written by a separate subagent with only its own lens material — no sight of sibling drafts (decorrelation is the point). Each candidate has its own internal standard. Present all candidates side-by-side to the user. **Do NOT rank, judge, or recommend** — the user is belief-free and in the judging seat. Each candidate also carries a one-line **frontier flag** (groove vs. frontier against the blind-expected resolution) — a scan aid, not a ranking.
+- chat history is becoming an unreliable working memory;
+- the inquiry needs explicit gaps and a coverage plan;
+- readings must be repeated, compared, or checked under another frame;
+- research or several agents need coordination;
+- the user wants a durable, searchable record.
 
-### Phase 6: Validation of the Palette
-**Read `reference/phase6-validation.md` before executing.** This phase is **staged** — the index holds setup (6.0 candidate selection, 6.1 model), then read each of the three stage files (A monk validation, B hostile auditor, C interpret/refine) just-in-time, writing output to file before reading the next. Don't pull all stages at once.
+On promotion, read [apparatus-survey.md](reference/apparatus-survey.md) and materialize [survey-log-template.md](reference/survey-log-template.md) from the session so far. Do not restart the inquiry, fake a formal interview, or ask the user to repeat answered questions. A wiki is optional until reuse, cross-links, recursion, several agents, or context risk justify it.
 
-User selects which palette candidate(s) to validate. Each candidate is validated **on its own terms** with a candidate-specific monk prompt (S: elevated vs. defeated; J: productive vs. evasive; G: orthogonal vs. same-axis; F: genealogy correct and constituency real; U: loadings genuinely opposite and refusal genuine). Each candidate gets its own **hostile auditor** with no sight of sibling candidates — each auditor attacks its candidate's internal standard. No tournament, no winner. User picks one, combines two (explicitly named), drops all and reopens Phase 4, or holds the palette open as the round's output. Present improvements one at a time per surviving candidate.
+### Promote to Expedition when
 
-### Phase 7: Recursion
-**Read `reference/phase7-recursion.md` before executing.**
+- an unresolved contradiction remains after lighter probes;
+- the outcome is costly or hard to reverse;
+- the user cannot carry opposing beliefs at full strength;
+- structural comparison, context-isolated committed positions, validation, and recursion would change the result enough to repay their cost;
+- the requested deliverables need the Expedition's full family of context-isolated positions, determinate negation, candidate palette, validation, and durable trace;
+- the user asks for the full dialectic.
 
-Recursion is the engine of the skill — the first round is calibration. **You MUST generate an idea burst (5-8 candidates) before clustering into directions** — do not skip this step, it is what prevents predictable/obvious recursion directions. Then cluster into 2-4 directions as a menu. Fresh agents are usually better than resumed sessions. New research is often essential as each synthesis opens new conceptual domains. Default: recurse at least once. Track the dialectic queue in a file. **Treat the queue as an open-ended population** (Lehman & Stanley / POET): admit contradictions on a minimal criterion (not-too-trivial, not-too-solved), select by novelty over resolvability, and **transfer each synthesis against the other queued tensions** — a stepping stone from one contradiction often unlocks another, the direct antidote to a dialectic drifting back to the user's prior.
+Read [apparatus-expedition.md](reference/apparatus-expedition.md). Adopt the Walk and Survey record as Phase 1 substrate; ask only for gaps. Preserve the original question, goal, evidence types, loaded terms, current tensions, working question, and lineage.
 
-## Belief Burden Catalog
+## Electric Monk core
 
-During the elenctic interview (Phase 1c'), **pay attention to what the user is stuck believing.** The dialectic's power comes from freeing the user from specific belief loads — but *which* beliefs need outsourcing depends on the person. Different cognitive styles produce different belief burdens, and the Electric Monks need to be calibrated accordingly.
+The Expedition is an artificial belief system. Context-isolated agents carry committed positions so the user can inspect the structure of the contradiction without having to believe either side.
 
-You don't need to type the user explicitly — just notice the pattern and calibrate. Here's a catalog of common belief burdens and how they map to the monks' roles.
+- **Rao — outsource belief.** A hedging Monk drops the very load it was hired to carry. Each Monk inhabits its position at full conviction.
+- **Hegel — use determinate negation.** Find the specific way each position fails from inside its own logic. A synthesis must cancel each position as complete, preserve its real insight, and produce a new frame. It is not compromise.
+- **Boyd — open the system.** Shatter arguments into parts, bring in material from outside the home frame, and recombine only where the connection has support. Trace each candidate claim back to its parts, link, and fit calibration.
+- **Preserve residue.** Juxtaposition, ground conditions, framing dissolution, and genuine undecidability may fit better than synthesis. The candidate palette tests these distinct landings.
+- **Counter sycophancy.** Treat the user’s ideas as material, not privileged answers. Do not praise, position-track, or bend the analysis toward what the user appears to want.
 
-**A note on the MBTI labels:** These patterns map loosely to MBTI cognitive function stacks (Ni-Te, Ne-Ti, etc.) because the model has rich training data about those patterns — thousands of forum posts, blog articles, and discussions about how each type thinks, gets stuck, and makes decisions. The labels function as **retrieval keys into that training data,** not as diagnostic categories. Don't treat them as psychometric claims. Don't announce them to the user. Use them as reasoning aids to help you pattern-match what you're seeing in the interview and calibrate the monks accordingly.
+Use the strongest available agents for an Expedition. Diverse models can help decorrelate Monks, but strong role and framing differences matter more than provider variety.
 
-**The Convergent Visionary** (Ni-Te pattern — common in founders, architects, CTOs)
-- *Belief burden:* Premature convergence — "I already see where this should go." They've locked onto a vision and can't genuinely entertain alternatives at full strength.
-- *What the monks must do:* Monk A validates their vision's core insight (so they can release it without feeling it's been dismissed). Monk B believes the strongest *alternative* vision at full conviction — not a critique of theirs, but a genuinely different view of what the thing should be. The user needs to see two fully-believed futures to escape their own.
-- *Interview signal:* They have a strong thesis and want to "stress-test" it. They describe the opposing view weakly or dismissively. They say "I know X, but..."
+## The Completion Gate
 
-**The Empathic Integrator** (Ni-Fe pattern — common in counselors, teachers, community leaders)
-- *Belief burden:* Undifferentiated care — "everything matters equally because someone needs it." They absorb others' needs and can't triage because triage feels like betrayal.
-- *What the monks must do:* Monk A believes their vision is *exactly right* — validates the Ni. Monk B believes the concrete reality constraints at full conviction: these resources, this timeline, these people's actual capacities. Not "your vision is wrong" but "here is what IS, right now." The user needs the gap between vision and reality held open by monks so they can make triage decisions from outside both.
-- *Interview signal:* They describe multiple competing needs without clear priority. They use "should" frequently. They feel guilty about the topic. They resist ranking or cutting.
+This gate applies **inside an Expedition** at every phase and stage boundary. It does not apply to a Walk or impose seven-phase ceremony on a Survey.
 
-**The Exploratory Debater** (Ne-Ti pattern — common in consultants, researchers, writers)
-- *Belief burden:* Paradoxical — they believe *nothing* deeply enough to commit, because commitment slows their transients. They can argue any side, but "what do *you* actually think?" produces discomfort.
-- *What the monks must do:* Monk A believes *the user's own behavioral history* — "your pattern of choices reveals you actually value X." Monk B believes the user's stated values — "you say you value Y." The contradiction is between what the user does and what the user says. The monks hold the mirror the user avoids.
-- *Interview signal:* They can articulate both sides fluently. They find the topic intellectually interesting but can't decide. They've explored this before without resolution. They reframe rather than commit.
+1. **Enumerate.** List every required task, deliverable, and scheduled instrument from the phase or stage checklist and `reference/expedition-instrument-map.md`.
+2. **Instrument audit.** For each scheduled instrument, cite its ledger entry and attest authorization, lifecycle state, actual execution seat and contexts, fallback, access delta, typed readings, calibration or control, artifact risk, unmeasured remainder, trace, and user-feedback state. Also attest that phase interpretation is stored outside the raw readout. Prepared is not complete; prose resembling a readout is not proof that the instrument ran.
+3. **Attest.** Mark every procedural and instrument item ✅ or ❌ and cite concrete evidence: a file, artifact, ledger entry, result, or check.
+4. **Gate.** Proceed only when all items are ✅. Any partial or missing item stops the apparatus.
+5. **Waiver.** Only the user may waive a named missing item. Time, context pressure, or orchestrator judgment is not a waiver. A waiver never upgrades a downgraded reading or manufactures blindness, independence, support, or confidence.
 
-**The Practical Executor** (Te-Si pattern — common in operators, managers, engineers)
-- *Belief burden:* Optimization lock — they've optimized a system and can't see that they might be optimizing the *wrong thing.* Their beliefs about how things work are grounded in evidence and experience, which makes them hard to dislodge.
-- *What the monks must do:* Monk A validates their system — "here's why this works and here's the evidence." Monk B questions the *goals,* not the execution — "you've optimized for X; what if X is no longer the right target?" The user needs to see their own competence validated before they can hear that the frame has shifted.
-- *Interview signal:* They cite data, metrics, past results. They describe what works. They're resistant to abstract reframing. They say "in my experience..." frequently.
+Show the checklist to the user before moving on.
 
-**The Possibility Explorer** (Ne-Fi pattern — common in creatives, entrepreneurs, activists)
-- *Belief burden:* Values fragmentation — they believe many things passionately but those beliefs may contradict each other. Each commitment feels individually right; collectively they're impossible.
-- *What the monks must do:* Monk A and Monk B each take one of the user's *own* commitments and push it to its logical extreme. The contradiction emerges from within the user's own value system, not from an external critic. The user needs to see the tension between things they already believe.
-- *Interview signal:* They describe multiple passions or commitments. They feel pulled in different directions. They resist being told what to prioritize because each priority is values-laden.
+## Expedition reference order
 
-**The Steady Guardian** (Si-Fe pattern — common in administrators, caretakers, institutional maintainers)
-- *Belief burden:* Tradition lock — "this is how it's done" has become invisible as an assumption. Their deep knowledge of how things work is genuine and valuable, but it blinds them to radically different approaches.
-- *What the monks must do:* Monk A articulates *why* the current approach exists — what wisdom is embedded in it. Monk B researches how other people/cultures/organizations solved the same underlying problem in completely different ways, grounded in real examples (not abstract possibility).
-- *Interview signal:* They describe the situation in terms of established processes. They cite how things have always been done. They express concern about change disrupting what works.
+Read each file in full immediately before executing it. Run its completion gate before reading the next one.
 
-**How to use this catalog:** Don't announce your typing. Don't say "I notice you're a convergent visionary." Just use the pattern to calibrate:
-1. Which belief load is heaviest for this user? That determines what the monks must hold.
-2. What must Monk A validate? (Always validate the dominant function first — otherwise the user takes on defensive belief weight and their transients slow down.)
-3. What must Monk B present that the user can't natively hold at full conviction?
+1. [Expedition instrument map](reference/expedition-instrument-map.md)
+2. [Phase 1: interview and research](reference/phase1-elenctic-interview.md)
+3. [Phase 2: Monk prompts](reference/phase2-monk-prompts.md)
+4. [Phase 3: spawn Monks](reference/phase3-spawn-monks.md)
+5. [Phase 4: determinate negation](reference/phase4-determinate-negation.md), including its linked stages and the [refinement loop](reference/refinement-loop.md)
+6. [Phase 5: candidate palette](reference/phase5-sublation.md)
+7. [Phase 6: validation](reference/phase6-validation.md)
+8. [Phase 7: recursion](reference/phase7-recursion.md)
 
-This calibration shapes the framing corrections in Phase 2 and the specific argument structures you assign to each monk.
+The [dialectic wiki](reference/dialectic-wiki.md) defines durable research memory and the control log. The [belief-burden catalog](reference/belief-burden-catalog.md) helps calibrate Monk roles without typing the user aloud.
 
-## Model Selection & Cost Guidance
+## Environment mapping
 
-**Use the strongest available model with maximum thinking budget for everything.** This skill operates at the edge of what models can do — perspective-taking, structural analysis, abductive reasoning, cross-domain connection. In testing, using Opus-class models for monk essays produced dramatically more insightful arguments than Sonnet-class. The monks aren't just "arguing well" — they're inhabiting positions, finding non-obvious evidence, and pushing to genuinely uncomfortable conclusions. This requires maximum capability.
+Map roles to the host’s subagent tools. Spawn Monks in separate fresh contexts and keep them blind to one another. Run tasks in parallel when they do not depend on one another and the host supports it. Resume the gardener when possible; if its session is lost, re-ground it from the wiki on disk. For validation, resume the original Monk when possible, reinforcing its role; otherwise give a fresh validator the original position and only the candidate it must test.
 
-| Phase | Recommended Model | Why |
-|-------|------------------|-----|
-| All phases | Opus/strongest available + extended thinking | Every phase benefits from maximum reasoning. The quality difference is substantial, not marginal. |
+Treat execution placement as part of each instrument, not as a speed choice. Keep user-facing elicitation and continuity work in the orchestrator. Use fresh or parallel subagents when blindness, context-isolated belief, decorrelation, or isolated source tracks create the access differential. The orchestrator owns comparison and presentation unless a card says otherwise.
 
-**Heterogeneous models increase creativity.** When possible, use different model families for Monk A and Monk B. Different training data produces different "intuitions" — different blind spots, different reasoning patterns, different default framings. This is structural decorrelation at the training-data level, which is the single most promising direction in the multi-agent debate literature (Du et al., ICLR 2025). The orchestrator should remain your strongest available model (it needs maximum synthesis capability), but monks benefit from heterogeneity.
-
-**Before starting, check what's available.** If you're running in an environment with access to multiple coding agents or model providers, ask the user:
-
-> I can increase the creativity of the dialectic by using different AI models for each monk — different training data means genuinely different blind spots and reasoning patterns. Do you have access to any of these I could use for one of the monks?
-> - Gemini (via `gemini` CLI or API)
-> - GPT-4 / ChatGPT (via `codex` CLI or API)
-> - Other model providers
->
-> If not, I'll use the same model family for both monks — the skill works fine either way, the decorrelation just comes from the different prompts and belief commitments rather than from different training data.
-
-If heterogeneous models aren't available, don't worry — the skill is designed to work with homogeneous models. The framing corrections, belief burden calibration, and targeted research directives already produce substantial decorrelation. Heterogeneous models are a bonus, not a requirement.
-
-### Approximate Token Budget (from test runs)
-
-Based on three test runs across different domains (normative/institutional, business strategy, political economy of OSS):
-
-**External-research domains:**
-
-| Phase | Typical Range | Notes |
-|-------|--------------|-------|
-| Phase 1 research (2-3 parallel agents) | 150-250K tokens | Do NOT cut here. This is the highest-value spend. Broader domains trend higher. |
-| Phase 1 supplementary research (user-triggered) | 0-50K tokens | Common — users frequently identify gaps. Budget for it. |
-| Phase 1d briefing synthesis | ~5K tokens | Orchestrator work |
-| Phase 3 monk essays (with briefing) | 25-45K tokens (2 monks), ~1.5x for 3 monks, ~2x for 4 | 2-3 targeted searches per monk |
-| Phase 4 analysis + misfit register | 15-25K tokens | Orchestrator inline work |
-| Phase 5 palette (S + 1-3 non-S candidates) | 20-40K tokens | Parallel decorrelated subagents; cost scales with candidate count |
-| Phase 6 monk validation per candidate | 12-25K tokens | Two monks per candidate, strongest model |
-| Phase 6 hostile auditor per candidate | 5-15K tokens | One agent per candidate, strongest model. Reads essays + single candidate only. |
-| Phase 7 recursive round | 25-50K tokens | Often most valuable |
-| Orchestrator overhead | 20-30K tokens | Interview, transitions, presentation |
-| **Total (one round + recursion)** | **~300-400K tokens** | Median ~300K without supplementary research |
-
-**Personal/values domains** are significantly cheaper on research but more expensive on interview:
-
-| Phase | Typical Range | Notes |
-|-------|--------------|-------|
-| Phase 1 extended interview | 15-30K tokens | 6-10 exchanges, deeper probing |
-| Phase 1 framework research (optional) | 0-50K tokens | Frameworks, not facts. May be skipped. |
-| Phase 1d context briefing | ~5K tokens | User-sourced material synthesized |
-| Phase 3 monk essays | 15-30K tokens | Monks may need zero additional searches |
-| Remaining phases | Similar to above | |
-| **Total (one round + recursion)** | **~100-200K tokens** | Much cheaper — the user's testimony is the primary input |
-
-**Key insight:** For external domains, Phase 1 research is the highest-value spend. For personal domains, Phase 1 *interview depth* is the highest-value spend — the monks can only believe as specifically as the briefing allows.
-
-## Environment Mapping: Claude Code / Task Tool
-
-This skill is written around `claude -p` (pipe mode) for spawning subagents. If you're running in Claude Code using the Task tool, here are the key differences:
-
-| Skill instruction | `claude -p` | Claude Code Task tool |
-|-------------------|-------------|----------------------|
-| Spawn subagent | `echo "[PROMPT]" \| claude -p > output.md` | `Task(prompt, subagent_type="general-purpose")` |
-| Parallel execution | Background shell jobs | `run_in_background=true` |
-| Output to file | Shell redirect (`> file.md`) | Agent returns text; orchestrator writes files |
-| Session resumption (Phase 6) | Resume same `claude -p` session | `resume` parameter with `agentId` — but persona may not persist without reinforcement. Include a summary of the agent's original argument as fallback. |
-| Persistent gardener | Resume same `claude -p` session across the dialectic | Resumable agent via `resume` + `agentId`; **always able to re-ground from the wiki on disk** if the session is lost or context compacts |
-| Model selection | `--model` flag | `model` parameter (defaults to inheriting from parent) |
-| Tool access | `--allowedTools web_search,web_fetch` | Inherits from parent or configure per-task |
-| Blind-expectation probe (Frontier Overlay) | `echo "[question + poles]" \| claude -p` — ephemeral, blind | `Task(prompt, subagent_type="general-purpose")` — sees only working-question + poles; blind to essays/negation/donors; orchestrator-facing (`reference/frontier-overlay.md`) |
-
-**Key difference:** With `claude -p`, agents write output directly to files via shell redirect. With the Task tool, agents return text to the orchestrator, who writes files. This adds a step but gives the orchestrator control over file naming and structure. Either approach works — just be aware that the file I/O pattern differs.
-
-**Session resumption for validation:** The skill prefers resuming original agent sessions so validators retain their full conviction context. In Claude Code, this works via `resume` + `agentId`, but test runs found the persona sometimes needs reinforcement. The fallback — a fresh validation prompt that includes a summary of the agent's original argument — works well in practice.
-
-## Domain Adaptation
-
-The dialectic structure is universal but the vocabulary of "truth" and the grounding mode vary by domain. Adapt accordingly:
-
-| Domain Type | What "Truth" Means | Good Synthesis Looks Like | Grounding Mode | Aporia (productive perplexity) Valid? |
-|-------------|-------------------|--------------------------|----------------|--------------|
-| **Empirical** (engineering, science) | What works, performs, is maintainable | Testable decision criteria, architectural patterns | External research | Rarely |
-| **Normative** (ethics, politics, policy) | What's defensible, respects competing values | Tension map with navigation strategies | Mixed (research + user values) | Yes |
-| **Personal** (life decisions, career) | What aligns with actual priorities | Values clarification — what you actually want | Deep interview (user is the source) | Yes |
-| **Creative** (writing, design, art) | What's interesting, resonant, surprising | Unexpected recombinations, new possibilities | Mixed (research + user aesthetic) | Sometimes |
-| **Risk Analysis** | Actual risk structure behind competing assessments | Decision framework calibrated to real uncertainties | External research | No |
-
-### Domain-Specific Failure Modes
-
-- **Engineering:** False equivalence — sometimes one approach is just better. Don't force balance where evidence is lopsided.
-- **Personal decisions:** Therapy-larping — help clarify thinking analytically, don't pretend to be a therapist. Also: **generic monks.** A monk that believes "you should follow your passion" without grounding in the user's specific history, constraints, and stakeholders is useless. The briefing must be specific enough that the monks argue from the user's actual situation.
-- **Politics:** Both-sidesism — steelman both positions but let the synthesis reflect actual evidence.
-- **Creative:** Over-rationalizing — sometimes the right choice is what feels right. Surface that, don't override it.
-- **Normative/Institutional:** Ignoring authority structures — a synthesis can be intellectually compelling but practically irrelevant if it doesn't engage how decisions actually get made within the relevant institution. Ask: "Who decides?" and "Does this synthesis engage the actual decision-making authority, not just the intellectual argument?"
-
-## Theoretical Foundations (Reference)
-
-Read this section to understand WHY the process works the way it does. This informs your judgment when things go off-script. The frameworks are listed in order of operational importance — Rao explains *what the tool is*, Hegel explains *how contradictions resolve*, Boyd explains *how creativity works and why going outside is mandatory*, Socrates explains *how to surface the question*, Adams gives *the metaphor*, Aquinas gives *the aspiration*, and DeLong explains *when to use it*.
-
-### Rao: Artificial Belief Systems and Fast Transients
-
-The foundational theory for this skill comes from Venkatesh Rao's "Electric Monks" framework (after Douglas Adams' *Dirk Gently*). The core distinction: **this tool is not artificial intelligence — it is an artificial belief system (ABS).** The agents aren't thinking for you. You're still doing the thinking (orchestrating, judging, choosing directions, recognizing genuine sublation vs. compromise). The agents are *believing* for you.
-
-**Why belief is the bottleneck:** The central transaction cost in human cognition is context-switching cost — what Boyd calls the "transient." The length of the transient depends on how much belief inertia you're carrying. Once you believe a position, switching to genuinely entertaining its negation is expensive. You hedge, you steelman weakly, you unconsciously bias. The Electric Monks eliminate this cost by carrying 100% of the belief load, freeing the user to operate as a pure context-switching specialist — what Rao calls "informationally tiny."
-
-**The F-86 analogy (from Boyd via Rao):** In the Korean War, F-86 Sabres achieved a 10:1 kill ratio against MIG-15s despite roughly matched flight capabilities. Boyd discovered the difference was hydraulic controls — the F-86 pilot could reorient faster because the plane did more of the mechanical work. The pilot's freed-up attention went to *choosing better maneuvers,* not just executing them faster. The Electric Monks are hydraulic controls for intellectual work: by doing the belief-work, they free the user's attention for the higher-order task of structural analysis and creative synthesis.
-
-**Operational implications for this skill:**
-
-1. **Anti-hedging is a functional requirement, not a stylistic preference.** A hedging monk is an Electric Monk that has failed at its one job. If it doesn't fully believe, the user has to pick up the dropped belief weight, their transients slow, and they lose the belief-free orchestrator position.
-
-2. **Validation checks for *elevation,* not agreement.** A defeated monk has dropped its belief load — belief was destroyed rather than transformed. A properly elevated monk *believes more* — it sees its original position as partial truth within a larger truth. The ABS should always be carrying belief; the synthesis just changes *what* it carries.
-
-3. **Recursion trains transient speed.** Each cycle is a full reorientation: commit (via monks) → shatter (via Boyd) → reconnect (via Hegel) → commit to the new thing (via monks again). Seven cycles in an hour = seven reorientations with zero belief inertia. Over time, the user may internalize this reorientation capacity — the mechanical monk as transitional object.
-
-4. **The branching queue is an orientation library.** Each deferred contradiction is a pre-positioned reorientation the user can snap into. The richer the queue, the more agile the user's subsequent thinking — even outside the tool — because they know the monks are holding those positions for them.
-
-5. **Validate the user's dominant mode first.** If the user has to *defend* their existing position, they've taken on belief weight. Monk A's first job is to validate the user's instinct so thoroughly that they can *release* it — let the monk carry it — and operate from the belief-free orchestrator seat.
-
-### Hegel: Determinate Negation and Aufhebung
-
-The engine of the dialectic is **determinate negation** — not "this is wrong" but "this is wrong in a specific way that points toward what's missing." The specific way a position fails contains a signpost toward the richer understanding needed.
-
-**Sublation (Aufhebung)** simultaneously cancels, preserves, and elevates. It is NOT compromise (splitting the difference). It produces something neither party could have conceived independently but which, once articulated, both recognize as more complete. It is **irreversible** — genuine cognitive gain. The Kant example: the rationalism/empiricism debate wasn't resolved by "knowledge comes half from reason and half from experience" but by "experience provides content, reason provides structure." After Kant, you can't go back.
-
-Hegel never used "thesis-antithesis-synthesis" — that framing comes from Fichte. The actual movement is driven by the one-sidedness of each concept, which generates its own negation internally.
-
-### Boyd: Destruction and Creation (1976) — The Creative Engine
-
-John Boyd's "Dialectic Engine": **destructive deduction** (shatter existing conceptual domains, break the correspondence between each concept and its parts, scatter them into a "sea of anarchy") followed by **creative induction** (find common qualities, attributes, or operations among these scattered parts to synthesize a genuinely new concept). The crucial step is the separation — without unstructuring, creation cannot proceed because the parts are still trapped as meaning within unchallenged domains.
-
-**Boyd's critical insight: you cannot synthesize something genuinely new by recombining within the same domain.** If Monk A and Monk B are both arguing about web frameworks, a synthesis that only recombines claims from their two essays will produce rearrangement, not creation. Genuine novelty requires material from *outside* the original conceptual domains. The destructive step — separating particulars from their previous wholes — creates *space* for outside material to enter and form new connections. Boyd is explicit: the result must NOT use the parts "in only those same arrangement" as any original domain — that would merely reconstruct what you already had.
-
-**Boyd's three pillars — why going outside is structurally necessary, not merely helpful:**
-1. **Gödel's Incompleteness:** Any consistent system is incomplete; its consistency cannot be demonstrated from within. You must go outside to verify it. Applied: you cannot determine whether a synthesis is consistent by analyzing it with the same concepts that built it.
-2. **Heisenberg's Uncertainty:** When the observer's precision approaches the phenomenon's precision, uncertainty swamps the measurement. Applied: the deeper you refine a concept, the more the concept shapes what you observe — a feedback loop that generates confusion, not clarity. *Operationalized as two checks:* the observer-perturbs-observed check at the top of 4.6 (decompose what the monk committed to, not a pre-smoothed version) and the precision-vs-grip check in Phase 5 (a synthesis with no residue has been over-refined past the evidence).
-3. **Second Law of Thermodynamics:** Entropy increases in any closed system. Applied: any inward-oriented effort to improve a concept's match with reality *necessarily increases the mismatch.* This is why within-domain refinement has diminishing returns and why each recursive round needs new external material — the system must open itself to avoid entropy death.
-
-Together: "any inward-oriented and continued effort to improve the match-up of concept with observed reality will only increase the degree of mismatch." The lateral creativity interventions (Phase 4.5) and the requirement for new research in recursive rounds aren't nice-to-have — they're the structural response to a thermodynamic necessity.
-
-**Boyd's verification step — reversibility:** After creative induction, Boyd requires checking internal consistency by tracing back to the original constituents. Those constituents are three-layered (per 4.6): the atomic parts, the *quality/attribute/operation* connection that joins them, and the `[fit:]` tag on the resulting recombination. If you cannot reverse directions — if a synthesis claim doesn't trace to identifiable parts, names no connection, or stands on a `[fit: reach]` connection — the ideas don't hold together without contradiction at that claim. But partial failure doesn't mean you reject the whole structure: identify which parts and connections cohere, add new material, and try again. The operational home of "positioned to synthesize" is the **refinement-loop maturity gate (at the 4.9 checkpoint)**: when the hidden question stops moving and the decomposition stops yielding new cross-edges, the reversibility material has stabilized enough to attempt synthesis.
-
-Boyd's cycle: **Structure → Unstructure → Restructure** → repeat endlessly at higher and broader levels of elaboration. The alternating entropy increase (destruction) and decrease (creation) form a control mechanism that drives toward deeper understanding.
-
-**Where Boyd is operationally present:** Phase 4.5b (donor recruitment — the multi-domain sea), Phase 4.6 (Boydian Decomposition — destructive deduction via domain manifest, anti-tidiness, qualities/attributes/operations passes, per-part calibration; plus the Heisenberg observer-perturbs check), Phase 4.6.6 (loss audit — hidden-profile guard), Phase 5 (creative induction — the reversibility *repair* loop, the precision-vs-grip check, and calibration weighting), Phase 6 (the auditor's reversibility check), and Phase 7 (Recursion — each cycle is Boyd's full Structure → Unstructure → Restructure). All three pillars now have an operational home: Gödel → reversibility + new research; Heisenberg → observer-perturbs + precision-vs-grip; Second Law → the Phase 7 entropy diagnostic.
-
-**Relationship to Hegel:** Hegel provides the engine for analyzing *how* positions fail (determinate negation) and the concept of what good synthesis looks like (Aufhebung). Boyd provides the engine for *what to do with the wreckage* — shatter, scatter, and recombine with outside material. Boyd also provides the theoretical proof for *why* going outside is mandatory (Gödel + Heisenberg + 2nd Law). The two frameworks are complementary: Hegel drives the contradiction analysis, Boyd drives the creative reconstruction.
-
-### Socratic Elenchus
-
-The elenctic method probes a position through questioning to expose contradictions and reach **aporia** (productive perplexity). Not adversarial but cooperative — "midwifery of ideas." The interview phase of this skill is elenctic. Aporia is sometimes a valid outcome.
-
-### LLM Multi-Agent Debate Research
-
-Key findings from Du et al. (2023, MIT) and subsequent work through ICLR 2025:
-- Multiple agents debating significantly improves reasoning and factual accuracy
-- Heterogeneous agents (different roles) outperform homogeneous ones
-- **Heterogeneous model families** (different foundation models for different agents) was the single most promising direction in the ICLR 2025 evaluation — different training data produces genuinely different reasoning patterns
-- Agents are too "agreeable" by default (RLHF) — they converge prematurely
-- Majority pressure suppresses independent correction
-- Agents debating *final answers* rather than *reasoning structures* is the core failure mode — requiring explicit reasoning chains (Phase 2, step 5f) counters this
-- The anti-hedging instructions in this skill explicitly counter RLHF agreeableness tendencies
-
-### Eisenstein: Typographic Fixity
-
-Elizabeth Eisenstein argued that print's most transformative effect was **typographic fixity** — enabling scholars to lay texts side by side and detect contradictions. LLMs represent the next step: fixity + comparison + structural contradiction analysis partially automated. This skill exploits that transition.
-
-### Adams: The Electric Monk
-
-Douglas Adams' Electric Monk (*Dirk Gently's Holistic Detective Agency*) is a labor-saving device designed to believe things for you. The one in the story has "developed a fault" — it believes too many irrational things. In this skill, the "fault" is the feature. Each monk is designed to believe a specific position at full conviction that the user cannot hold simultaneously. The monks are not thinking for the user — they are *believing* for the user, which is what frees the user to think.
-
-### Aquinas: Slender Knowledge of the Highest Things
-
-> "The slenderest knowledge that may be obtained of the highest things is more desirable than the most certain knowledge obtained of lesser things."
-
-This is the philosophical aspiration of the entire process. The dialectic does not produce certainty — every synthesis is provisional, fertile, pointing toward a deeper contradiction. But that slender, provisional knowledge of the *deep structure* (why this tension exists, what hidden question drives it, what shared assumption both sides are trapped in) is worth more than confident knowledge of the surface question ("which option should I pick?").
-
-**Operational implications:**
-- **Don't stop at Round 1.** Round 1 produces more certain knowledge of the lesser thing (the surface framing). Round 3 produces slender knowledge of the highest thing (the deep structure). The first round is calibration. The prize is in the recursion.
-- **Prefer depth over coverage.** A synthesis that names the deep tension but can't fully resolve it is more valuable than one that resolves a shallow tension with false confidence.
-- **Aporia is sometimes the highest output.** Reaching productive perplexity about the *right* question is more valuable than a confident answer to the *wrong* question.
-
-Aquinas practiced the *Disputatio* — structured scholastic debate where committed advocates argued positions before a master who synthesized. The Electric Monks are his disputing friars, mechanized.
-
-### DeLong: The Attention Crisis and Offensive Intellectual Infrastructure
-
-Brad DeLong's "Cognitive Distributed Disruption of Attention Crisis" (2026) frames the problem this skill addresses: the volume of plausible, credentialed output now exceeds any serious person's cognitive bandwidth. His solution is *defensive* intellectual infrastructure — ruthless triage, model-updating as the frame for reading, information portfolio management.
-
-**This skill is the offensive complement.** DeLong's triage decides what deserves deep engagement. The Electric Monks provide the method *for* that engagement — they're what you reach for when you've found a genuine contradiction that can't be resolved by reading one more article, watching one more talk, or skimming one more summary.
-
-**Operational implication:** The skill should not be used for everything. It's expensive (time, tokens, cognitive effort). Use it at DeLong's Level 4-5 — when the stakes justify deep engagement, when the tension is genuine and not resolvable by more information, when you need a *model update* rather than more data. The elenctic interview (Phase 1) should filter for this: if the question can be answered by looking it up, this is the wrong tool.
-
-### Peirce: Abduction as the Logic of Discovery
-
-Charles Sanders Peirce identified three modes of inference: deduction (from rule to consequence), induction (from cases to rule), and **abduction** (from surprising fact to explanatory hypothesis). The synthesis phase is abductive: given the surprising fact that both monk positions exist and each has genuine evidence, what hypothesis would make this *unsurprising*? Peirce's typology of abduction (selective → conditional-creative → propositional-conditional-creative) maps to synthesis quality — the best syntheses introduce genuinely new concepts, not just new arrangements of known ones. Operationally present in Phase 5 (Abduction Test).
-
-### Pollock: Defeasible Reasoning and Defeat Types
-
-John Pollock's epistemology distinguishes **undercutting defeaters** (the inferential link is broken — reasons to doubt the connection between evidence and conclusion) from **rebutting defeaters** (evidence directly supporting the opposite conclusion). Undercutting is more structurally revealing because it identifies *how* reasoning fails, not just *that* it fails — parallel to determinate negation's "specific way of failing." Pollock also identifies self-defeating arguments (conclusions that undermine their own premises), which should be rejected outright. Operationally present in the hostile auditor prompt (Phase 6).
-
-### Galinsky: Perspective-Taking vs. Advocacy
-
-Adam Galinsky's research shows that **perspective-taking** (cognitively inhabiting another's viewpoint) outperforms **advocacy** (arguing for a position) at both conscious and nonconscious levels. The mechanism is self-other overlap — when you inhabit a position rather than argue for it, you access richer associative networks and produce higher-quality elaboration. This is the psychological basis for the Electric Monk's "you ARE this position" instruction — inhabiting produces deeper arguments than advocating. Operationally present in the monk prompt template (Phase 2).
-
-### Klein: Prospective Hindsight (Premortem)
-
-Gary Klein's research shows that **imagining a future failure has already occurred** increases the ability to identify causes of that failure by ~30%, compared to asking "what could go wrong?" The temporal reframing ("it already happened, why?") breaks selective accessibility — the cognitive tendency to search only for confirming evidence. Operationally present in the hostile auditor prompt (Phase 6).
-
-### Fauconnier & Turner: Conceptual Blending
-
-Gilles Fauconnier and Mark Turner's theory of conceptual blending provides the machinery for understanding how genuinely new concepts emerge. A blend's value is measured by its **emergent structure** — organizational properties that exist in neither input space. The skill's Boydian decomposition is the destructive step (creating input spaces), and sublation is the blend (which must have emergent structure to be genuine). The "generic space" — the abstract relational structure shared by both inputs — often reveals the shared assumption the synthesis must transcend. Operationally present in Phase 4.5.
-
-### Ensemble Diversity: The Mathematical Basis
-
-Wood et al. (JMLR 2023) formalize why monk independence is load-bearing: the bias-variance-diversity decomposition shows diversity is literally subtracted from ensemble error (`E[loss] = noise + avg_bias + avg_variance − diversity`). Correlated errors eliminate the diversity benefit entirely. This is why monks must be spawned in separate sessions with no shared context, and why heterogeneous model families (when available) increase the skill's creative output. Surowiecki's wisdom-of-crowds conditions confirm: independence is necessary, not optional. Operationally present in the decorrelation check (Phase 3) and heterogeneous model guidance.
-
-### Abelson & Sussman: Structure and Interpretation of Computer Programs
-
-SICP's core thesis — that managing complexity requires modularization, abstraction barriers, and composition of simple components — mirrors this skill's architecture. Each phase is a module with defined inputs and outputs. Agents are spawned in isolated environments (SICP's environment model) to prevent information leakage. The auditor deliberately can't see the orchestrator's Phase 4 analysis — an abstraction barrier, not an oversight.
-
-Most relevant is SICP's **closure property:** a means of combination has closure when the result can itself be combined using the same means. The dialectic has closure — a synthesis is itself a valid position that can serve as input to the next round. This is *why recursion works:* the output type equals the input type. When closure breaks (a synthesis so abstract or meta that no monk could believe it at full conviction), recursion stalls. This is a diagnosable failure mode — if you can't hand the synthesis to a monk and have it argue from that position, the synthesis lacks closure and needs to be made more concrete.
-
-### Dixon & Srinivasan: The Idea Maze
-
-Chris Dixon (via Balaji Srinivasan): a good founder doesn't just have an idea — they can navigate the **idea maze**, anticipating which turns lead to treasure and which to dead ends. The maze is mapped through history (what did previous attempts get right and wrong?), analogy (what did similar efforts in adjacent domains do?), theories (what generalizable patterns exist?), and direct experience.
-
-The dialectic queue *is* an idea maze. Each synthesis opens new paths (contradictions). The user chooses which to explore. Unexplored paths remain visible in the queue — a map of the territory showing where you've been, where you could go, and what remains open. The research phase (Phase 1d) maps directly to Dixon's four sources: history of the domain, analogies to adjacent domains, theoretical frameworks, and the user's own direct experience (surfaced in the elenctic interview). The skill doesn't just navigate the maze — each recursive round *reveals new corridors* that weren't visible from the entrance.
-
-### Alexander: A City is Not a Tree (Semi-Lattice Construction)
-
-Christopher Alexander (1965) showed that natural cities have **semi-lattice** structure — overlapping, cross-connected sets — while designed cities impose **tree** structure where every element belongs to exactly one branch. Trees are easier to think about but destroy the cross-connections that make systems alive. Every attempt to design semi-lattices directly (Alexander's own HIDECS, Holacracy, Spotify's squad model) collapses back to trees because the design substrate — whether graph partitioning algorithms, org charts, or natural language — is tree-biased.
-
-**This skill is a semi-lattice compiler.** Language is tree-structured (Chomsky's generative grammar, dependency parsing, sequential token generation). Each monk produces a tree — a coherent linear argument from committed premises to conclusions. Monk B in any dialectic is always right that its output is a tree. But the Boydian decomposition phase (Phase 4.5) strips both arguments of their source, extracts atomic parts, and finds cross-connections between elements that came from different trees. These cross-domain connections ARE the semi-lattice edges. The synthesis is the semi-lattice that emerges from the overlap of multiple trees.
-
-The answer to "language can't represent semi-lattices" is not "make the LLM output a semi-lattice directly." It's: **produce multiple trees from different committed positions, then extract the cross-connections.** The semi-lattice is constructed, not generated. Every successful semi-lattice system works this way — Gene Ontology (multiple studies cross-referenced into a DAG), McChrystal's Team of Teams (tree-structured teams with liaison officers creating cross-connections), Ostrom's polycentric governance (overlapping jurisdictions, not one hierarchy).
-
-## Worked Examples
-
-Study these to understand the level of specificity, framing correction, and structural craft the skill requires. The key lessons are at the end.
-
-### Example 1: TanStack Start vs Next.js (Technical Architecture)
-
-**User's surface framing:** "Should I use TanStack Start or Next.js?"
-
-**Degenerate framing the orchestrator must avoid:** "Libraries vs frameworks" or "modular vs monolithic." This is the boring version — the contradiction isn't deep enough.
-
-**Deepest contradiction found (via research):** Infrastructure sovereignty and incentive alignment vs. deep framework-infrastructure integration and commercially-sustained ambition.
-
-**Key framing correction in Monk A's prompt:**
-> "TanStack Start IS a framework — it has opinions about routing, server functions, SSR, and application architecture. Your argument is NOT that TanStack Start is more modular or 'just libraries' while Next.js is a monolith. Both are opinionated frameworks. The real difference lies elsewhere."
-
-**Key framing correction in Monk B's prompt:**
-> "Your opponent's argument is NOT the naive 'libraries vs frameworks' take. They will argue that Next.js's design is structurally compromised by Vercel's commercial interests. You need to engage this argument directly, not dismiss it."
-
-**Research directives (targeted, not broad):**
-- Monk A: "Search for Vinxi and Nitro as open infrastructure primitives. Search for structural arguments about how Vercel's business model shapes Next.js's architectural decisions — not superficial 'vendor lock-in' complaints."
-- Monk B: "Search for React core team arguments for Server Components. Search for concrete evidence of Next.js deployment capabilities OUTSIDE Vercel."
-
-**Ontological question driving both prompts:** "What is the proper relationship between a framework, the infrastructure it runs on, and the business interests that fund its development?"
-
-### Example 2: Personal Values Conflict (Career vs. Family Commitment)
-
-**User's surface framing:** "I'm torn between taking this promotion and being more present for my kids."
-
-**Degenerate framing:** "Work-life balance." This flattens a structural tension into a scheduling problem.
-
-**Deepest contradiction found (via extended interview):** The user doesn't just want both — they believe *being the kind of person* who excels at work is inseparable from *being the kind of parent* they want to be. The tension is identity-level, not time-allocation.
-
-**Key framing correction in Monk A's prompt:**
-> "Your argument is NOT that career success matters. It's that THIS USER'S specific professional identity — what they build, how they lead, what they model for their children — is itself an act of parenting. Ground this in their actual history: [specific examples from interview]."
-
-**Key framing correction in Monk B's prompt:**
-> "Your argument is NOT that family time matters. It's that presence has a developmental window that closes — and that the user's children at ages [X] need [specific things from interview] that no amount of 'quality time' can compress into fewer hours."
-
-**No external research needed.** The briefing was built entirely from the elenctic interview — the user's history, their children's ages and needs, their partner's actual capacity, the specific role being offered.
-
-### Example 3: Agent Identity and Governance (Recursive, 7 Cycles)
-
-This example shows how recursion pulls in cross-domain material — Boyd's prediction in action:
-
-1. **"Is the agent the code or the pattern?"** → Synthesis: agent as resonance pattern. *Pulled in: stream theory.*
-2. **"Where does identity live?"** → Synthesis: address identity vs. semantic identity. *Pulled in: naming/identity theory.*
-3. **"Can a grammar be both simple and expressive?"** → Synthesis: metacognition decomposition. *Pulled in: cognitive science.*
-4. **"Who governs the governors?"** → Synthesis: jurisprudential streams. *Pulled in: legal theory, constitutional design, Gödel's incompleteness.*
-5. **"Should the SDK look familiar or teach new concepts?"** → Synthesis: simple API surface, rich feedback surface. *Pulled in: pedagogical theory.*
-6. **"Can agents be tested through their streams alone?"** → Synthesis: witness obligations. *Pulled in: evidentiary standards, cryptographic verification.*
-7. **"Must the verification chain terminate in trust?"** → Synthesis: the Incompleteness Engine. *Pulled in: Gödel again, quorum systems, adversarial red-teaming.*
-
-The original question has nothing to do with jurisprudence or Gödel — but by Cycle 4 the dialectic had evolved to where those concepts were essential. Each synthesis opens doors to domains the previous round couldn't see.
-
-### What Makes Good Prompts Work
-
-1. **Targeted research directives.** Not "research TanStack Start" but "search for TanStack Router's type-safety model specifically." Grounds the monk in real detail.
-2. **Framing corrections preempt degenerate dialectics.** "TanStack Start IS a framework — your argument is NOT that it's more modular." Without this, the monk defaults to the boring take.
-3. **Ontological questions force depth.** "What IS the proper relationship between X and Y?" pushes past feature comparison into structural argument.
-4. **"Push to the extreme" with permission.** Explicitly telling the monk to go somewhere uncomfortable counters RLHF agreeableness.
-5. **Opponent restatement prevents shadowboxing.** Monk B is warned: "Your opponent's argument is NOT the naive take. They will argue [ACTUAL ARGUMENT]."
-6. **Parallel structure enables comparison.** Both prompts follow the same shape (ontological claim → opponent's best case → diagnosis → deeper principle → push to extreme) so outputs are structurally comparable for Phase 4.
-7. **Personal domains ground in specifics.** A monk that believes "career matters" is useless. A monk that believes "THIS user's specific professional identity is itself an act of parenting, because [interview evidence]" is doing its job.
-
-## Output Format
-
-The final deliverable should include:
-
-1. **The Dialectical Trace** — the full journey, not just the destination:
-   - Both agents' arguments (full text or summary)
-   - The structural analysis (determinate negation)
-   - The hidden question
-   - The sublation with validation test
-   - New contradictions identified
-
-2. **The Model Update** — explicit statement of what changed:
-   - "Before: [old assumption]"
-   - "After: [new understanding]"
-   - "Because: [what the contradiction revealed]"
-
-3. **Actionable Output** (domain-dependent):
-   - Engineering: decision criteria, architectural patterns
-   - Strategy: framework for navigating the tension + **sequencing** (what first, what next, what depends on what) — test runs consistently found that strategy syntheses answer "what" but not "what first," and validation agents flag this as the primary weakness
-   - Personal: clarity about what you actually value
-   - Creative: new possibilities neither side saw
-
-4. **The Dialectic Queue** — a map of the intellectual territory:
-   - Which contradictions were explored (with links to their traces)
-   - Which contradictions remain open and queued for future rounds
-   - Which contradictions were deferred and why
-   - For multi-round dialectics, show the branching structure: which rounds built on which syntheses
-
-Write these as markdown files in the dialectic's output directory (see file organization guidance above). Prefix all files with their round number (`round_1_`, `round_2_`, etc.). Include a `README.md` or `index.md` linking all output files in order so the full dialectical trace is navigable. The queue file (`dialectic_queue.md`) serves as both a session artifact and a starting point for future sessions.
+Some tools return text while others let agents write files. Either is valid. The orchestrator owns final naming and must keep position, donor, tension, and synthesis material behind the Monk firewall defined in [dialectic-wiki.md](reference/dialectic-wiki.md).
