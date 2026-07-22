@@ -62,7 +62,7 @@ That gives every instrument a counterfactual test:
 
 > Without this operation, what would remain unseen?
 
-A term scan separates meanings that fluent conversation lets slide together. Electric Monks expose consequences that cannot be reached while one reasoner hedges between incompatible beliefs. Blind possibility-space cartography compares a frozen source map with blind model replicates so expected model grooves and source-specific residue become visible. A prompt that merely produces more ideas or saves time may still be useful, but it is a tool rather than an instrument.
+A term scan separates meanings that fluent conversation lets slide together. Electric Monks expose consequences that cannot be reached while one reasoner hedges between incompatible beliefs. Blind possibility-space cartography compares a frozen source map with fresh model probes run across pre-frozen, meaning-preserving prompt variants, so expected model grooves and source-specific residue become visible without trusting temperature alone. A prompt that merely produces more ideas or saves time may still be useful, but it is a tool rather than an instrument.
 
 The lab keeps three roles distinct:
 

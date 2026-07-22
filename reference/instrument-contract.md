@@ -182,6 +182,8 @@ Use controls in proportion to the cost of being wrong:
 - **Moderate cost:** compare against a neutral baseline, reversed frame, renamed term, or nearby counterexample.
 - **High cost:** add independent evidence or an agent blind to the first readout, then record what remained stable and what moved.
 
+When parallel generative probes sample a possibility space, do not rely on model temperature for diversity. Freeze a small family of meaning-preserving prompt variants before reading any output. Keep the specimen information, criteria, coordinate, and output contract fixed while varying surface wording or order. Label every variant and distinguish recurrence across variants from repetition under one exact prompt. Treat any substantive framing change as a separate stratum, not a replicate.
+
 If a contradiction, axis, or conclusion appears only after a strong perturbation, mark it as possibly induced.
 
 After a run, compare its access differential with its artifact risk. If the reading was already visible before the perturbation, label the run confirmation or convenience. If the perturbation created the output, label it induced or generated rather than discovered. Then complete the caddy gate. Compare the unmeasured remainder with the registry and normally offer three distinct instruments, explaining what each measures and why that reading may help. Offer fewer when fewer honestly fit. When none fits, say that no next instrument is warranted. Never rank or run the choices without user selection, or cross from a bounded reading into explanation, synthesis, recommendation, or action.

@@ -18,8 +18,8 @@
 ## Procedure
 
 1. **Freeze the source track.** Build a source-grounded map from observations, evidence, positions, negation, or prior instrument readouts. For a quick scout, this may be a small map produced from the user's specimen or by one source-track agent, but it must be frozen before any expectation output is read. Type every item by provenance. An option invented by the source-track agent from a sparse specimen is a `hypothesis`, not a source-backed fact. The expectation probes must not generate this map. Do not show it to them.
-2. **Plan the sample.** Choose only coordinates that could change the inquiry. Run at least three core replicates with the same neutral prompt. Add a small set of relevant strata, such as actor, scale, time, form, intervention, or constraint. Do not run the full Cartesian product.
-3. **Keep probes blind.** Use fresh contexts. Give each probe only its prompt and coordinate. Do not expose source material, desired answers, atlas labels, or sibling outputs. Record model and sampling controls when known.
+2. **Plan the sample.** Choose only coordinates that could change the inquiry. Before reading any output, freeze a core prompt family: one canonical neutral brief and at least two slight, meaning-preserving variants. Keep the information, criteria, coordinate, and output contract fixed; vary surface wording, clause order, or neutral phrasing. Give at least three fresh probes different members of this family. Temperature or sampling randomness does not replace deliberate prompt variation. If budget permits, add an exact-prompt replicate to estimate within-wording variation, but keep it distinct from cross-variant recurrence. Add a small set of relevant strata, such as actor, scale, time, form, intervention, or constraint. Do not run the full Cartesian product.
+3. **Keep probes blind.** Use fresh contexts. Give each probe only its assigned prompt variant and coordinate. Do not expose source material, desired answers, atlas labels, or sibling outputs. Record the exact variant, model, and sampling controls when known.
 4. **Cluster expected basins.** Group repeated moves, assumptions, mechanisms, examples, consequences, and answer forms. Keep model-specific basins visible when model families differ.
 5. **Overlay the source map.** Mark each source option as a deep groove, local groove, source-specific understory, atlas residual, or collapse risk.
 6. **Re-scan both maps.** Record source-backed versions of expected basins. Then re-scan source material that neither the atlas nor the frozen source map captured; label these atlas-induced residuals without judging their value.
@@ -39,7 +39,7 @@ Return:
 
 Use the map labels consistently:
 
-- **Expected basin:** a semantically recurring move in the blind probes; always report the exact count and sampled coordinates.
+- **Expected basin:** a semantically recurring move in the blind probes; always report the exact count, prompt variants, and sampled coordinates.
 - **Deep groove:** a basin that recurs in the core replicates and across more than one relevant stratum or meaning-preserving prompt form.
 - **Local groove:** a basin confined to one stratum, prompt form, or model family.
 - **Source-specific understory:** a directly supported source-track mechanism or option absent from the sampled expectation map. Agent-generated hypotheses do not earn this label without later support.
@@ -55,9 +55,10 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 ## Calibration and Controls
 
-- Base any recurrence claim on at least three blind replicates and report exact counts. Fresh contexts reduce leakage but do not make outputs statistically independent, especially within one model family. One probe may only suggest the next sample.
+- Base any recurrence claim on at least three blind probes spanning the frozen prompt family, and report exact counts by prompt variant. Fresh contexts reduce leakage but do not make outputs statistically independent, especially within one model family. Temperature is not evidence of adequate variation. One probe may only suggest the next sample.
 - Keep source and expectation tracks isolated until the source map is frozen.
 - Preserve raw probes and exact visible inputs in a Survey or Expedition.
+- Freeze meaning-preserving variants before exposure. If a variant changes the task, criteria, evidence, or output contract, treat it as a separate stratum rather than a core replicate.
 - Change one sampling variable at a time when possible.
 - Track new-basin yield by batch, replicate disagreement, strata covered, and unsampled cells.
 - When stakes are high, repeat across model families or use an independent factual or historical check.
@@ -66,7 +67,7 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 - Baseline leakage steers source generation toward the atlas.
 - Shared training and model lineage make probes correlated.
-- Prompt wording creates or hides basins.
+- Identical prompts over-sample one wording path; uncontrolled prompt variation changes the task and creates false diversity.
 - Adaptive sampling distorts initial recurrence counts.
 - The atlas mistakes model reconstructibility for social prevalence.
 - Recurrent basins are promoted into recommendations without source-grounded support.
@@ -84,6 +85,6 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 ## Cost and Persistence
 
-- **Quick scout:** One small frozen source map plus three fresh core probes; medium agent cost; session-only; directional findings only.
+- **Quick scout:** One small frozen source map plus three fresh core probes using a pre-frozen canonical prompt and two meaning-preserving variants; medium agent cost; session-only; directional findings only.
 - **Atlas:** Usually 6–12 probes plus clustering and overlay; Survey-scale; preserve raw probes, sampling plan, frozen source map, atlas, and overlay.
 - **Expedition use:** Link the atlas to the round control log or frontier ledger. Keep it distinct from Monk belief outputs and validation judgments.
