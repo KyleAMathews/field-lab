@@ -111,6 +111,18 @@ Before sending, compare the proposed response with the registry. Structured elic
 
 An instrument returns the closest practical equivalent of raw data for its operation. “Raw” does not mean unprocessed: a thermometer converts a physical signal into a calibrated number. It means that the instrument stops at the reading it is designed to produce.
 
+Physical instruments make the boundary plain:
+
+| Instrument     | Reading                              | What it does not supply                                      |
+| -------------- | ------------------------------------ | ------------------------------------------------------------ |
+| Thermometer    | Temperature at its sensor             | Thermal comfort without sun, wind, humidity, and clothing    |
+| Camera         | A framed exposure from one position   | What happened outside the frame or why the scene matters     |
+| Binoculars     | More detail in a narrow distant field | The wider setting or the importance of the detail            |
+| Audio recorder | Sound captured from one position      | A speaker's intent or the meaning of what was said           |
+| Light meter    | Light intensity under named settings  | How the whole place looks or feels to a particular observer  |
+
+Field-lab instruments work the same way. A term scan returns observed loadings and substitutions, not the right definition. A stake map returns testimony, inferred candidates, and gaps, not a diagnosis of the people involved. Belief stress returns committed arguments produced under its prompt and context controls, not proof that an argument is true. Taboo parallax returns a sourced comparison of speech settings and costs, not an explanation of a whole society.
+
 A reading may contain:
 
 - observations, measurements, user testimony, source claims, generated samples, controlled comparisons, or test traces;
