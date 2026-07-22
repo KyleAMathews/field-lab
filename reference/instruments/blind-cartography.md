@@ -13,7 +13,7 @@
 - **Context boundary:** The source track sees the specimen and evidence but no expectation outputs. Each expectation probe sees only the neutral prompt and its assigned coordinate—not the specimen, source map, sibling outputs, desired novelty, or overlay labels. The orchestrator alone sees both maps.
 - **Placement rationale:** Track isolation prevents a circular overlay; fresh expectation contexts reduce direct leakage and adaptive convergence.
 - **Fallback:** Without fresh expectation contexts, downgrade to a model-salience scout with no cartography labels. Without an independent frozen source track, stop or use the same downgrade. Do not simulate blindness inside one informed context.
-- **Return path:** Source and expectation tracks return raw typed items to the orchestrator, which owns clustering, overlay, calibration, and presentation.
+- **Return path:** Source and expectation tracks return raw typed items to the orchestrator, which performs only the registered clustering, overlay, and calibration. It returns the resulting map without ranking options or explaining what the inquiry should conclude.
 
 ## Procedure
 
@@ -22,7 +22,7 @@
 3. **Keep probes blind.** Use fresh contexts. Give each probe only its prompt and coordinate. Do not expose source material, desired answers, atlas labels, or sibling outputs. Record model and sampling controls when known.
 4. **Cluster expected basins.** Group repeated moves, assumptions, mechanisms, examples, consequences, and answer forms. Keep model-specific basins visible when model families differ.
 5. **Overlay the source map.** Mark each source option as a deep groove, local groove, source-specific understory, atlas residual, or collapse risk.
-6. **Mine both maps.** Recover useful source-backed versions of expected basins. Then re-scan source residue that neither the atlas nor the frozen source map captured; label these atlas-induced residuals.
+6. **Re-scan both maps.** Record source-backed versions of expected basins. Then re-scan source material that neither the atlas nor the frozen source map captured; label these atlas-induced residuals without judging their value.
 7. **Sample adaptively.** Spend new probes on high-disagreement strata, important holes, and the borders between strong source options and expected basins. Use meaning-preserving variants and keep targeted counts separate from initial recurrence.
 8. **Stop locally.** End the initial atlas when two consecutive small batches add no basin in the sampled strata, or after twelve probes unless the user expands the search. Record unsampled cells.
 
@@ -34,8 +34,8 @@ Return:
 - Expected basins with recurrence and prompt spread
 - The frozen source options, their observation-ledger kinds and support, and their atlas positions
 - Useful overlaps and atlas-induced residuals
-- Border regions where another sample could change a decision
-- The main artifact risks and a recommended next move
+- Border regions where another sample could change the map
+- The main artifact risks and unmeasured coordinates
 
 Use the map labels consistently:
 
@@ -80,7 +80,7 @@ If no independent source track is available, stop or explicitly downgrade the ru
 - **Escalate** to targeted research when a residual makes a historical novelty claim.
 - **Escalate** to the frontier rheometer when one candidate needs close expectedness and reaching analysis.
 - **Escalate** to Survey when repeated sampling needs a coverage plan, durable raw probes, or comparison across sessions.
-- **Stop** when the useful basins are stable, decision-relevant strata are covered, and another probe is less likely to teach than evidence, action, or a real-world test.
+- **Stop** when the sampled basins are stable, agreed strata are covered, and another probe is unlikely to change the map.
 
 ## Cost and Persistence
 

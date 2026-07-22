@@ -2,9 +2,9 @@
 
 An Expedition is the existing seven-phase Electric Monk dialectic, reached through the field lab. Its safeguards stay strict. Its entry changes: prior Walk and Survey work count as Phase 1 substrate.
 
-Promotion adds the Expedition apparatus; it does not replace the field kit. Walk instruments remain available throughout every phase whenever their calling signals arise. Announce and run them under their normal contracts, and preserve consequential readings in the Expedition record.
+Promotion adds the Expedition apparatus; it does not replace the field kit. The user's Expedition request selects the scheduled phase instruments in the authoritative map. Walk instruments remain available throughout every phase, but a calling signal only prompts an offer; run an extra Walk instrument only after the user selects it. Preserve its raw reading in the Expedition record.
 
-Expedition changes apparatus scale, not the default feedback tempo. It remains camera-like through the Phase 1 interview, framing confirmation, user checkpoints, the Phase 4 hard stop, candidate selection, validation choices, and recursion decisions. Do not treat the seven phases as authorization for an autonomous end-to-end run.
+Expedition changes apparatus scale, not the default feedback tempo. It remains camera-like through the Phase 1 interview, framing confirmation, user checkpoints, the Phase 4 hard stop, candidate selection, validation choices, and recursion decisions. The request authorizes scheduled phase work, but not silent progress through user gates or unrelated decisions and actions.
 
 ## Entry contract
 
@@ -15,7 +15,7 @@ Expedition changes apparatus scale, not the default feedback tempo. It remains c
    - goal and useful outcome;
    - promotion trigger;
    - instruments already used, including each actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace pointer;
-   - key observations with kinds and support;
+   - key readings with kinds and support;
    - loaded terms, current tensions, open gaps, and working question.
 4. Ask only for gaps. Do not repeat answered interview questions or the full process explanation if the user already understands it.
 5. Create the output directory only now. Reuse an existing `dialectic/` or `dialectics/` root when present.
@@ -57,7 +57,7 @@ Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or control 
 - Check that Monks differ in framework, not merely conclusion.
 - Mark what belief stress may have induced.
 - Preserve claim kinds through decomposition and synthesis.
-- Keep high-value residue instead of forcing it into synthesis.
+- Keep raw residue available instead of forcing it into synthesis; let the user decide what matters.
 - Validate each candidate on its own structural claim and with a context-isolated hostile view.
 - Recurse only through a live new contradiction, not by polishing the prior synthesis.
 
@@ -66,12 +66,12 @@ Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or control 
 An Expedition should leave a navigable trace:
 
 - committed positions and their evidence;
-- an instrument ledger showing what each phase operation made accessible, how it ran, its controls, and its artifacts;
+- an instrument ledger showing authorization, what each phase operation made accessible, its typed raw readings, how it ran, its calibration or controls, its artifacts, and what it did not measure;
 - determinate negation and the hidden question;
 - decomposition, cross-links, residue, and controls;
 - the candidate palette and validation results;
-- an explicit model update: before, after, because;
-- useful domain output, including sequence when action depends on order;
+- any model update the user requested or a named phase produced, recorded as before, after, and because; otherwise preserve the open questions;
+- any domain output the user requested, including sequence when action depends on order;
 - a queue of explored, open, and deferred contradictions with lineage.
 
 Full analysis belongs in files. User checkpoints should present the shape of the result and the decision at hand.

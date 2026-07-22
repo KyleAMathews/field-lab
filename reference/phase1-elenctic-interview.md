@@ -235,7 +235,7 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 
 **Completion gate — enumerate & attest before Phase 2 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
 
-- [ ] 1a–1b: prior field record inherited; every consequential instrument retains its actual seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace; needed orientation given; elenctic gaps filled; deepest version of the contradiction surfaced
+- [ ] 1a–1b: prior field record inherited; every consequential instrument retains its authorization, actual seat, context boundary, fallback or downgrade, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, and trace; needed orientation given; elenctic gaps filled; deepest version of the contradiction surfaced outside the raw readouts
 - [ ] 1c: belief burden identified (see `reference/belief-burden-catalog.md`)
 - [ ] 1c.1: third-pole probe run; final monk count decided (2 default; 3–4 only on the criteria)
 - [ ] 1c.2: multiple exploratory 2×2s generated and explored with the user, or `frame-projector` recorded as not called because a one-dimensional specimen contraindicated it
@@ -248,5 +248,5 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
 - [ ] Goals & context written to the control log — the user's broader purpose, deliverables, and audience (NOT just the narrow tension)
 - [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user
-- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with actual seats, contexts, controls, access deltas, artifact risks, trace paths, and user-feedback state; a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
+- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with authorization, actual seats, contexts, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, trace paths, and user-feedback state; phase analysis is separate, a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
 - [ ] `neutral-control` frozen from the user-confirmed specimen before any Monk output is read; baseline trace recorded for the Phase 3 comparison

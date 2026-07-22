@@ -29,17 +29,17 @@ session-provenance: <task/thread pointer and useful turn span, if available>
 
 ## Instruments already used
 
-| Instrument | Execution seat | Context boundary | Session pointer       | Access delta                               | What it added | Artifact risk |
-| ---------- | -------------- | ---------------- | --------------------- | ------------------------------------------ | ------------- | ------------- |
-| `<id>`     | <actual seat>  | <who saw what>   | <turn or short quote> | <what became newly observable or testable> | <reading>     | <risk>        |
+| Instrument | Authorization | Execution seat | Context boundary | Session pointer       | Access delta                               | Bounded reading | Artifact risk |
+| ---------- | ------------- | -------------- | ---------------- | --------------------- | ------------------------------------------ | --------------- | ------------- |
+| `<id>`     | <user pointer> | <actual seat>  | <who saw what>   | <turn or short quote> | <what became newly observable or testable> | <reading>       | <risk>        |
 
 Include only probes that actually ran. Do not rewrite ordinary conversation as a formal instrument run.
 
-## Key observations
+## Key readings
 
-| Finding | Kind                                                                                                                      | Support               | Confidence                  |
-| ------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------- |
-| <claim> | <observation / user-testimony / source-claim / elicited-response / inference / analogy / normative-judgment / hypothesis> | <pointer or citation> | <solid / plausible / reach> |
+| Reading | Kind                                                                                                                                                          | Support               | Confidence                  |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------- |
+| <value> | <observation / measurement / user-testimony / source-claim / elicited-response / generated-sample / controlled-comparison / inference / analogy / hypothesis> | <pointer or citation> | <solid / plausible / reach> |
 
 ## Loaded terms
 
@@ -51,9 +51,9 @@ Include only probes that actually ran. Do not rewrite ordinary conversation as a
 
 ## Open gaps and coverage plan
 
-| Gap   | Why it matters | Instrument or source | Execution seat  | Done when            |
-| ----- | -------------- | -------------------- | --------------- | -------------------- |
-| <gap> | <effect>       | `<instrument-id>`    | <required seat> | <coverage condition> |
+| Gap   | Requested measurement | Offered instrument or source | Selection state          | Done when            |
+| ----- | --------------------- | ---------------------------- | ------------------------ | -------------------- |
+| <gap> | <what remains unseen> | `<instrument-id>`            | <offered / user-selected> | <coverage condition> |
 
 ## Current working question
 
@@ -63,10 +63,11 @@ Include only probes that actually ran. Do not rewrite ordinary conversation as a
 
 Append systematic readings here using the common contract from `reference/instrument-contract.md`.
 
-## Decisions and next options
+## User orientation notes and choices
 
-- **Current recommendation:** <stop / act / probe / reframe / Expedition, and why>
-- **User decision:** <when made>
+- **What the user noticed in the readings:** <verbatim or close paraphrase>
+- **Selected next instrument or apparatus:** <selection and pointer, if any>
+- **Explicit engine transition:** <conclude / synthesize / recommend / decide / plan / act, with pointer, or none>
 ```
 
 ## Integrity rules
@@ -75,6 +76,8 @@ Append systematic readings here using the common contract from `reference/instru
 - Mark the promotion trigger plainly; “this is important” is not enough.
 - Keep claim kinds and support visible.
 - Record the actual execution seat, context boundary, and any fallback downgrade for each systematic reading.
+- Record authorization for every run. An offered instrument is not an instrument already used.
+- Keep raw instrument readings separate from later analysis or synthesis.
 - State when a reading came from ordinary chat rather than a formal probe.
 - Ask only for gaps. Never make the user repeat material already present.
 - Update the log as a working map, not as a transcript.

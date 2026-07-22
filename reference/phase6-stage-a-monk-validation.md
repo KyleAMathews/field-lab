@@ -151,6 +151,6 @@ Evaluate honestly:
 
 - [ ] Every candidate under validation got its candidate-specific monk validation (S: elevated vs. defeated; J: productive vs. evasive; G: orthogonal vs. same-axis; F: genealogy/constituency; U: loadings genuinely opposite)
 - [ ] Each candidate's output written to `round_N_validation_<candidate>.md`
-- [ ] One `position-preservation` readout per candidate × committed position records actual session/context, fallback, preserved insight, defeat, requested repair, artifact risk, residue, and trace path
+- [ ] One `position-preservation` raw readout per candidate × committed position records authorization, actual session/context, fallback, preserved claim, defeat claim, requested repair, calibration, artifact risk, unmeasured remainder, and trace path; the orchestrator's judgment remains separate
 
 Then read `reference/phase6-stage-b-hostile-auditor.md`.

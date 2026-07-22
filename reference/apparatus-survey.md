@@ -2,9 +2,9 @@
 
 A Survey begins when observation becomes systematic. It uses the same instruments as a Walk; it adds a collection plan and durable memory.
 
-Survey changes persistence, not feedback tempo. Keep the [camera loop](camera-loop.md): run a bounded collection batch, return its provisional map to the user, register corrections, and then update the coverage plan. Do not execute an entire research program from the initial framing without an intermediate error signal.
+Survey changes persistence, not feedback tempo. Keep the [camera loop](camera-loop.md): agree on a bounded collection batch, run only that selected plan, return its raw readings to the user, register corrections, and then offer updates to the coverage plan. Do not execute an entire research program from the initial framing without an intermediate error signal.
 
-Instrument cards determine execution placement inside the Survey. Keep focus, cross-track comparison, and user-facing interpretation with the orchestrator. Preserve fresh or parallel contexts when blindness, isolated evidence fields, or decorrelation create the access differential. If agents merely save time, delegation is optional; if separation is load-bearing, use the card's downgrade when it is unavailable.
+Instrument cards determine execution placement inside the Survey. Keep focus and cross-track collation with the orchestrator. Return readings without supplying a whole-specimen interpretation. Preserve fresh or parallel contexts when blindness, isolated evidence fields, or decorrelation create the access differential. If agents merely save time, delegation is optional; if separation is load-bearing, use the card's downgrade when it is unavailable.
 
 ## Entry
 
@@ -31,7 +31,7 @@ Do not restart with a formal interview. Do not pretend the Walk followed a scrip
 
 ## Build a collection plan
 
-For each open gap, state:
+Offer a collection plan. For each open gap, state:
 
 - what signal is missing;
 - why it could change the result;
@@ -39,7 +39,7 @@ For each open gap, state:
 - what counts as enough coverage;
 - the main artifact and a proportionate control.
 
-Run independent probes in parallel when they do not depend on one another. Keep research questions narrow enough that results can change the working question.
+The user may select, trim, or reorder this plan. Their agreement authorizes only the listed instruments and sources. Later calling signals do not authorize extra probes; offer plan changes and wait for agreement. Run selected independent probes in parallel when they do not depend on one another. Keep research questions narrow enough that results can change the working question.
 
 ## Useful Survey combinations
 
@@ -74,6 +74,6 @@ Stop or return to ordinary conversation when:
 - a real-world experiment is the best next move;
 - more probes repeat existing readings.
 
-Recommend Expedition when a live contradiction remains and committed context-isolated positions, structural decomposition, candidate comparison, hostile validation, or recursion would change the outcome enough to repay their cost.
+Offer Expedition when a live contradiction remains and committed context-isolated positions, structural decomposition, candidate comparison, hostile validation, or recursion would change the outcome enough to repay their cost.
 
 The user may also request Expedition directly. On promotion, follow [apparatus-expedition.md](apparatus-expedition.md).

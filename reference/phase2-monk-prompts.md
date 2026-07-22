@@ -88,4 +88,4 @@ Calibrate the monks based on what you learned in Phase 1c':
 - [ ] Each monk is calibrated to the user's belief burden (Monk A validates the user's dominant mode)
 - [ ] With 3+ monks: each monk's framing corrections preempt degenerate framings against _every other_ pole (no silent 2-vs-1 coalition)
 - [ ] Prompts written to file (`round_N_monk_<x>_prompt.md`)
-- [ ] `belief-stress` ledger entry is `prepared`, not `complete`: neutral substrate, isolated context boundary, execution seat, prompt paths, perturbation risk, and planned Phase 3 control comparison recorded
+- [ ] `belief-stress` ledger entry is authorized and `prepared`, not `complete`: neutral substrate, isolated context boundary, execution seat, prompt paths, perturbation risk, unmeasured state, and planned Phase 3 control comparison recorded

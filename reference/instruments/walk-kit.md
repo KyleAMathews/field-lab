@@ -1,6 +1,6 @@
 # Walk Field Kit
 
-These instruments run inline in ordinary conversation. Use as many as fit. Do not create files or a phase sequence merely because they ran.
+These instruments are available inline in ordinary conversation after the user selects them. Offer as many as honestly fit; do not auto-run one or create files or a phase sequence merely because a calling signal appears.
 
 ## Contents
 
@@ -21,13 +21,13 @@ These instruments run inline in ordinary conversation. Use as many as fit. Do no
 - **Input:** The user's request and any supplied specimen, read in full first.
 - **Perturbation:** Questions direct attention and may alter how the user understands the problem.
 - **Procedure:** Reflect a provisional frame in a few sentences. Ask 1–3 questions whose answers could most change the analysis: why now, intended use or audience, current prior, strongest doubt, relevant stakes, missing experience, or what outcome would change the next move. For a practical system with several uses, first ask, “What is your main goal for it?” Do not offer forms or bundle distinct goals before the answer. If an answer could change the recommendation, stop and wait; do not attach a provisional number, range, diagnosis, or action. Follow the user's answer rather than completing a checklist.
-- **Readout:** A user-confirmed or corrected specimen, with aim, stakes, prior, high-value unknowns, and the next bounded exposure.
+- **Readout:** The user's answers, a user-confirmed or corrected specimen, and still-unanswered focus questions. Do not add a proposed explanation or next move.
 - **Control:** Mark the reflected frame as provisional. Include an open correction such as “What am I misreading?” and let the user reject the interview.
 - **Common artifact:** Leading questions manufacture the tension; a long questionnaire front-loads the orchestrator's taxonomy; rapport questions add ceremony without information; a “provisional” recommendation anchors the user before the question is answered.
 - **Escalate when:** The confirmed specimen needs systematic coverage or context-isolated committed positions.
 - **Stop when:** Another answer is unlikely to change the next probe or direct response.
 - **Cost / persistence:** Usually 1–3 exchanges; session only.
-- **Execution placement:** **Orchestrator.** It sees the live conversation and supplied specimen because responsive user correction creates the access differential. A subagent may draft candidate questions but cannot conduct the interview. If the user cannot reply, stop or give a context-limited direct answer. The orchestrator receives the testimony and presents the updated frame.
+- **Execution placement:** **Orchestrator.** It sees the live conversation and supplied specimen because responsive user correction creates the access differential. A subagent may draft candidate questions but cannot conduct the interview. If the user cannot reply, stop or give a context-limited direct answer. The orchestrator returns the testimony and corrected frame without extending them into analysis.
 
 ## Substrate map (`substrate-map`)
 
@@ -68,14 +68,14 @@ These instruments run inline in ordinary conversation. Use as many as fit. Do no
 - **Operating range:** Disputes or practical questions where a shared label names several standards, forms, conventions, or methods—such as “clean,” “fair,” “safe,” “simple,” “done,” “bush,” or “tree form.” Do not run merely because a word is broad.
 - **Input:** The candidate term and examples of its use.
 - **Perturbation:** Holds the word still and replaces it with concrete criteria.
-- **Procedure:** Write each live meaning as “When X says _term_, it means…”. Test whether swapping in each meaning changes agreement, action, or evidence. Do not make an action-relevant replacement only by adopting new vocabulary in the response. Begin one plain sentence with “Quick term scan:” and state the corrected term, access benefit, and artifact risk. Example structure: “Quick term scan: calling this **X** rather than **Y** makes **access delta** visible; until **control**, it may overstate **artifact risk**.”
-- **Readout:** Distinct loadings, who uses them, and the decisions each implies.
+- **Procedure:** Write each live meaning as “When X says _term_, it means…”. Test whether swapping in each meaning changes agreement, action, or evidence. Do not select a corrected term or make an action-relevant replacement. Begin the readout with “Quick term scan:” and list the observed loadings and examples.
+- **Readout:** Distinct loadings, who uses them, source examples, and which evidence or choice would differ under each loading. Do not choose the right meaning for the user.
 - **Control:** Check whether the dispute remains after the word is replaced.
 - **Common artifact:** Clever semantics distract from a material conflict.
 - **Escalate when:** The term is constitutive of the dispute and cannot be unified without loss.
 - **Stop when:** A shared operational definition or explicit plural use is enough.
 - **Cost / persistence:** 1–2 turns; session only.
-- **Execution placement:** **Orchestrator.** It sees the user's examples and tests substitutions directly in conversation. A fresh subagent is optional only as a framing-sensitivity control; the basic instrument does not depend on independence. If examples are missing, ask for them. The orchestrator reports the loading shift and artifact risk.
+- **Execution placement:** **Orchestrator.** It sees the user's examples and tests substitutions directly in conversation. A fresh subagent is optional only as a framing-sensitivity control; the basic instrument does not depend on independence. If examples are missing, ask for them. The orchestrator returns the loadings, examples, and artifact risk without resolving the term.
 
 ## Tension statement (`tension-statement`)
 
@@ -89,7 +89,7 @@ These instruments run inline in ordinary conversation. Use as many as fit. Do no
 - **Control:** Restate the specimen without the binary and see what disappears.
 - **Common artifact:** The syntax manufactures symmetry or conflict.
 - **Escalate when:** Both poles remain live after correction and the outcome matters.
-- **Stop when:** One tension gives a useful decision or experiment.
+- **Stop when:** One or two candidate tensions cover the reported friction and their disconfirming observations are clear.
 - **Cost / persistence:** 1–3 turns; session only.
 - **Execution placement:** **Orchestrator.** It needs the accumulated claims, stakes, and user corrections to compress the live contradiction without inventing one. A fresh subagent may later challenge the statement but does not own the first compression. If continuity is lost, restate the substrate and ask the user to confirm it. The orchestrator presents the candidate tension.
 
@@ -107,7 +107,7 @@ These instruments run inline in ordinary conversation. Use as many as fit. Do no
 - **Escalate when:** The pole is live and changes what positions must be compared.
 - **Stop when:** The binary is adequate or the new pole can enter the next probe.
 - **Cost / persistence:** 1–3 turns; session only.
-- **Execution placement:** **Orchestrator.** It needs the confirmed binary and user context to judge whether a proposed pole is genuinely independent. A fresh subagent may generate candidates when decorrelation is useful, but the orchestrator applies the constituency and axis controls. If no independent pole is supported, return “none found.”
+- **Execution placement:** **Orchestrator.** It needs the confirmed binary and user context to test whether a proposed pole is genuinely independent. A fresh subagent may generate candidates when decorrelation is useful, but the orchestrator applies the constituency and axis controls. Return the surviving candidates or “none found” without choosing a new frame.
 
 ## Ground-condition probe (`ground-condition`)
 
@@ -117,13 +117,13 @@ These instruments run inline in ordinary conversation. Use as many as fit. Do no
 - **Input:** The live tension and known material conditions.
 - **Perturbation:** Moves from stated principles to the conditions that produce or constrain them.
 - **Procedure:** Ask what must be true for the conflict to exist, who controls that condition, what would happen if it changed, and what evidence could settle it.
-- **Readout:** Candidate ground conditions, their evidence status, and how each changes the question.
+- **Readout:** Candidate ground conditions, their evidence status, source pointers, and conditional question variants. Do not use a candidate condition to dissolve the original conflict.
 - **Control:** Reinsert the original value claims after the level shift; note what remains.
 - **Common artifact:** A convenient fact is used to make the normative conflict vanish.
 - **Escalate when:** A missing fact needs research, or the ground condition has its own contradiction.
 - **Stop when:** Checking one fact or changing one condition is the best next step.
 - **Cost / persistence:** 1–3 turns; session only.
-- **Execution placement:** **Orchestrator.** It connects the live tension to material conditions and decides which missing fact would change the question. Research subagents may gather a named fact after the probe identifies it; they do not choose the ground condition from the full hidden context. The orchestrator integrates evidence and presents the level shift.
+- **Execution placement:** **Orchestrator.** It connects the live tension to candidate material conditions. Research subagents may gather a named fact after the probe identifies it; they do not choose the ground condition from the full hidden context. The orchestrator returns conditions, evidence status, and conditional variants without selecting the decisive one.
 
 ## Small experiment (`small-experiment`)
 
@@ -133,11 +133,11 @@ These instruments run inline in ordinary conversation. Use as many as fit. Do no
 - **Input:** The decision, one uncertain mechanism, constraints, and a safe range.
 - **Perturbation:** Changes one part of the system to expose its effect.
 - **Procedure:** Prepare the instrument by specifying one change, duration, baseline, what stays fixed, who observes what, success and failure signals, stop rule, review point, and decision rule. Get the user's consent; the user runs the trial. When they return, compare the observation with the frozen baseline and rule. For a one-step diagnostic observation, use the compact form: uncertainty → observation → decision rule (“If A, do X; if B, do Y”).
-- **Lifecycle:** `prepared` after the trial and decision rule are agreed; `running` while the user conducts it; `complete` only after an observation returns and is interpreted. If the user never runs or reports it, preserve that state and do not claim a reading.
-- **Readout:** Prepared state: the bounded trial and the decision it will inform. Complete state: the observed contrast, departures from control, and the resulting decision.
+- **Lifecycle:** `prepared` after the trial and decision rule are agreed; `running` while the user conducts it; `complete` only after an observation returns. If the user never runs or reports it, preserve that state and do not claim a reading.
+- **Readout:** Prepared state: the bounded trial, baseline, controls, observations, and frozen decision rule. Complete state: the observed contrast, departures from control, missing observations, and which branch of the frozen rule the observation matches. Do not recommend the resulting action.
 - **Control:** Prefer one changed variable; record a baseline when memory is likely to drift.
 - **Common artifact:** The trial changes several things, lacks a review rule, or becomes permanent by inertia.
 - **Escalate when:** Results conflict, stakes rise, or the mechanism remains hidden after repetition.
 - **Stop when:** At preparation, stop conceptual work when the trial can begin safely and everyone knows when it ends. At completion, stop when the observed contrast resolves the named uncertainty or further repetition would not change the decision.
 - **Cost / persistence:** Usually 1–2 planning turns plus real-world elapsed time; session only unless the observation will return in a later session.
-- **Execution placement:** **Hybrid.** The orchestrator prepares the trial from the user's constraints, consent, and ability to observe; the user performs the real-world perturbation; the orchestrator interprets the returned observation against the frozen baseline and decision rule. A subagent may research safe ranges, but it must not set or launch the experiment. If safety or reversibility cannot be established, stop and propose passive observation instead.
+- **Execution placement:** **Hybrid.** The orchestrator prepares the trial from the user's constraints, consent, and ability to observe; the user performs the real-world perturbation; the orchestrator compares the returned observation with the frozen baseline and decision rule. A subagent may research safe ranges, but it must not set or launch the experiment. If safety or reversibility cannot be established, stop and offer passive observation instead.

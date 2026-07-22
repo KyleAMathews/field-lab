@@ -15,9 +15,9 @@ The field lab is the skill's default shell. It makes ordinary chat, selective pr
 ## Principles
 
 1. **Every inquiry starts as a Walk.** Give a direct answer when that is enough.
-2. **Instruments belong on the Walk.** Pull any fitting instrument without adding a file or phase tax.
-3. **Default to camera mode.** On open questions, help the user observe and orient through a focus interview, intermediate readouts, anomalies, and questions.
-4. **Use OODA as a brake.** The user owns the transition from Observe/Orient to Decide/Act. Do not conclude, synthesize, rank, make a substantive recommendation, plan, or act until they explicitly ask. Instrument and apparatus choices remain part of orientation.
+2. **Instruments belong on the Walk.** Offer any fitting instrument without adding a file or phase tax; pull it in only after the user selects it.
+3. **Default to camera mode.** On open questions, ask for missing substrate, offer instruments, and return bounded readings from instruments the user selects.
+4. **Use OODA as a brake.** The user owns instrument selection and the transition from Observe/Orient to Decide/Act. Do not run, conclude, synthesize, rank, make a substantive recommendation, plan, or act without the corresponding explicit choice.
 5. **Separate observation from intervention.** State what a probe changed, hid, stressed, or introduced.
 6. **Demand an access differential.** Before calling a tool an instrument, name what would remain unseen, entangled, unmeasured, or untested without it.
 7. **Add controls as stakes rise.** Costly conclusions should survive another frame, model, control, or source check.
@@ -56,7 +56,7 @@ The full Electric Monk apparatus for a stubborn, costly, or high-stakes contradi
 
 ## Quiet router
 
-Do not expose this as a mode menu. Read the specimen and focus with the user before choosing a large route. After each answer or provisional readout, register the user's correction, then choose among four live exits:
+Do not expose this as a mode menu. Read the specimen and focus with the user before offering a large route. After each answer or bounded readout, register the user's correction, then offer four live exits:
 
 | Exit            | Use when                                                                                  |
 | --------------- | ----------------------------------------------------------------------------------------- |
@@ -75,7 +75,7 @@ For a non-obvious probe, state:
 - its likely cost;
 - the main thing it may induce or hide.
 
-Light orchestrator-seat probes may run inline. Fresh or parallel subagents run only when the card assigns them or the user approves a non-required control. Durable artifacts, research programs, multiple agents, and Expeditions require an explicit recommendation or direct user request.
+No probe runs merely because it is light or fits a calling signal. The user must select it. A selected Survey or Expedition authorizes its agreed plan; fresh or parallel subagents run only when that plan or a separately selected card assigns them. Durable artifacts and research programs require direct user selection.
 
 ## Escalation guide
 

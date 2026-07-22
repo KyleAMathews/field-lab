@@ -5,7 +5,9 @@
 - [Instrument card](#instrument-card)
 - [Execution placement](#execution-placement)
 - [Tool, instrument, and apparatus boundary](#tool-instrument-and-apparatus-boundary)
+- [Selection and authorization](#selection-and-authorization)
 - [Instrument handshake](#instrument-handshake)
+- [Raw-readout boundary](#raw-readout-boundary)
 - [Common readout](#common-readout)
 - [Observation ledger](#observation-ledger)
 - [Control rule](#control-rule)
@@ -39,7 +41,7 @@ Every instrument card states:
 | **Context boundary**      | What each executor may and may not see                                        |
 | **Placement rationale**   | Why continuity, blindness, independence, or parallelism matters               |
 | **Fallback**              | Honest downgrade when the required execution seat is unavailable              |
-| **Return path**           | Who interprets, combines, and presents the reading                            |
+| **Return path**           | Who returns the bounded reading and keeps later interpretation separate       |
 
 Cards may point to existing phase procedures rather than copy them.
 
@@ -64,7 +66,7 @@ execution-seat: <orchestrator|fresh-subagent|parallel-subagents|hybrid|either>
 context-boundary: <what each executor may and may not see>
 placement-rationale: <why this seat matters>
 fallback: <downgrade or stop condition>
-return-path: <who interprets and presents the reading>
+return-path: <who returns the bounded reading; where any later interpretation occurs>
 ```
 
 ## Tool, instrument, and apparatus boundary
@@ -75,9 +77,22 @@ return-path: <who interprets and presents the reading>
 
 One operation may play more than one role, but name the role that matters in the current run. A notebook is support until its longitudinal record makes drift observable. A small-experiment plan prepares an instrument; the instrument runs only when the real system is perturbed and completes only when an observation returns. Do not call every useful prompt an instrument merely because it sits in the field lab.
 
+## Selection and authorization
+
+An instrument may be **offered** when its calling signal appears. It may be **selected** only by the user. Do not run it because it is cheap, obvious, newly relevant, or already mentioned in a caddy. The handshake identifies a selected run; it does not create permission.
+
+Selection may come from:
+
+- a direct request for a named instrument;
+- the user's choice from offered instruments;
+- an agreed Survey plan that names the instrument;
+- a request for an Expedition, which authorizes its scheduled instrument map.
+
+An apparatus selection does not authorize extra ad hoc instruments outside its agreed plan. Offer those separately. The focus interview is the sole automatic entry: asking its questions creates no reading, and the user authorizes completion by answering. If the user declines, stop it.
+
 ## Instrument handshake
 
-Before every run, tell the user:
+After selection and before every run, tell the user:
 
 1. the instrument's name;
 2. a short plain-language explanation in parentheses;
@@ -88,41 +103,62 @@ Use this stable lead-in: **“I’m pulling in the [name] instrument ([brief exp
 
 For an instrument whose real run happens later, use the same handshake before preparation but say that you are preparing it. Record the lifecycle state and get assent before the perturbation. Do not claim an access delta or empirical readout while it remains `prepared`.
 
-For a cheap conversational probe, announce and run it in the same turn. For a costly, strong, or perspective-altering perturbation, also state the main cost or artifact risk and get assent first. After the run, report the access delta and artifact risk, then run the caddy gate: scan the residue against the registry; normally suggest three materially distinct live instruments, each with a parenthetical explanation, why it may help now, its access target, and any material cost; or say plainly that no further instrument would repay its cost. If fewer than three honestly fit, offer fewer and say why rather than padding the set. Do not rank them unless asked. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. Do not run a suggested instrument merely because it was suggested.
+After the run, return the bounded reading and its artifact limits, then run the caddy gate: scan the unmeasured remainder against the registry; normally suggest three materially distinct live instruments, each with a parenthetical explanation, what it measures, why that reading may help, and any material cost; or say plainly that no further instrument would repay its cost. If fewer than three honestly fit, offer fewer and say why rather than padding the set. Do not rank or run them unless the user selects one.
 
 Before sending, compare the proposed response with the registry. Structured elicitation, semantic substitution, sequence mapping, stake separation, tension compression, bounded experiments, and context-isolated belief roles are instrument-shaped work. If the response contains one without a handshake, move the handshake before its readout. If a residue maps to another registered instrument, suggest it explicitly by name and access target.
+
+## Raw-readout boundary
+
+An instrument returns the closest practical equivalent of raw data for its operation. “Raw” does not mean unprocessed: a thermometer converts a physical signal into a calibrated number. It means that the instrument stops at the reading it is designed to produce.
+
+A reading may contain:
+
+- observations, measurements, user testimony, source claims, generated samples, controlled comparisons, or test traces;
+- provenance and claim kind;
+- calibration, confidence, null results, and missing data;
+- the perturbation and known artifact risks;
+- what the instrument did not measure.
+
+An instrument readout must not:
+
+- explain the whole specimen or declare its underlying cause;
+- decide which reading matters most;
+- synthesize across instruments or build a general model;
+- recommend a belief, decision, or action;
+- turn generated material, analogy, testimony, or model output into evidence.
+
+Ask the user what they notice. Interpretation and synthesis belong to the human in camera mode. When the user explicitly requests an engine task or a full-dialectic phase calls for interpretation, keep that later work visibly separate from the instrument ledger and cite the readings it uses.
 
 ## Common readout
 
 ```yaml
 instrument: <id>
-lifecycle: <prepared|running|complete|stopped>
+lifecycle: <offered|selected|prepared|running|complete|stopped>
+authorization:
+  basis: <direct-request|user-choice|focus-response|survey-plan|expedition-schedule>
+  pointer: <quote, turn, or agreed plan entry>
 orientation-state: <observing|orienting|engine-authorized>
 execution:
   seat: <orchestrator|fresh-subagent|parallel-subagents|hybrid|either>
   contexts: <who saw what>
   fallback: <none|named downgrade used>
-specimen-delta: <what became clearer or changed>
 access-delta: <what is observable now that was not observable before the run>
-findings:
-  - claim: <one finding>
-    kind: <observation|user-testimony|source-claim|elicited-response|inference|analogy|normative-judgment|hypothesis>
+readings:
+  - value: <one bounded reading>
+    kind: <observation|measurement|user-testimony|source-claim|elicited-response|generated-sample|controlled-comparison|test-result|inference|analogy|normative-judgment|hypothesis>
     support: <citation, testimony pointer, or instrument trace>
     confidence: <solid|plausible|reach>
+calibration: <control, baseline, null result, or confidence limit>
 artifact-risk: <what the instrument may have induced or hidden>
-residue: <what remains unclear, incompatible, or unmeasured>
-user-feedback: <pending|confirmed|correction or surprise after the reading is returned>
-specimen-update: <what changed after the user's error signal>
-next-options:
-  - <pause|small-experiment|instrument-id|promote-to-survey|promote-to-expedition>
-recommendation: <pending while observing or orienting; bounded response after explicit engine authorization>
+unmeasured: <what remains outside this instrument's reading>
+user-feedback: <pending|confirmed|correction after the reading is returned>
 ```
 
-This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return strong readings to the user before filling `user-feedback` and `specimen-update`; do not invent confirmation. While `orientation-state` is `observing` or `orienting`, leave `recommendation` pending even when the reading looks decisive. Only an explicit user request to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act changes the state to `engine-authorized`; agreement, correction, a completed run, or a phase gate does not. Instrument and apparatus choices stay inside orientation. In a Survey, preserve the full fields when a reading affects later work. In an Expedition, append every scheduled instrument's full lifecycle and readout to the round control log's instrument ledger; phase gates cite those entries.
+This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. `Offered` is not `selected`. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return readings to the user before filling `user-feedback`; do not invent confirmation or interpretation. In a Survey, preserve the full fields when a reading affects later work. In an Expedition, append every scheduled instrument's raw readout to the round control log; keep the phase's later analysis in its separate artifact.
 
 ## Observation ledger
 
-The `kind` field must survive later transformations. A synthesis can reorganize a claim but cannot turn testimony into observation, analogy into evidence, or hypothesis into fact.
+The `kind` field must survive later transformations. A synthesis can reorganize a reading but cannot turn testimony into observation, analogy into evidence, a generated sample into discovery, or hypothesis into fact.
 
 When several kinds support one finding, list them separately. When support is missing, lower confidence or mark the finding as a question.
 
@@ -136,4 +172,4 @@ Use controls in proportion to the cost of being wrong:
 
 If a contradiction, axis, or conclusion appears only after a strong perturbation, mark it as possibly induced.
 
-After a run, compare its access differential with its artifact risk. If the claimed finding was already visible before the perturbation, downgrade the run to confirmation or convenience. If the perturbation created the finding, report it as induced rather than discovered. Then complete the caddy gate. Compare the residue with the registry and normally offer three distinct instruments that could improve orientation, explaining what each is and why it may help. Offer fewer when fewer honestly fit. When none fits, say that no next instrument is warranted. Do not leave a named uncertainty beside an unnamed available probe, rank the choices without being asked, or cross from orientation into recommendation or action.
+After a run, compare its access differential with its artifact risk. If the reading was already visible before the perturbation, label the run confirmation or convenience. If the perturbation created the output, label it induced or generated rather than discovered. Then complete the caddy gate. Compare the unmeasured remainder with the registry and normally offer three distinct instruments, explaining what each measures and why that reading may help. Offer fewer when fewer honestly fit. When none fits, say that no next instrument is warranted. Never rank or run the choices without user selection, or cross from a bounded reading into explanation, synthesis, recommendation, or action.

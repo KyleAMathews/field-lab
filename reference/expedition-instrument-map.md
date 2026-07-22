@@ -9,7 +9,7 @@
 - [Gate rule](#gate-rule)
 - [User cadence](#user-cadence)
 
-The Expedition is a fixed apparatus that coordinates instruments. It is not a separate instrument-free workflow. The seven phase files remain the detailed procedures; the instrument cards make their access claims, execution seats, controls, artifacts, and readouts explicit.
+The Expedition is a fixed apparatus that coordinates instruments. Requesting it selects the scheduled map below, but not extra ad hoc instruments. The seven phase files remain the detailed procedures; the instrument cards make their access claims, execution seats, controls, artifacts, and bounded readouts explicit.
 
 ## Authority and precedence
 
@@ -26,12 +26,13 @@ Read both the phase procedure and the named card before running an instrument. I
 Track every scheduled instrument in the round control log:
 
 1. **Call:** announce the name, brief parenthetical explanation, calling signal, access target, and material cost or artifact risk.
-2. **Prepare:** freeze inputs, baseline, prompts, context boundaries, and execution seats before exposure.
-3. **Run:** follow the phase procedure under the card's execution contract.
-4. **Read:** append the common readout fields from `instrument-contract.md`, including the actual seat, contexts, fallback, access delta, typed findings, control, artifact risk, residue, and trace paths.
-5. **Return:** show the useful reading to the user at the phase's next checkpoint and record their correction before treating it as confirmed.
-6. **Caddy:** name a live next instrument or say why stopping or acting is better. During an Expedition, this may add a probe but cannot silently skip the remaining phase gate.
-7. **Gate:** attest the instrument's required lifecycle state and concrete trace before advancing.
+2. **Select:** cite the user's Expedition request or later choice for an optional instrument.
+3. **Prepare:** freeze inputs, baseline, prompts, context boundaries, and execution seats before exposure.
+4. **Run:** follow the phase procedure under the card's execution contract.
+5. **Read:** append the common raw-readout fields from `instrument-contract.md`, including authorization, actual seat, contexts, fallback, access delta, typed readings, calibration, artifact risk, unmeasured remainder, and trace paths.
+6. **Return:** show the bounded reading to the user at the phase's next checkpoint and record their correction. Do not mix it with the phase's later analysis.
+7. **Caddy:** offer three optional instruments when they could measure something outside the scheduled map. Do not run one until the user selects it, and do not use the caddy to skip the remaining phase gate.
+8. **Gate:** attest the instrument's required lifecycle state and concrete trace before advancing.
 
 Some instruments span phases. `belief-stress` is prepared in Phase 2 and read in Phase 3. `neutral-control` is frozen before belief stress and compared after it. Do not claim completion at preparation time.
 
@@ -53,7 +54,7 @@ Some instruments span phases. `belief-stress` is prepared in Phase 2 and read in
 | Phase 6C             | `framing-sensitivity` when a decision-relevant result may depend on wording, pole order, or model                                                             | Controlled variants changed one framing variable; stable and sensitive findings separated. When not called, record why no decision-relevant framing dependency remains.                                                                                                                                                                             |
 | Phase 7              | `tension-statement`; `third-pole`                                                                                                                             | Each proposed direction is a concrete two-sided contradiction; the burst was checked for an orthogonal direction or a recorded “none found”; user choice and queue lineage recorded.                                                                                                                                                                |
 
-Walk instruments remain available at every apparatus point. Use `term-scan`, `stake-map`, `substrate-map`, `ground-condition`, or `small-experiment` whenever its calling signal appears. Their use does not alter the phase number; their readouts enter the same instrument ledger and completion gate. A prepared or running experiment is not a completed reading; advance only on the observation state the phase actually requires.
+Walk instruments remain available at every apparatus point. Offer `term-scan`, `stake-map`, `substrate-map`, `ground-condition`, or `small-experiment` whenever its calling signal appears, but run it only after user selection. Their use does not alter the phase number; their raw readouts enter the same instrument ledger and completion gate. A prepared or running experiment is not a completed reading; advance only on the observation state the phase actually requires.
 
 ## Controls
 
@@ -70,13 +71,13 @@ Every phase or stage completion gate must include an **instrument attestation** 
 - each scheduled instrument and lifecycle state;
 - actual execution seat and context boundary;
 - fallback or downgrade, including `none`;
-- access delta and typed findings;
+- authorization, access delta, and typed readings;
 - control result;
-- artifact risk and residue;
+- artifact risk and unmeasured remainder;
 - trace paths and user-feedback state.
 
 An instrument is not complete merely because the phase produced prose resembling its readout. Missing handshakes, context separation, controls, or traces remain missing gate items. Only the user may waive a named deliverable. A waiver never changes the epistemic label of the resulting reading.
 
 ## User cadence
 
-Do not announce the whole instrument map at Expedition entry. Announce each instrument or tightly coupled cluster just before it runs with the stable **“I’m pulling in the [name] instrument…”** handshake. Return readings at the existing Phase 1 framing check, Phase 3 structural summary, Phase 4 hard stop, Phase 5 palette, Phase 6 per-candidate refinement, and Phase 7 direction choice. Between those checkpoints, preserve full readouts in the control log rather than dumping apparatus telemetry into the conversation.
+Do not announce the whole instrument map at Expedition entry. The user's Expedition request selects the scheduled map; still announce each instrument or tightly coupled cluster just before it runs with the stable **“I’m pulling in the [name] instrument…”** handshake. Return bounded readings at the existing checkpoints. Keep the phase's interpretation and synthesis visibly separate, and preserve full raw readouts in the control log rather than dumping apparatus telemetry into the conversation.

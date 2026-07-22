@@ -137,6 +137,6 @@ Use a fresh subagent when the mapping is decision-critical or the orchestrator h
 - [ ] 4.6.6: loss audit — single-monk high-value ideas scored provenance-blind, each with a disposition → `round_N_loss_audit.md`
 - [ ] 4.6.7: every load-bearing donor mapping tested against a frozen nearby failure case; accepted, narrowed, or rejected with trace → `round_N_negative_transfer.md`
 - [ ] Full decomposition written into `round_N_determinate_negation.md`
-- [ ] Instrument ledger contains complete `structural-recombine`, Stage-C `residue-collect`, `loss-audit`, and required `negative-transfer` readouts with actual seats, controls, access deltas, artifact risks, residue, and trace paths
+- [ ] Instrument ledger contains complete `structural-recombine`, Stage-C `residue-collect`, `loss-audit`, and required `negative-transfer` raw readouts with authorization, actual seats, calibration or controls, access deltas, typed readings, artifact risks, unmeasured remainders, and trace paths; later recombination and interpretation remain separate
 
 Then read `reference/phase4-stage-d-criteria.md`.

@@ -27,17 +27,18 @@ The field lab has two independent axes:
 
 The lab defaults to camera mode on open questions. It grows context through feedback before it commits a large conclusion. A lightweight Walk can still fail if the agent reads a brief, silently runs several interpretive probes, and returns a polished thesis without first finding out what the user sees in the specimen. A full Expedition can remain camera-like because interviews, framing checks, intermediate readouts, validation choices, and recursion keep adding error signals.
 
-The OODA loop supplies the brake. During camera mode, the human owns **Observe and Orient**; the agent helps collect substrate, notice anomalies and surprises, compare frames, preserve questions, and choose instruments. The agent does not slide into **Decide and Act** because its own reading looks complete. Once camera mode begins, synthesis, ranking, substantive recommendations, action plans, and action wait for an explicit request from the user. Instrument and apparatus choices remain part of orientation. A full-dialectic request still authorizes its named phase outputs, including synthesis where earned.
+The OODA loop supplies the brake. During camera mode, the human owns **Observe and Orient**, including which instruments to use and what their readings mean together. The agent asks for missing substrate, offers instruments, and returns bounded readings without turning them into a complete explanation. Synthesis, ranking, substantive recommendations, action plans, and action wait for an explicit request. A full-dialectic request still authorizes its named phase outputs, including synthesis where earned.
 
 The usual loop is:
 
 1. read the specimen before declaring a route;
 2. reflect a provisional focus and ask 1–3 questions that could change the analysis; if an answer could change the recommendation, stop and wait;
-3. say “I’m pulling in the [name] instrument ([brief explanation])” with its signal and what it may reveal, then run it;
-4. show the provisional reading, what the probe may have induced, and what remains unclear;
-5. ask what misregistered, then refocus; complete the caddy gate by usually suggesting three distinct next instruments, what each is, and why each may help, or say that no next instrument is warranted.
+3. offer three distinct instruments, what each measures, and why its reading may help; wait for the user to choose;
+4. say “I’m pulling in the [name] instrument ([brief explanation])”, then run only the selected instrument;
+5. return its bounded reading, calibration, artifact risk, and unmeasured remainder without explaining the whole specimen;
+6. ask what the user notices, then offer the next three instrument choices or say that no next instrument is warranted.
 
-Instrument use is visible but light. The stable “I’m pulling in the [name] instrument…” lead-in makes the field-lab metaphor familiar through use. A cheap probe is announced and run in the same turn. A strong or costly perturbation includes its cost or artifact risk and waits for assent. The agent never hides an instrument inside fluent analysis, but it also does not dump the whole bench on the user. After every readout, it checks which instruments could materially reduce the residue and normally offers three distinct choices with a short account of what each is and why it may help. It offers fewer when fewer honestly fit, does not rank them unless asked, and does not treat a suggestion as permission to run one.
+Instrument use is visible but light. The stable “I’m pulling in the [name] instrument…” lead-in makes the field-lab metaphor familiar through use. It follows selection rather than replacing it. The agent never hides an instrument inside fluent analysis, auto-runs a cheap probe, or dumps the whole bench on the user. After every readout, it checks which instruments could measure the unexamined remainder and normally offers three distinct choices. It offers fewer when fewer honestly fit, does not rank them unless asked, and never treats a suggestion or calling signal as permission to run one.
 
 A long brief supplies content, not complete context. It rarely says why the question is live now, what the user already suspects, what feels wrong, or which result would change the next move. Stable facts, narrow transformations, and explicit one-shot requests may still go straight to an answer. A question that sounds factual may still need focus: “How many branches should this bush have?” depends on the intended training system and the plant in front of the user. The lab checks whether the answer is invariant before searching toward a default. It does not offer a “working range” in the same turn as a question that could overturn that range.
 
@@ -112,7 +113,7 @@ An Expedition inherits the Walk and Survey record, then coordinates the same ins
 6. position-preservation checks and hostile audit;
 7. recursive exploration of the next live contradiction.
 
-Each phase gate cites an instrument-ledger entry. A phase cannot pass merely because it produced plausible prose: required blindness, context isolation, controls, access deltas, artifact risks, and traces must also be present. The gates remain strict; instrument contracts make their epistemic work visible rather than replacing them.
+Each phase gate cites an instrument-ledger entry. A phase cannot pass merely because it produced plausible prose: authorization, required blindness, context isolation, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, and traces must also be present. The gate also checks that phase interpretation is separate from the instrument readout. The gates remain strict; instrument contracts make their epistemic work visible rather than replacing them.
 
 ## Artifacts appear only when they earn their cost
 

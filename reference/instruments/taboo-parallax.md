@@ -24,17 +24,17 @@ Use cross-society differences in sayability to expose assumptions and questions 
 
 ## Execution placement
 
-- **Scout — orchestrator:** The orchestrator runs the small hypothesis scan because it needs the live focus interview and must return the first map for immediate user correction. It may see the conversation and up to three orienting sources. No agent separation is claimed. If the context is already captured by a national stereotype, use a fresh framing-sensitivity control or state the risk. The orchestrator presents the scout.
+- **Scout — orchestrator:** After the user selects it, the orchestrator runs the small hypothesis scan because it needs the live focus interview and must return the first map for immediate user correction. It may see the conversation and up to three orienting sources. No agent separation is claimed. If the context is already captured by a national stereotype, offer a fresh framing-sensitivity control or state the risk. The orchestrator returns the scout map without explaining what it proves.
 - **Full run — hybrid:** The orchestrator freezes the comparison set and common matrix. Separate parallel research subagents each see one bounded public sphere, the topic, arena, time slice, and source contract—but not sibling findings, the hoped-for heresy, or a preferred national contrast. After all tracks return, the orchestrator builds the symmetric diff, venue gradient, truth gate, and user-facing matrix.
 - **Placement rationale:** Isolated tracks prevent one country's story from scripting the others; the orchestrator retains the cross-case and user continuity needed for comparison.
 - **Fallback:** If separate research contexts are unavailable, run a sequential source-grounded comparison labeled **correlated parallax scan**. Do not claim blind-track convergence or the full instrument.
-- **Return path:** Research tracks return sourced local findings and gaps to the orchestrator; only the orchestrator compares societies and presents conclusions.
+- **Return path:** Research tracks return sourced local findings and gaps to the orchestrator; only the orchestrator builds the controlled comparison. It returns the matrix, source limits, and hypotheses without turning them into conclusions.
 
 ## State boundary and scout-first rule
 
-A Walk may suggest, scope, and run a **taboo-parallax scout**. Unless the user explicitly asks for proof or a source-grounded comparison, run the scout before recommending Survey. The scout returns a small provisional map, then asks whether its best lead deserves proof.
+A Walk may offer and scope a **taboo-parallax scout**. Run it only after the user selects it. A request for proof or a source-grounded comparison selects the full run rather than the scout. The scout returns a small provisional map, then leaves any choice about proof to the user.
 
-Before any source lookup or scout content, announce: **“I’m pulling in the taboo-parallax instrument (a hypothesis-only scout for differences in what settings can say) because…”** This remains mandatory when the user requested the scout by name. It may use model priors and no more than three orienting sources total, but it may return only candidate speech locations, contrasts, and research questions. It may not claim what a society “won't say,” create a log, or launch country tracks.
+After selection and before any source lookup or scout content, announce: **“I’m pulling in the taboo-parallax instrument (a hypothesis-only scout for differences in what settings can say) because…”** This remains mandatory when the user requested the scout by name. It may use model priors and no more than three orienting sources total, but it may return only candidate speech locations, contrasts, and research questions. It may not claim what a society “won't say,” create a log, or launch country tracks.
 
 The scout should test whether the real contrast is:
 
@@ -42,7 +42,7 @@ The scout should test whether the real contrast is:
 - among public arenas inside one country;
 - between abstract agreement and a concrete utterance or action inside a power relation.
 
-Return two or three concise candidate asymmetries, the strongest likely correction to the obvious story, and what evidence would be needed to establish each. Keep it a first map rather than a source dossier. Seek user correction before offering a full run.
+Return two or three concise candidate asymmetries, their provenance, and what evidence would be needed to establish each. Keep it a first map rather than a source dossier. Seek user correction before offering a full run.
 
 A full run compares three or four source-grounded public spheres through a frozen matrix. That planned comparative collection normally promotes the inquiry to Survey. Explain the research tracks, log, source burden, and stereotype risk plainly and get assent before promotion.
 
@@ -123,7 +123,7 @@ Sayability elsewhere does not validate a claim. Anger, labels, or sanctions may 
 
 ### 7. Return for correction
 
-Show the matrix and strongest asymmetries before turning them into conclusions. Ask the user which setting, translation, sanction, or candidate feels misread. Update the specimen before another probe.
+Show the matrix and measured asymmetries without turning them into conclusions. Ask the user which setting, translation, sanction, or candidate feels misread. Do not run another probe until the user selects it.
 
 ## Controls
 
@@ -153,6 +153,6 @@ Show the matrix and strongest asymmetries before turning them into conclusions. 
 
 ## Escalation and stop
 
-Escalate to a ground-condition probe when enforcement or institutional power explains the asymmetry; a stake map when different groups bear its costs; belief stress when a tabooed position needs to be inhabited rather than merely listed; or historical comparison when the present contrast may be transient.
+Offer a ground-condition probe when enforcement or institutional power may account for the asymmetry; a stake map when different groups may bear its costs; belief stress when the user wants a tabooed position inhabited rather than merely listed; or historical comparison when the present contrast may be transient. Do not auto-run the next instrument.
 
 Stop when the instrument has produced a bounded speech-cost finding and a testable question. Do not keep searching for more forbidden claims merely to make the output provocative.

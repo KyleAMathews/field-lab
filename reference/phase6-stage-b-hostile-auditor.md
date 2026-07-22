@@ -225,6 +225,6 @@ If U is genuinely strong, say so.
 - [ ] One hostile auditor spawned per candidate under validation, each reading **only** its own candidate + the monk essays + domain context (no sight of sibling candidates or the Phase 4 analysis)
 - [ ] Each auditor used the candidate-type-specific prompt (S/J/G/F/U)
 - [ ] Each auditor's output appended to the matching `round_N_validation_<candidate>.md`
-- [ ] One `hostile-assay` readout per candidate records actual fresh context, fallback, failure claims, trace/control results, artifact risk, residue, and orchestrator disposition
+- [ ] One `hostile-assay` raw readout per candidate records authorization, actual fresh context, fallback, failure claims, trace/control results, artifact risk, and unmeasured remainder; orchestrator disposition is recorded separately
 
 Then read `reference/phase6-stage-c-interpret-refine.md`.

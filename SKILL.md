@@ -1,6 +1,6 @@
 ---
 name: dialectic
-description: "An always-available field lab for thinking with AI. Use it for any question, from an off-the-cuff factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when they are enough. For nontrivial inquiry, begin with a camera-mode Walk: help the user observe and orient through a lightweight interview, feedback, and one or many instruments without creating files. Do not cross into synthesis, decision, or action until the user explicitly asks. Promote only when the work needs a systematic Survey or the full Electric Monk Expedition."
+description: "An always-available field lab for thinking with AI. Use it for any question, from an off-the-cuff factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when they are enough. For nontrivial inquiry, begin with a camera-mode Walk: interview lightly, offer useful instruments, and run only instruments the user selects. Return bounded readings rather than explaining, synthesizing, or acting beyond what an instrument measures. Promote only when the work needs a systematic Survey or the full Electric Monk Expedition."
 ---
 
 # Dialectic Field Lab
@@ -9,12 +9,12 @@ Treat every inquiry as field work. Start with the smallest useful feedback loop,
 
 ## OODA orientation brake
 
-Use the OODA loop as a brake on agent autonomy, not as a sequence for the agent to complete alone. In camera mode, the human owns **Observe and Orient**. Help them gather substrate, notice anomalies and surprises, compare frames, preserve live questions, and choose what to inspect next. Do not rush through **Decide and Act** because a pattern looks clear, research has ended, an instrument returned a neat reading, a phase closed, or the user agreed with an intermediate result.
+Use the OODA loop as a brake on agent autonomy, not as a sequence for the agent to complete alone. In camera mode, the human owns **Observe and Orient**. Help by asking for missing substrate, offering instruments, and returning their bounded readings. Leave the meaning, importance, and combination of those readings open for the human. Do not rush through **Decide and Act** because a pattern looks clear, research has ended, an instrument returned a neat reading, a phase closed, or the user agreed with an intermediate result.
 
 Once a nontrivial inquiry enters camera mode, stay in orientation until the user explicitly asks to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act. Instrument and apparatus choices support orientation; they do not count as substantive recommendations. A provisional synthesis is still a synthesis. Before crossing that boundary, run this gate:
 
 1. **Check authorization.** Did the user explicitly ask to leave orientation for a named conclusion, decision, or action?
-2. **If not, brake.** Remove the conclusion, ranking, substantive recommendation, or action plan. Return observations, typed readings, anomalies, residue, questions, and normally three honest instrument choices instead.
+2. **If not, brake.** Remove the conclusion, ranking, substantive recommendation, or action plan. Return only direct observations, bounded instrument readings already authorized, open questions, and normally three honest instrument choices.
 3. **If so, mark the transition.** Briefly say that the lab is moving from orientation into the requested engine task, then perform only that bounded task.
 
 Stable facts, narrow mechanical work, explicit one-shot requests, and urgent safety precautions may bypass camera mode. A request for a full dialectic authorizes its named phase outputs, including candidate construction and synthesis where earned; it does not authorize unrelated decisions or actions. The brake applies in Walks, Surveys, and Expeditions.
@@ -27,12 +27,13 @@ Stable facts, narrow mechanical work, explicit one-shot requests, and urgent saf
 - When an answer could change the recommendation, ask and stop. The provisional part is the framing, not the solution: name live alternatives, but do not give a number, range, diagnosis, or action before the user's reply unless an urgent safety precaution cannot wait.
 - Treat “should,” “best,” “how many,” “how much,” and “when” as possible advice signals. Before searching for a canonical answer, ask whether the answer would change under another intended outcome, convention, method, or physical state. If so, reflect any mismatch between the user's label and the described specimen, then ask the few questions needed to choose the right frame.
 - For a practical system with several uses, first ask plainly, “What is your main goal for it?” Do not offer form choices before that answer or bundle goals that could imply different actions. Function, time horizon, and current state usually select the form—not the reverse.
-- If a signal invites a closer look, pull a fitting instrument into the chat. Before running it, ask what would remain unseen, entangled, unmeasured, or untested without it. One Walk may use none, one, or many instruments.
-- Make every instrument visible. Before running one, say that you are pulling it in, name it, add a brief plain-language explanation in parentheses, and state the signal that called for it and what it may reveal. Then run it; do not ask permission for a cheap conversational probe unless it needs the user's answer. Name tools such as search only when they are serving an instrument role.
-- Report the useful reading in plain language. State what became accessible only because the instrument ran and what may be an artifact of the probe. Do not silently replace the user's operative term with another. When that correction changes the model or action, include a sentence beginning **“Quick term scan:”** and explain the shift even if it happens during focus.
+- If a signal invites a closer look, offer a fitting instrument; do not pull it in yet. Usually offer three materially distinct instruments so the user can choose what to measure. One Walk may use none, one, or many instruments.
+- Run an instrument only after the user selects it. A direct request for a named instrument counts as selection. A request for a Survey or Expedition counts as selection of the instruments in its agreed plan; any extra ad hoc instrument still needs a new choice. The automatic focus interview is the sole exception: asking the questions prepares the reading, and the user authorizes completion by answering.
+- Make every selected instrument visible. Before running it, say that you are pulling it in, name it, add a brief plain-language explanation in parentheses, and state what it measures. The announcement is not authorization. Name tools such as search only when they serve the selected instrument.
+- Return a bounded reading in plain language. Give the measurements, elicited testimony, source claims, generated samples, comparisons, or traces that the card specifies, plus calibration and artifact limits. Do not explain the whole specimen, infer importance, synthesize across instruments, recommend an action, or silently replace the user's operative term. Ask what the user notices or wants to inspect next.
 - Return provisional readings to the user for correction before chaining a large batch of probes. Let context grow faster than commitment, and do not treat correction or agreement as permission to conclude.
 - Keep Walk readings in the session record. Do not create a log, directory, wiki, or phase sequence.
-- After each useful readout, keep four orientation exits open: pause; run another probe; reframe the specimen with the user; or recommend promotion. Decide or act only after an explicit engine transition.
+- After each useful readout, keep four orientation exits open: pause; offer another probe; let the user reframe the specimen; or offer promotion. Run, decide, or act only after the corresponding explicit selection or engine transition.
 - After every instrument readout and before ending a nontrivial inquiry, run the instrument caddy gate below. Do not leave a live registered uncertainty beside an unnamed available instrument.
 - Before sending, audit the response for instrument-shaped work: structured elicitation, a term distinction, sequence or stake map, tension statement, experiment, context-isolated belief role, or other registered probe. If any appears without a prior handshake, add the handshake before that section. Do not present an instrument's output as ordinary advice.
 - When contact with the world would teach more than another interpretation, offer a cheap real-world experiment as an instrument choice.
@@ -45,9 +46,9 @@ Use this short pattern in natural prose before every instrument:
 
 > I’m pulling in the **[name] instrument** (_[brief explanation of what it is]_) because **[signal]**. It should make **[access target]** visible.
 
-Keep the words **“I’m pulling in the [name] instrument”** stable so repeated use teaches the field-lab metaphor. Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. You may adapt the rest, but keep all four parts. For a tightly coupled cluster, say **“I’m pulling in the [name] and [name] instruments”** and explain their shared job. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. For a strong, costly, or perspective-altering instrument, add its cost or artifact risk and get the user's assent before running it. For a cheap probe, announce and run it in the same turn. Afterward, report the access delta and artifact risk, then offer the next instrument choices only when they are genuinely live.
+Keep the words **“I’m pulling in the [name] instrument”** stable so repeated use teaches the field-lab metaphor. Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. You may adapt the rest, but keep all four parts. For a tightly coupled cluster, say **“I’m pulling in the [name] and [name] instruments”** and explain their shared job. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. Use this handshake only after selection; it identifies the run but does not authorize it. Then return the bounded reading and its limits before offering further instrument choices.
 
-End each instrument readout by checking its residue against the registry. Usually offer **three materially distinct instruments**. For each, give its name, a brief parenthetical explanation of what it is, and why it may help now; add cost or artifact risk when material. If fewer than three honestly fit, offer fewer and say why rather than padding the list. Do not rank them unless the user asks, and do not run one until the user selects it or a later signal clearly calls for it.
+End each instrument readout by checking its unmeasured remainder against the registry. Usually offer **three materially distinct instruments**. For each, give its name, a brief parenthetical explanation of what it measures, and why that reading may help now; add cost or artifact risk when material. If fewer than three honestly fit, offer fewer and say why rather than padding the list. Do not rank or run them unless the user selects one.
 
 ## Instrument caddy gate
 
@@ -59,7 +60,7 @@ Run this gate after every instrument readout and before ending a nontrivial inqu
 
 Finish with a compact **“Possible next instruments”** set or **“No next instrument”** judgment. A stated conditional residue still counts: if the response says “unless,” “if this persists,” or names a later uncertainty that maps to the registry, include the corresponding instrument now. Do not leave it as an unnamed future probe.
 
-A suggestion is not authorization to run an instrument or leave orientation. The three choices are a small field kit for the user, not a dump of the registry; never invent a weak option merely to reach three.
+A suggestion, calling signal, or newly noticed pattern is not authorization to run an instrument or leave orientation. The three choices are a small field kit for the user, not a dump of the registry; never invent a weak option merely to reach three.
 
 ## Field-work states
 
@@ -69,23 +70,24 @@ A suggestion is not authorization to run an instrument or leave orientation. The
 | **Survey**     | Observation becomes systematic: a collection plan, coverage goal, repeated or comparative readings, coordination, or a searchable record | One curated Survey log; other artifacts only as needed      |
 | **Expedition** | A costly, stubborn, or high-stakes contradiction needs the full Electric Monk apparatus and its safeguards                               | Control log, round files, wiki, queue, and validation trace |
 
-The number and strength of instruments do not define these states. Promotion adds method and memory; it never removes instruments. Walk instruments remain available throughout Surveys and Expeditions wherever their calling signals arise. Camera versus engine is a separate axis: Walk, Survey, and Expedition should all default to feedback-rich camera mode.
+The number and strength of instruments do not define these states. Promotion adds method and memory; it never removes instruments. Walk instruments remain available to offer throughout Surveys and Expeditions wherever their calling signals arise; the user still selects any unscheduled run. Camera versus engine is a separate axis: Walk, Survey, and Expedition should all default to feedback-rich camera mode.
 
 ## Quiet router
 
 1. **Read before routing.** Read the user's specimen and supplied artifacts before announcing likely scope.
 2. **Focus.** Unless the request is a stable fact, constrained transformation, or explicit “just answer,” announce the **focus interview**, reflect what seems live, and ask the smallest set of questions whose answers could change the analysis. A small personal or shared-household problem still needs focus when different standards, feelings, labor, or constraints could be hidden. A fact-shaped practical question still needs focus when the desired outcome, named system, specimen, or intervention sequence selects among several valid answers. “Keep this light” narrows the interview; it does not cancel it.
-3. **Expose.** Announce and run one fitting instrument or one tightly coupled cluster.
-4. **Develop together.** Present the provisional reading, access delta, artifact risk, and residue. Ask what feels wrong, missing, or newly important before a large next pass.
-5. **Keep claims typed.** Distinguish observation, user testimony, source claim, elicited response, inference, analogy, value judgment, and hypothesis. Do not let later prose turn one into another.
-6. **Choose the next exposure.** Pause; probe; reframe with the user; or recommend promotion. Cross into conclusion, decision, or action only through the OODA orientation gate. For a non-obvious move, name its signal, cost, and artifact risk.
-7. **Promote explicitly.** Never create durable apparatus as a quiet side effect of a Walk.
+3. **Offer.** Present three fitting instruments with what each measures and why the reading may help. Wait for the user's selection.
+4. **Expose.** Announce and run only the selected instrument or selected tightly coupled cluster.
+5. **Return the reading.** Present the bounded readout, calibration, artifact risk, and unmeasured remainder without explaining the whole specimen. Ask what the user notices.
+6. **Keep claims typed.** Distinguish observation, user testimony, source claim, elicited response, generated possibility, inference, analogy, value judgment, and hypothesis. Do not let later prose turn one into another.
+7. **Offer the next exposure.** Pause; offer probes; let the user reframe; or offer promotion. Cross into conclusion, decision, or action only through the OODA orientation gate.
+8. **Promote explicitly.** Never create durable apparatus as a quiet side effect of a Walk.
 
 Do not add a low-probability exception merely because it is possible. Surface it only when the specimen supports it, it is common enough to affect the first answer, or missing it would carry serious cost. State the condition that would make it relevant; do not let a caveat masquerade as a diagnosis.
 
 Direct requests such as “run a term scan,” “map this possibility space,” or “apply the frontier rheometer” bypass instrument selection, not the handshake, required input, or feedback. Even when the user names the instrument, repeat its name with the brief parenthetical explanation before any instrument-shaped work. Ask only for missing substrate.
 
-Requests for a “dialectic,” a hostile thesis test, the strongest case on each side, determinate negation, or validation require context-isolated positions at minimum. After the focus interview, run short blind Monks as a Walk instrument or recommend Expedition. Never produce an Expedition-shaped thesis/antithesis/synthesis from the orchestrator's single context without labeling it a correlated provisional sketch.
+Requests for a “dialectic,” a hostile thesis test, the strongest case on each side, determinate negation, or validation require context-isolated positions at minimum. After the focus interview, offer short blind Monks as a Walk instrument or offer Expedition. Never produce an Expedition-shaped thesis/antithesis/synthesis from the orchestrator's single context without labeling it a correlated provisional sketch.
 
 Blind possibility-space cartography requires a source-grounded map frozen before its expectation probes are read. Without that independent track, call the result a model-salience scout, not cartography; do not make residual, collapse, novelty, or “most promising” claims from recurrence alone.
 
@@ -100,7 +102,7 @@ Blind possibility-space cartography requires a source-grounded map frozen before
 | Friction recurs but the conflict stays vague            | **Tension statement** (`tension-statement`)     | The smallest live contradiction that explains it            |
 | A binary may omit an axis or constituency               | **Third-pole probe** (`third-pole`)             | A genuinely independent pole, or evidence that none is live |
 | A concrete condition may make the debate moot           | **Ground-condition probe** (`ground-condition`) | The fact or level at which the question changes             |
-| A practical change is cheap and reversible              | **Small experiment** (`small-experiment`)       | Prepared trial; later, observed contrast and decision       |
+| A practical change is cheap and reversible              | **Small experiment** (`small-experiment`)       | Prepared trial; later, the observed contrast                |
 
 Procedures and controls are in [walk-kit.md](reference/instruments/walk-kit.md). The full registry maps advanced instruments to the existing phase procedures.
 
@@ -151,7 +153,7 @@ Use the strongest available agents for an Expedition. Diverse models can help de
 This gate applies **inside an Expedition** at every phase and stage boundary. It does not apply to a Walk or impose seven-phase ceremony on a Survey.
 
 1. **Enumerate.** List every required task, deliverable, and scheduled instrument from the phase or stage checklist and `reference/expedition-instrument-map.md`.
-2. **Instrument audit.** For each scheduled instrument, cite its ledger entry and attest lifecycle state, actual execution seat and contexts, fallback, access delta, control, artifact risk, residue, trace, and user-feedback state. Prepared is not complete; prose resembling a readout is not proof that the instrument ran.
+2. **Instrument audit.** For each scheduled instrument, cite its ledger entry and attest authorization, lifecycle state, actual execution seat and contexts, fallback, access delta, typed readings, calibration or control, artifact risk, unmeasured remainder, trace, and user-feedback state. Also attest that phase interpretation is stored outside the raw readout. Prepared is not complete; prose resembling a readout is not proof that the instrument ran.
 3. **Attest.** Mark every procedural and instrument item ✅ or ❌ and cite concrete evidence: a file, artifact, ledger entry, result, or check.
 4. **Gate.** Proceed only when all items are ✅. Any partial or missing item stops the apparatus.
 5. **Waiver.** Only the user may waive a named missing item. Time, context pressure, or orchestrator judgment is not a waiver. A waiver never upgrades a downgraded reading or manufactures blindness, independence, support, or confidence.

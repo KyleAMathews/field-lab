@@ -41,9 +41,9 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener → `position` pages** (`reference/dialectic-wiki.md`): each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. **Present a structural summary to the user** — not the essays themselves. The essays are raw material for the orchestrator's decomposition; most users won't read them and shouldn't need to. Give the user a quick orientation instead (scale to N monks):
+**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener → `position` pages** (`reference/dialectic-wiki.md`): each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. The essays and position pages are the raw `belief-stress` reading. Keep the next structural summary labeled as Phase 3 interpretation outside the instrument ledger. Give the user a quick orientation instead of dumping the essays (scale to N monks):
 
-> The monks have written their essays (saved to files if you want to read them). Here's the structural summary:
+> The monks have written their essays (saved to files if you want to read them). The essays are the instrument reading; here is the separate Phase 3 structural summary:
 >
 > **Monk A** argued [2-3 sentence summary of the core claim, key evidence, and most interesting move].
 >
@@ -53,14 +53,14 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 >
 > **Where they diverged:** [describe the structural differences pairwise — what conceptual frame each used. With 3+ monks, note which pair diverged most and which least — the pair that diverged least is a decorrelation risk].
 >
-> **Anything surprising:** [Note if a monk made an unexpected move, cited evidence you didn't anticipate, or took the position somewhere the user might not have expected].
+> **Other recorded moves:** [List further claims or evidence with pointers and claim kinds. Do not filter them by what the agent finds surprising or important].
 
 Then ask:
 
 1. Does this capture the positions accurately, or is either monk missing something important about how this actually works?
 2. **"Is there a claim either monk makes that should be tested against evidence neither has considered?"** — This is the second high-leverage intervention point. In testing, users identified claims that sounded plausible but collapsed under scrutiny when tested against comparison classes the monks didn't consider. Catching this before synthesis prevents the entire downstream analysis from being built on an untested assumption.
 
-If the user identifies a testable claim, run a targeted research agent to check it. This is cheap (~25-50K tokens) and can fundamentally change the quality of the synthesis.
+If the user identifies a testable claim, offer a targeted research pass and state what it would measure. Run it only if the user selects it. Its sourced findings remain a raw reading; later synthesis may cite them but must not be folded into the instrument ledger.
 
 ---
 
@@ -73,5 +73,5 @@ If the user identifies a testable claim, run a targeted research agent to check 
 - [ ] Monk essays ingested by the gardener as `position` pages (immutable per-round snapshots, cross-linked)
 - [ ] Structural summary presented to the user; both high-leverage questions asked (accuracy check + testable-claim check)
 - [ ] Any user-identified testable claim researched before proceeding
-- [ ] `belief-stress` readout records actual parallel contexts, essay traces, access delta, hedging/decorrelation control, artifact risk, residue, and user correction; any correlated fallback remains downgraded
+- [ ] `belief-stress` readout records authorization, actual parallel contexts, essay traces, access delta, typed raw readings, hedging/decorrelation control, artifact risk, unmeasured remainder, and user correction; any correlated fallback remains downgraded and later interpretation is separate
 - [ ] `neutral-control` comparison records which structures predated belief stress, which appeared only under commitment, and which remain unsupported or possibly induced

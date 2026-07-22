@@ -44,7 +44,7 @@ Sources for recursive contradictions:
 
 **Do not skip this step. Do not abbreviate it. Do not combine it with direction-clustering.** Generate the burst first, read it, _then_ cluster.
 
-Generate a **burst of 5-8 candidate concepts/directions** — not just contradictions but concrete mechanisms, architectural patterns, novel framings, and open vulnerabilities that the synthesis makes newly conceivable. Cast a wide net first: the value is in the _density_ of the newly opened conceptual space. Include material from monk defeasibility responses (Phase 6, question 5), auditor output, and your own structural analysis. The burst should contain ideas that surprise you — if every item is predictable from the synthesis, you're not casting wide enough.
+Generate a **burst of 5-8 candidate concepts/directions** — not just contradictions but concrete mechanisms, architectural patterns, novel framings, and open vulnerabilities that the synthesis makes newly conceivable. Cast a wide net first and include material from monk defeasibility responses (Phase 6, question 5), auditor output, and your own structural analysis. Preserve the source and claim kind of each candidate; breadth is useful, but novelty is not a validity test.
 
 Then **cluster the burst into 2-4 coherent directions**, each briefly described as a contradiction worth exploring. Several candidate concepts often point at the same underlying tension from different angles. For example:
 
@@ -64,12 +64,12 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 - [ ] Idea burst (5–8 candidate contradictions) generated **first**, read, and only then clustered — not skipped or combined with clustering
 - [ ] Round's synthesis **transferred** against the other queued tensions (tried for dissolve/reframe/sharpen) before the next direction was chosen
-- [ ] Candidate directions cleared the **minimal criterion** (not-too-trivial, not-too-solved vs. existing wiki `tension`/`synthesis` pages) and were selected by **novelty**, not resolvability
+- [ ] Candidate directions cleared the **minimal criterion** (not-too-trivial, not-too-solved vs. existing wiki `tension`/`synthesis` pages); the user selected the next direction without an agent novelty ranking
 - [ ] Burst clustered into 2–4 candidate directions
 - [ ] Directions presented to the user as a menu (orchestrator proposes, user chooses) — no unilateral direction pick
 - [ ] Queue written/updated in `dialectic_queue.md` with each contradiction's source round and status
 - [ ] On stopping instead: final state of the dialectic queue presented to the user (explored / open / deferred)
-- [ ] `tension-statement` readout records the structure and failure test of each proposed direction; `third-pole` records an orthogonal direction or “none found,” with artifact risks, trace, and user correction
+- [ ] `tension-statement` raw readout records authorization, the structure and failure test of each proposed direction, calibration, artifact risk, unmeasured remainder, and trace; `third-pole` records an orthogonal direction or “none found” under the same fields; user choice and later interpretation remain separate
 
 ## Treat the Queue as a Population, Not a To-Do List (open-endedness)
 
@@ -82,7 +82,7 @@ The dialectic is an _open-ended_ engine — the value is divergence, not converg
 - _Not too trivial_ — a monk could defend each pole at full conviction (a one-sided or merely verbal disagreement doesn't qualify).
 - _Not already solved_ — check the wiki's `tension` and `synthesis` pages; a contradiction an existing synthesis already dissolves is not new. (This is POET's "not too easy / not too hard" band, ported to idea-space.)
 
-**Select by novelty, not by resolvability.** Among admitted directions, prefer the one _most distant from what the wiki has already explored_ — the one that opens a new region — over the one that looks most tractable or most obviously next. Ranking by "easiest to resolve" is the objective-trap; ranking by novelty is what sustains open-endedness. (The idea burst below already casts a wide net — this is the rule for _selecting_ among the burst.)
+**Let the user select the direction.** Show how each admitted direction differs from what the wiki has already explored, what evidence supports it, and what remains unmeasured. Do not turn distance, novelty, or tractability into an automatic ranking. Those are readings the user may weigh, not steering rules for the agent.
 
 **Deferred (future directions, not built yet):** run the wiki as a MAP-Elites _illuminating_ archive (one elite synthesis per niche of a descriptor space, scored by downstream-contradiction fecundity; empty cells = an explore-here signal), and add open-endedness _meters_ (an ANNECS analog counting novel-and-then-solved tensions; a Picbreeder re-search diagnostic — a synthesis you _can't_ reach by targeting it was a genuine stepping stone). Powerful, but they need a descriptor space and scaffolding — revisit once the loop mechanics are settled.
 

@@ -115,6 +115,6 @@ Keep this to 2 paragraphs maximum. Extract 3-5 structural observations from the 
 - [ ] A separate user on-ramp scaffold written for each finalized donor (familiar bridge → concrete scene → plain mechanism → ≤3 defined terms; final transfer + limit reserved for post-decomposition calibration); raw donor research not reused as user-facing copy
 - [ ] 4.5c three metaphors written; 3–5 structural observations extracted
 - [ ] All 4.5 output written to `round_N_determinate_negation.md`
-- [ ] Instrument ledger contains complete `defamiliarize` and `donor-perturb` readings: actual seats and blind contexts, leak and distance controls, donor/research traces, access deltas, artifact risks, residue, and any fallback downgrade
+- [ ] Instrument ledger contains complete `defamiliarize` and `donor-perturb` raw readings: authorization, actual seats and blind contexts, leak and distance controls, donor/research traces, access deltas, typed readings, artifact risks, unmeasured remainders, and any fallback downgrade; later interpretation remains separate
 
 Then read `reference/phase4-stage-c-decomposition.md`.

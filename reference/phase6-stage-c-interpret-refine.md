@@ -85,4 +85,4 @@ Then ask the user, per surviving candidate: "Incorporate this improvement? Or ta
 - [ ] Improvements presented to the user **one candidate at a time**, with a response received before moving to the next (this user-response item is not self-waivable)
 - [ ] The round's outcome recorded (candidate chosen / two combined + named / palette held open / Phase 4 reopened)
 - [ ] `framing-sensitivity` run for every decision-relevant framing dependency, with isolated variants and stable/sensitive findings recorded; or explicitly not called with a reason
-- [ ] Phase 6 instrument ledger contains complete `position-preservation`, `hostile-assay`, and any `framing-sensitivity` readouts with trace paths, artifact risks, residue, user decisions, and unresolved defects
+- [ ] Phase 6 instrument ledger contains complete raw `position-preservation`, `hostile-assay`, and any `framing-sensitivity` readouts with authorization, typed readings, calibration or controls, trace paths, artifact risks, unmeasured remainders, and user corrections; user decisions and the orchestrator's disposition remain outside the readouts

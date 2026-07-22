@@ -93,6 +93,6 @@ Honesty rule (it bites hardest here, where the pull toward a tidy reframe is str
 - [ ] 4.3 determinate negation per monk (specific + complementary); enrichment guard run (sharp vs. homogenized)
 - [ ] 4.4 hidden question articulated **and** the conditional hidden-question 2×2 drawn, or `frame-projector` recorded as not called because the specimen is genuinely one-dimensional
 - [ ] All 4.0–4.4 output written to `round_N_determinate_negation.md`
-- [ ] Instrument ledger contains complete `fracture-scan`, Stage-A `residue-collect`, and conditional `frame-projector` readouts with actual seats, access deltas, controls, artifact risks, residue, and trace paths; a contraindicated frame projector is recorded as not called, and user-facing correction remains pending until the 4.9 checkpoint
+- [ ] Instrument ledger contains complete `fracture-scan`, Stage-A `residue-collect`, and conditional `frame-projector` raw readouts with authorization, actual seats, access deltas, typed readings, calibration or controls, artifact risks, unmeasured remainders, and trace paths; stage interpretation is separate, a contraindicated frame projector is recorded as not called, and user-facing correction remains pending until the 4.9 checkpoint
 
 Then read `reference/phase4-stage-b-lateral.md`.

@@ -13,7 +13,7 @@ Phase 4 is also an instrument sequence. Read `reference/expedition-instrument-ma
 | C     | `structural-recombine`, `residue-collect`, `loss-audit`, `negative-transfer` |
 | D     | `frontier-rheometer`                                                         |
 
-The orchestrator retains Phase 4 synthesis continuity, but instruments that require blindness or isolated source tracks keep those seats. Append each readout to the instrument ledger as its stage closes; the stage prose alone is not a substitute for the execution trace, access delta, control, artifact risk, and residue.
+The orchestrator retains Phase 4 synthesis continuity, but instruments that require blindness or isolated source tracks keep those seats. Append each raw readout to the instrument ledger as its stage closes and keep later stage interpretation separate; the stage prose alone is not a substitute for authorization, the execution trace, typed readings, calibration or control, artifact risk, and unmeasured remainder.
 
 ## This phase is staged — read one stage file at a time
 

@@ -230,7 +230,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 - [ ] Candidates ingested by the gardener as `synthesis` pages (cross-linked to the tension they resolve)
 - [ ] Each candidate carries a one-line frontier flag (groove/frontier vs. the blind-expected resolution); flags are descriptive, not a ranking
 - [ ] Palette presented side-by-side with no ranking / recommendation; user invited to pick, combine, or reopen Phase 4
-- [ ] `candidate-spectrograph` readout records earned bands, actual executor and context per band, fallback, access delta, distinctness control, artifact risk, residue, candidate trace paths, and user feedback
+- [ ] `candidate-spectrograph` raw readout records authorization, earned generated bands, actual executor and context per band, fallback, access delta, distinctness control, artifact risk, unmeasured remainder, candidate trace paths, and user feedback; ranking and synthesis remain outside the readout
 
 **Present the palette to the user** as a structural summary. For each candidate that was drafted, give:
 

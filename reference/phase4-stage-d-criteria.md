@@ -25,7 +25,7 @@ Separating criteria from synthesis prevents pattern-matching to a pre-formed com
 
 **Do NOT proceed to Phase 5 without presenting your Phase 4 analysis to the user and getting their response.** This is a hard stop, not a suggested checkpoint.
 
-The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the most surprising decomposition insights, the sublation criteria, and **1-2 highest-signal misfits from the register** (not all of them — just the ones that might change the user's response).
+The full Phase 4 analysis is already written to file — the user can read it there. **Present a concise structural summary**: the hidden question, the key determinate negations (1-2 sentences each), the decomposition readings, the sublation criteria, and the misfit register. Do not let the agent silently choose the “most surprising” or “highest-signal” items; keep the full raw register available and ask the user what they want to inspect.
 
 **Introduce the donor domains gently.** The user is expert in the home domain but the donors are deliberately distant. Raw donor research is allowed to be dense because it serves decomposition; it is **not** suitable introduction copy. For every donor that materially supports a surfaced insight, **finish the on-ramp scaffold prepared in Stage B** (`reference/phase4-stage-b-lateral.md` → "build a separate user on-ramp scaffold"): its steps 1–4 (familiar bridge → concrete donor scene → plain-language mechanism → ≤3 native terms defined inline) were already drafted there. Now complete the **reserved step 5** using Stage C's calibrated recombinations — map the mechanism home, give the `[fit:]` calibration, and state where the analogy breaks — and **present the full scaffold in that 1→5 order, one donor at a time.** (Presenting the whole on-ramp, not just the transfer, is what lets the user judge whether the donor is genuinely load-bearing or a `[fit: reach]`.)
 
@@ -69,13 +69,13 @@ Then ask:
 
 - [ ] 4.7 sublation criteria written (preserve A / preserve B / dissolve shared assumption / answer hidden question) — kept separate from the misfits
 - [ ] Initial synthesis guess (written back in Stage A) compared against the finished decomposition for pattern-matching
-- [ ] 4.9 concise summary prepared: hidden question, key negations, surprising decomposition insights, sublation criteria, 1–2 highest-signal misfits
+- [ ] 4.9 concise summary prepared: hidden question, key negations, decomposition readings, sublation criteria, and a pointer to the full raw misfit register; no agent-only surprise or importance ranking controls what the user can inspect
 - [ ] A gentle, personalized on-ramp presented for each distant donor that materially supports the summary (familiar bridge → concrete scene → plain mechanism → ≤3 defined terms → transfer + limit); no raw donor-page prose or dense multi-donor table used as the introduction
 - [ ] **HARD STOP honored** — summary presented to the user and their response received (this item is NOT self-waivable; only the user can release it)
 - [ ] Hidden question written to the control log's hidden-question ledger this pass
 - [ ] Frontier Overlay run: blind-expectation probe spawned (blind to essays/negation/donors), companion block appended to the negation summary, collapse checked
 - [ ] Frontier-ledger line written this pass (reading / expected / actual / collapse)
 - [ ] `reference/refinement-loop.md` read and the four-exit router run (Phase 5 only on the Proceed exit)
-- [ ] `frontier-rheometer` readout records actual blind context, fallback, expected/actual access delta, collapse control, artifact risk, residue, and trace; user response updates the specimen before the router exit
+- [ ] `frontier-rheometer` raw readout records authorization, actual blind context, fallback, expected/actual access delta, typed readings, collapse control, artifact risk, unmeasured remainder, and trace; interpretation remains separate and the user response updates the specimen before the router exit
 
 This is the end of Phase 4. After the user responds at the 4.9 checkpoint, run the refinement-loop router (`reference/refinement-loop.md`). Proceed to Phase 5 (`reference/phase5-sublation.md`) only on the router's **Proceed** exit; otherwise loop back per the chosen exit.

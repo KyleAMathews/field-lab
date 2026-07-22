@@ -1,6 +1,6 @@
 # Instrument Registry
 
-Choose by the phenomenon, not by the prestige of the method. Execution seat is part of the reading, not merely a speed choice. Read [the contract](../instrument-contract.md) before creating or changing a card. Inside an Expedition, use the [phase-to-instrument map](../expedition-instrument-map.md); phase procedures and cards are jointly binding.
+Offer instruments by the phenomenon, not by the prestige of the method, and let the user select. Execution seat is part of the reading, not merely a speed choice. Every card returns a bounded reading, not a general explanation or recommendation. Read [the contract](../instrument-contract.md) before creating or changing a card. Inside an Expedition, use the [phase-to-instrument map](../expedition-instrument-map.md); phase procedures and cards are jointly binding.
 
 ## Walk field kit
 
