@@ -82,6 +82,8 @@ Before every run, tell the user:
 3. the specimen signal that called for it;
 4. the access target—what it may make visible that is not yet available.
 
+Use this stable lead-in: **“I’m pulling in the [name] instrument ([brief explanation]) because…”** Keeping the word **instrument** beside the name is part of the interface: repeated use teaches the field-lab metaphor. For a tightly coupled cluster, use **“I’m pulling in the [name] and [name] instruments…”** You may vary the rest of the sentence, not this identification.
+
 For an instrument whose real run happens later, use the same handshake before preparation but say that you are preparing it. Record the lifecycle state and get assent before the perturbation. Do not claim an access delta or empirical readout while it remains `prepared`.
 
 For a cheap conversational probe, announce and run it in the same turn. For a costly, strong, or perspective-altering perturbation, also state the main cost or artifact risk and get assent first. After the run, report the access delta and artifact risk, then run the caddy gate: scan the residue against the registry; suggest one or at most two live instruments with a parenthetical explanation, calling signal, access target, and material cost; or say plainly that no further instrument would repay its cost. End with a named **useful next instrument** or **no next instrument** judgment. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. Do not run a suggested instrument merely because it was suggested.

@@ -74,7 +74,7 @@ Name the condition that would make the exception relevant and its evidence statu
 ## Cadence rules
 
 - Do not announce a compact or full route before reading the specimen. A host-required skill-use notice may name the skill but should not pre-commit scope. This does not waive the just-in-time handshake before the focus interview or any other instrument.
-- Announce each instrument just before use and explain it briefly in parentheses; do not bury it in the analysis or announce a future sequence that may no longer fit after feedback.
+- Announce each instrument just before use with **“I’m pulling in the [name] instrument ([brief explanation])…”** Keep the word **instrument** beside the name so the user learns the field-lab metaphor; do not bury it in the analysis or announce a future sequence that may no longer fit after feedback.
 - Do not answer a focus question on the user's behalf or attach substantive advice before they reply.
 - Do not batch several interpretive instruments and deliver a final thesis before the user sees an intermediate reading.
 - One tightly coupled cluster may run between user turns when its parts answer one bounded question. Term scan + tension statement often qualifies; term scan + ground condition + third pole + determinate negation usually does not.

@@ -34,7 +34,7 @@ Use cross-society differences in sayability to expose assumptions and questions 
 
 A Walk may suggest, scope, and run a **taboo-parallax scout**. Unless the user explicitly asks for proof or a source-grounded comparison, run the scout before recommending Survey. The scout returns a small provisional map, then asks whether its best lead deserves proof.
 
-Before any source lookup or scout content, announce: **“I’m pulling in a taboo-parallax scout (a hypothesis-only scan for differences in what settings can say) because…”** This remains mandatory when the user requested the scout by name. It may use model priors and no more than three orienting sources total, but it may return only candidate speech locations, contrasts, and research questions. It may not claim what a society “won't say,” create a log, or launch country tracks.
+Before any source lookup or scout content, announce: **“I’m pulling in the taboo-parallax instrument (a hypothesis-only scout for differences in what settings can say) because…”** This remains mandatory when the user requested the scout by name. It may use model priors and no more than three orienting sources total, but it may return only candidate speech locations, contrasts, and research questions. It may not claim what a society “won't say,” create a log, or launch country tracks.
 
 The scout should test whether the real contrast is:
 

@@ -79,4 +79,4 @@ An instrument is not complete merely because the phase produced prose resembling
 
 ## User cadence
 
-Do not announce the whole instrument map at Expedition entry. Announce each instrument or tightly coupled cluster just before it runs. Return readings at the existing Phase 1 framing check, Phase 3 structural summary, Phase 4 hard stop, Phase 5 palette, Phase 6 per-candidate refinement, and Phase 7 direction choice. Between those checkpoints, preserve full readouts in the control log rather than dumping apparatus telemetry into the conversation.
+Do not announce the whole instrument map at Expedition entry. Announce each instrument or tightly coupled cluster just before it runs with the stable **“I’m pulling in the [name] instrument…”** handshake. Return readings at the existing Phase 1 framing check, Phase 3 structural summary, Phase 4 hard stop, Phase 5 palette, Phase 6 per-candidate refinement, and Phase 7 direction choice. Between those checkpoints, preserve full readouts in the control log rather than dumping apparatus telemetry into the conversation.

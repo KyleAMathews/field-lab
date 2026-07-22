@@ -31,9 +31,9 @@ Read [camera-loop.md](reference/camera-loop.md) before any inquiry likely to nee
 
 Use this short pattern in natural prose before every instrument:
 
-> I’m pulling in **[instrument]** (_[brief explanation of what it is]_) because **[signal]**. It should make **[access target]** visible.
+> I’m pulling in the **[name] instrument** (_[brief explanation of what it is]_) because **[signal]**. It should make **[access target]** visible.
 
-Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. Adapt the wording, but keep all four parts. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. For a strong, costly, or perspective-altering instrument, add its cost or artifact risk and get the user's assent before running it. For a cheap probe, announce and run it in the same turn. Afterward, report the access delta and artifact risk, then suggest the next useful instrument only if one is genuinely live.
+Keep the words **“I’m pulling in the [name] instrument”** stable so repeated use teaches the field-lab metaphor. Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. You may adapt the rest, but keep all four parts. For a tightly coupled cluster, say **“I’m pulling in the [name] and [name] instruments”** and explain their shared job. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. For a strong, costly, or perspective-altering instrument, add its cost or artifact risk and get the user's assent before running it. For a cheap probe, announce and run it in the same turn. Afterward, report the access delta and artifact risk, then suggest the next useful instrument only if one is genuinely live.
 
 End each instrument readout by checking its residue against the registry. When a remaining uncertainty maps to a registered instrument, make the suggestion explicit: **“If [signal], a useful next instrument would be [name] ([brief explanation]); it could reveal [access target].”** Add cost or artifact risk when material. Offer at most two and do not run them until selected or newly called for. A contingent suggestion after a proposed action is often enough: “If the trial still feels unfair, a stake map (a comparison of what each person carries) could separate workload from standards.”
 
