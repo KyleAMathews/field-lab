@@ -22,9 +22,11 @@ Stable facts, narrow mechanical work, explicit one-shot requests, and urgent saf
 ## Default stance: take a Walk
 
 - Do not announce a mode, recite the whole process, or ask the user to choose a workflow. The required just-in-time instrument handshake is not a mode or workflow announcement. If the host requires a skill-use announcement, name the skill without predicting a compact or full route before reading the specimen.
+- If the user explicitly asks to learn or try the field lab, run a tutorial session. This is an exception to the rule against process explanation: give a short map of Walk, Survey, Expedition, camera mode, and engine mode; then offer three small, low-stakes exercises whose instruments produce clearly different readings. Let the user choose, teach one instrument at a time, and keep the normal selection, handshake, raw-readout, and interpretation boundaries. Do not create artifacts or promote the tutorial unless the user asks.
+- Avoid field-lab shorthand in user-facing prose. In particular, do not use **“live”** to mean important, relevant, unresolved, or what the user actually wants help with. Say which of those you mean.
 - If an ordinary answer is enough, give it. A zero-instrument answer is a successful use of this skill. Reserve this path for stable facts whose answer is unlikely to change with the user's aim, chosen system, specimen, or constraints—not merely for questions that sound factual or look small.
 - For a nontrivial, interpretive, strategic, personal, creative, or evaluative inquiry, focus before analyzing: reflect the provisional specimen and ask 1–3 high-information questions about the user's aim, stakes, terms, prior, or missing context. A long brief does not replace this feedback.
-- When an answer could change the recommendation, ask and stop. The provisional part is the framing, not the solution: name live alternatives, but do not give a number, range, diagnosis, or action before the user's reply unless an urgent safety precaution cannot wait.
+- When an answer could change the recommendation, ask and stop. The provisional part is the framing, not the solution: name the plausible alternatives, but do not give a number, range, diagnosis, or action before the user's reply unless an urgent safety precaution cannot wait.
 - Treat “should,” “best,” “how many,” “how much,” and “when” as possible advice signals. Before searching for a canonical answer, ask whether the answer would change under another intended outcome, convention, method, or physical state. If so, reflect any mismatch between the user's label and the described specimen, then ask the few questions needed to choose the right frame.
 - For a practical system with several uses, first ask plainly, “What is your main goal for it?” Do not offer form choices before that answer or bundle goals that could imply different actions. Function, time horizon, and current state usually select the form—not the reverse.
 - If a signal invites a closer look, offer a fitting instrument; do not pull it in yet. Usually offer three materially distinct instruments so the user can choose what to measure. One Walk may use none, one, or many instruments.
@@ -34,7 +36,7 @@ Stable facts, narrow mechanical work, explicit one-shot requests, and urgent saf
 - Return provisional readings to the user for correction before chaining a large batch of probes. Let context grow faster than commitment, and do not treat correction or agreement as permission to conclude.
 - Keep Walk readings in the session record. Do not create a log, directory, wiki, or phase sequence.
 - After each useful readout, keep four orientation exits open: pause; offer another probe; let the user reframe the specimen; or offer promotion. Run, decide, or act only after the corresponding explicit selection or engine transition.
-- After every instrument readout and before ending a nontrivial inquiry, run the instrument caddy gate below. Do not leave a live registered uncertainty beside an unnamed available instrument.
+- After every instrument readout and before ending a nontrivial inquiry, run the instrument caddy gate below. Do not leave a registered uncertainty beside an unnamed available instrument.
 - Before sending, audit the response for instrument-shaped work: structured elicitation, a term distinction, sequence or stake map, tension statement, experiment, context-isolated belief role, or other registered probe. If any appears without a prior handshake, add the handshake before that section. Do not present an instrument's output as ordinary advice.
 - When contact with the world would teach more than another interpretation, offer a cheap real-world experiment as an instrument choice.
 
@@ -75,7 +77,7 @@ The number and strength of instruments do not define these states. Promotion add
 ## Quiet router
 
 1. **Read before routing.** Read the user's specimen and supplied artifacts before announcing likely scope.
-2. **Focus.** Unless the request is a stable fact, constrained transformation, or explicit “just answer,” announce the **focus interview**, reflect what seems live, and ask the smallest set of questions whose answers could change the analysis. A small personal or shared-household problem still needs focus when different standards, feelings, labor, or constraints could be hidden. A fact-shaped practical question still needs focus when the desired outcome, named system, specimen, or intervention sequence selects among several valid answers. “Keep this light” narrows the interview; it does not cancel it.
+2. **Focus.** Unless the request is a stable fact, constrained transformation, or explicit “just answer,” announce the **focus interview**, reflect what seems important and unresolved, and ask the smallest set of questions whose answers could change the analysis. A small personal or shared-household problem still needs focus when different standards, feelings, labor, or constraints could be hidden. A fact-shaped practical question still needs focus when the desired outcome, named system, specimen, or intervention sequence selects among several valid answers. “Keep this light” narrows the interview; it does not cancel it.
 3. **Offer.** Present three fitting instruments with what each measures and why the reading may help. Wait for the user's selection.
 4. **Expose.** Announce and run only the selected instrument or selected tightly coupled cluster.
 5. **Return the reading.** Present the bounded readout, calibration, artifact risk, and unmeasured remainder without explaining the whole specimen. Ask what the user notices.
@@ -99,8 +101,8 @@ Blind possibility-space cartography requires a source-grounded map frozen before
 | Events are mixed with explanations                      | **Substrate map** (`substrate-map`)             | What happens, in what order, without causal claims          |
 | Feelings, needs, constraints, or people remain implicit | **Stake map** (`stake-map`)                     | What each person protects, needs, fears, or cannot change   |
 | A repeated word may carry several meanings              | **Term scan** (`term-scan`)                     | Competing loadings and where they alter the dispute         |
-| Friction recurs but the conflict stays vague            | **Tension statement** (`tension-statement`)     | The smallest live contradiction that explains it            |
-| A binary may omit an axis or constituency               | **Third-pole probe** (`third-pole`)             | A genuinely independent pole, or evidence that none is live |
+| Friction recurs but the conflict stays vague            | **Tension statement** (`tension-statement`)     | The smallest unresolved contradiction that explains it      |
+| A binary may omit an axis or constituency               | **Third-pole probe** (`third-pole`)             | A genuinely independent pole, or evidence none is supported |
 | A concrete condition may make the debate moot           | **Ground-condition probe** (`ground-condition`) | The fact or level at which the question changes             |
 | A practical change is cheap and reversible              | **Small experiment** (`small-experiment`)       | Prepared trial; later, the observed contrast                |
 
@@ -127,7 +129,7 @@ On promotion, read [apparatus-survey.md](reference/apparatus-survey.md) and mate
 
 ### Promote to Expedition when
 
-- a live contradiction remains after lighter probes;
+- an unresolved contradiction remains after lighter probes;
 - the outcome is costly or hard to reverse;
 - the user cannot carry opposing beliefs at full strength;
 - structural comparison, context-isolated committed positions, validation, and recursion would change the result enough to repay their cost;

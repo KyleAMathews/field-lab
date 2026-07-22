@@ -4,7 +4,17 @@ _The Electric Monks are named after Douglas Adams' machines built to believe thi
 
 Bring it any question. It may answer in one paragraph, pull a few instruments into the conversation, organize a systematic inquiry, or launch the full Electric Monk dialectic.
 
-Every inquiry begins as a **Walk**. A direct answer is a complete and successful result when user-specific context is unlikely to change it. A nontrivial Walk begins by focusing with the user: the agent reflects what seems live, asks a few questions that could change the analysis, then alternates bounded instrument readings with user correction. A problem can be small yet context-bound: “keep this light” calls for fewer, sharper questions, not an instant canned fix. No files, mode menu, phase announcement, or setup are required.
+Every inquiry begins as a **Walk**. A direct answer is a complete and successful result when user-specific context is unlikely to change it. A nontrivial Walk begins by focusing with the user: the agent reflects what seems important and unresolved, asks a few questions that could change the analysis, then alternates bounded instrument readings with user correction. A problem can be small yet context-bound: “keep this light” calls for fewer, sharper questions, not an instant canned fix. No files, mode menu, phase announcement, or setup are required.
+
+## First time? Take the tutorial
+
+Before bringing a difficult question, try a guided, low-stakes tour of the bench:
+
+```text
+/dialectic I want to test the instruments in this field lab. Briefly explain how it works, then give me a few easy, low-stakes exercises for instruments that produce different kinds of readings. Let me choose what to try and guide me through one at a time.
+```
+
+The tutorial should explain the lab briefly, offer contrasting exercises, and then follow the same rules as ordinary use: you select each instrument; the agent announces it; the instrument returns a bounded reading; and you decide what the readings mean together.
 
 If the inquiry later needs systematic collection or durable memory, it becomes a **Survey**. If a stubborn contradiction repays the cost of context-isolated committed agents, structural analysis, validation, and recursion, it becomes an **Expedition**. The existing seven-phase Electric Monk dialectic remains strict; it is no longer the price of entry.
 
@@ -40,7 +50,7 @@ The usual loop is:
 
 Instrument use is visible but light. The stable “I’m pulling in the [name] instrument…” lead-in makes the field-lab metaphor familiar through use. It follows selection rather than replacing it. The agent never hides an instrument inside fluent analysis, auto-runs a cheap probe, or dumps the whole bench on the user. After every readout, it checks which instruments could measure the unexamined remainder and normally offers three distinct choices. It offers fewer when fewer honestly fit, does not rank them unless asked, and never treats a suggestion or calling signal as permission to run one.
 
-A long brief supplies content, not complete context. It rarely says why the question is live now, what the user already suspects, what feels wrong, or which result would change the next move. Stable facts, narrow transformations, and explicit one-shot requests may still go straight to an answer. A question that sounds factual may still need focus: “How many branches should this bush have?” depends on the intended training system and the plant in front of the user. The lab checks whether the answer is invariant before searching toward a default. It does not offer a “working range” in the same turn as a question that could overturn that range.
+A long brief supplies content, not complete context. It rarely says why the question matters now, what the user already suspects, what feels wrong, or which result would change the next move. Stable facts, narrow transformations, and explicit one-shot requests may still go straight to an answer. A question that sounds factual may still need focus: “How many branches should this bush have?” depends on the intended training system and the plant in front of the user. The lab checks whether the answer is invariant before searching toward a default. It does not offer a “working range” in the same turn as a question that could overturn that range.
 
 This follows Venkatesh Rao's [“A Camera, Not an Engine II”](https://contraptions.venkateshrao.com/p/a-camera-not-an-engine-ii): camera-like agent loops let seeing outrun doing by using feedback to produce an information surplus; engine-like loops let doing outrun seeing.
 
@@ -64,7 +74,7 @@ The lab keeps three roles distinct:
 
 Execution placement is part of the instrument when it changes what can be seen:
 
-- **Orchestrator:** live interviewing, continuity, synthesis, and user-facing interpretation.
+- **Orchestrator:** responsive interviewing, continuity, synthesis, and user-facing interpretation.
 - **Fresh subagent:** blindness from the current analysis creates the reading.
 - **Parallel subagents:** context-isolated belief, evidence, or framing tracks must remain separate until comparison.
 - **Hybrid:** isolated agents collect or generate; the orchestrator integrates.
@@ -83,7 +93,7 @@ Other common field-kit probes include:
 - mapping what happens before explaining why;
 - making feelings, priorities, constraints, and affected people explicit;
 - scanning a loaded term such as “clean,” “fair,” “simple,” or “done”;
-- stating the smallest live tension;
+- stating the smallest unresolved tension;
 - checking for a missing third pole or ground condition;
 - preparing, running, and interpreting a small, reversible real-world experiment.
 
@@ -111,7 +121,7 @@ An Expedition inherits the Walk and Survey record, then coordinates the same ins
 4. determinate negation, lateral intervention, decomposition, and refinement;
 5. a candidate palette: synthesis, juxtaposition, ground condition, framing dissolution, and undecidable-centered readings where earned;
 6. position-preservation checks and hostile audit;
-7. recursive exploration of the next live contradiction.
+7. recursive exploration of the next unresolved contradiction.
 
 Each phase gate cites an instrument-ledger entry. A phase cannot pass merely because it produced plausible prose: authorization, required blindness, context isolation, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, and traces must also be present. The gate also checks that phase interpretation is separate from the instrument readout. The gates remain strict; instrument contracts make their epistemic work visible rather than replacing them.
 
