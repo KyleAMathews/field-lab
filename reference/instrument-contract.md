@@ -88,7 +88,7 @@ Use this stable lead-in: **“I’m pulling in the [name] instrument ([brief exp
 
 For an instrument whose real run happens later, use the same handshake before preparation but say that you are preparing it. Record the lifecycle state and get assent before the perturbation. Do not claim an access delta or empirical readout while it remains `prepared`.
 
-For a cheap conversational probe, announce and run it in the same turn. For a costly, strong, or perspective-altering perturbation, also state the main cost or artifact risk and get assent first. After the run, report the access delta and artifact risk, then run the caddy gate: scan the residue against the registry; suggest one or at most two live instruments with a parenthetical explanation, calling signal, access target, and material cost; or say plainly that no further instrument would repay its cost. End with a named **useful next instrument** or **no next instrument** judgment. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. Do not run a suggested instrument merely because it was suggested.
+For a cheap conversational probe, announce and run it in the same turn. For a costly, strong, or perspective-altering perturbation, also state the main cost or artifact risk and get assent first. After the run, report the access delta and artifact risk, then run the caddy gate: scan the residue against the registry; normally suggest three materially distinct live instruments, each with a parenthetical explanation, why it may help now, its access target, and any material cost; or say plainly that no further instrument would repay its cost. If fewer than three honestly fit, offer fewer and say why rather than padding the set. Do not rank them unless asked. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. Do not run a suggested instrument merely because it was suggested.
 
 Before sending, compare the proposed response with the registry. Structured elicitation, semantic substitution, sequence mapping, stake separation, tension compression, bounded experiments, and context-isolated belief roles are instrument-shaped work. If the response contains one without a handshake, move the handshake before its readout. If a residue maps to another registered instrument, suggest it explicitly by name and access target.
 
@@ -97,6 +97,7 @@ Before sending, compare the proposed response with the registry. Structured elic
 ```yaml
 instrument: <id>
 lifecycle: <prepared|running|complete|stopped>
+orientation-state: <observing|orienting|engine-authorized>
 execution:
   seat: <orchestrator|fresh-subagent|parallel-subagents|hybrid|either>
   contexts: <who saw what>
@@ -113,11 +114,11 @@ residue: <what remains unclear, incompatible, or unmeasured>
 user-feedback: <pending|confirmed|correction or surprise after the reading is returned>
 specimen-update: <what changed after the user's error signal>
 next-options:
-  - <stop|small-experiment|instrument-id|promote-to-survey|promote-to-expedition>
-recommendation: <one option and why; user decides>
+  - <pause|small-experiment|instrument-id|promote-to-survey|promote-to-expedition>
+recommendation: <pending while observing or orienting; bounded response after explicit engine authorization>
 ```
 
-This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return strong readings to the user before filling `user-feedback` and `specimen-update`; do not invent confirmation. Do not fill `recommendation` while a focus question that could change it remains unanswered. In a Survey, preserve the full fields when a reading affects later work. In an Expedition, append every scheduled instrument's full lifecycle and readout to the round control log's instrument ledger; phase gates cite those entries.
+This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return strong readings to the user before filling `user-feedback` and `specimen-update`; do not invent confirmation. While `orientation-state` is `observing` or `orienting`, leave `recommendation` pending even when the reading looks decisive. Only an explicit user request to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act changes the state to `engine-authorized`; agreement, correction, a completed run, or a phase gate does not. Instrument and apparatus choices stay inside orientation. In a Survey, preserve the full fields when a reading affects later work. In an Expedition, append every scheduled instrument's full lifecycle and readout to the round control log's instrument ledger; phase gates cite those entries.
 
 ## Observation ledger
 
@@ -135,4 +136,4 @@ Use controls in proportion to the cost of being wrong:
 
 If a contradiction, axis, or conclusion appears only after a strong perturbation, mark it as possibly induced.
 
-After a run, compare its access differential with its artifact risk. If the claimed finding was already visible before the perturbation, downgrade the run to confirmation or convenience. If the perturbation created the finding, report it as induced rather than discovered. Then complete the caddy gate. Compare the residue with the registry. When it maps to another instrument, suggest that instrument explicitly with its calling signal and access target; when none fits, say that stopping or acting is the best next move. Do not leave a named uncertainty beside an unnamed available probe.
+After a run, compare its access differential with its artifact risk. If the claimed finding was already visible before the perturbation, downgrade the run to confirmation or convenience. If the perturbation created the finding, report it as induced rather than discovered. Then complete the caddy gate. Compare the residue with the registry and normally offer three distinct instruments that could improve orientation, explaining what each is and why it may help. Offer fewer when fewer honestly fit. When none fits, say that no next instrument is warranted. Do not leave a named uncertainty beside an unnamed available probe, rank the choices without being asked, or cross from orientation into recommendation or action.

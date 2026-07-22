@@ -9,6 +9,20 @@ Walk, Survey, and Expedition set the scale of method and memory. Camera and engi
 
 The field lab defaults to camera mode. See Venkatesh Rao's [“A Camera, Not an Engine II”](https://contraptions.venkateshrao.com/p/a-camera-not-an-engine-ii): in camera-like agent loops, seeing can outrun doing because error signals keep adding context. Engine-like loops let doing outrun seeing and create unobserved consequences.
 
+## OODA as an orientation brake
+
+The OODA loop adds a clear division of authority. In camera mode, the human owns **Observe and Orient**. The agent helps gather substrate, register anomalies and surprises, compare frames, preserve questions, and offer instruments that may change the view. It must not complete **Decide and Act** on the user's behalf.
+
+Do not infer that orientation is complete because:
+
+- the agent sees a coherent pattern;
+- research or an instrument run has ended;
+- the user agrees with or corrects a reading;
+- a Survey reaches its coverage goal;
+- an Expedition phase reaches its procedural gate.
+
+Once camera mode begins, only an explicit user request to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act opens engine mode. Instrument and apparatus choices remain part of orientation. Mark an engine transition briefly and keep it bounded to what the user asked for. “Provisional” does not exempt a conclusion or recommendation from this gate. Stable facts, narrow mechanical tasks, explicit one-shot requests, and urgent safety precautions may bypass camera mode.
+
 ## The loop
 
 1. **Focus.** Read the supplied specimen before declaring a route. Reflect a provisional account of what appears live, not a provisional solution.
@@ -16,7 +30,7 @@ The field lab defaults to camera mode. See Venkatesh Rao's [“A Camera, Not an 
 3. **Expose.** Announce one instrument or one tightly coupled cluster, including a brief parenthetical explanation, its signal, and its access target, then run it. Keep the first reading provisional.
 4. **Develop.** Return the reading to the user. Name the access delta, artifact risk, and residue.
 5. **Register error.** Seek an error signal suited to the claim: user correction, source conflict, observation, test result, or downstream outcome. Treat error as information, not friction.
-6. **Refocus.** Update the specimen and choose whether to stop, act, expose again, reframe, or promote.
+6. **Refocus.** Update the specimen and choose whether to pause, expose again, reframe, or promote. Conclude, decide, or act only after the user explicitly opens that transition.
 
 The user's replies are part of the sensing loop. Do not treat them as requests that interrupt an otherwise autonomous analysis.
 
@@ -71,6 +85,16 @@ A focus turn may:
 
 It may not cross into substantive advice until the user replies. The exception is an urgent, conservative safety step that cannot wait; state it as an interim precaution, not the answer.
 
+## The conclusion gate
+
+Before any synthesis, ranking, substantive recommendation, decision, action plan, or action in an inquiry already in camera mode:
+
+1. identify the user's explicit transition request;
+2. if none exists, remove the engine output and return observations, typed readings, anomalies, residue, questions, and instrument choices;
+3. if it exists, state the transition in one short line and perform only the named engine task.
+
+Answering a focus question, approving a source, correcting a frame, or saying “yes” to an instrument does not authorize this transition. A full-dialectic request authorizes the phase outputs named by that apparatus, but not a separate real-world decision or action.
+
 ## Exception discipline
 
 Do not enumerate every possible caveat. Surface an exception only when at least one holds:
@@ -91,7 +115,7 @@ Name the condition that would make the exception relevant and its evidence statu
 - After a strong perturbation such as Monks, donor recruitment, or a frame projector, seek a user error signal before synthesizing.
 - Make later questions responsive to prior answers. A fixed interview script is engine behavior wearing a camera label.
 - A good Walk may spend several turns focusing and never create an artifact.
-- End each instrument readout with the caddy gate. Check its residue against the registry. If a remaining uncertainty maps to an instrument, suggest it by name with a brief parenthetical explanation, the signal that would call for it, the unknown it would expose, and any material cost. Offer no more than two. If none would repay its cost, say that stopping or acting is the best next move. Make the close explicit as **useful next instrument** or **no next instrument**. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. A contingent suggestion after an action or trial avoids turning the bench into a menu.
+- End each instrument readout with the caddy gate. Check its residue against the registry. Normally offer three materially distinct instruments, each with a brief parenthetical explanation of what it is, why it may help now, the unknown it would expose, and any material cost. If fewer than three honestly fit, offer fewer and say why; never pad. Do not rank the choices unless asked. If none would repay its cost, say that no next instrument is warranted. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. Suggestions support orientation; they do not authorize a run or an engine transition.
 - Before sending, scan the response for instrument-shaped work. A bounded real-world trial is `small-experiment`; a structured meaning distinction is a term scan; elicitation is a focus interview. Move the handshake before any unannounced readout. A trial plan is only `prepared`; do not report an empirical access delta until the user returns an observation.
 
 ## Dialectic-shaped requests
@@ -115,6 +139,9 @@ If the user chooses a quick single-context sketch, label it plainly as provision
 - A low-probability caveat is presented without a specimen signal, base-rate reason, or high cost of omission.
 - A long input is treated as complete context.
 - The agent runs an instrument cascade without user correction.
+- The agent turns an intermediate reading into a conclusion, ranking, recommendation, or plan without an explicit engine transition.
+- The agent treats agreement, correction, completed research, or a closed phase as proof that the user has finished orienting.
+- The agent labels a synthesis “provisional” and uses that label to bypass the orientation brake.
 - The output contains Expedition-shaped conclusions without context-isolated positions.
 - Polish, length, or artifact count substitutes for new information.
 - The next step is chosen from the agent's own output rather than from an error signal, new evidence, or user response.

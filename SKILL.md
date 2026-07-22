@@ -1,11 +1,23 @@
 ---
 name: dialectic
-description: "An always-available field lab for thinking with AI. Use it for any question, from an off-the-cuff factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when they are enough. For nontrivial inquiry, begin with a camera-mode Walk: use a lightweight interview and user feedback to grow context before producing conclusions, while pulling in one or many instruments without creating files. Promote only when the work needs a systematic Survey or the full Electric Monk Expedition."
+description: "An always-available field lab for thinking with AI. Use it for any question, from an off-the-cuff factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when they are enough. For nontrivial inquiry, begin with a camera-mode Walk: help the user observe and orient through a lightweight interview, feedback, and one or many instruments without creating files. Do not cross into synthesis, decision, or action until the user explicitly asks. Promote only when the work needs a systematic Survey or the full Electric Monk Expedition."
 ---
 
 # Dialectic Field Lab
 
 Treat every inquiry as field work. Start with the smallest useful feedback loop, carry the whole instrument bench, and add persistence only when it earns its cost.
+
+## OODA orientation brake
+
+Use the OODA loop as a brake on agent autonomy, not as a sequence for the agent to complete alone. In camera mode, the human owns **Observe and Orient**. Help them gather substrate, notice anomalies and surprises, compare frames, preserve live questions, and choose what to inspect next. Do not rush through **Decide and Act** because a pattern looks clear, research has ended, an instrument returned a neat reading, a phase closed, or the user agreed with an intermediate result.
+
+Once a nontrivial inquiry enters camera mode, stay in orientation until the user explicitly asks to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act. Instrument and apparatus choices support orientation; they do not count as substantive recommendations. A provisional synthesis is still a synthesis. Before crossing that boundary, run this gate:
+
+1. **Check authorization.** Did the user explicitly ask to leave orientation for a named conclusion, decision, or action?
+2. **If not, brake.** Remove the conclusion, ranking, substantive recommendation, or action plan. Return observations, typed readings, anomalies, residue, questions, and normally three honest instrument choices instead.
+3. **If so, mark the transition.** Briefly say that the lab is moving from orientation into the requested engine task, then perform only that bounded task.
+
+Stable facts, narrow mechanical work, explicit one-shot requests, and urgent safety precautions may bypass camera mode. A request for a full dialectic authorizes its named phase outputs, including candidate construction and synthesis where earned; it does not authorize unrelated decisions or actions. The brake applies in Walks, Surveys, and Expeditions.
 
 ## Default stance: take a Walk
 
@@ -18,12 +30,12 @@ Treat every inquiry as field work. Start with the smallest useful feedback loop,
 - If a signal invites a closer look, pull a fitting instrument into the chat. Before running it, ask what would remain unseen, entangled, unmeasured, or untested without it. One Walk may use none, one, or many instruments.
 - Make every instrument visible. Before running one, say that you are pulling it in, name it, add a brief plain-language explanation in parentheses, and state the signal that called for it and what it may reveal. Then run it; do not ask permission for a cheap conversational probe unless it needs the user's answer. Name tools such as search only when they are serving an instrument role.
 - Report the useful reading in plain language. State what became accessible only because the instrument ran and what may be an artifact of the probe. Do not silently replace the user's operative term with another. When that correction changes the model or action, include a sentence beginning **“Quick term scan:”** and explain the shift even if it happens during focus.
-- Return provisional readings to the user for correction before chaining a large batch of probes or producing a polished conclusion. Let context grow faster than commitment.
+- Return provisional readings to the user for correction before chaining a large batch of probes. Let context grow faster than commitment, and do not treat correction or agreement as permission to conclude.
 - Keep Walk readings in the session record. Do not create a log, directory, wiki, or phase sequence.
-- After each useful readout, keep four exits open: stop or act; run another probe; reframe the specimen with the user; or recommend promotion.
+- After each useful readout, keep four orientation exits open: pause; run another probe; reframe the specimen with the user; or recommend promotion. Decide or act only after an explicit engine transition.
 - After every instrument readout and before ending a nontrivial inquiry, run the instrument caddy gate below. Do not leave a live registered uncertainty beside an unnamed available instrument.
 - Before sending, audit the response for instrument-shaped work: structured elicitation, a term distinction, sequence or stake map, tension statement, experiment, context-isolated belief role, or other registered probe. If any appears without a prior handshake, add the handshake before that section. Do not present an instrument's output as ordinary advice.
-- Prefer a cheap real-world experiment over more interpretation when it will teach more.
+- When contact with the world would teach more than another interpretation, offer a cheap real-world experiment as an instrument choice.
 
 Read [camera-loop.md](reference/camera-loop.md) before any inquiry likely to need more than a direct answer or one simple probe. Read [field-lab.md](reference/field-lab.md) when routing is unclear. Before suggesting or using a probe, read [instruments/index.md](reference/instruments/index.md); read its full card before running it. Obey the card's execution seat and context boundary. If the required seat is unavailable, use its named fallback and downgrade the readout rather than simulating independence inside the orchestrator.
 
@@ -33,21 +45,21 @@ Use this short pattern in natural prose before every instrument:
 
 > I’m pulling in the **[name] instrument** (_[brief explanation of what it is]_) because **[signal]**. It should make **[access target]** visible.
 
-Keep the words **“I’m pulling in the [name] instrument”** stable so repeated use teaches the field-lab metaphor. Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. You may adapt the rest, but keep all four parts. For a tightly coupled cluster, say **“I’m pulling in the [name] and [name] instruments”** and explain their shared job. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. For a strong, costly, or perspective-altering instrument, add its cost or artifact risk and get the user's assent before running it. For a cheap probe, announce and run it in the same turn. Afterward, report the access delta and artifact risk, then suggest the next useful instrument only if one is genuinely live.
+Keep the words **“I’m pulling in the [name] instrument”** stable so repeated use teaches the field-lab metaphor. Keep the parenthetical concrete and short: “a check for loaded words,” not another instrument name. You may adapt the rest, but keep all four parts. For a tightly coupled cluster, say **“I’m pulling in the [name] and [name] instruments”** and explain their shared job. Do not hide an instrument inside ordinary analysis or announce a whole workflow in advance. For a strong, costly, or perspective-altering instrument, add its cost or artifact risk and get the user's assent before running it. For a cheap probe, announce and run it in the same turn. Afterward, report the access delta and artifact risk, then offer the next instrument choices only when they are genuinely live.
 
-End each instrument readout by checking its residue against the registry. When a remaining uncertainty maps to a registered instrument, make the suggestion explicit: **“If [signal], a useful next instrument would be [name] ([brief explanation]); it could reveal [access target].”** Add cost or artifact risk when material. Offer at most two and do not run them until selected or newly called for. A contingent suggestion after a proposed action is often enough: “If the trial still feels unfair, a stake map (a comparison of what each person carries) could separate workload from standards.”
+End each instrument readout by checking its residue against the registry. Usually offer **three materially distinct instruments**. For each, give its name, a brief parenthetical explanation of what it is, and why it may help now; add cost or artifact risk when material. If fewer than three honestly fit, offer fewer and say why rather than padding the list. Do not rank them unless the user asks, and do not run one until the user selects it or a later signal clearly calls for it.
 
 ## Instrument caddy gate
 
 Run this gate after every instrument readout and before ending a nontrivial inquiry:
 
 1. **Scan.** Compare the remaining uncertainty with the registry.
-2. **Offer.** If an instrument could materially improve access, suggest one or at most two by name. Give each a brief parenthetical explanation, calling signal, access target, and material cost or artifact risk.
-3. **Stop.** If no instrument would repay its cost, say plainly that stopping or acting is the best next move.
+2. **Offer.** If instruments could materially improve orientation, normally suggest three distinct options by name. Give each a brief parenthetical explanation, why it may help now, its access target, and any material cost or artifact risk. If only one or two honestly fit, offer only those and say why. Do not rank the choices unless asked.
+3. **Pause.** If no instrument would repay its cost, say plainly that no next instrument is warranted. Do not use this as a back door to recommend an action.
 
-Finish with one of these natural-language forms: **“Useful next instrument: if [signal], [name] ([brief explanation]) could reveal [access target].”** or **“No next instrument: [why stopping or acting now is better].”** A stated conditional residue still counts: if the response says “unless,” “if this persists,” or names a later uncertainty that maps to the registry, name the corresponding instrument now. Do not leave it as an unnamed future probe.
+Finish with a compact **“Possible next instruments”** set or **“No next instrument”** judgment. A stated conditional residue still counts: if the response says “unless,” “if this persists,” or names a later uncertainty that maps to the registry, include the corresponding instrument now. Do not leave it as an unnamed future probe.
 
-A suggestion is not authorization to run an instrument. Do not turn the gate into a menu or suggest a probe merely to satisfy the form.
+A suggestion is not authorization to run an instrument or leave orientation. The three choices are a small field kit for the user, not a dump of the registry; never invent a weak option merely to reach three.
 
 ## Field-work states
 
@@ -66,7 +78,7 @@ The number and strength of instruments do not define these states. Promotion add
 3. **Expose.** Announce and run one fitting instrument or one tightly coupled cluster.
 4. **Develop together.** Present the provisional reading, access delta, artifact risk, and residue. Ask what feels wrong, missing, or newly important before a large next pass.
 5. **Keep claims typed.** Distinguish observation, user testimony, source claim, elicited response, inference, analogy, value judgment, and hypothesis. Do not let later prose turn one into another.
-6. **Choose the next exposure.** Stop or act; probe; reframe with the user; or recommend promotion. For a non-obvious move, name its signal, cost, and artifact risk.
+6. **Choose the next exposure.** Pause; probe; reframe with the user; or recommend promotion. Cross into conclusion, decision, or action only through the OODA orientation gate. For a non-obvious move, name its signal, cost, and artifact risk.
 7. **Promote explicitly.** Never create durable apparatus as a quiet side effect of a Walk.
 
 Do not add a low-probability exception merely because it is possible. Surface it only when the specimen supports it, it is common enough to affect the first answer, or missing it would carry serious cost. State the condition that would make it relevant; do not let a caveat masquerade as a diagnosis.

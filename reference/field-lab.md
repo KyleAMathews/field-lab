@@ -8,15 +8,16 @@ The field lab is the skill's default shell. It makes ordinary chat, selective pr
 - [Two independent axes](#two-independent-axes)
 - [States](#states)
 - [Quiet router](#quiet-router)
-- [Escalation and stop guides](#escalation-guide)
+- [Escalation guide](#escalation-guide)
+- [Pause guide](#pause-guide)
 - [Artifact boundary](#artifact-boundary)
 
 ## Principles
 
 1. **Every inquiry starts as a Walk.** Give a direct answer when that is enough.
 2. **Instruments belong on the Walk.** Pull any fitting instrument without adding a file or phase tax.
-3. **Default to camera mode.** On open questions, use a focus interview and intermediate readouts so feedback grows context faster than the lab commits conclusions.
-4. **The user steers.** Diagnose and recommend; let the user stop, act, probe, or promote.
+3. **Default to camera mode.** On open questions, help the user observe and orient through a focus interview, intermediate readouts, anomalies, and questions.
+4. **Use OODA as a brake.** The user owns the transition from Observe/Orient to Decide/Act. Do not conclude, synthesize, rank, make a substantive recommendation, plan, or act until they explicitly ask. Instrument and apparatus choices remain part of orientation.
 5. **Separate observation from intervention.** State what a probe changed, hid, stressed, or introduced.
 6. **Demand an access differential.** Before calling a tool an instrument, name what would remain unseen, entangled, unmeasured, or untested without it.
 7. **Add controls as stakes rise.** Costly conclusions should survive another frame, model, control, or source check.
@@ -28,9 +29,9 @@ The field lab is the skill's default shell. It makes ordinary chat, selective pr
 
 ## Two independent axes
 
-Walk, Survey, and Expedition set apparatus scale and persistence. Camera and engine set feedback tempo. A light Walk can fail by batching analysis faster than the user can correct it; a large Expedition can remain camera-like through interviews, checkpoints, and error-sensitive recursion.
+Walk, Survey, and Expedition set apparatus scale and persistence. Camera and engine set feedback tempo. OODA marks the authority boundary: the agent supports Observe/Orient; the user opens Decide/Act. A light Walk can fail by batching analysis faster than the user can correct it; a large Expedition can remain camera-like through interviews, checkpoints, and error-sensitive recursion.
 
-Read [camera-loop.md](camera-loop.md) for the default cadence. Do not remove interviewing merely because the inquiry remains a Walk.
+Read [camera-loop.md](camera-loop.md) for the default cadence and hard transition gate. Do not remove interviewing merely because the inquiry remains a Walk, and do not treat a completed reading or phase as permission to conclude.
 
 ## States
 
@@ -59,10 +60,12 @@ Do not expose this as a mode menu. Read the specimen and focus with the user bef
 
 | Exit            | Use when                                                                                  |
 | --------------- | ----------------------------------------------------------------------------------------- |
-| **Stop or act** | The user has enough clarity, or a real-world action will teach more                       |
+| **Pause**       | The user has enough material for now, even if no conclusion has formed                    |
 | **Probe**       | One bounded uncertainty maps to a named instrument                                        |
 | **Reframe**     | The inquiry has revealed a different specimen; confirm the change with the user           |
 | **Promote**     | The next useful move needs systematic memory, coordination, or full procedural safeguards |
+
+Conclusion, decision, and action are separate engine exits. Offer them only after the user explicitly asks to cross from orientation. Do not infer that transition from agreement, correction, completed research, instrument completion, or a passed phase gate.
 
 For a non-obvious probe, state:
 
@@ -98,15 +101,16 @@ Light orchestrator-seat probes may run inline. Fresh or parallel subagents run o
 
 Research is a supporting tool, not an instrument. Use it after a registered probe has named the factual gap, then return the evidence to that instrument's readout with its original claim kind intact.
 
-## Stop guide
+## Pause guide
 
-Recommend stopping or acting when:
+Say that no next instrument is warranted when:
 
 - the user can state the tension and the stakes without caricature;
 - a cheap observation can settle the empirical remainder;
-- a reversible experiment will teach more than another reading;
 - probes repeat without adding facts, axes, links, or residue;
-- the user has enough clarity for the actual task even though a larger question stays open.
+- the user has enough material for the actual inquiry even though a larger question stays open.
+
+If a reversible experiment would teach more than another reading, offer it as one of the three caddy choices. Do not treat the suggestion as permission to run it or as an engine transition.
 
 ## Artifact boundary
 
