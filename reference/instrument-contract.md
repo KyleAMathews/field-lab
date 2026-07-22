@@ -9,6 +9,7 @@
 - [Instrument handshake](#instrument-handshake)
 - [Raw-readout boundary](#raw-readout-boundary)
 - [Common readout](#common-readout)
+- [Durable presentation](#durable-presentation)
 - [Observation ledger](#observation-ledger)
 - [Control rule](#control-rule)
 
@@ -171,6 +172,18 @@ user-feedback: <pending|confirmed|correction after the reading is returned>
 ```
 
 This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. Every durable entry records `recorded-at`; use `observed-at` only for the event or observation time, and never substitute recording time for an unknown event time. `Offered` is not `selected`. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return readings to the user before filling `user-feedback`; do not invent confirmation or interpretation. In a Field Trip, preserve the full fields when a reading affects later work. An Expedition may copy a significant timestamped Field Trip entry and source pointer; it never duplicates the instrument ledger. A workflow may require its scheduled readouts in a separate control record; keep later analysis in the workflow artifact named by its contract.
+
+## Durable presentation
+
+Keep the full audit schema without forcing it into a horizontal layout. In human-readable Markdown logs:
+
+- use one headed, vertical record block per instrument lifecycle event;
+- put each audit field on its own labeled line and use bullets for multiple typed readings;
+- append a new dated block when lifecycle or feedback changes rather than widening or overwriting a row;
+- link long traces and artifacts instead of placing their contents inside the ledger;
+- use a table only when comparison itself helps and the table has no more than four short columns.
+
+Never render the common instrument readout, observation ledger, workflow ledger, or Expedition entry as a wide prose table. Machine-readable YAML or JSON may sit in a separate artifact, but it does not replace the readable vertical record.
 
 ## Observation ledger
 

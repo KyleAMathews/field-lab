@@ -38,19 +38,38 @@ The opening snapshot below inherits `opened-at`. Do not silently overwrite it: a
 
 ## Instrument ledger
 
-Seed this append-only ledger with inherited entries at `selected` or later, then advance each entry under the same schema. Use the common readout fields in `reference/instrument-contract.md`; keep the compact table below when one row can preserve the state and reading without loss.
+Seed this append-only ledger with inherited entries at `selected` or later. Use one vertical record per meaningful lifecycle event; never put the common readout into a wide table.
 
-| Recorded at | Observed at | Instrument | Authorization | Lifecycle | Execution seat | Context boundary | Fallback / downgrade | Trace | Access delta | Bounded reading | Control | Artifact risk | Unmeasured | User feedback |
-| ----------- | ----------- | ---------- | ------------- | --------- | -------------- | ---------------- | -------------------- | ----- | ------------ | --------------- | ------- | ------------- | ---------- | ------------- |
-| <ISO 8601> | <ISO 8601 / unknown / N/A> | `<id>` | <user pointer> | <selected / prepared / running / complete / stopped> | <actual or planned seat> | <who saw or will see what> | <none or named downgrade> | <pointer> | <new access, or pending> | <reading, or pending> | <calibration> | <risk> | <remainder> | <pending / confirmed / correction> |
+### `<instrument-id>` — <selected / prepared / running / complete / stopped>
 
-Include instruments at `selected` or later. Keep mere offers in the collection plan; do not rewrite ordinary conversation as a formal run. A `prepared` experiment retains its frozen baseline, controls, and decision rule even before an observation returns. Only a `complete` entry may claim an empirical access delta or reading. When an instrument produces several typed readings, append its full common readout below the table rather than creating another ledger.
+- **Recorded at:** <ISO 8601>
+- **Observed at:** <ISO 8601 / unknown / not-applicable>
+- **Authorization:** <basis and user pointer>
+- **Execution:** <actual or planned seat>; <who saw or will see what>
+- **Fallback / downgrade:** <none or named downgrade>
+- **Trace:** <artifact or turn pointer>
+- **Access delta:** <what became visible, or pending>
+- **Bounded readings:**
+  - **<kind>; <solid / plausible / reach>:** <reading> — **Support:** <pointer or citation>
+- **Control / calibration:** <baseline, comparison, null, or limit>
+- **Artifact risk:** <what the instrument may have induced or hidden>
+- **Unmeasured:** <what remains outside the reading>
+- **User feedback:** <pending / confirmed / correction with pointer>
+- **Caddy:** <offered instruments, selected workflow handoff, or no next instrument>
+
+Include instruments at `selected` or later. Keep mere offers in the collection plan; do not rewrite ordinary conversation as a formal run. A `prepared` experiment retains its frozen baseline, controls, and decision rule even before an observation returns. Only a `complete` entry may claim an empirical access delta or reading. Append another dated record when lifecycle or feedback changes; do not overwrite the earlier state.
 
 ## Key readings
 
-| Recorded at | Observed at | Reading | Kind | Support | Confidence |
-| ----------- | ----------- | ------- | ---- | ------- | ---------- |
-| <ISO 8601> | <ISO 8601 / unknown / N/A> | <value> | <observation / measurement / user-testimony / source-claim / elicited-response / generated-sample / controlled-comparison / test-result / inference / analogy / normative-judgment / hypothesis> | <pointer or citation> | <solid / plausible / reach> |
+### <short reading label>
+
+- **Recorded at:** <ISO 8601>
+- **Observed at:** <ISO 8601 / unknown / not-applicable>
+- **Kind:** <observation / measurement / user-testimony / source-claim / elicited-response / generated-sample / controlled-comparison / test-result / inference / analogy / normative-judgment / hypothesis>
+- **Reading:** <value>
+- **Support:** <pointer or citation>
+- **Confidence:** <solid / plausible / reach>
+- **Artifact risk:** <distortion or none known>
 
 ## Loaded terms
 
@@ -62,9 +81,14 @@ Include instruments at `selected` or later. Keep mere offers in the collection p
 
 ## Open gaps, collection plan, and stop rules
 
-| Recorded at | Gap | Requested measurement | Offered instrument or source | Selection state | Done when |
-| ----------- | --- | --------------------- | ---------------------------- | --------------- | --------- |
-| <ISO 8601> | <gap> | <what remains unseen> | `<instrument-id>` | <offered / user-selected> | <coverage condition> |
+### <short gap label>
+
+- **Recorded at:** <ISO 8601>
+- **Gap:** <what is unknown>
+- **Requested measurement:** <what remains unseen>
+- **Offered instrument or source:** `<instrument-id>` or <source>
+- **Selection state:** <offered / user-selected>
+- **Done when:** <coverage condition>
 
 - **Recorded at:** <ISO 8601> — **Stop when:** <the agreed local condition for pausing or closing>
 - **Recorded at:** <ISO 8601> — **Plan change:** <user-selected addition, removal, or reordering with pointer>
@@ -77,9 +101,12 @@ Include instruments at `selected` or later. Keep mere offers in the collection p
 
 ## Workflow ledger
 
-| Recorded at | Workflow | Authorization | State | Artifacts | Next gate |
-| ----------- | -------- | ------------- | ----- | --------- | --------- |
-| <ISO 8601> | <name> | <user pointer> | <selected / running / paused / complete> | <paths> | <gate or none> |
+### <workflow name> — <selected / running / paused / complete>
+
+- **Recorded at:** <ISO 8601>
+- **Authorization:** <user pointer>
+- **Artifacts:** <paths>
+- **Next gate:** <gate or none>
 
 ## User orientation notes and choices
 
@@ -104,6 +131,7 @@ Include instruments at `selected` or later. Keep mere offers in the collection p
 - Preserve the reason the log opened and all prior lineage.
 - Keep claim kinds, support, and confidence visible.
 - Keep one authoritative append-only instrument ledger; do not split inherited and new runs into separate schemas.
+- Render prose-bearing ledger entries as vertical record blocks. Use tables only for compact comparisons with no more than four short columns.
 - Record actual execution, authorization, lifecycle, context boundary, and fallback for every run.
 - Keep raw readings separate from interpretation, synthesis, and action.
 - Keep coverage and stop rules editable; record user-selected plan changes instead of silently expanding the trip.

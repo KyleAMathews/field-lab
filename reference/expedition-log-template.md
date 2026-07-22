@@ -21,19 +21,27 @@ session-provenance: <task/thread pointer and useful turn span, if available>
 
 ## Field Trips
 
-Append one row when a Field Trip joins the Expedition. Its field log remains authoritative.
+Append one record when a Field Trip joins the Expedition. Its field log remains authoritative.
 
-| Recorded at | Field Trip | Field log | Opened at | Scope | Status |
-| ----------- | ---------- | --------- | --------- | ----- | ------ |
-| <ISO 8601> | <title> | <path> | <ISO 8601> | <bounded operation> | <active / paused / complete> |
+### <Field Trip title> — <active / paused / complete>
+
+- **Recorded at:** <ISO 8601>
+- **Opened at:** <ISO 8601>
+- **Field log:** <path>
+- **Scope:** <bounded operation>
 
 ## Expedition entries
 
 Append only changes, conclusions, or significant findings copied from a named Field Trip log. Preserve the source wording, claim kind, confidence, and downgrade. Do not create an Expedition-level interpretation or copy whole raw readouts.
 
-| Recorded at | Observed or occurred at | Kind | Copied entry | Source Field Trip | Source log entry | Claim status |
-| ----------- | ----------------------- | ---- | ------------ | ----------------- | ---------------- | ------------ |
-| <ISO 8601> | <ISO 8601 / unknown / N/A> | <change / conclusion / significant-finding> | <faithful copy or close marked paraphrase> | <title> | <path and entry pointer> | <kind, confidence, and downgrade> |
+### <change / conclusion / significant finding>
+
+- **Recorded at:** <ISO 8601>
+- **Observed or occurred at:** <ISO 8601 / unknown / not-applicable>
+- **Copied entry:** <faithful copy or close marked paraphrase>
+- **Source Field Trip:** <title>
+- **Source log entry:** <path and entry pointer>
+- **Claim status:** <kind, confidence, and downgrade>
 ```
 
 ## Integrity rules
@@ -41,7 +49,8 @@ Append only changes, conclusions, or significant findings copied from a named Fi
 - Keep the Expedition log sparse: opening metadata, what the Expedition is about, Field Trip entries, and copied Field Trip changes, conclusions, or significant findings.
 - Keep each field log authoritative for its own readings, workflows, choices, and provenance.
 - Preserve the exact opening date, time, timezone, user-authorization pointer, and session provenance.
-- Give every appended row a `recorded-at` timestamp with timezone. Preserve `observed-at` or `occurred-at` from the source Field Trip when known; write `unknown` rather than inventing it.
+- Give every appended record a `recorded-at` timestamp with timezone. Preserve `observed-at` or `occurred-at` from the source Field Trip when known; write `unknown` rather than inventing it.
+- Use vertical record blocks for prose-bearing entries. Do not turn the Expedition log into a wide table.
 - Update frontmatter `updated-at` and `status` when the Expedition changes; record that change as an Expedition entry copied from the responsible Field Trip.
 - Preserve source pointers, claim kinds, confidence, disagreement, and every downgrade.
 - Never authorize or record instrument execution, workflow execution, engine transitions, or independent analysis in the Expedition log.
