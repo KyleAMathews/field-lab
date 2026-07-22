@@ -2,7 +2,11 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-*For each candidate the user selected (6.0), send the candidate-type-specific prompt below to both monks. Apply only the sub-section matching the candidate you're validating.*
+_For each candidate the user selected (6.0), send the candidate-type-specific prompt below to both monks. Apply only the sub-section matching the candidate you're validating._
+
+## Stage A instrument: `position-preservation`
+
+Announce `position-preservation` before dispatch. Resume the original committed Monk when possible or freshly brief an isolated committed validator. Each validator sees its own original position and one candidate only—never sibling candidates or the orchestrator's synthesis reasoning. Preserve whether the session was resumed or reconstructed; an orchestrator-only trace audit is a lower-confidence fallback, not position validation.
 
 ## 6.2 Monk Validation — Per Candidate
 
@@ -37,7 +41,7 @@ Do NOT be agreeable. If the synthesis is compromise dressed up, say so.
 
 ### 6.2.J Validating Candidate J (Juxtaposition)
 
-The monks are *not* supposed to feel elevated here — J's whole move is refusing the unification that would elevate them. Validation checks whether the juxtaposition actually reveals something.
+The monks are _not_ supposed to feel elevated here — J's whole move is refusing the unification that would elevate them. Validation checks whether the juxtaposition actually reveals something.
 
 ```
 You argued passionately for [POSITION]. [Resume session OR: summary...]
@@ -144,7 +148,9 @@ Evaluate honestly:
 ---
 
 **Completion gate — enumerate & attest before Stage B (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+
 - [ ] Every candidate under validation got its candidate-specific monk validation (S: elevated vs. defeated; J: productive vs. evasive; G: orthogonal vs. same-axis; F: genealogy/constituency; U: loadings genuinely opposite)
 - [ ] Each candidate's output written to `round_N_validation_<candidate>.md`
+- [ ] One `position-preservation` readout per candidate × committed position records actual session/context, fallback, preserved insight, defeat, requested repair, artifact risk, residue, and trace path
 
 Then read `reference/phase6-stage-b-hostile-auditor.md`.

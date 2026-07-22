@@ -2,14 +2,19 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-Generate one prompt per Electric Monk — **typically 2, sometimes 3 or 4** if Phase 1c.1 surfaced a third (or fourth) pole meeting the criteria. Each monk must *believe* its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
+## Instrument lifecycle: prepare `belief-stress`
+
+Phase 2 prepares the `belief-stress` instrument; it does not complete it. Read its card in `reference/instruments/advanced-bench.md` and the Phase 1 `neutral-control` trace. Announce belief stress before prompt construction, including its polarization and false-conflict risk. Record the shared neutral substrate, one isolated context boundary per Monk, and the planned return path. No Monk prompt may contain sibling positions, candidate synthesis, determinate negation, or orchestrator preference.
+
+Generate one prompt per Electric Monk — **typically 2, sometimes 3 or 4** if Phase 1c.1 surfaced a third (or fourth) pole meeting the criteria. Each monk must _believe_ its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
 
 Calibrate the monks based on what you learned in Phase 1c':
+
 - **What must each monk believe?** (Shaped by the user's belief burden)
 - **What must Monk A validate?** (Always validate the user's dominant mode first)
 - **What must each other monk hold that the user can't natively hold?**
 
-**N-monk note.** When there are 3+ monks, each monk's framing corrections must preempt degenerate framings against *every other monk*, not just one opponent. A Monk C that only argues against A will silently treat B as an ally; the result is a 2-vs-1 argument, not genuine three-way decorrelation. Each monk should know what it believes *and* what it specifically rejects about each other pole.
+**N-monk note.** When there are 3+ monks, each monk's framing corrections must preempt degenerate framings against _every other monk_, not just one opponent. A Monk C that only argues against A will silently treat B as an ally; the result is a 2-vs-1 argument, not genuine three-way decorrelation. Each monk should know what it believes _and_ what it specifically rejects about each other pole.
 
 ## Required Prompt Structure
 
@@ -72,13 +77,15 @@ Calibrate the monks based on what you learned in Phase 1c':
 7. LENGTH: 1500-2000 words for Round 1, 1000-1500 words for recursive rounds.
 ```
 
-**Why full belief is non-negotiable:** This is an artificial belief system, not a debate exercise. The user's cognitive agility depends on the monks carrying 100% of the belief load. When both monks believe fully, the user can operate in the belief-free space between them — analyzing the *structure* of the contradiction, spotting shared assumptions, finding cross-domain connections. When a monk hedges ("both sides have merit"), the user is pulled back into belief-space, their transients slow, and the dialectic degrades into a book report.
+**Why full belief is non-negotiable:** This is an artificial belief system, not a debate exercise. The user's cognitive agility depends on the monks carrying 100% of the belief load. When both monks believe fully, the user can operate in the belief-free space between them — analyzing the _structure_ of the contradiction, spotting shared assumptions, finding cross-domain connections. When a monk hedges ("both sides have merit"), the user is pulled back into belief-space, their transients slow, and the dialectic degrades into a book report.
 
 ---
 
 **Completion gate — enumerate & attest before Phase 3 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+
 - [ ] One prompt drafted per monk (matching the final monk count set in Phase 1)
 - [ ] Each prompt carries all seven required sections (role, framing corrections, context briefing, research directives, argument structure, anti-hedging, length)
 - [ ] Each monk is calibrated to the user's belief burden (Monk A validates the user's dominant mode)
-- [ ] With 3+ monks: each monk's framing corrections preempt degenerate framings against *every other* pole (no silent 2-vs-1 coalition)
+- [ ] With 3+ monks: each monk's framing corrections preempt degenerate framings against _every other_ pole (no silent 2-vs-1 coalition)
 - [ ] Prompts written to file (`round_N_monk_<x>_prompt.md`)
+- [ ] `belief-stress` ledger entry is `prepared`, not `complete`: neutral substrate, isolated context boundary, execution seat, prompt paths, perturbation risk, and planned Phase 3 control comparison recorded

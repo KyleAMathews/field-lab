@@ -2,7 +2,11 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
-*For each candidate under validation, spawn one hostile auditor using the candidate-type-specific prompt below. Apply only the sub-section matching the candidate you're auditing.*
+_For each candidate under validation, spawn one hostile auditor using the candidate-type-specific prompt below. Apply only the sub-section matching the candidate you're auditing._
+
+## Stage B instrument: `hostile-assay`
+
+Announce `hostile-assay` before dispatch. Each fresh auditor sees the source positions, domain context, trace, and one candidate—but no sibling candidate, Phase 4 analysis, or orchestrator preference. If no fresh context is available, label the result author self-critique and do not claim the full hostile assay.
 
 ## 6.3 Hostile Auditor — Per Candidate
 
@@ -217,8 +221,10 @@ If U is genuinely strong, say so.
 ---
 
 **Completion gate — enumerate & attest before Stage C (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+
 - [ ] One hostile auditor spawned per candidate under validation, each reading **only** its own candidate + the monk essays + domain context (no sight of sibling candidates or the Phase 4 analysis)
 - [ ] Each auditor used the candidate-type-specific prompt (S/J/G/F/U)
 - [ ] Each auditor's output appended to the matching `round_N_validation_<candidate>.md`
+- [ ] One `hostile-assay` readout per candidate records actual fresh context, fallback, failure claims, trace/control results, artifact risk, residue, and orchestrator disposition
 
 Then read `reference/phase6-stage-c-interpret-refine.md`.
