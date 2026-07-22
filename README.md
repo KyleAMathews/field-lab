@@ -6,7 +6,7 @@ Bring it any question. It may answer in one paragraph, pull a few instruments in
 
 Every inquiry begins as a **Walk**. A direct answer is a complete and successful result when user-specific context is unlikely to change it. A nontrivial Walk begins by focusing with the user: the agent reflects what seems live, asks a few questions that could change the analysis, then alternates bounded instrument readings with user correction. A problem can be small yet context-bound: “keep this light” calls for fewer, sharper questions, not an instant canned fix. No files, mode menu, phase announcement, or setup are required.
 
-If the inquiry later needs systematic collection or durable memory, it becomes a **Survey**. If a stubborn contradiction repays the cost of independent committed agents, structural analysis, validation, and recursion, it becomes an **Expedition**. The existing seven-phase Electric Monk dialectic remains strict; it is no longer the price of entry.
+If the inquiry later needs systematic collection or durable memory, it becomes a **Survey**. If a stubborn contradiction repays the cost of context-isolated committed agents, structural analysis, validation, and recursion, it becomes an **Expedition**. The existing seven-phase Electric Monk dialectic remains strict; it is no longer the price of entry.
 
 ## Why the field-lab shape
 
@@ -63,7 +63,7 @@ Execution placement is part of the instrument when it changes what can be seen:
 
 - **Orchestrator:** live interviewing, continuity, synthesis, and user-facing interpretation.
 - **Fresh subagent:** blindness from the current analysis creates the reading.
-- **Parallel subagents:** independent belief, evidence, or framing tracks must remain separate until comparison.
+- **Parallel subagents:** context-isolated belief, evidence, or framing tracks must remain separate until comparison.
 - **Hybrid:** isolated agents collect or generate; the orchestrator integrates.
 - **Either:** delegation changes cost or variety, not the instrument's epistemic claim.
 
@@ -96,21 +96,21 @@ Promotion creates one Survey log from the session so far. It does not restart th
 
 ### Expedition
 
-The full Electric Monk apparatus. Two or more independent agents fully believe distinct positions on the user's behalf. The orchestrator compares the structures, finds how each position fails from inside its own logic, brings in outside material, and produces a palette of possible landings rather than forcing every specimen into synthesis.
+The full Electric Monk apparatus. Two or more context-isolated agents fully believe distinct positions on the user's behalf. The orchestrator compares the structures, finds how each position fails from inside its own logic, brings in outside material, and produces a palette of possible landings rather than forcing every specimen into synthesis.
 
-A request for a “dialectic,” hostile thesis test, strongest case on each side, determinate negation, or validation requires independently held positions at minimum. The lab may run short blind Monks within a Walk or recommend the full Expedition. It must not imitate independent opposition inside one orchestrator context merely because the user did not say “full.”
+A request for a “dialectic,” hostile thesis test, strongest case on each side, determinate negation, or validation requires context-isolated positions at minimum. The lab may run short blind Monks within a Walk or recommend the full Expedition. It must not imitate separated opposition inside one orchestrator context merely because the user did not say “full.”
 
 An Expedition inherits the Walk and Survey record, then coordinates the same instrument bench through seven strict completion-gated phases. The phase procedures define the full work; the instrument cards govern what each operation can reveal, who runs it, its controls, and how its reading is recorded:
 
 1. interview and research;
 2. committed Monk prompt construction;
-3. independent belief essays;
+3. context-isolated belief essays;
 4. determinate negation, lateral intervention, decomposition, and refinement;
 5. a candidate palette: synthesis, juxtaposition, ground condition, framing dissolution, and undecidable-centered readings where earned;
 6. position-preservation checks and hostile audit;
 7. recursive exploration of the next live contradiction.
 
-Each phase gate cites an instrument-ledger entry. A phase cannot pass merely because it produced plausible prose: required blindness, independent belief, controls, access deltas, artifact risks, and traces must also be present. The gates remain strict; instrument contracts make their epistemic work visible rather than replacing them.
+Each phase gate cites an instrument-ledger entry. A phase cannot pass merely because it produced plausible prose: required blindness, context isolation, controls, access deltas, artifact risks, and traces must also be present. The gates remain strict; instrument contracts make their epistemic work visible rather than replacing them.
 
 ## Artifacts appear only when they earn their cost
 
@@ -128,9 +128,9 @@ Promotion distills the conversation so far. It does not rewrite an informal Walk
 - **Off-the-cuff question:** “Why do moths fly toward porch lights?” → direct answer, no visible method.
 - **Fact-shaped practical Walk:** “How many branches should this fruit bush have?” → reflect the specimen, clarify the desired form, then search or advise; no files.
 - **Instrument-rich Walk:** “My wife and I mean different things by a clean kitchen.” → term scan, stake map, and a one-week experiment; no files.
-- **Hostile thesis Walk:** “Test this thesis against its strongest opposition.” → focus interview, short independent Monks, intermediate reading, then user correction; still no files if persistence is unnecessary.
+- **Hostile thesis Walk:** “Test this thesis against its strongest opposition.” → focus interview, short context-isolated Monks, intermediate reading, then user correction; still no files if persistence is unnecessary.
 - **Survey:** “Compare four family calendar systems over three weeks and let us resume later.” → shared collection plan and durable Survey log.
-- **Expedition:** “Should our open-source framework launch first-party cloud hosting?” → inherited field record, independent committed positions, decomposition, candidate palette, audit, and recursion.
+- **Expedition:** “Should our open-source framework launch first-party cloud hosting?” → inherited field record, context-isolated committed positions, decomposition, candidate palette, audit, and recursion.
 
 ## Installation
 
@@ -165,7 +165,7 @@ Use the full apparatus when:
 - you can argue every side but cannot find the structure that would let you act;
 - a proven system may be optimizing the wrong goal;
 - an inherited frame has become hard to see;
-- the decision is costly enough that independent positions and hostile validation can change it.
+- the decision is costly enough that context-isolated positions and hostile validation can change it.
 
 The Monks are an **artificial belief system**. Their job is not to think instead of the user. Their job is to carry incompatible beliefs at full strength so the user can inspect the contradiction without defending either side.
 

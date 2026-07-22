@@ -49,11 +49,13 @@ Execution placement is part of the epistemic contract when it changes what the i
 
 - **Orchestrator:** The instrument depends on live user contact, accumulated context, or continuity across readings.
 - **Fresh subagent:** Blindness or separation from the orchestrator's conclusions creates the access differential.
-- **Parallel subagents:** Several isolated readings or belief positions must remain independent until comparison.
+- **Parallel subagents:** Several context-isolated readings or belief positions must remain separate until comparison.
 - **Hybrid:** Different stages require different seats; the card must assign each stage and the handoff.
 - **Either:** Placement changes cost or convenience, not the claimed phenomenon. State the default.
 
 Do not delegate merely because agents are available. Do not keep work in the orchestrator when prior knowledge defeats a required blind or independent view. If a required seat is unavailable, use the card's fallback and rename or downgrade the result; never claim the full instrument ran.
+
+Context isolation is a separation control; it does not imply statistical independence. Same-model agents can share training priors, prompt habits, tool limits, and systematic errors even when they cannot see one another. Name the separation that actually exists—such as fresh-context, sibling-blind, cross-model, cross-source, or external human/world—and state the main remaining correlation risk when it matters to the claim.
 
 Every card's execution block must answer:
 
@@ -88,7 +90,7 @@ For an instrument whose real run happens later, use the same handshake before pr
 
 For a cheap conversational probe, announce and run it in the same turn. For a costly, strong, or perspective-altering perturbation, also state the main cost or artifact risk and get assent first. After the run, report the access delta and artifact risk, then run the caddy gate: scan the residue against the registry; suggest one or at most two live instruments with a parenthetical explanation, calling signal, access target, and material cost; or say plainly that no further instrument would repay its cost. End with a named **useful next instrument** or **no next instrument** judgment. A conditional residue—“unless,” “if this persists,” or another later uncertainty—still requires its matching instrument to be named now. Do not run a suggested instrument merely because it was suggested.
 
-Before sending, compare the proposed response with the registry. Structured elicitation, semantic substitution, sequence mapping, stake separation, tension compression, bounded experiments, and independent belief roles are instrument-shaped work. If the response contains one without a handshake, move the handshake before its readout. If a residue maps to another registered instrument, suggest it explicitly by name and access target.
+Before sending, compare the proposed response with the registry. Structured elicitation, semantic substitution, sequence mapping, stake separation, tension compression, bounded experiments, and context-isolated belief roles are instrument-shaped work. If the response contains one without a handshake, move the handshake before its readout. If a residue maps to another registered instrument, suggest it explicitly by name and access target.
 
 ## Common readout
 

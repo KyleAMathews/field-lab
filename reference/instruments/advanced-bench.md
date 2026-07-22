@@ -51,7 +51,7 @@ These compact cards let an instrument run outside its home phase. They do not im
 - **Common artifacts:** Forced polarization creates a contradiction, agents hedge, or they share one frame with opposite conclusions.
 - **Escalate / stop:** Escalate when internal failures need fracture scans or the result affects a costly action. Stop when one side lacks evidence or a direct test is cheaper.
 - **Cost / persistence:** Two or more agents; session for short runs, full essays and position pages in an Expedition.
-- **Execution placement:** **Parallel subagents required.** Each fresh agent sees one grounded position and shared neutral substrate, but no sibling position, synthesis material, or other output. Independent full belief creates the access differential. Without separate contexts, offer a correlated provisional opposition sketch and do not call it belief stress. The orchestrator compares the returned positions without blending them.
+- **Execution placement:** **Parallel subagents required.** Each fresh agent sees one grounded position and shared neutral substrate, but no sibling position, synthesis material, or other output. Context-isolated full belief creates the access differential, though shared models and prompts remain correlated. Without separate contexts, offer a correlated provisional opposition sketch and do not call it belief stress. The orchestrator compares the returned positions without blending them.
 
 ## Fracture scanner (`fracture-scan`)
 
@@ -135,7 +135,7 @@ These compact cards let an instrument run outside its home phase. They do not im
 - **Phenomenon / range / input:** Several sound but structurally distinct ways an inquiry may land; needs a mature tension and earned residue.
 - **Unaided limit / access differential:** Sequential drafting converges on the first plausible resolution. Decorrelated structural bands expose landings that preserve different parts of the specimen.
 - **Perturbation / procedure:** Draft synthesis plus conditional juxtaposition, ground-condition, framing-dissolution, or undecidable-centered candidates using [Phase 5](../phase5-sublation.md).
-- **Readout / control:** Side-by-side candidates, each with its own structural claim, support, residue, and failure test; use independent writers when stakes justify it.
+- **Readout / control:** Side-by-side candidates, each with its own structural claim, support, residue, and failure test; use context-isolated writers when stakes justify it.
 - **Common artifacts:** Preset bands bound the visible spectrum, candidates differ only in tone, or synthesis receives hidden priority.
 - **Escalate / stop:** Escalate when action needs candidate-specific validation. Stop when the user can keep, combine, reject, or hold the palette open.
 - **Cost / persistence:** Several deep drafts; usually Expedition, but a small Survey may use a short palette.

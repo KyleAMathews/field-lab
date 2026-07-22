@@ -6,7 +6,7 @@
 
 Phase 3 executes the prepared `belief-stress` instrument under its parallel-subagent contract. Each Monk sees its own full-conviction prompt and the shared neutral substrate, but not sibling positions or outputs. After all essays return, compare their structures with the Phase 1 `neutral-control`: mark what was already visible, what belief stress exposed, and what the perturbation may have induced. Append the full belief-stress readout before presenting the structural summary.
 
-Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.1 surfaced additional poles. Use `claude -p` (or your environment's equivalent for spawning an independent agent) so each gets a clean context with full belief commitment.
+Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.1 surfaced additional poles. Use the host's subagent mechanism so each gets a clean context with full belief commitment.
 
 ```bash
 # Example for Claude Code (scales to N monks):

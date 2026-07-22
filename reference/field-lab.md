@@ -51,7 +51,7 @@ It begins by distilling the session into one Survey log. The log is a current ma
 
 ### Expedition
 
-The full Electric Monk apparatus for a stubborn, costly, or high-stakes contradiction. It inherits all prior material, then applies strict phase gates, independent committed positions, structural analysis, candidate construction, validation, and recursion.
+The full Electric Monk apparatus for a stubborn, costly, or high-stakes contradiction. It inherits all prior material, then applies strict phase gates, context-isolated committed positions, structural analysis, candidate construction, validation, and recursion.
 
 ## Quiet router
 

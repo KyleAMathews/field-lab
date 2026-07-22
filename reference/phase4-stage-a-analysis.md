@@ -6,7 +6,7 @@ _Read the framing in `reference/phase4-determinate-negation.md` first if you hav
 
 ## Stage A instruments
 
-Announce and run `fracture-scan` for each position, using immanent rather than external criticism. Run `residue-collect` across shared assumptions, position protection, and material that resists the active frame. Run `frame-projector` for the hidden-question 2×2. These instruments stay in the orchestrator because continuity with the interview, evidence, and Monk testimony is load-bearing; fresh agents may challenge completed readings only as named controls.
+Announce and run `fracture-scan` for each position, using immanent rather than external criticism. Run `residue-collect` across shared assumptions, position protection, and material that resists the active frame. Run `frame-projector` for the hidden-question 2×2 only when the specimen supports a plausible second axis; otherwise record it as not called because a one-dimensional specimen contraindicated it. These instruments stay in the orchestrator because continuity with the interview, evidence, and Monk testimony is load-bearing; fresh agents may challenge completed readings only as named controls.
 
 ## 4.0 Surface Contradiction
 
@@ -75,12 +75,12 @@ If 4.2.5 surfaced a disguised shared interest, the determinate negation of each 
 
 Articulate the deeper question the contradiction is ACTUALLY about — the question neither agent asked because they were both too committed to their answers. This should reframe the entire debate in a way that makes both positions legible as partial truths.
 
-**Draw the hidden-question 2×2 (mandatory).** **See `reference/quadrant-diagrams.md`.** This is the highest-value 2×2 in the dialectic: put **axis 1 = the surface debate (4.0)** and **axis 2 = the hidden question's axis (this section)**, then place each monk. Two payoffs:
+**Check frame-projector eligibility, then draw the hidden-question 2×2 when a second axis earns its place.** **See `reference/quadrant-diagrams.md`.** This is often the highest-value 2×2 in the dialectic: put **axis 1 = the surface debate (4.0)** and **axis 2 = the hidden question's axis (this section)**, then place each monk. Two payoffs:
 
 - **The quadrant a monk ignores is its determinate negation (4.3) made visual** — the monk is fighting along axis 1 and is blind to axis 2, so the quadrants it can't see name what's missing from its worldview.
 - **The under-occupied quadrant is a synthesis / third-pole candidate** — carry it into 4.7's sublation criteria and Phase 5.
 
-Honesty rule (it bites hardest here, where the pull toward a tidy reframe is strongest): if axis 2 doesn't earn its place — the monks really do sit on one line — _say so_ rather than manufacturing a hidden axis. A forced hidden-question 2×2 invents a reframe the evidence doesn't support; an honest "this contradiction is genuinely 1-D" strengthens the undecidable lens (4.6.5) and tells you the tension is real.
+Honesty rule (it bites hardest here, where the pull toward a tidy reframe is strongest): if axis 2 doesn't earn its place—the monks really do sit on one line—do not call the instrument. Record `frame-projector: not called — contraindicated by a one-dimensional specimen`. A forced hidden-question 2×2 invents a reframe the evidence doesn't support; the contraindication strengthens the undecidable lens (4.6.5) and tells you the tension is real.
 
 ---
 
@@ -91,8 +91,8 @@ Honesty rule (it bites hardest here, where the pull toward a tidy reframe is str
 - [ ] 4.2 shared assumptions (N-way + any pairwise, with 3+ monks)
 - [ ] 4.2.5 position protection per monk, with citations, written to the misfit register; watchlist checked
 - [ ] 4.3 determinate negation per monk (specific + complementary); enrichment guard run (sharp vs. homogenized)
-- [ ] 4.4 hidden question articulated **and** the mandatory hidden-question 2×2 drawn (or honestly recorded as genuinely 1-D)
+- [ ] 4.4 hidden question articulated **and** the conditional hidden-question 2×2 drawn, or `frame-projector` recorded as not called because the specimen is genuinely one-dimensional
 - [ ] All 4.0–4.4 output written to `round_N_determinate_negation.md`
-- [ ] Instrument ledger contains complete `fracture-scan`, Stage-A `residue-collect`, and `frame-projector` readouts with actual seats, access deltas, controls, artifact risks, residue, and trace paths; user-facing correction remains pending until the 4.9 checkpoint
+- [ ] Instrument ledger contains complete `fracture-scan`, Stage-A `residue-collect`, and conditional `frame-projector` readouts with actual seats, access deltas, controls, artifact risks, residue, and trace paths; a contraindicated frame projector is recorded as not called, and user-facing correction remains pending until the 4.9 checkpoint
 
 Then read `reference/phase4-stage-b-lateral.md`.

@@ -29,22 +29,22 @@ Do not infer a preferred execution seat from an instrument's name during promoti
 
 Read [expedition-instrument-map.md](expedition-instrument-map.md) before Phase 1. It is the authoritative map from phase operations to instrument contracts, execution seats, controls, readouts, and gate attestations.
 
-| Phase | Main instruments                                                                                                                                                         | Required reference                                                                 |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| 1     | `focus-interview`, `elenchus`, `third-pole`, `frame-projector`, `home-frame-leak`, `neutral-control`                                                                     | [phase1-elenctic-interview.md](phase1-elenctic-interview.md)                       |
-| 2     | Prepare `belief-stress`                                                                                                                                                  | [phase2-monk-prompts.md](phase2-monk-prompts.md)                                   |
-| 3     | Complete `belief-stress`; compare `neutral-control`                                                                                                                      | [phase3-spawn-monks.md](phase3-spawn-monks.md)                                     |
-| 4     | `fracture-scan`, `residue-collect`, `frame-projector`, `defamiliarize`, `donor-perturb`, `structural-recombine`, `loss-audit`, `negative-transfer`, `frontier-rheometer` | [phase4-determinate-negation.md](phase4-determinate-negation.md) and linked stages |
-| 5     | `candidate-spectrograph`                                                                                                                                                 | [phase5-sublation.md](phase5-sublation.md)                                         |
-| 6     | `position-preservation`, `hostile-assay`, conditional `framing-sensitivity`                                                                                              | [phase6-validation.md](phase6-validation.md)                                       |
-| 7     | `tension-statement`, `third-pole`                                                                                                                                        | [phase7-recursion.md](phase7-recursion.md)                                         |
+| Phase | Main instruments                                                                                                                                                                     | Required reference                                                                 |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| 1     | `focus-interview`, `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, `neutral-control`                                                                     | [phase1-elenctic-interview.md](phase1-elenctic-interview.md)                       |
+| 2     | Prepare `belief-stress`                                                                                                                                                              | [phase2-monk-prompts.md](phase2-monk-prompts.md)                                   |
+| 3     | Complete `belief-stress`; compare `neutral-control`                                                                                                                                  | [phase3-spawn-monks.md](phase3-spawn-monks.md)                                     |
+| 4     | `fracture-scan`, `residue-collect`, conditional `frame-projector`, `defamiliarize`, `donor-perturb`, `structural-recombine`, `loss-audit`, `negative-transfer`, `frontier-rheometer` | [phase4-determinate-negation.md](phase4-determinate-negation.md) and linked stages |
+| 5     | `candidate-spectrograph`                                                                                                                                                             | [phase5-sublation.md](phase5-sublation.md)                                         |
+| 6     | `position-preservation`, `hostile-assay`, conditional `framing-sensitivity`                                                                                                          | [phase6-validation.md](phase6-validation.md)                                       |
+| 7     | `tension-statement`, `third-pole`                                                                                                                                                    | [phase7-recursion.md](phase7-recursion.md)                                         |
 
 The `atlas` runs throughout. Read each phase file and the full card for its named instruments just before use. Apply the Completion Gate in `SKILL.md` before advancing.
 
 ## Roles and firewall
 
 - **Orchestrator:** interviews, reads research, frames positions, performs structural analysis, and works with the user.
-- **Monks:** fresh, independent agents that each fully believe one position. They never see sibling positions or orchestrator-only tension and synthesis material.
+- **Monks:** fresh, context-isolated agents that each fully believe one position. They never see sibling positions or orchestrator-only tension and synthesis material. They remain correlated through shared models, training, tools, and prompts unless the run adds broader separation.
 - **Research agents:** answer narrow gaps and write staging drafts when durable research is needed.
 - **Gardener:** the sole writer of the Expedition wiki; ingests, links, lints, re-grounds, and assembles firewall-clean Monk briefs.
 
@@ -58,7 +58,7 @@ Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or control 
 - Mark what belief stress may have induced.
 - Preserve claim kinds through decomposition and synthesis.
 - Keep high-value residue instead of forcing it into synthesis.
-- Validate each candidate on its own structural claim and with an independent hostile view.
+- Validate each candidate on its own structural claim and with a context-isolated hostile view.
 - Recurse only through a live new contradiction, not by polishing the prior synthesis.
 
 ## Main outputs

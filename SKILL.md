@@ -22,7 +22,7 @@ Treat every inquiry as field work. Start with the smallest useful feedback loop,
 - Keep Walk readings in the session record. Do not create a log, directory, wiki, or phase sequence.
 - After each useful readout, keep four exits open: stop or act; run another probe; reframe the specimen with the user; or recommend promotion.
 - After every instrument readout and before ending a nontrivial inquiry, run the instrument caddy gate below. Do not leave a live registered uncertainty beside an unnamed available instrument.
-- Before sending, audit the response for instrument-shaped work: structured elicitation, a term distinction, sequence or stake map, tension statement, experiment, independent belief role, or other registered probe. If any appears without a prior handshake, add the handshake before that section. Do not present an instrument's output as ordinary advice.
+- Before sending, audit the response for instrument-shaped work: structured elicitation, a term distinction, sequence or stake map, tension statement, experiment, context-isolated belief role, or other registered probe. If any appears without a prior handshake, add the handshake before that section. Do not present an instrument's output as ordinary advice.
 - Prefer a cheap real-world experiment over more interpretation when it will teach more.
 
 Read [camera-loop.md](reference/camera-loop.md) before any inquiry likely to need more than a direct answer or one simple probe. Read [field-lab.md](reference/field-lab.md) when routing is unclear. Before suggesting or using a probe, read [instruments/index.md](reference/instruments/index.md); read its full card before running it. Obey the card's execution seat and context boundary. If the required seat is unavailable, use its named fallback and downgrade the readout rather than simulating independence inside the orchestrator.
@@ -73,7 +73,7 @@ Do not add a low-probability exception merely because it is possible. Surface it
 
 Direct requests such as “run a term scan,” “map this possibility space,” or “apply the frontier rheometer” bypass instrument selection, not the handshake, required input, or feedback. Even when the user names the instrument, repeat its name with the brief parenthetical explanation before any instrument-shaped work. Ask only for missing substrate.
 
-Requests for a “dialectic,” a hostile thesis test, the strongest case on each side, determinate negation, or validation require independently held positions at minimum. After the focus interview, run short blind Monks as a Walk instrument or recommend Expedition. Never produce an Expedition-shaped thesis/antithesis/synthesis from the orchestrator's single context without labeling it a correlated provisional sketch.
+Requests for a “dialectic,” a hostile thesis test, the strongest case on each side, determinate negation, or validation require context-isolated positions at minimum. After the focus interview, run short blind Monks as a Walk instrument or recommend Expedition. Never produce an Expedition-shaped thesis/antithesis/synthesis from the orchestrator's single context without labeling it a correlated provisional sketch.
 
 Blind possibility-space cartography requires a source-grounded map frozen before its expectation probes are read. Without that independent track, call the result a model-salience scout, not cartography; do not make residual, collapse, novelty, or “most promising” claims from recurrence alone.
 
@@ -116,15 +116,15 @@ On promotion, read [apparatus-survey.md](reference/apparatus-survey.md) and mate
 - a live contradiction remains after lighter probes;
 - the outcome is costly or hard to reverse;
 - the user cannot carry opposing beliefs at full strength;
-- structural comparison, independent committed positions, validation, and recursion would change the result enough to repay their cost;
-- the requested deliverables need the Expedition's full family of independent positions, determinate negation, candidate palette, validation, and durable trace;
+- structural comparison, context-isolated committed positions, validation, and recursion would change the result enough to repay their cost;
+- the requested deliverables need the Expedition's full family of context-isolated positions, determinate negation, candidate palette, validation, and durable trace;
 - the user asks for the full dialectic.
 
 Read [apparatus-expedition.md](reference/apparatus-expedition.md). Adopt the Walk and Survey record as Phase 1 substrate; ask only for gaps. Preserve the original question, goal, evidence types, loaded terms, current tensions, working question, and lineage.
 
 ## Electric Monk core
 
-The Expedition is an artificial belief system. Independent agents carry committed positions so the user can inspect the structure of the contradiction without having to believe either side.
+The Expedition is an artificial belief system. Context-isolated agents carry committed positions so the user can inspect the structure of the contradiction without having to believe either side.
 
 - **Rao — outsource belief.** A hedging Monk drops the very load it was hired to carry. Each Monk inhabits its position at full conviction.
 - **Hegel — use determinate negation.** Find the specific way each position fails from inside its own logic. A synthesis must cancel each position as complete, preserve its real insight, and produce a new frame. It is not compromise.
@@ -163,8 +163,8 @@ The [dialectic wiki](reference/dialectic-wiki.md) defines durable research memor
 
 ## Environment mapping
 
-Map roles to the host’s independent-agent tools. Spawn Monks in separate fresh contexts and keep them blind to one another. Run independent tasks in parallel when the host supports it. Resume the gardener when possible; if its session is lost, re-ground it from the wiki on disk. For validation, resume the original Monk when possible, reinforcing its role; otherwise give a fresh validator the original position and only the candidate it must test.
+Map roles to the host’s subagent tools. Spawn Monks in separate fresh contexts and keep them blind to one another. Run tasks in parallel when they do not depend on one another and the host supports it. Resume the gardener when possible; if its session is lost, re-ground it from the wiki on disk. For validation, resume the original Monk when possible, reinforcing its role; otherwise give a fresh validator the original position and only the candidate it must test.
 
-Treat execution placement as part of each instrument, not as a speed choice. Keep user-facing elicitation and continuity work in the orchestrator. Use fresh or parallel subagents when blindness, independent belief, decorrelation, or isolated source tracks create the access differential. The orchestrator owns comparison and presentation unless a card says otherwise.
+Treat execution placement as part of each instrument, not as a speed choice. Keep user-facing elicitation and continuity work in the orchestrator. Use fresh or parallel subagents when blindness, context-isolated belief, decorrelation, or isolated source tracks create the access differential. The orchestrator owns comparison and presentation unless a card says otherwise.
 
 Some tools return text while others let agents write files. Either is valid. The orchestrator owns final naming and must keep position, donor, tension, and synthesis material behind the Monk firewall defined in [dialectic-wiki.md](reference/dialectic-wiki.md).

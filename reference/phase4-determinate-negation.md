@@ -8,7 +8,7 @@ Phase 4 is also an instrument sequence. Read `reference/expedition-instrument-ma
 
 | Stage | Instruments                                                                  |
 | ----- | ---------------------------------------------------------------------------- |
-| A     | `fracture-scan`, `residue-collect`, `frame-projector`                        |
+| A     | `fracture-scan`, `residue-collect`, conditional `frame-projector`            |
 | B     | `defamiliarize`, `donor-perturb`                                             |
 | C     | `structural-recombine`, `residue-collect`, `loss-audit`, `negative-transfer` |
 | D     | `frontier-rheometer`                                                         |

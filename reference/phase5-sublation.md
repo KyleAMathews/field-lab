@@ -32,7 +32,7 @@ Open the top of the Phase 5 file by listing which candidates will be drafted and
 
 ## 5.1 Generate Candidates in Parallel (Decorrelation)
 
-**Construct the candidate 2×2 first (mandatory). See `reference/quadrant-diagrams.md`.** Carry the hidden-question 2×2 from 4.4 forward (or draw it now if Phase 4 left it implicit) and read candidates off it — this is how a reframe becomes a concrete candidate:
+**Use the candidate 2×2 when `frame-projector` completed in Phase 4. See `reference/quadrant-diagrams.md`.** Carry that hidden-question 2×2 forward and read candidates off it—this is how a supported reframe becomes a concrete candidate. If Phase 4 recorded the instrument as contraindicated, preserve that one-dimensional result; do not rerun it to force a candidate.
 
 - **G (ground condition):** axis 2 — the orthogonal dimension — often _is_ the ground condition; naming it as the load-bearing variable is the G move.
 - **F (framing dissolution):** the 2×2 itself is the dissolution — the old binary collapses to one axis while the second axis shows the debate was mis-framed. Hand the F-agent the diagram.
@@ -222,7 +222,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 **Completion gate — enumerate & attest before Phase 6 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
 
-- [ ] Candidate 2×2 constructed first (4.4 hidden-question 2×2 carried forward)
+- [ ] Completed Phase 4 candidate 2×2 carried forward, or its one-dimensional `frame-projector` contraindication preserved without forcing a diagram
 - [ ] S drafted by the orchestrator with all internal standards run: abduction test, three-layer reversibility check, precision-vs-grip, calibration weighting, closure, model update, failure-mode tests
 - [ ] For each of J/G/F/U: **either** drafted (because its lens fired non-trivially) **or** explicitly recorded as not-fired with the reason — no silent omissions
 - [ ] Each non-S candidate written by a separate subagent with only its own lens material (no sight of sibling drafts)

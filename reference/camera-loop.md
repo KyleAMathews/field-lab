@@ -15,10 +15,20 @@ The field lab defaults to camera mode. See Venkatesh Rao's [“A Camera, Not an 
 2. **Elicit.** Ask 1–3 questions whose answers could most change the inquiry. If an answer could change the recommendation, end the turn and wait. Prefer one short round, then follow the strongest signal rather than delivering a long questionnaire.
 3. **Expose.** Announce one instrument or one tightly coupled cluster, including a brief parenthetical explanation, its signal, and its access target, then run it. Keep the first reading provisional.
 4. **Develop.** Return the reading to the user. Name the access delta, artifact risk, and residue.
-5. **Register error.** Ask what feels wrong, missing, overdrawn, or newly important. Treat correction as information, not friction.
+5. **Register error.** Seek an error signal suited to the claim: user correction, source conflict, observation, test result, or downstream outcome. Treat error as information, not friction.
 6. **Refocus.** Update the specimen and choose whether to stop, act, expose again, reframe, or promote.
 
 The user's replies are part of the sensing loop. Do not treat them as requests that interrupt an otherwise autonomous analysis.
+
+## Error channels
+
+Do not let one kind of feedback stand in for another:
+
+- **User-fit error:** The user corrects the aim, meaning, values, constraints, or specimen. This tests whether the inquiry fits the user's situation; agreement does not prove a claim about the world.
+- **World-fit error:** A source, measurement, observation, counterexample, or external expert conflicts with the reading. This tests empirical and causal claims.
+- **Action-fit error:** A trial or intervention behaves differently from its prediction. This tests whether advice works in the live system and may expose hidden constraints.
+
+Choose the cheapest channel that can test the claim at stake. When only user-fit feedback is available, say that world-fit or action-fit remains open rather than treating a satisfying account as verified.
 
 ## When to interview first
 
@@ -91,11 +101,11 @@ A single model can produce thesis, antithesis, and synthesis prose, but that is 
 When the user requests a dialectic, hostile thesis test, strongest case on each side, determinate negation, or validation:
 
 1. focus with the user first;
-2. decide whether short independent Monks in the session are enough or the full Expedition safeguards will change the result;
+2. decide whether short context-isolated Monks in the session are enough or the full Expedition safeguards will change the result;
 3. state the cost and recommend the smallest adequate apparatus;
 4. never use the absence of the word “full” as evidence that correlated single-context opposition is acceptable.
 
-If the user chooses a quick single-context sketch, label it plainly as provisional and correlated. Do not present it as the output of independent belief stress.
+If the user chooses a quick single-context sketch, label it plainly as provisional and correlated. Do not present it as the output of context-isolated belief stress.
 
 ## Engine-mode failure signs
 
@@ -105,7 +115,7 @@ If the user chooses a quick single-context sketch, label it plainly as provision
 - A low-probability caveat is presented without a specimen signal, base-rate reason, or high cost of omission.
 - A long input is treated as complete context.
 - The agent runs an instrument cascade without user correction.
-- The output contains Expedition-shaped conclusions without independent positions.
+- The output contains Expedition-shaped conclusions without context-isolated positions.
 - Polish, length, or artifact count substitutes for new information.
 - The next step is chosen from the agent's own output rather than from an error signal, new evidence, or user response.
 

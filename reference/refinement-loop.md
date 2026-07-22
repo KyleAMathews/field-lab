@@ -21,7 +21,7 @@ Include the pass's **frontier reading** (`reference/frontier-overlay.md`) as dia
 
 ## The maturity gate (three signals)
 
-The **hidden-question settledness check is the primary fork.** Read the hidden question from 4.4 (the mandatory hidden-question 2×2) and compare it against the previous pass, tracked in the control log's **hidden-question ledger** (`reference/dialectic-wiki.md` → control log).
+The **hidden-question settledness check is the primary fork.** Read the hidden question from 4.4 (the conditional hidden-question 2×2, or its one-dimensional contraindication record) and compare it against the previous pass, tracked in the control log's **hidden-question ledger** (`reference/dialectic-wiki.md` → control log).
 
 1. **Hidden question** — did it move this pass, and on what axis?
    - _Settled_ (no move, or only cosmetic) → toward **Proceed**.

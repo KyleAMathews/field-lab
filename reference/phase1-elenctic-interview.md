@@ -13,7 +13,7 @@ Read `reference/expedition-instrument-map.md` and the relevant cards before runn
 - `focus-interview` when no current focus was confirmed on the Walk or Survey;
 - `elenchus` across 1b–1f;
 - `third-pole` at 1c.1;
-- `frame-projector` at 1c.2;
+- `frame-projector` at 1c.2 when the specimen supports a plausible second axis; otherwise record it as not called because its operating range is one-dimensional;
 - `home-frame-leak` at 1d.5;
 - `neutral-control`, frozen after the user confirms the framing and before any Monk output exists;
 - the persistent `atlas`, started with the gardener.
@@ -22,7 +22,7 @@ Announce each instrument just before its first operation. An inherited reading m
 
 ## 1a. Explain the Process to the User
 
-**Explain the apparatus only if the user has not already heard or requested it.** A direct Expedition request from a new user needs orientation. A promotion from a Walk or Survey usually needs only a short account of what changes: independent committed positions, durable files, structural analysis, validation, and recursion. Do not replay a long process explanation the user already understands. For a new user, deliver something like:
+**Explain the apparatus only if the user has not already heard or requested it.** A direct Expedition request from a new user needs orientation. A promotion from a Walk or Survey usually needs only a short account of what changes: context-isolated committed positions, durable files, structural analysis, validation, and recursion. Do not replay a long process explanation the user already understands. For a new user, deliver something like:
 
 > Here's how this works. We're going to use a structured process to dig into this topic and build a deeper understanding than either of us could reach alone.
 >
@@ -101,7 +101,7 @@ If no third pole surfaces that meets all three criteria, run with 2 monks — an
 - **Third-pole generator** — each second axis is a candidate orthogonal pole, feeding 1c.1 directly. A live second axis is often exactly the Monk-C position.
 - **Fault-line scout** — the spread of framings is the raw material for deciding, at 1f, which tension (and how many monks) the dialectic runs on.
 
-**Mandatory, with the honesty rule:** produce a genuine _spread_ of framings, not one diagram dressed three ways. If a candidate framing has no second axis that earns its place, say so — that tension is genuinely 1-D, which is itself a finding (and a signal the contradiction is real, not a framing artifact). Don't manufacture a fake axis to fill the quota. Present the candidates to the user as part of the interview and let the exploration run.
+**Conditional, with the honesty rule:** if the specimen supports a plausible second axis, produce a genuine _spread_ of framings, not one diagram dressed three ways. If no candidate second axis earns its place, stop and record `frame-projector: not called — contraindicated by a one-dimensional specimen`. A one-dimensional result is itself a finding and may show that the contradiction is real rather than a framing artifact. Do not manufacture an axis to satisfy the phase. Present any honest candidates to the user as part of the interview and let the exploration run.
 
 ## 1d. Ground the Monks (Domain-Adaptive)
 
@@ -238,7 +238,7 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] 1a–1b: prior field record inherited; every consequential instrument retains its actual seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace; needed orientation given; elenctic gaps filled; deepest version of the contradiction surfaced
 - [ ] 1c: belief burden identified (see `reference/belief-burden-catalog.md`)
 - [ ] 1c.1: third-pole probe run; final monk count decided (2 default; 3–4 only on the criteria)
-- [ ] 1c.2: multiple exploratory 2×2s generated and explored with the user (or honestly recorded as 1-D)
+- [ ] 1c.2: multiple exploratory 2×2s generated and explored with the user, or `frame-projector` recorded as not called because a one-dimensional specimen contraindicated it
 - [ ] 1d: monks grounded — external research **or** deep personal interview, as the domain requires
 - [ ] 1d.5: blind structural reconnaissance run; fault-line choice sharpened against it
 - [ ] 1e.1: 1–2 cross-domain framings woven into the briefing (or consciously skipped for a personal/values domain — state which)
@@ -248,5 +248,5 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
 - [ ] Goals & context written to the control log — the user's broader purpose, deliverables, and audience (NOT just the narrow tension)
 - [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user
-- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, `third-pole`, `frame-projector`, `home-frame-leak`, and `atlas` with actual seats, contexts, controls, access deltas, artifact risks, trace paths, and user-feedback state; every fallback remains labeled
+- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with actual seats, contexts, controls, access deltas, artifact risks, trace paths, and user-feedback state; a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
 - [ ] `neutral-control` frozen from the user-confirmed specimen before any Monk output is read; baseline trace recorded for the Phase 3 comparison

@@ -74,6 +74,6 @@ Stop or return to ordinary conversation when:
 - a real-world experiment is the best next move;
 - more probes repeat existing readings.
 
-Recommend Expedition when a live contradiction remains and committed independent positions, structural decomposition, candidate comparison, hostile validation, or recursion would change the outcome enough to repay their cost.
+Recommend Expedition when a live contradiction remains and committed context-isolated positions, structural decomposition, candidate comparison, hostile validation, or recursion would change the outcome enough to repay their cost.
 
 The user may also request Expedition directly. On promotion, follow [apparatus-expedition.md](apparatus-expedition.md).
