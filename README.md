@@ -6,6 +6,20 @@ Bring it any question. It may answer in one paragraph, pull a few instruments in
 
 Every inquiry begins as a **Walk**. A direct answer is a complete and successful result when user-specific context is unlikely to change it. A nontrivial Walk begins by focusing with the user: the agent reflects what seems important and unresolved, asks a few questions that could change the analysis, then alternates bounded instrument readings with user correction. A problem can be small yet context-bound: “keep this light” calls for fewer, sharper questions, not an instant canned fix. No files, mode menu, phase announcement, or setup are required.
 
+## Install
+
+Install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills) so the skill and its reference files stay together. It supports Claude Code, Codex, and other agents:
+
+```bash
+npx skills add KyleAMathews/hegelian-dialectic-skill
+```
+
+Add `-g` for a global install. Then invoke the skill in an ordinary question:
+
+```text
+/dialectic Why do I keep putting off this small migration?
+```
+
 ## First time? Take the tutorial
 
 Before bringing a difficult question, try a guided, low-stakes tour of the bench:
@@ -15,6 +29,17 @@ Before bringing a difficult question, try a guided, low-stakes tour of the bench
 ```
 
 The tutorial should explain the lab briefly, offer contrasting exercises, and then follow the same rules as ordinary use: you select each instrument; the agent announces it; the instrument returns a bounded reading; and you decide what the readings mean together.
+
+## Quick examples
+
+- **Off-the-cuff question:** `/dialectic Why do moths fly toward porch lights?` → direct answer, no visible method.
+- **Fact-shaped practical Walk:** `/dialectic How many branches should this fruit bush have?` → clarify the desired form, then search or advise; no files.
+- **Instrument-rich Walk:** `/dialectic My wife and I mean different things by a clean kitchen.` → optional term scan, stake map, and small experiment; no files.
+- **Hostile thesis Walk:** `/dialectic Test this thesis against its strongest opposition.` → focus interview, short context-isolated Monks, and user correction.
+- **Survey:** `/dialectic Compare four family calendar systems over three weeks and let us resume later.` → shared collection plan and durable Survey log.
+- **Expedition:** `/dialectic I want the full Expedition on whether our framework should own deployment.` → committed positions, decomposition, candidate palette, audit, and recursion.
+
+You do not need to choose Walk or Survey up front. Ask for a named instrument directly if you want one: “run a term scan,” “check for a ground condition,” “map this possibility space,” or “stress these positions with Electric Monks.”
 
 If the inquiry later needs systematic collection or durable memory, it becomes a **Survey**. If a stubborn contradiction repays the cost of context-isolated committed agents, structural analysis, validation, and recursion, it becomes an **Expedition**. The existing seven-phase Electric Monk dialectic remains strict; it is no longer the price of entry.
 
@@ -135,39 +160,6 @@ Each phase gate cites an instrument-ledger entry. A phase cannot pass merely bec
 | Expedition              | Promoted control log, round files, wiki, queue, and validation trace |
 
 Promotion distills the conversation so far. It does not rewrite an informal Walk as a scripted interview, and the user should not have to restate material already in the session.
-
-## Example paths
-
-- **Off-the-cuff question:** “Why do moths fly toward porch lights?” → direct answer, no visible method.
-- **Fact-shaped practical Walk:** “How many branches should this fruit bush have?” → reflect the specimen, clarify the desired form, then search or advise; no files.
-- **Instrument-rich Walk:** “My wife and I mean different things by a clean kitchen.” → term scan, stake map, and a one-week experiment; no files.
-- **Hostile thesis Walk:** “Test this thesis against its strongest opposition.” → focus interview, short context-isolated Monks, intermediate reading, then user correction; still no files if persistence is unnecessary.
-- **Survey:** “Compare four family calendar systems over three weeks and let us resume later.” → shared collection plan and durable Survey log.
-- **Expedition:** “Should our open-source framework launch first-party cloud hosting?” → inherited field record, context-isolated committed positions, decomposition, candidate palette, audit, and recursion.
-
-## Installation
-
-The skill needs its reference files, so install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills). It supports Claude Code, Codex, and other agents:
-
-```bash
-npx skills add KyleAMathews/hegelian-dialectic-skill
-```
-
-Add `-g` for a global install. Then invoke the `dialectic` skill in an ordinary question:
-
-```text
-/dialectic Why do I keep putting off this small migration?
-```
-
-```text
-/dialectic Help us work out what “clean” means when we say the kitchen is done.
-```
-
-```text
-/dialectic I want the full Expedition on whether our framework should own deployment.
-```
-
-You do not need to choose Walk or Survey up front. Ask for a named instrument directly if you want one: “run a term scan,” “check for a ground condition,” “map this possibility space,” or “stress these positions with Electric Monks.”
 
 ## What the Expedition is for
 
