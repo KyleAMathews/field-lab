@@ -40,21 +40,27 @@ The field-work forms are:
 
 The number and strength of instruments do not define these forms. Opening a log adds memory; an Expedition adds cross-trip navigation. Neither removes instruments, selects a workflow, authorizes conclusions, or changes camera mode into engine mode. Walk instruments remain available everywhere, and each unscheduled run still needs selection.
 
-## Camera and engine: the OODA orientation brake
+## Camera and engine: keep the lab in orientation
 
-In Boyd's OODA loop, **Observe and Orient** come before **Decide and Act**. Use that distinction as a brake on agent autonomy, not as a sequence for the agent to complete alone.
+Boyd's OODA loop separates **Observe and Orient** from **Decide and Act**. Keep Field Lab in the first pair by default. Help the user observe and orient; let the user decide what the readings mean and when to turn them into a conclusion or action.
 
-In **camera mode**, gather and expose material for the user to interpret. The human owns Observe and Orient. Help by asking for missing context, offering instruments, and returning bounded readings. Leave the meaning, importance, and combination of those readings open for the human.
+In **camera mode**, ask for missing context, offer instruments, and return their bounded readings. Camera mode may include deep research, comparison, mapping, experiments, and multi-step workflows. Its limit is authority, not depth: do not settle what the material means, combine it into a final explanation, rank options, or recommend action unless the user asks.
 
-In **engine mode**, perform a conclusion, decision, plan, recommendation, or action the user has explicitly requested. Do not rush into engine mode because a pattern looks clear, research has ended, an instrument returned a neat reading, a phase closed, or the user agreed with an intermediate result. A provisional synthesis is still a synthesis.
+In **engine mode**, produce a synthesis, conclusion, decision, recommendation, plan, or action that the user has explicitly requested. Do not enter engine mode merely because:
 
-Choosing an instrument or apparatus supports orientation; it is not itself a substantive recommendation.
+- a pattern looks clear;
+- research or a workflow phase has ended;
+- the user selected an instrument;
+- an instrument returned a neat reading; or
+- the user agreed with an intermediate result.
 
-Before crossing from camera to engine:
+Choosing an instrument authorizes that reading, not a conclusion drawn from it. A provisional synthesis is still a synthesis.
 
-1. **Check authorization.** Did the user explicitly request the named conclusion, decision, plan, recommendation, or action?
-2. **If not, brake.** Remove it. Return only direct observations, authorized instrument readings, open questions, and normally three honest instrument choices.
-3. **If so, mark the transition.** Briefly say that the lab is moving into the requested engine task, then perform only that bounded task.
+Before crossing into engine mode:
+
+1. **Check the request.** Has the user explicitly asked for the specific synthesis, conclusion, decision, recommendation, plan, or action?
+2. **If not, stop at orientation.** Return the authorized readings, their limits, open questions, and any useful next instruments.
+3. **If so, mark the crossing.** Begin by briefly naming the engine task the user requested—for example, “You asked for a recommendation”—then perform only that task. Do this even when a nontrivial request begins in engine mode. Do not add the announcement to stable facts or narrow mechanical work that bypasses camera mode.
 
 Stable facts, narrow mechanical work, explicit one-shot requests, and urgent safety precautions may bypass camera mode. A selected workflow may authorize its named interpretive outputs; it does not authorize unrelated decisions or actions. The brake applies on Walks, Field Trips, Expeditions, and inside workflows.
 
@@ -159,18 +165,6 @@ Use this as the single routing sequence:
 | A practical change is cheap and reversible | **Small experiment** (`small-experiment`) | Prepared trial; later, the observed contrast |
 
 Procedures and controls are in [walk-kit.md](reference/instruments/walk-kit.md). The full registry maps advanced instruments to existing phase procedures.
-
-## Selected-instrument special contracts
-
-### Blind cartography
-
-Blind possibility-space cartography requires a source-grounded map frozen before its expectation probes are read. Without that independent track, call the result a model-salience scout, not cartography. Do not make residual, collapse, novelty, or “most promising” claims from recurrence alone.
-
-### Exploratory 2×2
-
-Any 2×2 readout must follow [Rao's cluster-first procedure and the rendering contract](reference/quadrant-diagrams.md#rao-sequence). Show the formation trace in order: typed phenomenology inventory; candidate four-cluster partitions with members, prototypes, overlaps, and outliers; candidate separating lines with chemistry and failure notes; label workshop with naming mode and alternatives; then every complete inline monospaced ASCII or box diagram.
-
-Each rendered map needs both named axes and poles, visible directions, four bounded evocatively labeled cells, and 1–2 relevant examples in every occupied cell or an explicit empty mark. A heading such as `axis A × axis B` followed by four labels, bullets, or a table is not a complete 2×2 readout. Preserve an honest contraindication instead of forcing a diagram when the material does not support one.
 
 ## Persistence boundaries
 
