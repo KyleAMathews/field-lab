@@ -6,15 +6,7 @@ Opening a log changes persistence, not authority. It does not authorize an instr
 
 ## Entry
 
-Offer to open a field log when one or more are true:
-
-- the session is becoming too large or fragile to serve as working memory;
-- an observation, reading, or question is worth preserving beyond the session;
-- the inquiry needs named gaps, repeated or comparative readings, or a coverage goal;
-- research, agents, instruments, or later sessions need coordination;
-- the work must be searched, cited, reviewed, resumed, or audited.
-
-No number or type of instruments forces a Field Trip. A demanding trip may begin after one observation; many opportunistic probes may remain on a Walk. Explain why the log would repay its cost and wait for the user's agreement.
+Enter only after `SKILL.md` routes the inquiry here and the user agrees to open a field log. Record that authorization. Do not infer it from the number, strength, or cost of instruments.
 
 ## Open the field log
 
@@ -29,7 +21,7 @@ Use a narrow standalone directory such as `field-trip-<topic>/field_log.md`, or 
 
 ## Run the trip
 
-Keep the [camera loop](camera-loop.md): agree on a bounded batch, run only the selected plan, return raw readings to the user, register their corrections, and update the open gaps. Do not execute an entire research program from the first framing without an intermediate error signal.
+Keep the canonical router and camera/engine boundary from `SKILL.md`: agree on a bounded batch, run only the selected plan, return bounded readings, register corrections, and update the open gaps. Do not execute an entire research program from the first framing without an intermediate error signal.
 
 A simple Field Trip may have only a scope and log. When it needs a collection plan, let the user select, trim, or reorder it. For each gap, record:
 

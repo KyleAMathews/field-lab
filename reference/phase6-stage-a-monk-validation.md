@@ -1,6 +1,6 @@
 # Phase 6 — Stage A: Monk Validation (6.2)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _For each candidate the user selected (6.0), send the candidate-type-specific prompt below to both monks. Apply only the sub-section matching the candidate you're validating._
 
@@ -147,7 +147,7 @@ Evaluate honestly:
 
 ---
 
-**Completion gate — enumerate & attest before Stage B (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Stage B.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] Every candidate under validation got its candidate-specific monk validation (S: elevated vs. defeated; J: productive vs. evasive; G: orthogonal vs. same-axis; F: genealogy/constituency; U: loadings genuinely opposite)
 - [ ] Each candidate's output written to `round_N_validation_<candidate>.md`

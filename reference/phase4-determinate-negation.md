@@ -1,6 +1,6 @@
 # Phase 4: Determinate Negation
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 4 opening card and wait for the user's Phase 4 go-ahead. Preview each later stage that introduces a new research or subagent batch and pause again before it runs.
 
@@ -33,11 +33,11 @@ The framing in _this_ index applies to every stage. Section numbers are continuo
 | A     | `reference/phase4-stage-a-analysis.md`      | 4.0–4.4           | Find the collision                                                                                                                                              |
 | B     | `reference/phase4-stage-b-lateral.md`       | 4.5a/b/c          | Build the sea (donor pipeline)                                                                                                                                  |
 | C     | `reference/phase4-stage-c-decomposition.md` | 4.6, 4.6.5, 4.6.6 | Shatter, recombine, instrument                                                                                                                                  |
-| D     | `reference/phase4-stage-d-criteria.md`      | 4.7, 4.9          | Sublation criteria + HARD STOP + the frontier reading (`reference/frontier-overlay.md`) + the four-exit refinement-loop router (`reference/refinement-loop.md`) |
+| D     | `reference/phase4-stage-d-criteria.md`      | 4.7, 4.9          | Sublation criteria + HARD STOP + the frontier reading (`reference/instruments/frontier-rheometer.md`) + the four-exit refinement-loop router (`reference/refinement-loop.md`) |
 
 Writing each stage to file as you finish it is not optional bookkeeping — it is what makes the staging safe. If context is compacted between stages, the completed work survives on disk.
 
-**Each stage ends with a completion gate** (enumerate its deliverables, attest ✅/❌ with evidence, stop on any ❌ unless the user waives it — see SKILL.md → The Completion Gate). Stage boundaries inside Phase 4 are where work is most often left half-done, precisely because they're not user-facing — run the gate at every A→B→C→D hop, not only at the 4.9 hard stop.
+**Each stage ends with the [workflow completion gate](dialectic-workflow.md#completion-gate).** Apply it at every A→B→C→D transition, not only at the 4.9 hard stop.
 
 ## Framing that applies to all stages
 

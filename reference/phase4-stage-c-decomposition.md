@@ -1,6 +1,6 @@
 # Phase 4 — Stage C: Boydian Decomposition + Registers (4.6, 4.6.5, 4.6.6)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _This stage is the destructive heart of the phase: shatter every domain in the pool (monks + donors from Stage B) into atomic parts, find cross-domain connections, recombine into something with emergent structure, then instrument what the synthesis will leave un-resolved (misfit register) and what it would smooth away (loss audit)._
 
@@ -126,7 +126,7 @@ Use a fresh subagent when the mapping is decision-critical or the orchestrator h
 
 ---
 
-**Completion gate — enumerate & attest before Stage D (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Stage D.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] 4.6: domain manifest listed; every domain (monks + donors) decomposed to **equal depth**
 - [ ] Atomic parts calibration-tagged (monk parts `[solid/plausible/reach]`; donor parts `[fit:]`); anti-tidiness check passed (genuinely unstructured)

@@ -1,6 +1,6 @@
 # Phase 3: Spawn the Electric Monks
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 3 opening card, including the number of agents and rough run cost, and wait for the user's Phase 3 go-ahead. A passed Phase 2 gate does not launch the Monks.
 
@@ -66,7 +66,7 @@ If the user identifies a testable claim, offer a targeted research pass and stat
 
 ---
 
-**Completion gate — enumerate & attest before Phase 4 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Phase 4.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] All N monks spawned as separate subagent sessions, in parallel
 - [ ] Each essay checked for hedging and degenerate framing (re-run any monk that hedged)

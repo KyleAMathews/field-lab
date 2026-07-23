@@ -1,6 +1,6 @@
 # Phase 5: Palette of Candidates
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 **⛔ Phase-opening check:** After the re-entry and Proceed checks pass, present the Phase 5 opening card, including the earned candidate bands and planned isolated writers, and wait for the user's Phase 5 go-ahead. Neither check starts candidate generation.
 
@@ -34,7 +34,7 @@ Open the top of the Phase 5 file by listing which candidates will be drafted and
 
 ## 5.1 Generate Candidates in Parallel (Decorrelation)
 
-**Use the candidate 2×2 when `frame-projector` completed in Phase 4. See `reference/quadrant-diagrams.md`.** Carry its formation trace—phenomenology, clusters, separators, label workshop—and complete rendered ASCII/box-drawing diagram forward, not merely the axes or four labels. Read candidates from the supported clusters and telling absences. If Phase 4 recorded the instrument as contraindicated, preserve that result; do not rerun it to force a candidate.
+**Use the candidate 2×2 when `frame-projector` completed in Phase 4.** Carry the card's full formation trace and rendered map forward, not merely the axes or four labels. Read candidates from supported clusters and telling absences. If Phase 4 recorded the instrument as contraindicated, preserve that result; do not rerun it to force a candidate.
 
 - **G (ground condition):** axis 2 — the orthogonal dimension — often _is_ the ground condition; naming it as the load-bearing variable is the G move.
 - **F (framing dissolution):** the 2×2 itself is the dissolution — the old binary collapses to one axis while the second axis shows the debate was mis-framed. Hand the F-agent the diagram.
@@ -222,7 +222,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 
 **Hand the candidates to the gardener in the background → `synthesis` pages** (`reference/dialectic-wiki.md`), then continue the user-facing palette work. Do not wait at dispatch; check the pages only when a later operation consumes them or the Phase 5 gate has no other unfinished items. Each candidate becomes a `synthesis` page (its central move + the lens that earned it + a pointer to the candidate file), cross-linked to the `tension` it resolves and the `position`/`concept` pages it draws on. This is what a later round reads when it builds on — or shatters — this synthesis.
 
-**Completion gate — enumerate & attest before Phase 6 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Phase 6.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] Completed Phase 4 frame-projector formation trace and rendered 2×2 carried forward, or its specific contraindication preserved without forcing a diagram
 - [ ] S drafted by the orchestrator with all internal standards run: abduction test, three-layer reversibility check, precision-vs-grip, calibration weighting, closure, model update, failure-mode tests
@@ -239,7 +239,7 @@ When a claim fails at any layer, do NOT discard the whole synthesis — Boyd's i
 - The candidate's **central move** in 2-3 sentences
 - The **lens that earned it** (why this candidate is in the palette)
 - The **new contradiction** the candidate generates (if any — not all candidates need to be fertile in the same way)
-- A one-line **frontier flag** (`reference/frontier-overlay.md`): read this candidate against the pass's blind-expectation probe — `[groove — matches the expected "…"]` or `[frontier — diverges from the expected "…"]`. This is a descriptive scan aid, **not a ranking** — do not order or recommend candidates by it. (Reuse the same blind expectation from 4.9; the setup is unchanged within a pass. If the working question changed since 4.9, re-run the probe.)
+- A one-line **frontier flag** (`reference/instruments/frontier-rheometer.md`): read this candidate against the pass's blind-expectation probe — `[groove — matches the expected "…"]` or `[frontier — diverges from the expected "…"]`. This is a descriptive scan aid, **not a ranking** — do not order or recommend candidates by it. (Reuse the same blind expectation from 4.9; the setup is unchanged within a pass. If the working question changed since 4.9, re-run the probe.)
 
 Format the presentation so the user can see the palette side-by-side. **Do not rank. Do not recommend. Do not say "I think S is strongest."** The user is the judge; the orchestrator's job is to make each candidate as strong as it can be on its own terms.
 

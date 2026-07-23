@@ -1,6 +1,6 @@
 # Phase 4 — Stage D: Sublation Criteria + User Checkpoint (4.7, 4.9)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _The final stage of Phase 4: state what the synthesis must accomplish, then HARD STOP and present a concise summary to the user. This is the highest-leverage correction point in the entire process — do not skip the stop._
 
@@ -31,9 +31,9 @@ The full Phase 4 analysis is already written to file — the user can read it th
 
 Assume zero prior knowledge of the donor and high general intelligence. Do not open with a taxonomy, notation, compressed formal definition, or a stack of technical nouns such as “kinetic quenching,” “restite,” and “metastable Form-V target.” Do not merely put parentheses around jargon and call it explained. Use the user's interview material as a **bridge**, not as proof that the analogy fits; personalization must not upgrade the calibration. Present each donor separately rather than packing several into a table. A user who cannot picture the donor phenomenon cannot judge whether its transfer is illuminating or forced — precisely the `[fit: reach]` check needed at this stop.
 
-**Attach the frontier reading (the overlay).** Before presenting, run the Frontier Overlay for this pass (`reference/frontier-overlay.md`):
+**Attach the frontier reading (the overlay).** Before presenting, run the Frontier Rheometer for this pass (`reference/instruments/frontier-rheometer.md`):
 
-1. Spawn the **blind-expectation probe** — a fresh subagent that sees ONLY the working question and the poles (blind to the essays, this negation, the donors). Use the skeleton in `reference/frontier-overlay.md`. It returns the 1–3 resolutions it _expects_.
+1. Spawn the **blind-expectation probe** — a fresh subagent that sees ONLY the working question and the poles (blind to the essays, this negation, the donors). Use the skeleton in `reference/instruments/frontier-rheometer.md`. It returns the 1–3 resolutions it _expects_.
 2. Compare its expected resolutions against where your determinate negation actually landed: match → groove, divergence → frontier. Add the free-layer reading (are the maturity signals saturating = groove, or still producing new cross-edges/facts = frontier).
 3. Check for a **collapse**: did the monks _reach_ (strained / donor-dependent argument, or new `[fit:]` cross-edges) but the negation land on the blind-expected groove? If so, flag it.
 4. Append the **companion block** _after_ your negation summary (do not re-tag the negation inline). It is diagnostic and descriptive — not a recommendation, and it must not tell the user what to do:
@@ -61,11 +61,11 @@ Then ask:
 
 **Anti-sycophancy at this checkpoint:** When the user provides input here, evaluate it structurally, not socially. Do NOT say "this is excellent material." Instead: What does this material do to the decomposition? Does it challenge the hidden question? Does it open a new domain for cross-connection? Does it actually change anything, or is it confirming what the analysis already found? If the user shares a framework they're excited about, it enters the mix as one more input to be shattered and recombined — not as the answer the synthesis should converge on. The user is in the belief-free seat. Do not try to locate their position and build toward it.
 
-**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger** and this pass's frontier reading to the **frontier-ledger** (`reference/frontier-overlay.md`), then read `reference/refinement-loop.md` and run the **four-exit router**: Proceed / Research / Refine / Re-split. The 4.9 stop is no longer a straight line into synthesis — Phase 5 is only the _Proceed_ exit, taken when the hidden question has settled and the signals (new cross-edges, new facts) are quiet. The other three exits loop back to mature the contradiction before synthesizing. You recommend an exit; the user chooses.
+**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger** and this pass's frontier reading to the **frontier-ledger** (`reference/instruments/frontier-rheometer.md`), then read `reference/refinement-loop.md` and run the **four-exit router**: Proceed / Research / Refine / Re-split. The 4.9 stop is no longer a straight line into synthesis — Phase 5 is only the _Proceed_ exit, taken when the hidden question has settled and the signals (new cross-edges, new facts) are quiet. The other three exits loop back to mature the contradiction before synthesizing. You recommend an exit; the user chooses.
 
 ---
 
-**Completion gate — enumerate & attest before Phase 5 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Phase 5.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] 4.7 sublation criteria written (preserve A / preserve B / dissolve shared assumption / answer hidden question) — kept separate from the misfits
 - [ ] Initial synthesis guess (written back in Stage A) compared against the finished decomposition for pattern-matching

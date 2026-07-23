@@ -1,3 +1,17 @@
+---
+id: taboo-parallax
+name: "Taboo Parallax"
+summary: "Expose sourced differences in speech cost, translation, enforcement, and their truth limits."
+use_when: "Speech costs may differ across bounded public settings"
+avoid_when: "Do not use it to manufacture provocation, characterize a whole nationality, or settle truth by popularity elsewhere."
+access_target: "Sourced asymmetries, translations, and truth limits"
+requires: "A topic, live question, bounded home setting, speech arena, audience, time slice, and decision the comparison should inform."
+execution_seat: hybrid
+fresh_context: required
+effort: high
+persistence: "Scout: session. Full run: three or four research tracks and normally a Field Trip."
+artifact_risk: "Case selection, translation, and model priors can manufacture stereotypes or false contrasts."
+---
 # Taboo Parallax (`taboo-parallax`)
 
 ## Contents

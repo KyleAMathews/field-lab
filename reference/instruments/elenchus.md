@@ -1,0 +1,24 @@
+---
+id: elenchus
+name: "Stake and assumption mapper"
+summary: "Answerable assumptions, commitments, testimony, and gaps"
+use_when: "Hidden premises, stakes, history, or belief load need deeper elicitation"
+avoid_when: "Avoid turning a fact lookup into an interview."
+access_target: "Answerable assumptions, commitments, testimony, and gaps"
+requires: "the user's account and room for questions"
+execution_seat: orchestrator
+fresh_context: none
+effort: medium
+persistence: "Several turns; session on a Walk, typed readings in a Field Trip."
+artifact_risk: "The interview follows the orchestrator's preferred frame; repeated questions create frustration or apparent depth."
+---
+# Stake and assumption mapper (`elenchus`)
+
+- **Phenomenon / range / input:** Hidden premises, stakes, history, and belief load in a live question; needs the user's account and room for questions. Avoid turning a fact lookup into an interview.
+- **Unaided limit / access differential:** A volunteered account follows the user's current frame. Elenctic contrasts make tacit premises and incompatible commitments answerable one at a time.
+- **Perturbation / procedure:** Socratic questions direct attention toward contradictions and omitted context. Ask one question at a time: clarify the claimed aim, test a concrete case, expose the premise that links the case to the claim, ask what evidence or experience supports it, and test whether another stated commitment conflicts with it. Reflect each answer for correction before following the strongest unresolved contrast. Stop when the user-confirmed assumptions, stakes, constraints, and highest-value gap are explicit.
+- **Readout / control:** Assumptions, testimony, constraints, stakes, and gaps; distinguish what the user said from what the question wording elicited.
+- **Common artifacts:** The interview follows the orchestrator's preferred frame; repeated questions create frustration or apparent depth.
+- **Escalate / stop:** Escalate when a live contradiction needs committed belief or systematic research. Stop when the question or next observation is clear.
+- **Cost / persistence:** Several turns; session on a Walk, typed readings in a Field Trip.
+- **Execution placement:** **Orchestrator.** It conducts the live interview and sees the user's prior corrections; continuity is the reason for this seat. A subagent may draft questions from a bounded brief but may not interpret unconfirmed testimony. If live contact is unavailable, return gaps rather than a completed elenchus. The orchestrator returns the testimony, assumptions, and gaps for user correction without explaining them.

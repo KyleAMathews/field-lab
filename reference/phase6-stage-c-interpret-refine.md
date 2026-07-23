@@ -1,6 +1,6 @@
 # Phase 6 — Stage C: Interpret + Refine (6.4, 6.5, 6.6)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _With monk validations (Stage A) and auditor reports (Stage B) in hand, interpret each candidate on its own terms, then help the user refine the palette. Do not cross-rank candidates._
 
@@ -77,7 +77,7 @@ Then ask the user, per surviving candidate: "Incorporate this improvement? Or ta
 
 ---
 
-**Completion gate — enumerate & attest before Phase 7 / stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Phase 7 or stopping.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] 6.4: each candidate interpreted on its own terms (no cross-ranking)
 - [ ] Full validation + auditor output written to `round_N_validation_<candidate>.md` per candidate

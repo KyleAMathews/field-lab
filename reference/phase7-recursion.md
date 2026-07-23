@@ -1,6 +1,6 @@
 # Phase 7: Recursion — Where the Real Value Lives
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 7 opening card and wait for the user's Phase 7 go-ahead before generating or clustering recursive directions. A passed validation gate does not start another round.
 
@@ -62,7 +62,7 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 **Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). Every item records `recorded-at`; every status change records `status-updated-at` and its user or workflow pointer. This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
 
-**Completion gate — enumerate & attest before launching the next round or stopping (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before launching the next round or stopping.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] Idea burst (5–8 candidate contradictions) generated **first**, read, and only then clustered — not skipped or combined with clustering
 - [ ] Round's synthesis **transferred** against the other queued tensions (tried for dissolve/reframe/sharpen) before the next direction was chosen

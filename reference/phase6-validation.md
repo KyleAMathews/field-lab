@@ -1,6 +1,6 @@
 # Phase 6: Validation of the Palette
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 6 opening card with the user-selected candidates, validator seats, and rough cost, then wait for the user's Phase 6 go-ahead. Candidate selection alone does not launch validation.
 
@@ -48,7 +48,7 @@ Use the strongest available model with extended thinking for all validation agen
 
 ---
 
-**Completion gate — enumerate & attest before Stage A (see SKILL.md → The Completion Gate):**
+**Completion gate — enumerate and attest before Stage A.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate):
 
 - [ ] 6.0: user has selected which candidate(s) go into validation (not the orchestrator's guess — the user's pick, or an explicit deferral you resolved by the stated default)
 - [ ] 6.1: strongest model with extended thinking set for validation agents

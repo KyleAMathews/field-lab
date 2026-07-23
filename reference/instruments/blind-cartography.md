@@ -1,3 +1,17 @@
+---
+id: blind-cartography
+name: "Blind Possibility-Space Cartography"
+summary: "Map expected model basins, coverage holes, and source-grounded residuals."
+use_when: "Model-default possibilities may crowd out an open space"
+avoid_when: "Do not use it to estimate public opinion, factual likelihood, or historical novelty."
+access_target: "Expected basins, coverage holes, and source-grounded residuals"
+requires: "A neutral specimen label, result-changing coordinates, and an independent source track frozen before expectation outputs."
+execution_seat: hybrid
+fresh_context: required
+effort: high
+persistence: "Quick scout: session. Full atlas: usually 6–12 probes with a durable Field Trip trace."
+artifact_risk: "Shared model lineage, prompt leakage, and adaptive sampling can make expected basins look independent or socially prevalent."
+---
 # Blind Possibility-Space Cartography (`blind-cartography`)
 
 - **Phenomenon sought:** The difference between options grounded in the specimen and options a model readily reconstructs, including expected basins, coverage holes, and source-grounded residuals.

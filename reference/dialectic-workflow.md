@@ -4,7 +4,7 @@ The Electric Monk dialectic is one user-selected workflow in the Field Lab. “R
 
 The workflow runs within a Field Trip, which may stand alone or belong to an Expedition. It is not itself an Expedition. If the user selects the dialectic during an unlogged Walk, its declared durable trace includes opening a Field Trip and field log; state that before creating files.
 
-Selecting the workflow reserves its scheduled instruments and declared artifacts. It does not start them, authorize a phase-sized batch, permit silent passage through user checkpoints, or authorize an expedition-wide conclusion or unrelated action. The user starts each numbered phase through its opening gate. Walk instruments remain available, but each unscheduled run still requires user selection.
+Selecting the workflow reserves its scheduled instruments and declared artifacts. It does not start them, authorize a phase-sized batch, permit silent passage through user checkpoints, or authorize an expedition-wide conclusion or unrelated action. The user starts each numbered phase through its opening gate. Other instruments remain available, but each unscheduled run still requires user selection.
 
 ## Entry contract
 
@@ -54,19 +54,7 @@ After the user starts the phase, announce each instrument or tightly coupled clu
 
 If a phase has internal stages, apply the same rule at any stage that introduces a new long-running subagent batch, outside research pass, or materially different instrument cluster: preview the work and cost, then pause. Short mechanical stages may proceed under the numbered phase's go-ahead, but still need their instrument handshakes and promised readouts.
 
-## Phase map
-
-| Phase | Main instruments | Required reference |
-| ----- | ---------------- | ------------------ |
-| 1 | `focus-interview`, `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, `neutral-control` | [phase1-elenctic-interview.md](phase1-elenctic-interview.md) |
-| 2 | prepare `belief-stress` | [phase2-monk-prompts.md](phase2-monk-prompts.md) |
-| 3 | complete `belief-stress`; compare `neutral-control` | [phase3-spawn-monks.md](phase3-spawn-monks.md) |
-| 4 | `fracture-scan`, `residue-collect`, conditional `frame-projector`, `defamiliarize`, `donor-perturb`, `structural-recombine`, `loss-audit`, `negative-transfer`, `frontier-rheometer` | [phase4-determinate-negation.md](phase4-determinate-negation.md) and linked stages |
-| 5 | `candidate-spectrograph` | [phase5-sublation.md](phase5-sublation.md) |
-| 6 | `position-preservation`, `hostile-assay`, conditional `framing-sensitivity` | [phase6-validation.md](phase6-validation.md) |
-| 7 | `tension-statement`, `third-pole` | [phase7-recursion.md](phase7-recursion.md) |
-
-The `atlas` runs throughout. Read each phase file and the full card for its named instruments just before use. The phase procedure, instrument card, and common contract are jointly binding; satisfy the stricter rule.
+Read [dialectic-instrument-map.md](dialectic-instrument-map.md) for the sole phase-to-instrument schedule and required instrument attestations. Read each phase file and the full card for its named instruments just before use.
 
 ## Roles and firewall
 

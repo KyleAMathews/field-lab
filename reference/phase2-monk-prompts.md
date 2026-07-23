@@ -1,12 +1,12 @@
 # Phase 2: Generate the Electric Monk Prompts
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 2 opening card and wait for the user's Phase 2 go-ahead before preparing belief stress. A passed Phase 1 gate does not start Phase 2.
 
 ## Instrument lifecycle: prepare `belief-stress`
 
-Phase 2 prepares the `belief-stress` instrument; it does not complete it. Read its card in `reference/instruments/advanced-bench.md` and the Phase 1 `neutral-control` trace. Announce belief stress before prompt construction, including its polarization and false-conflict risk. Record the shared neutral substrate, one isolated context boundary per Monk, and the planned return path. No Monk prompt may contain sibling positions, candidate synthesis, determinate negation, or orchestrator preference.
+Phase 2 prepares the `belief-stress` instrument; it does not complete it. Read its card in `reference/instruments/belief-stress.md` and the Phase 1 `neutral-control` trace. Announce belief stress before prompt construction, including its polarization and false-conflict risk. Record the shared neutral substrate, one isolated context boundary per Monk, and the planned return path. No Monk prompt may contain sibling positions, candidate synthesis, determinate negation, or orchestrator preference.
 
 Generate one prompt per Electric Monk — **typically 2, sometimes 3 or 4** if Phase 1c.1 surfaced a third (or fourth) pole meeting the criteria. Each monk must _believe_ its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
 
@@ -83,7 +83,7 @@ Calibrate the monks based on what you learned in Phase 1c':
 
 ---
 
-**Completion gate — enumerate & attest before Phase 3 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Phase 3.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] One prompt drafted per monk (matching the final monk count set in Phase 1)
 - [ ] Each prompt carries all seven required sections (role, framing corrections, context briefing, research directives, argument structure, anti-hedging, length)

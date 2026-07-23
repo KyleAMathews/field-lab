@@ -1,6 +1,6 @@
 # Phase 4 — Stage B: Lateral Creativity Interventions (4.5)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _This stage builds the "sea of anarchy" you will shatter in Stage C: compressed conflicts, a multi-domain donor pool recruited blind, and a non-propositional pause. Do this BEFORE the Boydian decomposition so the new material becomes atomic parts in the decomposition rather than an afterthought._
 
@@ -105,7 +105,7 @@ Keep this to 2 paragraphs maximum. Extract 3-5 structural observations from the 
 
 ---
 
-**Completion gate — enumerate & attest before Stage C (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Stage C.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] 4.5a compressed conflicts (oxymorons) generated
 - [ ] 4.5b donor pool recruited **blind** — brief provenance lock + register tags; recruiter read the Outline itself; final set selected under the blind rules (negation coverage, ≥3 unrelated meta-domains, register spread on both axes)

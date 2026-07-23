@@ -1,6 +1,6 @@
 # The Refinement Loop (the 4.9 router)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 Phase 4 ends at the 4.9 HARD STOP. Historically that checkpoint had two exits — proceed to Phase 5, or take the user's corrections and fold them in. It is now a **four-exit router**. Its job is to answer one question: **has this contradiction matured enough to synthesize, or does it need another pass first?** Synthesizing an immature tension is the failure this loop exists to prevent — it is why the first monk run so often feels like a straw-man, and why the waterfall reaches Phase 5 before the space is actually explored.
 
@@ -17,7 +17,7 @@ Phase 4 ends at the 4.9 HARD STOP. Historically that checkpoint had two exits �
 
 **Your recommendation to the user must include:** the three signal readings, the gap you diagnosed, the recommended exit, and _how the next pass would be framed_.
 
-Include the pass's **frontier reading** (`reference/frontier-overlay.md`) as diagnostic evidence — especially a **collapse** (the monks reached but the negation drained to a groove), which is a strong signal that the tension is _not_ ready to synthesize even if the other signals are quiet. This informs your recommendation only; it never decides the exit — the user does. (A frontier reading of "groove" is not by itself a reason to keep looping: the user may want the standard answer.)
+Include the pass's **frontier reading** (`reference/instruments/frontier-rheometer.md`) as diagnostic evidence — especially a **collapse** (the monks reached but the negation drained to a groove), which is a strong signal that the tension is _not_ ready to synthesize even if the other signals are quiet. This informs your recommendation only; it never decides the exit — the user does. (A frontier reading of "groove" is not by itself a reason to keep looping: the user may want the standard answer.)
 
 ## The maturity gate (three signals)
 
@@ -75,7 +75,7 @@ The second read is the actual scent-fix — re-injection at loop-top counteracts
 
 ---
 
-**Completion gate — enumerate & attest before taking a router exit (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before taking a router exit.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] The three signals computed and **shown to the user** (hidden-question movement, new cross-edges, new facts)
 - [ ] The gap diagnosed and an exit recommended, including how the next pass would be framed

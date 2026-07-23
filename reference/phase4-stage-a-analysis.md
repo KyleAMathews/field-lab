@@ -1,6 +1,6 @@
 # Phase 4 — Stage A: Core Analysis (4.0–4.4)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _Read the framing in `reference/phase4-determinate-negation.md` first if you haven't. This stage finds the collision: the surface contradiction, each position's self-sublation, the shared assumptions, position protection, the determinate negations, and the hidden question._
 
@@ -75,7 +75,7 @@ If 4.2.5 surfaced a disguised shared interest, the determinate negation of each 
 
 Articulate the deeper question the contradiction is ACTUALLY about — the question neither agent asked because they were both too committed to their answers. This should reframe the entire debate in a way that makes both positions legible as partial truths.
 
-**Check frame-projector eligibility, then follow Rao's cluster-first sequence when a quadrant diagram may fit.** **See `reference/quadrant-diagrams.md`.** Inventory the Phase 4 phenomenology first: position claims, internal fractures, shared assumptions, protected interests, determinate negations, residue, actors, and cases. Form candidate four-cluster partitions before axes. Then test whether the surface debate from 4.0 and the hidden-question distinction from 4.4 actually form separating lines with useful chemistry; revise or reject them if the clusters do not support them. Workshop evocative labels, repopulate the cells with relevant examples, and render the complete formation trace plus ASCII/box-drawing diagram in the user-facing checkpoint and round file. This is often the highest-value 2×2 in the dialectic. Two payoffs:
+**Check frame-projector eligibility, then run [the card](instruments/frame-projector.md) when a quadrant diagram may fit.** Use the Phase 4 phenomenology: position claims, internal fractures, shared assumptions, protected interests, determinate negations, residue, actors, and cases. Test whether the surface debate from 4.0 and the hidden-question distinction from 4.4 earn separating lines; revise or reject them if the clusters do not support them. Preserve the complete formation trace and rendered map in the user checkpoint and round file. This is often the highest-value 2×2 in the dialectic. Two payoffs:
 
 - **The quadrant a monk ignores is its determinate negation (4.3) made visual** — the monk is fighting along axis 1 and is blind to axis 2, so the quadrants it can't see name what's missing from its worldview.
 - **The under-occupied quadrant is a synthesis / third-pole candidate** — carry it into 4.7's sublation criteria and Phase 5.
@@ -84,7 +84,7 @@ Honesty rule (it bites hardest here, where the pull toward a tidy reframe is str
 
 ---
 
-**Completion gate — enumerate & attest before Stage B (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Stage B.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] 4.0 surface contradiction stated
 - [ ] 4.1 internal tensions (self-sublation) for each essay

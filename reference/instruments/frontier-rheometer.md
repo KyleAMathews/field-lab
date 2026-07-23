@@ -1,4 +1,18 @@
-# The Frontier Overlay (precommodification diagnostic)
+---
+id: frontier-rheometer
+name: "Frontier Rheometer"
+summary: "Compare a blind expected landing with an actual result and describe groove, frontier, or collapse."
+use_when: "A result may follow an expected groove or collapse back into one"
+avoid_when: "Do not use expectedness as a novelty, quality, truth, or action score."
+access_target: "Blind expectation, actual landing, and descriptive divergence"
+requires: "A working question, committed poles, a frozen actual landing, and a blind expectation probe that has not seen the landing."
+execution_seat: hybrid
+fresh_context: required
+effort: low
+persistence: "One blind probe per pass; session on a Walk or a frontier-ledger entry in a workflow."
+artifact_risk: "A fluent match may be mistaken for low value, while vague divergence may be mistaken for novelty."
+---
+# Frontier Rheometer (`frontier-rheometer`)
 
 A low-precision **diagnostic overlay**. It reads how far each move sits inside vs. outside the latent space — **groove** (precommodified / standard) vs. **frontier** (novel / hard) — and flags the moment a reaching, frontier-ish tension gets **redirected back to known territory**. It is a **map the user reads and steers from; it never steers the dialectic.** This doc is the contract; Phase 4 Stage D, Phase 5, and the refinement-loop router all point here.
 
@@ -93,7 +107,7 @@ One line per refinement pass in `round_N_dialectic_log.md`, so redirect _over ti
 
 ```
 frontier-ledger:
-- pass N: reading=<groove|frontier|mixed>; expected=<blind expectation, one line>; actual=<where negation/candidate landed>; collapse=<none | "reached on X, pulled to groove Y">
+- recorded-at=<YYYY-MM-DDTHH:MM:SS±HH:MM>; pass=N; reading=<groove|frontier|mixed>; expected=<blind expectation, one line>; actual=<where negation/candidate landed>; collapse=<none | "reached on X, pulled to groove Y">
 ```
 
 ## The five guardrails

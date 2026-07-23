@@ -1,6 +1,6 @@
 # Phase 6 — Stage B: Hostile Auditor (6.3)
 
-**⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
+**Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
 _For each candidate under validation, spawn one hostile auditor using the candidate-type-specific prompt below. Apply only the sub-section matching the candidate you're auditing._
 
@@ -220,7 +220,7 @@ If U is genuinely strong, say so.
 
 ---
 
-**Completion gate — enumerate & attest before Stage C (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Stage C.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] One hostile auditor spawned per candidate under validation, each reading **only** its own candidate + the monk essays + domain context (no sight of sibling candidates or the Phase 4 analysis)
 - [ ] Each auditor used the candidate-type-specific prompt (S/J/G/F/U)

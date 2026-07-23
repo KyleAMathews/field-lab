@@ -51,57 +51,31 @@ Recover what the user is thinking about from the inherited field record, then as
 
 ## 1c. Elenctic Probing
 
-Use inherited Walk and Field Trip material first, then interview the user with Socratic technique only where gaps remain. Your goal is to surface:
+Run the [`elenchus` card](instruments/elenchus.md), using inherited Walk and Field Trip material before asking new questions. For this workflow, ensure its reading covers:
 
-- Hidden assumptions they haven't articulated
-- The _deepest_ version of the contradiction (not the obvious surface-level framing)
-- What domain type this is (empirical, normative, personal, creative — this affects what a good synthesis looks like)
-- What specific parameters of their mental model they want updated
+- hidden assumptions and incompatible commitments;
+- the deepest supported contradiction rather than its surface wording;
+- the domain type—empirical, normative, personal, creative, or mixed;
+- what the user wants the dialectic to update; and
+- any third position already present in literature or practice.
 
-Key questions to probe:
-
-- "What's your strongest intuition here? Where does it break down?"
-- "What would change your mind?"
-- "What are you actually optimizing for?"
-- "What's the version of the opposing view that worries you most?"
-- "Is this a decision you need to make, or understanding you want to build?"
-- **"What does the existing literature/practice propose as a third way that neither pole represents?"** — in test runs, the misfit register's briefing-residue lens consistently finds that a live third-way case or framework already exists in the domain (e.g., Koyama/Rubin multicausal consensus, Eghbal's four-cell typology) and both monks walk past it. Surfacing it during the interview lets the briefing include it so the monks have to engage rather than ignore.
+Keep these elicited readings separate from the later phase framing.
 
 ## 1c.1 Third-Pole Probe (Missing-Perspective Check)
 
-**Default is 2 monks.** Before closing the interview, run one explicit probe for a missing third pole. 2-monk framings most often leak perspective when a live position exists that's arguing on a genuinely different axis than A↔B — and that position tends to be invisible from within either of the two poles.
-
-Ask the user (or ask yourself if the user won't have the meta-view):
-
-> Is there a live position here that isn't reachable as a blend of A and B — one that's arguing on a different axis entirely, or that starts from a premise neither A nor B shares?
-
-A **third (or Nth) monk is warranted when** all three of these hold:
-
-1. **Not a blend.** The candidate position cannot be reached by any A↔B slider. If it sits on the same axis as A and B, it's a midpoint, not a new monk — skip it.
-2. **Independent constituency or literature.** It has its own defenders, tradition, named thinkers, or a coherent practitioner community. A position with no constituency is usually a confabulation or the orchestrator's own view smuggled in.
-3. **Orthogonal axis, ideally.** The strongest third monk argues on a different axis entirely (e.g., A/B debate _what method works best_, C argues _method choice is downstream of relational factor X_). Orthogonal-axis monks are where 2-monk framings most often leak the big perspective Kyle's experience flagged.
-
-**Cap practically at 4 monks.** Beyond that, user attention can't hold the output, decorrelation degrades (the Nth monk starts shading into earlier monks), and Phase 4's pairwise structural analysis gets unwieldy.
-
-If you add a third (or fourth) monk, name each explicitly — don't just number them. "Monk C: the Schumacherian ground-condition position" is legible; "Monk 3" isn't. The name anchors what the monk must believe and keeps Phase 4's pairwise determinate negations from blurring into each other.
-
-If no third pole surfaces that meets all three criteria, run with 2 monks — and note in the briefing that the third-pole probe was run and came up empty. This closes the loop; later phases (especially the misfit register) can check whether a position the probe missed surfaces in the monks' essays.
+Run the [`third-pole` card](instruments/third-pole.md). Default to two Monks. Add a third or fourth only when the card returns a non-blended position with its own basis and constituency that changes what must be compared. Name every added position by what it believes rather than by number alone. Record a qualified “none found” when no candidate survives.
 
 **Anti-sycophancy warning:** The elenctic interview is where position-tracking starts. The user will share what they think, what they've read, what frameworks they find compelling. Your job is to understand the _shape of the tension_ — not to figure out which side the user leans toward so you can build the synthesis in that direction. If the user seems excited about a particular framework or thinker, that's useful information for grounding the monks, but it is NOT a signal about where the synthesis should land. The user came to this tool to be in the belief-free seat. Help them get there — don't track their position and feed it back to them as a synthesis.
 
 ## 1c.2 Exploratory 2×2s (Mapping Where to Run the Monks)
 
-**Read `reference/quadrant-diagrams.md` for how to draw and judge a 2×2.** Phase 1 is open-ended exploration, and the 2×2 is the sharpest tool for it: when a debate looks like one spectrum, a second orthogonal axis often reveals the positions are in different _quadrants_, not at opposite ends of one line — which is the whole game (it's the same move as the hidden question at 4.4 and the third-pole probe at 1c.1).
-
-**Follow Rao's cluster-first sequence and show the formation trace.** First list and type the relevant phenomenology from the interview and supplied material. Then form 2–4 genuinely different candidate four-cluster partitions before proposing axes. For each partition, show members, prototypes, overlaps, and outliers; discover separating lines; workshop evocative labels; then render and repopulate the complete ASCII/box-drawing map. Never begin with three favored axis pairs, reverse-engineer clusters to fill them, or substitute a polished diagram for the inventory, clustering, separator, and label work.
-
-Explore every honest candidate with the user. Phase 1 cannot close until the user has seen the formation trace plus the actual axes, poles, four cells, and relevant examples for every candidate. This is divergent on purpose: different clusterings and separators surface different possible tensions, and you're trying to find _where to point the monks_, not lock a frame. Each candidate does triple duty:
+When the specimen supports a plausible second axis, run [the frame-projector card](instruments/frame-projector.md). Explore every honest candidate with the user because Phase 1 uses the projections to decide where to point the Monks rather than to lock a frame. Each candidate serves three workflow needs:
 
 - **Comprehension check** — it externalizes your model of the user's problem; they correct the axes and placements (the 2×2 is a _question_, not an answer).
 - **Third-pole generator** — each second axis is a candidate orthogonal pole, feeding 1c.1 directly. A live second axis is often exactly the Monk-C position.
 - **Fault-line scout** — the spread of framings is the raw material for deciding, at 1f, which tension (and how many monks) the dialectic runs on.
 
-**Conditional, with the honesty rule:** if the specimen supports a plausible second axis, produce a genuine _spread_ of framings, not one diagram dressed three ways. If no candidate second axis earns its place, stop and record `frame-projector: not called — contraindicated by a one-dimensional specimen`. A one-dimensional result is itself a finding and may show that the contradiction is real rather than a framing artifact. Do not manufacture an axis to satisfy the phase. Present any honest candidates to the user as part of the interview and let the exploration run.
+If no candidate second axis earns its place, record `frame-projector: not called — contraindicated by a one-dimensional specimen`. Do not manufacture an axis to satisfy the phase.
 
 ## 1d. Ground the Monks (Domain-Adaptive)
 
@@ -166,21 +140,9 @@ You need to know the domain well enough to:
 
 ## 1d.5 Blind Structural Reconnaissance (Discovering the Domain's Hidden Structure)
 
-By now you (the orchestrator) know the home domain — and that knowledge carries the home frame's blind spots. The whole pipeline is home-frame-bound until Phase 4's cross-domain donors arrive, which is part of _why_ dialectics tend to converge on the user's prior: by the time foreignness shows up, the home frame has already shaped the fault line, the monks, and the negations. This step injects an outsider's structural eye _early_ — not to feed the monks foreign vocabulary (that comes later, on purpose), but to help **you** see the domain's deep structure before you lock what the monks will fight about.
+Run the [`home-frame-leak` card](instruments/home-frame-leak.md). Use its surviving structural reading to sharpen the fault-line choice and rerun the third-pole check before the briefing locks.
 
-**Mechanism (blind, like the 4.5b donor recruiter):**
-
-1. **Write an abstract structural sketch of the tension** — the same stripping as a donor brief: every home-domain noun, acronym, named standard, and single-field term of art removed, leaving the bare relational shape (e.g. "two positions that each treat a shared substrate as the thing to optimize, disagreeing over whether control should be centralized or emergent"). You are the leaker and can't see your own leak; the analyst's leak check (below) is the real gate.
-2. **Dispatch a blind structural analyst** with ONLY the sketch (no home domain, no user material, no monk plan). Have it:
-   - **Leak check first:** name the single domain this sketch most smells like. If it can name your actual home field (or flags any leaked term), re-strip and re-dispatch **once**. If the second analyst still identifies the field, stop. Record the specimen as not blindable at this abstraction, discard both structural readings, and either run the card's sighted-assumption fallback under its downgrade or carry the gap. Never keep dispatching until one analyst happens not to guess.
-   - Then report, purely from the structure: **what the shape presupposes** (assumptions baked into this _kind_ of tension that insiders stop seeing); **candidate deepest axes** (where structures of this shape usually really split, often beneath the surface debate); **candidate orthogonal third poles** (axes a two-pole framing would miss).
-3. **Use the output to sharpen, not to seed.** Fold it into your choice of the deepest contradiction (1c/1d) and re-run the third-pole probe (1c.1) before the briefing locks. A surfaced axis or third pole only enters if it also meets 1c.1's criteria (not-a-blend, independent constituency, ideally orthogonal).
-
-**Hard guardrails:**
-
-- The analyst is **blind** — it shapes _your map and fault-line choice only_. Its raw cross-domain vocabulary does **not** enter the monk briefing (1e) by default; feeding it to the monks is the opt-in experiment below.
-- It does **not** pre-pick Phase-4 donors — donor selection stays with the blind recruiter at 4.5b. At most, note structural patterns worth revisiting there.
-- Treat its output structurally, not as an answer (same anti-sycophancy as everywhere): one more input to interrogate, not a frame to converge on.
+Keep the raw cross-domain vocabulary out of the Monk briefing unless the enrichment rule below admits one or two framings. Do not let this instrument pre-pick Phase 4 donors or turn its output into an answer.
 
 ## 1e. Write the Context Briefing Document
 
@@ -233,7 +195,7 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 
 ---
 
-**Completion gate — enumerate & attest before Phase 2 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
+**Completion gate — enumerate and attest before Phase 2.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] Phase 1 opening card, promised first checkpoint, and later user phase-start pointer recorded in the phase-start ledger
 - [ ] 1a–1b: prior field record inherited; every consequential instrument retains its authorization, actual seat, context boundary, fallback or downgrade, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, and trace; needed orientation given; elenctic gaps filled; deepest version of the contradiction surfaced outside the raw readouts

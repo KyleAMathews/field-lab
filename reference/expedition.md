@@ -6,14 +6,7 @@ An Expedition is not a workflow and does not authorize instruments, conclusions,
 
 ## Entry
 
-Offer an Expedition when:
-
-- several existing Field Trips have a shared question, place, system, or lineage;
-- a planned series of Field Trips needs a home before the first trip begins;
-- changes, conclusions, or significant findings from related trips need one chronological index;
-- several people or agents need stable navigation across trip records.
-
-Do not create one merely because a single Field Trip is difficult, uses many instruments, or runs a large workflow. Explain the directory and index cost, then wait for the user's agreement.
+Enter only after `SKILL.md` routes the inquiry here and the user agrees to create the shared directory and index. Record that authorization. Do not infer it from one difficult Field Trip or a large workflow.
 
 ## Directory
 
