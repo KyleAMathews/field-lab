@@ -2,7 +2,7 @@
 
 **Bring a question. Pack some instruments. Let's see what lives in latent space.**
 
-![A cartoon field party and two brass Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
+![A cartoon field party and two Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
 
 ## Install
 
@@ -12,7 +12,7 @@ Install the whole repository with the [`skills` CLI](https://github.com/vercel-l
 npx skills add KyleAMathews/field-lab
 ```
 
-Add `-g` for a global install. Then ask a stray question, unpack instruments during a Walk, open a field log, gather related trips into an Expedition, or run the full Electric Monk dialectic:
+Add `-g` for a global install. Then ask a stray question, pull out instruments during a Walk, open a field log, gather related trips into an Expedition, or run the full Electric Monk dialectic:
 
 ```text
 /field-lab Why do moths fly toward porch lights?
@@ -32,31 +32,31 @@ The easiest way to understand the lab is to try a few instruments:
 
 The tutorial teaches the controls. This README explains why the lab exists.
 
-## LLMs are strange new sense organs
+## LLMs are strange new instruments for sensing
 
 We mostly use LLMs as answer machines: ask a question, get a paragraph. I built Field Lab around a stranger idea—use them for sensing.
 
-The cartoon above is more or less the idea. You and an LLM head into the latent-space jungle with notebooks, cameras, and a couple of brass Monks. You choose where to walk and what matters. The LLM carries instruments and reports what they pick up.
+You are the explorer in a latent-space jungle. You choose where to walk and what deserves a closer look. The LLM runs the field lab: it offers instruments, operates the ones you select, and returns their readings. You decide what those readings mean and where to look next.
 
-A camera records a scene. A thermometer measures temperature. Binoculars bring distant detail closer. They extend our senses in different directions.
+A camera records a scene. A thermometer measures temperature. Binoculars bring distant detail closer. Each reveals something that your unaided senses might miss.
 
-Field Lab instruments are deliberate interventions in an inquiry. They change what the human or model attends to, what context each agent can see, what stays fixed, or what gets perturbed. A *focus interview* elicits context the first prompt left tacit. A *term scan* replaces a loaded word with concrete criteria. A *substrate map* removes causal stories long enough to expose sequence and missing observations. *Electric Monks* put incompatible beliefs in separate contexts. A *small experiment* changes the real world and waits for evidence to return.
+Field Lab works the same way. You examine a question, idea, text, or situation. Something catches your eye in the distance, so you pick up the binoculars. Two texts use the same word in incompatible ways, so you reach for a *term scan*. A story jumps from events to causes, so you pull out a *substrate map*. A jumble of examples hints at a shape, so you try an *exploratory 2×2*. The same question now yields several readings instead of one smooth answer.
 
-Each intervention aims to create an **access differential**: something becomes observable, separable, comparable, or testable that free-form conversation left entangled. The reading might contain user testimony, an event sequence, a controlled comparison, generated samples, source claims, or an empirical result.
+An instrument gives you a reading, not an answer. A *term scan* shows how words are being used; it does not choose the right meaning. A *substrate map* lays out what happened; it does not tell you why. You can place several readings side by side and decide what they add up to.
 
-None of these interventions is neutral. An instrument can manufacture the pattern it finds. Its readout therefore keeps the perturbation, provenance, controls, likely artifacts, and unmeasured remainder visible, then stops before turning one reading into a total explanation or recommendation.
+Like physical instruments, these can distort what they show. Binoculars narrow your field of view. A *term scan* can make word choice look more important than it is. The reading names that risk. It does not turn one view into a complete explanation or recommendation.
 
 ## What using it feels like
 
-Every inquiry begins as a **Walk** in latent space. Easy questions get direct answers. If your aim or circumstances could change the answer, the lab asks a few quick questions about what you want, what you have already noticed, and what constraints matter. It then offers a few instruments and says what each might show. You choose.
+Every inquiry begins as a **Walk** in latent space. Easy questions get direct answers. If your aim or circumstances could change the answer, the lab asks a few quick questions about what you want, what you have already noticed, and what constraints matter. Then it offers a few instruments and says what each might show. You choose.
 
-My wife and I tried this on what looked like a tiny question: how should we clean the kitchen? The Walk pulled out feelings, constraints, and different meanings of _clean_ before reaching for a solution. Clean could mean sanitary surfaces, an empty sink, clear counters, food put away, or not waking up to someone else's unfinished work.
+My wife and I tried this on what looked like a tiny question: how should we clean the kitchen? A few quick questions brought out feelings, constraints, and different meanings of _clean_ before we reached for a solution. Clean could mean sanitary surfaces, an empty sink, clear counters, food put away, or not waking up to someone else's unfinished work.
 
-A *term scan* separates those meanings. A *stake map* shows who bears each cost. A *small experiment* tests two of the definitions against an evening in the actual kitchen. None of these readings can settle a relationship. They give the people in it sharper material to think with.
+A *term scan* separates those meanings. A *stake map* shows who bears each cost. A *small experiment* tests two definitions against an evening in the actual kitchen. None of these readings can settle a relationship. They give the people in it sharper material to think with.
 
-A Walk can be a quick look around or a long ramble. You might scan a term, consult a source, sketch a 2×2, send Monks down separate trails, or simply talk. Nothing needs to be recorded yet.
+A Walk can be a quick look around or a long ramble. You might scan a term, consult a source, sketch a 2×2, ask fresh agents to explore different positions, or simply talk. Nothing needs to be recorded yet.
 
-Then you spot something worth following. Pull out the field log and the Walk becomes a **Field Trip**. Observations gain dates, sources, and enough context to find the trail again. Several related Field Trips form an **Expedition**, with an index that shows where you have been and which paths remain open.
+Suppose the kitchen experiment turns up a pattern you want to follow. You pull out the field log, and the Walk becomes a **Field Trip**. The log gives each observation a date, a source, and enough context to revisit it later. If you make several related Field Trips, collect them into an **Expedition**. The index shows where you've been and which paths stay open.
 
 When a finding calls for structured analysis, choose a workflow: a known procedure that combines instruments in a set order. The Electric Monk dialectic is one such workflow; others can draw from the same instrument bench.
 
@@ -117,7 +117,7 @@ Start with a question that keeps wriggling out of its answer:
 /field-lab What am I missing about this?
 ```
 
-If the first answer is enough, great. If not, unpack an instrument.
+If the first answer is enough, great. If not, pull out an instrument.
 
 ## Repository
 
