@@ -6,13 +6,13 @@
 
 ## Install
 
-Install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills). It supports Claude Code, Codex, and other agents:
+Install the whole repository with the `skills` CLI. It supports Claude Code, Codex, and other agents:
 
 ```bash
-npx skills add KyleAMathews/field-lab
+npx skills add KyleAMathews/field-lab -g
 ```
 
-Add `-g` for a global install. Then ask a stray question, pull out instruments during a Walk, open a field log, gather related trips into an Expedition, or run the full Electric Monk dialectic:
+Then ask a stray question, pull out instruments during a Walk, open a field log, gather related trips into an Expedition, or run the full Electric Monk dialectic:
 
 ```text
 /field-lab Why do moths fly toward porch lights?
