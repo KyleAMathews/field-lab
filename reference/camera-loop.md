@@ -1,6 +1,6 @@
 # Camera Loop
 
-Walk, Survey, and Expedition set the scale of method and memory. Camera and engine describe the tempo of cognition. These are separate axes.
+Walk, Field Trip, and Expedition set the scope of memory. Workflows set method. Camera and engine describe the tempo of cognition. These are separate dimensions.
 
 | Tempo           | Information and action balance                                               | Default use                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -18,8 +18,8 @@ Do not infer that orientation is complete because:
 - the agent sees a coherent pattern;
 - research or an instrument run has ended;
 - the user agrees with or corrects a reading;
-- a Survey reaches its coverage goal;
-- an Expedition phase reaches its procedural gate.
+- a Field Trip reaches its coverage goal;
+- a workflow reaches one of its procedural gates.
 
 Once camera mode begins, only an explicit user request to conclude, synthesize, rank, make a substantive recommendation, decide, plan, or act opens engine mode. Instrument and apparatus choices remain part of orientation. Mark an engine transition briefly and keep it bounded to what the user asked for. “Provisional” does not exempt a conclusion or recommendation from this gate. Stable facts, narrow mechanical tasks, explicit one-shot requests, and urgent safety precautions may bypass camera mode.
 
@@ -31,7 +31,7 @@ Once camera mode begins, only an explicit user request to conclude, synthesize, 
 4. **Expose.** Announce and run only the selected instrument or selected tightly coupled cluster. Keep the run inside its card.
 5. **Return.** Give the bounded reading, calibration, artifact risk, and unmeasured remainder. Do not explain the whole specimen, combine readings into a theory, or recommend action.
 6. **Register error.** Ask what the user notices. Seek an error signal suited to the reading: user correction, source conflict, observation, test result, or downstream outcome. Treat error as information, not friction.
-7. **Refocus.** Offer whether to pause, measure something else, reframe, or promote. Conclude, decide, or act only after the user explicitly opens that transition.
+7. **Refocus.** Offer whether to pause, measure something else, reframe, open a field log, collect related trips in an Expedition, or select a workflow. Conclude, decide, or act only after the user explicitly opens that transition.
 
 The user's replies are part of the sensing loop. Do not treat them as requests that interrupt an otherwise autonomous analysis.
 
@@ -94,7 +94,7 @@ Before any synthesis, ranking, substantive recommendation, decision, action plan
 2. if none exists, remove the engine output and return observations, typed readings, open questions, and instrument choices;
 3. if it exists, state the transition in one short line and perform only the named engine task.
 
-Answering a focus question, approving a source, correcting a frame, or saying “yes” to an instrument does not authorize this transition. A full-dialectic request authorizes the phase outputs named by that apparatus, but not a separate real-world decision or action.
+Answering a focus question, approving a source, correcting a frame, or saying “yes” to an instrument does not authorize this transition. Naming a dialectic as the requested output selects the full dialectic workflow and authorizes the phase outputs named by that apparatus, but not a separate real-world decision or action.
 
 ## Exception discipline
 
@@ -110,7 +110,7 @@ Name the condition that would make the exception relevant and its evidence statu
 
 - Do not announce a compact or full route before reading the specimen. A host-required skill-use notice may name the skill but should not pre-commit scope. This does not waive the just-in-time handshake before the focus interview or any other instrument.
 - Announce each instrument just before use with **“I’m pulling in the [name] instrument ([brief explanation])…”** Keep the word **instrument** beside the name so the user learns the field-lab metaphor; do not bury it in the analysis or announce a future sequence that may no longer fit after feedback.
-- Do not run an instrument merely because the agent notices its calling signal. Offer it and wait for selection. Direct requests count as selection; choosing a Survey or Expedition authorizes only its agreed instrument plan. The focus interview may ask its questions automatically, but no reading exists until the user answers.
+- Do not run an instrument merely because the agent notices its calling signal. Offer it and wait for selection. Direct requests count as selection; an agreed Field Trip plan or selected workflow authorizes only the instruments it names. Creating or joining an Expedition authorizes none. The focus interview may ask its questions automatically, but no reading exists until the user answers.
 - Do not answer a focus question on the user's behalf or attach substantive advice before they reply.
 - Do not batch several interpretive instruments and deliver a final thesis before the user sees an intermediate reading.
 - One tightly coupled cluster may run between user turns when its parts answer one bounded question. Term scan + tension statement often qualifies; term scan + ground condition + third pole + determinate negation usually does not.
@@ -118,18 +118,21 @@ Name the condition that would make the exception relevant and its evidence statu
 - Make later questions responsive to prior answers. A fixed interview script is engine behavior wearing a camera label.
 - A good Walk may spend several turns focusing and never create an artifact.
 - End each instrument readout with the caddy gate. Check its unmeasured remainder against the registry. Normally offer three materially distinct instruments, each with a brief parenthetical explanation of what it measures, why that reading may help now, and any material cost. If fewer than three honestly fit, offer fewer and say why; never pad. Do not rank the choices unless asked. If none would repay its cost, say that no next instrument is warranted. Suggestions support orientation; they never authorize a run or an engine transition.
+- If the user's response selects a named workflow, skip the general caddy menu and enter the workflow. Do not ask the user to choose the same workflow again under “short” versus “full” labels. Workflow selection loads its schedule but does not start an unattended phase: give the workflow overview, present the current phase's aim, instruments, artifacts, and cost, then wait for its phase-start go-ahead.
 - Before sending, scan the response for instrument-shaped work. A bounded real-world trial is `small-experiment`; a structured meaning distinction is a term scan; elicitation is a focus interview. Move the handshake before any unannounced readout. A trial plan is only `prepared`; do not report an empirical access delta until the user returns an observation.
 
 ## Dialectic-shaped requests
 
 A single model can produce thesis, antithesis, and synthesis prose, but that is not the Electric Monk instrument. The access differential comes from separate contexts carrying incompatible beliefs without hedging.
 
-When the user requests a dialectic, hostile thesis test, strongest case on each side, determinate negation, or validation:
+When the user requests a dialectic or names dialectic as the desired output:
 
 1. focus with the user first;
-2. assess whether short context-isolated Monks in the session are enough or the full Expedition safeguards would change the result;
-3. state the costs and offer the fitting apparatus choices;
-4. never use the absence of the word “full” as evidence that correlated single-context opposition is acceptable.
+2. treat the focus response as workflow selection once the needed aim, specimen, and output are clear;
+3. enter the full dialectic workflow directly: orient the user to all seven phases, present the Phase 1 opening card including its declared Field Trip and field-log artifacts, and pause before starting it;
+4. reserve standalone short Monks for an explicit request for a quick, short, lightweight, or sketch treatment.
+
+For a hostile thesis test, strongest case on each side, determinate negation, or validation that does not name a dialectic, use context-isolated positions at minimum and ask about scope only when it is genuinely unclear. Never use the absence of the word “full” to downgrade an explicit dialectic request.
 
 If the user chooses a quick single-context sketch, label it plainly as provisional and correlated. Do not present it as the output of context-isolated belief stress.
 
@@ -141,13 +144,14 @@ If the user chooses a quick single-context sketch, label it plainly as provision
 - A low-probability caveat is presented without a specimen signal, base-rate reason, or high cost of omission.
 - A long input is treated as complete context.
 - The agent runs an instrument cascade without user correction.
+- The agent treats workflow selection or a passed completion gate as permission to start the next phase without its opening card and user go-ahead.
 - The agent selects and runs an instrument because it noticed a calling signal rather than because the user chose it.
 - An instrument readout explains the specimen, synthesizes other readings, or recommends an action beyond its bounded measurement.
 - The agent turns an intermediate reading into a conclusion, ranking, recommendation, or plan without an explicit engine transition.
 - The agent treats agreement, correction, completed research, or a closed phase as proof that the user has finished orienting.
 - The agent labels a synthesis “provisional” and uses that label to bypass the orientation brake.
-- The output contains Expedition-shaped conclusions without context-isolated positions.
+- The output contains full-dialectic-shaped conclusions without context-isolated positions.
 - Polish, length, or artifact count substitutes for new information.
 - The next step is chosen from the agent's own output rather than from an error signal, new evidence, or user response.
 
-The remedy is not automatic promotion. Slow the loop: show an intermediate exposure and ask where it misregistered.
+The remedy is not a larger field-work form or workflow. Slow the loop: show an intermediate exposure and ask where it misregistered.

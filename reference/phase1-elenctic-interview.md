@@ -2,15 +2,17 @@
 
 This is the most important phase. Everything downstream depends on it.
 
-**Entry — inherit the field record.** If this Expedition grew from a Walk or Survey, first read the session record and Survey log. Copy their lineage, original question, goal, typed observations, instrument readings, loaded terms, tensions, gaps, and working question into the control log. For every inherited instrument, retain the actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace pointer. Do not replace the historical execution record with the card's preferred seat; a correlated fallback stays correlated unless rerun under the full contract. Treat this as interview and research substrate. Ask only for missing material; do not make the user restate it or rewrite ordinary chat as a scripted interview.
+**⛔ Phase-opening check:** Do not inherit records, create files, spawn the gardener, or run the Phase 1 cluster until the workflow has shown the seven-phase overview and the Phase 1 opening card, and the user has said to start Phase 1. See `reference/dialectic-workflow.md` → Phase-opening gate.
 
-**Setup — spawn the gardener now, before new research.** An Expedition crosses the wiki threshold: it uses several agents, durable cross-links, and usually recursion. The persistent **gardener** subagent (`reference/dialectic-wiki.md`) turns research into the organized wiki that later serves the monks, future runs, and you after context loss. You still read the research yourself; the gardener handles wiki bookkeeping.
+**Entry — inherit the field record.** If this dialectic workflow grew from a Walk or Field Trip, first read the session record, field log, and Expedition log when one exists. Copy their lineage, original question, goal, typed observations, instrument readings, loaded terms, tensions, gaps, and working question into the control log. For every inherited instrument, retain the actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace pointer. Do not replace the historical execution record with the card's preferred seat; a correlated fallback stays correlated unless rerun under the full contract. Treat this as interview and research substrate. Ask only for missing material; do not make the user restate it or rewrite ordinary chat as a scripted interview.
+
+**Setup — dispatch the gardener in the background before new research.** The full dialectic workflow crosses the wiki threshold: it uses several agents, durable cross-links, and usually recursion. Create the workflow and staging directories, dispatch the persistent **gardener** subagent (`reference/dialectic-wiki.md`) to initialize the wiki, and immediately continue the interview and framing work. Do not wait for a startup or readiness response. You still read the research yourself; the gardener handles wiki bookkeeping asynchronously.
 
 ## Phase 1 instrument cluster
 
-Read `reference/expedition-instrument-map.md` and the relevant cards before running this phase. Phase 1 coordinates:
+Read `reference/dialectic-instrument-map.md` and the relevant cards before running this phase. Phase 1 coordinates:
 
-- `focus-interview` when no current focus was confirmed on the Walk or Survey;
+- `focus-interview` when no current focus was confirmed on the Walk or Field Trip;
 - `elenchus` across 1b–1f;
 - `third-pole` at 1c.1;
 - `frame-projector` at 1c.2 when the specimen supports a plausible second axis; otherwise record it as not called because its operating range is one-dimensional;
@@ -20,25 +22,21 @@ Read `reference/expedition-instrument-map.md` and the relevant cards before runn
 
 Announce each instrument just before its first operation. An inherited reading may satisfy an instrument only when its full readout and execution trace survive promotion; otherwise rerun it or record the named gap. Append each consequential reading to the control log's instrument ledger. Phase 1 closes only when the user has corrected the integrated framing and the neutral pre-belief baseline is frozen.
 
-## 1a. Explain the Process to the User
+## Phase 1 cadence
 
-**Explain the apparatus only if the user has not already heard or requested it.** A direct Expedition request from a new user needs orientation. A promotion from a Walk or Survey usually needs only a short account of what changes: context-isolated committed positions, durable files, structural analysis, validation, and recursion. Do not replay a long process explanation the user already understands. For a new user, deliver something like:
+Phase 1 is not one batch. Use these user-visible stops:
 
-> Here's how this works. We're going to use a structured process to dig into this topic and build a deeper understanding than either of us could reach alone.
->
-> **Step 1: Interview.** I'm going to ask you a bunch of questions. Not to quiz you — to understand what you're really wrestling with underneath the surface framing. The better I understand your situation, the better everything downstream works.
->
-> **Step 2: Research.** I'll do deep research on the topic [or: I'll build a detailed picture of your situation from what you tell me] so I'm genuinely knowledgeable about the landscape.
->
-> **Step 3: Two "Electric Monks."** I'll create two AI agents, each of which will _fully believe_ one side of the tension you're facing. They won't hedge or try to be balanced — they'll each make the absolute strongest case for their position. The reason: when you read two positions argued at full conviction, you can see the _structure_ of the disagreement clearly, without having to hold either position yourself.
->
-> **Step 4: Structural analysis and synthesis.** I'll analyze _how_ each position fails, find the deeper question underneath, and build a synthesis that transforms the question itself — not a compromise, but something genuinely new that neither side could have seen alone.
->
-> **Step 5: We keep going.** Each synthesis generates new tensions. We'll do multiple rounds, and each round gets sharper and more insightful as we dig deeper into the heart of the matter. The first round is the least calibrated — think of it as setting the stage. The real breakthroughs usually come in rounds 2 and 3.
->
-> **The most important thing: YOU are the source of the best insights here.** I'll get things wrong. The monks will make bad assumptions. The synthesis might miss something obvious to you. **Interrupt me constantly.** Correct wrong assumptions. Throw in new ideas when they occur to you. Tell me "that's not quite right, it's more like..." The value of this process comes from the collision between the structured analysis and your actual knowledge and judgment. Don't trust the output — interrogate it.
+1. **Open and focus.** After the phase-start go-ahead, open the declared records, start the atlas, dispatch the gardener in the background, inherit prior material, and run only the missing focus interview and first elenctic questions. Do not wait for the gardener. Return the provisional aim, stakes, and tension for correction without mentioning routine gardener status.
+2. **Test the frame.** After that correction, run the third-pole probe. If the specimen supports it, preview and then run the frame projector as its own substantial exposure. Return the possible poles or maps and ask what is misplaced or missing.
+3. **Propose grounding.** From the corrected frame, propose the research depth, named questions or tracks, number and kind of agents or searches, expected artifacts, and rough time/token band. **Stop for a separate research go-ahead.** Do not treat the Phase 1 start as permission for an open-ended research batch.
+4. **Ground and check leakage.** Run only the approved research batch, ingest it, and return a concise evidence-and-gap reading. Then announce and run home-frame leak reconnaissance under its card. Return its bounded structural reading for correction.
+5. **Freeze the frame.** Draft the integrated briefing, show the 1f framing summary, and ask for correction. Only after the user confirms it, freeze the Anchor, Goals & context, final Monk count, and neutral control.
 
-Adapt the language to the user — this is a template, not a script. For technical users, be concise. For users unfamiliar with AI tools or structured analysis, spend more time on the explanation. On promotion, point to what the prior Walk or Survey has already satisfied.
+Add a checkpoint sooner whenever an instrument returns a strong perturbation or the user could cheaply correct a bad assumption. Never run focus, elenchus, third-pole, frame projection, research, home-frame leakage, and neutral control as a single unattended tool cascade.
+
+## 1a. Orient and Open Phase 1
+
+The workflow entry contract gives the seven-phase overview. Do not repeat it here. Give the Phase 1 opening card even when the user already knows the workflow: current position, aim, scheduled instruments with short explanations, conditional calls, records and agents, estimated cost, and the first return point. Then stop. After the user starts Phase 1, point out what the prior Walk or Field Trip has already supplied and begin with the first cadence stop above.
 
 ## 1b. Understand What the User Wants
 
@@ -47,13 +45,13 @@ Recover what the user is thinking about from the inherited field record, then as
 - **Mode A (Stress-Test):** User has one idea they want to challenge. You need to identify the strongest possible antithesis.
 - **Mode B (Opposition):** User has two positions in tension. You need to refine both to their steelman forms.
 
-**Also capture the _broader goal_, not just the tension.** Reuse it from the Survey log when present; otherwise ask what the user is ultimately trying to _do_ with this dialectic — the deliverable and audience (e.g., "a skill to help people design X," "material for a blog post," "a decision I have to make," "a mental model I want to build"). The specific tension is in service of this larger purpose. Capture it in the control log's **Goals & context** (written at 1f; see `reference/dialectic-wiki.md`).
+**Also capture the _broader goal_, not just the tension.** Reuse it from the field log when present; otherwise ask what the user is ultimately trying to _do_ with this dialectic — the deliverable and audience (e.g., "a skill to help people design X," "material for a blog post," "a decision I have to make," "a mental model I want to build"). The specific tension is in service of this larger purpose. Capture it in the control log's **Goals & context** (written at 1f; see `reference/dialectic-wiki.md`).
 
 **Default monk count is 2.** Binary contradiction is the core structural unit of the dialectic and produces the tightest analysis. But 2 monks sometimes leaves a valid big perspective on the table — a position that can't be reached as a blend of the two poles, or that's arguing on a different axis entirely. If the interview surfaces such a position, add a third (or fourth) monk. See 1c.1.
 
 ## 1c. Elenctic Probing
 
-Use inherited Walk and Survey material first, then interview the user with Socratic technique only where gaps remain. Your goal is to surface:
+Use inherited Walk and Field Trip material first, then interview the user with Socratic technique only where gaps remain. Your goal is to surface:
 
 - Hidden assumptions they haven't articulated
 - The _deepest_ version of the contradiction (not the obvious surface-level framing)
@@ -95,7 +93,9 @@ If no third pole surfaces that meets all three criteria, run with 2 monks — an
 
 **Read `reference/quadrant-diagrams.md` for how to draw and judge a 2×2.** Phase 1 is open-ended exploration, and the 2×2 is the sharpest tool for it: when a debate looks like one spectrum, a second orthogonal axis often reveals the positions are in different _quadrants_, not at opposite ends of one line — which is the whole game (it's the same move as the hidden question at 4.4 and the third-pole probe at 1c.1).
 
-**Generate multiple candidate 2×2s — typically 2–4, each with a _different_ pair of axes — and explore them with the user.** This is divergent on purpose: different second axes surface different possible tensions, and you're trying to find _where to point the monks_, not lock a frame. Each candidate does triple duty:
+**Follow Rao's cluster-first sequence and show the formation trace.** First list and type the relevant phenomenology from the interview and supplied material. Then form 2–4 genuinely different candidate four-cluster partitions before proposing axes. For each partition, show members, prototypes, overlaps, and outliers; discover separating lines; workshop evocative labels; then render and repopulate the complete ASCII/box-drawing map. Never begin with three favored axis pairs, reverse-engineer clusters to fill them, or substitute a polished diagram for the inventory, clustering, separator, and label work.
+
+Explore every honest candidate with the user. Phase 1 cannot close until the user has seen the formation trace plus the actual axes, poles, four cells, and relevant examples for every candidate. This is divergent on purpose: different clusterings and separators surface different possible tensions, and you're trying to find _where to point the monks_, not lock a frame. Each candidate does triple duty:
 
 - **Comprehension check** — it externalizes your model of the user's problem; they correct the axes and placements (the 2×2 is a _question_, not an answer).
 - **Third-pole generator** — each second axis is a candidate orthogonal pole, feeding 1c.1 directly. A live second axis is often exactly the Monk-C position.
@@ -131,7 +131,7 @@ This is expensive (~150-250K tokens across agents) but is the single most valuab
 
 Research agents should be given _specific_ search targets — not "research this topic" but "search for X's argument about Y, specifically the part about Z."
 
-**Research now flows through the wiki.** Research subagents follow the research-subagent contract (`reference/research-subagent-prompt.md`) — they write page drafts to `<dialectic-dir>/staging/` and return only paths. You read the drafts for the interview and to write the briefing; hand the same paths to the **gardener**, which ingests them into the research wiki (`reference/dialectic-wiki.md`). So the research is both in play now (in your context) and organized for later — the monks, future rounds, and re-grounding. This starts the wiki compounding from Round 1.
+**Research now flows through the wiki.** Research subagents follow the research-subagent contract (`reference/research-subagent-prompt.md`) — they write page drafts to `<dialectic-dir>/staging/` and return only paths. You read the drafts for the interview and briefing, hand the same paths to the **gardener**, and continue working while it ingests them into the research wiki (`reference/dialectic-wiki.md`). Do not wait after each handoff. Check ingestion only when a later step needs a gardener-built view or when Phase 1 has no other incomplete gate items. So the research is both in play now (in your context) and organized for later — the monks, future rounds, and re-grounding. This starts the wiki compounding from Round 1.
 
 ### Personal and Values Domains (life decisions, career, relationships, commitments, priorities)
 
@@ -184,7 +184,7 @@ By now you (the orchestrator) know the home domain — and that knowledge carrie
 
 ## 1e. Write the Context Briefing Document
 
-**Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `round_1_context_briefing.md`). You write this from everything you've read — external research and user-sourced interview material alike. (The gardener has ingested the same research into the wiki; that's the durable, organized copy for the monks and later rounds — not a substitute for writing the briefing now.) Write the full briefing to the file — present only a concise summary to the user at the confirmation step (1f).
+**Synthesize everything — external research AND user-sourced material — into a single neutral briefing document and save it to a file** (e.g., `round_1_context_briefing.md`). You write this from everything you've read — external research and user-sourced interview material alike. The gardener ingests the same research in the background for durable use by the monks and later rounds; its wiki copy does not replace the briefing, and briefing work does not wait for routine ingest. Write the full briefing to the file — present only a concise summary to the user at the confirmation step (1f).
 
 For **external-research domains**, this covers:
 
@@ -235,14 +235,15 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 
 **Completion gate — enumerate & attest before Phase 2 (see SKILL.md → The Completion Gate).** Mark each ✅/❌ with evidence; any ❌ stops you unless the user explicitly waives it:
 
+- [ ] Phase 1 opening card, promised first checkpoint, and later user phase-start pointer recorded in the phase-start ledger
 - [ ] 1a–1b: prior field record inherited; every consequential instrument retains its authorization, actual seat, context boundary, fallback or downgrade, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, and trace; needed orientation given; elenctic gaps filled; deepest version of the contradiction surfaced outside the raw readouts
 - [ ] 1c: belief burden identified (see `reference/belief-burden-catalog.md`)
 - [ ] 1c.1: third-pole probe run; final monk count decided (2 default; 3–4 only on the criteria)
-- [ ] 1c.2: multiple exploratory 2×2s generated and explored with the user, or `frame-projector` recorded as not called because a one-dimensional specimen contraindicated it
+- [ ] 1c.2: frame-projector formation trace shown—typed phenomenology inventory; multiple candidate four-cluster partitions with members, prototypes, overlaps, and outliers; candidate separators with chemistry and failure notes; label workshop with naming mode and alternatives—followed by complete separate ASCII/box-drawing diagrams with both named axes and poles, four bounded evocatively labeled cells, and relevant examples, then explored with the user; or the instrument recorded as not called with its specific contraindication
 - [ ] 1d: monks grounded — external research **or** deep personal interview, as the domain requires
 - [ ] 1d.5: blind structural reconnaissance run; fault-line choice sharpened against it
 - [ ] 1e.1: 1–2 cross-domain framings woven into the briefing (or consciously skipped for a personal/values domain — state which)
-- [ ] Gardener spawned at the **start** of Phase 1 (before research), so research is organized into the wiki as it arrives — or research consciously skipped for a well-known domain (state which)
+- [ ] Gardener dispatched in the **background** at the start of Phase 1 (before research), without blocking the interview or other independent work — or research consciously skipped for a well-known domain (state which)
 - [ ] Research ingested into the wiki by the gardener (durable organized memory for monks / future rounds / re-grounding)
 - [ ] Context briefing written to `round_N_context_briefing.md`
 - [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)

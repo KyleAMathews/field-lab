@@ -2,6 +2,8 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
+**⛔ Phase-opening check:** After the re-entry check, present the Phase 6 opening card with the user-selected candidates, validator seats, and rough cost, then wait for the user's Phase 6 go-ahead. Candidate selection alone does not launch validation.
+
 Phase 6 validates the palette from Phase 5. The user selects which candidate(s) to validate — typically one or two, not all. Each selected candidate is validated **on its own terms** against its own internal standard, by the monks and by a hostile auditor.
 
 Phase 6 coordinates three instrument contracts:

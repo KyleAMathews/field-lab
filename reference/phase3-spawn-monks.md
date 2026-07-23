@@ -2,6 +2,8 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
+**⛔ Phase-opening check:** After the re-entry check, present the Phase 3 opening card, including the number of agents and rough run cost, and wait for the user's Phase 3 go-ahead. A passed Phase 2 gate does not launch the Monks.
+
 ## Instrument lifecycle: run and read `belief-stress`
 
 Phase 3 executes the prepared `belief-stress` instrument under its parallel-subagent contract. Each Monk sees its own full-conviction prompt and the shared neutral substrate, but not sibling positions or outputs. After all essays return, compare their structures with the Phase 1 `neutral-control`: mark what was already visible, what belief stress exposed, and what the perturbation may have induced. Append the full belief-stress readout before presenting the structural summary.
@@ -41,7 +43,7 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener → `position` pages** (`reference/dialectic-wiki.md`): each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. The essays and position pages are the raw `belief-stress` reading. Keep the next structural summary labeled as Phase 3 interpretation outside the instrument ledger. Give the user a quick orientation instead of dumping the essays (scale to N monks):
+**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener in the background → `position` pages** (`reference/dialectic-wiki.md`), then immediately continue the structural comparison and user checkpoint: each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Do not wait at dispatch; check the ingest when the Phase 3 gate becomes the next dependency. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. The essays and position pages are the raw `belief-stress` reading. Keep the next structural summary labeled as Phase 3 interpretation outside the instrument ledger. Give the user a quick orientation instead of dumping the essays (scale to N monks):
 
 > The monks have written their essays (saved to files if you want to read them). The essays are the instrument reading; here is the separate Phase 3 structural summary:
 >

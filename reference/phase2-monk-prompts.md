@@ -2,6 +2,8 @@
 
 **⛔ Re-entry check:** Did you just run the completion gate for the phase/stage you came from — enumerate its deliverables and attest each ✅/❌? If not, **stop immediately and do that before continuing** (see SKILL.md → The Completion Gate).
 
+**⛔ Phase-opening check:** After the re-entry check, present the Phase 2 opening card and wait for the user's Phase 2 go-ahead before preparing belief stress. A passed Phase 1 gate does not start Phase 2.
+
 ## Instrument lifecycle: prepare `belief-stress`
 
 Phase 2 prepares the `belief-stress` instrument; it does not complete it. Read its card in `reference/instruments/advanced-bench.md` and the Phase 1 `neutral-control` trace. Announce belief stress before prompt construction, including its polarization and false-conflict risk. Record the shared neutral substrate, one isolated context boundary per Monk, and the planned return path. No Monk prompt may contain sibling positions, candidate synthesis, determinate negation, or orchestrator preference.

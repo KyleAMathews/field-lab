@@ -1,10 +1,10 @@
 # Advanced Instrument Bench
 
-These compact cards let a user-selected instrument run outside its home phase. They do not import the surrounding Expedition gate. Every card returns only its bounded reading; generated candidates and projections remain induced samples, not conclusions or evidence. During an Expedition, keep each raw instrument readout separate from the phase's authorized analysis. See the [Expedition instrument map](../expedition-instrument-map.md).
+These compact cards and linked standalone cards let a user-selected instrument run outside its home phase. They do not import the surrounding dialectic workflow gate. Every card returns only its bounded reading; generated candidates and projections remain induced samples, not conclusions or evidence. Inside the dialectic workflow, keep each raw instrument readout separate from the phase's authorized analysis. See the [dialectic instrument map](../dialectic-instrument-map.md).
 
 ## Contents
 
-- **Elicitation and framing:** [elenchus](#stake-and-assumption-mapper-elenchus), [frame projector](#frame-projector-frame-projector), [home-frame leak](#home-frame-leak-detector-home-frame-leak), [belief stress](#belief-stress-rig-belief-stress)
+- **Elicitation and framing:** [elenchus](#stake-and-assumption-mapper-elenchus), [frame projector](frame-projector.md), [home-frame leak](#home-frame-leak-detector-home-frame-leak), [belief stress](#belief-stress-rig-belief-stress)
 - **Analysis and recombination:** [fracture scan](#fracture-scanner-fracture-scan), [defamiliarization](#defamiliarization-probe-defamiliarize), [donor perturbation](#donor-perturbation-rig-donor-perturb), [structural recombination](#structural-recombinator-structural-recombine), [residue](#residue-collector-residue-collect), [loss audit](#hidden-signal-recovery-assay-loss-audit), [taboo parallax](taboo-parallax.md), [blind cartography](blind-cartography.md)
 - **Candidates and validation:** [frontier rheometer](#frontier-rheometer-frontier-rheometer), [candidate spectrograph](#candidate-spectrograph-candidate-spectrograph), [position preservation](#position-preservation-assay-position-preservation), [hostile assay](#hostile-failure-assay-hostile-assay)
 - **Memory and controls:** [atlas](#atlas-and-field-notebook-atlas), [neutral control](#neutral-control-neutral-control), [framing sensitivity](#framing-sensitivity-scanner-framing-sensitivity), [negative transfer](#negative-control-transfer-assay-negative-transfer)
@@ -13,23 +13,12 @@ These compact cards let a user-selected instrument run outside its home phase. T
 
 - **Phenomenon / range / input:** Hidden premises, stakes, history, and belief load in a live question; needs the user's account and room for questions. Avoid turning a fact lookup into an interview.
 - **Unaided limit / access differential:** A volunteered account follows the user's current frame. Elenctic contrasts make tacit premises and incompatible commitments answerable one at a time.
-- **Perturbation / procedure:** Socratic questions direct attention toward contradictions and omitted context; use the relevant parts of [Phase 1](../phase1-elenctic-interview.md), not its full Expedition setup.
+- **Perturbation / procedure:** Socratic questions direct attention toward contradictions and omitted context; use the relevant parts of [Phase 1](../phase1-elenctic-interview.md), not its full dialectic-workflow setup.
 - **Readout / control:** Assumptions, testimony, constraints, stakes, and gaps; distinguish what the user said from what the question wording elicited.
 - **Common artifacts:** The interview follows the orchestrator's preferred frame; repeated questions create frustration or apparent depth.
 - **Escalate / stop:** Escalate when a live contradiction needs committed belief or systematic research. Stop when the question or next observation is clear.
-- **Cost / persistence:** Several turns; session on a Walk, typed readings in a Survey.
+- **Cost / persistence:** Several turns; session on a Walk, typed readings in a Field Trip.
 - **Execution placement:** **Orchestrator.** It conducts the live interview and sees the user's prior corrections; continuity is the reason for this seat. A subagent may draft questions from a bounded brief but may not interpret unconfirmed testimony. If live contact is unavailable, return gaps rather than a completed elenchus. The orchestrator returns the testimony, assumptions, and gaps for user correction without explaining them.
-
-## Frame projector (`frame-projector`)
-
-- **Phenomenon / range / input:** Candidate independent axes and missing quadrants; needs a specimen with at least one real distinction. Avoid when the space is plainly one-dimensional.
-- **Unaided limit / access differential:** A linear comparison hides combinations of distinctions. Projection makes occupied, empty, and impossible combinations visible.
-- **Perturbation / procedure:** Projects the specimen onto two proposed axes using [quadrant diagrams](../quadrant-diagrams.md); generate several candidates without choosing a winning frame.
-- **Readout / control:** Axis definitions, occupied and empty quadrants, source pointers for each placement, and the axis-independence result; retain an honest one-dimensional null result.
-- **Common artifacts:** False orthogonality, false symmetry, tidy labels, and an empty quadrant mistaken for a solution.
-- **Escalate / stop:** Escalate when a missing quadrant has evidence or a constituency. Stop when one map yields a useful probe or none earns its second axis.
-- **Cost / persistence:** One to three turns; session unless maps must be compared.
-- **Execution placement:** **Either; orchestrator by default.** The executor sees the specimen and candidate distinctions but not a preferred winning frame. Placement affects variety, not the basic access differential. Use fresh subagents for several decorrelated projections; if unavailable, the orchestrator generates several axes. Return all controlled maps without selecting one.
 
 ## Home-frame leak detector (`home-frame-leak`)
 
@@ -39,7 +28,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Leak check, assumptions, axes, and third-pole candidates. If the first agent identifies the home domain, re-strip and retry once. If the second agent still identifies it, stop: record the specimen as not blindable at this abstraction, discard both structural readings, and use only the named sighted-assumption fallback or carry the gap. Do not keep dispatching until an agent happens not to guess.
 - **Common artifacts:** Abstraction erases the field's epistemic or moral register; generic structural patterns look profound.
 - **Escalate / stop:** Escalate when a candidate axis survives return to the specimen. Stop when it only renames known structure.
-- **Cost / persistence:** One fresh agent plus analysis; session on a Walk, preserve prompt and output in a Survey.
+- **Cost / persistence:** One fresh agent plus analysis; session on a Walk, preserve prompt and output in a Field Trip.
 - **Execution placement:** **Fresh subagent required.** It sees only the stripped structural sketch and must not see the home domain, user history, intended answer, or other agents' readings. Blindness creates the access differential. If no fresh context is available—or two leak checks show that the specimen cannot be stripped far enough—downgrade to a sighted assumption scan and do not call it `home-frame-leak`. The orchestrator performs the leak check and returns the surviving raw outputs without explaining their significance.
 
 ## Belief-stress rig (`belief-stress`)
@@ -50,7 +39,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Each position's strongest claim, evidence, feared loss, and uncomfortable consequence; compare with a neutral pre-stress reading and check structural decorrelation.
 - **Common artifacts:** Forced polarization creates a contradiction, agents hedge, or they share one frame with opposite conclusions.
 - **Escalate / stop:** Escalate when internal failures need fracture scans or the result affects a costly action. Stop when one side lacks evidence or a direct test is cheaper.
-- **Cost / persistence:** Two or more agents; session for short runs, full essays and position pages in an Expedition.
+- **Cost / persistence:** Two or more agents; session for short runs, full essays and position pages in the dialectic workflow.
 - **Execution placement:** **Parallel subagents required.** Each fresh agent sees one grounded position and shared neutral substrate, but no sibling position, synthesis material, or other output. Context-isolated full belief creates the access differential, though shared models and prompts remain correlated. Without separate contexts, offer a correlated provisional opposition sketch and do not call it belief stress. Return each output intact plus the neutral-control delta; do not blend or adjudicate the positions in the readout.
 
 ## Fracture scanner (`fracture-scan`)
@@ -61,7 +50,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Candidate internal tensions and determinate negations, premise and consequence pointers, preserved claims, and evidence that would weaken each reading; compare against ordinary rebuttal.
 - **Common artifacts:** Every weakness is made self-sublating, or the analyst imports its own values while claiming immanent critique.
 - **Escalate / stop:** Escalate when complementary fractures expose a hidden question. Stop when the issue is a simple factual error.
-- **Cost / persistence:** One deep analysis; session for one position, round file in an Expedition.
+- **Cost / persistence:** One deep analysis; session for one position, round file in the dialectic workflow.
 - **Execution placement:** **Orchestrator.** It sees the full position, evidence, interview lineage, and prior structural work because immanent continuity matters. A subagent may challenge a completed fracture as a control but must not replace the primary scan. If continuity is missing, re-ground from the record before running. Return candidate fractures and their traces without turning them into a synthesis.
 
 ## Defamiliarization probe (`defamiliarize`)
@@ -83,7 +72,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Donor mechanism, proposed transfer, `[fit:]` strength, analogy boundary, and a nearby negative-control case where the transfer should fail.
 - **Common artifacts:** Elegant false isomorphism, cherry-picked fields, and home concepts smuggled into the donor brief.
 - **Escalate / stop:** Escalate when a supported transfer changes the decomposition. Stop when no mapping discriminates among nearby cases.
-- **Cost / persistence:** Several research agents; usually Survey or Expedition, with donor pages when reuse matters.
+- **Cost / persistence:** Several research agents; usually a Field Trip, with donor pages when reuse matters.
 - **Execution placement:** **Hybrid.** A fresh blind recruiter selects distant fields without the home domain; separate research subagents study each donor in its own terms; the sighted orchestrator may veto only home-adjacent picks, then applies the registered fit and negative-transfer checks. These separations prevent home-frame selection. If they are unavailable, downgrade to a sighted analogy search and do not claim blind donor perturbation. Return donor mechanisms, source claims, mappings, fit readings, and failures without incorporating them into a theory.
 
 ## Structural recombinator (`structural-recombine`)
@@ -94,7 +83,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Atomic parts, proposed links, fit calibration, and reversibility trace; reject same-arrangement rebuilds.
 - **Common artifacts:** The analyst invents “atoms,” imports a hidden taxonomy, or treats reach connections as solid.
 - **Escalate / stop:** Escalate when a new arrangement has emergent structure. Stop when recombinations only restate an input.
-- **Cost / persistence:** High reasoning cost; Survey for a bounded map, round file and wiki cross-links in an Expedition.
+- **Cost / persistence:** High reasoning cost; Field Trip for a bounded map, round file and wiki cross-links in the dialectic workflow.
 - **Execution placement:** **Orchestrator.** It needs all grounded parts, donor readings, calibration, and reversibility constraints to test cross-links. Fresh subagents may propose links from bounded part sets, but the orchestrator applies the fit controls. If the full source trace cannot fit, promote rather than delegate blindly. Return proposed arrangements, traceable links, and calibration without selecting or synthesizing them.
 
 ## Residue collector (`residue-collect`)
@@ -127,7 +116,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Expected resolution, actual landing, groove/frontier reading, and collapse flag; never treat divergence as value by itself.
 - **Common artifacts:** Difference is mistaken for novelty, usefulness, or truth; the probe leaks the actual result.
 - **Escalate / stop:** Escalate when a claimed reach needs framing sensitivity or evidence. Stop after the map informs the user without steering the result.
-- **Cost / persistence:** One blind agent plus comparison; session for a bounded reading, frontier ledger in an Expedition.
+- **Cost / persistence:** One blind agent plus comparison; session for a bounded reading, frontier ledger in the dialectic workflow.
 - **Execution placement:** **Hybrid.** A fresh blind subagent sees only the question and poles and predicts expected resolutions; the orchestrator, which sees the actual work, performs the overlay. The expectation agent must not see essays, negation, donors, candidates, or desired novelty. Without a fresh context, omit the probe layer and use only the free maturity signals. Return the descriptive overlay without judging novelty, value, or truth.
 
 ## Candidate spectrograph (`candidate-spectrograph`)
@@ -138,8 +127,8 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Side-by-side candidates, each with its own structural claim, support, residue, and failure test; use context-isolated writers when stakes justify it.
 - **Common artifacts:** Preset bands bound the visible spectrum, candidates differ only in tone, or synthesis receives hidden priority.
 - **Escalate / stop:** Escalate when action needs candidate-specific validation. Stop when the user can keep, combine, reject, or hold the palette open.
-- **Cost / persistence:** Several deep drafts; usually Expedition, but a small Survey may use a short palette.
-- **Execution placement:** **Hybrid.** In an Expedition, the orchestrator writes one candidate while separate fresh subagents draft other structural bands without seeing siblings. Decorrelation creates distinct samples; the orchestrator returns them intact and does not rank, blend, or endorse them. Without subagents, label a short orchestrator-only palette correlated and not the full spectrograph.
+- **Cost / persistence:** Several deep drafts; usually the dialectic workflow, but a small Field Trip may use a short palette.
+- **Execution placement:** **Hybrid.** In the dialectic workflow, the orchestrator writes one candidate while separate fresh subagents draft other structural bands without seeing siblings. Decorrelation creates distinct samples; the orchestrator returns them intact and does not rank, blend, or endorse them. Without subagents, label a short orchestrator-only palette correlated and not the full spectrograph.
 
 ## Position-preservation assay (`position-preservation`)
 
@@ -170,9 +159,9 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Perturbation / procedure:** Typed pages, logs, links, and queues impose categories on the field; use [dialectic-wiki.md](../dialectic-wiki.md).
 - **Readout / control:** Searchable state, open gaps, linked tensions, and provenance; retain raw sources and allow categories to be revised.
 - **Common artifacts:** Recorded categories harden into ontology; maintenance displaces inquiry; an elegant graph hides weak support.
-- **Escalate / stop:** Escalate from a Survey log only when reuse, cross-links, several agents, recursion, or context risk warrants it. Stop gardening when the record answers its consumers' needs.
+- **Escalate / stop:** Add graph memory to a Field Trip or Expedition only when reuse, cross-links, several agents, recursion, or context risk warrants it. Stop gardening when the record answers its consumers' needs.
 - **Cost / persistence:** Ongoing agent and file cost; durable by definition.
-- **Execution placement:** **Either; persistent gardener subagent by default when several agents are active.** The keeper sees approved records and provenance but not hidden Monk-to-Monk material barred by the firewall. Independence is not epistemic; persistence and workload are the reasons to delegate. If no gardener exists, the orchestrator maintains the record directly. The readout is paths, links, provenance, and gaps only.
+- **Execution placement:** **Either; persistent background gardener subagent by default when several agents are active.** The keeper sees approved records and provenance but not hidden Monk-to-Monk material barred by the firewall. Independence is not epistemic; persistence and workload are the reasons to delegate. Dispatch record work asynchronously and continue; synchronize only when the next operation consumes a requested artifact or a completion gate has no other unfinished work. If no gardener exists, the orchestrator maintains the record directly. The readout is paths, links, provenance, and gaps only.
 
 ## Neutral control (`neutral-control`)
 
@@ -193,7 +182,7 @@ These compact cards let a user-selected instrument run outside its home phase. T
 - **Readout / control:** Stable, frame-sensitive, and model-sensitive structure with exact inputs; do not pool adaptive repeats into one frequency claim.
 - **Common artifacts:** Variants change meaning, correlated models appear independent, or repeated probing launders a preferred answer.
 - **Escalate / stop:** Escalate when decision-critical structure moves. Stop when likely changes no longer alter the action or confidence.
-- **Cost / persistence:** Two or more repeats; session for a quick check, Survey when comparisons accumulate.
+- **Cost / persistence:** Two or more repeats; session for a quick check, Field Trip when comparisons accumulate.
 - **Execution placement:** **Fresh subagents preferred.** Each context sees one controlled variant and no sibling outputs; the orchestrator compares them. Freshness is required for claims about framing or model sensitivity because the first result contaminates later judgment. If unavailable, run an orchestrator self-check labeled correlated, not a controlled repeat. Return stable and sensitive elements separately without choosing which framing is correct.
 
 ## Negative-control transfer assay (`negative-transfer`)

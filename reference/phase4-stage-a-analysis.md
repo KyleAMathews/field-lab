@@ -75,7 +75,7 @@ If 4.2.5 surfaced a disguised shared interest, the determinate negation of each 
 
 Articulate the deeper question the contradiction is ACTUALLY about — the question neither agent asked because they were both too committed to their answers. This should reframe the entire debate in a way that makes both positions legible as partial truths.
 
-**Check frame-projector eligibility, then draw the hidden-question 2×2 when a second axis earns its place.** **See `reference/quadrant-diagrams.md`.** This is often the highest-value 2×2 in the dialectic: put **axis 1 = the surface debate (4.0)** and **axis 2 = the hidden question's axis (this section)**, then place each monk. Two payoffs:
+**Check frame-projector eligibility, then follow Rao's cluster-first sequence when a quadrant diagram may fit.** **See `reference/quadrant-diagrams.md`.** Inventory the Phase 4 phenomenology first: position claims, internal fractures, shared assumptions, protected interests, determinate negations, residue, actors, and cases. Form candidate four-cluster partitions before axes. Then test whether the surface debate from 4.0 and the hidden-question distinction from 4.4 actually form separating lines with useful chemistry; revise or reject them if the clusters do not support them. Workshop evocative labels, repopulate the cells with relevant examples, and render the complete formation trace plus ASCII/box-drawing diagram in the user-facing checkpoint and round file. This is often the highest-value 2×2 in the dialectic. Two payoffs:
 
 - **The quadrant a monk ignores is its determinate negation (4.3) made visual** — the monk is fighting along axis 1 and is blind to axis 2, so the quadrants it can't see name what's missing from its worldview.
 - **The under-occupied quadrant is a synthesis / third-pole candidate** — carry it into 4.7's sublation criteria and Phase 5.
@@ -91,7 +91,7 @@ Honesty rule (it bites hardest here, where the pull toward a tidy reframe is str
 - [ ] 4.2 shared assumptions (N-way + any pairwise, with 3+ monks)
 - [ ] 4.2.5 position protection per monk, with citations, written to the misfit register; watchlist checked
 - [ ] 4.3 determinate negation per monk (specific + complementary); enrichment guard run (sharp vs. homogenized)
-- [ ] 4.4 hidden question articulated **and** the conditional hidden-question 2×2 drawn, or `frame-projector` recorded as not called because the specimen is genuinely one-dimensional
+- [ ] 4.4 hidden question articulated **and** the frame-projector formation trace preserved—typed phenomenology, candidate clusters, tested separators, and label workshop—followed by a complete ASCII/box-drawing diagram with both named axes and poles, four evocatively labeled cells, and relevant examples; or `frame-projector` recorded as not called with its specific contraindication
 - [ ] All 4.0–4.4 output written to `round_N_determinate_negation.md`
 - [ ] Instrument ledger contains complete `fracture-scan`, Stage-A `residue-collect`, and conditional `frame-projector` raw readouts with authorization, actual seats, access deltas, typed readings, calibration or controls, artifact risks, unmeasured remainders, and trace paths; stage interpretation is separate, a contraindicated frame projector is recorded as not called, and user-facing correction remains pending until the 4.9 checkpoint
 

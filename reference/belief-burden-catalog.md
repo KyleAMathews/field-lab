@@ -1,6 +1,6 @@
 # Belief-Burden Catalog
 
-Use this during Expedition Phase 1 to notice which belief load the Monks must carry. It is a calibration aid, not a diagnosis. Do not name a type to the user.
+Use this during Phase 1 of the full dialectic workflow to notice which belief load the Monks must carry. It is a calibration aid, not a diagnosis. Do not name a type to the user.
 
 The parenthetical labels are loose retrieval keys into familiar cognitive patterns, not psychometric claims.
 

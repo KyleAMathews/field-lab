@@ -6,7 +6,7 @@ _The final stage of Phase 4: state what the synthesis must accomplish, then HARD
 
 ## Stage D instrument
 
-The Frontier Overlay below is the Expedition procedure for `frontier-rheometer`. Announce it before spawning the blind-expectation probe. Preserve the hybrid boundary: the probe sees only the working question and poles; the orchestrator alone sees expected and actual landings. Difference is descriptive, not merit. If a fresh context is unavailable, omit the probe layer and record the card's downgrade rather than simulating blindness.
+The Frontier Overlay below is the dialectic-workflow procedure for `frontier-rheometer`. Announce it before spawning the blind-expectation probe. Preserve the hybrid boundary: the probe sees only the working question and poles; the orchestrator alone sees expected and actual landings. Difference is descriptive, not merit. If a fresh context is unavailable, omit the probe layer and record the card's downgrade rather than simulating blindness.
 
 ## 4.7 Sublation Criteria
 

@@ -1,212 +1,130 @@
-# Dialectic — a field lab for thinking with AI
+# Field Lab — thinking with AI
 
-_The Electric Monks are named after Douglas Adams' machines built to believe things for you._
+**Bring a question. Pack some instruments. Let's see what lives in latent space.**
 
-Bring it any question. It may answer in one paragraph, pull a few instruments into the conversation, organize a systematic inquiry, or launch the full Electric Monk dialectic.
+![A cartoon field party and two Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
 
-Every inquiry begins as a **Walk**. A direct answer is a complete and successful result when user-specific context is unlikely to change it. A nontrivial Walk begins by focusing with the user: the agent reflects what seems important and unresolved, asks a few questions that could change the analysis, then alternates bounded instrument readings with user correction. A problem can be small yet context-bound: “keep this light” calls for fewer, sharper questions, not an instant canned fix. No files, mode menu, phase announcement, or setup are required.
+## Install
+
+Install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills). It supports Claude Code, Codex, and other agents:
+
+```bash
+npx skills add KyleAMathews/field-lab
+```
+
+Add `-g` for a global install. Then ask a stray question, pull out instruments during a Walk, open a field log, gather related trips into an Expedition, or run the full Electric Monk dialectic:
+
+```text
+/field-lab Why do moths fly toward porch lights?
+/field-lab My wife and I mean different things by a clean kitchen.
+/field-lab Open a field log for three weeks of deployment observations.
+/field-lab Start an Expedition for our ongoing work on AI-assisted code review.
+/field-lab Run the full dialectic on whether our framework should own deployment.
+```
 
 ## First time? Take the tutorial
 
-Before bringing a difficult question, try a guided, low-stakes tour of the bench:
+The easiest way to understand the lab is to try a few instruments:
 
 ```text
-/dialectic I want to test the instruments in this field lab. Briefly explain how it works, then give me a few easy, low-stakes exercises for instruments that produce different kinds of readings. Let me choose what to try and guide me through one at a time.
+/field-lab I want to test the instruments in this field lab. Briefly explain how it works, then give me a few easy, low-stakes exercises for instruments that produce different kinds of readings. Let me choose what to try and guide me through one at a time.
 ```
 
-The tutorial should explain the lab briefly, offer contrasting exercises, and then follow the same rules as ordinary use: you select each instrument; the agent announces it; the instrument returns a bounded reading; and you decide what the readings mean together.
+The tutorial teaches the controls. This README explains why the lab exists.
 
-If the inquiry later needs systematic collection or durable memory, it becomes a **Survey**. If a stubborn contradiction repays the cost of context-isolated committed agents, structural analysis, validation, and recursion, it becomes an **Expedition**. The existing seven-phase Electric Monk dialectic remains strict; it is no longer the price of entry.
+## LLMs are strange new instruments for sensing
 
-## Why the field-lab shape
+We mostly use LLMs as answer machines: ask a question, get a paragraph. I built Field Lab around a stranger idea—use them for sensing.
 
-The original skill was one deep workflow. It produced useful results, but invoking it meant accepting the whole process. The field lab separates three things that had been tied together:
+You are the explorer in a latent-space jungle. You choose where to walk and what deserves a closer look. The LLM runs the field lab: it offers instruments, operates the ones you select, and returns their readings. You decide what those readings mean and where to look next.
 
-- **instrument access** — any inquiry may use the bench;
-- **systematic method** — a Survey adds a collection plan and durable log;
-- **full procedural safeguards** — an Expedition adds the seven-phase dialectic.
+A camera records a scene. A thermometer measures temperature. Binoculars bring distant detail closer. Each reveals something that your unaided senses might miss.
 
-Instrument count does not set the state. A scientist may carry a camera, binoculars, recorder, and light meter on a walk. In the same way, a short conversation may use several probes and still remain a Walk. Survey and Expedition describe increasing systematicity, coordination, and memory—not access to better tools.
+Field Lab works the same way. You examine a question, idea, text, or situation. Something catches your eye in the distance, so you pick up the binoculars. Two texts use the same word in incompatible ways, so you reach for a *term scan*. A story jumps from events to causes, so you pull out a *substrate map*. A jumble of examples hints at a shape, so you try an *exploratory 2×2*. The same question now yields several readings instead of one smooth answer.
 
-## Camera mode, not pure engine mode
+An instrument gives you a reading, not an answer. A *term scan* shows how words are being used; it does not choose the right meaning. A *substrate map* lays out what happened; it does not tell you why. You can place several readings side by side and decide what they add up to.
 
-The field lab has two independent axes:
+Like physical instruments, these can distort what they show. Binoculars narrow your field of view. A *term scan* can make word choice look more important than it is. The reading names that risk. It does not turn one view into a complete explanation or recommendation.
 
-- **Walk → Survey → Expedition** sets the scale of method, coordination, and memory.
-- **Camera → engine** sets the tempo of feedback relative to conclusion and action.
+## What using it feels like
 
-The lab defaults to camera mode on open questions. It grows context through feedback before it commits a large conclusion. A lightweight Walk can still fail if the agent reads a brief, silently runs several interpretive probes, and returns a polished thesis without first finding out what the user sees in the specimen. A full Expedition can remain camera-like because interviews, framing checks, intermediate readouts, validation choices, and recursion keep adding error signals.
+Every inquiry begins as a **Walk** in latent space. Easy questions get direct answers. If your aim or circumstances could change the answer, the lab asks a few quick questions about what you want, what you have already noticed, and what constraints matter. Then it offers a few instruments and says what each might show. You choose.
 
-The OODA loop supplies the brake. During camera mode, the human owns **Observe and Orient**, including which instruments to use and what their readings mean together. The agent asks for missing substrate, offers instruments, and returns bounded readings without turning them into a complete explanation. Synthesis, ranking, substantive recommendations, action plans, and action wait for an explicit request. A full-dialectic request still authorizes its named phase outputs, including synthesis where earned.
+My wife and I tried this on what looked like a tiny question: how should we clean the kitchen? A few quick questions brought out feelings, constraints, and different meanings of _clean_ before we reached for a solution. Clean could mean sanitary surfaces, an empty sink, clear counters, food put away, or not waking up to someone else's unfinished work.
 
-The usual loop is:
+A *term scan* separates those meanings. A *stake map* shows who bears each cost. A *small experiment* tests two definitions against an evening in the actual kitchen. None of these readings can settle a relationship. They give the people in it sharper material to think with.
 
-1. read the specimen before declaring a route;
-2. reflect a provisional focus and ask 1–3 questions that could change the analysis; if an answer could change the recommendation, stop and wait;
-3. offer three distinct instruments, what each measures, and why its reading may help; wait for the user to choose;
-4. say “I’m pulling in the [name] instrument ([brief explanation])”, then run only the selected instrument;
-5. return its bounded reading, calibration, artifact risk, and unmeasured remainder without explaining the whole specimen;
-6. ask what the user notices, then offer the next three instrument choices or say that no next instrument is warranted.
+A Walk can be a quick look around or a long ramble. You might scan a term, consult a source, sketch a 2×2, ask fresh agents to explore different positions, or simply talk. Nothing needs to be recorded yet.
 
-Instrument use is visible but light. The stable “I’m pulling in the [name] instrument…” lead-in makes the field-lab metaphor familiar through use. It follows selection rather than replacing it. The agent never hides an instrument inside fluent analysis, auto-runs a cheap probe, or dumps the whole bench on the user. After every readout, it checks which instruments could measure the unexamined remainder and normally offers three distinct choices. It offers fewer when fewer honestly fit, does not rank them unless asked, and never treats a suggestion or calling signal as permission to run one.
+Suppose the kitchen experiment turns up a pattern you want to follow. You pull out the field log, and the Walk becomes a **Field Trip**. The log gives each observation a date, a source, and enough context to revisit it later. If you make several related Field Trips, collect them into an **Expedition**. The index shows where you've been and which paths stay open.
 
-A long brief supplies content, not complete context. It rarely says why the question matters now, what the user already suspects, what feels wrong, or which result would change the next move. Stable facts, narrow transformations, and explicit one-shot requests may still go straight to an answer. A question that sounds factual may still need focus: “How many branches should this bush have?” depends on the intended training system and the plant in front of the user. The lab checks whether the answer is invariant before searching toward a default. It does not offer a “working range” in the same turn as a question that could overturn that range.
+When a finding calls for structured analysis, choose a workflow: a known procedure that combines instruments in a set order. The Electric Monk dialectic is one such workflow; others can draw from the same instrument bench.
 
-This follows Venkatesh Rao's [“A Camera, Not an Engine II”](https://contraptions.venkateshrao.com/p/a-camera-not-an-engine-ii): camera-like agent loops let seeing outrun doing by using feedback to produce an information surplus; engine-like loops let doing outrun seeing.
+Turn back whenever you have enough. A Walk might bring home a direct answer, a sharper distinction, or a better question.
 
-## What counts as an instrument
+## What's on the field lab bench?
 
-Not every useful prompt is an instrument. An instrument must make something visible, separable, measurable, or testable that ordinary conversation leaves hidden or entangled. It must also name how it perturbs the specimen and what false reading it tends to produce.
+Here are some of the instruments:
 
-That gives every instrument a counterfactual test:
+- *Focus interview:* interview you about your aims, stakes, and constraints;
+- *Term scan:* hold up words like _clean_, _fair_, or _safe_ and see where their meanings split;
+- *Substrate map:* reconstruct what happened step by step before guessing why;
+- *Exploratory 2×2:* collect and cluster concrete examples before drawing the axes;
+- *Electric Monks:* have separate agents argue opposing beliefs at full strength, then compare their cases;
+- *Taboo parallax:* find taboo ideas by comparing what is costly to say across countries and public arenas;
+- *Blind cartography:* probe several fresh agents to see which ideas are precommodified in the model, then use published sources to reveal what they missed;
+- *Residue collector:* gather the facts, contradictions, and outliers a neat explanation leaves behind;
+- *Hostile auditor:* hand an argument to a fresh hostile reader and see where it breaks.
 
-> Without this operation, what would remain unseen?
+The test is simple:
 
-A term scan separates meanings that fluent conversation lets slide together. Electric Monks expose consequences that cannot be reached while one reasoner hedges between incompatible beliefs. Blind possibility-space cartography compares a frozen source map with blind model replicates so expected model grooves and source-specific residue become visible. A prompt that merely produces more ideas or saves time may still be useful, but it is a tool rather than an instrument.
+> What would this show me that ordinary chat would not?
 
-The lab keeps three roles distinct:
+A tool helps you do something. An instrument changes what you can observe, separate, compare, or test.
 
-- a **tool** helps perform work;
-- an **instrument** creates a specific access differential and returns a reading with known artifacts;
-- an **apparatus** coordinates instruments, controls, people, and memory across a larger method.
+## The Electric Monks
 
-## Who runs an instrument
+Field Lab's heaviest apparatus began as a Douglas Adams joke. He imagined machines built to believe things for you. [Venkatesh Rao asked what follows](https://contraptions.venkateshrao.com/p/electric-monks-and-fast-transients): if a machine carries a belief at full strength, you can inspect it without taking on its inertia.
 
-Execution placement is part of the instrument when it changes what can be seen:
+In the Electric Monk dialectic, fresh and isolated agents inhabit incompatible positions without hedging. Research grounds each one. The lab finds where each position breaks on its own terms, strips the arguments into parts, and brings in material from outside the dispute. Cross-linking those parts exposes relations no single position contains.
 
-- **Orchestrator:** responsive interviewing, continuity, synthesis, and user-facing interpretation.
-- **Fresh subagent:** blindness from the current analysis creates the reading.
-- **Parallel subagents:** context-isolated belief, evidence, or framing tracks must remain separate until comparison.
-- **Hybrid:** isolated agents collect or generate; the orchestrator integrates.
-- **Either:** delegation changes cost or variety, not the instrument's epistemic claim.
+Synthesis is one possible result, not the goal. The inquiry may instead end with an open conflict, a missing ground condition, a frame that no longer fits, or a word carrying incompatible meanings. The original Monks and a hostile auditor test whatever comes out. Any contradiction left over can start another round.
 
-Every card states its context boundary, placement rationale, fallback, and return path. If a required fresh context is unavailable, the agent downgrades or renames the result instead of pretending to be blind to what it already knows.
+That makes it an **artificial belief system**: the Monks do the believing while you compare what follows from each belief.
 
-## The three states
+## Intellectual lineage
 
-### Walk
+Field Lab began with the Electric Monks. These ideas shaped what it became:
 
-Ordinary conversation with optional instruments. A direct answer is valid when the question is already well focused. Otherwise, the first instrument is usually a lightweight focus interview: a provisional reflection plus a few responsive questions about aim, stakes, prior belief, missing context, or intended use.
+- **Artificial belief: Douglas Adams and Venkatesh Rao.** Adams invented the Electric Monk. In [“Electric Monks and Fast Transients”](https://contraptions.venkateshrao.com/p/electric-monks-and-fast-transients), Rao argues that machines can carry belief while humans switch among points of view.
+- **Camera before engine: Rao.** [“A Camera, Not an Engine II”](https://contraptions.venkateshrao.com/p/a-camera-not-an-engine-ii) treats AI as an instrument for seeing in latent space. In camera mode, feedback adds context before the model acts on it.
+- **Instruments of discovery: _The Crooked Timber of AI_.** Its account of [scientific discovery](https://protocolized.summerofprotocols.com/p/the-crooked-timber-of-ai) helped turn one fixed workflow into a field lab.
+- **Walking without a map: Tim Ingold and Rao.** Ingold asks what becomes visible when [a walk has no fixed destination](https://journals.sagepub.com/doi/10.1177/07916035221088546). Rao shows how orderly reading can make us blind in [“How to Take Your Brain Off-Road”](https://ribbonfarm.com/2016/05/26/how-to-take-your-brain-off-road/).
+- **Determinate negation: Hegel.** Look for the exact point where a position breaks. _Aufhebung_ asks what a new frame can discard and what it must keep.
+- **Destruction and creation: John Boyd.** [Boyd's 1976 essay](https://www.coljohnboyd.com/pdf/destruction-and-creation/) argues that we cannot make new models by polishing a closed system. We must break it apart, bring in outside material, and recombine. His OODA loop puts orientation between observation and decision. Field Lab slows the jump between them.
+- **Comparison at scale: Elizabeth Eisenstein.** _The Printing Press as an Agent of Change_ describes how print held texts still enough for people to compare them. LLMs extend that advantage. Field Lab uses them to compare sources, committed positions, instrument readings, and cross-domain fragments without asking the user to hold it all in working memory.
+- **Semi-lattices: Christopher Alexander.** [“A City Is Not a Tree”](https://christopher-alexander-ces-archive.org/record/the-city-is-a-semi-lattice-but-not-a-tree-original-text-of-article-a-city-is-not-a-tree/) contrasts tidy planning trees with the overlaps of living cities. A dialectic begins with separate argument trees, then cross-links their parts.
 
-Other common field-kit probes include:
+A few instruments draw on more specific sources. Rao's [cluster-first method](https://ribbonfarm.com/2009/04/20/how-to-draw-and-judge-quadrant-diagrams/) governs *exploratory 2×2s*. Paul Graham's [“What You Can't Say”](https://paulgraham.com/say.html) prompted *taboo parallax*, with added truth and stereotype controls. The dialectic's memory borrows from Karpathy's [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 
-- mapping what happens before explaining why;
-- making feelings, priorities, constraints, and affected people explicit;
-- scanning a loaded term such as “clean,” “fair,” “simple,” or “done”;
-- stating the smallest unresolved tension;
-- checking for a missing third pole or ground condition;
-- preparing, running, and interpreting a small, reversible real-world experiment.
+None of these thinkers supplies a complete philosophy for the lab. Each changed one part of its design.
 
-Advanced instruments are also available on a Walk when their input can be satisfied in the session: short Electric Monks, exploratory 2×2s, blind structural reconnaissance, residue collection, hostile audit, or a quick possibility-space scout. A **taboo-parallax scout** can make a small hypothesis-only comparison on a Walk; its source-grounded three- or four-setting matrix normally becomes a Survey. A **blind-cartography scout** can compare one frozen source map with three fresh probes in the session; its larger 6–12-probe atlas normally becomes a Survey. Using several agents or sophisticated probes does not by itself create a Survey.
+## Take a question into the field
 
-Readings stay in the chat. The Walk does not create an artifact tree. But it is still a feedback loop: after a strong reading, the agent returns it to the user before running a long cascade or declaring the final thesis. After any reading, `stop` is a valid result.
-
-### Survey
-
-A Survey begins only when observation becomes systematic: the inquiry needs an explicit coverage goal, repeated or comparative readings, coordination across several instruments, research tracks, agents, or sessions, or a durable record that can be resumed, searched, or audited.
-
-Promotion creates one Survey log from the session so far. It does not restart the inquiry or make the user repeat an interview. A wiki remains optional until reuse, cross-links, recursion, several agents, or context loss make it useful.
-
-### Expedition
-
-The full Electric Monk apparatus. Two or more context-isolated agents fully believe distinct positions on the user's behalf. The orchestrator compares the structures, finds how each position fails from inside its own logic, brings in outside material, and produces a palette of possible landings rather than forcing every specimen into synthesis.
-
-A request for a “dialectic,” hostile thesis test, strongest case on each side, determinate negation, or validation requires context-isolated positions at minimum. The lab may run short blind Monks within a Walk or recommend the full Expedition. It must not imitate separated opposition inside one orchestrator context merely because the user did not say “full.”
-
-An Expedition inherits the Walk and Survey record, then coordinates the same instrument bench through seven strict completion-gated phases. The phase procedures define the full work; the instrument cards govern what each operation can reveal, who runs it, its controls, and how its reading is recorded:
-
-1. interview and research;
-2. committed Monk prompt construction;
-3. context-isolated belief essays;
-4. determinate negation, lateral intervention, decomposition, and refinement;
-5. a candidate palette: synthesis, juxtaposition, ground condition, framing dissolution, and undecidable-centered readings where earned;
-6. position-preservation checks and hostile audit;
-7. recursive exploration of the next unresolved contradiction.
-
-Each phase gate cites an instrument-ledger entry. A phase cannot pass merely because it produced plausible prose: authorization, required blindness, context isolation, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, and traces must also be present. The gate also checks that phase interpretation is separate from the instrument readout. The gates remain strict; instrument contracts make their epistemic work visible rather than replacing them.
-
-## Artifacts appear only when they earn their cost
-
-| Inquiry state           | Default record                                                       |
-| ----------------------- | -------------------------------------------------------------------- |
-| Direct answer           | Chat session                                                         |
-| Walk with any field kit | Chat session and any natural tool outputs                            |
-| Survey                  | One curated Survey log; source and staging files only when needed    |
-| Expedition              | Promoted control log, round files, wiki, queue, and validation trace |
-
-Promotion distills the conversation so far. It does not rewrite an informal Walk as a scripted interview, and the user should not have to restate material already in the session.
-
-## Example paths
-
-- **Off-the-cuff question:** “Why do moths fly toward porch lights?” → direct answer, no visible method.
-- **Fact-shaped practical Walk:** “How many branches should this fruit bush have?” → reflect the specimen, clarify the desired form, then search or advise; no files.
-- **Instrument-rich Walk:** “My wife and I mean different things by a clean kitchen.” → term scan, stake map, and a one-week experiment; no files.
-- **Hostile thesis Walk:** “Test this thesis against its strongest opposition.” → focus interview, short context-isolated Monks, intermediate reading, then user correction; still no files if persistence is unnecessary.
-- **Survey:** “Compare four family calendar systems over three weeks and let us resume later.” → shared collection plan and durable Survey log.
-- **Expedition:** “Should our open-source framework launch first-party cloud hosting?” → inherited field record, context-isolated committed positions, decomposition, candidate palette, audit, and recursion.
-
-## Installation
-
-The skill needs its reference files, so install the whole repository with the [`skills` CLI](https://github.com/vercel-labs/skills). It supports Claude Code, Codex, and other agents:
-
-```bash
-npx skills add KyleAMathews/hegelian-dialectic-skill
-```
-
-Add `-g` for a global install. Then invoke the `dialectic` skill in an ordinary question:
+Start with a question that keeps wriggling out of its answer:
 
 ```text
-/dialectic Why do I keep putting off this small migration?
+/field-lab What am I missing about this?
 ```
 
-```text
-/dialectic Help us work out what “clean” means when we say the kitchen is done.
-```
+If the first answer is enough, great. If not, pull out an instrument.
 
-```text
-/dialectic I want the full Expedition on whether our framework should own deployment.
-```
+## Repository
 
-You do not need to choose Walk or Survey up front. Ask for a named instrument directly if you want one: “run a term scan,” “check for a ground condition,” “map this possibility space,” or “stress these positions with Electric Monks.”
-
-## What the Expedition is for
-
-Use the full apparatus when:
-
-- you have locked onto a vision and cannot inhabit a real alternative;
-- several sound commitments cannot all hold;
-- you can argue every side but cannot find the structure that would let you act;
-- a proven system may be optimizing the wrong goal;
-- an inherited frame has become hard to see;
-- the decision is costly enough that context-isolated positions and hostile validation can change it.
-
-The Monks are an **artificial belief system**. Their job is not to think instead of the user. Their job is to carry incompatible beliefs at full strength so the user can inspect the contradiction without defending either side.
-
-The Expedition uses three main ideas:
-
-- **Rao:** outsource belief load so the user can switch frames without belief inertia.
-- **Hegel:** find each position's specific internal failure; preserve its real insight while changing the frame.
-- **Boyd:** break closed conceptual systems apart, bring in outside material, and test whether new links can be traced back to their parts and fit.
-
-It also keeps residue visible. Sometimes the sound result is not synthesis but a conflict that must stay open, a concrete ground condition, a fossil frame, or a word whose incompatible uses cannot be merged without loss.
-
-## Repository map
-
-- [`SKILL.md`](SKILL.md) — concise entry, router, state boundaries, and Expedition gate
-- [`reference/field-lab.md`](reference/field-lab.md) — field states, router, stop and escalation rules
-- [`reference/camera-loop.md`](reference/camera-loop.md) — feedback cadence and lightweight interviewing
-- [`reference/instruments/index.md`](reference/instruments/index.md) — phenomenon-to-instrument registry
-- [`reference/instruments/walk-kit.md`](reference/instruments/walk-kit.md) — lightweight instrument cards
-- [`reference/instruments/advanced-bench.md`](reference/instruments/advanced-bench.md) — standalone contracts for advanced instruments
-- [`reference/instruments/blind-cartography.md`](reference/instruments/blind-cartography.md) — blind possibility-space cartography
-- [`reference/instruments/taboo-parallax.md`](reference/instruments/taboo-parallax.md) — cross-society sayability comparison with truth and stereotype controls
-- [`reference/instrument-contract.md`](reference/instrument-contract.md) — access differential, execution placement, readout, provenance, and control rules
-- [`reference/apparatus-survey.md`](reference/apparatus-survey.md) — Survey entry and operation
-- [`reference/survey-log-template.md`](reference/survey-log-template.md) — first durable inquiry record
-- [`reference/apparatus-expedition.md`](reference/apparatus-expedition.md) — full apparatus map and promotion contract
-- [`reference/expedition-instrument-map.md`](reference/expedition-instrument-map.md) — authoritative phase-to-instrument lifecycle and gate map
-- [`reference/dialectic-wiki.md`](reference/dialectic-wiki.md) — Expedition memory, firewall, and control log
-- [`docs/superpowers/specs/2026-07-21-field-lab-architecture-design.md`](docs/superpowers/specs/2026-07-21-field-lab-architecture-design.md) — design rationale
+- [`SKILL.md`](SKILL.md): entry point and routing rules
+- [`reference/instruments/`](reference/instruments/): the instrument bench
+- [`reference/dialectic-workflow.md`](reference/dialectic-workflow.md): the Electric Monk workflow
+- [`reference/`](reference/): field-work, memory, and validation contracts
 
 ## License
 

@@ -20,7 +20,7 @@ Use cross-society differences in sayability to expose assumptions and questions 
 - **Input:** A topic; the user's live question; the relevant home setting; the speech arena and audience; the present or historical time slice; and the decision the comparison should inform.
 - **Perturbation:** Selecting countries, translating terms, and asking directly about taboos can create the very contrast being sought. Model priors and English-language sources can turn cultures into stock characters.
 - **Readout:** A source-grounded sayability matrix, asymmetric blind-spot candidates, enforcement mechanisms, within-society countervoices, truth tests, source limits, and unresolved residue.
-- **Cost / persistence:** Three or four independent research tracks plus comparison. A full run is normally a Survey and belongs in its log. An Expedition may use the matrix as framing, donor, third-pole, or ground-condition substrate.
+- **Cost / persistence:** Three or four independent research tracks plus comparison. A full run normally opens a Field Trip and belongs in its field log. A dialectic workflow may use the matrix as framing, donor, third-pole, or ground-condition substrate.
 
 ## Execution placement
 
@@ -44,7 +44,7 @@ The scout should test whether the real contrast is:
 
 Return two or three concise candidate asymmetries, their provenance, and what evidence would be needed to establish each. Keep it a first map rather than a source dossier. Seek user correction before offering a full run.
 
-A full run compares three or four source-grounded public spheres through a frozen matrix. That planned comparative collection normally promotes the inquiry to Survey. Explain the research tracks, log, source burden, and stereotype risk plainly and get assent before promotion.
+A full run compares three or four source-grounded public spheres through a frozen matrix. That planned comparative collection normally calls for opening a Field Trip. Explain the research tracks, field log, source burden, and stereotype risk plainly and get assent before creating artifacts.
 
 ## Procedure
 

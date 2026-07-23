@@ -9,6 +9,7 @@
 - [Instrument handshake](#instrument-handshake)
 - [Raw-readout boundary](#raw-readout-boundary)
 - [Common readout](#common-readout)
+- [Durable presentation](#durable-presentation)
 - [Observation ledger](#observation-ledger)
 - [Control rule](#control-rule)
 
@@ -85,8 +86,10 @@ Selection may come from:
 
 - a direct request for a named instrument;
 - the user's choice from offered instruments;
-- an agreed Survey plan that names the instrument;
-- a request for an Expedition, which authorizes its scheduled instrument map.
+- an agreed Field Trip plan that names the instrument;
+- a selected workflow whose schedule names the instrument.
+
+Creating or joining an Expedition authorizes no instruments. It adds only the shared directory, lineage, and index described by the Expedition contract.
 
 An apparatus selection does not authorize extra ad hoc instruments outside its agreed plan. Offer those separately. The focus interview is the sole automatic entry: asking its questions creates no reading, and the user authorizes completion by answering. If the user declines, stop it.
 
@@ -103,7 +106,7 @@ Use this stable lead-in: **“I’m pulling in the [name] instrument ([brief exp
 
 For an instrument whose real run happens later, use the same handshake before preparation but say that you are preparing it. Record the lifecycle state and get assent before the perturbation. Do not claim an access delta or empirical readout while it remains `prepared`.
 
-After the run, return the bounded reading and its artifact limits, then run the caddy gate: scan the unmeasured remainder against the registry; normally suggest three materially distinct live instruments, each with a parenthetical explanation, what it measures, why that reading may help, and any material cost; or say plainly that no further instrument would repay its cost. If fewer than three honestly fit, offer fewer and say why rather than padding the set. Do not rank or run them unless the user selects one.
+After the run, return the bounded reading and its artifact limits, then run the caddy gate: scan the unmeasured remainder against the registry; normally suggest three materially distinct live instruments, each with a parenthetical explanation, what it measures, why that reading may help, and any material cost; or say plainly that no further instrument would repay its cost. If fewer than three honestly fit, offer fewer and say why rather than padding the set. Do not rank or run them unless the user selects one. If the user's response selects a named workflow, hand off directly instead of offering another caddy menu.
 
 Before sending, compare the proposed response with the registry. Structured elicitation, semantic substitution, sequence mapping, stake separation, tension compression, bounded experiments, and context-isolated belief roles are instrument-shaped work. If the response contains one without a handshake, move the handshake before its readout. If a residue maps to another registered instrument, suggest it explicitly by name and access target.
 
@@ -146,8 +149,10 @@ Ask the user what they notice. Interpretation and synthesis belong to the human 
 ```yaml
 instrument: <id>
 lifecycle: <offered|selected|prepared|running|complete|stopped>
+recorded-at: <YYYY-MM-DDTHH:MM:SS±HH:MM>
+observed-at: <YYYY-MM-DDTHH:MM:SS±HH:MM, unknown, or not-applicable>
 authorization:
-  basis: <direct-request|user-choice|focus-response|survey-plan|expedition-schedule>
+  basis: <direct-request|user-choice|focus-response|field-trip-plan|workflow-schedule>
   pointer: <quote, turn, or agreed plan entry>
 orientation-state: <observing|orienting|engine-authorized>
 execution:
@@ -166,7 +171,19 @@ unmeasured: <what remains outside this instrument's reading>
 user-feedback: <pending|confirmed|correction after the reading is returned>
 ```
 
-This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. `Offered` is not `selected`. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return readings to the user before filling `user-feedback`; do not invent confirmation or interpretation. In a Survey, preserve the full fields when a reading affects later work. In an Expedition, append every scheduled instrument's raw readout to the round control log; keep the phase's later analysis in its separate artifact.
+This is a logical contract, not required user-facing YAML. On a Walk, use natural prose and include only what matters. Every durable entry records `recorded-at`; use `observed-at` only for the event or observation time, and never substitute recording time for an unknown event time. `Offered` is not `selected`. At `prepared`, record the intended access target and leave `access-delta` pending; at `running`, preserve the frozen controls; only `complete` carries an empirical reading. State a material downgrade when the card's preferred seat was unavailable. Return readings to the user before filling `user-feedback`; do not invent confirmation or interpretation. In a Field Trip, preserve the full fields when a reading affects later work. An Expedition may copy a significant timestamped Field Trip entry and source pointer; it never duplicates the instrument ledger. A workflow may require its scheduled readouts in a separate control record; keep later analysis in the workflow artifact named by its contract.
+
+## Durable presentation
+
+Keep the full audit schema without forcing it into a horizontal layout. In human-readable Markdown logs:
+
+- use one headed, vertical record block per instrument lifecycle event;
+- put each audit field on its own labeled line and use bullets for multiple typed readings;
+- append a new dated block when lifecycle or feedback changes rather than widening or overwriting a row;
+- link long traces and artifacts instead of placing their contents inside the ledger;
+- use a table only when comparison itself helps and the table has no more than four short columns.
+
+Never render the common instrument readout, observation ledger, workflow ledger, or Expedition entry as a wide prose table. Machine-readable YAML or JSON may sit in a separate artifact, but it does not replace the readable vertical record.
 
 ## Observation ledger
 
@@ -182,6 +199,8 @@ Use controls in proportion to the cost of being wrong:
 - **Moderate cost:** compare against a neutral baseline, reversed frame, renamed term, or nearby counterexample.
 - **High cost:** add independent evidence or an agent blind to the first readout, then record what remained stable and what moved.
 
+When parallel generative probes sample a possibility space, do not rely on model temperature for diversity. Freeze a small family of meaning-preserving prompt variants before reading any output. Keep the specimen information, criteria, coordinate, and output contract fixed while varying surface wording or order. Label every variant and distinguish recurrence across variants from repetition under one exact prompt. Treat any substantive framing change as a separate stratum, not a replicate.
+
 If a contradiction, axis, or conclusion appears only after a strong perturbation, mark it as possibly induced.
 
-After a run, compare its access differential with its artifact risk. If the reading was already visible before the perturbation, label the run confirmation or convenience. If the perturbation created the output, label it induced or generated rather than discovered. Then complete the caddy gate. Compare the unmeasured remainder with the registry and normally offer three distinct instruments, explaining what each measures and why that reading may help. Offer fewer when fewer honestly fit. When none fits, say that no next instrument is warranted. Never rank or run the choices without user selection, or cross from a bounded reading into explanation, synthesis, recommendation, or action.
+After a run, compare its access differential with its artifact risk. If the reading was already visible before the perturbation, label the run confirmation or convenience. If the perturbation created the output, label it induced or generated rather than discovered. Then complete the caddy gate unless the user's response selected a named workflow. Otherwise compare the unmeasured remainder with the registry and normally offer three distinct instruments, explaining what each measures and why that reading may help. Offer fewer when fewer honestly fit. When none fits, say that no next instrument is warranted. Never rank or run the choices without user selection, or cross from a bounded reading into explanation, synthesis, recommendation, or action.
