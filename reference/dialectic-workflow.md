@@ -44,7 +44,7 @@ Some instruments span phases. Preserve their lifecycle: preparation freezes inpu
 Run this gate before **every numbered phase**, including Phase 1. A passed completion gate closes the prior phase; it does not open the next one.
 
 1. **Place the user.** Say `We are at Phase N of 7` and give the phase's aim in one sentence.
-2. **Describe the moves.** Say what Cacambo will do and what each move should make visible. Give instrument names second, in parentheses, when useful. Mark any move that will run only if the material calls for it.
+2. **Describe the moves.** Say what Kit will do and what each move should make visible. Give instrument names second, in parentheses, when useful. Mark any move that will run only if the material calls for it.
 3. **Show the work.** Name what the user will receive, any files or logs that will be created, and any fresh agents or outside research involved. Give a useful estimate of time or effort only when it is known; describe the actual work, not a generic cost band.
 4. **Describe the next return point.** Say what the user will see before more work runs. Never describe the entire phase as one uninterrupted batch.
 5. **Pause.** Ask whether to start this phase and stop. A prior workflow choice, completion gate, or “continue” given before this card is not the phase-start go-ahead.

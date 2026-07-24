@@ -1,6 +1,6 @@
 # Field Lab — bring me a question
 
-**I’m Cacambo, your field caddy. You choose what to examine; I help you choose and use the right instruments.**
+**I’m Kit, your field caddy. You choose what to examine; I help you choose and use the right instruments.**
 
 ![A cartoon field party and two Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
 
@@ -23,7 +23,7 @@ Then call Field Lab with whatever is on your mind:
 ```text
 /field-lab Why do moths fly toward porch lights?
 /field-lab My wife and I mean different things by a clean kitchen.
-/field-lab Cacambo, I'm trying to decide whether to reorganize this team. Which instruments might help?
+/field-lab Kit, I'm trying to decide whether to reorganize this team. Which instruments might help?
 /field-lab Keep a Field Log for three weeks of deployment observations.
 /field-lab Link our Field Logs on AI-assisted code review.
 /field-lab Put the case for our framework owning deployment through the full Electric Monk dialectic.
