@@ -9,7 +9,7 @@ Selecting the workflow reserves its scheduled instruments and declared artifacts
 ## Entry contract
 
 1. Acknowledge the user's direct request or explain in plain language what the full workflow could reveal that a shorter inquiry would miss.
-2. Give this compact map of the whole workflow before using tools or creating artifacts. Adapt the words, not the seven moves:
+2. Give this compact map of the whole workflow before using tools or creating artifacts. Adapt the words, not the seven steps:
    1. **Frame and ground** — confirm the real tension, test missing axes, and gather only the research it needs.
    2. **Prepare the Monks** — freeze separate full-conviction briefs for the committed positions.
    3. **Run the Monks** — collect the context-isolated positions and check what belief stress changed.
@@ -44,7 +44,7 @@ Some instruments span phases. Preserve their lifecycle: preparation freezes inpu
 Run this gate before **every numbered phase**, including Phase 1. A passed completion gate closes the prior phase; it does not open the next one.
 
 1. **Place the user.** Say `We are at Phase N of 7` and give the phase's aim in one sentence.
-2. **Describe the moves.** Say what Kit will do and what each move should make visible. Give instrument names second, in parentheses, when useful. Mark any move that will run only if the material calls for it.
+2. **Describe the operations.** Say what Kit will do and what each operation should make visible. Give instrument names second, in parentheses, when useful. Mark any operation that will run only if the material calls for it.
 3. **Show the work.** Name what the user will receive, any files or logs that will be created, and any fresh agents or outside research involved. Give a useful estimate of time or effort only when it is known; describe the actual work, not a generic cost band.
 4. **Describe the next return point.** Say what the user will see before more work runs. Never describe the entire phase as one uninterrupted batch.
 5. **Pause.** Ask whether to start this phase and stop. A prior workflow choice, completion gate, or “continue” given before this card is not the phase-start go-ahead.

@@ -17,7 +17,7 @@ For every dialectic-workflow operation:
 1. The **dialectic workflow** defines phase-opening and completion gates.
 2. The **phase or stage file** defines its local procedure, required artifacts, order, and checklist.
 3. The **instrument card** defines the phenomenon sought, why the operation helps, complete standalone procedure, execution seat, context boundary, fallback, control, likely distortions, and return path.
-4. **`SKILL.md`** defines instrument selection, how to explain a chosen move, the bounded-result boundary, follow-up offers, and requested-task authority.
+4. **`SKILL.md`** defines instrument selection, how to explain a chosen instrument, the bounded-result boundary, follow-up offers, and requested-task authority.
 
 Read the workflow, current phase procedure, and named card before running a scheduled instrument. If their requirements differ, satisfy the stricter requirement. A user waiver may release a named phase deliverable, but it cannot upgrade a downgraded instrument reading or manufacture blindness, independence, support, or confidence.
 

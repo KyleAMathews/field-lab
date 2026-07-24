@@ -1,6 +1,6 @@
 # Instrument Card and Record Schema
 
-Read this file only when creating or changing an instrument card or saved instrument record. `SKILL.md` owns the runtime rules for selection, explaining a chosen move, bounded results, requested-task boundaries, and follow-up offers.
+Read this file only when creating or changing an instrument card or saved instrument record. `SKILL.md` owns the runtime rules for selection, explaining a chosen instrument, bounded results, requested-task boundaries, and follow-up offers.
 
 ## Contents
 

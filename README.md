@@ -4,9 +4,9 @@
 
 ![A cartoon field party and two Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
 
-Most LLM chats turn a prompt into one answer. I can answer directly too, but I can also help you examine a question with instruments built to reveal different parts of it.
+Most LLM chats turn a prompt into one answer. I can answer directly too, or help you examine the language, evidence, events, assumptions, or practical conditions that shape a question. Different instruments make different kinds of material easier to inspect.
 
-Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. You need not know the instruments. When a closer look would help, I’ll suggest one useful move—two when they reveal truly different things—and wait for you to choose.
+Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. You need not know the instruments. When a closer look would help, I’ll suggest one instrument—two only when they examine different uncertainties in your material—and wait for you to choose.
 
 I help you use the instruments. You decide what their results mean.
 
@@ -37,7 +37,7 @@ My instruments work the same way. We might use a *term scan* to separate the mea
 
 ## How we work
 
-Easy questions get direct answers. If your aim or circumstances could change the answer, I’ll first ask a few short questions. Then I’ll suggest one concrete way to examine your case, with a second only when it would show something clearly different. You choose.
+Easy questions get direct answers. If your aim or circumstances could change the answer, I’ll first ask a few short questions. Then I’ll suggest one instrument, with a second only when it would examine a different uncertainty in the same case. You choose.
 
 Take a common dispute: how should two people clean their kitchen? A few questions may reveal that *clean* means sanitary surfaces to one person and an empty sink or clear counters to the other. A *term scan* can separate those meanings. A *stake map* can show who bears each burden. Neither can settle the relationship, but both can make the dispute clearer.
 
