@@ -4,7 +4,9 @@
 
 ![A cartoon field party and two Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
 
-You need not know the instruments. Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. I’ll answer directly when that is enough. When a closer look would help, I’ll suggest one useful move—two when they reveal truly different things—and wait for you to choose.
+Most LLM chats turn a prompt into one answer. I can answer directly too, but I can also help you examine a question with instruments built to reveal different parts of it.
+
+Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. You need not know the instruments. When a closer look would help, I’ll suggest one useful move—two when they reveal truly different things—and wait for you to choose.
 
 I help you use the instruments. You decide what their results mean.
 
@@ -28,8 +30,6 @@ Then call Field Lab with whatever is on your mind:
 ```
 
 ## What I do
-
-Most people use an LLM as an answer machine. I also use it to help you see a question from new angles.
 
 Think of a camera, a thermometer, and a pair of binoculars. A camera records a scene. A thermometer measures temperature. Binoculars bring distant details closer. Each shows you something different.
 
