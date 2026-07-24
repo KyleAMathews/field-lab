@@ -1,6 +1,6 @@
 # Instrument Card and Record Schema
 
-Read this file only when creating or changing an instrument card or durable instrument record. `SKILL.md` owns the runtime rules for selection, handshakes, bounded readouts, the camera/engine boundary, and the caddy gate.
+Read this file only when creating or changing an instrument card or saved instrument record. `SKILL.md` owns the runtime rules for selection, explaining a chosen move, bounded results, requested-task boundaries, and follow-up offers.
 
 ## Contents
 
@@ -8,7 +8,7 @@ Read this file only when creating or changing an instrument card or durable inst
 - [Selection frontmatter](#selection-frontmatter)
 - [Card schema](#card-schema)
 - [Execution placement](#execution-placement)
-- [Durable readout schema](#durable-readout-schema)
+- [Saved result schema](#saved-result-schema)
 - [Readable logs](#readable-logs)
 
 ## Card admission test
@@ -29,7 +29,7 @@ Give every canonical instrument file this YAML frontmatter:
 ---
 id: <stable identifier matching the filename>
 name: <plain-language name>
-summary: <short explanation suitable for a handshake>
+summary: <short plain-language explanation suitable for an offer>
 use_when: <strongest calling signal>
 avoid_when: <main contraindication>
 access_target: <what becomes visible or testable>
@@ -37,7 +37,7 @@ requires: <minimum specimen and access state>
 execution_seat: <orchestrator|fresh-subagent|parallel-subagents|hybrid|either>
 fresh_context: <none|optional|preferred|required|timing-dependent|hybrid>
 effort: <low|medium|high|variable>
-persistence: <session, Field Trip, or durable-record expectation>
+persistence: <plain-language time and record needs; say “can be done here” or name the purpose of a Field Log>
 artifact_risk: <chief way the operation may induce or hide structure>
 ---
 ```
@@ -54,16 +54,16 @@ Make every card self-contained. Do not delegate its core procedure to a workflow
 | ----- | ----------- |
 | **Name / ID** | Stable plain-language name and short identifier |
 | **Phenomenon sought** | What the instrument helps reveal |
-| **Unaided limit / access differential** | What ordinary inquiry misses and what the run makes available |
+| **Why use it** | What ordinary inquiry misses and what the run makes available |
 | **Operating range** | When it helps and when it should not run |
 | **Input** | Minimum specimen state |
-| **Perturbation** | What it changes, stresses, hides, projects, or injects |
+| **What changes** | What it changes, stresses, hides, projects, or injects |
 | **Procedure** | Complete bounded operation |
-| **Readout** | Structured result and return path |
+| **Result** | Structured result and return path |
 | **Control** | Baseline, repetition, independent view, or falsification check scaled to risk |
-| **Common artifacts** | Likely false positives and distortions |
+| **Common distortions** | Likely false positives and distortions |
 | **Escalate / stop** | Signals for another operation and conditions for stopping |
-| **Cost / persistence** | Attention, time, research, agent, and record cost |
+| **What it requires** | Attention, time, research, agents, and records |
 | **Execution placement** | Seat, context boundary, rationale, fallback, and return path |
 
 Compact cards may combine adjacent fields when no requirement becomes ambiguous.
@@ -90,7 +90,7 @@ return-path: <who returns the bounded reading>
 
 Context isolation is a separation control, not statistical independence. Name the separation that exists—fresh-context, sibling-blind, cross-model, cross-source, or external human/world—and state any material remaining correlation.
 
-## Durable readout schema
+## Saved result schema
 
 Use this logical schema when a Field Trip or workflow needs an auditable record. A Walk may keep the same content in concise prose.
 
@@ -119,7 +119,7 @@ unmeasured: <what remains outside this reading>
 user-feedback: <pending|confirmed|correction with pointer>
 ```
 
-- Record every durable entry at `selected` or later; keep mere offers in the collection plan.
+- Record every saved entry at `selected` or later; keep mere offers in the collection plan.
 - Leave `access-delta` and readings pending at `selected`, `prepared`, or `running`.
 - Use `observed-at` for the event time; write `unknown` rather than substituting the record time.
 - Preserve claim kinds through later transformations. Do not turn testimony into observation, analogy into evidence, a generated sample into discovery, or hypothesis into fact.

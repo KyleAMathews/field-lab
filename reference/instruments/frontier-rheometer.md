@@ -9,7 +9,7 @@ requires: "A working question, committed poles, a frozen actual landing, and a b
 execution_seat: hybrid
 fresh_context: required
 effort: low
-persistence: "One blind probe per pass; session on a Walk or a frontier-ledger entry in a workflow."
+persistence: "One blind probe per pass; can be done here or kept as a frontier-ledger entry in a workflow."
 artifact_risk: "A fluent match may be mistaken for low value, while vague divergence may be mistaken for novelty."
 ---
 # Frontier Rheometer (`frontier-rheometer`)

@@ -9,7 +9,7 @@ requires: "A bounded question or territory and a typed inventory of the material
 execution_seat: either
 fresh_context: optional
 effort: high
-persistence: "One to three turns; session unless maps must be compared or resumed."
+persistence: "One short mapping pass; can be done here unless the maps must be compared or resumed later."
 artifact_risk: "Favored axes can create false orthogonality, tidy boxes, or unsupported empty quadrants."
 ---
 # Frame Projector (`frame-projector`)
@@ -21,7 +21,7 @@ Use this instrument to expose dominant clusters, candidate separating lines, evo
 - **Perturbation:** Cluster the material before proposing axes, then use separating lines and evocative labels to test several possible maps.
 - **Readout:** Return the inventory, candidate clusters, separators, label workshop, rendered maps, and calibration in that order. Return all controlled maps without selecting one for the user.
 - **Main artifact:** Favored axes can create false orthogonality, tidy boxes, or empty quadrants that the specimen does not support.
-- **Cost / persistence:** One to three turns. Keep the readout in the session unless maps must be compared or resumed.
+- **What it requires:** One short mapping pass. Keep the result in the conversation unless maps must be compared or resumed later.
 
 ## Contents
 
@@ -123,7 +123,7 @@ When using an abstract label for experienced and specific material, map it back 
 
 ## Rendering contract
 
-Whenever a phase or instrument says to draw, produce, present, or return a 2×2, render a complete monospaced ASCII or box-drawing diagram **inline for the user and in any durable artifact**. A title followed by `axis A × axis B: label, label, label, label`, four bullets, or a Markdown table is not a rendered 2×2 and does not satisfy a completion gate.
+Whenever a phase or instrument says to draw, produce, present, or return a 2×2, render a complete monospaced ASCII or box-drawing diagram **inline for the user and in any saved artifact**. A title followed by `axis A × axis B: label, label, label, label`, four bullets, or a Markdown table is not a rendered 2×2 and does not satisfy a completion gate.
 
 Every candidate map must show:
 

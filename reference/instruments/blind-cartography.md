@@ -9,14 +9,14 @@ requires: "A neutral specimen label, result-changing coordinates, and an indepen
 execution_seat: hybrid
 fresh_context: required
 effort: high
-persistence: "Quick scout: session. Full atlas: usually 6–12 probes with a durable Field Trip trace."
+persistence: "A quick scout can be done here. A full atlas usually needs 6–12 probes; offer a Field Log for the raw traces."
 artifact_risk: "Shared model lineage, prompt leakage, and adaptive sampling can make expected basins look independent or socially prevalent."
 ---
 # Blind Possibility-Space Cartography (`blind-cartography`)
 
 - **Phenomenon sought:** The difference between options grounded in the specimen and options a model readily reconstructs, including expected basins, coverage holes, and source-grounded residuals.
 - **Unaided limit:** Reading only the source map cannot show which options are model defaults; reading only repeated model outputs cannot show what the specimen contains that those defaults miss.
-- **Access differential:** The overlay makes expected grooves, source-specific understory, collapse toward defaults, and residual search regions visible as relations between two independently made maps.
+- **What this adds:** The overlay makes expected grooves, source-specific understory, collapse toward defaults, and residual search regions visible as relations between two independently made maps.
 - **Operating range:** Use when many answers, concepts, strategies, questions, or designs may fit and the inquiry needs to distinguish defaults from less expected options. Do not use to estimate public opinion, factual likelihood, or historical novelty.
 - **Input:** A neutral specimen label; the coordinates that could change the result; and a source track able to generate options without seeing probe outputs. This source track is required even for a quick scout. Each source-map item must retain its observation-ledger kind and support.
 - **Perturbation:** Hides the source material from fresh probes, samples the model-shaped expectation space repeatedly, and later overlays the independent maps.
@@ -94,11 +94,11 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 - **Escalate** to targeted research when a residual makes a historical novelty claim.
 - **Escalate** to the frontier rheometer when one candidate needs close expectedness and reaching analysis.
-- **Escalate** to a Field Trip when repeated sampling needs a coverage plan, durable raw probes, or comparison across sessions.
+- **Escalate** by offering a Field Log when repeated sampling needs a coverage plan, raw probes kept for comparison, or work across later conversations. Say what the log will keep together.
 - **Stop** when the sampled basins are stable, agreed strata are covered, and another probe is unlikely to change the map.
 
-## Cost and Persistence
+## What it requires
 
-- **Quick scout:** One small frozen source map plus three fresh core probes using a pre-frozen canonical prompt and two meaning-preserving variants; medium agent cost; session-only; directional findings only.
+- **Quick scout:** One small frozen source map plus three fresh core probes using a fixed prompt and two meaning-preserving variants; can be done here; directional findings only.
 - **Atlas:** Usually 6–12 probes plus clustering and overlay; Field-Trip scale; preserve raw probes, sampling plan, frozen source map, atlas, and overlay.
 - **Dialectic-workflow use:** Link the atlas to the round control log or frontier ledger. Keep it distinct from Monk belief outputs and validation judgments.

@@ -9,13 +9,13 @@ requires: "One concrete instance; ask for the latest or most typical if needed."
 execution_seat: orchestrator
 fresh_context: none
 effort: low
-persistence: "1–3 turns; session only."
+persistence: "A brief conversation; can be completed here."
 artifact_risk: "A partial account looks like a neutral full baseline."
 ---
 # Substrate map (`substrate-map`)
 
 - **Phenomenon sought:** The observable sequence beneath causal stories.
-- **Unaided limit / access differential:** Ordinary accounts blend event, motive, and cause. The map separates a time-ordered report and makes missing observations visible.
+- **Why use it:** Ordinary accounts blend event, motive, and cause. The map separates a time-ordered report and makes missing observations visible.
 - **Operating range:** Recurring practical events, handoffs, habits, incidents, processes, or interventions whose order and system response matter. Do not use when the question is already a stable fact lookup.
 - **Input:** One concrete instance; ask for the latest or most typical if needed.
 - **Perturbation:** Temporarily removes explanations, blame, and motive claims.
@@ -25,5 +25,5 @@ artifact_risk: "A partial account looks like a neutral full baseline."
 - **Common artifact:** A partial account looks like a neutral full baseline.
 - **Escalate when:** Different accounts conflict, or a recurring handoff concentrates friction.
 - **Stop when:** The next unknown can be watched directly.
-- **Cost / persistence:** 1–3 turns; session only.
+- **What it requires:** A brief conversation using the available account or records.
 - **Execution placement:** **Orchestrator.** It sees the live account and prior corrections so it can separate observation from explanation without losing sequence. Delegation adds no epistemic value; if the context is too large, promote and give a research agent only a bounded extraction task. The orchestrator builds and presents the map.

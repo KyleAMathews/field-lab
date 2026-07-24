@@ -15,10 +15,10 @@ artifact_risk: "The negative case is too distant, exceptions are explained away,
 # Negative-control transfer assay (`negative-transfer`)
 
 - **Phenomenon / range / input:** Whether a donor mapping discriminates rather than fitting everything; needs one claimed transfer and a nearby case.
-- **Unaided limit / access differential:** A successful-looking analogy alone cannot show selectivity. A nearby failure case makes the transfer boundary testable.
+- **Why use it:** A successful-looking analogy alone cannot show selectivity. A nearby failure case makes the transfer boundary testable.
 - **Perturbation / procedure:** Apply the same mapping to a case where the proposed mechanism predicts failure or absence.
 - **Readout / control:** What the mapping predicts, what the nearby case shows, and which part of the transfer survives; choose the control before seeing the desired outcome when possible.
 - **Common artifacts:** The negative case is too distant, exceptions are explained away, or the mapping shifts after failure.
 - **Escalate / stop:** Downgrade or reject non-discriminating transfers. Stop when the mapping has a clear boundary.
-- **Cost / persistence:** One targeted research or analysis pass; preserve with any donor claim used later.
+- **What it requires:** One targeted research or analysis pass; keep it with any donor claim used later.
 - **Execution placement:** **Either; fresh subagent preferred when stakes are material.** The executor sees the mapping and a preselected nearby case, not the desired rescue of the analogy. Separation strengthens falsification but is not essential to the basic test. If the orchestrator runs it, freeze the negative case before inspection and report self-serving adjustment risk. Return the predicted and observed boundary; do not accept, narrow, or reject the transfer inside the readout.

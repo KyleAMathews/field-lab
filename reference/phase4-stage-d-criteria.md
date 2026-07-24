@@ -36,28 +36,26 @@ Assume zero prior knowledge of the donor and high general intelligence. Do not o
 1. Spawn the **blind-expectation probe** — a fresh subagent that sees ONLY the working question and the poles (blind to the essays, this negation, the donors). Use the skeleton in `reference/instruments/frontier-rheometer.md`. It returns the 1–3 resolutions it _expects_.
 2. Compare its expected resolutions against where your determinate negation actually landed: match → groove, divergence → frontier. Add the free-layer reading (are the maturity signals saturating = groove, or still producing new cross-edges/facts = frontier).
 3. Check for a **collapse**: did the monks _reach_ (strained / donor-dependent argument, or new `[fit:]` cross-edges) but the negation land on the blind-expected groove? If so, flag it.
-4. Append the **companion block** _after_ your negation summary (do not re-tag the negation inline). It is diagnostic and descriptive — not a recommendation, and it must not tell the user what to do:
+4. Append the **companion block** _after_ your negation summary (do not re-tag the negation inline). Keep the formal groove/frontier terms in the ledger, but use plain language with the user. It is descriptive, not a recommendation:
 
-   > **Frontier reading** (diagnostic — descriptive, not a recommendation)
+   > **Where this landed**
    >
-   > - Terrain: `<groove | frontier | mixed>` — `<one clause>`
-   > - Expected (blind probe): `<expected resolutions, one line>`
-   > - Actual landing: `<where the negation went>` → `<matched = groove | diverged = frontier>`
-   > - Collapse: `<none | ⚠ reached on X, negation pulled back to groove Y>`
+   > - A fresh reader expected: `<expected resolutions, one line>`
+   > - The analysis actually reached: `<where the negation went>`
+   > - Difference: `<matched the expected route | departed from it | reached beyond it, then snapped back to an expected answer>`
 
-On a standard run this will read "groove — as expected" with no collapse; that is correct and should add no friction.
+On a standard run the actual landing may match the expected route. Say so in one line and add no drama.
 
 Then ask:
 
-> Here's my structural analysis of the contradiction. Before I attempt synthesis:
+> Here’s the shape I’m seeing. Before I build anything from it:
 >
-> - **Did I identify the right hidden question?** Or is the real tension somewhere else?
-> - **Did I miss anything in the decomposition?** New connections, evidence, or angles that should be in the mix before I synthesize?
-> - **Are the sublation criteria right?** What must the synthesis preserve that I haven't listed?
-> - **Do the flagged misfits look right,** or am I missing a bigger one?
-> - **Are the recovered high-value ideas right,** and do the conscious drops look correct — or did I smooth away something that should be carried?
+> - Did I find the real question underneath the dispute, or is the tension somewhere else?
+> - Did I miss a connection, fact, or angle that belongs in the parts?
+> - What must any good result preserve?
+> - Did I smooth away something that should stay visible?
 >
-> This is the highest-leverage correction point — it's much harder to fix the synthesis after I've committed to a direction.
+> This is the useful place to correct the route, before I start building candidates.
 
 **Anti-sycophancy at this checkpoint:** When the user provides input here, evaluate it structurally, not socially. Do NOT say "this is excellent material." Instead: What does this material do to the decomposition? Does it challenge the hidden question? Does it open a new domain for cross-connection? Does it actually change anything, or is it confirming what the analysis already found? If the user shares a framework they're excited about, it enters the mix as one more input to be shattered and recombined — not as the answer the synthesis should converge on. The user is in the belief-free seat. Do not try to locate their position and build toward it.
 

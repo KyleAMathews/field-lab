@@ -16,8 +16,8 @@ For every dialectic-workflow operation:
 
 1. The **dialectic workflow** defines phase-opening and completion gates.
 2. The **phase or stage file** defines its local procedure, required artifacts, order, and checklist.
-3. The **instrument card** defines the phenomenon sought, access differential, complete standalone procedure, execution seat, context boundary, fallback, control, artifact risk, and return path.
-4. **`SKILL.md`** defines instrument selection, the handshake, bounded-readout boundary, caddy gate, and camera/engine authority.
+3. The **instrument card** defines the phenomenon sought, why the operation helps, complete standalone procedure, execution seat, context boundary, fallback, control, likely distortions, and return path.
+4. **`SKILL.md`** defines instrument selection, how to explain a chosen move, the bounded-result boundary, follow-up offers, and requested-task authority.
 
 Read the workflow, current phase procedure, and named card before running a scheduled instrument. If their requirements differ, satisfy the stricter requirement. A user waiver may release a named phase deliverable, but it cannot upgrade a downgraded instrument reading or manufacture blindness, independence, support, or confidence.
 
@@ -55,7 +55,7 @@ Some instruments span phases. `belief-stress` is prepared in Phase 2 and read in
 | Phase 6C             | `framing-sensitivity` when a decision-relevant result may depend on wording, pole order, or model                                                             | Controlled variants changed one framing variable; stable and sensitive findings separated. When not called, record why no decision-relevant framing dependency remains.                                                                                                                                                                             |
 | Phase 7              | `tension-statement`; `third-pole`                                                                                                                             | Each proposed direction is a concrete two-sided contradiction; the burst was checked for an orthogonal direction or a recorded “none found”; user choice and queue lineage recorded.                                                                                                                                                                |
 
-Unscheduled instruments remain available at every workflow point. Offer `term-scan`, `stake-map`, `substrate-map`, `ground-condition`, or `small-experiment` whenever its calling signal appears, but run it only after user selection. Their use does not alter the phase number; their raw readouts enter the same instrument ledger and completion gate. A prepared or running experiment is not a completed reading; advance only on the observation state the phase actually requires.
+Unscheduled instruments remain available at every workflow point. Offer `term-scan`, `stake-map`, `substrate-map`, `ground-condition`, or `real-world-check` whenever its calling signal appears, but run it only after user selection. Their use does not alter the phase number; their raw results enter the same instrument ledger and completion gate. A prepared or running check is not a completed result; advance only on the observation state the phase actually requires.
 
 ## Controls
 

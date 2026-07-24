@@ -1,10 +1,14 @@
-# Field Lab — thinking with AI
+# Field Lab — bring me a question
 
-**Bring a question. Pack some instruments. Let's see what lives in latent space.**
+**I’m Cacambo, your field caddy. You choose what to examine; I help you choose and use the right instruments.**
 
 ![A cartoon field party and two Electric Monks use cameras, notebooks, binoculars, and specimen jars to explore a jungle of strange plants and branching ideas.](assets/field-lab-expedition.webp)
 
-## Install
+You need not know the instruments. Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. I’ll answer directly when that is enough. When a closer look would help, I’ll suggest one useful move—two when they reveal truly different things—and wait for you to choose.
+
+I help you use the instruments. You decide what their results mean.
+
+## Put me to work
 
 Install the whole repository with the `skills` CLI. It supports Claude Code, Codex, and other agents:
 
@@ -12,92 +16,71 @@ Install the whole repository with the `skills` CLI. It supports Claude Code, Cod
 npx skills add KyleAMathews/field-lab -g
 ```
 
-Then ask a stray question, pull out instruments during a Walk, open a field log, gather related trips into an Expedition, or run the full Electric Monk dialectic:
+Then call Field Lab with whatever is on your mind:
 
 ```text
 /field-lab Why do moths fly toward porch lights?
 /field-lab My wife and I mean different things by a clean kitchen.
-/field-lab Open a field log for three weeks of deployment observations.
-/field-lab Start an Expedition for our ongoing work on AI-assisted code review.
-/field-lab Run the full dialectic on whether our framework should own deployment.
+/field-lab Cacambo, I'm trying to decide whether to reorganize this team. Which instruments might help?
+/field-lab Keep a Field Log for three weeks of deployment observations.
+/field-lab Link our Field Logs on AI-assisted code review.
+/field-lab Put the case for our framework owning deployment through the full Electric Monk dialectic.
 ```
 
-## First time? Take the tutorial
+## What I do
 
-The easiest way to understand the lab is to try a few instruments:
+Most people use an LLM as an answer machine. I also use it to help you see a question from new angles.
 
-```text
-/field-lab I want to test the instruments in this field lab. Briefly explain how it works, then give me a few easy, low-stakes exercises for instruments that produce different kinds of readings. Let me choose what to try and guide me through one at a time.
-```
+Think of a camera, a thermometer, and a pair of binoculars. A camera records a scene. A thermometer measures temperature. Binoculars bring distant details closer. Each shows you something different.
 
-The tutorial teaches the controls. This README explains why the lab exists.
+My instruments work the same way. We might use a *term scan* to separate the meanings of a disputed word, a *substrate map* to reconstruct events before guessing at causes, or an *exploratory 2×2* to find a shape in a jumble of examples. Each gives you a result you can inspect, compare with others, or set aside.
 
-## LLMs are strange new instruments for sensing
+## How we work
 
-We mostly use LLMs as answer machines: ask a question, get a paragraph. I built Field Lab around a stranger idea—use them for sensing.
+Easy questions get direct answers. If your aim or circumstances could change the answer, I’ll first ask a few short questions. Then I’ll suggest one concrete way to examine your case, with a second only when it would show something clearly different. You choose.
 
-You are the explorer in a latent-space jungle. You choose where to walk and what deserves a closer look. The LLM runs the field lab: it offers instruments, operates the ones you select, and returns their readings. You decide what those readings mean and where to look next.
+Take a common dispute: how should two people clean their kitchen? A few questions may reveal that *clean* means sanitary surfaces to one person and an empty sink or clear counters to the other. A *term scan* can separate those meanings. A *stake map* can show who bears each burden. Neither can settle the relationship, but both can make the dispute clearer.
 
-A camera records a scene. A thermometer measures temperature. Binoculars bring distant detail closer. Each reveals something that your unaided senses might miss.
+If the inquiry starts producing sources, comparisons, or findings worth keeping, I’ll say so: “There’s something worth keeping here. Want me to start a Field Log?” The log gives each observation a date, a source, and enough context to revisit it later. If several Field Logs belong together, I can give them a shared Expedition index without mixing their evidence.
 
-Field Lab works the same way. You examine a question, idea, text, or situation. Something catches your eye in the distance, so you pick up the binoculars. Two texts use the same word in incompatible ways, so you reach for a *term scan*. A story jumps from events to causes, so you pull out a *substrate map*. A jumble of examples hints at a shape, so you try an *exploratory 2×2*. The same question now yields several readings instead of one smooth answer.
+For a question that needs several linked steps, I may offer a workflow such as the Electric Monk dialectic. You can stop whenever you have enough. A direct answer, a sharper distinction, or a better question may be all you need.
 
-An instrument gives you a reading, not an answer. A *term scan* shows how words are being used; it does not choose the right meaning. A *substrate map* lays out what happened; it does not tell you why. You can place several readings side by side and decide what they add up to.
-
-Like physical instruments, these can distort what they show. Binoculars narrow your field of view. A *term scan* can make word choice look more important than it is. The reading names that risk. It does not turn one view into a complete explanation or recommendation.
-
-## What using it feels like
-
-Every inquiry begins as a **Walk** in latent space. Easy questions get direct answers. If your aim or circumstances could change the answer, the lab asks a few quick questions about what you want, what you have already noticed, and what constraints matter. Then it offers a few instruments and says what each might show. You choose.
-
-My wife and I tried this on what looked like a tiny question: how should we clean the kitchen? A few quick questions brought out feelings, constraints, and different meanings of _clean_ before we reached for a solution. Clean could mean sanitary surfaces, an empty sink, clear counters, food put away, or not waking up to someone else's unfinished work.
-
-A *term scan* separates those meanings. A *stake map* shows who bears each cost. A *small experiment* tests two definitions against an evening in the actual kitchen. None of these readings can settle a relationship. They give the people in it sharper material to think with.
-
-A Walk can be a quick look around or a long ramble. You might scan a term, consult a source, sketch a 2×2, ask fresh agents to explore different positions, or simply talk. Nothing needs to be recorded yet.
-
-Suppose the kitchen experiment turns up a pattern you want to follow. You pull out the field log, and the Walk becomes a **Field Trip**. The log gives each observation a date, a source, and enough context to revisit it later. If you make several related Field Trips, collect them into an **Expedition**. The index shows where you've been and which paths stay open.
-
-When a finding calls for structured analysis, choose a workflow: a known procedure that combines instruments in a set order. The Electric Monk dialectic is one such workflow; others can draw from the same instrument bench.
-
-Turn back whenever you have enough. A Walk might bring home a direct answer, a sharper distinction, or a better question.
-
-## What's on the field lab bench?
+## What I carry
 
 Here are some of the instruments:
 
-- *Focus interview:* interview you about your aims, stakes, and constraints;
 - *Term scan:* hold up words like _clean_, _fair_, or _safe_ and see where their meanings split;
 - *Substrate map:* reconstruct what happened step by step before guessing why;
+- *Real-world check:* try one safe, reversible change and compare what happens with what you expected;
 - *Exploratory 2×2:* collect and cluster concrete examples before drawing the axes;
 - *Electric Monks:* have separate agents argue opposing beliefs at full strength, then compare their cases;
-- *Taboo parallax:* find taboo ideas by comparing what is costly to say across countries and public arenas;
-- *Blind cartography:* probe several fresh agents to see which ideas are precommodified in the model, then use published sources to reveal what they missed;
+- *Taboo parallax:* compare what is costly to say in different countries or public settings;
+- *Blind cartography:* find which ideas a model produces by default, then use published sources to look for what it missed;
 - *Residue collector:* gather the facts, contradictions, and outliers a neat explanation leaves behind;
-- *Hostile auditor:* hand an argument to a fresh hostile reader and see where it breaks.
+- *Hostile auditor:* give an argument to a fresh, skeptical reader and see where it breaks.
 
-The test is simple:
+I judge each instrument by a simple test:
 
 > What would this show me that ordinary chat would not?
 
 A tool helps you do something. An instrument changes what you can observe, separate, compare, or test.
 
-## The Electric Monks
+## My heaviest piece of kit: the Electric Monks
 
-Field Lab's heaviest apparatus began as a Douglas Adams joke. He imagined machines built to believe things for you. [Venkatesh Rao asked what follows](https://contraptions.venkateshrao.com/p/electric-monks-and-fast-transients): if a machine carries a belief at full strength, you can inspect it without taking on its inertia.
+The heaviest piece of kit I carry began as a Douglas Adams joke. He imagined machines built to believe things for you. [Venkatesh Rao asked what follows](https://contraptions.venkateshrao.com/p/electric-monks-and-fast-transients): if a machine carries a belief at full strength, you can inspect where it leads without adopting it yourself.
 
-In the Electric Monk dialectic, fresh and isolated agents inhabit incompatible positions without hedging. Research grounds each one. The lab finds where each position breaks on its own terms, strips the arguments into parts, and brings in material from outside the dispute. Cross-linking those parts exposes relations no single position contains.
+In the Electric Monk dialectic, I send fresh, isolated agents to make the strongest case for opposing beliefs. Each researches its own case without seeing the others. I then test where each position fails by its own rules, break the arguments into parts, and bring in material from outside the dispute. New links between those parts may reveal something no single position could see.
 
-Synthesis is one possible result, not the goal. The inquiry may instead end with an open conflict, a missing ground condition, a frame that no longer fits, or a word carrying incompatible meanings. The original Monks and a hostile auditor test whatever comes out. Any contradiction left over can start another round.
+The result need not be a synthesis. The inquiry may uncover an open conflict, a missing fact, a frame that no longer fits, or a word carrying several meanings. The original Monks and a hostile auditor test whatever comes out. Any contradiction left over can start another round.
 
 That makes it an **artificial belief system**: the Monks do the believing while you compare what follows from each belief.
 
-## Intellectual lineage
+## Postscript: where my kit comes from
 
-Field Lab began with the Electric Monks. These ideas shaped what it became:
+The Field Lab began with the Electric Monks. These ideas shaped the rest of my kit:
 
 - **Artificial belief: Douglas Adams and Venkatesh Rao.** Adams invented the Electric Monk. In [“Electric Monks and Fast Transients”](https://contraptions.venkateshrao.com/p/electric-monks-and-fast-transients), Rao argues that machines can carry belief while humans switch among points of view.
-- **Camera before engine: Rao.** [“A Camera, Not an Engine II”](https://contraptions.venkateshrao.com/p/a-camera-not-an-engine-ii) treats AI as an instrument for seeing in latent space. In camera mode, feedback adds context before the model acts on it.
+- **Seeing before deciding: Rao.** [“A Camera, Not an Engine II”](https://contraptions.venkateshrao.com/p/a-camera-not-an-engine-ii) treats AI as an instrument for seeing in latent space. Feedback adds context before the model acts on it.
 - **Instruments of discovery: _The Crooked Timber of AI_.** Its account of [scientific discovery](https://protocolized.summerofprotocols.com/p/the-crooked-timber-of-ai) helped turn one fixed workflow into a field lab.
 - **Walking without a map: Tim Ingold and Rao.** Ingold asks what becomes visible when [a walk has no fixed destination](https://journals.sagepub.com/doi/10.1177/07916035221088546). Rao shows how orderly reading can make us blind in [“How to Take Your Brain Off-Road”](https://ribbonfarm.com/2016/05/26/how-to-take-your-brain-off-road/).
 - **Determinate negation: Hegel.** Look for the exact point where a position breaks. _Aufhebung_ asks what a new frame can discard and what it must keep.
@@ -107,17 +90,7 @@ Field Lab began with the Electric Monks. These ideas shaped what it became:
 
 A few instruments draw on more specific sources. Rao's [cluster-first method](https://ribbonfarm.com/2009/04/20/how-to-draw-and-judge-quadrant-diagrams/) governs *exploratory 2×2s*. Paul Graham's [“What You Can't Say”](https://paulgraham.com/say.html) prompted *taboo parallax*, with added truth and stereotype controls. The dialectic's memory borrows from Karpathy's [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 
-None of these thinkers supplies a complete philosophy for the lab. Each changed one part of its design.
-
-## Take a question into the field
-
-Start with a question that keeps wriggling out of its answer:
-
-```text
-/field-lab What am I missing about this?
-```
-
-If the first answer is enough, great. If not, pull out an instrument.
+None of these thinkers supplies a complete philosophy for the lab. Each changed one part of how I work.
 
 ## Repository
 

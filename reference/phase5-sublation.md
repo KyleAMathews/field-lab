@@ -245,9 +245,9 @@ Format the presentation so the user can see the palette side-by-side. **Do not r
 
 Conclude with:
 
-> Here are [N] structurally-distinct candidates for where this dialectic lands. Each has a different posture — [S/J/G/F/U] — and they're not meant to converge. Pick one, combine two, or tell me which ones to send through validation in Phase 6. Or say "none of these land — go back to Phase 4 and reopen the decomposition."
+> I found [N] genuinely different places this could land. Each protects something different and gives something up. Pick one, combine two, or tell me which ones you want tested. You can also say, “None of these fit—take the argument apart again.”
 >
-> Remember: your judgment is the point here. The monks are belief-committed and the orchestrator has spent a lot of token budget on this decomposition, but the question of which candidate fits your actual situation is one only you can answer.
+> Your judgment is the point here. The Monks carried the beliefs and I took the arguments apart, but only you can tell which candidate fits your situation.
 
 **Anti-sycophancy when receiving feedback:** When the user picks a candidate or rejects the whole palette, do not capitulate or celebrate. If the user picks S, it is not because S was "the right answer" — it is because it fit their situation. If the user picks J and later says "actually I think S is closer," that is the dialectic working. If the user rejects the palette, examine _which specific move_ in each candidate failed — don't just promise to try harder. If the user provides a new framework or insight, it enters the decomposition as material to be stress-tested in the next round, not as the answer the candidates should have reached.
 

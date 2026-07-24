@@ -1,14 +1,14 @@
 # Field Trip
 
-A Field Trip is one bounded, logged discovery operation. It begins when the user agrees to **open a field log**. It uses the same instruments and camera loop as a Walk; the log adds durable memory, coordination, comparison, search, and audit.
+A Field Trip is one bounded inquiry with a field log. It begins when the user agrees to **set up the field log**. It uses the same instruments and camera loop as a Walk; the log keeps its sources, findings, open questions, comparisons, and decisions together.
 
-Opening a log changes persistence, not authority. It does not authorize an instrument, workflow, conclusion, decision, or action.
+Setting up a log changes what gets recorded, not who decides what to do. It does not authorize an instrument, workflow, conclusion, decision, or action.
 
 ## Entry
 
-Enter only after `SKILL.md` routes the inquiry here and the user agrees to open a field log. Record that authorization. Do not infer it from the number, strength, or cost of instruments.
+Enter only after `SKILL.md` routes the inquiry here and the user agrees to set up a field log. Record that authorization. Do not infer it from the number, strength, or cost of instruments.
 
-## Open the field log
+## Set up the field log
 
 1. Read [field-log-template.md](field-log-template.md).
 2. Record the exact user-authorization pointer and an ISO 8601 opening timestamp with timezone, then distill the Walk, supplied prior chats, and linked records into one field log; do not replay them as transcripts. If a prior chat is not available in context, ask the user to attach it or supply a short summary rather than pretending to have read it.
@@ -21,7 +21,7 @@ Use a narrow standalone directory such as `field-trip-<topic>/field_log.md`, or 
 
 ## Run the trip
 
-Keep the canonical router and camera/engine boundary from `SKILL.md`: agree on a bounded batch, run only the selected plan, return bounded readings, register corrections, and update the open gaps. Do not execute an entire research program from the first framing without an intermediate error signal.
+Keep the canonical router, selected instrument queue, and camera/engine boundary from `SKILL.md`: agree on a bounded batch, preserve any user-selected order, run only the selected plan, return bounded readings, register corrections, and update the open gaps. Completing one batch does not cancel the next queued instrument or authorize a fresh menu. Do not execute an entire research program from the first framing without an intermediate error signal.
 
 A simple Field Trip may have only a scope and log. When it needs a collection plan, let the user select, trim, or reorder it. For each gap, record:
 
@@ -29,7 +29,8 @@ A simple Field Trip may have only a scope and log. When it needs a collection pl
 - the smallest fitting instrument or source;
 - what counts as enough coverage;
 - the main artifact and a proportionate control;
-- whether the operation is merely offered or user-selected.
+- whether the operation is merely offered or user-selected;
+- for a selected sequence, which instruments form the current batch and which are queued next, in user-selected order.
 
 Record coverage and stop rules as editable working controls, not promises to complete a fixed program. Agreement authorizes only the listed instruments and sources. A later calling signal requires a proposed plan change and fresh agreement. Instrument cards still determine execution placement, controls, lifecycle, downgrade, and bounded readout.
 

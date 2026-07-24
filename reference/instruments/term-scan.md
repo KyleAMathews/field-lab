@@ -9,13 +9,13 @@ requires: "The candidate term and examples of its use."
 execution_seat: orchestrator
 fresh_context: optional
 effort: low
-persistence: "1–2 turns; session only."
+persistence: "One brief pass; can be completed here."
 artifact_risk: "Clever semantics distract from a material conflict."
 ---
 # Term scan (`term-scan`)
 
 - **Phenomenon sought:** A shared word with different loadings.
-- **Unaided limit / access differential:** Fluent use makes semantic shifts hard to notice. Substitution exposes distinct criteria and the actions each meaning implies.
+- **Why use it:** Fluent use makes shifts in meaning hard to notice. Substitution exposes distinct criteria and the actions each meaning implies.
 - **Operating range:** Disputes or practical questions where a shared label names several standards, forms, conventions, or methods—such as “clean,” “fair,” “safe,” “simple,” “done,” “bush,” or “tree form.” Do not run merely because a word is broad.
 - **Input:** The candidate term and examples of its use.
 - **Perturbation:** Holds the word still and replaces it with concrete criteria.
@@ -25,5 +25,5 @@ artifact_risk: "Clever semantics distract from a material conflict."
 - **Common artifact:** Clever semantics distract from a material conflict.
 - **Escalate when:** The term is constitutive of the dispute and cannot be unified without loss.
 - **Stop when:** A shared operational definition or explicit plural use is enough.
-- **Cost / persistence:** 1–2 turns; session only.
+- **What it requires:** One brief pass over the user's examples or text.
 - **Execution placement:** **Orchestrator.** It sees the user's examples and tests substitutions directly in conversation. A fresh subagent is optional only as a framing-sensitivity control; the basic instrument does not depend on independence. If examples are missing, ask for them. The orchestrator returns the loadings, examples, and artifact risk without resolving the term.

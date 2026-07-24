@@ -1,4 +1,4 @@
-# Phase 7: Recursion — Where the Real Value Lives
+# Phase 7: Recursion — New Trails
 
 **Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
@@ -10,17 +10,18 @@
 
 Announce `tension-statement` before converting the idea burst into candidate directions. Each proposed direction must name two sound demands, the condition that makes them collide, and the mechanism of conflict; a topic or weakness alone is not a recursive contradiction. Then run `third-pole` across the clustered directions to test whether the menu omits an independent axis or constituency. A clear “none found” is a valid reading. Record both instruments before the user chooses.
 
-**Recursion is not optional cleanup. It is the engine of the skill.** The first round produces a synthesis. The recursive rounds force that synthesis to confront its own limitations, generating increasingly powerful mental models. Each cycle compresses understanding upward. In test runs, a React/Vue dialectic went from "corporate lab vs. independent auteur" → "the Layer Thesis" → "co-evolutionary arms race." An institutional identity dialectic went from "enforcement vs. freedom" → "practice-based identity" → "nucleation as formation mechanism" → then surfaced a third-level tension that reframed everything. In both cases, the recursive rounds produced the most valuable insights.
+Recursion is an optional new inquiry, not cleanup or an automatic next step. A completed round may expose a different live contradiction worth examining. Later rounds can test a result against its own limits, but more work is not inherently better. Show the openings and let the user decide whether any serves their aim.
 
 **When transitioning to recursion, tell the user:**
 
-> That was Round 1. Here's something important: **that round was the least insightful we'll get.** It was calibration — getting the broad shape of the tension on the table. Each subsequent round gets sharper, more specific to your actual situation, and more likely to surface something genuinely new. The process is like focusing a lens — each round tightens the resolution. Ready for Round 2?
+> That closes Round 1. It opened [N] new tensions. We don’t have to follow them. If you’d like, I can lay out the live trails, what each might reveal, and where each could lead us astray. Want to have a look?
 
-**The default should be to recurse at least once.** Only stop if:
+Offer another round only when a live contradiction could reveal something material for the user's aim. Stop if:
 
-- The synthesis generated no significant new contradictions (rare if the sublation is genuine — a real Aufhebung is fertile)
-- The user explicitly wants to stop
-- The new contradictions are outside the scope of what the user cares about
+- the completed round gave the user what they needed;
+- no significant new contradiction appeared;
+- the new contradictions fall outside the user's aim; or
+- the user does not choose one.
 
 ## Proposing Recursive Directions
 
@@ -50,13 +51,13 @@ Generate a **burst of 5-8 candidate concepts/directions** — not just contradic
 
 Then **cluster the burst into 2-4 coherent directions**, each briefly described as a contradiction worth exploring. Several candidate concepts often point at the same underlying tension from different angles. For example:
 
-> The synthesis generated three fertile contradictions:
+> I can see three live trails:
 >
 > 1. **The formation problem:** The synthesis says identity should live in shared practice — but who forms the practitioners? (internal tension)
 > 2. **The authority problem:** The synthesis argues from historical theology, but decisions are made by prophetic authority — does this synthesis engage the actual power structure? (synthesis vs. domain reality)
 > 3. **The scalability problem:** Nucleation works for small communities — does it survive contact with a 30,000-student institution? (synthesis vs. feasibility)
 >
-> Which would you like to pursue? (Or we can queue multiple for successive rounds.)
+> Does one deserve another round? We can also leave all three in the Field Log for later.
 
 **The user may want to queue multiple directions.** A dialectic can branch — Round 2 pursues direction A, Round 3 pursues direction B (starting from the Round 2 synthesis), or Round 3 forks back to the Round 1 synthesis to pursue direction C independently. The orchestrator should track which contradictions have been explored and which are queued.
 
@@ -136,7 +137,7 @@ The system gets richer not by converging on a final answer but by accumulating r
 - The latest synthesis surfaces a contradiction that requires fundamentally different expertise or information than you have access to
 - The user has what they need
 
-**But err on the side of one more round.** The marginal insight is often the most powerful — it's the insight that couldn't have been reached without the preceding rounds building up to it.
+Do not sell another round by promising that later insight will be better. Describe the open contradictions and the work each would require; let the user judge whether any earns more attention.
 
 When stopping, present the user with the **final state of the dialectic queue** — which contradictions were explored, which remain open, and which were deferred. This is a map of the intellectual territory: the resolved contradictions form the new understanding, and the open contradictions are starting points for future sessions.
 

@@ -2,13 +2,13 @@
 
 The Electric Monk dialectic is one user-selected workflow in the Field Lab. “Run a dialectic,” “use the dialectic,” and “the output is a dialectic” select it unless the user explicitly asks for a quick, short, lightweight, or sketch treatment. Do not require the adjective “full” or ask the user to choose it twice. It coordinates context-isolated committed positions, research, determinate negation, outside material, plural candidate construction, validation, and recursion through seven completion-gated phases.
 
-The workflow runs within a Field Trip, which may stand alone or belong to an Expedition. It is not itself an Expedition. If the user selects the dialectic during an unlogged Walk, its declared durable trace includes opening a Field Trip and field log; state that before creating files.
+The workflow keeps a Field Log and may stand alone or belong to an Expedition. If the user selects the dialectic without a Field Log, offer to start one for the workflow's sources, findings, and open questions before creating files. Do not present the internal Field Trip label as the reason.
 
 Selecting the workflow reserves its scheduled instruments and declared artifacts. It does not start them, authorize a phase-sized batch, permit silent passage through user checkpoints, or authorize an expedition-wide conclusion or unrelated action. The user starts each numbered phase through its opening gate. Other instruments remain available, but each unscheduled run still requires user selection.
 
 ## Entry contract
 
-1. Acknowledge the user's direct request or explain why the full workflow may repay its cost.
+1. Acknowledge the user's direct request or explain in plain language what the full workflow could reveal that a shorter inquiry would miss.
 2. Give this compact map of the whole workflow before using tools or creating artifacts. Adapt the words, not the seven moves:
    1. **Frame and ground** — confirm the real tension, test missing axes, and gather only the research it needs.
    2. **Prepare the Monks** — freeze separate full-conviction briefs for the committed positions.
@@ -17,10 +17,10 @@ Selecting the workflow reserves its scheduled instruments and declared artifacts
    5. **Build a candidate palette** — produce several distinct possible landings, including synthesis where earned.
    6. **Stress-test selected candidates** — let the positions and fresh hostile readers probe what each candidate loses.
    7. **Choose whether to recurse** — surface the next contradictions and let the user choose whether another round is useful.
-3. Tell the user that the workflow opens a Field Trip and field log, uses separate agents, and may take several checkpoints. Say that no phase will begin until its opening card is accepted.
+3. Offer to start a Field Log for the workflow's sources, findings, and open questions. Say what the work involves: separate agents, several rounds of research and comparison, saved notes, and a pause before each new phase. For example: “There’s enough material here that we’ll want to keep the evidence trails straight. Would you like me to start a Field Log? I’ll use separate agents for the opposing cases, save the research and comparisons, and bring each phase back to you before moving on.”
 4. Read [dialectic-instrument-map.md](dialectic-instrument-map.md) and the current phase file. Present the Phase 1 opening card under the gate below, then **stop**. Do not create files, spawn the gardener, search, prepare an instrument, or run an instrument before the user starts Phase 1.
 5. After the user starts Phase 1, locate the session record, current field log, and Expedition log if one exists.
-6. If no field log exists, read [field-log-template.md](field-log-template.md) and open one as part of the workflow's declared artifact set. Timestamp the Field Trip and round control log under their contracts.
+6. If no field log exists, read [field-log-template.md](field-log-template.md) and set one up as part of the workflow's declared files. Timestamp the Field Trip and round control log under their contracts.
 7. Preserve these fields into the Field Trip log and `round_1_dialectic_log.md`:
    - original question, session provenance, and field lineage;
    - goal, audience, and useful outcome;
@@ -44,15 +44,15 @@ Some instruments span phases. Preserve their lifecycle: preparation freezes inpu
 Run this gate before **every numbered phase**, including Phase 1. A passed completion gate closes the prior phase; it does not open the next one.
 
 1. **Place the user.** Say `We are at Phase N of 7` and give the phase's aim in one sentence.
-2. **Show the bench.** List the scheduled instruments for this phase by name. For each, add a short parenthetical explanation of what it measures and why it may help here. Mark conditional instruments as conditional. This is a preview, not the instrument handshake and not a claim that any instrument is running.
-3. **Show the work.** Name the expected readout, durable artifacts, use of subagents or outside research, and a rough cost or time band. If cost depends on a later choice, say so.
-4. **Describe the next checkpoint.** Say what the user will see before more work runs. Never describe the entire phase as one uninterrupted batch.
+2. **Describe the moves.** Say what Cacambo will do and what each move should make visible. Give instrument names second, in parentheses, when useful. Mark any move that will run only if the material calls for it.
+3. **Show the work.** Name what the user will receive, any files or logs that will be created, and any fresh agents or outside research involved. Give a useful estimate of time or effort only when it is known; describe the actual work, not a generic cost band.
+4. **Describe the next return point.** Say what the user will see before more work runs. Never describe the entire phase as one uninterrupted batch.
 5. **Pause.** Ask whether to start this phase and stop. A prior workflow choice, completion gate, or “continue” given before this card is not the phase-start go-ahead.
 6. **Record the start.** After the user agrees, record the opening card, promised checkpoint, and user-message pointer in the round control log before doing phase work.
 
-After the user starts the phase, announce each instrument or tightly coupled cluster with its normal handshake just before it runs. Return its bounded reading at the phase's stated checkpoint. Do not compress the opening card and the first instrument run into one response.
+After the user starts the phase, explain each instrument or tightly coupled cluster in plain language just before it runs. Return its bounded result at the phase's stated return point. Do not compress the opening card and the first instrument run into one response.
 
-If a phase has internal stages, apply the same rule at any stage that introduces a new long-running subagent batch, outside research pass, or materially different instrument cluster: preview the work and cost, then pause. Short mechanical stages may proceed under the numbered phase's go-ahead, but still need their instrument handshakes and promised readouts.
+If a phase has internal stages, apply the same rule at any stage that introduces a new long-running agent batch, outside research pass, or materially different instrument cluster: preview the actual work, time, and files when material, then pause. Short mechanical stages may proceed under the numbered phase's go-ahead, but still need a plain-language explanation and the promised result.
 
 Read [dialectic-instrument-map.md](dialectic-instrument-map.md) for the sole phase-to-instrument schedule and required instrument attestations. Read each phase file and the full card for its named instruments just before use.
 
@@ -60,7 +60,7 @@ Read [dialectic-instrument-map.md](dialectic-instrument-map.md) for the sole pha
 
 - **Orchestrator:** interviews, reads research, frames positions, performs structural work, and works with the user.
 - **Monks:** fresh, context-isolated agents that fully believe one position. They never see sibling positions or orchestrator-only tension and synthesis material. Context isolation does not remove shared-model correlation.
-- **Research agents:** answer narrow gaps and write staging drafts when durable research is needed.
+- **Research agents:** answer narrow gaps and write staging drafts when research needs to be kept for later phases.
 - **Gardener:** background, sole writer of the dialectic wiki; ingests, links, lints, re-grounds, and assembles firewall-clean Monk briefs from disk. Its dispatch is asynchronous unless the very next operation needs one of those outputs.
 
 Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or round control logs. Keep immutable position snapshots, typed page classes, staged handoffs, append-only ledgers, and the rule that workflow gates cannot pass until required material is ingested.

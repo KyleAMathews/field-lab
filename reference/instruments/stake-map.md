@@ -9,13 +9,13 @@ requires: "The affected people and one concrete point of friction."
 execution_seat: orchestrator
 fresh_context: none
 effort: low
-persistence: "1–4 turns; session only."
+persistence: "A short conversation; can be completed here."
 artifact_risk: "The orchestrator supplies a polished motive the person never endorsed."
 ---
 # Stake map (`stake-map`)
 
 - **Phenomenon sought:** What people protect, need, fear, value, or cannot change.
-- **Unaided limit / access differential:** Proposed solutions hide the costs they answer. Structured elicitation separates reported stakes, inferred stakes, and fixed constraints by person.
+- **Why use it:** Proposed solutions hide the burdens they answer. Structured questions separate reported stakes, inferred stakes, and fixed constraints by person.
 - **Operating range:** Coordination, preferences, personal choices, norms, and relationship friction. Do not use to diagnose a person or invent hidden motives.
 - **Input:** The affected people and one concrete point of friction.
 - **Perturbation:** Direct attention from stated solutions to the cost each person experiences.
@@ -24,6 +24,6 @@ artifact_risk: "The orchestrator supplies a polished motive the person never end
 - **Control:** Mark user testimony separately from inference; offer inferred stakes as questions.
 - **Common artifact:** The orchestrator supplies a polished motive the person never endorsed.
 - **Escalate when:** Two valid stakes cannot fit together, or a repeated word hides different standards.
-- **Stop when:** Each person can recognize the map and a small experiment is available.
-- **Cost / persistence:** 1–4 turns; session only.
+- **Stop when:** Each person can recognize the map and, if action would help, a safe Real-world check is available with agreement from everyone affected.
+- **What it requires:** A short conversation and correction from the people whose stakes are being mapped.
 - **Execution placement:** **Orchestrator.** It keeps direct access to the user's testimony and marks inferred stakes as questions. A subagent may re-scan an existing transcript only as a separate control, not replace elicitation. If live testimony is unavailable, return a provisional map with gaps. The orchestrator presents it for recognition or correction.

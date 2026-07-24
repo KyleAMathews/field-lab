@@ -9,13 +9,13 @@ requires: "The user's request and any supplied specimen, read in full first."
 execution_seat: orchestrator
 fresh_context: none
 effort: low
-persistence: "Usually 1–3 exchanges; session only."
+persistence: "Usually 1–3 exchanges and can be completed in the current conversation."
 artifact_risk: "Leading questions manufacture the tension; a long questionnaire front-loads the orchestrator's taxonomy; rapport questions add ceremony without information; a “provisional” recommendation anchors the user before the question is answered."
 ---
 # Focus interview (`focus-interview`)
 
 - **Phenomenon sought:** Misregistration between the stated request or supplied artifact and the user's actual aim, stakes, prior, felt uncertainty, or desired change.
-- **Unaided limit / access differential:** The initial prompt shows what the user chose to state, not which part is live, tacit, doubtful, or consequential. Responsive questions make that hidden context available before analysis hardens around the first frame.
+- **Why use it:** The initial prompt shows what the user chose to state, not which part is live, tacit, doubtful, or consequential. Responsive questions make that hidden context available before analysis hardens around the first frame.
 - **Operating range:** Use before substantive work on interpretive, strategic, personal, creative, evaluative, dialectical, or aim-dependent practical questions. This includes fact-shaped requests whose answer may vary by intended outcome, named method, specimen state, or constraints. Skip stable facts, narrow mechanical tasks, explicit one-shot requests, and cases where prior conversation already supplies current answers.
 - **Input:** The user's request and any supplied specimen, read in full first.
 - **Perturbation:** Questions direct attention and may alter how the user understands the problem.
@@ -25,5 +25,5 @@ artifact_risk: "Leading questions manufacture the tension; a long questionnaire 
 - **Common artifact:** Leading questions manufacture the tension; a long questionnaire front-loads the orchestrator's taxonomy; rapport questions add ceremony without information; a “provisional” recommendation anchors the user before the question is answered.
 - **Escalate when:** The confirmed specimen needs systematic coverage or context-isolated committed positions.
 - **Stop when:** Another answer is unlikely to change the next probe or direct response.
-- **Cost / persistence:** Usually 1–3 exchanges; session only.
-- **Execution placement:** **Orchestrator.** It sees the live conversation and supplied specimen because responsive user correction creates the access differential. A subagent may draft candidate questions but cannot conduct the interview. If the user cannot reply, stop or give a context-limited direct answer. The orchestrator returns the testimony and corrected frame without extending them into analysis.
+- **What it requires:** A few focused questions in the current conversation.
+- **Execution placement:** **Orchestrator.** It sees the live conversation and supplied material because responsive user correction is what makes the questions useful. A subagent may draft candidate questions but cannot conduct the interview. If the user cannot reply, stop or give a context-limited direct answer. The orchestrator returns the testimony and corrected frame without extending them into analysis.

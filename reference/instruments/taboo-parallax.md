@@ -9,7 +9,7 @@ requires: "A topic, live question, bounded home setting, speech arena, audience,
 execution_seat: hybrid
 fresh_context: required
 effort: high
-persistence: "Scout: session. Full run: three or four research tracks and normally a Field Trip."
+persistence: "A scout can be done here. A full run uses three or four research tracks; offer a Field Log to keep its sources and comparisons together."
 artifact_risk: "Case selection, translation, and model priors can manufacture stereotypes or false contrasts."
 ---
 # Taboo Parallax (`taboo-parallax`)
@@ -29,12 +29,12 @@ Use cross-society differences in sayability to expose assumptions and questions 
 ## Instrument contract
 
 - **Phenomenon sought:** Claims, questions, distinctions, or premises that are ordinary in one social setting but euphemized, sanctioned, or excluded in another.
-- **Unaided limit / access differential:** Reasoning inside one speech regime makes its taboos feel like fact, taste, or simple decency. A controlled comparison makes asymmetric speech costs, enforcement mechanisms, and suppressed axes visible.
+- **Why use it:** Reasoning inside one public setting makes its taboos feel like fact, taste, or simple decency. A controlled comparison makes differences in speech pressure, enforcement, and suppressed questions visible.
 - **Operating range:** Social, political, organizational, moral, economic, family, professional, or technological topics where public norms shape which hypotheses can be stated. Do not use it to manufacture provocation, characterize an entire nationality, or settle a factual claim by popularity elsewhere.
 - **Input:** A topic; the user's live question; the relevant home setting; the speech arena and audience; the present or historical time slice; and the decision the comparison should inform.
 - **Perturbation:** Selecting countries, translating terms, and asking directly about taboos can create the very contrast being sought. Model priors and English-language sources can turn cultures into stock characters.
 - **Readout:** A source-grounded sayability matrix, asymmetric blind-spot candidates, enforcement mechanisms, within-society countervoices, truth tests, source limits, and unresolved residue.
-- **Cost / persistence:** Three or four independent research tracks plus comparison. A full run normally opens a Field Trip and belongs in its field log. A dialectic workflow may use the matrix as framing, donor, third-pole, or ground-condition substrate.
+- **What it requires:** Three or four independent research tracks plus comparison. For a full run, offer to start a Field Log to keep the sources and comparisons together. A dialectic workflow may use the matrix as framing, donor, third-pole, or ground-condition material.
 
 ## Execution placement
 
@@ -48,7 +48,7 @@ Use cross-society differences in sayability to expose assumptions and questions 
 
 A Walk may offer and scope a **taboo-parallax scout**. Run it only after the user selects it. A request for proof or a source-grounded comparison selects the full run rather than the scout. The scout returns a small provisional map, then leaves any choice about proof to the user.
 
-After selection and before any source lookup or scout content, announce: **“I’m pulling in the taboo-parallax instrument (a hypothesis-only scout for differences in what settings can say) because…”** This remains mandatory when the user requested the scout by name. It may use model priors and no more than three orienting sources total, but it may return only candidate speech locations, contrasts, and research questions. It may not claim what a society “won't say,” create a log, or launch country tracks.
+After selection and before any source lookup or scout content, lead with the action and limit. For example: **“Let’s compare where this claim can be said plainly, softened, or not voiced in these settings. I’ll use a Taboo parallax scout to give us a small hypothesis map—not proof.”** Do this even when the user requested the scout by name, but vary the words to fit the case. It may use model priors and no more than three orienting sources total, but it may return only candidate speech locations, contrasts, and research questions. It may not claim what a society “won't say,” create a log, or launch country tracks.
 
 The scout should test whether the real contrast is:
 
@@ -58,7 +58,7 @@ The scout should test whether the real contrast is:
 
 Return two or three concise candidate asymmetries, their provenance, and what evidence would be needed to establish each. Keep it a first map rather than a source dossier. Seek user correction before offering a full run.
 
-A full run compares three or four source-grounded public spheres through a frozen matrix. That planned comparative collection normally calls for opening a Field Trip. Explain the research tracks, field log, source burden, and stereotype risk plainly and get assent before creating artifacts.
+A full run compares three or four source-grounded public spheres through a frozen matrix. Offer to start a Field Log so the sources and comparisons stay together. Explain the separate research tracks, amount of source work, and stereotype risk plainly, then get assent before creating files.
 
 ## Procedure
 

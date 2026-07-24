@@ -55,7 +55,7 @@ Seed this append-only ledger with inherited entries at `selected` or later. Use 
 - **Artifact risk:** <what the instrument may have induced or hidden>
 - **Unmeasured:** <what remains outside the reading>
 - **User feedback:** <pending / confirmed / correction with pointer>
-- **Caddy:** <offered instruments, selected workflow handoff, or no next instrument>
+- **Caddy:** <remaining current batch, queued next instrument, offered instruments, selected workflow handoff, or no next instrument>
 
 Include instruments at `selected` or later. Keep mere offers in the collection plan; do not rewrite ordinary conversation as a formal run. A `prepared` experiment retains its frozen baseline, controls, and decision rule even before an observation returns. Only a `complete` entry may claim an empirical access delta or reading. Append another dated record when lifecycle or feedback changes; do not overwrite the earlier state.
 
@@ -87,11 +87,11 @@ Include instruments at `selected` or later. Keep mere offers in the collection p
 - **Gap:** <what is unknown>
 - **Requested measurement:** <what remains unseen>
 - **Offered instrument or source:** `<instrument-id>` or <source>
-- **Selection state:** <offered / user-selected>
+- **Selection state:** <offered / user-selected—current batch / user-selected—queued next, with order>
 - **Done when:** <coverage condition>
 
 - **Recorded at:** <ISO 8601> — **Stop when:** <the agreed local condition for pausing or closing>
-- **Recorded at:** <ISO 8601> — **Plan change:** <user-selected addition, removal, or reordering with pointer>
+- **Recorded at:** <ISO 8601> — **Plan change:** <user-selected addition, removal, replacement, or reordering with pointer; preserve the remaining queue>
 
 ## Current working question
 

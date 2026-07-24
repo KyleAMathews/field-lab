@@ -15,10 +15,10 @@ artifact_risk: "“Interesting” substitutes for supported and useful; every dr
 # Hidden-signal recovery assay (`loss-audit`)
 
 - **Phenomenon / range / input:** Useful supported material carried by only one source and dropped by comparison; needs source outputs plus a proposed reduction or candidate.
-- **Unaided limit / access differential:** Combined summaries favor shared material. Independent re-scans expose high-value single-source items and the mechanism of their loss.
+- **Why use it:** Combined summaries favor shared material. Independent re-scans expose high-value single-source items and the rule that dropped them.
 - **Perturbation / procedure:** Freeze the proposed summary, comparison, decomposition, or candidate. Re-scan each source separately, with sibling sources hidden when possible. List supported items absent from the frozen result, then trace where each vanished: compression, majority agreement, category mismatch, low salience, or explicit rejection. Preserve support and source pointers before collating the lists.
 - **Readout / control:** Recovered item, original support, where it vanished, and the comparison rule that dropped it. Do not judge usefulness or decide whether to restore it.
 - **Common artifacts:** “Interesting” substitutes for supported and useful; every dropped item is rescued.
 - **Escalate / stop:** Offer a separate evaluation only when the user wants recovered items judged. Stop after every source has a recovered/dropped trace.
-- **Cost / persistence:** One pass per source; preserve with the comparison it audits.
+- **What it requires:** One pass per source; keep it with the comparison it audits.
 - **Execution placement:** **Parallel subagents preferred.** Give each fresh scanner one source and the proposed reduction, with provenance labels and sibling sources hidden; the orchestrator collates recovered items without judging them. Isolation protects single-source material from consensus compression. If agents are unavailable, the orchestrator re-scans one source at a time with provenance stripped and labels the result lower-confidence.

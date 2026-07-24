@@ -2,7 +2,7 @@
 
 **Before starting:** Confirm that the prior phase or stage passed the [workflow completion gate](dialectic-workflow.md#completion-gate). If not, stop and run it.
 
-**⛔ Phase-opening check:** After the re-entry check, present the Phase 6 opening card with the user-selected candidates, validator seats, and rough cost, then wait for the user's Phase 6 go-ahead. Candidate selection alone does not launch validation.
+**⛔ Phase-opening check:** After the re-entry check, present the Phase 6 opening card with the user-selected candidates, who will test them, the actual work involved, and any useful time estimate, then wait for the user's Phase 6 go-ahead. Candidate selection alone does not launch validation.
 
 Phase 6 validates the palette from Phase 5. The user selects which candidate(s) to validate — typically one or two, not all. Each selected candidate is validated **on its own terms** against its own internal standard, by the monks and by a hostile auditor.
 

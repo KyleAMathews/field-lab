@@ -9,13 +9,13 @@ requires: "The two poles and the axis on which they differ."
 execution_seat: orchestrator
 fresh_context: optional
 effort: low
-persistence: "1–3 turns; session only."
+persistence: "A brief pass; can be completed here."
 artifact_risk: "A decorative third way created to make the map look rich."
 ---
 # Third-pole probe (`third-pole`)
 
 - **Phenomenon sought:** An omitted independent position, constituency, or axis.
-- **Unaided limit / access differential:** Inspection along the stated axis can find only poles and blends. Searching for an independent basis makes an orthogonal position, or its absence, visible.
+- **Why use it:** Looking only along the stated axis can find only poles and blends. Searching for an independent basis makes a truly different position, or its absence, visible.
 - **Operating range:** Binary framings that feel complete too early. Do not count a blend or compromise as a third pole.
 - **Input:** The two poles and the axis on which they differ.
 - **Perturbation:** Searches outside that axis.
@@ -25,5 +25,5 @@ artifact_risk: "A decorative third way created to make the map look rich."
 - **Common artifact:** A decorative third way created to make the map look rich.
 - **Escalate when:** The pole is live and changes what positions must be compared.
 - **Stop when:** The binary is adequate or the new pole can enter the next probe.
-- **Cost / persistence:** 1–3 turns; session only.
+- **What it requires:** A brief pass over the two stated poles and the evidence around them.
 - **Execution placement:** **Orchestrator.** It needs the confirmed binary and user context to test whether a proposed pole is genuinely independent. A fresh subagent may generate candidates when decorrelation is useful, but the orchestrator applies the constituency and axis controls. Return the surviving candidates or “none found” without choosing a new frame.

@@ -9,13 +9,13 @@ requires: "The live tension and known material conditions."
 execution_seat: orchestrator
 fresh_context: optional
 effort: low
-persistence: "1–3 turns; session only."
+persistence: "A brief pass; can be completed here."
 artifact_risk: "A convenient fact is used to make the normative conflict vanish."
 ---
 # Ground-condition probe (`ground-condition`)
 
 - **Phenomenon sought:** A concrete fact, resource condition, authority relation, or level shift that changes the debate.
-- **Unaided limit / access differential:** Principle-level argument hides the conditions that produce or constrain it. The probe separates those conditions and exposes a fact or control point that can be checked.
+- **Why use it:** A principle-level argument can hide the conditions that produce or constrain it. The probe separates those conditions and exposes a fact or control point that can be checked.
 - **Operating range:** Abstract conflicts that may depend on capacity, timing, ownership, incentives, or who decides. Do not use to dismiss a real value conflict as logistics.
 - **Input:** The live tension and known material conditions.
 - **Perturbation:** Moves from stated principles to the conditions that produce or constrain them.
@@ -25,5 +25,5 @@ artifact_risk: "A convenient fact is used to make the normative conflict vanish.
 - **Common artifact:** A convenient fact is used to make the normative conflict vanish.
 - **Escalate when:** A missing fact needs research, or the ground condition has its own contradiction.
 - **Stop when:** Checking one fact or changing one condition is the best next step.
-- **Cost / persistence:** 1–3 turns; session only.
+- **What it requires:** A brief pass plus any records needed to check the conditions.
 - **Execution placement:** **Orchestrator.** It connects the live tension to candidate material conditions. Research subagents may gather a named fact after the probe identifies it; they do not choose the ground condition from the full hidden context. The orchestrator returns conditions, evidence status, and conditional variants without selecting the decisive one.

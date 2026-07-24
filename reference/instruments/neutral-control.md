@@ -15,10 +15,10 @@ artifact_risk: "“Neutral” wording carries the orchestrator's frame or lacks 
 # Neutral control (`neutral-control`)
 
 - **Phenomenon / range / input:** Structure visible before a strong probe; needs the same specimen later given to the active instrument.
-- **Unaided limit / access differential:** A post-perturbation reading cannot identify what the probe added. A frozen baseline makes the delta separable.
+- **Why use it:** A result collected after a strong prompt cannot show what the prompt added. A frozen baseline makes the change visible.
 - **Perturbation / procedure:** Describe events, claims, and gaps without belief stress, donor material, forced axes, or synthesis language.
 - **Readout / control:** Baseline structure compared with post-probe additions and removals; keep inputs matched.
 - **Common artifacts:** “Neutral” wording carries the orchestrator's frame or lacks enough detail to compare.
 - **Escalate / stop:** Mark probe-only findings as possibly induced. Stop once material deltas are classified.
-- **Cost / persistence:** One short pass; keep beside the stressed readout when stakes are moderate or high.
+- **What it requires:** One short pass collected before the stronger prompt; keep it beside the later result when stakes are meaningful.
 - **Execution placement:** **Either, conditional on timing.** The orchestrator may freeze the baseline before seeing the perturbation. After exposure, use a fresh subagent that sees only the original specimen; the orchestrator can no longer recreate a neutral baseline. If neither condition is possible, omit the control and state that attribution is unavailable. Return the matched additions and removals without explaining their importance.

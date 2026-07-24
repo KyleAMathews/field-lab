@@ -85,15 +85,20 @@ function usage() {
 
 Rank instrument cards by their YAML frontmatter and return each matching block in full.
 
+Query shape:
+  Use 4-8 abstract terms for one access problem, not the user's subject nouns.
+  Combine the failure shape, desired readout, and any key control.
+  Reuse language from the instrument bench in SKILL.md.
+
 Options:
   --limit <n>   Return at most n matches (default: ${DEFAULT_LIMIT})
   --json        Emit machine-readable JSON
   --help        Show this help
 
 Examples:
-  node scripts/find-instruments.js repeated word meaning standards
-  node scripts/find-instruments.js --limit 3 sequence handoffs missing observations
-  node scripts/find-instruments.js --json blind baseline framing`;
+  node scripts/find-instruments.js events mixed motives observable sequence
+  node scripts/find-instruments.js --limit 3 repeated word competing meanings standards
+  node scripts/find-instruments.js --json strong probe added structure frozen baseline`;
 }
 
 function parseArgs(argv) {
@@ -207,19 +212,19 @@ function stem(token) {
     .replace(/(ing|ers|ies|ied|ed|es|s)$/, "");
 }
 
-function queryTokens(query) {
+function queryTermDetails(query) {
   const seen = new Set();
-  const tokens = [];
+  const terms = [];
 
   for (const token of normalize(query).split(/\s+/)) {
     if (!token || STOP_WORDS.has(token)) continue;
     const root = stem(token);
     if (root.length < 2 || seen.has(root)) continue;
     seen.add(root);
-    tokens.push(root);
+    terms.push({ input: token, root });
   }
 
-  return tokens;
+  return terms;
 }
 
 function fieldMatch(fieldValue, token) {
@@ -293,10 +298,11 @@ function loadCards() {
 }
 
 function search(cards, query, limit) {
-  const tokens = queryTokens(query);
-  if (!tokens.length) {
+  const termDetails = queryTermDetails(query);
+  if (!termDetails.length) {
     throw new Error("provide at least one meaningful search term");
   }
+  const tokens = termDetails.map((term) => term.root);
 
   const matches = cards
     .map((card) => scoreCard(card, query, tokens))
@@ -309,19 +315,71 @@ function search(cards, query, limit) {
     )
     .slice(0, limit);
 
-  return { query, terms: tokens, matches };
+  const best = matches[0];
+  const bestMatchedRoots = new Set(best?.matched_terms ?? []);
+  const matchedQueryTerms = termDetails
+    .filter((term) => bestMatchedRoots.has(term.root))
+    .map((term) => term.input);
+  const unmatchedQueryTerms = termDetails
+    .filter((term) => !bestMatchedRoots.has(term.root))
+    .map((term) => term.input);
+  const bestCoverage = termDetails.length
+    ? matchedQueryTerms.length / termDetails.length
+    : 0;
+  const reasons = [];
+
+  if (termDetails.length < 4) reasons.push("use at least four abstract terms");
+  if (termDetails.length > 8) reasons.push("search one failure shape with at most eight terms");
+  if (matchedQueryTerms.length < 2) reasons.push("fewer than two terms match the best card");
+  if (bestCoverage < 0.5) reasons.push("less than half the terms match the best card");
+
+  return {
+    query,
+    terms: termDetails.map((term) => term.input),
+    diagnostic: {
+      weak_query: reasons.length > 0,
+      reasons,
+      best_match: best?.id ?? null,
+      best_coverage: Number(bestCoverage.toFixed(2)),
+      matched_query_terms: matchedQueryTerms,
+      unmatched_query_terms: unmatchedQueryTerms,
+    },
+    matches,
+  };
 }
 
 function humanOutput(result) {
+  const diagnostic = result.diagnostic;
+
   if (!result.matches.length) {
-    return `No frontmatter matches for: ${result.terms.join(", ")}\nTry broader terms or inspect the bench in SKILL.md.`;
+    return [
+      `No frontmatter matches for: ${result.terms.join(", ")}`,
+      "Reframe the case as one abstract access problem using the bench in SKILL.md.",
+      "Name what is hidden, mixed, missing, induced, erased, or untested and the readout needed.",
+    ].join("\n");
   }
 
-  const lines = [
-    `Instrument metadata matches for: ${result.terms.join(", ")}`,
-    "Search relevance only; check fit before offering an instrument.",
-    "",
-  ];
+  const lines = [];
+
+  if (diagnostic.weak_query) {
+    const percent = Math.round(diagnostic.best_coverage * 100);
+    lines.push(
+      `Weak query fit: ${diagnostic.best_match} matched ${diagnostic.matched_query_terms.length} of ${result.terms.length} terms (${percent}%).`,
+    );
+    if (diagnostic.unmatched_query_terms.length) {
+      lines.push(`Unmatched terms: ${diagnostic.unmatched_query_terms.join(", ")}`);
+    }
+    lines.push(`Why weak: ${diagnostic.reasons.join("; ")}.`);
+    lines.push(
+      "Reframe before trusting the ranking: use 4-8 bench terms for one abstract failure shape and desired readout, not domain nouns.",
+      "",
+      `Tentative instrument metadata matches for: ${result.terms.join(", ")}`,
+    );
+  } else {
+    lines.push(`Instrument metadata matches for: ${result.terms.join(", ")}`);
+  }
+
+  lines.push("Search relevance only; check fit before offering an instrument.", "");
 
   for (const [index, card] of result.matches.entries()) {
     lines.push(
