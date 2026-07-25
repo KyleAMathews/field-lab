@@ -58,4 +58,4 @@ Pause or close the Field Trip when:
 - further probes repeat existing readings;
 - the user has enough material even though open questions remain.
 
-Record the trip as `active`, `paused`, or `complete`; completeness does not require synthesis. If related Field Trips now need a shared purpose, lineage, or cross-trip index, offer an [Expedition](expedition.md).
+Keep the current state in frontmatter and the field log's single Current status section. Update both in place. Append a Status changes line only when the state actually changes among `active`, `paused`, and `complete`; routine continuation, new readings, and new questions to return to do not create status entries. Completeness does not require synthesis. If related Field Trips now need a shared purpose, lineage, or cross-trip index, offer an [Expedition](expedition.md).

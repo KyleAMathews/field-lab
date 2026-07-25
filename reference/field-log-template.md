@@ -18,7 +18,7 @@ expedition: <path to expedition_log.md, or none>
 
 # <Field Trip title>
 
-The opening snapshot below inherits `opened-at`. Do not silently overwrite it: append later changes with `recorded-at`, and update frontmatter `updated-at`.
+The opening question, scope, and reason below inherit `opened-at` and remain fixed. Later lineage, instrument readings, user choices, and other historical events use append-only entries with `recorded-at`. Current working question, questions to return to, collection plan, and current status are living sections: edit them in place and update their single `updated-at` value. Never append a full copy of a living section.
 
 ## Original question
 
@@ -99,6 +99,14 @@ Include instruments at `selected` or later. Keep mere offers in the collection p
 
 <Where the Field Trip has arrived. Keep this distinct from the original question.>
 
+## Questions to return to
+
+**Updated at:** <ISO 8601>
+
+Keep one deduplicated list of questions the user may want to return to. Add, remove, merge, or narrow bullets in place. Do not copy the whole list into status updates or append a second Questions to return to section.
+
+- <open question or line of inquiry>
+
 ## Workflow ledger
 
 ### <workflow name> — <selected / running / paused / complete>
@@ -111,23 +119,35 @@ Include instruments at `selected` or later. Keep mere offers in the collection p
 ## User orientation notes and choices
 
 - **Recorded at:** <ISO 8601> — **What the user noticed:** <verbatim or close paraphrase>
+- **Recorded at:** <ISO 8601> — **Boundary or question-list change:** <the changed limit, added question, removal, merge, or narrowing; delta only>
 - **Recorded at:** <ISO 8601> — **Selected next instrument, workflow, or Expedition:** <selection and pointer, if any>
 - **Recorded at:** <ISO 8601> — **Explicit engine transition:** <conclude / synthesize / recommend / decide / plan / act, with pointer, or none>
 
-## Trip status
+## Current status
 
-- **Updated at:** <ISO 8601>
+This is one living snapshot. Replace its values in place; never append another Current status block.
+
+- **Updated at:** <ISO 8601; change only when state or reason changes>
 - **State:** <active / paused / complete>
 - **Reason:** <scope met, paused by user, experiment pending, readings repeating, or other observed condition>
-- **Open trails:** <questions worth retaining without forcing closure>
+
+## Status changes
+
+Append one line only when the state changes between `active`, `paused`, and `complete`. Routine reading, a new finding, or changing the questions to return to is not a status change.
+
+- **Recorded at:** <ISO 8601> — **State:** <prior> → <new> — **Reason:** <why>
 ```
 
 ## Integrity rules
 
 - Preserve the original question and current working question separately.
 - Preserve the exact opening date, time, timezone, and user-authorization pointer.
-- Give every appended entry a `recorded-at` timestamp with timezone. Use `observed-at` or `occurred-at` when the event time differs; write `unknown` rather than inventing it.
-- Give every mutable section and frontmatter state an `updated-at` timestamp with timezone.
+- Give every append-only entry a `recorded-at` timestamp with timezone. Use `observed-at` or `occurred-at` when the event time differs; write `unknown` rather than inventing it.
+- Give every living section and frontmatter state one `updated-at` timestamp with timezone and replace that value in place.
+- Never append a full copy of Current working question, Questions to return to, collection plan, or Current status. Preserve history in the relevant event ledger as a concise delta only when the change matters.
+- Keep Questions to return to as one deduplicated living list. When provenance matters, record only the added, removed, merged, or narrowed question in User orientation notes and choices; do not repeat unchanged questions.
+- Append to Status changes only for an actual transition among `active`, `paused`, and `complete`. Do not record repeated `active` entries merely because the user continues, a reading arrives, or the log changes.
+- When first updating an older log that contains repeated Trip status or Open trails blocks, compact them once: keep the latest state and reason in Current status, merge the still-open questions into one deduplicated Questions to return to list, and retain only actual state transitions in Status changes. Remove repeated `active` snapshots and repeated copies of unchanged questions.
 - Preserve the reason the log opened and all prior lineage.
 - Keep claim kinds, support, and confidence visible.
 - Keep one authoritative append-only instrument ledger; do not split inherited and new runs into separate schemas.
