@@ -16,6 +16,8 @@ artifact_risk: "Favored axes can create false orthogonality, tidy boxes, or unsu
 
 Use this instrument to expose dominant clusters, candidate separating lines, evocative prototypes, and missing quadrants in ambiguous, high-dimensional material. Starting from favored axes hides whether the boxes describe real clusters; Rao's cluster-first projection makes the formation trace inspectable.
 
+**Core geometry:** Treat both axes as continuous spectra or watersheds and each cell as a fuzzy center of gravity. Cases may sit near a line, straddle regions, or move over time. Never say that a 2×2 “forces sharp boundaries.” The drawn lines orient comparison; they do not claim that the material contains crisp, exclusive types. Calibrate instead for continuity, overlap, trajectories, false orthogonality, omitted dimensions, and other projection loss.
+
 - **Operating range:** Use when a bounded question or territory contains enough observed, sourced, elicited, or explicitly generated items to cluster. Avoid plainly one-dimensional, statistically tractable, first-principles, or taxonomic material.
 - **Input:** A bounded question or territory and a typed inventory of the material to project.
 - **Perturbation:** Cluster the material before proposing axes, then use separating lines and evocative labels to test several possible maps.
@@ -93,7 +95,7 @@ For each cluster, show 2–3 label candidates, the naming mode, and why the reta
 
 Draw the complete diagram, then place the inventory items back into it. Every occupied cell needs at least one relevant member or example; use 1–2 representative examples in the diagram and list additional members below. Mark a cell `[empty]` or `[under-occupied]` only after searching the inventory and relevant source material, not because no example came immediately to mind.
 
-If the examples do not fit their labels, several items drift across borders, or the labels collapse when examples are removed, return to clustering or the separating lines. Do not polish the names around a broken structure.
+If the examples do not fit their labels, several items sit near or cross the watersheds, or the labels collapse when examples are removed, return to clustering or the separating lines. Near-line and moving cases may be faithful readings rather than defects; revise the map only when its clusters or separators fail to clarify them. Do not polish the names around a broken structure.
 
 ### 6. Return the readout
 
@@ -104,7 +106,7 @@ Return these blocks in order:
 3. **Candidate separators** with independence, chemistry, and failure notes.
 4. **Label workshop** with alternatives, naming mode, and retained labels.
 5. **Rendered 2×2(s)** with examples and empty-cell status.
-6. **Calibration** covering source limits, axis claim type, confidence, orthogonality, and what remains unmeasured.
+6. **Calibration** covering source limits, axis claim type, confidence, orthogonality, fuzzy membership, movement over time, and what remains unmeasured. Describe the cells as regions or centers of gravity, not exclusive types, and never list “sharp boundaries” as an inherent cost of a 2×2.
 
 The inventory, clusters, axes, and labels are instrument readings. Do not turn them into a recommendation or choose the winning map for the user.
 
@@ -129,7 +131,7 @@ Every candidate map must show:
 
 1. both named axes and both semantic poles of each axis;
 2. visible horizontal and vertical directions;
-3. four bounded cells, each with its own label;
+3. four visibly divided cells, each with its own label, treated as fuzzy regions rather than exclusive bins;
 4. at least one relevant example or observed member in every occupied cell—normally 1–2 representative placements—or an explicit `[empty]` / `[under-occupied]` mark;
 5. the axis claim type, second-axis confidence, source pointers for placements, and orthogonality result immediately below the diagram.
 
