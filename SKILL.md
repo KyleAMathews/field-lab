@@ -206,7 +206,7 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`substrate-map`](reference/instruments/substrate-map.md) | Events are mixed with motives or explanations | Observable sequence, handoffs, and missing observations |
 | [`stake-map`](reference/instruments/stake-map.md) | Feelings, needs, standards, constraints, or people remain implicit | Reported, inferred, aligned, conflicting, and unknown stakes |
 | [`term-scan`](reference/instruments/term-scan.md) | A repeated word may carry several standards or meanings | Competing loadings and where they change evidence or choice |
-| [`tension-statement`](reference/instruments/tension-statement.md) | Friction recurs but the contradiction stays vague | The smallest supported collision and its disconfirming evidence |
+| [`tension-statement`](reference/instruments/tension-statement.md) | Friction is vague or a working tension may have moved or thinned | A traced initial menu and later tension-status checks with user choice |
 | [`third-pole`](reference/instruments/third-pole.md) | A binary may omit an axis, position, or constituency | A genuinely independent pole, or evidence none is supported |
 | [`ground-condition`](reference/instruments/ground-condition.md) | A fact, resource, authority relation, or level may change the debate | Candidate ground conditions and their evidence status |
 | [`real-world-check`](reference/instruments/real-world-check.md) | One safe, reversible change could answer a practical uncertainty | What actually changes after one controlled action |

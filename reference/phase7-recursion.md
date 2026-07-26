@@ -4,11 +4,11 @@
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 7 opening card and wait for the user's Phase 7 go-ahead before generating or clustering recursive directions. A passed validation gate does not start another round.
 
-**Inner loop vs. outer loop.** Two loops run, and they are different. The **inner loop** (the 4.9 refinement-loop router, `reference/refinement-loop.md`) matures _this_ contradiction on its frozen anchor _before_ the first synthesis — its operators are Research / Refine / Re-split. **Phase 7 is the outer loop:** it jumps _after_ a synthesis to a queued _different_ contradiction. Discriminator: **re-split stays on the same frozen anchor; Phase 7 moves to a different queued contradiction.** Don't blur them — a re-split is not a new round, and a new round is not a re-split.
+**Refinement, redirection, and recursion are different.** The **inner loop** (the 4.9 router) matures the current viable contradiction through Research / Refine / Re-split. Re-split stays with the same underlying contradiction. **Redirect** ends a thin, dissolved, or abandoned round before synthesis and returns a different user-selected direction to Phase 1. **Phase 7 recursion** happens only after synthesis and opens a new contradiction from what the completed round produced. Preserve those lineages; do not make the user synthesize a dead end merely to earn a direction change.
 
 ## Phase 7 instruments: `tension-statement` and `third-pole`
 
-Announce `tension-statement` before converting the idea burst into candidate directions. Each proposed direction must name two sound demands, the condition that makes them collide, and the mechanism of conflict; a topic or weakness alone is not a recursive contradiction. Then run `third-pole` across the clustered directions to test whether the menu omits an independent axis or constituency. A clear “none found” is a valid reading. Record both instruments before the user chooses.
+Announce `tension-statement` before converting the idea burst into candidate directions. Each proposed direction must name two sound demands, the condition that makes them collide, and the mechanism of conflict; a topic or weakness alone is not a recursive contradiction. Run it through the traced candidate menu but keep its lifecycle `running`. Then run `third-pole` across the clustered directions to test whether the menu omits an independent axis or constituency. A clear “none found” is a valid reading. Present the final unranked menu after that control; the user's choice, combination, rewrite, or rejection completes `tension-statement`. Record both instruments and keep the generated menu separate from the user's choice.
 
 Recursion is an optional new inquiry, not cleanup or an automatic next step. A completed round may expose a different live contradiction worth examining. Later rounds can test a result against its own limits, but more work is not inherently better. Show the openings and let the user decide whether any serves their aim.
 
@@ -43,7 +43,7 @@ Sources for recursive contradictions:
 
 ## Present a Menu, Not a Decision
 
-**YOU MUST DO THE IDEA BURST BEFORE PROPOSING DIRECTIONS.** This is the most commonly skipped step in the entire skill, and skipping it visibly degrades the quality of recursive directions. When the orchestrator jumps straight to "here are 2-3 directions," it proposes whatever's most obvious from the synthesis — which is almost always a safe, predictable next step rather than the genuinely fertile contradiction that would produce the best next round. The idea burst is what prevents this.
+**YOU MUST TEST FOR A LIVE CONTRADICTION, THEN DO THE IDEA BURST BEFORE PROPOSING DIRECTIONS.** First apply the `tension-statement` no-tension test. If no live contradiction is supported, record that result and stop without proposing another round. Otherwise do the burst. This is the most commonly skipped step in the entire skill, and skipping it visibly degrades the quality of recursive directions. When the orchestrator jumps straight to "here are 2-3 directions," it proposes whatever's most obvious from the synthesis — which is almost always a safe, predictable next step rather than the genuinely fertile contradiction that would produce the best next round. The idea burst is what prevents this.
 
 **Do not skip this step. Do not abbreviate it. Do not combine it with direction-clustering.** Generate the burst first, read it, _then_ cluster.
 
@@ -63,9 +63,11 @@ Then **cluster the burst into 2-4 coherent directions**, each briefly described 
 
 **Write the queue to a file** (e.g., `dialectic_queue.md`) — a running list of proposed contradictions with their source round and status (explored, queued, deferred). Every item records `recorded-at`; every status change records `status-updated-at` and its user or workflow pointer. This becomes a map of the dialectical territory: where you've been, where you could go, and what's still open. Present a concise summary of the directions to the user — the full queue is in the file.
 
+**No-tension completion exit.** If `tension-statement` returns no supported recursive contradiction, record its full readout, record that the queue is unchanged, present that result, and stop. Do not apply the candidate-direction checklist below.
+
 **Completion gate — enumerate and attest before launching the next round or stopping.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
-- [ ] Idea burst (5–8 candidate contradictions) generated **first**, read, and only then clustered — not skipped or combined with clustering
+- [ ] `tension-statement` first tested for a live contradiction; an idea burst (5–8 candidate contradictions) was generated **first**, read, and only then clustered — not skipped or combined with clustering
 - [ ] Round's synthesis **transferred** against the other queued tensions (tried for dissolve/reframe/sharpen) before the next direction was chosen
 - [ ] Candidate directions cleared the **minimal criterion** (not-too-trivial, not-too-solved vs. existing wiki `tension`/`synthesis` pages); the user selected the next direction without an agent novelty ranking
 - [ ] Burst clustered into 2–4 candidate directions

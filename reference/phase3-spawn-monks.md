@@ -4,11 +4,11 @@
 
 **⛔ Phase-opening check:** After the re-entry check, present the Phase 3 opening card, including the number of agents and rough run cost, and wait for the user's Phase 3 go-ahead. A passed Phase 2 gate does not launch the Monks.
 
-## Instrument lifecycle: run and read `belief-stress`
+## Instrument lifecycle: run and read `belief-stress`, then recheck the tension
 
 Phase 3 executes the prepared `belief-stress` instrument under its parallel-subagent contract. Each Monk sees its own full-conviction prompt and the shared neutral substrate, but not sibling positions or outputs. After all essays return, compare their structures with the Phase 1 `neutral-control`: mark what was already visible, what belief stress exposed, and what the perturbation may have induced. Append the full belief-stress readout before presenting the structural summary.
 
-Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.1 surfaced additional poles. Use the host's subagent mechanism so each gets a clean context with full belief commitment.
+Spawn each monk as a separate subagent session — **typically Monk A and B, sometimes also C or D** if Phase 1c.2 surfaced additional poles. Use the host's subagent mechanism so each gets a clean context with full belief commitment.
 
 ```bash
 # Example for Claude Code (scales to N monks):
@@ -64,6 +64,16 @@ Then ask:
 
 If the user identifies a testable claim, offer a targeted research pass and state what it would measure. Run it only if the user selects it. Its sourced findings remain a raw reading; later synthesis may cite them but must not be folded into the instrument ledger.
 
+After the user's correction and any selected claim check, run `tension-statement` in recheck mode. Reread the whole inquiry and tension trail; do not let the most vivid Monk move or newest source take over. Treat Monk output as testimony about the belief burdens, not evidence that a new tension is true.
+
+Return the current status and delta:
+
+- On `live` or `sharpened`, ask whether the user wants to carry this direction into Phase 4.
+- On `moved`, distinguish a better split of the same contradiction from a different direction. For the same contradiction, apply the Re-split closure and user-choice rules, return to Phase 2, and rerun the Monks before Phase 4.
+- On `thin` or `dissolved`, do not force Phase 4 to justify the sunk cost of the Monk run.
+
+If the user chooses a materially different direction, use the workflow's **Redirect** route: mark this round and its frozen Monk specimen `redirected`, preserve the essays and findings, open a new round with lineage, and return to Phase 1. If the user stops, record the final tension status and stop.
+
 ---
 
 **Completion gate — enumerate and attest before Phase 4.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
@@ -75,5 +85,6 @@ If the user identifies a testable claim, offer a targeted research pass and stat
 - [ ] Monk essays ingested by the gardener as `position` pages (immutable per-round snapshots, cross-linked)
 - [ ] Structural summary presented to the user; both high-leverage questions asked (accuracy check + testable-claim check)
 - [ ] Any user-identified testable claim researched before proceeding
+- [ ] Post-belief-stress `tension-statement` recheck reread the whole inquiry, distinguished side trails from movement, recorded `live` / `sharpened` / `moved` / `thin` / `dissolved`, and captured the user's continue, re-split, redirect, or stop choice
 - [ ] `belief-stress` readout records authorization, actual parallel contexts, essay traces, access delta, typed raw readings, hedging/decorrelation control, artifact risk, unmeasured remainder, and user correction; any correlated fallback remains downgraded and later interpretation is separate
 - [ ] `neutral-control` comparison records which structures predated belief stress, which appeared only under commitment, and which remain unsupported or possibly induced

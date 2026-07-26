@@ -33,7 +33,7 @@ The framing in _this_ index applies to every stage. Section numbers are continuo
 | A     | `reference/phase4-stage-a-analysis.md`      | 4.0–4.4           | Find the collision                                                                                                                                              |
 | B     | `reference/phase4-stage-b-lateral.md`       | 4.5a/b/c          | Build the sea (donor pipeline)                                                                                                                                  |
 | C     | `reference/phase4-stage-c-decomposition.md` | 4.6, 4.6.5, 4.6.6 | Shatter, recombine, instrument                                                                                                                                  |
-| D     | `reference/phase4-stage-d-criteria.md`      | 4.7, 4.9          | Sublation criteria + HARD STOP + the frontier reading (`reference/instruments/frontier-rheometer.md`) + the four-exit refinement-loop router (`reference/refinement-loop.md`) |
+| D     | `reference/phase4-stage-d-criteria.md`      | 4.7, 4.9          | Sublation criteria + HARD STOP + the frontier reading (`reference/instruments/frontier-rheometer.md`) + the five-exit refinement-loop router (`reference/refinement-loop.md`) |
 
 Writing each stage to file as you finish it is not optional bookkeeping — it is what makes the staging safe. If context is compacted between stages, the completed work survives on disk.
 
@@ -41,7 +41,7 @@ Writing each stage to file as you finish it is not optional bookkeeping — it i
 
 ## Framing that applies to all stages
 
-**N-monk scaling.** The default is 2 monks but Phase 1c.1 may have added a 3rd or 4th. The machinery below scales naturally — each monk gets its own determinate negation, the Boydian decomposition gets richer (more atomic parts in the "sea of anarchy"), and most lenses work N-way without rewrite. A few specific adjustments with 3+ monks:
+**N-monk scaling.** The default is 2 monks but Phase 1c.2 may have added a 3rd or 4th. The machinery below scales naturally — each monk gets its own determinate negation, the Boydian decomposition gets richer (more atomic parts in the "sea of anarchy"), and most lenses work N-way without rewrite. A few specific adjustments with 3+ monks:
 
 - **4.2 Shared Assumptions:** Ask "what do _all N_ monks share that none realize they share?" Then separately note any _pairwise_ assumptions that two monks share but the third doesn't — pairwise coalitions are themselves a structural finding, sometimes the main one.
 - **4.2.5 Position Protection:** Run the protection analysis per monk. Then ask whether there's a disguised shared interest _all N_ tacitly need (the strongest finding) — or only a pairwise subset (the next strongest).

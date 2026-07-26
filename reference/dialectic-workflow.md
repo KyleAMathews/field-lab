@@ -10,7 +10,7 @@ Selecting the workflow reserves its scheduled instruments and declared artifacts
 
 1. Acknowledge the user's direct request or explain in plain language what the full workflow could reveal that a shorter inquiry would miss.
 2. Give this compact map of the whole workflow before using tools or creating artifacts. Adapt the words, not the seven steps:
-   1. **Frame and ground** — confirm the real tension, test missing axes, and gather only the research it needs.
+   1. **Frame and ground** — surface several interview-traced tensions, let the user choose a provisional working frame, test missing axes, and gather only the research it needs.
    2. **Prepare the Monks** — freeze separate full-conviction briefs for the committed positions.
    3. **Run the Monks** — collect the context-isolated positions and check what belief stress changed.
    4. **Break the positions open** — find each position's internal failure, preserve residue, and test outside structures.
@@ -35,9 +35,19 @@ If the workflow inherits prior readings, copy what actually ran. A correlated fa
 
 ## Non-linear workflow
 
-The seven phases provide order, but not a blind pipeline. Phase 4 hard-stops for user correction and may proceed, research, refine, or re-split. Phase 5 accepts only a user-selected proceed route. Phase 7 opens new contradictions and branches; it is not another polishing pass on the same candidate.
+The seven phases provide order, but not a blind pipeline. Phase 4 hard-stops for user correction and may proceed, research, refine, re-split, or redirect. Phase 5 accepts only a user-selected proceed route. Phase 7 opens post-synthesis contradictions and branches; it is not another polishing pass on the same candidate.
 
 Some instruments span phases. Preserve their lifecycle: preparation freezes inputs and controls; only the later observation completes the reading. `belief-stress`, for example, is prepared in Phase 2 and completed in Phase 3.
+
+### Tension movement and redirection
+
+Treat the user's selected tension as the current direction, not a permanent commitment. Recheck it with `tension-statement` after Phase 1 grounding, after belief stress and user correction in Phase 3, at the Phase 4 router, and whenever the user says the tension has moved or dissolved.
+
+Do not reframe on every new thought or source. At each recheck, reread the whole inquiry—original question, goal, interview, accumulated evidence, tension trail, and current working question. Keep a new item as a side trail unless it changes a load-bearing demand, condition, or mechanism, remains central to the goal against that whole record, and has support beyond its own novelty through recurrence, other material, or the user's confirmation. One decisive fact may instead dissolve the collision.
+
+Before the Phase 2 Monk snapshot, a user-selected move updates the current round. After the snapshot is frozen, a materially different tension uses **Redirect**: preserve the current round as `redirected`, open a new round with a lineage pointer, and return to Phase 1. Inherit valid interview and research material; ask only for gaps. A redirected round does not need a forced synthesis.
+
+Freeze the specimen for each Monk run, not the inquiry. Later movement never rewrites what those Monks actually saw.
 
 ## Phase-opening gate
 
@@ -68,6 +78,7 @@ Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or round co
 ## Structural safeguards
 
 - Calibrate Monk roles with [belief-burden-catalog.md](belief-burden-catalog.md) without announcing a type.
+- In Phase 1, let novel tensions emerge, but trace each one to the interview or supplied material, label outside-source and orchestrator inferences, present the surviving options without ranking, and let the user choose or rewrite the provisional working tension. Preserve useful side trails, but move the frame only after a whole-inquiry check clears the movement threshold. If no live collision is supported or the user rejects the menu, stop rather than manufacture a frame or Monks.
 - Correct degenerate framings before spawning Monks.
 - Check that Monks differ in framework, not merely conclusion.
 - Mark what belief stress may have induced.
@@ -87,7 +98,7 @@ Apply this gate at every phase and stage boundary:
 3. **Instrument audit.** For each scheduled instrument, cite its ledger entry and attest `recorded-at`, any known `observed-at`, authorization, lifecycle state, actual seat and contexts, fallback, access delta, typed readings, calibration or control, artifact risk, unmeasured remainder, trace, and user-feedback state. Attest that later interpretation remains outside the raw readout.
 4. **Attest.** Mark every procedural and instrument item ✅ or ❌ with concrete evidence.
 5. **Gate.** Proceed only when all items are ✅. Plausible prose is not evidence that an instrument ran.
-6. **Waiver.** Only the user may waive a named deliverable. A waiver cannot manufacture blindness, independence, support, confidence, or a completed lifecycle.
+6. **Waiver.** Only the user may waive a named deliverable. A waiver cannot manufacture a live contradiction, blindness, independence, support, confidence, or a completed lifecycle.
 
 Show the checklist to the user before advancing.
 

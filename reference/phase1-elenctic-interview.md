@@ -14,8 +14,9 @@ Read `reference/dialectic-instrument-map.md` and the relevant cards before runni
 
 - `focus-interview` when no current focus was confirmed on the Walk or Field Trip;
 - `elenchus` across 1b–1f;
-- `third-pole` at 1c.1;
-- `frame-projector` at 1c.2 when the specimen supports a plausible second axis; otherwise record it as not called because its operating range is one-dimensional;
+- `tension-statement` for the initial burst at 1c.1 and whole-inquiry rechecks at 1c.4;
+- `third-pole` at 1c.2 after the user selects a working tension;
+- `frame-projector` at 1c.3 when the selected tension supports a plausible second axis; otherwise record it as not called because its operating range is one-dimensional;
 - `home-frame-leak` at 1d.5;
 - `neutral-control`, frozen after the user confirms the framing and before any Monk output exists;
 - the persistent `atlas`, started with the gardener.
@@ -26,13 +27,14 @@ Announce each instrument just before its first operation. An inherited reading m
 
 Phase 1 is not one batch. Use these user-visible stops:
 
-1. **Open and focus.** After the phase-start go-ahead, open the declared records, start the atlas, dispatch the gardener in the background, inherit prior material, and run only the missing focus interview and first elenctic questions. Do not wait for the gardener. Return the provisional aim, stakes, and tension for correction without mentioning routine gardener status.
-2. **Test the frame.** After that correction, run the third-pole probe. If the specimen supports it, preview and then run the frame projector as its own substantial exposure. Return the possible poles or maps and ask what is misplaced or missing.
-3. **Propose grounding.** From the corrected frame, propose the research depth, named questions or tracks, number and kind of agents or searches, expected artifacts, and rough time/token band. **Stop for a separate research go-ahead.** Do not treat the Phase 1 start as permission for an open-ended research batch.
-4. **Ground and check leakage.** Run only the approved research batch, ingest it, and return a concise evidence-and-gap reading. Then announce and run home-frame leak reconnaissance under its card. Return its bounded structural reading for correction.
-5. **Freeze the frame.** Draft the integrated briefing, show the 1f framing summary, and ask for correction. Only after the user confirms it, freeze the Anchor, Goals & context, final Monk count, and neutral control.
+1. **Open and focus.** After the phase-start go-ahead, open the declared records, start the atlas, dispatch the gardener in the background, inherit prior material, and run only the missing focus interview and first elenctic questions. Do not wait for the gardener. Return the provisional aim, stakes, and provenance inventory for correction without naming a real or deepest tension.
+2. **Burst and choose—or stop.** After that correction, finish the needed elenctic probing and run `tension-statement`. If no live collision is supported, return that result and stop Phase 1. Otherwise present the 2–4 unranked, interview-traced options and stop for the user to choose, combine, rewrite, or reject them. Treat the choice as the current direction, not a promise to keep it. Do not test axes, research a pole, or draft the briefing before this choice.
+3. **Test the chosen frame.** Run the third-pole probe on the user-selected working tension. If the specimen supports it, preview and then run the frame projector as its own substantial exposure. Return the possible poles or maps and ask what is misplaced or missing. If either operation may have changed the collision, use the 1c.4 whole-inquiry recheck; do not let its newest or most vivid output replace the working tension on its own.
+4. **Propose grounding.** From the corrected frame, propose the research depth, named questions or tracks, number and kind of agents or searches, expected artifacts, and rough time/token band. **Stop for a separate research go-ahead.** Do not treat the Phase 1 start as permission for an open-ended research batch.
+5. **Ground and recheck.** Run only the approved research batch, ingest it, and return a concise evidence-and-gap reading. Then announce and run home-frame leak reconnaissance under its card. After the user corrects that reading, run the 1c.4 whole-inquiry recheck. A `live` or `sharpened` result gets a short delta, not another full menu. A `moved`, `thin`, or `dissolved` result returns viable parked and new directions for user choice.
+6. **Snapshot the current frame for the Monks.** Draft the integrated briefing, show the 1f framing summary, and ask for correction. Only after the user confirms it, record the Anchor and Goals & context, then freeze the final Monk count, neutral control, and exact specimen for this Monk run. The inquiry and tension trail remain open to later movement.
 
-Add a checkpoint sooner whenever an instrument returns a strong perturbation or the user could cheaply correct a bad assumption. Never run focus, elenchus, third-pole, frame projection, research, home-frame leakage, and neutral control as a single unattended tool cascade.
+Add a checkpoint sooner whenever an instrument returns a strong perturbation or the user could cheaply correct a bad assumption. Never run focus, elenchus, tension burst, third-pole, frame projection, research, home-frame leakage, and neutral control as a single unattended tool cascade.
 
 ## 1a. Orient and Open Phase 1
 
@@ -47,35 +49,64 @@ Recover what the user is thinking about from the inherited field record, then as
 
 **Also capture the _broader goal_, not just the tension.** Reuse it from the field log when present; otherwise ask what the user is ultimately trying to _do_ with this dialectic — the deliverable and audience (e.g., "a skill to help people design X," "material for a blog post," "a decision I have to make," "a mental model I want to build"). The specific tension is in service of this larger purpose. Capture it in the control log's **Goals & context** (written at 1f; see `reference/dialectic-wiki.md`).
 
-**Default monk count is 2.** Binary contradiction is the core structural unit of the dialectic and produces the tightest analysis. But 2 monks sometimes leaves a valid big perspective on the table — a position that can't be reached as a blend of the two poles, or that's arguing on a different axis entirely. If the interview surfaces such a position, add a third (or fourth) monk. See 1c.1.
+**Default monk count is 2 after the user selects a live tension.** Binary contradiction is the core structural unit of the dialectic and produces the tightest analysis. But 2 monks sometimes leaves a valid big perspective on the table — a position that can't be reached as a blend of the two poles, or that's arguing on a different axis entirely. If the interview surfaces such a position, add a third (or fourth) monk. See 1c.2.
 
 ## 1c. Elenctic Probing
 
 Run the [`elenchus` card](instruments/elenchus.md), using inherited Walk and Field Trip material before asking new questions. For this workflow, ensure its reading covers:
 
 - hidden assumptions and incompatible commitments;
-- the deepest supported contradiction rather than its surface wording;
+- the candidate clashes supported by the user's account rather than one preselected “deepest” contradiction;
 - the domain type—empirical, normative, personal, creative, or mixed;
 - what the user wants the dialectic to update; and
 - any third position already present in literature or practice.
 
 Keep these elicited readings separate from the later phase framing.
 
-## 1c.1 Third-Pole Probe (Missing-Perspective Check)
+## 1c.1 Tension Burst and User Selection
+
+Run the [`tension-statement` card](instruments/tension-statement.md). Use the whole inherited record and interview, not only the last exchange.
+
+Do not ask the user to approve one agent-picked “real tension.” Present the surviving menu and its traces. Each option must show:
+
+- which user statements, corrections, or supplied artifacts root both demands and the collision condition;
+- what outside source or orchestrator inference, if any, made the option novel;
+- what would weaken the option; and
+- what the frame may leave out.
+
+Record the full burst, clustered menu, and the user's response in the tension trail. Mark the selected option `working` and the other supported options `parked`. The user may choose, combine, rewrite, park, or reject every option, and may revisit that choice later.
+
+**No-tension exit.** If the card finds no supported live collision, or the user rejects the whole menu without naming a replacement, stop Phase 1. Do not draft Monk positions or use research, analogy, or source language to waive a tension into existence. Offer to return to the interview, use another user-selected instrument, or end the dialectic workflow. Phase 2 requires a user-selected live tension.
+
+## 1c.2 Third-Pole Probe (Missing-Perspective Check)
 
 Run the [`third-pole` card](instruments/third-pole.md). Default to two Monks. Add a third or fourth only when the card returns a non-blended position with its own basis and constituency that changes what must be compared. Name every added position by what it believes rather than by number alone. Record a qualified “none found” when no candidate survives.
 
 **Anti-sycophancy warning:** The elenctic interview is where position-tracking starts. The user will share what they think, what they've read, what frameworks they find compelling. Your job is to understand the _shape of the tension_ — not to figure out which side the user leans toward so you can build the synthesis in that direction. If the user seems excited about a particular framework or thinker, that's useful information for grounding the monks, but it is NOT a signal about where the synthesis should land. The user came to this tool to be in the belief-free seat. Help them get there — don't track their position and feed it back to them as a synthesis.
 
-## 1c.2 Exploratory 2×2s (Mapping Where to Run the Monks)
+## 1c.3 Exploratory 2×2s (Mapping Where to Run the Monks)
 
 When the specimen supports a plausible second axis, run [the frame-projector card](instruments/frame-projector.md). Explore every honest candidate with the user because Phase 1 uses the projections to decide where to point the Monks rather than to lock a frame. Each candidate serves three workflow needs:
 
 - **Comprehension check** — it externalizes your model of the user's problem; they correct the axes and placements (the 2×2 is a _question_, not an answer).
-- **Third-pole generator** — each second axis is a candidate orthogonal pole, feeding 1c.1 directly. A live second axis is often exactly the Monk-C position.
-- **Fault-line scout** — the spread of framings is the raw material for deciding, at 1f, which tension (and how many monks) the dialectic runs on.
+- **Third-pole generator** — each second axis is a candidate orthogonal pole, feeding 1c.2 directly. A live second axis is often exactly the Monk-C position.
+- **Fault-line scout** — the spread of framings stress-tests the user's chosen tension and Monk count. A materially different collision returns to the tension burst; the projection never replaces the selected frame on its own.
 
 If no candidate second axis earns its place, record `frame-projector: not called — contraindicated by a one-dimensional specimen`. Do not manufacture an axis to satisfy the phase.
+
+## 1c.4 Recheck a Moving Tension
+
+Run the [`tension-statement` card](instruments/tension-statement.md) in recheck mode after the approved grounding batch and whenever the user says the current tension has moved, thinned, or dissolved. Also use it when a decisive fact defeats the collision. Do not rerun it merely because a new article, analogy, or thought is interesting.
+
+At each recheck:
+
+1. Reread the original question, Goals & context, full interview, accumulated evidence, current working question, and tension trail.
+2. Mark new items as support, sharpening, side trails, weakening evidence, or decisive defeaters.
+3. Apply the card's movement threshold. Recency, novelty, or one source's vocabulary is not enough to move the frame.
+4. Return the status and delta. Show another menu only for `moved`, `thin`, or `dissolved`, or when the user asks to reconsider directions.
+5. Record the user's current direction and preserve every prior version and side trail.
+
+Before Phase 2, a user-selected move updates this round. Do not draft the briefing until one current tension is `live` or `sharpened`.
 
 ## 1d. Ground the Monks (Domain-Adaptive)
 
@@ -136,11 +167,11 @@ You need to know the domain well enough to:
 - Identify and correct likely **degenerate framings** (the obvious/boring version of the dialectic that won't produce insight)
 - Generate **specific research directives or interview questions** for each subagent
 - Write **framing corrections** that steer monks away from shallow takes
-- Identify the **deepest available contradiction**
+- Distinguish several plausible contradictions, recognize when none is live, and ground the user's selected one
 
 ## 1d.5 Blind Structural Reconnaissance (Discovering the Domain's Hidden Structure)
 
-Run the [`home-frame-leak` card](instruments/home-frame-leak.md). Use its surviving structural reading to sharpen the fault-line choice and rerun the third-pole check before the briefing locks.
+Run the [`home-frame-leak` card](instruments/home-frame-leak.md). Use its surviving structural reading as input to the 1c.4 whole-inquiry recheck and rerun the third-pole check only after the user confirms the current direction. Its newest frame is a candidate side trail, not an automatic replacement.
 
 Keep the raw cross-domain vocabulary out of the Monk briefing unless the enrichment rule below admits one or two framings. Do not let this instrument pre-pick Phase 4 donors or turn its output into an answer.
 
@@ -153,7 +184,7 @@ For **external-research domains**, this covers:
 - Key evidence, sources, and arguments from all sides
 - The landscape of the debate — who the key thinkers are, what positions exist
 - Relevant empirical data, historical context, institutional structures
-- The specific framing you've identified as the deepest contradiction
+- The user-selected working tension and the provenance of each load-bearing demand, condition, and inference
 
 For **personal/values domains**, this covers:
 
@@ -162,11 +193,13 @@ For **personal/values domains**, this covers:
 - Stakeholders and their actual capacities
 - The values hierarchy as best you can reconstruct it
 - Constraints (which are real, which are assumed)
-- The specific tension you've identified as the deepest contradiction
+- The user-selected working tension and its roots in the user's account, supplied material, and labeled inferences
 
 For **mixed domains**, both sections.
 
 Both monks will read this file before writing. For personal domains this is especially important — it gives the monks the user's actual situation rather than letting them argue from generic positions. A monk that believes "you should prioritize your career" in the abstract is useless. A monk that believes "given your specific history of X, your constraint of Y, and the fact that stakeholder Z can actually handle Q — you should prioritize your career _because_..." is an Electric Monk doing its job.
+
+Give the briefing a short **frame provenance** block. Trace the selected tension and each Monk position to the interview, other user-supplied material, outside sources, and orchestrator inferences without blending those kinds. Novel framing is allowed; silent frame selection is not.
 
 ### 1e.1 Cross-Domain Monk Enrichment
 
@@ -180,36 +213,41 @@ Weave 1–2 cross-domain framings surfaced by 1d.5 into the briefing — as _ana
 
 Before proceeding, summarize back:
 
-- "Here's how I understand the two positions..."
-- "Here's what I think the real tension is..."
+- "This is the current tension for the next Monk run, and here is how it changed—or stayed stable—through the rechecks..."
+- "Here is how each position grows from that choice and from what you told me..."
 - "Here's what I'll have each agent research and argue..."
 - **"Are there companies, thinkers, comparison classes, or evidence we're missing?"** — This question consistently produces the highest-leverage interventions in the entire process. In testing, users caught missing competitors (Vercel's agentic play), missing comparison classes (AI-native devtools), and missing authority structures that fundamentally changed the synthesis.
-- **"Is there a third live position we're not accounting for — one that isn't a blend of A and B, or that's arguing on a different axis entirely?"** — This is the third-pole check from 1c.1 surfaced one more time before the briefing locks. If the user names a position that meets the three criteria (not-a-blend, independent constituency, ideally orthogonal axis), add it as Monk C and update the briefing.
+- **"Is there a third live position we're not accounting for — one that isn't a blend of A and B, or that's arguing on a different axis entirely?"** — This is the third-pole check from 1c.2 surfaced one more time before the briefing locks. If the user names a position that meets the three criteria (not-a-blend, independent constituency, ideally orthogonal axis), add it as Monk C and update the briefing.
 
-Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. **State the final monk count and what each monk will believe** before moving to Phase 2 — this prevents the orchestrator from silently dropping or adding monks later.
+Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. Then run the 1c.4 recheck; do not silently edit the selected tension or promote a fresh source into the frame. **State the final monk count, what each monk will believe, and that this freezes only the next Monk specimen** before moving to Phase 2.
 
 **Write the frozen Anchor and the Goals & context.** Once framing is confirmed, write two things to `round_1_dialectic_log.md` (see `reference/dialectic-wiki.md` → the control log):
 
-- **Anchor** — the original felt tension in the user's own words, verbatim, never overwritten. The fixed point all later drift is measured against; frozen even as the working question evolves.
+- **Anchor** — the original felt tension or question in the user's own words, never overwritten. It is a historical bearing for measuring movement, not a command to keep working a tension that has thinned, dissolved, or ceased to serve the goal.
 - **Goals & context** — the user's broader purpose from 1b: intended deliverables, audience, and what a useful outcome looks like. This is _dialectic-level_ — it frames every round, not just this tension — and the user can update it. Re-read it with the Anchor at each loop-top so the synthesis stays aimed at what the user actually needs, not just at resolving the tension.
 
 ---
 
+**No-current-tension completion exit.** If 1c.1 returns no supported tension, a recheck returns `thin` or `dissolved` and the user selects no replacement, or the user rejects every option without a replacement, record the readout, tension-trail statuses, unchanged or closed working question, and stopped workflow state; present that result and stop. Do not apply the Phase 1→2 gate below.
+
 **Completion gate — enumerate and attest before Phase 2.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
 - [ ] Phase 1 opening card, promised first checkpoint, and later user phase-start pointer recorded in the phase-start ledger
-- [ ] 1a–1b: prior field record inherited; every consequential instrument retains its authorization, actual seat, context boundary, fallback or downgrade, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, and trace; needed orientation given; elenctic gaps filled; deepest version of the contradiction surfaced outside the raw readouts
+- [ ] 1a–1b: prior field record inherited; every consequential instrument retains its authorization, actual seat, context boundary, fallback or downgrade, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, and trace; needed orientation given; elenctic gaps filled; the provenance inventory preserves the user's account without preselecting a contradiction
 - [ ] 1c: belief burden identified (see `reference/belief-burden-catalog.md`)
-- [ ] 1c.1: third-pole probe run; final monk count decided (2 default; 3–4 only on the criteria)
-- [ ] 1c.2: frame-projector formation trace shown—typed phenomenology inventory; multiple candidate four-cluster partitions with members, prototypes, overlaps, and outliers; candidate separators with chemistry and failure notes; label workshop with naming mode and alternatives—followed by complete separate ASCII/box-drawing diagrams with both named axes and poles, four bounded evocatively labeled cells, and relevant examples, then explored with the user; or the instrument recorded as not called with its specific contraindication
+- [ ] 1c.1: `tension-statement` tested whether a live collision exists; a 5–8 item burst was generated before clustering, 2–4 unranked traced options were presented, and the user's provisional choice, combination, or rewrite was recorded with a message pointer
+- [ ] 1c.2: third-pole probe run on the user-selected tension; final monk count decided (2 default; 3–4 only on the criteria)
+- [ ] 1c.3: frame-projector formation trace shown—typed phenomenology inventory; multiple candidate four-cluster partitions with members, prototypes, overlaps, and outliers; candidate separators with chemistry and failure notes; label workshop with naming mode and alternatives—followed by complete separate ASCII/box-drawing diagrams with both named axes and poles, four bounded evocatively labeled cells, and relevant examples, then explored with the user; or the instrument recorded as not called with its specific contraindication
 - [ ] 1d: monks grounded — external research **or** deep personal interview, as the domain requires
 - [ ] 1d.5: blind structural reconnaissance run; fault-line choice sharpened against it
+- [ ] 1c.4: after grounding and home-frame leakage, `tension-statement` reread the whole inquiry, disposed new items as support / sharpening / side trail / weakening / decisive dissolve, applied the movement threshold, and recorded a user-confirmed `live` or `sharpened` current direction
 - [ ] 1e.1: 1–2 cross-domain framings woven into the briefing (or consciously skipped for a personal/values domain — state which)
 - [ ] Gardener dispatched in the **background** at the start of Phase 1 (before research), without blocking the interview or other independent work — or research consciously skipped for a well-known domain (state which)
 - [ ] Research ingested into the wiki by the gardener (durable organized memory for monks / future rounds / re-grounding)
 - [ ] Context briefing written to `round_N_context_briefing.md`
+- [ ] Context briefing contains frame provenance for the selected tension and every Monk position, with user testimony, supplied material, outside sources, and orchestrator inferences kept distinct
 - [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
 - [ ] Goals & context written to the control log — the user's broader purpose, deliverables, and audience (NOT just the narrow tension)
-- [ ] 1f: framing summarized back; "what are we missing?" + third-pole questions asked; final monk count and each monk's belief stated to the user
-- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with authorization, actual seats, contexts, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, trace paths, and user-feedback state; phase analysis is separate, a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
+- [ ] 1f: the current tension, its status and trail, and its roots summarized back; "what are we missing?" + third-pole questions asked; final monk count, each monk's belief, and the limited scope of the frozen Monk specimen stated to the user
+- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, initial and post-grounding `tension-statement`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with authorization, actual seats, contexts, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, trace paths, and user-feedback state; the tension trail preserves generated menus, side trails, statuses, and user choices separately; phase analysis is separate, a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
 - [ ] `neutral-control` frozen from the user-confirmed specimen before any Monk output is read; baseline trace recorded for the Phase 3 comparison

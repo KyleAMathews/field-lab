@@ -8,7 +8,7 @@
 
 Phase 2 prepares the `belief-stress` instrument; it does not complete it. Read its card in `reference/instruments/belief-stress.md` and the Phase 1 `neutral-control` trace. Announce belief stress before prompt construction, including its polarization and false-conflict risk. Record the shared neutral substrate, one isolated context boundary per Monk, and the planned return path. No Monk prompt may contain sibling positions, candidate synthesis, determinate negation, or orchestrator preference.
 
-Generate one prompt per Electric Monk — **typically 2, sometimes 3 or 4** if Phase 1c.1 surfaced a third (or fourth) pole meeting the criteria. Each monk must _believe_ its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
+Generate one prompt per Electric Monk — **typically 2, sometimes 3 or 4** if Phase 1c.2 surfaced a third (or fourth) pole meeting the criteria. Each monk must _believe_ its position at full conviction. This is not roleplay or debate — it is the functional core of the artificial belief system. A hedging monk is an Electric Monk that has failed at its one job: if the monk doesn't fully believe, the user has to carry part of the belief load, which means they can't occupy the belief-free orchestrator position where the real thinking happens.
 
 Calibrate the monks based on what you learned in Phase 1c':
 
