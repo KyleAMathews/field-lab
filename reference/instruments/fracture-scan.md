@@ -11,7 +11,10 @@ fresh_context: optional
 effort: medium
 persistence: "One deep analysis; can be done here for one position, while the dialectic workflow keeps it in the round file."
 artifact_risk: "Every weakness is made self-sublating, or the analyst imports its own values while claiming immanent critique."
+maturity: trialed
+documented_uses: 3
 ---
+
 # Fracture scanner (`fracture-scan`)
 
 - **Phenomenon / range / input:** The specific way a position undermines itself; needs a coherent position with premises and consequences.

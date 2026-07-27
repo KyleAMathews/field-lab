@@ -58,11 +58,11 @@ Reduce choice load. Recommend one path and add at most one meaningfully differen
 
 ## Keep three axes separate
 
-| Axis | Forms | What changes |
-| ---- | ----- | ------------ |
-| **Record and scope** | Walk → Field Trip → Expedition | What gets recorded and how records are organized |
-| **Method** | Ad hoc instruments or a selected workflow | Whether instruments follow a named procedure |
-| **Requested task** | Examine → synthesize, recommend, decide, plan, or act | What the user asked the assistant to do |
+| Axis                 | Forms                                                 | What changes                                     |
+| -------------------- | ----------------------------------------------------- | ------------------------------------------------ |
+| **Record and scope** | Walk → Field Trip → Expedition                        | What gets recorded and how records are organized |
+| **Method**           | Ad hoc instruments or a selected workflow             | Whether instruments follow a named procedure     |
+| **Requested task**   | Examine → synthesize, recommend, decide, plan, or act | What the user asked the assistant to do          |
 
 - Use a **Walk** for ordinary conversation and opportunistic instrument use. Keep working in the conversation.
 - Set up a **Field Trip** only when the user agrees to create a field log for one bounded inquiry.
@@ -212,48 +212,55 @@ Do not paste the user's problem, subject nouns, or a full natural-language quest
 
 Reuse words or short phrases from the likely bench rows. Search one dominant failure shape at a time; if several remain plausible, run separate queries rather than packing the whole case into one query.
 
-| Concrete clue | Better search query |
-| ------------- | ------------------- |
-| An incident review keeps turning into blame | `events mixed motives observable sequence missing observations` |
-| Everyone says the launch is “ready” but applies a different test | `repeated word competing meanings standards evidence choice` |
-| People agree in meetings but object in private | `speech costs bounded settings translations truth limits` |
-| The test itself may have caused the result | `strong probe added structure frozen baseline later delta` |
+| Concrete clue                                                    | Better search query                                             |
+| ---------------------------------------------------------------- | --------------------------------------------------------------- |
+| An incident review keeps turning into blame                      | `events mixed motives observable sequence missing observations` |
+| Everyone says the launch is “ready” but applies a different test | `repeated word competing meanings standards evidence choice`    |
+| People agree in meetings but object in private                   | `speech costs bounded settings translations truth limits`       |
+| The test itself may have caused the result                       | `strong probe added structure frozen baseline later delta`      |
 
-The script searches only card frontmatter, then returns every matching frontmatter block in full. Its order is lexical relevance, not instrument fitness. Compare `use_when`, `avoid_when`, `access_target`, `requires`, execution, effort, persistence, and artifact risk before offering up to three fits.
+The script searches only card frontmatter, then returns every matching frontmatter block in full. Its order is lexical relevance, not instrument fitness. Compare `use_when`, `avoid_when`, `access_target`, `requires`, execution, effort, persistence, artifact risk, maturity, and documented uses before offering up to three fits.
+
+Treat maturity as a warning about Field Lab use, not a fit score or validity claim. A `draft` instrument may be offered when it best fits, but say plainly that the port has no documented completed run and frame the use as an experiment. Do not prefer a mature instrument when it seeks the wrong phenomenon. Never turn use count or donor evidence into a claim that an instrument is valid.
 
 When the script marks a query weak, do not trust its ranking as a shortlist. Rewrite once with bench vocabulary at a more abstract level. If the rewrite is still weak, inspect the bench directly; do not add more domain synonyms. Do not read card bodies merely to decide what to offer.
 
-| ID | Offer when | Access target |
-| --- | ---------- | ------------- |
-| [`focus-interview`](reference/instruments/focus-interview.md) | The stated request may not be the actual inquiry | Confirmed aim, stakes, prior, and highest-value unknown |
-| [`substrate-map`](reference/instruments/substrate-map.md) | Events are mixed with motives or explanations | Observable sequence, handoffs, and missing observations |
-| [`stake-map`](reference/instruments/stake-map.md) | Feelings, needs, standards, constraints, or people remain implicit | Reported, inferred, aligned, conflicting, and unknown stakes |
-| [`term-scan`](reference/instruments/term-scan.md) | A repeated word may carry several standards or meanings | Competing loadings and where they change evidence or choice |
-| [`tension-statement`](reference/instruments/tension-statement.md) | Friction is vague or a working tension may have moved or thinned | A traced initial menu and later tension-status checks with user choice |
-| [`third-pole`](reference/instruments/third-pole.md) | A binary may omit an axis, position, or constituency | A genuinely independent pole, or evidence none is supported |
-| [`ground-condition`](reference/instruments/ground-condition.md) | A fact, resource, authority relation, or level may change the debate | Candidate ground conditions and their evidence status |
-| [`real-world-check`](reference/instruments/real-world-check.md) | One safe, reversible change could answer a practical uncertainty | What actually changes after one controlled action |
-| [`elenchus`](reference/instruments/elenchus.md) | Hidden premises, stakes, history, or belief load need deeper elicitation | Answerable assumptions, commitments, testimony, and gaps |
-| [`frame-projector`](reference/instruments/frame-projector.md) | Concrete examples may support several useful 2×2 projections | Candidate clusters, separating axes, missing quadrants, and projection loss |
-| [`home-frame-leak`](reference/instruments/home-frame-leak.md) | Home vocabulary may hide assumptions | Structure a fresh reader can see without the home frame |
-| [`belief-stress`](reference/instruments/belief-stress.md) | Incompatible positions need full-strength, separated advocacy | What each committed position reveals or induces |
-| [`fracture-scan`](reference/instruments/fracture-scan.md) | A coherent position may fail by its own rule | Its immanent fracture, preserved insight, and weakening evidence |
-| [`defamiliarize`](reference/instruments/defamiliarize.md) | Current vocabulary blocks new distinctions | Foreign forms, translated distinctions, and their breakpoints |
-| [`donor-perturb`](reference/instruments/donor-perturb.md) | The home field lacks a needed mechanism | Distant donor mechanisms, mappings, fit, and transfer limits |
-| [`structural-recombine`](reference/instruments/structural-recombine.md) | Whole arguments hide possible cross-links among parts | Decomposed parts, proposed links, calibration, and source trace |
-| [`design-grammar`](reference/instruments/design-grammar.md) | A fixed artifact or system may hide a reusable language of possible forms | Candidate primitives, invariants, combination rules, adjacent forms, and decomposition loss |
-| [`residue-collect`](reference/instruments/residue-collect.md) | A frame or candidate may have dropped material | Sourced remainder exposed by a named lens |
-| [`loss-audit`](reference/instruments/loss-audit.md) | Comparison may erase useful single-source material | Recovered items and the rule that dropped them |
-| [`taboo-parallax`](reference/instruments/taboo-parallax.md) | Speech costs may differ across bounded public settings | Sourced asymmetries, translations, and truth limits |
-| [`blind-cartography`](reference/instruments/blind-cartography.md) | Model-default possibilities may crowd out an open space | Expected basins, coverage holes, and source-grounded residuals |
-| [`frontier-rheometer`](reference/instruments/frontier-rheometer.md) | A result may follow an expected groove or collapse back into one | Blind expectation, actual landing, and descriptive divergence |
-| [`candidate-spectrograph`](reference/instruments/candidate-spectrograph.md) | Several structurally distinct landings remain possible | Unranked candidates with different structural claims and losses |
-| [`position-preservation`](reference/instruments/position-preservation.md) | A candidate may have erased a source position's real insight | Committed preservation, defeat, and repair readings |
-| [`hostile-assay`](reference/instruments/hostile-assay.md) | A candidate needs a blind failure test | Defeaters, broken links, failure scenes, and repair conditions |
-| [`atlas`](reference/instruments/atlas.md) | Session memory cannot expose drift, provenance, or cross-links | Searchable state, lineage, linked tensions, and gaps |
-| [`neutral-control`](reference/instruments/neutral-control.md) | A strong probe may add structure that was not present before | A frozen pre-perturbation baseline and the later delta |
-| [`framing-sensitivity`](reference/instruments/framing-sensitivity.md) | A result may depend on wording, order, or model | Stable and frame-sensitive components under controlled variants |
-| [`negative-transfer`](reference/instruments/negative-transfer.md) | A donor mapping may fit everything | Its prediction and failure boundary on a nearby negative case |
+| ID                                                                            | Offer when                                                                            | Access target                                                                               |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`focus-interview`](reference/instruments/focus-interview.md)                 | The stated request may not be the actual inquiry                                      | Confirmed aim, stakes, prior, and highest-value unknown                                     |
+| [`open-page`](reference/instruments/open-page.md)                             | Repeated analytic questions would constrain what a person can express                 | An uninterrupted, source-preserved account in the person's own order and language           |
+| [`substrate-map`](reference/instruments/substrate-map.md)                     | Events are mixed with motives or explanations                                         | Observable sequence, handoffs, and missing observations                                     |
+| [`behavior-chain`](reference/instruments/behavior-chain.md)                   | A person wants to understand how one specific action or lapse came about              | Reported conditions, links, consequences, and competing functions                           |
+| [`self-distanced-replay`](reference/instruments/self-distanced-replay.md)     | A person wants another view of one event without disputing or analyzing their account | A source-traced observer-view rendering and its limits                                      |
+| [`stake-map`](reference/instruments/stake-map.md)                             | Feelings, needs, standards, constraints, or people remain implicit                    | Reported, inferred, aligned, conflicting, and unknown stakes                                |
+| [`term-scan`](reference/instruments/term-scan.md)                             | A repeated word may carry several standards or meanings                               | Competing loadings and where they change evidence or choice                                 |
+| [`tension-statement`](reference/instruments/tension-statement.md)             | Friction is vague or a working tension may have moved or thinned                      | A traced initial menu and later tension-status checks with user choice                      |
+| [`third-pole`](reference/instruments/third-pole.md)                           | A binary may omit an axis, position, or constituency                                  | A genuinely independent pole, or evidence none is supported                                 |
+| [`ground-condition`](reference/instruments/ground-condition.md)               | A fact, resource, authority relation, or level may change the debate                  | Candidate ground conditions and their evidence status                                       |
+| [`real-world-check`](reference/instruments/real-world-check.md)               | One safe, reversible change could answer a practical uncertainty                      | What actually changes after one controlled action                                           |
+| [`elenchus`](reference/instruments/elenchus.md)                               | Hidden premises, stakes, history, or belief load need deeper elicitation              | Answerable assumptions, commitments, testimony, and gaps                                    |
+| [`frame-projector`](reference/instruments/frame-projector.md)                 | Concrete examples may support several useful 2×2 projections                          | Candidate clusters, separating axes, missing quadrants, and projection loss                 |
+| [`home-frame-leak`](reference/instruments/home-frame-leak.md)                 | Home vocabulary may hide assumptions                                                  | Structure a fresh reader can see without the home frame                                     |
+| [`belief-stress`](reference/instruments/belief-stress.md)                     | Incompatible positions need full-strength, separated advocacy                         | What each committed position reveals or induces                                             |
+| [`fracture-scan`](reference/instruments/fracture-scan.md)                     | A coherent position may fail by its own rule                                          | Its immanent fracture, preserved insight, and weakening evidence                            |
+| [`defamiliarize`](reference/instruments/defamiliarize.md)                     | Current vocabulary blocks new distinctions                                            | Foreign forms, translated distinctions, and their breakpoints                               |
+| [`donor-perturb`](reference/instruments/donor-perturb.md)                     | The home field lacks a needed mechanism                                               | Distant donor mechanisms, mappings, fit, and transfer limits                                |
+| [`structural-recombine`](reference/instruments/structural-recombine.md)       | Whole arguments hide possible cross-links among parts                                 | Decomposed parts, proposed links, calibration, and source trace                             |
+| [`design-grammar`](reference/instruments/design-grammar.md)                   | A fixed artifact or system may hide a reusable language of possible forms             | Candidate primitives, invariants, combination rules, adjacent forms, and decomposition loss |
+| [`formation-section`](reference/instruments/formation-section.md)             | Accumulated material contains additions, deletion, reuse, overwrites, or branches     | Source units, direct relations, formation processes, and uncertain phases                   |
+| [`attribute-interpolation`](reference/instruments/attribute-interpolation.md) | One specimen may change character as one meaningful quality varies                    | Generated thresholds, collateral changes, and invariants along one declared attribute       |
+| [`residue-collect`](reference/instruments/residue-collect.md)                 | A frame or candidate may have dropped material                                        | Sourced remainder exposed by a named lens                                                   |
+| [`loss-audit`](reference/instruments/loss-audit.md)                           | Comparison may erase useful single-source material                                    | Recovered items and the rule that dropped them                                              |
+| [`taboo-parallax`](reference/instruments/taboo-parallax.md)                   | Speech costs may differ across bounded public settings                                | Sourced asymmetries, translations, and truth limits                                         |
+| [`blind-cartography`](reference/instruments/blind-cartography.md)             | Model-default possibilities may crowd out an open space                               | Expected basins, coverage holes, and source-grounded residuals                              |
+| [`frontier-rheometer`](reference/instruments/frontier-rheometer.md)           | A result may follow an expected groove or collapse back into one                      | Blind expectation, actual landing, and descriptive divergence                               |
+| [`candidate-spectrograph`](reference/instruments/candidate-spectrograph.md)   | Several structurally distinct landings remain possible                                | Unranked candidates with different structural claims and losses                             |
+| [`position-preservation`](reference/instruments/position-preservation.md)     | A candidate may have erased a source position's real insight                          | Committed preservation, defeat, and repair readings                                         |
+| [`hostile-assay`](reference/instruments/hostile-assay.md)                     | A candidate needs a blind failure test                                                | Defeaters, broken links, failure scenes, and repair conditions                              |
+| [`atlas`](reference/instruments/atlas.md)                                     | Session memory cannot expose drift, provenance, or cross-links                        | Searchable state, lineage, linked tensions, and gaps                                        |
+| [`neutral-control`](reference/instruments/neutral-control.md)                 | A strong probe may add structure that was not present before                          | A frozen pre-perturbation baseline and the later delta                                      |
+| [`framing-sensitivity`](reference/instruments/framing-sensitivity.md)         | A result may depend on wording, order, or model                                       | Stable and frame-sensitive components under controlled variants                             |
+| [`negative-transfer`](reference/instruments/negative-transfer.md)             | A donor mapping may fit everything                                                    | Its prediction and failure boundary on a nearby negative case                               |
 
 When the user names an instrument, skip search and read that card. After any selection, read the entire card before explaining or preparing the operation. The card body owns the complete procedure and controls; search results and frontmatter are not substitutes.
 
@@ -303,6 +310,7 @@ Use one owner for each rule:
 - [find-instruments.js](scripts/find-instruments.js): frontmatter-only lexical retrieval for shortlisting; it never selects, offers, or runs an instrument.
 - Instrument cards: operating range, input, procedure, execution placement, control, result, likely distortions, fallback, required work, and stop rule.
 - [instrument-contract.md](reference/instrument-contract.md): card-authoring and saved-result schemas; read it only when creating or changing an instrument card.
+- [instrument-usage-audit.md](reference/instrument-usage-audit.md): conservative completed-use counts and maturity evidence; read it when changing a card's maturity.
 - Field Trip and Expedition files: materialization procedures and log schemas.
 - [dialectic-workflow.md](reference/dialectic-workflow.md): all workflow-wide gates and safeguards.
 - Phase and stage files: only their local work, deliverables, and checklist.

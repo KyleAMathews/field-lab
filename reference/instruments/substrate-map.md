@@ -11,7 +11,10 @@ fresh_context: none
 effort: low
 persistence: "A brief conversation; can be completed here."
 artifact_risk: "A partial account looks like a neutral full baseline."
+maturity: trialed
+documented_uses: 6
 ---
+
 # Substrate map (`substrate-map`)
 
 - **Phenomenon sought:** The observable sequence beneath causal stories.

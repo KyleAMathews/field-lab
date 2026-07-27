@@ -11,7 +11,10 @@ fresh_context: timing-dependent
 effort: low
 persistence: "One short pass; keep beside the stressed readout when stakes are moderate or high."
 artifact_risk: "“Neutral” wording carries the orchestrator's frame or lacks enough detail to compare."
+maturity: trialed
+documented_uses: 1
 ---
+
 # Neutral control (`neutral-control`)
 
 - **Phenomenon / range / input:** Structure visible before a strong probe; needs the same specimen later given to the active instrument.

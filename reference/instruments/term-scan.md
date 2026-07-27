@@ -11,7 +11,10 @@ fresh_context: optional
 effort: low
 persistence: "One brief pass; can be completed here."
 artifact_risk: "Clever semantics distract from a material conflict."
+maturity: trialed
+documented_uses: 5
 ---
+
 # Term scan (`term-scan`)
 
 - **Phenomenon sought:** A shared word with different loadings.

@@ -11,7 +11,10 @@ fresh_context: required
 effort: high
 persistence: "One strong agent per candidate; preserve for high-cost decisions."
 artifact_risk: "Criticism becomes consequence-free cleverness, generic pessimism, or an attack from an irrelevant standard."
+maturity: trialed
+documented_uses: 1
 ---
+
 # Hostile failure assay (`hostile-assay`)
 
 - **Phenomenon / range / input:** Hidden assumptions, broken links, compromise, and failure under the candidate's own standard; needs one candidate and its source trace.

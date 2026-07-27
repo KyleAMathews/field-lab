@@ -11,7 +11,10 @@ fresh_context: required
 effort: high
 persistence: "One agent per position per candidate; preserve with validation trace."
 artifact_risk: "A Monk protects rhetoric, identity, or total victory rather than the insight that made its position necessary."
+maturity: draft
+documented_uses: 0
 ---
+
 # Position-preservation assay (`position-preservation`)
 
 - **Phenomenon / range / input:** Whether a candidate preserves a position's real insight while changing its frame; needs the original position and one candidate.

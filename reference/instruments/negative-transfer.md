@@ -11,7 +11,10 @@ fresh_context: preferred
 effort: medium
 persistence: "One targeted research or analysis pass; preserve with any donor claim used later."
 artifact_risk: "The negative case is too distant, exceptions are explained away, or the mapping shifts after failure."
+maturity: trialed
+documented_uses: 3
 ---
+
 # Negative-control transfer assay (`negative-transfer`)
 
 - **Phenomenon / range / input:** Whether a donor mapping discriminates rather than fitting everything; needs one claimed transfer and a nearby case.

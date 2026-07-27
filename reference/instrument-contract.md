@@ -39,6 +39,8 @@ fresh_context: <none|optional|preferred|required|timing-dependent|hybrid>
 effort: <low|medium|high|variable>
 persistence: <plain-language time and record needs; say “can be done here” or name the purpose of a Field Log>
 artifact_risk: <chief way the operation may induce or hide structure>
+maturity: <draft|trialed|practiced|established>
+documented_uses: <conservative count of completed home-domain runs>
 ---
 ```
 
@@ -46,25 +48,34 @@ Keep every value short enough to scan beside several other cards. Keep the schem
 
 Treat the frontmatter as routing metadata and the body as the operating contract. The body may state a fuller version of a frontmatter field when the run needs its nuance; it must not contradict the metadata.
 
+`maturity` reports Field Lab use, not the age or prestige of a donor method:
+
+- `draft`: no documented completed run;
+- `trialed`: one to nine documented completed runs;
+- `practiced`: ten to twenty-four documented completed runs;
+- `established`: at least twenty-five documented completed runs across at least five distinct inquiries.
+
+Count a run only when an artifact or trace shows that the named card's operation completed. Exclude definitions, offers, plans, generic examples, and workflow mentions with no recoverable result. Use the conservative count when a record is ambiguous. A high count does not prove validity, and donor-field evidence does not raise the Field Lab maturity label.
+
 ## Card schema
 
 Make every card self-contained. Do not delegate its core procedure to a workflow phase. A workflow may add sequence, artifacts, gates, and phase-specific interpretation, but it must call the same standalone procedure.
 
-| Field | Requirement |
-| ----- | ----------- |
-| **Name / ID** | Stable plain-language name and short identifier |
-| **Phenomenon sought** | What the instrument helps reveal |
-| **Why use it** | What ordinary inquiry misses and what the run makes available |
-| **Operating range** | When it helps and when it should not run |
-| **Input** | Minimum specimen state |
-| **What changes** | What it changes, stresses, hides, projects, or injects |
-| **Procedure** | Complete bounded operation |
-| **Result** | Structured result and return path |
-| **Control** | Baseline, repetition, independent view, or falsification check scaled to risk |
-| **Common distortions** | Likely false positives and distortions |
-| **Escalate / stop** | Signals for another operation and conditions for stopping |
-| **What it requires** | Attention, time, research, agents, and records |
-| **Execution placement** | Seat, context boundary, rationale, fallback, and return path |
+| Field                   | Requirement                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| **Name / ID**           | Stable plain-language name and short identifier                               |
+| **Phenomenon sought**   | What the instrument helps reveal                                              |
+| **Why use it**          | What ordinary inquiry misses and what the run makes available                 |
+| **Operating range**     | When it helps and when it should not run                                      |
+| **Input**               | Minimum specimen state                                                        |
+| **What changes**        | What it changes, stresses, hides, projects, or injects                        |
+| **Procedure**           | Complete bounded operation                                                    |
+| **Result**              | Structured result and return path                                             |
+| **Control**             | Baseline, repetition, independent view, or falsification check scaled to risk |
+| **Common distortions**  | Likely false positives and distortions                                        |
+| **Escalate / stop**     | Signals for another operation and conditions for stopping                     |
+| **What it requires**    | Attention, time, research, agents, and records                                |
+| **Execution placement** | Seat, context boundary, rationale, fallback, and return path                  |
 
 Compact cards may combine adjacent fields when no requirement becomes ambiguous.
 

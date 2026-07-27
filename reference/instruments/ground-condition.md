@@ -11,7 +11,10 @@ fresh_context: optional
 effort: low
 persistence: "A brief pass; can be completed here."
 artifact_risk: "A convenient fact is used to make the normative conflict vanish."
+maturity: trialed
+documented_uses: 6
 ---
+
 # Ground-condition probe (`ground-condition`)
 
 - **Phenomenon sought:** A concrete fact, resource condition, authority relation, or level shift that changes the debate.

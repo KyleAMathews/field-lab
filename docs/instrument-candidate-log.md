@@ -21,13 +21,13 @@ shows distinct access, bounded artifacts, acceptable burden, and user value.
 
 | Candidate                 | Family                   | Status                            | Best next test                                                |
 | ------------------------- | ------------------------ | --------------------------------- | ------------------------------------------------------------- |
-| `design-grammar`          | Transformation           | **Promoted**                      | Evolve through ordinary use                                   |
-| `behavior-chain`          | Transformation           | **Strong; one provisional pass**  | Harder agent or human failure with competing mechanisms       |
+| `design-grammar`          | Transformation           | **Promoted; trialed**             | Evolve through ordinary use                                   |
+| `behavior-chain`          | Transformation           | **Promoted; draft**               | One user-owned human action with enough recall to correct     |
 | `solution-analysis`       | Transformation           | **Promising; first test overfit** | Hard case plus a plain-solution baseline                      |
-| `open-page`               | Collection               | **First-tester candidate**        | One low-stakes run with no interruption or automatic analysis |
-| `self-distanced-replay`   | Transformation           | **Strong donor; port untested**   | Compare source, ordinary summary, and observer-view rendering |
-| `formation-section`       | Transformation           | **Strong donor candidate**        | Versioned artifact with real overwrites and branches          |
-| `attribute-interpolation` | Transformation           | **Strong latent-space candidate** | One declared attribute with meaningful thresholds             |
+| `open-page`               | Collection               | **Promoted; draft**               | One low-stakes run with no interruption or automatic analysis |
+| `self-distanced-replay`   | Transformation           | **Promoted; draft**               | Compare source, ordinary summary, and observer-view rendering |
+| `formation-section`       | Transformation           | **Promoted; draft**               | Versioned artifact with real overwrites and branches          |
+| `attribute-interpolation` | Transformation           | **Promoted; draft**               | One declared attribute with meaningful thresholds             |
 | `evidenced-reassembly`    | Transformation           | **Parked**                        | Wait for a consequential fragmented-source case               |
 | `checked-score`           | Transformation           | Reserve                           | Process with simultaneous support, timing, and optionality    |
 | `nondetection-register`   | Control / transformation | Reserve; likely absorb            | Multi-detector blind-spot case                                |
@@ -50,6 +50,11 @@ shows distinct access, bounded artifacts, acceptable burden, and user value.
 - **Absorb:** useful control or kernel likely belongs in another card.
 - **Withdrawn:** do not present it as a sourced port or active candidate.
 
+Canonical cards also carry a separate home-domain maturity field: `draft` at
+zero documented completed runs, `trialed` at one to nine, `practiced` at ten to
+twenty-four, and `established` at twenty-five or more across at least five
+distinct inquiries. Donor evidence does not raise this status.
+
 ## Evaluation rule
 
 Before promoting a candidate, ask:
@@ -71,7 +76,7 @@ home-domain test.
 
 ### Design Grammar (`design-grammar`)
 
-- **Status:** Promoted on 2026-07-26.
+- **Status:** Promoted on 2026-07-26; maturity `trialed`.
 - **Family:** Transformation.
 - **Donor:** Venkatesh Rao's account of oozification and the path from a
   specific artifact to a design grammar and then a language.
@@ -88,38 +93,35 @@ home-domain test.
 
 ### Behavior Chain (`behavior-chain`)
 
-- **Status:** Strong; first admission comparison provisionally passed.
+- **Status:** Promoted on 2026-07-27; maturity `draft`.
 - **Family:** Transformation.
 - **Donor:** DBT behavioral chain analysis, kept recognizably distinct from
   invented Field Lab operations.
-- **Input:** One bounded target action or failure with enough recall, records,
-  or trace evidence.
+- **Input:** One bounded human action the user owns and wants to understand,
+  with enough recall or records to trace one episode.
 - **Operation:** Separate prior conditions and vulnerabilities, prompting
-  event, observable or reported links, target action, immediate and later
-  consequences, missing evidence, and competing functional hypotheses.
-- **Access target:** The functional route by which a specific action occurred,
-  including first-person internal links when the user supplies them or
-  observable system links when debugging an agent.
+  event, reported environmental and internal links, target action, immediate
+  and later consequences, missing evidence, and competing functional
+  hypotheses.
+- **Access target:** The corrected functional route by which one specific human
+  action became possible or useful in its setting.
 - **Difference from `substrate-map`:** Substrate Map gives the visible sequence.
   Behavior Chain adds precursor conditions, consequences, competing
-  mechanisms, and evidence that could distinguish them.
-- **First test:** The Liang task's instrument-naming failure. The chain
-  separated the initial omission from the later false correction, bounded the
-  target action, separated precursor context from the prompt, proposed several
-  competing mechanisms, and named discriminating evidence.
-- **Observed gain:** A real access gain on agent debugging: the later false
-  correction needed a temporal-reference repair distinct from the upstream
-  naming check.
+  functions, and user-reported thoughts, feelings, body sensations, and
+  environmental links.
 - **Required controls:** Do not invent motives, emotions, or hidden
-  chain-of-thought. Keep observed links separate from causal hypotheses.
-  Separate system vulnerabilities from observation limits. Stop when the trace
-  is too sparse. Do not use it to shift responsibility onto a person subject
-  to abuse, coercion, or another actor's target conduct.
+  experience. Keep testimony separate from causal hypotheses. Stop when recall
+  is too sparse or the user does not want to revisit the material. Do not use
+  it to shift responsibility onto a person subject to abuse, coercion, or
+  another actor's target conduct.
 - **Likely composition:** `open-page` or one-question collection →
   `behavior-chain` → user correction → `solution-analysis`.
-- **Test record:** [Frozen comparison](/Users/kylemathews/programs/dialectics/field-trip-liang-worldview/naming-failure-behavior-chain-comparison.md).
-- **Next useful case:** A harder agent or human failure with several supported
-  mechanisms and consequentially different repairs.
+- **Historical note:** One agent-failure comparison helped separate the
+  candidate from `substrate-map`, but agent traces are not the target material
+  for the shipped card and do not count toward its maturity.
+- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/behavior-chain.md).
+- **Next useful case:** A human action with several plausible functions and
+  enough user recall to correct the sequence.
 
 ### Solution Analysis (`solution-analysis`)
 
@@ -150,7 +152,7 @@ home-domain test.
 
 ### Open Page (`open-page`)
 
-- **Status:** First-tester candidate.
+- **Status:** Promoted on 2026-07-27; maturity `draft`.
 - **Family:** Collection.
 - **Donors:** Freewriting, open-page writing, uninterrupted response, and
   cognitive-interviewing controls.
@@ -167,11 +169,12 @@ home-domain test.
   the prompt, extraction, and correction reveal a distinct signal.
 - **First-tester shape:** Use a low-stakes real question. Ask after the run:
   “Would you choose this way of working again for a similar question?”
+- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/open-page.md).
 - **Next useful case:** The user's wife is the intended first usability test.
 
 ### Self-Distanced Replay (`self-distanced-replay`)
 
-- **Status:** Strong donor; LLM port untested.
+- **Status:** Promoted on 2026-07-27; maturity `draft`.
 - **Family:** Transformation.
 - **Donor:** Experimental work on self-distanced reflection.
 - **Input:** A user-owned account of one event or tension.
@@ -185,13 +188,14 @@ home-domain test.
   new transfer, not the tested intervention.
 - **Main artifacts:** The model can flatten feeling, sound falsely neutral, or
   turn distance into disbelief.
+- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/self-distanced-replay.md).
 - **Next useful case:** Compare raw account, ordinary summary, and
   self-distanced replay on one non-crisis event; ask whether the replay reveals
   anything useful without alienating the user.
 
 ### Formation Section (`formation-section`)
 
-- **Status:** Strong transformation candidate.
+- **Status:** Promoted on 2026-07-27; maturity `draft`.
 - **Family:** Transformation.
 - **Donors:** Archaeological single-context recording, Harris matrices,
   stratigraphic interpretation, and formation-process analysis.
@@ -208,12 +212,13 @@ home-domain test.
   It can expose maintenance and micro-work beneath a visible outcome.
 - **Main artifacts:** Partial order becomes false duration; layers imply
   progress; later interpretations overwrite the units.
+- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/formation-section.md).
 - **Next useful case:** A document or project with known versions, discarded
   branches, and later reuse.
 
 ### Attribute Interpolation (`attribute-interpolation`)
 
-- **Status:** Strong latent-space candidate.
+- **Status:** Promoted on 2026-07-27; maturity `draft`.
 - **Family:** Transformation.
 - **Donors:** The user's “Flying Drones in Latent Space” essay, keyframe-like
   interpolation, controlled variation, and the useful part of the proposed
@@ -229,6 +234,7 @@ home-domain test.
   conditions, and induced changes.
 - **Main artifacts:** False continuity, arbitrary scales, hidden correlated
   changes, and a perspective menu that recreates decision fatigue.
+- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/attribute-interpolation.md).
 - **Next useful case:** A real writing, design, strategy, or concept specimen
   where the user already cares about a threshold along one attribute.
 
@@ -1056,9 +1062,17 @@ practices. Do not present them as DBT ports.
 - **2026-07-26:** `design-grammar` promoted to the canonical bench.
 - **2026-07-26:** Transformation study produced Checked Score, sonification
   controls, and Evidenced Reassembly.
-- **2026-07-27:** Behavior Chain provisionally passed one agent-failure test.
+- **2026-07-27:** An agent-failure comparison informed Behavior Chain's
+  admission test, but the shipped card was narrowed to human material and the
+  comparison was excluded from its maturity count.
 - **2026-07-27:** Solution Analysis produced useful repairs but overfit a simple
   case.
 - **2026-07-27:** Evidenced Reassembly failed three suitability gates, produced
   only a weak gain on a fourth corpus, and was parked.
 - **2026-07-27:** Portfolio consolidated into this log for user evaluation.
+- **2026-07-27:** Behavior Chain, Open Page, Self-Distanced Replay, Formation
+  Section, and Attribute Interpolation were promoted to the canonical bench as
+  human-facing drafts.
+- **2026-07-27:** Canonical cards gained audited home-domain maturity and
+  completed-use fields with higher thresholds for practiced and established
+  status.

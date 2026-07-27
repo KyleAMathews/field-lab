@@ -11,7 +11,10 @@ fresh_context: none
 effort: low
 persistence: "A short conversation; can be completed here."
 artifact_risk: "The orchestrator supplies a polished motive the person never endorsed."
+maturity: draft
+documented_uses: 0
 ---
+
 # Stake map (`stake-map`)
 
 - **Phenomenon sought:** What people protect, need, fear, value, or cannot change.

@@ -11,7 +11,10 @@ fresh_context: optional
 effort: high
 persistence: "Ongoing agent and file work; use only when a field log no longer exposes the needed links and history."
 artifact_risk: "Recorded categories harden into ontology; maintenance displaces inquiry; an elegant graph hides weak support."
+maturity: trialed
+documented_uses: 8
 ---
+
 # Atlas and field notebook (`atlas`)
 
 - **Phenomenon / range / input:** Long-running provenance, cross-links, coverage, and inquiry lineage; useful when one conversation no longer shows enough history.

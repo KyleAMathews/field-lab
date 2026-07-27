@@ -7,7 +7,13 @@ const path = require("node:path");
 
 const CARD_DIR = path.resolve(__dirname, "..", "reference", "instruments");
 const DEFAULT_LIMIT = 5;
-const MAX_LIMIT = 28;
+const MAX_LIMIT = 40;
+const MATURITY_BY_USE_COUNT = [
+  [0, "draft"],
+  [9, "trialed"],
+  [24, "practiced"],
+  [Number.POSITIVE_INFINITY, "established"],
+];
 
 const REQUIRED_FIELDS = [
   "id",
@@ -22,6 +28,8 @@ const REQUIRED_FIELDS = [
   "effort",
   "persistence",
   "artifact_risk",
+  "maturity",
+  "documented_uses",
 ];
 
 const SEARCH_FIELDS = [
@@ -154,7 +162,9 @@ function parseScalar(rawValue, file, lineNumber) {
     try {
       return JSON.parse(value);
     } catch {
-      throw new Error(`${file}:${lineNumber}: invalid quoted frontmatter value`);
+      throw new Error(
+        `${file}:${lineNumber}: invalid quoted frontmatter value`,
+      );
     }
   }
 
@@ -180,12 +190,28 @@ function parseFrontmatter(file) {
     (field) => typeof metadata[field] !== "string" || !metadata[field].trim(),
   );
   if (missing.length) {
-    throw new Error(`${file}: missing frontmatter fields: ${missing.join(", ")}`);
+    throw new Error(
+      `${file}: missing frontmatter fields: ${missing.join(", ")}`,
+    );
   }
 
   const expectedId = path.basename(file, ".md");
   if (metadata.id !== expectedId) {
     throw new Error(`${file}: id "${metadata.id}" does not match filename`);
+  }
+
+  const documentedUses = Number(metadata.documented_uses);
+  if (!Number.isInteger(documentedUses) || documentedUses < 0) {
+    throw new Error(`${file}: documented_uses must be a non-negative integer`);
+  }
+
+  const expectedMaturity = MATURITY_BY_USE_COUNT.find(
+    ([maximum]) => documentedUses <= maximum,
+  )[1];
+  if (metadata.maturity !== expectedMaturity) {
+    throw new Error(
+      `${file}: maturity "${metadata.maturity}" does not match ${documentedUses} documented uses; expected "${expectedMaturity}"`,
+    );
   }
 
   return {
@@ -329,9 +355,12 @@ function search(cards, query, limit) {
   const reasons = [];
 
   if (termDetails.length < 4) reasons.push("use at least four abstract terms");
-  if (termDetails.length > 8) reasons.push("search one failure shape with at most eight terms");
-  if (matchedQueryTerms.length < 2) reasons.push("fewer than two terms match the best card");
-  if (bestCoverage < 0.5) reasons.push("less than half the terms match the best card");
+  if (termDetails.length > 8)
+    reasons.push("search one failure shape with at most eight terms");
+  if (matchedQueryTerms.length < 2)
+    reasons.push("fewer than two terms match the best card");
+  if (bestCoverage < 0.5)
+    reasons.push("less than half the terms match the best card");
 
   return {
     query,
@@ -367,7 +396,9 @@ function humanOutput(result) {
       `Weak query fit: ${diagnostic.best_match} matched ${diagnostic.matched_query_terms.length} of ${result.terms.length} terms (${percent}%).`,
     );
     if (diagnostic.unmatched_query_terms.length) {
-      lines.push(`Unmatched terms: ${diagnostic.unmatched_query_terms.join(", ")}`);
+      lines.push(
+        `Unmatched terms: ${diagnostic.unmatched_query_terms.join(", ")}`,
+      );
     }
     lines.push(`Why weak: ${diagnostic.reasons.join("; ")}.`);
     lines.push(
@@ -379,7 +410,10 @@ function humanOutput(result) {
     lines.push(`Instrument metadata matches for: ${result.terms.join(", ")}`);
   }
 
-  lines.push("Search relevance only; check fit before offering an instrument.", "");
+  lines.push(
+    "Search relevance only; check fit before offering an instrument.",
+    "",
+  );
 
   for (const [index, card] of result.matches.entries()) {
     lines.push(

@@ -11,7 +11,10 @@ fresh_context: optional
 effort: variable
 persistence: "Brief planning plus time to try the change; offer a Field Log if the observation will return later."
 artifact_risk: "The check changes several things, pressures another person, lacks a review rule, or becomes permanent by inertia."
+maturity: draft
+documented_uses: 0
 ---
+
 # Real-world check (`real-world-check`)
 
 - **Phenomenon sought:** What actually happens after one small, practical, reversible change.

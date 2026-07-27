@@ -11,7 +11,10 @@ fresh_context: optional
 effort: low
 persistence: "A brief conversation; can be completed here."
 artifact_risk: "The syntax manufactures conflict, or the orchestrator presents its own inference as the user's tension."
+maturity: trialed
+documented_uses: 2
 ---
+
 # Tension statement (`tension-statement`)
 
 - **Phenomenon sought:** Whether a live contradiction exists, and whether a current tension remains live, sharpens, moves, thins out, or dissolves as inquiry proceeds.

@@ -11,7 +11,10 @@ fresh_context: preferred
 effort: medium
 persistence: "One pass per source; preserve with the comparison it audits."
 artifact_risk: "“Interesting” substitutes for supported and useful; every dropped item is rescued."
+maturity: practiced
+documented_uses: 21
 ---
+
 # Hidden-signal recovery assay (`loss-audit`)
 
 - **Phenomenon / range / input:** Useful supported material carried by only one source and dropped by comparison; needs source outputs plus a proposed reduction or candidate.

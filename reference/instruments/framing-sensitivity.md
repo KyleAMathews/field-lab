@@ -11,7 +11,10 @@ fresh_context: preferred
 effort: medium
 persistence: "Two or more repeats; a quick check can be done here, while accumulating comparisons may warrant a Field Log."
 artifact_risk: "Variants change meaning, correlated models appear independent, or repeated probing launders a preferred answer."
+maturity: draft
+documented_uses: 0
 ---
+
 # Framing-sensitivity scanner (`framing-sensitivity`)
 
 - **Phenomenon / range / input:** Which findings survive changes in wording, order, or model; needs a bounded probe and one result worth checking.

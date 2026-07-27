@@ -11,7 +11,10 @@ fresh_context: optional
 effort: medium
 persistence: "One analytical pass; can be done here, or kept in a field log or tension pages when part of larger work."
 artifact_risk: "The orchestrator treats personal interest as signal or invents residue to keep the inquiry open."
+maturity: trialed
+documented_uses: 3
 ---
+
 # Residue collector (`residue-collect`)
 
 - **Phenomenon / range / input:** Material a frame, comparison, or candidate cannot absorb without loss; needs at least one structured reading.

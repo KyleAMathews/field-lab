@@ -11,7 +11,10 @@ fresh_context: optional
 effort: high
 persistence: "One bounded extraction and reconstruction pass; use a Field Log when the source or variants must remain traceable."
 artifact_risk: "False primitives, invented rules, combinatorial junk, and erasure of properties that belong to the whole."
+maturity: trialed
+documented_uses: 1
 ---
+
 # Design grammar extractor (`design-grammar`)
 
 - **Phenomenon:** A fixed artifact or system may contain a reusable design language: smaller parts, stable constraints, and rules that can reconstruct the source and generate nearby forms.

@@ -11,7 +11,10 @@ fresh_context: optional
 effort: medium
 persistence: "One short pass or several probes; can be done here unless the result will be reused later."
 artifact_risk: "Verbal resonance is mistaken for causal or structural fit."
+maturity: trialed
+documented_uses: 2
 ---
+
 # Defamiliarization probe (`defamiliarize`)
 
 - **Phenomenon / range / input:** Fixed home categories that loosen under compressed conflict, metaphor, or distant form; needs a named conflict.

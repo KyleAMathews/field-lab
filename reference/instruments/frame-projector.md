@@ -11,7 +11,10 @@ fresh_context: optional
 effort: high
 persistence: "One short mapping pass; can be done here unless the maps must be compared or resumed later."
 artifact_risk: "Favored axes can create false orthogonality, tidy boxes, or unsupported empty quadrants."
+maturity: trialed
+documented_uses: 4
 ---
+
 # Frame Projector (`frame-projector`)
 
 Use this instrument to expose dominant clusters, candidate separating lines, evocative prototypes, and missing quadrants in ambiguous, high-dimensional material. Starting from favored axes hides whether the boxes describe real clusters; Rao's cluster-first projection makes the formation trace inspectable.
@@ -114,12 +117,12 @@ The inventory, clusters, axes, and labels are instrument readings. Do not turn t
 
 Match labels and supporting material to the specimen:
 
-| Material | Prefer | Required support |
-| --- | --- | --- |
-| Conceptual and context-free | Metaphysical category or dominant attribute | Coherent conceptual argument |
-| Conceptual and historically specific | Rich scenario or possible-world name | A short imagined story or what-if |
-| Experienced but abstract | Metaphor or calibration image | The pattern of experience the metaphor preserves |
-| Experienced and specific | Archetype or prototype | Real people, events, places, practices, or cases |
+| Material                             | Prefer                                      | Required support                                 |
+| ------------------------------------ | ------------------------------------------- | ------------------------------------------------ |
+| Conceptual and context-free          | Metaphysical category or dominant attribute | Coherent conceptual argument                     |
+| Conceptual and historically specific | Rich scenario or possible-world name        | A short imagined story or what-if                |
+| Experienced but abstract             | Metaphor or calibration image               | The pattern of experience the metaphor preserves |
+| Experienced and specific             | Archetype or prototype                      | Real people, events, places, practices, or cases |
 
 When using an abstract label for experienced and specific material, map it back to concrete examples. When unsure, prefer the more evocative coherent label over structural coordinates, but never let wit outrun the cluster's members.
 

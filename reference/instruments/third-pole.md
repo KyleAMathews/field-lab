@@ -11,7 +11,10 @@ fresh_context: optional
 effort: low
 persistence: "A brief pass; can be completed here."
 artifact_risk: "A decorative third way created to make the map look rich."
+maturity: practiced
+documented_uses: 16
 ---
+
 # Third-pole probe (`third-pole`)
 
 - **Phenomenon sought:** An omitted independent position, constituency, or axis.

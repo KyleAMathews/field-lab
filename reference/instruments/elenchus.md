@@ -11,7 +11,10 @@ fresh_context: none
 effort: medium
 persistence: "A longer conversation; can stay here or be recorded in a Field Log."
 artifact_risk: "The interview follows the orchestrator's preferred frame; repeated questions create frustration or apparent depth."
+maturity: trialed
+documented_uses: 8
 ---
+
 # Stake and assumption mapper (`elenchus`)
 
 - **Phenomenon / range / input:** Hidden premises, stakes, history, and belief load in a live question; needs the user's account and room for questions. Avoid turning a fact lookup into an interview.

@@ -11,7 +11,10 @@ fresh_context: preferred
 effort: high
 persistence: "Several deep drafts; usually the dialectic workflow, but a small Field Trip may keep a short palette in its field log."
 artifact_risk: "Preset bands bound the visible spectrum, candidates differ only in tone, or synthesis receives hidden priority."
+maturity: trialed
+documented_uses: 1
 ---
+
 # Candidate spectrograph (`candidate-spectrograph`)
 
 - **Phenomenon / range / input:** Several sound but structurally distinct ways an inquiry may land; needs a mature tension and earned residue.

@@ -11,7 +11,10 @@ fresh_context: required
 effort: high
 persistence: "A scout can be done here. A full run uses three or four research tracks; offer a Field Log to keep its sources and comparisons together."
 artifact_risk: "Case selection, translation, and model priors can manufacture stereotypes or false contrasts."
+maturity: trialed
+documented_uses: 2
 ---
+
 # Taboo Parallax (`taboo-parallax`)
 
 ## Contents
