@@ -159,7 +159,7 @@ Use the bench below to choose what to offer. After the user selects an instrumen
 
 ### Explain the selected instrument
 
-Before a selected run, lead with the concrete action and result, then give the instrument name as a secondary label when the name helps. Vary the phrasing; do not turn the template into a repeated ceremony.
+Whenever recommending, offering, or starting an instrument, lead with the concrete action and result, then always give its canonical name. Say briefly what that instrument will do to the user's material. Never describe an instrument-shaped operation without naming it. Vary the phrasing; do not turn the template into a repeated ceremony.
 
 - **Recommendation:** “I'd start by **[action]**. That should show us **[result]**. The **[instrument]** is built for this. Want to try it?”
 - **After selection:** “Good—let's **[action]**. I'll keep **[limitation]** in view.”
