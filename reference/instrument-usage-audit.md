@@ -51,6 +51,7 @@ controls. Use the lower count when the evidence is ambiguous.
 | `position-preservation`   | 0              | `draft`       |
 | `real-world-check`        | 0              | `draft`       |
 | `residue-collect`         | 3              | `trialed`     |
+| `rubric-builder`          | 0              | `draft`       |
 | `self-distanced-replay`   | 0              | `draft`       |
 | `stake-map`               | 0              | `draft`       |
 | `structural-recombine`    | 100            | `established` |

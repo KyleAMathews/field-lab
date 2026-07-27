@@ -28,6 +28,7 @@ shows distinct access, bounded artifacts, acceptable burden, and user value.
 | `self-distanced-replay`   | Transformation           | **Promoted; draft**               | Compare source, ordinary summary, and observer-view rendering |
 | `formation-section`       | Transformation           | **Promoted; draft**               | Versioned artifact with real overwrites and branches          |
 | `attribute-interpolation` | Transformation           | **Promoted; draft**               | One declared attribute with meaningful thresholds             |
+| `rubric-builder`          | Transformation           | **Promoted; draft**               | A new domain with inspected contrasts and a true holdout      |
 | `evidenced-reassembly`    | Transformation           | **Parked**                        | Wait for a consequential fragmented-source case               |
 | `checked-score`           | Transformation           | Reserve                           | Process with simultaneous support, timing, and optionality    |
 | `nondetection-register`   | Control / transformation | Reserve; likely absorb            | Multi-detector blind-spot case                                |
@@ -237,6 +238,42 @@ home-domain test.
 - **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/attribute-interpolation.md).
 - **Next useful case:** A real writing, design, strategy, or concept specimen
   where the user already cares about a threshold along one attribute.
+
+### Rubric Builder (`rubric-builder`)
+
+- **Status:** Promoted on 2026-07-27; maturity `draft`.
+- **Family:** Transformation.
+- **Donors:** Kyle Mathews's “Custom Rubrics for Agentic Search” essay, the
+  Bakery and Restaurant Rubrics' calibration history, and criterion-referenced
+  rubric design.
+- **Input:** One bounded recurring judgment, positive and negative examples
+  the person knows well enough to inspect, and at least one example withheld
+  from criterion construction.
+- **Operation:** Inspect each example deeply with the person, one question at a
+  time, until small physical, structural, temporal, or behavioral details
+  replace broad evaluative words. Preserve a corrected card for each example;
+  compare the derivation examples; propose a small set of hidden but observable
+  criteria; define evidence, anchors, unknowns, exceptions, and any necessary
+  gates; audit easy proxies and suppressed good cases; then freeze and test the
+  draft on the holdout before one traced revision.
+- **Access target:** The observable distinctions and failure boundaries behind
+  judgments the person can make more easily than explain.
+- **Main controls:** Human correction of each example card,
+  derivation/holdout separation, trace from criteria to inspected observations,
+  `unknown` distinct from zero, positive evidence for exclusion, and a
+  proxy-and-suppression audit.
+- **Main artifacts:** Shallow intake disguised as elicitation, small-set
+  overfit, training on the holdout, false precision, double-counted criteria,
+  prominence or vocabulary as a proxy, and personal preference presented as a
+  universal standard.
+- **Workflow boundary:** The instrument designs and calibrates the rule.
+  Popularity-neutral retrieval, scoring a candidate set, rendering a
+  shortlist, lived feedback, and later revision are explicit workflow stages.
+  Export creates a reusable copy of the tested rule; it is not a second
+  instrument.
+- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/rubric-builder.md).
+- **Next useful case:** A domain other than scratch food with three to five
+  positive and negative examples plus one genuine holdout pair.
 
 ### Evidenced Reassembly (`evidenced-reassembly`)
 
@@ -1043,6 +1080,7 @@ practices. Do not present them as DBT ports.
 - [Oozy Intelligence in Slow Time](https://contraptions.venkateshrao.com/p/oozy-intelligence-in-slow-time)
 - [Fear of Oozification](https://contraptions.venkateshrao.com/p/fear-of-oozification)
 - [Flying Drones in Latent Space](https://bricolage.io/flying-drones-latent-space/)
+- [Custom Rubrics for Agentic Search](https://bricolage.io/custom-rubrics-for-agentic-search/)
 - [International Council of Kinetography Laban](https://ickl.org/)
 - [Dance Notation Bureau fundamentals](https://www.dancenotation.org/labanotation-fundamentals/)
 - [Hermann's sonification taxonomy](https://www.icad.org/Proceedings/2008/Hermann2008.pdf)
@@ -1076,3 +1114,7 @@ practices. Do not present them as DBT ports.
 - **2026-07-27:** Canonical cards gained audited home-domain maturity and
   completed-use fields with higher thresholds for practiced and established
   status.
+- **2026-07-27:** `rubric-builder` was promoted as a draft. Its core operation
+  is deep, human-guided inspection of examples before criterion extraction; it
+  keeps retrieval, application, export, and repeated revision outside the
+  instrument.
