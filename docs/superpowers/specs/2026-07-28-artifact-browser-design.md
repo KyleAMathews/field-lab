@@ -27,14 +27,14 @@ This first design supplies:
 - generic views for a small set of semantic artifact shapes;
 - live filesystem updates through Durable Streams and StreamDB;
 - a static publisher;
-- a base for later Field Lab and Dialectic Press migrations.
+- a base for later Field Lab artifact adoption and Markdown publishing.
 
 ## Context
 
-Field Lab now contains a growing bench of instruments. Dialectic Press turns
-dialectic outputs into candidate cards, validation ledgers, editorial designs,
-drafts, and publications. These files are useful to people but hard for an
-orchestrating agent to navigate as an undifferentiated list.
+Field Lab now contains a growing bench of instruments and readouts. Dialectic
+Press produces Markdown blog posts from dialectic outputs. These files are
+useful to people but hard for an orchestrating agent to navigate as an
+undifferentiated list.
 
 A taxonomy helps with two related problems:
 
@@ -54,11 +54,12 @@ browsing.
 ## Goals
 
 - Browse any explicit file inside a chosen filesystem root.
-- Open the browser from a working terminal session with one CLI command.
+- Serve the browser from a working terminal session and optionally open it.
 - Render existing Markdown well without changing it.
 - Reflect filesystem changes in the browser without a page reload.
 - Keep the browser strictly read-only.
-- Use TanStack DB for all client state.
+- Use TanStack DB for data collections and persisted reader preferences.
+- Use TanStack Router search parameters for navigational UI state.
 - Use Durable Streams and StreamDB only for live metadata transport.
 - Give artifacts stable, portable schemas that generic renderers can consume.
 - Separate epistemic function, representation, editorial role, and exposure.
@@ -71,7 +72,7 @@ browsing.
 - Do not move authoritative file contents into a database or stream.
 - Do not retain filesystem history across CLI runs.
 - Do not edit, rename, or delete files from the browser.
-- Do not require existing Markdown to adopt frontmatter or sidecars.
+- Do not require existing Markdown to adopt frontmatter.
 - Do not define one universal payload schema.
 - Do not encode screen coordinates in artifact data.
 - Do not migrate Field Lab or Dialectic Press in this change.
@@ -90,7 +91,8 @@ content. StreamDB is a disposable, live materialized index.
 
 Each CLI process creates a new stream with a random run identifier. Browser
 reloads can replay that run's metadata, but a later CLI run starts from a fresh
-scan. Historical file changes have no product value and should not survive.
+watcher enumeration. Historical file changes have no product value and should
+not survive.
 
 ### Metadata-only StreamDB
 
@@ -120,9 +122,7 @@ application.
 ```mermaid
 flowchart LR
     CLI["artifact-browser path"] --> Root["Resolve root and initial file"]
-    Root --> Scan["Metadata scan"]
     Root --> Watch["Filesystem watcher"]
-    Scan --> Stream["Fresh Durable Stream"]
     Watch --> Stream
     Stream --> SDB["StreamDB metadata collections"]
     SDB --> Queries["TanStack DB live queries"]
@@ -141,7 +141,7 @@ TanStack DB, and Durable Streams. The application remains a single project under
 ### Commands
 
 ```bash
-artifact-browser [path]
+artifact-browser [path] [--no-open]
 artifact-browser publish <entry...> --out <directory>
 ```
 
@@ -154,18 +154,21 @@ artifact-browser publish <entry...> --out <directory>
 The live command:
 
 1. resolves and canonicalizes the target;
-2. starts a loopback-only application server;
-3. starts a transient local Durable Streams server;
+2. picks unused loopback ports for the application and Durable Streams servers;
+3. starts both servers on those ports, retrying port selection if either port is
+   claimed before binding;
 4. creates a fresh stream;
-5. starts the watcher and buffers events;
-6. scans the root and writes the initial metadata snapshot;
-7. applies buffered changes and marks the workspace ready;
-8. opens the default browser at the selected file;
-9. closes the stream, watcher, and servers when the CLI exits.
+5. starts one filesystem watcher with initial events enabled;
+6. builds the initial metadata collections from the watcher's `add` and
+   `addDir` events;
+7. marks the workspace ready when the watcher emits `ready`;
+8. prints the URL for use by a system or integrated browser;
+9. opens the system browser unless `--no-open` was passed;
+10. closes the stream, watcher, and servers when the CLI exits.
 
-Starting the watcher before the scan prevents a change during scanning from
-being lost. Events are coalesced by relative path before they are appended.
-Initial records and bursts are batched.
+The watcher performs the initial traversal. There is no separate scan or
+scan/watch reconciliation path. Initial records and later event bursts are
+coalesced by relative path and appended in batches.
 
 Routine generated directories and VCS internals are ignored by default. An
 explicit file target bypasses normal navigation ignores. A later CLI option may
@@ -181,13 +184,13 @@ A singleton record describing the current run:
 
 ```ts
 {
-  id: string
-  displayName: string
-  runId: string
-  status: "scanning" | "ready" | "error"
-  startedAt: number
-  fileCount: number
-  artifactCount: number
+  id: string;
+  displayName: string;
+  runId: string;
+  status: "starting" | "ready" | "error";
+  startedAt: number;
+  fileCount: number;
+  artifactCount: number;
 }
 ```
 
@@ -200,18 +203,18 @@ One record per visible file or directory:
 
 ```ts
 {
-  id: string
-  path: string
-  parentPath: string | null
-  name: string
-  kind: "file" | "directory" | "symlink"
-  extension: string | null
-  mimeType: string | null
-  size: number | null
-  modifiedAt: number | null
-  revision: string
-  rendererId: string
-  readable: boolean
+  id: string;
+  path: string;
+  parentPath: string | null;
+  name: string;
+  kind: "file" | "directory" | "symlink";
+  extension: string | null;
+  mimeType: string | null;
+  size: number | null;
+  modifiedAt: number | null;
+  revision: string;
+  rendererId: string;
+  readable: boolean;
 }
 ```
 
@@ -225,20 +228,20 @@ One descriptor per recognized artifact:
 
 ```ts
 {
-  id: string
-  fileId: string
-  protocolVersion: string
-  schemaId: string
-  schemaVersion: string
-  title: string
-  instrumentId: string | null
-  instrumentFamily: InstrumentFamily | null
-  contact: Contact | null
-  role: ArtifactRole
-  representation: Representation
-  renderingMode: RenderingMode
-  exposure: Exposure
-  valid: boolean
+  id: string;
+  fileId: string;
+  protocolVersion: string;
+  schemaId: string;
+  schemaVersion: string;
+  title: string;
+  instrumentId: string | null;
+  instrumentFamily: InstrumentFamily | null;
+  contact: Contact | null;
+  role: ArtifactRole;
+  representation: Representation;
+  renderingMode: RenderingMode;
+  exposure: Exposure;
+  valid: boolean;
 }
 ```
 
@@ -247,25 +250,22 @@ analysis, and renderer selection. The artifact payload remains in its file.
 
 ### `diagnostics`
 
-Recoverable scan, schema, renderer, link, and watcher problems:
+Recoverable schema, renderer, link, publishing, and watcher problems:
 
 ```ts
 {
-  id: string
-  fileId: string | null
-  severity: "info" | "warning" | "error"
-  source: "scan" | "schema" | "watch" | "render" | "publish"
-  message: string
-  location: string | null
+  id: string;
+  fileId: string | null;
+  severity: "info" | "warning" | "error";
+  source: "schema" | "watch" | "render" | "publish";
+  message: string;
+  location: string | null;
 }
 ```
 
 Diagnostics do not prevent ordinary file browsing.
 
-## TanStack DB Client Model
-
-All state uses TanStack DB, including local UI state. React `useState` is not an
-application state store.
+## Client State Model
 
 ### Stream-backed collections
 
@@ -305,17 +305,19 @@ The font pairing switcher includes at least:
 - Playfair Display + Lato;
 - Fraunces + Figtree.
 
-### Local UI collection
+### Router search parameters
 
-A local-only collection holds:
+TanStack Router search parameters hold navigational UI state:
 
 - selected file;
 - expanded directories;
 - active browser filter;
 - search text;
 - inspector visibility;
-- active renderer view;
-- transient notices.
+- active renderer view.
+
+This makes a browser view linkable and lets history navigation restore it.
+Transient rendering state stays local to the component that owns it.
 
 ## Content API and Root Confinement
 
@@ -343,11 +345,10 @@ headers. Arbitrary HTML never runs in the main application origin.
 
 The browser recognizes artifacts in this order:
 
-1. explicit artifact envelope;
-2. artifact sidecar;
-3. Markdown frontmatter;
-4. inferred document metadata;
-5. generic file metadata.
+1. Markdown `artifact` frontmatter;
+2. an ordinary JSON or YAML document with a recognized `$schema`;
+3. inferred document metadata;
+4. generic file metadata.
 
 Every file therefore remains browsable. Protocol adoption only adds semantic
 views, validation, filtering, and publishing rules.
@@ -377,9 +378,10 @@ artifact:
 The Markdown body remains the content. Existing frontmatter fields outside
 `artifact` remain untouched.
 
-### Structured artifacts
+### Structured JSON and YAML
 
-`.artifact.json` and `.artifact.yaml` files use:
+An ordinary JSON or YAML file becomes a structured artifact when it declares a
+recognized `$schema` and follows that schema:
 
 ```json
 {
@@ -398,10 +400,6 @@ The Markdown body remains the content. Existing frontmatter fields outside
 }
 ```
 
-A sidecar named `<filename>.artifact.json` may describe a file format that
-cannot carry metadata. Its `data` may contain semantic annotations but not a
-second copy of the target file.
-
 Unknown protocol or schema versions open in raw mode with a diagnostic.
 
 ## Taxonomy
@@ -413,15 +411,15 @@ another.
 
 What epistemic operation the instrument performs:
 
-| Family | Purpose | Examples |
-|---|---|---|
-| `elicit` | Draw out aims, stakes, criteria, or commitments | focus interview, elenchus |
-| `map` | Make structure, terms, dependencies, or positions legible | substrate map, stake map |
-| `reframe` | Change the frame to expose hidden assumptions | third-pole, defamiliarize |
-| `explore` | Generate or traverse candidate space | attribute interpolation, blind cartography |
-| `test` | Stress a claim, transfer, or candidate | hostile assay, belief stress |
-| `audit` | Check controls, sensitivity, residue, or calibration | neutral control, loss audit |
-| `retain` | Preserve useful state for later inquiry | atlas |
+| Family    | Purpose                                                   | Examples                                   |
+| --------- | --------------------------------------------------------- | ------------------------------------------ |
+| `elicit`  | Draw out aims, stakes, criteria, or commitments           | focus interview, elenchus                  |
+| `map`     | Make structure, terms, dependencies, or positions legible | substrate map, stake map                   |
+| `reframe` | Change the frame to expose hidden assumptions             | third-pole, defamiliarize                  |
+| `explore` | Generate or traverse candidate space                      | attribute interpolation, blind cartography |
+| `test`    | Stress a claim, transfer, or candidate                    | hostile assay, belief stress               |
+| `audit`   | Check controls, sensitivity, residue, or calibration      | neutral control, loss audit                |
+| `retain`  | Preserve useful state for later inquiry                   | atlas                                      |
 
 ### Contact
 
@@ -543,16 +541,16 @@ not become content reads.
 
 ## Other Renderers
 
-| Input | Default view |
-|---|---|
-| JSON or YAML | Known artifact renderer, otherwise structured tree |
-| Source code or plain text | Highlighted source or plain preformatted text |
-| Image | Scaled image with dimensions and metadata |
-| Audio or video | Native media controls |
-| PDF | Embedded PDF reader |
-| HTML | Sandboxed preview with source toggle |
-| CSV or TSV | Virtualized table |
-| Unknown binary | Metadata, download, and system-open actions |
+| Input                     | Default view                                       |
+| ------------------------- | -------------------------------------------------- |
+| JSON or YAML              | Known artifact renderer, otherwise structured tree |
+| Source code or plain text | Highlighted source or plain preformatted text      |
+| Image                     | Scaled image with dimensions and metadata          |
+| Audio or video            | Native media controls                              |
+| PDF                       | Embedded PDF reader                                |
+| HTML                      | Sandboxed preview with source toggle               |
+| CSV or TSV                | Virtualized table                                  |
+| Unknown binary            | Metadata, download, and system-open actions        |
 
 Each renderer sits behind an error boundary. A renderer failure leaves the file
 browser and raw-file actions usable.
@@ -611,9 +609,9 @@ Publishing fails closed:
 - A dependency outside the chosen root is rejected.
 
 The dependency collector follows Markdown links, media references, structured
-artifact references, renderer-declared dependencies, and sidecars. It reports
-missing files, escaping paths, unsupported dynamic references, schema errors,
-and exposure conflicts before writing the output.
+artifact references, and renderer-declared dependencies. It reports missing
+files, escaping paths, unsupported dynamic references, schema errors, and
+exposure conflicts before writing the output.
 
 The publisher stages output in a temporary sibling directory and moves it into
 place only after validation and rendering checks succeed. Existing output is
@@ -621,15 +619,10 @@ not replaced unless the user explicitly requests replacement.
 
 ### Dialectic Press
 
-A Press publication artifact may publish as:
-
-- one focused essay and its evidence;
-- a collection of related essays;
-- an editorial map with candidate and validation views;
-- a browsable handoff package.
-
-The static package does not flatten editorial artifacts into mechanical views.
-It preserves each artifact's rendering mode and selected editorial renderer.
+Dialectic Press produces one Markdown file for a blog post. The browser treats
+it as a normal Markdown document, and published mode packages that file with its
+linked local media. This design adds no Press-specific artifact schema or
+renderer.
 
 ## Failure and Recovery
 
@@ -650,9 +643,9 @@ It preserves each artifact's rendering mode and selected editorial renderer.
 artifact-browser/
 ├── src/
 │   ├── cli/           # open, serve, and publish commands
-│   ├── server/        # confinement, content API, scan, and watch
+│   ├── server/        # confinement, content API, and watch
 │   ├── protocol/      # envelopes, schemas, taxonomy, registry contracts
-│   ├── collections/   # StreamDB, content, preferences, and UI state
+│   ├── collections/   # StreamDB, content, and preferences
 │   ├── renderers/     # Markdown, files, and semantic artifact views
 │   ├── publishing/    # dependency collection and static bundle
 │   ├── components/    # shell, navigation, reader, and controls
@@ -676,16 +669,18 @@ needs to consume them.
 - MIME and renderer selection;
 - link rewriting;
 - preference collection persistence.
+- port selection and bind-conflict retry.
 
 ### Integration tests
 
-- initial scan produces the expected StreamDB collections;
+- initial watcher events produce the expected StreamDB collections;
 - add, change, delete, directory, and rename events update live queries;
-- watcher changes during the initial scan are not lost;
+- the watcher transitions the workspace to ready after initial enumeration;
 - reconnect and fresh-snapshot recovery converge on filesystem state;
 - an open file refetches on revision change;
 - malformed artifacts remain browsable;
 - publish failures leave the destination unchanged.
+- `--no-open` prints the URL without launching a system browser.
 
 ### Browser and visual tests
 
@@ -711,7 +706,8 @@ needs to consume them.
 
 The first implementation is complete when:
 
-1. `artifact-browser <file-or-directory>` opens the correct root and selection.
+1. `artifact-browser <file-or-directory>` picks open ports, serves the correct
+   root and selection, and prints its URL.
 2. Existing Markdown renders with the approved typography and feature set.
 3. The font switcher persists its choice through a TanStack DB local-storage
    collection.
@@ -726,6 +722,8 @@ The first implementation is complete when:
 11. `artifact-browser publish` emits a self-contained static package.
 12. The published package observes exposure rules and renders without a live
     server.
+13. Opening the system browser is optional; `--no-open` supports integrated
+    browsers and headless callers.
 
 ## Follow-up Specifications
 
@@ -734,10 +732,7 @@ After this foundation is implemented:
 1. **Field Lab artifact migration** — annotate instrument cards, readouts, Field
    Logs, Expedition Logs, and atlases; define which instruments emit which
    semantic schemas.
-2. **Dialectic Press artifact migration** — annotate candidate cards,
-   validation ledgers, editorial designs, drafts, publications, and handoffs;
-   define editorial renderers.
-3. **Coverage audit** — populate the instrument registry and use the browser's
+2. **Coverage audit** — populate the instrument registry and use the browser's
    matrices to identify missing contacts, tests, controls, and readouts.
 
 ## References
