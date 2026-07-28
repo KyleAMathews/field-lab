@@ -31,11 +31,12 @@ controls. Use the lower count when the evidence is ambiguous.
 | `belief-stress`           | 1              | `trialed`     |
 | `blind-cartography`       | 1              | `trialed`     |
 | `candidate-spectrograph`  | 1              | `trialed`     |
+| `criterion-excavation`    | 1              | `trialed`     |
 | `defamiliarize`           | 2              | `trialed`     |
 | `design-grammar`          | 1              | `trialed`     |
 | `donor-perturb`           | 8              | `trialed`     |
 | `elenchus`                | 8              | `trialed`     |
-| `focus-interview`         | 8              | `trialed`     |
+| `focus-interview`         | 9              | `trialed`     |
 | `formation-section`       | 0              | `draft`       |
 | `fracture-scan`           | 3              | `trialed`     |
 | `frame-projector`         | 4              | `trialed`     |
@@ -43,15 +44,14 @@ controls. Use the lower count when the evidence is ambiguous.
 | `frontier-rheometer`      | 1              | `trialed`     |
 | `ground-condition`        | 6              | `trialed`     |
 | `home-frame-leak`         | 0              | `draft`       |
-| `hostile-assay`           | 1              | `trialed`     |
-| `loss-audit`              | 21             | `practiced`   |
+| `hostile-assay`           | 2              | `trialed`     |
+| `loss-audit`              | 22             | `practiced`   |
 | `negative-transfer`       | 3              | `trialed`     |
-| `neutral-control`         | 1              | `trialed`     |
+| `neutral-control`         | 2              | `trialed`     |
 | `open-page`               | 0              | `draft`       |
 | `position-preservation`   | 0              | `draft`       |
 | `real-world-check`        | 0              | `draft`       |
 | `residue-collect`         | 3              | `trialed`     |
-| `rubric-builder`          | 0              | `draft`       |
 | `self-distanced-replay`   | 0              | `draft`       |
 | `stake-map`               | 0              | `draft`       |
 | `structural-recombine`    | 100            | `established` |
@@ -66,6 +66,15 @@ controls. Use the lower count when the evidence is ambiguous.
 - `behavior-chain` begins at zero. One prior agent-failure comparison helped
   with card admission, but the shipped card targets human material and that
   trial does not test it.
+- The 2026-07-27 Rubric Builder forward-test adds one completed use each for
+  `focus-interview`, `criterion-excavation`, `neutral-control`,
+  `hostile-assay`, and `loss-audit`. Intake and excavation reconstructed the
+  user's answers from existing user-authored material rather than a normal
+  live, one-example-at-a-time interview, so Criterion Excavation's pacing and
+  correction controls remain untested. The loss audit used one fresh scanner
+  with sibling records visible rather than parallel one-source scanners; its
+  result is complete but has weaker separation. A target-contaminated holdout
+  application was discarded and contributes no count.
 - `home-frame-leak` has three documented stopped runs and no valid completed
   reading. The stop-rule evidence remains useful but does not raise the
   completed-use count.

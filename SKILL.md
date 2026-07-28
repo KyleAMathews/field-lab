@@ -276,7 +276,7 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`design-grammar`](reference/instruments/design-grammar.md)                   | A fixed artifact or system may hide a reusable language of possible forms             | Candidate primitives, invariants, combination rules, adjacent forms, and decomposition loss |
 | [`formation-section`](reference/instruments/formation-section.md)             | Accumulated material contains additions, deletion, reuse, overwrites, or branches     | Source units, direct relations, formation processes, and uncertain phases                   |
 | [`attribute-interpolation`](reference/instruments/attribute-interpolation.md) | One specimen may change character as one meaningful quality varies                    | Generated thresholds, collateral changes, and invariants along one declared attribute       |
-| [`rubric-builder`](reference/instruments/rubric-builder.md)                   | A person can recognize good and bad examples more easily than they can name why        | Hidden but observable criteria exposed through human-guided specimen inspection              |
+| [`criterion-excavation`](reference/instruments/criterion-excavation.md)       | A person can recognize good and bad examples more easily than they can name why       | Candidate hidden but observable criteria exposed through corrected example records          |
 | [`residue-collect`](reference/instruments/residue-collect.md)                 | A frame or candidate may have dropped material                                        | Sourced remainder exposed by a named lens                                                   |
 | [`loss-audit`](reference/instruments/loss-audit.md)                           | Comparison may erase useful single-source material                                    | Recovered items and the rule that dropped them                                              |
 | [`taboo-parallax`](reference/instruments/taboo-parallax.md)                   | Speech costs may differ across bounded public settings                                | Sourced asymmetries, translations, and truth limits                                         |
@@ -315,6 +315,20 @@ When several Field Logs now share a question, place, system, lineage, or planned
 > We've got three related trails now. Want me to give them a shared index, with a separate Field Log for each? That will keep the threads linked without mixing their evidence.
 
 This shared index is an **Expedition**. After agreement, read [expedition.md](reference/expedition.md), then create [expedition-log-template.md](reference/expedition-log-template.md). Treat it as a container and shared record, not a method.
+
+## Rubric Builder workflow
+
+Treat Rubric Builder as a selected six-stage workflow for a paced preference
+interview, close inspection of contrasting examples, source research, rubric
+construction, calibration, and optional deployment.
+
+A request to build or test a custom rubric selects the workflow when the user
+wants to uncover tacit criteria from examples rather than merely format criteria
+they already supplied. Before entering it, read
+[rubric-builder-workflow.md](reference/rubric-builder-workflow.md). Follow its
+example holdout, research boundary, checkpoints, scheduled instruments, test
+separation, and deployment choice. Do not substitute a generic scorecard or
+begin outside research before the person-derived baseline is frozen.
 
 ## Electric Monk dialectic workflow
 

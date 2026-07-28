@@ -28,7 +28,7 @@ shows distinct access, bounded artifacts, acceptable burden, and user value.
 | `self-distanced-replay`   | Transformation           | **Promoted; draft**               | Compare source, ordinary summary, and observer-view rendering |
 | `formation-section`       | Transformation           | **Promoted; draft**               | Versioned artifact with real overwrites and branches          |
 | `attribute-interpolation` | Transformation           | **Promoted; draft**               | One declared attribute with meaningful thresholds             |
-| `rubric-builder`          | Transformation           | **Promoted; draft**               | A new domain with inspected contrasts and a true holdout      |
+| `criterion-excavation`    | Transformation           | **Promoted; trialed**             | A live non-food interview with a true holdout                 |
 | `evidenced-reassembly`    | Transformation           | **Parked**                        | Wait for a consequential fragmented-source case               |
 | `checked-score`           | Transformation           | Reserve                           | Process with simultaneous support, timing, and optionality    |
 | `nondetection-register`   | Control / transformation | Reserve; likely absorb            | Multi-detector blind-spot case                                |
@@ -239,23 +239,25 @@ home-domain test.
 - **Next useful case:** A real writing, design, strategy, or concept specimen
   where the user already cares about a threshold along one attribute.
 
-### Rubric Builder (`rubric-builder`)
+### Criterion Excavation and the Rubric Builder workflow
 
-- **Status:** Promoted on 2026-07-27; maturity `draft`.
-- **Family:** Transformation.
+- **Status:** Criterion Excavation promoted on 2026-07-27; maturity `trialed`
+  after one reconstructed-intake run. Rubric Builder is now a six-stage
+  workflow rather than a single instrument.
+- **Family:** Transformation instrument inside an elicitation, research,
+  construction, and calibration workflow.
 - **Donors:** Kyle Mathews's “Custom Rubrics for Agentic Search” essay, the
   Bakery and Restaurant Rubrics' calibration history, and criterion-referenced
   rubric design.
-- **Input:** One bounded recurring judgment, positive and negative examples
-  the person knows well enough to inspect, and at least one example withheld
-  from criterion construction.
-- **Operation:** Inspect each example deeply with the person, one question at a
-  time, until small physical, structural, temporal, or behavioral details
-  replace broad evaluative words. Preserve a corrected card for each example;
-  compare the derivation examples; propose a small set of hidden but observable
-  criteria; define evidence, anchors, unknowns, exceptions, and any necessary
-  gates; audit easy proxies and suppressed good cases; then freeze and test the
-  draft on the holdout before one traced revision.
+- **Instrument input:** One bounded recurring judgment and contrasting examples
+  the person knows well enough to inspect.
+- **Instrument operation:** Inspect examples with the person, one question at a
+  time; preserve corrected example cards; then expose candidate hidden but
+  observable criteria without constructing a scorecard.
+- **Workflow operation:** Frame and split examples, run Criterion Excavation,
+  freeze the person-derived baseline, research literal evidence, construct a
+  version-zero rubric, apply sealed holdouts, run Loss Audit and Hostile Assay,
+  make one traced revision, and let the user choose deployment.
 - **Access target:** The observable distinctions and failure boundaries behind
   judgments the person can make more easily than explain.
 - **Main controls:** Human correction of each example card,
@@ -266,14 +268,35 @@ home-domain test.
   overfit, training on the holdout, false precision, double-counted criteria,
   prominence or vocabulary as a proxy, and personal preference presented as a
   universal standard.
-- **Workflow boundary:** The instrument designs and calibrates the rule.
-  Popularity-neutral retrieval, scoring a candidate set, rendering a
-  shortlist, lived feedback, and later revision are explicit workflow stages.
-  Export creates a reusable copy of the tested rule; it is not a second
-  instrument.
-- **Current record:** [Canonical card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/rubric-builder.md).
-- **Next useful case:** A domain other than scratch food with three to five
-  positive and negative examples plus one genuine holdout pair.
+- **Workflow boundary:** Criterion Excavation returns candidate criteria only.
+  Research, rubric construction, holdout application, validation, revision,
+  retrieval, deployment, and export remain explicit workflow stages.
+- **Forward-test:** A blind reconstruction of the Bakery Rubric recovered
+  47/100 of the hidden canonical structure at version zero and 61.5/100 after
+  holdout, loss, and hostile calibration. It recovered the scratch gate,
+  specialist neutrality, scoped evidence, unknown handling, and both holdout
+  directions. It did not recover the canonical numeric production and interest
+  models, separate bakery tracks, home/trip scoring, rating and execution
+  formulas, or partial-evidence machinery. The result supports the workflow as
+  a useful personal-rubric builder, not as a reliable reverse-engineer of a
+  complex existing rubric.
+- **Test control:** The first holdout pass loaded the installed target bakery
+  skill and was discarded. A replacement target-blind worker froze a literal
+  evidence ledger, and a separate no-browse applicator scored it before seeing
+  the labels. Intake and Criterion Excavation used inferred answers from
+  user-authored records, so the normal live pacing remains untested.
+- **Execution record:** Focus Interview and Criterion Excavation ran in the
+  orchestrator from reconstructed user-authored answers, a downgrade from live
+  questioning. Neutral Control froze the person-derived baseline before two
+  source-retrieval contexts worked without the benchmark. Loss Audit used one
+  fresh scanner with sibling records visible, weaker than its preferred
+  per-source separation. Hostile Assay used a fresh auditor blind to holdouts
+  and repairs. The clean holdout used separate target-blind retrieval and
+  label-blind application contexts.
+- **Current records:** [Criterion Excavation card](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/instruments/criterion-excavation.md)
+  and [Rubric Builder workflow](/Users/kylemathews/programs/hegelian-dialectic-skill/reference/rubric-builder-workflow.md).
+- **Next useful case:** A live non-food domain with one inspected example at a
+  time and a genuine holdout pair.
 
 ### Evidenced Reassembly (`evidenced-reassembly`)
 
@@ -1114,7 +1137,9 @@ practices. Do not present them as DBT ports.
 - **2026-07-27:** Canonical cards gained audited home-domain maturity and
   completed-use fields with higher thresholds for practiced and established
   status.
-- **2026-07-27:** `rubric-builder` was promoted as a draft. Its core operation
-  is deep, human-guided inspection of examples before criterion extraction; it
-  keeps retrieval, application, export, and repeated revision outside the
-  instrument.
+- **2026-07-27:** The draft `rubric-builder` card was split into the standalone
+  `criterion-excavation` instrument and the six-stage Rubric Builder workflow.
+  A bakery reconstruction forward-test moved Criterion Excavation to
+  `trialed`. Blind recovery scored 47/100 at version zero and 61.5/100 after
+  one calibration revision; the workflow built a useful personal rubric but
+  did not recover most of the canonical scoring machinery.
