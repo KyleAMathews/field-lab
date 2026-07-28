@@ -24,7 +24,6 @@ This first design supplies:
 - a shared artifact protocol and taxonomy;
 - a CLI that opens any file or directory in the local browser;
 - a strong Markdown reader and renderers for common file types;
-- generic views for a small set of semantic artifact shapes;
 - live filesystem updates through Durable Streams and StreamDB;
 - a static publisher;
 - a base for later Field Lab artifact adoption and Markdown publishing.
@@ -45,7 +44,9 @@ Visualization is part of the same problem. Many readouts have repeatable
 semantic shapes—graphs, matrices, ledgers, sequences, and record sets. If those
 shapes have formal schemas, a standard application can render them without each
 skill building a bespoke viewer. Editorial work remains distinct: an essay or
-publication is a crafted representation, not a mechanical chart.
+publication is a crafted representation, not a mechanical chart. Defining those
+schemas and views is follow-up work; the first browser establishes the extension
+points they will use.
 
 Existing work is mostly Markdown and must remain useful without migration.
 Adopting the artifact protocol adds richer views; it is not a requirement for
@@ -61,9 +62,8 @@ browsing.
 - Use TanStack DB for data collections and persisted reader preferences.
 - Use TanStack Router search parameters for navigational UI state.
 - Use Durable Streams and StreamDB only for live metadata transport.
-- Give artifacts stable, portable schemas that generic renderers can consume.
+- Let files declare stable schema IDs without fixing their payload schemas yet.
 - Separate epistemic function, representation, editorial role, and exposure.
-- Make instrument coverage and schema gaps visible.
 - Produce self-contained static packages for sharing and deployment.
 - Preserve a single renderer implementation across live and published modes.
 
@@ -74,6 +74,10 @@ browsing.
 - Do not edit, rename, or delete files from the browser.
 - Do not require existing Markdown to adopt frontmatter.
 - Do not define one universal payload schema.
+- Do not define the concrete graph, matrix, ledger, sequence, series, or
+  record-set schemas in the first implementation.
+- Do not build an instrument catalog or coverage matrix before an instrument
+  registry exists.
 - Do not encode screen coordinates in artifact data.
 - Do not migrate Field Lab or Dialectic Press in this change.
 - Do not replace the editorial judgment in Dialectic Press with a generic
@@ -112,10 +116,10 @@ Only their data adapters differ.
 
 ### Portable schemas
 
-Artifact files use stable schema identifiers and JSON Schema definitions.
-Runtime code implements matching Standard Schema validators. JSON Schema makes
-the artifact portable; Standard Schema integrates it with StreamDB and the
-application.
+Artifact metadata can carry a stable schema identifier and version. Concrete
+payload schemas may later use JSON Schema for portability and matching Standard
+Schema validators at runtime. The first implementation recognizes and preserves
+unknown schema IDs but does not define the semantic payload families.
 
 ## System Architecture
 
@@ -136,6 +140,23 @@ The KPB starter supplies TanStack Start, React, Radix UI, Capsize typography,
 TanStack DB, and Durable Streams. The application remains a single project under
 `artifact-browser/`.
 
+### Implementation prerequisites
+
+Before feature work:
+
+- align StreamDB, TanStack DB, and the React bindings on one compatible TanStack
+  DB version and enforce it through the package manager;
+- prove a StreamDB collection can be queried through `useLiveQuery` in a small
+  smoke test;
+- add the local Durable Streams server and the official query-collection adapter
+  as runtime dependencies;
+- build the reader as a client-only TanStack Start SPA;
+- package that prebuilt SPA with a small Node CLI that serves the shell, content
+  API, and boot configuration.
+
+StreamDB runs only in the browser. The CLI and content server do not import the
+React bindings.
+
 ## CLI and Process Lifecycle
 
 ### Commands
@@ -154,14 +175,15 @@ artifact-browser publish <entry...> --out <directory>
 The live command:
 
 1. resolves and canonicalizes the target;
-2. picks unused loopback ports for the application and Durable Streams servers;
-3. starts both servers on those ports, retrying port selection if either port is
-   claimed before binding;
+2. starts the application and Durable Streams servers with port `0`, allowing
+   the operating system to assign available loopback ports atomically;
+3. reads the assigned ports from the listening servers;
 4. creates a fresh stream;
 5. starts one filesystem watcher with initial events enabled;
 6. builds the initial metadata collections from the watcher's `add` and
    `addDir` events;
-7. marks the workspace ready when the watcher emits `ready`;
+7. after the watcher emits `ready`, drains the metadata work queue and stream
+   producer, then marks the workspace ready;
 8. prints the URL for use by a system or integrated browser;
 9. opens the system browser unless `--no-open` was passed;
 10. closes the stream, watcher, and servers when the CLI exits.
@@ -275,7 +297,8 @@ stay in TanStack DB operators so updates remain incremental.
 
 ### On-demand content collection
 
-A query-backed collection fetches file contents from the server. Its key is:
+An official query-adapter-backed collection fetches file contents from the
+server. Its key is:
 
 ```text
 <relative-path>@<revision>
@@ -328,6 +351,11 @@ The server exposes read-only operations for:
 - download responses;
 - safe metadata needed by native renderers.
 
+It supports `HEAD`, byte ranges, ETags, and size limits. Range requests allow
+PDF viewers and media controls to seek without downloading the whole file.
+Large text, JSON, YAML, CSV, and Mermaid inputs fall back to bounded or raw views
+rather than blocking the browser's main thread.
+
 Every request:
 
 1. accepts a normalized relative path;
@@ -336,8 +364,16 @@ Every request:
 4. rejects traversal, absolute paths, null bytes, and escaping symlinks;
 5. opens the file without granting a write handle.
 
-The server binds only to loopback. It emits restrictive content security policy
-headers. Arbitrary HTML never runs in the main application origin.
+The server binds only to loopback and creates a random capability for each run.
+The capability is present in the printed browser URL and required by content
+requests. The server also rejects unexpected origins and emits restrictive
+content security policy headers. Arbitrary HTML never runs in the main
+application origin or inherits content-API authority.
+
+The first release protects against ordinary path traversal and escaping
+symlinks. Adversarial filesystem mutation during an open operation is outside
+its threat model; stronger file-handle-based confinement may be added if that
+threat becomes relevant.
 
 ## Artifact Protocol
 
@@ -468,11 +504,11 @@ internal | checkpoint | public
 These facets support coverage views such as instrument family by contact,
 instrument family by representation, and artifact role by exposure. Empty cells
 indicate possible coverage or schema gaps; they do not prove a missing
-instrument.
+instrument. These views remain deferred until the instrument registry exists.
 
-## Semantic Payload Schemas
+## Deferred Semantic Payload Schemas
 
-The first protocol defines a small family of reusable payload shapes:
+Future protocol work may define reusable payload shapes:
 
 - `document`: ordered prose and media;
 - `record-set`: typed cards or entities;
@@ -491,8 +527,9 @@ A renderer registry maps:
 schema ID + representation + supported version → renderer
 ```
 
-An unknown schema falls back to generic JSON, YAML, table, or source views.
-Known schemas may offer several views without changing the artifact.
+The first implementation does not promise these schemas or their generic views.
+Unknown structured files render as JSON, YAML, table, or source. Later schema
+work may add several views without changing an artifact's source data.
 
 ## Browser Interaction
 
@@ -512,8 +549,6 @@ The left browser supports:
 - recent files;
 - file-type filters;
 - artifact taxonomy filters;
-- an instrument catalog;
-- coverage matrices for taxonomy and renderer gaps.
 
 Watcher updates preserve selection, expanded folders, active filters, and reader
 layout. An open file refetches when its revision changes. The reader preserves
@@ -550,7 +585,7 @@ not become content reads.
 | PDF                       | Embedded PDF reader                                |
 | HTML                      | Sandboxed preview with source toggle               |
 | CSV or TSV                | Virtualized table                                  |
-| Unknown binary            | Metadata, download, and system-open actions        |
+| Unknown binary            | Metadata and download; optional local system-open  |
 
 Each renderer sits behind an error boundary. A renderer failure leaves the file
 browser and raw-file actions usable.
@@ -593,25 +628,27 @@ directory can be hosted at a domain root or nested path.
 The static adapter loads the manifest into read-only TanStack DB collections.
 The reader and renderer components are the same as live mode. Published mode
 contains no watcher, content API, filesystem authority, or Durable Streams
-client connection. The publisher resolves the selected artifacts' renderer IDs
-and includes their code chunks plus the core fallback renderers.
+client connection. V1 ships the complete, normally tree-shaken renderer bundle;
+it does not rebuild a custom subset for each publication.
 
 ### Selection
 
 Publishing fails closed:
 
 - Explicit file arguments become entry points.
-- Their linked local media and declared artifact dependencies are included.
+- Their embedded local media and declared artifact dependencies are included.
 - A directory argument includes artifacts marked `public`.
 - Plain files without exposure metadata are omitted from a directory-wide
   publish unless named explicitly.
 - `internal` and `checkpoint` artifacts require an explicit override.
 - A dependency outside the chosen root is rejected.
 
-The dependency collector follows Markdown links, media references, structured
-artifact references, and renderer-declared dependencies. It reports missing
-files, escaping paths, unsupported dynamic references, schema errors, and
-exposure conflicts before writing the output.
+The dependency collector follows Markdown embedded media and explicit
+structured artifact references. Ordinary hyperlinks remain hyperlinks and do
+not pull their targets into the package. V1 does not attempt complete dependency
+discovery for arbitrary HTML, CSS imports, scripts, or generated URLs. It
+reports missing files, escaping paths, unsupported dynamic references, schema
+errors, and exposure conflicts before writing the output.
 
 The publisher stages output in a temporary sibling directory and moves it into
 place only after validation and rendering checks succeed. Existing output is
@@ -631,8 +668,8 @@ renderer.
 - A deleted open file remains selected as a tombstone until the user navigates.
 - A transient watcher failure is reported and retried.
 - A stream disconnect reconnects and resumes within the current run.
-- If stream recovery fails, the server may reset and emit a fresh metadata
-  snapshot from the filesystem.
+- If stream recovery fails, the server may reset the stream and restart the
+  watcher so its initial events rebuild metadata.
 - A content fetch whose revision changed mid-read returns a retryable conflict.
 - A publish validation failure leaves no partial output package.
 - A single renderer crash cannot take down navigation or other files.
@@ -646,7 +683,7 @@ artifact-browser/
 │   ├── server/        # confinement, content API, and watch
 │   ├── protocol/      # envelopes, schemas, taxonomy, registry contracts
 │   ├── collections/   # StreamDB, content, and preferences
-│   ├── renderers/     # Markdown, files, and semantic artifact views
+│   ├── renderers/     # Markdown and common file views
 │   ├── publishing/    # dependency collection and static bundle
 │   ├── components/    # shell, navigation, reader, and controls
 │   └── routes/
@@ -668,18 +705,19 @@ needs to consume them.
 - dependency collection and exposure rules;
 - MIME and renderer selection;
 - link rewriting;
-- preference collection persistence.
-- port selection and bind-conflict retry.
+- preference collection persistence;
+- port `0` assignment and reported-URL construction.
 
 ### Integration tests
 
 - initial watcher events produce the expected StreamDB collections;
 - add, change, delete, directory, and rename events update live queries;
-- the watcher transitions the workspace to ready after initial enumeration;
+- the workspace becomes ready only after initial enumeration and queued metadata
+  writes finish;
 - reconnect and fresh-snapshot recovery converge on filesystem state;
 - an open file refetches on revision change;
 - malformed artifacts remain browsable;
-- publish failures leave the destination unchanged.
+- publish failures leave the destination unchanged;
 - `--no-open` prints the URL without launching a system browser.
 
 ### Browser and visual tests
@@ -688,7 +726,7 @@ needs to consume them.
 - Mermaid, code, tables, media, and relative links;
 - each font pairing at narrow and wide reader measures;
 - keyboard navigation and collapsed-panel layouts;
-- coverage matrices and artifact filters;
+- artifact filters;
 - renderer error boundaries;
 - live updates without losing selection;
 - accessibility checks for navigation and controls.
@@ -706,8 +744,8 @@ needs to consume them.
 
 The first implementation is complete when:
 
-1. `artifact-browser <file-or-directory>` picks open ports, serves the correct
-   root and selection, and prints its URL.
+1. `artifact-browser <file-or-directory>` binds both servers to OS-assigned
+   ports, serves the correct root and selection, and prints its URL.
 2. Existing Markdown renders with the approved typography and feature set.
 3. The font switcher persists its choice through a TanStack DB local-storage
    collection.
@@ -717,23 +755,22 @@ The first implementation is complete when:
 6. StreamDB contains metadata and diagnostics but no file bodies.
 7. All reads remain inside the selected root and the UI performs no writes.
 8. Artifact metadata can be filtered by every taxonomy facet.
-9. At least one generic view exists for each semantic payload family.
-10. Coverage views expose empty taxonomy and renderer cells.
-11. `artifact-browser publish` emits a self-contained static package.
-12. The published package observes exposure rules and renders without a live
+9. `artifact-browser publish` emits a self-contained static package.
+10. The published package observes exposure rules and renders without a live
     server.
-13. Opening the system browser is optional; `--no-open` supports integrated
+11. Opening the system browser is optional; `--no-open` supports integrated
     browsers and headless callers.
 
 ## Follow-up Specifications
 
 After this foundation is implemented:
 
-1. **Field Lab artifact migration** — annotate instrument cards, readouts, Field
-   Logs, Expedition Logs, and atlases; define which instruments emit which
-   semantic schemas.
-2. **Coverage audit** — populate the instrument registry and use the browser's
-   matrices to identify missing contacts, tests, controls, and readouts.
+1. **Field Lab schema and registry design** — define concrete semantic payload
+   schemas, instrument identities, and renderer contracts.
+2. **Field Lab artifact migration** — annotate instrument cards, readouts, Field
+   Logs, Expedition Logs, and atlases against that registry.
+3. **Coverage audit** — use the registry and browser matrices to identify
+   missing contacts, tests, controls, and readouts.
 
 ## References
 
@@ -741,8 +778,11 @@ After this foundation is implemented:
 - [TanStack DB overview](https://tanstack.com/db/latest/docs/overview)
 - [TanStack DB live queries](https://tanstack.com/db/latest/docs/guides/live-queries)
 - [Durable Streams StreamDB](https://durablestreams.com/stream-db)
+- [Durable Streams server package](https://github.com/durable-streams/durable-streams/tree/main/packages/server)
 - [Durable Streams StreamFS](https://durablestreams.com/stream-fs)
 - [Durable Streams JSON mode](https://durablestreams.com/json-mode)
+- [TanStack Start SPA mode](https://tanstack.com/start/latest/docs/framework/react/guide/spa-mode)
+- [TanStack Router search parameters](https://tanstack.com/router/latest/docs/guide/search-params)
 - [Capsize Radix UI typography skill](https://github.com/KyleAMathews/vite-plugin-capsize-radix-ui/blob/main/SKILL.md)
 - [`reference/instrument-contract.md`](../../../reference/instrument-contract.md)
 - [`reference/field-log-template.md`](../../../reference/field-log-template.md)
