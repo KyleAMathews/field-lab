@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" fill="#f0ebe1"/>
+  <path d="M120 245 C270 75 590 85 780 230" fill="none" stroke="#a35438" stroke-width="3"/>
+  <circle cx="120" cy="245" r="10" fill="#2e4035"/>
+  <circle cx="445" cy="118" r="10" fill="#2e4035"/>
+  <circle cx="780" cy="230" r="10" fill="#2e4035"/>
+  <g fill="#37322d" font-family="Georgia, serif" font-size="24">
+    <text x="82" y="286">files</text>
+    <text x="393" y="82">readouts</text>
+    <text x="723" y="271">essays</text>
+  </g>
+</svg>
