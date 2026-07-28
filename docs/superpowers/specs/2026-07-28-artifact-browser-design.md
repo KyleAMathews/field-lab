@@ -510,7 +510,7 @@ view without exposing an absolute filesystem path.
 The left browser supports:
 
 - directory hierarchy;
-- name and content-metadata search;
+- path, title, and artifact-metadata search;
 - recent files;
 - file-type filters;
 - artifact taxonomy filters;
@@ -589,12 +589,14 @@ dist/
 ```
 
 Static routes use fragments or query parameters so the package works on a plain
-HTTP file server without rewrite rules.
+HTTP file server without rewrite rules. All generated URLs are relative so the
+directory can be hosted at a domain root or nested path.
 
 The static adapter loads the manifest into read-only TanStack DB collections.
 The reader and renderer components are the same as live mode. Published mode
 contains no watcher, content API, filesystem authority, or Durable Streams
-client connection.
+client connection. The publisher resolves the selected artifacts' renderer IDs
+and includes their code chunks plus the core fallback renderers.
 
 ### Selection
 
@@ -703,7 +705,7 @@ needs to consume them.
 - verify every manifest content reference exists;
 - verify no undeclared, internal, or escaping file enters the bundle;
 - verify direct and nested navigation without server rewrites;
-- verify the package works with networking disabled after load.
+- verify the package makes no request to a live application or stream API.
 
 ## Acceptance Criteria
 
