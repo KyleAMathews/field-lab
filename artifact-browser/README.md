@@ -27,7 +27,7 @@ pnpm artifact-browser notes/session.md --no-open
 
 ## What it reads
 
-- Markdown and GFM, with sanitized HTML, Mermaid, and highlighted code
+- Markdown and GFM, with sanitized HTML, Mermaid, and TanStack Highlight
 - JSON and YAML
 - CSV and TSV
 - plain text and source files

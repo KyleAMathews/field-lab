@@ -49,6 +49,10 @@ describe("MarkdownRenderer", () => {
 
 <script>window.bad = true</script>
 
+\`\`\`ts
+const answer: number = 42
+\`\`\`
+
 \`\`\`mermaid
 flowchart LR
   A --> B
@@ -77,6 +81,8 @@ flowchart LR
 			"?file=README.md&cap=secret",
 		);
 		expect(container.querySelector("script")).toBeNull();
+		expect(container.querySelector(".th-code--ts")).toBeInTheDocument();
+		expect(container.querySelector(".th-keyword")).toHaveTextContent("const");
 		expect(screen.getByText(/flowchart LR/)).toBeInTheDocument();
 	});
 

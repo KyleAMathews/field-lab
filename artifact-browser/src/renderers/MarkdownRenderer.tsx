@@ -1,3 +1,4 @@
+import { tokenize } from "@tanstack/highlight";
 import { useEffect, useRef } from "react";
 import ReactMarkdown, { type UrlTransform } from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -30,24 +31,28 @@ function withoutFrontmatter(source: string): string {
 }
 
 function CodeBlock({ language, source }: { language: string; source: string }) {
-	const ref = useRef<HTMLDivElement>(null);
-	useEffect(() => {
-		let active = true;
-		import("shiki").then(async ({ codeToHtml }) => {
-			const html = await codeToHtml(source, {
-				lang: language || "text",
-				theme: "github-light",
-			}).catch(() => null);
-			if (active && ref.current && html) ref.current.innerHTML = html;
-		});
-		return () => {
-			active = false;
-		};
-	}, [language, source]);
+	const result = tokenize(source, {
+		lang: language || "plaintext",
+	});
+	let offset = 0;
+	const tokens = result.tokens.map((token) => {
+		const key = `${offset}-${token.className ?? "plain"}`;
+		offset += token.value.length;
+		return token.className ? (
+			<span className={`th-token th-${token.className}`} key={key}>
+				{token.value}
+			</span>
+		) : (
+			token.value
+		);
+	});
 	return (
-		<div className="code-block" ref={ref}>
-			<pre>
-				<code>{source}</code>
+		<div className="code-block">
+			<pre
+				className={`th-code th-code--${result.lang}`}
+				data-language={result.lang}
+			>
+				<code>{tokens}</code>
 			</pre>
 		</div>
 	);
