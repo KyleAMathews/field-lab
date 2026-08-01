@@ -308,7 +308,19 @@ For grave or high-stakes material, lower the temperature:
 
 The Field Log is the user-facing invitation. A bounded inquiry with a Field Log is a **Field Trip** in the lab's internal organization; the user does not need that label unless it helps them navigate or they ask.
 
-After agreement, read [field-trip.md](reference/field-trip.md), then create [field-log-template.md](reference/field-log-template.md) from the conversation. Do not restart the inquiry or ask the user to repeat answered questions.
+After agreement, read [field-trip.md](reference/field-trip.md). When creating or
+changing its compound Field Log, also read
+[field-log-events.md](reference/field-log-events.md). Use the bundled writer as
+the only mutation path; never create or edit `field_log.jsonl` or
+`field_log.md` directly. Do not restart the inquiry or ask the user to repeat
+answered questions. When the user sharpens or redirects the inquiry, update the
+Field Log's displayed aim in the same write as their exact comment; do not
+leave the opening placeholder as the trip's overview.
+
+For every user-gated Field Log event, give the writer the specific allowed
+authorization kind, the user-turn pointer, and the user's exact authorizing
+words in `authorization.verbatim`. Never paraphrase this quote or use a general
+earlier permission for a later operation.
 
 When several Field Logs now share a question, place, system, lineage, or planned series, offer a shared index:
 

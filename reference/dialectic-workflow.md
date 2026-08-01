@@ -20,7 +20,9 @@ Selecting the workflow reserves its scheduled instruments and declared artifacts
 3. Offer to start a Field Log for the workflow's sources, findings, and open questions. Say what the work involves: separate agents, several rounds of research and comparison, saved notes, and a pause before each new phase. For example: “There’s enough material here that we’ll want to keep the evidence trails straight. Would you like me to start a Field Log? I’ll use separate agents for the opposing cases, save the research and comparisons, and bring each phase back to you before moving on.”
 4. Read [dialectic-instrument-map.md](dialectic-instrument-map.md) and the current phase file. Present the Phase 1 opening card under the gate below, then **stop**. Do not create files, spawn the gardener, search, prepare an instrument, or run an instrument before the user starts Phase 1.
 5. After the user starts Phase 1, locate the session record, current field log, and Expedition log if one exists.
-6. If no field log exists, read [field-log-template.md](field-log-template.md) and set one up as part of the workflow's declared files. Timestamp the Field Trip and round control log under their contracts.
+6. If no Field Log exists, read [field-trip.md](field-trip.md) and
+   [field-log-events.md](field-log-events.md), then initialize the compound log
+   through its bundled writer as part of the workflow's declared files.
 7. Preserve these fields into the Field Trip log and `round_1_dialectic_log.md`:
    - original question, session provenance, and field lineage;
    - goal, audience, and useful outcome;

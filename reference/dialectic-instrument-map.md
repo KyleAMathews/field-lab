@@ -30,7 +30,11 @@ Track every scheduled instrument in the round control log:
 3. **Call:** apply the handshake in `SKILL.md`.
 4. **Prepare:** freeze inputs, baseline, prompts, context boundaries, and execution seats before exposure.
 5. **Run:** follow the phase procedure under the card's execution contract.
-6. **Read:** append the durable readout fields from [field-log-template.md](field-log-template.md), including `recorded-at`, any known `observed-at`, authorization, actual seat, contexts, fallback, access delta, typed readings, calibration, artifact risk, unmeasured remainder, and trace paths.
+6. **Read:** append the durable result through the writer contract in
+   [field-log-events.md](field-log-events.md), including any known
+   `observedAt`, authorization, actual seat, contexts, fallback, access delta,
+   typed readings, calibration, artifact risk, unmeasured remainder, and trace
+   paths.
 7. **Return:** show the bounded reading to the user at the phase's next checkpoint and record their correction. Do not mix it with the phase's later analysis.
 8. **Caddy:** apply the caddy gate in `SKILL.md` at the promised checkpoint. Do not use it to skip the remaining phase gate.
 9. **Gate:** attest the instrument's required lifecycle state and concrete trace before advancing.

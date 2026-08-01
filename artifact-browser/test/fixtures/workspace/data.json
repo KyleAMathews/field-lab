@@ -1,0 +1,17 @@
+{
+  "$schema": "urn:field-lab:schema:artifact-envelope:1",
+  "artifact": {
+    "protocol": "1",
+    "schema": "field-lab/ledger",
+    "schemaVersion": "1",
+    "title": "Renderer candidates",
+    "role": "map",
+    "representation": "ledger",
+    "renderingMode": "mechanical",
+    "exposure": "internal"
+  },
+  "data": [
+    { "shape": "document", "status": "built" },
+    { "shape": "graph", "status": "deferred" }
+  ]
+}
