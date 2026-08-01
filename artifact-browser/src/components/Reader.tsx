@@ -1,5 +1,6 @@
 import { useLiveQuery } from "@tanstack/react-db";
 import { getContentCollection } from "../collections/content";
+import { useRetainedValue } from "../hooks/useRetainedValue";
 import type { FileRecord } from "../protocol/types";
 import { selectRenderer } from "../renderers/registry";
 
@@ -29,12 +30,7 @@ export function Reader({
 		);
 	}
 
-	return (
-		<LoadedReader
-			key={`${file.path}@${file.revision}`}
-			{...{ file, capability, view, staticContents }}
-		/>
-	);
+	return <LoadedReader {...{ file, capability, view, staticContents }} />;
 }
 
 function LoadedReader({
@@ -55,7 +51,8 @@ function LoadedReader({
 		staticContents?.[file.path],
 	);
 	const { data = [], isLoading, isError } = useLiveQuery(collection);
-	if (isLoading)
+	const content = useRetainedValue(file.path, data[0]);
+	if (isLoading && !content)
 		return (
 			<div
 				className="reader-skeleton"
@@ -65,7 +62,6 @@ function LoadedReader({
 		);
 	if (isError)
 		return <div className="reader-error">This file could not be read.</div>;
-	const content = data[0];
 	if (!content)
 		return (
 			<div

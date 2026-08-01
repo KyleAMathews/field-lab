@@ -76,7 +76,16 @@ export function FileTree({
 								onClick={() =>
 									directory
 										? toggle(file.path)
-										: navigate({ file: file.path, panel: undefined }, false)
+										: navigate(
+												{
+													file: file.path,
+													panel: undefined,
+													page: undefined,
+													entry: undefined,
+													readout: undefined,
+												},
+												false,
+											)
 								}
 							>
 								<span className={`file-indent depth-${Math.min(depth, 8)}`} />

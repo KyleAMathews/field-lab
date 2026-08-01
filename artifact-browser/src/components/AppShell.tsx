@@ -3,6 +3,8 @@ import { Info, PanelLeft, TextQuote } from "lucide-react";
 import type { BrowserData } from "../collections/stream-db";
 import type { BrowserSearch } from "../protocol/search";
 import { encodeExpanded } from "../protocol/search";
+import { ArtifactIndex } from "./ArtifactIndex";
+import { FieldLogReader } from "./FieldLogReader";
 import { FileTree } from "./FileTree";
 import { Inspector } from "./Inspector";
 import { Reader } from "./Reader";
@@ -32,6 +34,8 @@ export function AppShell({
 	);
 	const file = selected[0];
 	const view = search.view ?? "rendered";
+	const fieldLog = file?.name === "field_log.md";
+	const artifacts = search.page === "artifacts";
 	const defaultExpanded = new Set<string>(["."]);
 	if (selectedPath) {
 		const parts = selectedPath.split("/");
@@ -63,6 +67,21 @@ export function AppShell({
 				</div>
 				<div className="header-actions">
 					<button
+						className={`header-text-button${artifacts ? " is-active" : ""}`}
+						type="button"
+						aria-current={artifacts ? "page" : undefined}
+						onClick={() =>
+							navigate({
+								page: artifacts ? undefined : "artifacts",
+								view: artifacts ? "rendered" : undefined,
+								readout: undefined,
+								source: undefined,
+							})
+						}
+					>
+						{artifacts ? "Field Log" : "Artifacts"}
+					</button>
+					<button
 						className={`icon-button mobile-files${search.panel === "files" ? " is-active" : ""}`}
 						type="button"
 						aria-label="Show files"
@@ -91,13 +110,24 @@ export function AppShell({
 				className={`browser-grid${search.inspector ? " has-inspector" : ""}${search.panel === "files" ? " mobile-files-open" : ""}`}
 			>
 				<FileTree db={data.db} search={treeSearch} navigate={navigate} />
-				<main className="reader-panel">
+				<main
+					className={`reader-panel${fieldLog || artifacts ? " reader-panel-wide" : ""}`}
+				>
 					<div className="reader-toolbar">
 						<div className="selected-file">
-							<span>{file?.name ?? "Workspace"}</span>
-							{file ? <span className="selected-path">{file.path}</span> : null}
+							<span>
+								{artifacts ? "Artifacts" : (file?.name ?? "Workspace")}
+							</span>
+							{artifacts ? (
+								<span className="selected-path">Workspace index</span>
+							) : file ? (
+								<span className="selected-path">{file.path}</span>
+							) : null}
 						</div>
-						{file && ["markdown", "structured"].includes(file.rendererId) ? (
+						{!artifacts &&
+						!fieldLog &&
+						file &&
+						["markdown", "structured"].includes(file.rendererId) ? (
 							<div className="view-switcher">
 								<button
 									type="button"
@@ -117,13 +147,32 @@ export function AppShell({
 						) : null}
 					</div>
 					<div className="reader-scroll">
-						<div className="reader-canvas">
-							<Reader
-								file={file}
-								capability={search.cap}
-								view={view}
-								staticContents={data.staticContents}
-							/>
+						<div
+							className={`reader-canvas${fieldLog || artifacts ? " reader-canvas-wide" : ""}`}
+						>
+							{fieldLog && view === "rendered" ? (
+								<FieldLogReader
+									db={data.db}
+									file={file}
+									capability={search.cap}
+									staticContents={data.staticContents}
+									search={search}
+									navigate={navigate}
+								/>
+							) : artifacts ? (
+								<ArtifactIndex
+									db={data.db}
+									search={search}
+									navigate={navigate}
+								/>
+							) : (
+								<Reader
+									file={file}
+									capability={search.cap}
+									view={view}
+									staticContents={data.staticContents}
+								/>
+							)}
 						</div>
 					</div>
 				</main>

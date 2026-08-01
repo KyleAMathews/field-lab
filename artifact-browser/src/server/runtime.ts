@@ -52,6 +52,7 @@ export async function startBrowserRuntime(options: {
 		capability,
 		boot,
 		staticDir: options.staticDir ?? defaultStaticDir,
+		launchDirectory: process.cwd(),
 	});
 	const watcher = startMetadataWatcher({
 		root: target.root,

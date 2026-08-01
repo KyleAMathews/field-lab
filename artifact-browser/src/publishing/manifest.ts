@@ -17,6 +17,11 @@ const relativePathSchema = z
 		"Expected a root-relative path.",
 	);
 
+const contentKeySchema = z
+	.string()
+	.min(1)
+	.refine((value) => !value.includes("\0"));
+
 export const publishedManifestSchema = z.object({
 	version: z.literal(1),
 	workspaceName: z.string(),
@@ -25,7 +30,7 @@ export const publishedManifestSchema = z.object({
 	files: z.array(fileRecordSchema),
 	artifacts: z.array(artifactRecordSchema),
 	diagnostics: z.array(diagnosticRecordSchema),
-	contents: z.record(relativePathSchema, relativePathSchema),
+	contents: z.record(contentKeySchema, relativePathSchema),
 });
 
 export type PublishedManifest = z.infer<typeof publishedManifestSchema>;

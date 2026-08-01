@@ -18,7 +18,10 @@ describe("publication build", () => {
 		await mkdir(join(app, "assets"));
 		await writeFile(join(app, "assets/reader.js"), "export {}");
 		await writeFile(join(root, "post.md"), "# Published");
+		const externalSource = join(root, "transcript.txt");
+		await writeFile(externalSource, "Transcript");
 		const plan = await collectPublication({ root, entries: ["post.md"] });
+		plan.externalSourcePaths["/original/transcript.txt"] = externalSource;
 		const manifest = await buildPublication({
 			plan,
 			output,
@@ -31,6 +34,11 @@ describe("publication build", () => {
 		expect(indexHtml).toContain('src="./assets/reader.js"');
 		expect(
 			await stat(join(output, manifest.contents["post.md"] ?? "")),
+		).toBeTruthy();
+		expect(
+			await stat(
+				join(output, manifest.contents["/original/transcript.txt"] ?? ""),
+			),
 		).toBeTruthy();
 		expect(
 			JSON.parse(await readFile(join(output, "publication.json"), "utf8")),

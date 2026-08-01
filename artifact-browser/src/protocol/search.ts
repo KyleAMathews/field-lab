@@ -3,6 +3,13 @@ export interface BrowserSearch {
 	file?: string;
 	q?: string;
 	type?: string;
+	page?: "artifacts";
+	aq?: string;
+	kind?: string;
+	instrument?: string;
+	entry?: string;
+	readout?: string;
+	source?: string;
 	inspector?: boolean;
 	view?: "rendered" | "source";
 	expanded?: string;
@@ -19,6 +26,13 @@ export function parseBrowserSearch(
 		file: string("file"),
 		q: string("q"),
 		type: string("type"),
+		page: value.page === "artifacts" ? "artifacts" : undefined,
+		aq: string("aq"),
+		kind: string("kind"),
+		instrument: string("instrument"),
+		entry: string("entry"),
+		readout: string("readout"),
+		source: string("source"),
 		inspector:
 			value.inspector === true || value.inspector === "true" || undefined,
 		view:

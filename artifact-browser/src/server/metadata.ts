@@ -3,6 +3,10 @@ import { basename, dirname, extname, relative, sep } from "node:path";
 import matter from "gray-matter";
 import mime from "mime";
 import YAML from "yaml";
+import {
+	isSourceCodePath,
+	sourceCodeMimeType,
+} from "../protocol/content-types";
 import { artifactFrontmatterSchema } from "../protocol/schema";
 import type {
 	ArtifactRecord,
@@ -30,6 +34,7 @@ export function selectRenderer(
 	if (MARKDOWN_EXTENSIONS.has(extension)) return "markdown";
 	if (STRUCTURED_EXTENSIONS.has(extension)) return "structured";
 	if (extension === ".csv" || extension === ".tsv") return "table";
+	if (isSourceCodePath(path)) return "text";
 	if (mimeType?.startsWith("image/")) return "image";
 	if (mimeType?.startsWith("audio/")) return "audio";
 	if (mimeType?.startsWith("video/")) return "video";
@@ -143,7 +148,9 @@ export async function readFileMetadata(
 		!isDirectory && extname(path) ? extname(path).slice(1).toLowerCase() : null;
 	const mimeType = isDirectory
 		? null
-		: (mime.getType(path) ?? "application/octet-stream");
+		: (sourceCodeMimeType(path) ??
+			mime.getType(path) ??
+			"application/octet-stream");
 	const file: FileRecord = {
 		id: path,
 		path,
@@ -163,4 +170,32 @@ export async function readFileMetadata(
 	if (kind !== "file") return { file, artifact: null, diagnostic: null };
 	const artifact = await inspectArtifact(absolutePath, path);
 	return { file, ...artifact };
+}
+
+export async function readExternalFileMetadata(
+	absolutePath: string,
+): Promise<FileRecord> {
+	const stats = await lstat(absolutePath);
+	if (!stats.isFile()) throw new Error("External source must be a file.");
+	const extension = extname(absolutePath)
+		? extname(absolutePath).slice(1).toLowerCase()
+		: null;
+	const mimeType =
+		sourceCodeMimeType(absolutePath) ??
+		mime.getType(absolutePath) ??
+		"application/octet-stream";
+	return {
+		id: `external:${absolutePath}`,
+		path: absolutePath,
+		parentPath: null,
+		name: basename(absolutePath),
+		kind: "file",
+		extension,
+		mimeType,
+		size: stats.size,
+		modifiedAt: stats.mtimeMs,
+		revision: `${stats.mtimeMs.toString(36)}-${stats.size.toString(36)}`,
+		rendererId: selectRenderer(absolutePath, mimeType),
+		readable: true,
+	};
 }

@@ -8,8 +8,10 @@ import {
 } from "node:http";
 import { extname, join, normalize, relative, resolve } from "node:path";
 import mime from "mime";
+import { sourceCodeMimeType } from "../protocol/content-types";
 import type { BootConfig } from "../protocol/types";
-import { resolveContentPath } from "./path-policy";
+import { readExternalFileMetadata } from "./metadata";
+import { resolveContentPath, resolveExternalFilePath } from "./path-policy";
 
 export interface ArtifactHttpServer {
 	origin: string;
@@ -21,6 +23,7 @@ interface HttpServerOptions {
 	capability: string;
 	boot: BootConfig;
 	staticDir: string;
+	launchDirectory?: string;
 	host?: string;
 	port?: number;
 }
@@ -126,7 +129,10 @@ async function serveContent(
 	if (!file?.isFile()) return send(response, 404, "File not found.");
 
 	const etag = `"${file.size.toString(36)}-${file.mtimeMs.toString(36)}"`;
-	const contentType = mime.getType(absolutePath) ?? "application/octet-stream";
+	const contentType =
+		sourceCodeMimeType(absolutePath) ??
+		mime.getType(absolutePath) ??
+		"application/octet-stream";
 	const headers: Record<string, string> = {
 		"accept-ranges": "bytes",
 		"cache-control": "private, no-cache",
@@ -184,6 +190,28 @@ export async function startHttpServer(
 				const body = JSON.stringify(options.boot);
 				response.writeHead(200, {
 					"cache-control": "no-store",
+					"content-type": "application/json; charset=utf-8",
+					"content-length": Buffer.byteLength(body).toString(),
+				});
+				return response.end(body);
+			}
+			if (requestUrl.pathname === "/api/metadata") {
+				if (request.method !== "GET") {
+					return send(response, 405, "Method not allowed.", { allow: "GET" });
+				}
+				const path = requestUrl.searchParams.get("path");
+				if (!path) return send(response, 400, "A file path is required.");
+				const absolutePath = await resolveExternalFilePath(
+					options.root,
+					options.launchDirectory ?? process.cwd(),
+					path,
+				).catch(() => null);
+				if (!absolutePath) return send(response, 404, "File not found.");
+				const body = JSON.stringify(
+					await readExternalFileMetadata(absolutePath),
+				);
+				response.writeHead(200, {
+					"cache-control": "private, no-cache",
 					"content-type": "application/json; charset=utf-8",
 					"content-length": Buffer.byteLength(body).toString(),
 				});

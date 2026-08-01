@@ -2,7 +2,7 @@ import { mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { readFileMetadata } from "./metadata";
+import { readExternalFileMetadata, readFileMetadata } from "./metadata";
 
 describe("metadata", () => {
 	it("extracts file and artifact metadata without the body", async () => {
@@ -55,5 +55,24 @@ artifact:
 		expect(result.file.rendererId).toBe("markdown");
 		expect(result.artifact).toBeNull();
 		expect(result.diagnostic?.source).toBe("schema");
+	});
+
+	it("treats TypeScript as source text rather than MPEG video", async () => {
+		const root = await mkdtemp(join(tmpdir(), "artifact-meta-"));
+		const file = join(root, "projection.ts");
+		await writeFile(file, "export const projection = true;\n");
+
+		const result = await readFileMetadata(root, file, 1);
+		expect(result.file).toMatchObject({
+			extension: "ts",
+			mimeType: "text/typescript",
+			rendererId: "text",
+		});
+
+		const external = await readExternalFileMetadata(file);
+		expect(external).toMatchObject({
+			mimeType: "text/typescript",
+			rendererId: "text",
+		});
 	});
 });

@@ -44,12 +44,47 @@ only file, artifact, workspace, and diagnostic metadata.
 The selected file, search, view, expanded directories, and inspector state live
 in URL query parameters. Font pairing preferences persist in `localStorage`.
 
+## Field Logs
+
+Selecting `field_log.md` opens a wide Field Log view:
+
+- current questions, sources, terms, tensions, plan, and lineage at the top;
+- exact user comments and instrument results in chronological order below;
+- full structured readouts in a route-controlled reader;
+- a faceted Artifacts page for readouts, sources, files, maps, and raw data.
+
+Legacy Markdown Field Logs are projected directly. A new compound Field Log
+uses `field_log.jsonl` as its canonical event stream and `field_log.md` as its
+generated portable reading copy.
+
+Create and update compound logs through the writer:
+
+```bash
+pnpm field-log init ./field-trip-topic --json '{"type":"trip.created",...}'
+pnpm field-log append ./field-trip-topic --json '[{"type":"comment.recorded",...}]'
+pnpm field-log validate ./field-trip-topic
+pnpm field-log render ./field-trip-topic
+pnpm field-log link ./field-trip-topic --entry 4 --readout 3
+```
+
+The writer assigns event, entity, entry, and run IDs plus timestamps. It uses
+XState to validate transitions, checks an instrument card's inline JSON Schema
+when present, serializes concurrent writers with a trip lock, appends JSONL,
+and overwrites Markdown from the full stream. Failed validation changes neither
+file. `--stdin` and `--file` are available for unusually large events.
+
+User-gated events also require their allowed authorization kind, a user-turn
+pointer, and the user's exact authorizing words in `authorization.verbatim`.
+See `reference/field-log-events.md` for the event-to-kind mapping.
+
 ## Security boundary
 
-Both servers bind to loopback. Each run gets a random capability. Content paths
-are canonicalized against the workspace root, and escaping symlinks, absolute
-paths, traversal, and unexpected browser origins are rejected. The browser is
-read-only.
+Both servers bind to loopback. Each run gets a random capability. The file tree
+stays rooted at the selected workspace, while source records may open explicit
+absolute or launch-relative files elsewhere on the local computer. External
+files pass through the same capability-protected, read-only content server.
+Unexpected browser origins are rejected. The separate `field-log` CLI is the
+sole Field Log mutation path.
 
 The first release does not defend against an attacker who can swap filesystem
 entries during a single open operation. It also treats unknown semantic schemas
@@ -76,9 +111,15 @@ pnpm artifact-browser publish post.md --out ./published
 ```
 
 The output contains the reader, a versioned manifest, and content-addressed
-copies of each entry. Markdown embedded media is included. Ordinary links are
-not crawled. Structured JSON or YAML may include an explicit `references`
-array.
+copies of each entry. Markdown embedded media is included. Publishing a
+compound Field Log also includes its declared JSONL event stream. Ordinary
+links are not crawled. Structured JSON or YAML may include an explicit
+`references` array.
+
+Field Log sources inside the trip directory are included. An outside local
+source remains metadata-only unless the event stream contains a later
+`source.publication.authorized` event with `publication-consent`, a user-turn
+pointer, and the user's exact authorizing words.
 
 A directory entry includes only artifacts whose frontmatter exposure is
 `public`. Broaden that rule when needed:

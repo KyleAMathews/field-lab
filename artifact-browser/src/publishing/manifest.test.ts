@@ -12,7 +12,10 @@ describe("published manifest", () => {
 				files: [],
 				artifacts: [],
 				diagnostics: [],
-				contents: { "post.md": "content/abc.md" },
+				contents: {
+					"post.md": "content/abc.md",
+					"/original/transcript.txt": "content/def.txt",
+				},
 			}).version,
 		).toBe(1);
 	});

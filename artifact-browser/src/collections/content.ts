@@ -1,6 +1,7 @@
 import { createCollection } from "@tanstack/db";
 import { queryCollectionOptions } from "@tanstack/query-db-collection";
 import { QueryClient } from "@tanstack/react-query";
+import { isSourceCodePath } from "../protocol/content-types";
 
 const MAX_TEXT_BYTES = 8 * 1024 * 1024;
 const MAX_STRUCTURED_BYTES = 2 * 1024 * 1024;
@@ -22,6 +23,24 @@ const contentCollections = new Map<
 	string,
 	ReturnType<typeof createContentCollection>
 >();
+
+export function isStructuredContent(path: string, mimeType: string): boolean {
+	return (
+		mimeType.includes("json") ||
+		mimeType.includes("yaml") ||
+		/\.(?:jsonl?|ya?ml|csv|tsv)$/i.test(path)
+	);
+}
+
+export function isTextualContent(path: string, mimeType: string): boolean {
+	return (
+		mimeType.startsWith("text/") ||
+		mimeType.includes("json") ||
+		mimeType.includes("yaml") ||
+		isSourceCodePath(path) ||
+		/\.(?:md|mdx|jsonl?|ya?ml|csv|tsv|txt)$/i.test(path)
+	);
+}
 
 function createContentCollection(
 	path: string,
@@ -46,16 +65,9 @@ function createContentCollection(
 				const mimeType =
 					response.headers.get("content-type") ?? "application/octet-stream";
 				const size = Number(response.headers.get("content-length") ?? "0");
-				const structured =
-					mimeType.includes("json") ||
-					mimeType.includes("yaml") ||
-					/\.(?:json|ya?ml|csv|tsv)$/i.test(path);
+				const structured = isStructuredContent(path, mimeType);
 				const limit = structured ? MAX_STRUCTURED_BYTES : MAX_TEXT_BYTES;
-				const textual =
-					mimeType.startsWith("text/") ||
-					mimeType.includes("json") ||
-					mimeType.includes("yaml") ||
-					/\.(?:md|mdx|json|ya?ml|csv|tsv|txt)$/i.test(path);
+				const textual = isTextualContent(path, mimeType);
 				const tooLarge = textual && size > limit;
 				return [
 					{

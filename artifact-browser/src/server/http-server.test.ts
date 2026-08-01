@@ -1,16 +1,19 @@
-import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, realpath, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { startHttpServer } from "./http-server";
 
 describe("artifact HTTP server", () => {
-	it("protects boot and serves confined ranged content", async () => {
+	it("protects boot and serves ranged workspace and external content", async () => {
 		const root = await mkdtemp(join(tmpdir(), "artifact-http-"));
+		const external = await mkdtemp(join(tmpdir(), "artifact-external-http-"));
 		const staticDir = join(root, "app");
 		await mkdir(staticDir);
 		await writeFile(join(staticDir, "index.html"), "<h1>Browser</h1>");
 		await writeFile(join(root, "hello.txt"), "hello world");
+		const externalPath = join(external, "source.md");
+		await writeFile(externalPath, "# External source");
 		const capability = "secret";
 		const server = await startHttpServer({
 			root,
@@ -60,6 +63,23 @@ describe("artifact HTTP server", () => {
 					)
 				).status,
 			).toBe(400);
+			const metadata = await fetch(
+				`${server.origin}/api/metadata?cap=${capability}&path=${encodeURIComponent(externalPath)}`,
+			);
+			expect(metadata.status).toBe(200);
+			const externalFile = await metadata.json();
+			expect(externalFile).toMatchObject({
+				path: await realpath(externalPath),
+				name: "source.md",
+				rendererId: "markdown",
+			});
+			expect(
+				await (
+					await fetch(
+						`${server.origin}/api/content?cap=${capability}&path=${encodeURIComponent(externalPath)}`,
+					)
+				).text(),
+			).toBe("# External source");
 		} finally {
 			await server.close();
 		}

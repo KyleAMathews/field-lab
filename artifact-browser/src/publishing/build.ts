@@ -42,17 +42,23 @@ export async function buildPublication(options: {
 		const indexHtml = await readFile(indexPath, "utf8");
 		await writeFile(indexPath, indexHtml.replace(/(["'])\/\.\//g, "$1./"));
 		const contents: Record<string, string> = {};
+		const sources: Array<[path: string, absolute: string]> = [];
 		for (const file of options.plan.files) {
 			if (file.kind !== "file") continue;
 			const absolute = options.plan.absolutePaths[file.path];
 			if (!absolute) throw new Error(`Missing source for ${file.path}`);
+			sources.push([file.path, absolute]);
+		}
+		sources.push(...Object.entries(options.plan.externalSourcePaths));
+		if (sources.length)
+			await mkdir(join(stage, "content"), { recursive: true });
+		for (const [path, absolute] of sources) {
 			const body = await readFile(absolute);
 			const hash = createHash("sha256").update(body).digest("hex");
-			const asset = `content/${hash}${extname(file.path).toLowerCase()}`;
-			await mkdir(join(stage, "content"), { recursive: true });
+			const asset = `content/${hash}${extname(path).toLowerCase()}`;
 			if (!(await exists(join(stage, asset))))
 				await writeFile(join(stage, asset), body);
-			contents[file.path] = asset;
+			contents[path] = asset;
 		}
 
 		const manifest = validatePublishedManifest({

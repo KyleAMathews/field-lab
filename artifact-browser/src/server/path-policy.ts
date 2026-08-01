@@ -38,9 +38,9 @@ export async function resolveContentPath(
 	root: string,
 	relativePath: string,
 ): Promise<string> {
+	if (relativePath.includes("\0")) throw new Error("Invalid content path.");
+	if (isAbsolute(relativePath)) return realpath(relativePath);
 	if (
-		relativePath.includes("\0") ||
-		isAbsolute(relativePath) ||
 		relativePath === ".." ||
 		relativePath.startsWith("../") ||
 		relativePath.startsWith(`..${sep}`)
@@ -60,4 +60,26 @@ export async function resolveContentPath(
 	}
 
 	return canonicalCandidate;
+}
+
+export async function resolveExternalFilePath(
+	root: string,
+	launchDirectory: string,
+	path: string,
+): Promise<string> {
+	if (!path || path.includes("\0")) throw new Error("Invalid file path.");
+	const candidates = isAbsolute(path)
+		? [path]
+		: [
+				resolve(root, path),
+				resolve(launchDirectory, path),
+				resolve(dirname(launchDirectory), path),
+			];
+	for (const candidate of new Set(candidates)) {
+		const canonical = await realpath(candidate).catch(() => null);
+		if (!canonical) continue;
+		const stats = await lstat(canonical).catch(() => null);
+		if (stats?.isFile()) return canonical;
+	}
+	throw new Error("File not found.");
 }

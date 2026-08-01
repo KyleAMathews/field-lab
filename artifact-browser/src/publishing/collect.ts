@@ -1,13 +1,15 @@
-import { readdir, readFile, stat } from "node:fs/promises";
+import { readdir, readFile, realpath, stat } from "node:fs/promises";
 import {
 	basename,
 	dirname,
 	extname,
+	isAbsolute,
 	join,
 	relative,
 	resolve,
 	sep,
 } from "node:path";
+import matter from "gray-matter";
 import type {
 	ArtifactRecord,
 	DiagnosticRecord,
@@ -25,6 +27,7 @@ export interface PublicationPlan {
 	artifacts: ArtifactRecord[];
 	diagnostics: DiagnosticRecord[];
 	absolutePaths: Record<string, string>;
+	externalSourcePaths: Record<string, string>;
 }
 
 function rootRelative(root: string, path: string): string {
@@ -56,6 +59,17 @@ function markdownDependencies(source: string): string[] {
 				dependencies.add(target);
 		}
 	}
+	if (source) {
+		const data = matter(source).data as Record<string, unknown>;
+		const eventStream = data["event-stream"];
+		if (
+			data.type === "field-log" &&
+			typeof eventStream === "string" &&
+			eventStream.trim()
+		) {
+			dependencies.add(eventStream);
+		}
+	}
 	return [...dependencies];
 }
 
@@ -77,6 +91,65 @@ async function structuredDependencies(path: string): Promise<string[]> {
 	}
 }
 
+interface PublicationDependency {
+	path: string;
+	allowExternal: boolean;
+}
+
+async function fieldLogEventDependencies(
+	path: string,
+): Promise<PublicationDependency[]> {
+	if (extname(path).toLowerCase() !== ".jsonl") return [];
+	const source = await readFile(path, "utf8");
+	const events: Array<Record<string, unknown>> = [];
+	for (const [index, line] of source.split(/\r?\n/).entries()) {
+		if (!line.trim()) continue;
+		let event: unknown;
+		try {
+			event = JSON.parse(line);
+		} catch {
+			throw new Error(`Invalid JSONL at ${path}:${index + 1}`);
+		}
+		if (event && typeof event === "object")
+			events.push(event as Record<string, unknown>);
+	}
+
+	const authorizedSourceIds = new Set<number>();
+	for (const event of events) {
+		if (event.type !== "source.publication.authorized") continue;
+		const payload = event.payload as Record<string, unknown> | undefined;
+		const authorization = event.authorization as
+			| Record<string, unknown>
+			| undefined;
+		if (
+			Number.isInteger(payload?.sourceId) &&
+			authorization?.kind === "publication-consent" &&
+			typeof authorization.pointer === "string" &&
+			authorization.pointer.trim() &&
+			typeof authorization.verbatim === "string" &&
+			authorization.verbatim.trim()
+		) {
+			authorizedSourceIds.add(Number(payload?.sourceId));
+		}
+	}
+
+	const dependencies = new Map<string, boolean>();
+	for (const event of events) {
+		if (event.type !== "source.collected") continue;
+		const payload = event.payload as Record<string, unknown> | undefined;
+		if (typeof payload?.path !== "string" || !payload.path.trim()) continue;
+		const sourceId = payload.sourceId;
+		dependencies.set(
+			payload.path,
+			Number.isInteger(sourceId) && authorizedSourceIds.has(Number(sourceId)),
+		);
+	}
+	return [...dependencies].map(([dependencyPath, allowExternal]) => ({
+		path: dependencyPath,
+		allowExternal,
+	}));
+}
+
 export async function collectPublication(options: {
 	root: string;
 	entries: string[];
@@ -86,6 +159,7 @@ export async function collectPublication(options: {
 	const includeExposure = new Set(options.includeExposure ?? ["public"]);
 	const selected = new Set<string>();
 	const entryPaths: string[] = [];
+	const externalSourcePaths: Record<string, string> = {};
 
 	for (const input of options.entries) {
 		const absolute = await resolveContentPath(root, input);
@@ -119,13 +193,43 @@ export async function collectPublication(options: {
 		const source = /\.(?:md|mdx|markdown)$/i.test(path)
 			? await readFile(absolute, "utf8")
 			: "";
-		const dependencies = [
-			...markdownDependencies(source),
-			...(await structuredDependencies(absolute)),
+		const dependencies: PublicationDependency[] = [
+			...markdownDependencies(source).map((dependencyPath) => ({
+				path: dependencyPath,
+				allowExternal: false,
+			})),
+			...(await structuredDependencies(absolute)).map((dependencyPath) => ({
+				path: dependencyPath,
+				allowExternal: false,
+			})),
+			...(await fieldLogEventDependencies(absolute)),
 		];
 		for (const dependency of dependencies) {
-			const clean = dependency.split(/[?#]/, 1)[0];
+			const clean = dependency.path.split(/[?#]/, 1)[0];
 			if (!clean) continue;
+			if (isAbsolute(clean)) {
+				const dependencyAbsolute = await realpath(clean).catch((error) => {
+					if (!dependency.allowExternal) return null;
+					throw error;
+				});
+				if (!dependencyAbsolute) continue;
+				const relativePath = rootRelative(root, dependencyAbsolute);
+				if (relativePath !== ".." && !relativePath.startsWith("../")) {
+					const dependencyStat = await stat(dependencyAbsolute);
+					if (!dependencyStat.isFile())
+						throw new Error(`Missing publication asset: ${dependency.path}`);
+					if (!selected.has(relativePath)) {
+						selected.add(relativePath);
+						queue.push(relativePath);
+					}
+				} else if (dependency.allowExternal) {
+					const dependencyStat = await stat(dependencyAbsolute);
+					if (!dependencyStat.isFile())
+						throw new Error(`Missing publication asset: ${dependency.path}`);
+					externalSourcePaths[clean] = dependencyAbsolute;
+				}
+				continue;
+			}
 			const dependencyAbsolute = await resolveContentPath(
 				root,
 				rootRelative(root, resolve(dirname(absolute), clean)),
@@ -133,7 +237,7 @@ export async function collectPublication(options: {
 			const dependencyPath = rootRelative(root, dependencyAbsolute);
 			const dependencyStat = await stat(dependencyAbsolute);
 			if (!dependencyStat.isFile())
-				throw new Error(`Missing publication asset: ${dependency}`);
+				throw new Error(`Missing publication asset: ${dependency.path}`);
 			if (!selected.has(dependencyPath)) {
 				selected.add(dependencyPath);
 				queue.push(dependencyPath);
@@ -172,5 +276,6 @@ export async function collectPublication(options: {
 		artifacts,
 		diagnostics,
 		absolutePaths,
+		externalSourcePaths,
 	};
 }
