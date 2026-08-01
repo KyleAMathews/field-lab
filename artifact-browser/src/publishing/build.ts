@@ -49,7 +49,7 @@ export async function buildPublication(options: {
 			if (!absolute) throw new Error(`Missing source for ${file.path}`);
 			sources.push([file.path, absolute]);
 		}
-		sources.push(...Object.entries(options.plan.externalSourcePaths));
+		sources.push(...Object.entries(options.plan.sourceIdentityPaths));
 		if (sources.length)
 			await mkdir(join(stage, "content"), { recursive: true });
 		for (const [path, absolute] of sources) {

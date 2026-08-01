@@ -6,8 +6,17 @@ import {
 	type Server,
 	type ServerResponse,
 } from "node:http";
-import { extname, join, normalize, relative, resolve } from "node:path";
+import {
+	extname,
+	isAbsolute,
+	join,
+	normalize,
+	relative,
+	resolve,
+	sep,
+} from "node:path";
 import mime from "mime";
+import { validateFieldLog } from "../field-log/writer";
 import { sourceCodeMimeType } from "../protocol/content-types";
 import type { BootConfig } from "../protocol/types";
 import { readExternalFileMetadata } from "./metadata";
@@ -26,6 +35,26 @@ interface HttpServerOptions {
 	launchDirectory?: string;
 	host?: string;
 	port?: number;
+}
+
+function isWithin(root: string, candidate: string): boolean {
+	const rel = relative(root, candidate);
+	return rel === "" || (rel !== ".." && !rel.startsWith(`..${sep}`));
+}
+
+async function allowedSourcePaths(root: string): Promise<Set<string>> {
+	const paths = new Set<string>();
+	const events = await validateFieldLog(root).catch(() => []);
+	for (const event of events) {
+		if (event.type !== "source.collected") continue;
+		const path = event.payload.path;
+		if (typeof path !== "string" || !isAbsolute(path)) continue;
+		const canonical = await resolveExternalFilePath(root, root, path).catch(
+			() => null,
+		);
+		if (canonical) paths.add(canonical);
+	}
+	return paths;
 }
 
 function securityHeaders(streamUrl: string): Record<string, string> {
@@ -120,6 +149,15 @@ async function serveContent(
 
 	let absolutePath: string;
 	try {
+		if (isAbsolute(path)) {
+			const canonical = await resolveExternalFilePath(
+				options.root,
+				options.launchDirectory ?? process.cwd(),
+				path,
+			);
+			if (!(await allowedSourcePaths(options.root)).has(canonical))
+				throw new Error("Absolute path is not a collected source.");
+		}
 		absolutePath = await resolveContentPath(options.root, path);
 	} catch {
 		return send(response, 400, "Invalid content path.");
@@ -207,6 +245,11 @@ export async function startHttpServer(
 					path,
 				).catch(() => null);
 				if (!absolutePath) return send(response, 404, "File not found.");
+				if (
+					!isWithin(options.root, absolutePath) &&
+					!(await allowedSourcePaths(options.root)).has(absolutePath)
+				)
+					return send(response, 404, "File not found.");
 				const body = JSON.stringify(
 					await readExternalFileMetadata(absolutePath),
 				);

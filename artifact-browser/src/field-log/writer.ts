@@ -1,11 +1,11 @@
+import { randomUUID } from "node:crypto";
 import {
 	access,
-	appendFile,
 	mkdir,
 	open,
 	readFile,
 	rename,
-	unlink,
+	rm,
 	writeFile,
 } from "node:fs/promises";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
@@ -48,11 +48,7 @@ const submittedAuthorizationSchema = z.object({
 		.min(1, "authorization.verbatim must quote the user's exact words."),
 });
 
-const storedAuthorizationSchema = z.object({
-	kind: z.string().min(1),
-	pointer: z.string().min(1),
-	verbatim: z.string().min(1).optional(),
-});
+const storedAuthorizationSchema = submittedAuthorizationSchema;
 
 const submittedEventSchema = z
 	.object({
@@ -61,7 +57,7 @@ const submittedEventSchema = z
 		authorization: submittedAuthorizationSchema.optional(),
 		payload: z.record(z.string(), z.unknown()),
 	})
-	.passthrough()
+	.strict()
 	.superRefine((event, context) => {
 		for (const key of ["eventId", "recordedAt", "schema"]) {
 			if (key in event) {
@@ -74,15 +70,17 @@ const submittedEventSchema = z
 		}
 	});
 
-const storedEventSchema = z.object({
-	schema: z.literal("field-log/v1"),
-	eventId: z.number().int().positive(),
-	type: z.string().min(1),
-	recordedAt: z.iso.datetime({ offset: true }),
-	actor: actorSchema,
-	authorization: storedAuthorizationSchema.optional(),
-	payload: z.record(z.string(), z.unknown()),
-});
+const storedEventSchema = z
+	.object({
+		schema: z.literal("field-log/v1"),
+		eventId: z.number().int().positive(),
+		type: z.string().min(1),
+		recordedAt: z.iso.datetime({ offset: true }),
+		actor: actorSchema,
+		authorization: storedAuthorizationSchema.optional(),
+		payload: z.record(z.string(), z.unknown()),
+	})
+	.strict();
 
 export type SubmittedEvent = z.infer<typeof submittedEventSchema>;
 export type StoredEvent = z.infer<typeof storedEventSchema>;
@@ -180,6 +178,7 @@ export interface MutationReceipt {
 	runId?: number;
 	entryId?: number;
 	relativeHref?: string;
+	projectionWarning?: string;
 }
 
 function paths(directory: string) {
@@ -192,30 +191,58 @@ function paths(directory: string) {
 	};
 }
 
-async function acquireLock(path: string): Promise<() => Promise<void>> {
+export async function acquireFieldLogLock(
+	path: string,
+): Promise<() => Promise<void>> {
+	const nonce = randomUUID();
+	const ownerPath = resolve(path, "owner.json");
+	const owner = JSON.stringify({ pid: process.pid, nonce });
+	let staleQuarantine: string | null = null;
 	try {
-		const handle = await open(path, "wx");
-		await handle.writeFile(`${process.pid}\n`);
-		await handle.close();
+		await mkdir(path);
+		await writeFile(ownerPath, owner, { flag: "wx" });
 	} catch (error) {
 		if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
-		const owner = Number((await readFile(path, "utf8").catch(() => "")).trim());
+		const observed = await readFile(ownerPath, "utf8").catch(() => "");
+		let observedOwner: { pid?: number; nonce?: string } = {};
+		try {
+			observedOwner = JSON.parse(observed) as typeof observedOwner;
+		} catch {
+			throw new Error(`Field Log has a legacy or damaged lock at ${path}.`);
+		}
+		const observedPid = observedOwner.pid;
 		let live = false;
-		if (Number.isInteger(owner) && owner > 0) {
+		if (Number.isInteger(observedPid) && Number(observedPid) > 0) {
 			try {
-				process.kill(owner, 0);
+				process.kill(Number(observedPid), 0);
 				live = true;
 			} catch (ownerError) {
 				live = (ownerError as NodeJS.ErrnoException).code === "EPERM";
 			}
 		}
-		if (live) throw new Error(`Field Log is locked by process ${owner}.`);
-		await unlink(path);
-		const handle = await open(path, "wx");
-		await handle.writeFile(`${process.pid}\n`);
-		await handle.close();
+		if (live) throw new Error(`Field Log is locked by process ${observedPid}.`);
+		if (!observedOwner.nonce)
+			throw new Error(`Field Log has a damaged lock at ${path}.`);
+		staleQuarantine = `${path}.stale-${observedOwner.nonce}`;
+		await rename(path, staleQuarantine).catch((takeoverError) => {
+			throw new Error("Another writer changed the Field Log lock.", {
+				cause: takeoverError,
+			});
+		});
+		await mkdir(path);
+		await writeFile(ownerPath, owner, { flag: "wx" });
 	}
-	return () => unlink(path).catch(() => undefined);
+	const confirmed = await readFile(ownerPath, "utf8").catch(() => "");
+	if (confirmed !== owner) {
+		throw new Error("Another writer replaced the Field Log lock.");
+	}
+	return async () => {
+		const current = await readFile(ownerPath, "utf8").catch(() => "");
+		if (current !== owner) return;
+		await rm(path, { recursive: true });
+		if (staleQuarantine)
+			await rm(staleQuarantine, { recursive: true, force: true });
+	};
 }
 
 async function readStoredEvents(path: string): Promise<StoredEvent[]> {
@@ -223,15 +250,134 @@ async function readStoredEvents(path: string): Promise<StoredEvent[]> {
 		if ((error as NodeJS.ErrnoException).code === "ENOENT") return "";
 		throw error;
 	});
-	const parsed = parseEventStream(source);
-	return parsed.map((event, index) => {
+	return parseAndValidateFieldLog(source);
+}
+
+function requireString(
+	payload: Record<string, unknown>,
+	type: string,
+	...keys: string[]
+): void {
+	if (
+		!keys.some((key) => typeof payload[key] === "string" && payload[key].trim())
+	)
+		throw new Error(
+			`${type} requires non-empty payload.${keys.join(" or payload.")}.`,
+		);
+}
+
+function validateEventSemantics(event: StoredEvent): void {
+	const { type, payload } = event;
+	const instrumentId = payload.instrumentId;
+	if (
+		type.startsWith("instrument.") &&
+		instrumentId !== undefined &&
+		(typeof instrumentId !== "string" ||
+			!/^[a-z0-9][a-z0-9-]*$/.test(instrumentId))
+	)
+		throw new Error(`${type} has an invalid payload.instrumentId.`);
+	const requiredKind =
+		requiredAuthorizationKind[type as keyof typeof requiredAuthorizationKind];
+	if (requiredKind && event.authorization?.kind !== requiredKind)
+		throw new Error(`${type} requires authorization.kind ${requiredKind}.`);
+	switch (type) {
+		case "trip.created":
+			requireString(payload, type, "title");
+			requireString(payload, type, "openingQuestion");
+			break;
+		case "trip.context.recorded":
+			requireString(payload, type, "scope", "aim", "text", "context");
+			break;
+		case "comment.recorded":
+			requireString(payload, type, "text");
+			break;
+		case "note.recorded":
+		case "synthesis.recorded":
+		case "engine.result.recorded":
+			requireString(payload, type, "markdown");
+			break;
+		case "source.collected":
+			requireString(payload, type, "title");
+			requireString(payload, type, "url", "path", "origin");
+			break;
+		case "source.examined":
+			requireString(payload, type, "coverage");
+			break;
+		case "question.added":
+			requireString(payload, type, "text");
+			if (payload.role !== "current" && payload.role !== "return-to")
+				throw new Error(`${type} requires payload.role current or return-to.`);
+			break;
+		case "question.revised":
+			requireString(payload, type, "text", "role", "status");
+			break;
+		case "question.answered":
+			requireString(payload, type, "answer", "reason");
+			break;
+		case "question.reopened":
+		case "tension.resolved":
+		case "tension.reopened":
+			requireString(payload, type, "reason", "evidence");
+			break;
+		case "term.added":
+		case "term.revised":
+			requireString(payload, type, "term", "title");
+			break;
+		case "tension.added":
+		case "tension.revised":
+			requireString(payload, type, "title", "description");
+			break;
+		case "plan.item.added":
+			requireString(payload, type, "title");
+			break;
+		case "plan.item.completed":
+			requireString(payload, type, "result");
+			break;
+		case "plan.item.removed":
+			requireString(payload, type, "reason");
+			break;
+		case "workflow.selected":
+			requireString(payload, type, "name", "title");
+			break;
+		case "instrument.run.selected":
+		case "instrument.run.prepared":
+		case "instrument.run.started": {
+			requireString(payload, type, "instrumentId");
+			break;
+		}
+		case "instrument.run.completed": {
+			requireString(payload, type, "instrumentId");
+			const entry = payload.entry as Record<string, unknown> | undefined;
+			if (!entry || typeof entry !== "object")
+				throw new Error(`${type} requires payload.entry.`);
+			requireString(entry, type, "markdown");
+			break;
+		}
+		case "instrument.run.failed":
+		case "instrument.run.stopped":
+			requireString(payload, type, "reason", "error", "residue");
+			break;
+		case "instrument.feedback.recorded":
+			requireString(payload, type, "text");
+			break;
+	}
+}
+
+export function parseAndValidateFieldLog(source: string): StoredEvent[] {
+	const parsed = parseEventStream(source, {
+		allowIncompleteTrailingLine: false,
+	});
+	const events = parsed.map((event, index) => {
 		const stored = storedEventSchema.parse(event);
 		if (stored.eventId !== index + 1)
 			throw new Error(
 				`Expected eventId ${index + 1}, found ${stored.eventId}.`,
 			);
+		validateEventSemantics(stored);
 		return stored;
 	});
+	validateHistory(events);
+	return events;
 }
 
 function counters(
@@ -534,15 +680,39 @@ function renderProjection(
 		.trim()}\n`;
 }
 
-async function writeProjection(
+async function stageProjection(
 	path: string,
 	events: StoredEvent[],
-): Promise<void> {
+): Promise<() => Promise<void>> {
 	const projection = projectFieldLogEvents(events);
 	const markdown = renderProjection(projection, events.at(-1)?.eventId ?? 0);
 	const temporary = `${path}.${process.pid}.tmp`;
 	await writeFile(temporary, markdown, "utf8");
-	await rename(temporary, path);
+	return () => rename(temporary, path);
+}
+
+async function appendStoredEvents(
+	path: string,
+	events: StoredEvent[],
+): Promise<void> {
+	const handle = await open(path, "a");
+	try {
+		await handle.writeFile(
+			`${events.map((event) => JSON.stringify(event)).join("\n")}\n`,
+			"utf8",
+		);
+		await handle.sync();
+	} finally {
+		await handle.close();
+	}
+}
+
+async function writeProjection(
+	path: string,
+	events: StoredEvent[],
+): Promise<void> {
+	const commit = await stageProjection(path, events);
+	await commit();
 }
 
 export async function validateFieldLog(
@@ -551,7 +721,6 @@ export async function validateFieldLog(
 	const target = paths(directory);
 	const events = await readStoredEvents(target.events);
 	if (events.length === 0) throw new Error("Field Log has no events.");
-	validateHistory(events);
 	await validateInstrumentSchemas(target.root, events);
 	return events;
 }
@@ -562,7 +731,7 @@ export async function initializeFieldLog(
 ): Promise<MutationReceipt> {
 	const target = paths(directory);
 	await mkdir(target.root, { recursive: true });
-	const release = await acquireLock(target.lock);
+	const release = await acquireFieldLogLock(target.lock);
 	try {
 		const existing = await readStoredEvents(target.events);
 		if (existing.length) throw new Error("Field Log already exists.");
@@ -570,9 +739,19 @@ export async function initializeFieldLog(
 		if (event?.type !== "trip.created")
 			throw new Error("field-log init requires one trip.created event.");
 		validateHistory([event]);
-		await appendFile(target.events, `${JSON.stringify(event)}\n`, "utf8");
-		await writeProjection(target.markdown, [event]);
-		return { eventIds: [event.eventId] };
+		validateEventSemantics(event);
+		const commitProjection = await stageProjection(target.markdown, [event]);
+		await appendStoredEvents(target.events, [event]);
+		try {
+			await commitProjection();
+			return { eventIds: [event.eventId] };
+		} catch (error) {
+			return {
+				eventIds: [event.eventId],
+				projectionWarning:
+					error instanceof Error ? error.message : "Projection update failed.",
+			};
+		}
 	} finally {
 		await release();
 	}
@@ -583,22 +762,19 @@ export async function appendFieldLogEvents(
 	input: unknown | unknown[],
 ): Promise<MutationReceipt> {
 	const target = paths(directory);
-	const release = await acquireLock(target.lock);
+	const release = await acquireFieldLogLock(target.lock);
 	try {
 		const existing = await readStoredEvents(target.events);
 		if (!existing.length) throw new Error("Initialize the Field Log first.");
 		const submitted = Array.isArray(input) ? input : [input];
 		if (!submitted.length) throw new Error("No events supplied.");
 		const assigned = assignEvents(existing, submitted);
+		for (const event of assigned) validateEventSemantics(event);
 		const proposed = [...existing, ...assigned];
 		validateHistory(proposed);
 		await validateInstrumentSchemas(target.root, assigned);
-		await appendFile(
-			target.events,
-			`${assigned.map((event) => JSON.stringify(event)).join("\n")}\n`,
-			"utf8",
-		);
-		await writeProjection(target.markdown, proposed);
+		const commitProjection = await stageProjection(target.markdown, proposed);
+		await appendStoredEvents(target.events, assigned);
 		const last = assigned.at(-1);
 		const runId =
 			typeof last?.payload.runId === "number" ? last.payload.runId : undefined;
@@ -612,7 +788,7 @@ export async function appendFieldLogEvents(
 				: typeof last?.payload.entryId === "number"
 					? last.payload.entryId
 					: undefined;
-		return {
+		const receipt: MutationReceipt = {
 			eventIds: assigned.map((event) => event.eventId),
 			runId,
 			entryId,
@@ -620,6 +796,13 @@ export async function appendFieldLogEvents(
 				? `?file=field_log.md&entry=entry-${entryId}${runId ? `&readout=${runId}` : ""}`
 				: undefined,
 		};
+		try {
+			await commitProjection();
+		} catch (error) {
+			receipt.projectionWarning =
+				error instanceof Error ? error.message : "Projection update failed.";
+		}
+		return receipt;
 	} finally {
 		await release();
 	}
@@ -627,7 +810,7 @@ export async function appendFieldLogEvents(
 
 export async function renderFieldLog(directory: string): Promise<void> {
 	const target = paths(directory);
-	const release = await acquireLock(target.lock);
+	const release = await acquireFieldLogLock(target.lock);
 	try {
 		const events = await validateFieldLog(target.root);
 		await writeProjection(target.markdown, events);

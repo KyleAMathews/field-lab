@@ -29,7 +29,10 @@ string. `--file` and stdin are available only when shell quoting or an unusually
 large event makes inline JSON unsafe.
 
 The CLI prints one JSON receipt on success and one JSON error on failure.
-Failure is final for that call: correct the input and call it again.
+Validation and staging errors happen before the canonical append: correct the
+input and call it again. A receipt may include `projectionWarning` when JSONL
+committed but the generated Markdown could not be replaced. Do not repeat that
+append; run `field-log render` to repair the reading copy.
 
 ## Submitted event envelope
 

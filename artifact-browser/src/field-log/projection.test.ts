@@ -1,7 +1,23 @@
 import { describe, expect, it } from "vitest";
-import { parseLegacyFieldLog, projectFieldLogEvents } from "./projection";
+import {
+	parseEventStream,
+	parseLegacyFieldLog,
+	projectFieldLogEvents,
+} from "./projection";
 
 describe("Field Log projection", () => {
+	it("ignores only an incomplete trailing JSONL record", () => {
+		expect(
+			parseEventStream(
+				'{"eventId":1,"type":"trip.created","payload":{}}\n{"eventId":',
+			),
+		).toHaveLength(1);
+		expect(() =>
+			parseEventStream(
+				'{"eventId":\n{"eventId":2,"type":"trip.created","payload":{}}\n',
+			),
+		).toThrow(/Line 1/);
+	});
 	it("projects the legacy dashboard, exact comments, and chronological runs", () => {
 		const projection = parseLegacyFieldLog(`---
 type: field-log

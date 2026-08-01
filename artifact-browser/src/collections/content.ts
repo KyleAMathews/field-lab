@@ -6,6 +6,13 @@ import { isSourceCodePath } from "../protocol/content-types";
 const MAX_TEXT_BYTES = 8 * 1024 * 1024;
 const MAX_STRUCTURED_BYTES = 2 * 1024 * 1024;
 
+export function contentByteLimit(path: string, mimeType: string): number {
+	if (/(?:^|\/)field_log\.jsonl$/i.test(path)) return Number.POSITIVE_INFINITY;
+	return isStructuredContent(path, mimeType)
+		? MAX_STRUCTURED_BYTES
+		: MAX_TEXT_BYTES;
+}
+
 export interface FileContent {
 	id: string;
 	path: string;
@@ -23,6 +30,10 @@ const contentCollections = new Map<
 	string,
 	ReturnType<typeof createContentCollection>
 >();
+
+export function contentCollectionCacheSize(): number {
+	return contentCollections.size;
+}
 
 export function isStructuredContent(path: string, mimeType: string): boolean {
 	return (
@@ -65,8 +76,7 @@ function createContentCollection(
 				const mimeType =
 					response.headers.get("content-type") ?? "application/octet-stream";
 				const size = Number(response.headers.get("content-length") ?? "0");
-				const structured = isStructuredContent(path, mimeType);
-				const limit = structured ? MAX_STRUCTURED_BYTES : MAX_TEXT_BYTES;
+				const limit = contentByteLimit(path, mimeType);
 				const textual = isTextualContent(path, mimeType);
 				const tooLarge = textual && size > limit;
 				return [
@@ -96,6 +106,12 @@ export function getContentCollection(
 	const key = `${capability}:${path}@${revision}:${urlOverride ?? ""}`;
 	let collection = contentCollections.get(key);
 	if (!collection) {
+		const prefix = `${capability}:${path}@`;
+		for (const [existingKey, existing] of contentCollections) {
+			if (!existingKey.startsWith(prefix)) continue;
+			contentCollections.delete(existingKey);
+			void existing.cleanup().catch(() => undefined);
+		}
 		collection = createContentCollection(
 			path,
 			revision,

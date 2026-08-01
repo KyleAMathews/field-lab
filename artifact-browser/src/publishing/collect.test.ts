@@ -52,10 +52,9 @@ describe("publication collection", () => {
 		await writeFile(
 			join(root, "field_log.jsonl"),
 			[
-				'{"schema":"field-log/v1","eventId":1}',
-				`{"schema":"field-log/v1","eventId":2,"type":"source.collected","payload":{"sourceId":1,"path":"${join(root, "sources", "paper.pdf")}"}}`,
-				`{"schema":"field-log/v1","eventId":3,"type":"source.collected","payload":{"sourceId":2,"path":"${externalSource}"}}`,
-				'{"schema":"field-log/v1","eventId":4,"type":"source.publication.authorized","authorization":{"kind":"user-request","pointer":"turn-4","verbatim":"Publish it."},"payload":{"sourceId":2}}',
+				'{"schema":"field-log/v1","eventId":1,"type":"trip.created","recordedAt":"2026-07-30T12:00:00.000Z","actor":{"kind":"orchestrator"},"authorization":{"kind":"artifact-consent","pointer":"turn-1","verbatim":"Start a Field Log."},"payload":{"title":"A trip","openingQuestion":"Why?"}}',
+				`{"schema":"field-log/v1","eventId":2,"type":"source.collected","recordedAt":"2026-07-30T12:01:00.000Z","actor":{"kind":"orchestrator"},"payload":{"sourceId":1,"title":"Paper","path":${JSON.stringify(join(root, "sources", "paper.pdf"))}}}`,
+				`{"schema":"field-log/v1","eventId":3,"type":"source.collected","recordedAt":"2026-07-30T12:02:00.000Z","actor":{"kind":"orchestrator"},"payload":{"sourceId":2,"title":"Transcript","path":${JSON.stringify(externalSource)}}}`,
 			].join("\n"),
 		);
 		await writeFile(join(root, "sources", "paper.pdf"), "paper");
@@ -69,21 +68,79 @@ describe("publication collection", () => {
 				.filter((file) => file.kind === "file")
 				.map((file) => file.path),
 		).toEqual(["field_log.jsonl", "field_log.md", "sources/paper.pdf"]);
-		expect(planWithoutConsent.externalSourcePaths).toEqual({});
+		expect(planWithoutConsent.sourceIdentityPaths).toEqual({
+			[join(root, "sources", "paper.pdf")]: await realpath(
+				join(root, "sources", "paper.pdf"),
+			),
+		});
 
 		await writeFile(
 			join(root, "field_log.jsonl"),
 			[
 				await readFile(join(root, "field_log.jsonl"), "utf8"),
-				'{"schema":"field-log/v1","eventId":5,"type":"source.publication.authorized","authorization":{"kind":"publication-consent","pointer":"turn-5","verbatim":"Include the transcript in the published package."},"payload":{"sourceId":2}}',
+				'{"schema":"field-log/v1","eventId":4,"type":"source.publication.authorized","recordedAt":"2026-07-30T12:03:00.000Z","actor":{"kind":"orchestrator"},"authorization":{"kind":"publication-consent","pointer":"turn-5","verbatim":"Include the transcript in the published package."},"payload":{"sourceId":2}}',
 			].join("\n"),
 		);
 		const planWithConsent = await collectPublication({
 			root,
 			entries: ["field_log.md"],
 		});
-		expect(planWithConsent.externalSourcePaths).toEqual({
+		expect(planWithConsent.sourceIdentityPaths).toEqual({
+			[join(root, "sources", "paper.pdf")]: await realpath(
+				join(root, "sources", "paper.pdf"),
+			),
 			[externalSource]: await realpath(externalSource),
 		});
+	});
+
+	it("rejects malformed history and consent recorded before collection", async () => {
+		const parent = await mkdtemp(join(tmpdir(), "artifact-publish-"));
+		const root = join(parent, "trip");
+		await mkdir(root);
+		const externalSource = join(parent, "transcript.txt");
+		await writeFile(externalSource, "transcript");
+		await writeFile(
+			join(root, "field_log.md"),
+			"---\ntype: field-log\nformat: field-log/v1\nevent-stream: ./field_log.jsonl\n---\n# Field Log",
+		);
+		await writeFile(
+			join(root, "field_log.jsonl"),
+			[
+				'{"schema":"field-log/v1","eventId":1}',
+				'{"schema":"field-log/v1","eventId":2,"type":"source.publication.authorized","recordedAt":"2026-07-30T12:00:00.000Z","actor":{"kind":"orchestrator"},"authorization":{"kind":"publication-consent","pointer":"turn-2","verbatim":"Include it."},"payload":{"sourceId":1}}',
+				`{"schema":"field-log/v1","eventId":3,"type":"source.collected","recordedAt":"2026-07-30T12:01:00.000Z","actor":{"kind":"orchestrator"},"payload":{"sourceId":1,"title":"Transcript","path":${JSON.stringify(externalSource)}}}`,
+			].join("\n"),
+		);
+		await expect(
+			collectPublication({ root, entries: ["field_log.md"] }),
+		).rejects.toThrow();
+	});
+
+	it("reports an external source omitted for lack of publication consent", async () => {
+		const parent = await mkdtemp(join(tmpdir(), "artifact-publish-"));
+		const root = join(parent, "trip");
+		await mkdir(root);
+		const externalSource = join(parent, "transcript.txt");
+		await writeFile(externalSource, "transcript");
+		await writeFile(
+			join(root, "field_log.md"),
+			"---\ntype: field-log\nformat: field-log/v1\nevent-stream: ./field_log.jsonl\n---\n# Field Log",
+		);
+		await writeFile(
+			join(root, "field_log.jsonl"),
+			[
+				'{"schema":"field-log/v1","eventId":1,"type":"trip.created","recordedAt":"2026-07-30T12:00:00.000Z","actor":{"kind":"orchestrator"},"authorization":{"kind":"artifact-consent","pointer":"turn-1","verbatim":"Start a log."},"payload":{"title":"A trip","openingQuestion":"Why?"}}',
+				`{"schema":"field-log/v1","eventId":2,"type":"source.collected","recordedAt":"2026-07-30T12:01:00.000Z","actor":{"kind":"orchestrator"},"payload":{"sourceId":1,"title":"Transcript","path":${JSON.stringify(externalSource)}}}`,
+			].join("\n"),
+		);
+		const plan = await collectPublication({ root, entries: ["field_log.md"] });
+		expect(plan.diagnostics).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					severity: "warning",
+					message: expect.stringContaining("publication consent"),
+				}),
+			]),
+		);
 	});
 });

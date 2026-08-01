@@ -33,10 +33,6 @@ export function sourceLocalPath(
 ): string | undefined {
 	if (source.path) {
 		if (source.path.startsWith("/") || /^[a-z]+:/i.test(source.path)) {
-			const packagedPath = knownPaths
-				? knownPathSuffix(source.path, knownPaths)
-				: undefined;
-			if (packagedPath) return packagedPath;
 			return source.path;
 		}
 		const resolved = resolvePath(

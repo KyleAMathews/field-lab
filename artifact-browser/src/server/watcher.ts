@@ -64,7 +64,8 @@ export function startMetadataWatcher(options: {
 	append(artifactStateSchema.workspace.insert({ value: options.workspace }));
 
 	const enqueue = (work: () => Promise<void>) => {
-		queue = queue.then(work).catch((error) => {
+		const task = queue.then(work);
+		queue = task.catch((error) => {
 			const message =
 				error instanceof Error ? error.message : "Unknown watcher error.";
 			append(
@@ -80,6 +81,7 @@ export function startMetadataWatcher(options: {
 				}),
 			);
 		});
+		return task;
 	};
 
 	const upsert = (absolutePath: string) => {
@@ -148,12 +150,12 @@ export function startMetadataWatcher(options: {
 	const ready = new Promise<void>((resolve, reject) => {
 		watcher.once("error", reject);
 		watcher.once("ready", () => {
-			enqueue(async () => {
+			const task = enqueue(async () => {
 				updateWorkspace("ready");
 				await producer.flush();
 				if (producerError) throw producerError;
-				resolve();
 			});
+			task.then(resolve, reject);
 		});
 	});
 

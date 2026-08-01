@@ -70,8 +70,11 @@ pnpm field-log link ./field-trip-topic --entry 4 --readout 3
 The writer assigns event, entity, entry, and run IDs plus timestamps. It uses
 XState to validate transitions, checks an instrument card's inline JSON Schema
 when present, serializes concurrent writers with a trip lock, appends JSONL,
-and overwrites Markdown from the full stream. Failed validation changes neither
-file. `--stdin` and `--file` are available for unusually large events.
+syncs the canonical append, and overwrites Markdown from the full stream. Failed
+validation changes neither file. If the append commits but Markdown replacement
+fails, the receipt includes `projectionWarning`; run `field-log render` to
+repair the reading copy. `--stdin` and `--file` are available for unusually
+large events.
 
 User-gated events also require their allowed authorization kind, a user-turn
 pointer, and the user's exact authorizing words in `authorization.verbatim`.
@@ -80,9 +83,10 @@ See `reference/field-log-events.md` for the event-to-kind mapping.
 ## Security boundary
 
 Both servers bind to loopback. Each run gets a random capability. The file tree
-stays rooted at the selected workspace, while source records may open explicit
-absolute or launch-relative files elsewhere on the local computer. External
-files pass through the same capability-protected, read-only content server.
+stays rooted at the selected workspace, while validated `source.collected`
+records may open their exact absolute files elsewhere on the local computer.
+Other absolute files are rejected. External files pass through the same
+capability-protected, read-only content server.
 Unexpected browser origins are rejected. The separate `field-log` CLI is the
 sole Field Log mutation path.
 

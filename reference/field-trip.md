@@ -56,7 +56,9 @@ not replace the full `comment.recorded` journal entry with it.
 The CLI assigns timestamps and every sequential event, entity, run, and entry
 ID. Do not supply them. It validates the whole proposed history before writing,
 appends JSONL while holding the trip lock, and regenerates Markdown. A rejected
-command changes neither file; correct the event and run it again.
+command changes neither file; correct the event and run it again. If a success
+receipt includes `projectionWarning`, the events committed. Do not repeat them;
+run the render command to repair Markdown from canonical history.
 
 Never write either Field Log file by hand. `field_log.md` owns no state and may
 be overwritten during every successful append or recovery.

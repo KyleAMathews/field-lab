@@ -10,6 +10,7 @@ import {
 	sep,
 } from "node:path";
 import matter from "gray-matter";
+import { validateFieldLog } from "../field-log/writer";
 import type {
 	ArtifactRecord,
 	DiagnosticRecord,
@@ -27,7 +28,7 @@ export interface PublicationPlan {
 	artifacts: ArtifactRecord[];
 	diagnostics: DiagnosticRecord[];
 	absolutePaths: Record<string, string>;
-	externalSourcePaths: Record<string, string>;
+	sourceIdentityPaths: Record<string, string>;
 }
 
 function rootRelative(root: string, path: string): string {
@@ -99,50 +100,28 @@ interface PublicationDependency {
 async function fieldLogEventDependencies(
 	path: string,
 ): Promise<PublicationDependency[]> {
-	if (extname(path).toLowerCase() !== ".jsonl") return [];
-	const source = await readFile(path, "utf8");
-	const events: Array<Record<string, unknown>> = [];
-	for (const [index, line] of source.split(/\r?\n/).entries()) {
-		if (!line.trim()) continue;
-		let event: unknown;
-		try {
-			event = JSON.parse(line);
-		} catch {
-			throw new Error(`Invalid JSONL at ${path}:${index + 1}`);
-		}
-		if (event && typeof event === "object")
-			events.push(event as Record<string, unknown>);
-	}
-
-	const authorizedSourceIds = new Set<number>();
-	for (const event of events) {
-		if (event.type !== "source.publication.authorized") continue;
-		const payload = event.payload as Record<string, unknown> | undefined;
-		const authorization = event.authorization as
-			| Record<string, unknown>
-			| undefined;
-		if (
-			Number.isInteger(payload?.sourceId) &&
-			authorization?.kind === "publication-consent" &&
-			typeof authorization.pointer === "string" &&
-			authorization.pointer.trim() &&
-			typeof authorization.verbatim === "string" &&
-			authorization.verbatim.trim()
-		) {
-			authorizedSourceIds.add(Number(payload?.sourceId));
-		}
-	}
-
+	if (basename(path) !== "field_log.jsonl") return [];
+	const events = await validateFieldLog(dirname(path));
+	const collected = new Map<number, string>();
 	const dependencies = new Map<string, boolean>();
 	for (const event of events) {
-		if (event.type !== "source.collected") continue;
-		const payload = event.payload as Record<string, unknown> | undefined;
-		if (typeof payload?.path !== "string" || !payload.path.trim()) continue;
-		const sourceId = payload.sourceId;
-		dependencies.set(
-			payload.path,
-			Number.isInteger(sourceId) && authorizedSourceIds.has(Number(sourceId)),
-		);
+		if (event.type === "source.collected") {
+			const sourceId = Number(event.payload.sourceId);
+			const sourcePath = event.payload.path;
+			if (Number.isInteger(sourceId) && typeof sourcePath === "string") {
+				collected.set(sourceId, sourcePath);
+				dependencies.set(sourcePath, false);
+			}
+			continue;
+		}
+		if (event.type === "source.publication.authorized") {
+			const sourcePath = collected.get(Number(event.payload.sourceId));
+			if (!sourcePath)
+				throw new Error(
+					"Publication consent must follow the matching source collection.",
+				);
+			dependencies.set(sourcePath, true);
+		}
 	}
 	return [...dependencies].map(([dependencyPath, allowExternal]) => ({
 		path: dependencyPath,
@@ -159,7 +138,8 @@ export async function collectPublication(options: {
 	const includeExposure = new Set(options.includeExposure ?? ["public"]);
 	const selected = new Set<string>();
 	const entryPaths: string[] = [];
-	const externalSourcePaths: Record<string, string> = {};
+	const sourceIdentityPaths: Record<string, string> = {};
+	const diagnostics: DiagnosticRecord[] = [];
 
 	for (const input of options.entries) {
 		const absolute = await resolveContentPath(root, input);
@@ -222,11 +202,21 @@ export async function collectPublication(options: {
 						selected.add(relativePath);
 						queue.push(relativePath);
 					}
+					sourceIdentityPaths[clean] = dependencyAbsolute;
 				} else if (dependency.allowExternal) {
 					const dependencyStat = await stat(dependencyAbsolute);
 					if (!dependencyStat.isFile())
 						throw new Error(`Missing publication asset: ${dependency.path}`);
-					externalSourcePaths[clean] = dependencyAbsolute;
+					sourceIdentityPaths[clean] = dependencyAbsolute;
+				} else {
+					diagnostics.push({
+						id: `publish:external-source:${diagnostics.length + 1}`,
+						fileId: path,
+						severity: "warning",
+						source: "publish",
+						message: `External source omitted because no publication consent was recorded: ${clean}`,
+						location: clean,
+					});
 				}
 				continue;
 			}
@@ -247,7 +237,6 @@ export async function collectPublication(options: {
 
 	const files: FileRecord[] = [];
 	const artifacts: ArtifactRecord[] = [];
-	const diagnostics: DiagnosticRecord[] = [];
 	const absolutePaths: Record<string, string> = {};
 	const visiblePaths = new Set(selected);
 	visiblePaths.add(".");
@@ -276,6 +265,6 @@ export async function collectPublication(options: {
 		artifacts,
 		diagnostics,
 		absolutePaths,
-		externalSourcePaths,
+		sourceIdentityPaths,
 	};
 }

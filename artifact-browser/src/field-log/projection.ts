@@ -430,16 +430,35 @@ function payloadNumber(
 	return undefined;
 }
 
-export function parseEventStream(jsonl: string): EventEnvelope[] {
-	return jsonl
-		.split(/\r?\n/)
-		.filter((line) => line.trim())
-		.map((line, index) => {
-			const parsed = JSON.parse(line) as EventEnvelope;
-			if (!parsed || typeof parsed !== "object")
-				throw new Error(`Line ${index + 1} is not an event object.`);
-			return parsed;
-		});
+export function parseEventStream(
+	jsonl: string,
+	options: { allowIncompleteTrailingLine?: boolean } = {
+		allowIncompleteTrailingLine: true,
+	},
+): EventEnvelope[] {
+	const lines = jsonl.split(/\r?\n/);
+	const lastNonempty = lines.findLastIndex((line) => line.trim());
+	const events: EventEnvelope[] = [];
+	for (const [index, line] of lines.entries()) {
+		if (!line.trim()) continue;
+		let parsed: EventEnvelope;
+		try {
+			parsed = JSON.parse(line) as EventEnvelope;
+		} catch (error) {
+			if (
+				options.allowIncompleteTrailingLine !== false &&
+				index === lastNonempty &&
+				!jsonl.endsWith("\n")
+			) {
+				break;
+			}
+			throw new Error(`Line ${index + 1} is not valid JSON.`, { cause: error });
+		}
+		if (!parsed || typeof parsed !== "object")
+			throw new Error(`Line ${index + 1} is not an event object.`);
+		events.push(parsed);
+	}
+	return events;
 }
 
 export function projectFieldLogEvents(

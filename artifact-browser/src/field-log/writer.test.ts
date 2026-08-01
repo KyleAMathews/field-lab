@@ -1,8 +1,9 @@
-import { mkdtemp, readFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+	acquireFieldLogLock,
 	appendFieldLogEvents,
 	initializeFieldLog,
 	validateFieldLog,
@@ -176,7 +177,10 @@ describe("Field Log writer", () => {
 		await appendFieldLogEvents(directory, {
 			type: "source.collected",
 			actor,
-			payload: { path: "/outside/private-transcript.txt" },
+			payload: {
+				title: "Private transcript",
+				path: "/outside/private-transcript.txt",
+			},
 		});
 
 		await expect(
@@ -348,5 +352,160 @@ describe("Field Log writer", () => {
 		expect(markdown).toContain(
 			"The readings support a **bounded conclusion**.",
 		);
+	});
+
+	it("rejects empty core payloads and unknown submitted fields", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		for (const event of [
+			{ type: "comment.recorded", actor: { kind: "user" }, payload: {} },
+			{ type: "source.collected", actor, payload: {} },
+			{ type: "question.added", actor, payload: {} },
+		]) {
+			await expect(appendFieldLogEvents(directory, event)).rejects.toThrow();
+		}
+		await expect(
+			appendFieldLogEvents(directory, {
+				type: "comment.recorded",
+				actor: { kind: "user" },
+				payload: { text: "Exact words." },
+				payloads: { text: "Typo." },
+			}),
+		).rejects.toThrow();
+	});
+
+	it("revalidates stored authorization and instrument identifiers", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		await expect(
+			appendFieldLogEvents(directory, {
+				type: "instrument.run.selected",
+				actor,
+				authorization,
+				payload: { instrumentId: "../../field-trip" },
+			}),
+		).rejects.toThrow(/instrumentId/i);
+		await appendFieldLogEvents(directory, {
+			type: "instrument.run.selected",
+			actor,
+			authorization,
+			payload: { instrumentId: "negation" },
+		});
+		await expect(
+			appendFieldLogEvents(directory, {
+				type: "instrument.run.completed",
+				actor,
+				payload: {
+					runId: 1,
+					instrumentId: "../../field-trip",
+					entry: { markdown: "Unsafe identifier." },
+				},
+			}),
+		).rejects.toThrow(/instrumentId/i);
+
+		const stored = JSON.parse(
+			(await readFile(join(directory, "field_log.jsonl"), "utf8")).split(
+				"\n",
+			)[0] ?? "",
+		) as Record<string, unknown>;
+		stored.authorization = {
+			kind: "artifact-consent",
+			pointer: "turn-1",
+		};
+		await writeFile(
+			join(directory, "field_log.jsonl"),
+			`${JSON.stringify(stored)}\n`,
+		);
+		await expect(validateFieldLog(directory)).rejects.toThrow(/verbatim/i);
+	});
+
+	it("returns a committed receipt when projection replacement fails", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		await rm(join(directory, "field_log.md"));
+		await mkdir(join(directory, "field_log.md"));
+		const receipt = await appendFieldLogEvents(directory, {
+			type: "note.recorded",
+			actor,
+			payload: { markdown: "Committed note." },
+		});
+		expect(receipt).toMatchObject({
+			eventIds: [2],
+			projectionWarning: expect.stringContaining("field_log.md"),
+		});
+		expect(
+			await readFile(join(directory, "field_log.jsonl"), "utf8"),
+		).toContain("Committed note.");
+	});
+
+	it("does not append when projection staging fails", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		const before = await readFile(join(directory, "field_log.jsonl"), "utf8");
+		await mkdir(join(directory, `field_log.md.${process.pid}.tmp`));
+		await expect(
+			appendFieldLogEvents(directory, {
+				type: "note.recorded",
+				actor,
+				payload: { markdown: "Must not commit." },
+			}),
+		).rejects.toThrow();
+		expect(await readFile(join(directory, "field_log.jsonl"), "utf8")).toBe(
+			before,
+		);
+	});
+
+	it("does not remove a lock now owned by another writer", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		const lock = join(directory, ".field_log.lock");
+		const release = await acquireFieldLogLock(lock);
+		await writeFile(
+			join(lock, "owner.json"),
+			JSON.stringify({ pid: process.pid, nonce: "replacement" }),
+		);
+		await release();
+		expect(await readFile(join(lock, "owner.json"), "utf8")).toContain(
+			"replacement",
+		);
+	});
+
+	it("admits only one writer during stale-lock takeover", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		const lock = join(directory, ".field_log.lock");
+		await mkdir(lock);
+		await writeFile(
+			join(lock, "owner.json"),
+			JSON.stringify({ pid: 2_147_483_647, nonce: "stale" }),
+		);
+		const results = await Promise.allSettled([
+			acquireFieldLogLock(lock),
+			acquireFieldLogLock(lock),
+		]);
+		expect(
+			results.filter((result) => result.status === "fulfilled"),
+		).toHaveLength(1);
+		for (const result of results) {
+			if (result.status === "fulfilled") await result.value();
+		}
 	});
 });

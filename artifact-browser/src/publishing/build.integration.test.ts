@@ -21,7 +21,7 @@ describe("publication build", () => {
 		const externalSource = join(root, "transcript.txt");
 		await writeFile(externalSource, "Transcript");
 		const plan = await collectPublication({ root, entries: ["post.md"] });
-		plan.externalSourcePaths["/original/transcript.txt"] = externalSource;
+		plan.sourceIdentityPaths["/original/transcript.txt"] = externalSource;
 		const manifest = await buildPublication({
 			plan,
 			output,

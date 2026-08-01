@@ -38,7 +38,7 @@ describe("sourceLocalPath", () => {
 		).toBe("field_log.jsonl");
 	});
 
-	it("matches an absolute source path to a packaged workspace file", () => {
+	it("keeps an absolute source identity exact", () => {
 		expect(
 			sourceLocalPath(
 				{
@@ -49,7 +49,21 @@ describe("sourceLocalPath", () => {
 				"field_log.md",
 				new Set(["field_log.md", "sources/paper.pdf"]),
 			),
-		).toBe("sources/paper.pdf");
+		).toBe("/Users/kyle/trip/sources/paper.pdf");
+	});
+
+	it("does not guess that an unrelated workspace suffix is the source", () => {
+		expect(
+			sourceLocalPath(
+				{
+					id: "source-1",
+					title: "External notes",
+					path: "/private/project/notes.md",
+				},
+				"field_log.md",
+				new Set(["field_log.md", "notes.md"]),
+			),
+		).toBe("/private/project/notes.md");
 	});
 
 	it("preserves paths that leave the workspace for local external access", () => {
