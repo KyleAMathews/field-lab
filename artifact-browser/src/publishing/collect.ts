@@ -94,7 +94,8 @@ async function structuredDependencies(path: string): Promise<string[]> {
 
 interface PublicationDependency {
 	path: string;
-	allowExternal: boolean;
+	requiresAuthorization: boolean;
+	authorized: boolean;
 }
 
 async function fieldLogEventDependencies(
@@ -102,15 +103,33 @@ async function fieldLogEventDependencies(
 ): Promise<PublicationDependency[]> {
 	if (basename(path) !== "field_log.jsonl") return [];
 	const events = await validateFieldLog(dirname(path));
+	const fieldLogRoot = await realpath(dirname(path));
 	const collected = new Map<number, string>();
-	const dependencies = new Map<string, boolean>();
+	const dependencies = new Map<
+		string,
+		{ requiresAuthorization: boolean; authorized: boolean }
+	>();
 	for (const event of events) {
 		if (event.type === "source.collected") {
 			const sourceId = Number(event.payload.sourceId);
 			const sourcePath = event.payload.path;
 			if (Number.isInteger(sourceId) && typeof sourcePath === "string") {
+				const canonicalSource = isAbsolute(sourcePath)
+					? await realpath(sourcePath).catch(() => sourcePath)
+					: null;
+				const sourceRelative = canonicalSource
+					? relative(fieldLogRoot, canonicalSource)
+					: "";
+				const isExternal =
+					sourceRelative === ".." ||
+					sourceRelative.startsWith(`..${sep}`) ||
+					isAbsolute(sourceRelative);
 				collected.set(sourceId, sourcePath);
-				dependencies.set(sourcePath, false);
+				dependencies.set(sourcePath, {
+					requiresAuthorization:
+						isExternal || typeof event.payload.originalPath === "string",
+					authorized: false,
+				});
 			}
 			continue;
 		}
@@ -120,12 +139,14 @@ async function fieldLogEventDependencies(
 				throw new Error(
 					"Publication consent must follow the matching source collection.",
 				);
-			dependencies.set(sourcePath, true);
+			const dependency = dependencies.get(sourcePath);
+			if (dependency)
+				dependencies.set(sourcePath, { ...dependency, authorized: true });
 		}
 	}
-	return [...dependencies].map(([dependencyPath, allowExternal]) => ({
+	return [...dependencies].map(([dependencyPath, authorization]) => ({
 		path: dependencyPath,
-		allowExternal,
+		...authorization,
 	}));
 }
 
@@ -176,22 +197,32 @@ export async function collectPublication(options: {
 		const dependencies: PublicationDependency[] = [
 			...markdownDependencies(source).map((dependencyPath) => ({
 				path: dependencyPath,
-				allowExternal: false,
+				requiresAuthorization: false,
+				authorized: true,
 			})),
 			...(await structuredDependencies(absolute)).map((dependencyPath) => ({
 				path: dependencyPath,
-				allowExternal: false,
+				requiresAuthorization: false,
+				authorized: true,
 			})),
 			...(await fieldLogEventDependencies(absolute)),
 		];
 		for (const dependency of dependencies) {
 			const clean = dependency.path.split(/[?#]/, 1)[0];
 			if (!clean) continue;
-			if (isAbsolute(clean)) {
-				const dependencyAbsolute = await realpath(clean).catch((error) => {
-					if (!dependency.allowExternal) return null;
-					throw error;
+			if (dependency.requiresAuthorization && !dependency.authorized) {
+				diagnostics.push({
+					id: `publish:external-source:${diagnostics.length + 1}`,
+					fileId: path,
+					severity: "warning",
+					source: "publish",
+					message: `External source omitted because no publication consent was recorded: ${clean}`,
+					location: clean,
 				});
+				continue;
+			}
+			if (isAbsolute(clean)) {
+				const dependencyAbsolute = await realpath(clean);
 				if (!dependencyAbsolute) continue;
 				const relativePath = rootRelative(root, dependencyAbsolute);
 				if (relativePath !== ".." && !relativePath.startsWith("../")) {
@@ -203,20 +234,11 @@ export async function collectPublication(options: {
 						queue.push(relativePath);
 					}
 					sourceIdentityPaths[clean] = dependencyAbsolute;
-				} else if (dependency.allowExternal) {
+				} else if (dependency.authorized) {
 					const dependencyStat = await stat(dependencyAbsolute);
 					if (!dependencyStat.isFile())
 						throw new Error(`Missing publication asset: ${dependency.path}`);
 					sourceIdentityPaths[clean] = dependencyAbsolute;
-				} else {
-					diagnostics.push({
-						id: `publish:external-source:${diagnostics.length + 1}`,
-						fileId: path,
-						severity: "warning",
-						source: "publish",
-						message: `External source omitted because no publication consent was recorded: ${clean}`,
-						location: clean,
-					});
 				}
 				continue;
 			}

@@ -8,7 +8,15 @@ import {
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { appendFieldLogEvents, initializeFieldLog } from "../field-log/writer";
 import { collectPublication } from "./collect";
+
+const actor = { kind: "orchestrator", pointer: "test-task" };
+const artifactConsent = {
+	kind: "artifact-consent" as const,
+	pointer: "turn-1",
+	verbatim: "Start a Field Log for this inquiry.",
+};
 
 describe("publication collection", () => {
 	it("includes embedded media but does not crawl ordinary links", async () => {
@@ -141,6 +149,57 @@ describe("publication collection", () => {
 					message: expect.stringContaining("publication consent"),
 				}),
 			]),
+		);
+	});
+
+	it("keeps a copied transient source private until publication is authorized", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "artifact-publish-trip-"));
+		const downloads = await mkdtemp(join(tmpdir(), "artifact-download-"));
+		const original = join(downloads, "transcript.txt");
+		await writeFile(original, "private transcript");
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		await appendFieldLogEvents(directory, {
+			type: "source.collected",
+			actor,
+			payload: { title: "Transcript", path: original },
+		});
+
+		const withoutConsent = await collectPublication({
+			root: directory,
+			entries: ["field_log.md"],
+		});
+		expect(withoutConsent.files.map((file) => file.path)).not.toContain(
+			"sources/1-transcript.txt",
+		);
+		expect(withoutConsent.diagnostics).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					message: expect.stringContaining("publication consent"),
+				}),
+			]),
+		);
+
+		await appendFieldLogEvents(directory, {
+			type: "source.publication.authorized",
+			actor,
+			authorization: {
+				kind: "publication-consent",
+				pointer: "turn-2",
+				verbatim: "Include the transcript in the published package.",
+			},
+			payload: { sourceId: 1 },
+		});
+		const withConsent = await collectPublication({
+			root: directory,
+			entries: ["field_log.md"],
+		});
+		expect(withConsent.files.map((file) => file.path)).toContain(
+			"sources/1-transcript.txt",
 		);
 	});
 });

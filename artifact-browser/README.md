@@ -85,8 +85,11 @@ See `reference/field-log-events.md` for the event-to-kind mapping.
 Both servers bind to loopback. Each run gets a random capability. The file tree
 stays rooted at the selected workspace, while validated `source.collected`
 records may open their exact absolute files elsewhere on the local computer.
-Other absolute files are rejected. External files pass through the same
-capability-protected, read-only content server.
+The writer copies sources from Desktop, Downloads, and the operating system's
+temporary directory into the Field Trip and records their original locations.
+Copying does not grant publication rights: static builds omit those bytes until
+the user authorizes publication. Other absolute files are rejected. External
+files pass through the same capability-protected, read-only content server.
 Unexpected browser origins are rejected. The separate `field-log` CLI is the
 sole Field Log mutation path.
 

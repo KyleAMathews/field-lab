@@ -326,12 +326,18 @@ Append the exact initiating user comment immediately after `trip.created`.
 - `source.publication.authorized`: `sourceId`; `publication-consent`
   authorization with the user's exact words
 
-Use an absolute path for a local source outside the trip directory. Collection
-means the source entered scope, not that anyone read it or agreed to publish
-its bytes. Sources inside the Field Trip directory ship with its static package.
-For a source outside the trip, append `source.publication.authorized` before
-publishing to include the file; without that event, the package keeps only the
-source metadata already present in JSONL.
+Use an absolute path for a local source outside the trip directory. The writer
+copies files from Desktop, Downloads, and the operating system's temporary
+directory into `sources/<sourceId>-<filename>`. It stores that relative path in
+`path` and preserves the submitted location in `originalPath` and `origin`.
+Stable external files remain absolute references.
+
+Collection means the source entered scope, not that anyone read it or agreed to
+publish its bytes. Sources created inside the Field Trip directory ship with
+its static package. Files copied from a transient location still require a
+matching `source.publication.authorized` event because moving the bytes does not
+grant publication rights. Without that event, the package keeps only the source
+metadata already present in JSONL. Stable external files follow the same rule.
 
 The JSONL keeps every collection and examination event. The generic journal
 groups consecutive source activity and the Source shelf shows only the three

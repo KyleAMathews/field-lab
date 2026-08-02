@@ -1,14 +1,24 @@
 import { randomUUID } from "node:crypto";
 import {
 	access,
+	copyFile,
 	mkdir,
 	open,
 	readFile,
+	realpath,
 	rename,
 	rm,
 	writeFile,
 } from "node:fs/promises";
-import { dirname, isAbsolute, relative, resolve } from "node:path";
+import { homedir, tmpdir } from "node:os";
+import {
+	basename,
+	dirname,
+	isAbsolute,
+	relative,
+	resolve,
+	sep,
+} from "node:path";
 import { fileURLToPath } from "node:url";
 import Ajv from "ajv";
 import matter from "gray-matter";
@@ -691,6 +701,111 @@ async function stageProjection(
 	return () => rename(temporary, path);
 }
 
+function isWithin(directory: string, path: string): boolean {
+	const pathFromDirectory = relative(directory, path);
+	return (
+		pathFromDirectory === "" ||
+		(!pathFromDirectory.startsWith(`..${sep}`) &&
+			pathFromDirectory !== ".." &&
+			!isAbsolute(pathFromDirectory))
+	);
+}
+
+interface StagedSourceCopies {
+	commit: () => Promise<void>;
+	discard: () => Promise<void>;
+}
+
+async function stageTransientSourceCopies(
+	root: string,
+	events: StoredEvent[],
+): Promise<StagedSourceCopies> {
+	const canonicalRoot = await realpath(root);
+	const unstableRoots = await Promise.all(
+		[
+			resolve(homedir(), "Desktop"),
+			resolve(homedir(), "Downloads"),
+			resolve(tmpdir()),
+		].map(async (path) => realpath(path).catch(() => path)),
+	);
+	const copies: Array<{
+		temporary: string;
+		target: string;
+		committed: boolean;
+	}> = [];
+
+	try {
+		for (const event of events) {
+			if (event.type !== "source.collected") continue;
+			const originalPath = event.payload.path;
+			if (typeof originalPath !== "string" || !isAbsolute(originalPath))
+				continue;
+			const canonicalSource = await realpath(originalPath).catch(() => null);
+			if (!canonicalSource || isWithin(canonicalRoot, canonicalSource))
+				continue;
+			if (!unstableRoots.some((path) => isWithin(path, canonicalSource)))
+				continue;
+
+			const sourceId = Number(event.payload.sourceId);
+			const relativeTarget = `sources/${sourceId}-${basename(canonicalSource)}`;
+			const target = resolve(root, relativeTarget);
+			const temporary = `${target}.${process.pid}.${randomUUID()}.tmp`;
+			await mkdir(dirname(target), { recursive: true });
+			await access(target)
+				.then(() => {
+					throw new Error(
+						`Refusing to replace existing copied source: ${target}`,
+					);
+				})
+				.catch((error: NodeJS.ErrnoException) => {
+					if (error.code !== "ENOENT") throw error;
+				});
+			await copyFile(canonicalSource, temporary);
+			copies.push({ temporary, target, committed: false });
+			event.payload = {
+				...event.payload,
+				path: relativeTarget,
+				originalPath,
+				...(typeof event.payload.origin === "string"
+					? {}
+					: { origin: `local file: ${originalPath}` }),
+			};
+		}
+	} catch (error) {
+		await Promise.all(
+			copies.map(({ temporary }) => rm(temporary, { force: true })),
+		);
+		throw error;
+	}
+
+	return {
+		commit: async () => {
+			try {
+				for (const copy of copies) {
+					await rename(copy.temporary, copy.target);
+					copy.committed = true;
+				}
+			} catch (error) {
+				await Promise.all(
+					copies.flatMap((copy) => [
+						rm(copy.temporary, { force: true }),
+						...(copy.committed ? [rm(copy.target, { force: true })] : []),
+					]),
+				);
+				throw error;
+			}
+		},
+		discard: async () => {
+			await Promise.all(
+				copies.flatMap((copy) => [
+					rm(copy.temporary, { force: true }),
+					...(copy.committed ? [rm(copy.target, { force: true })] : []),
+				]),
+			);
+		},
+	};
+}
+
 async function appendStoredEvents(
 	path: string,
 	events: StoredEvent[],
@@ -773,7 +888,18 @@ export async function appendFieldLogEvents(
 		const proposed = [...existing, ...assigned];
 		validateHistory(proposed);
 		await validateInstrumentSchemas(target.root, assigned);
-		const commitProjection = await stageProjection(target.markdown, proposed);
+		const sourceCopies = await stageTransientSourceCopies(
+			target.root,
+			assigned,
+		);
+		let commitProjection: () => Promise<void>;
+		try {
+			commitProjection = await stageProjection(target.markdown, proposed);
+			await sourceCopies.commit();
+		} catch (error) {
+			await sourceCopies.discard();
+			throw error;
+		}
 		await appendStoredEvents(target.events, assigned);
 		const last = assigned.at(-1);
 		const runId =

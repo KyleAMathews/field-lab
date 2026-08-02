@@ -1,5 +1,5 @@
 import { createReadStream } from "node:fs";
-import { readFile, stat } from "node:fs/promises";
+import { readFile, realpath, stat } from "node:fs/promises";
 import {
 	createServer,
 	type IncomingMessage,
@@ -19,7 +19,7 @@ import mime from "mime";
 import { validateFieldLog } from "../field-log/writer";
 import { sourceCodeMimeType } from "../protocol/content-types";
 import type { BootConfig } from "../protocol/types";
-import { readExternalFileMetadata } from "./metadata";
+import { readExternalFileMetadata, readFileMetadata } from "./metadata";
 import { resolveContentPath, resolveExternalFilePath } from "./path-policy";
 
 export interface ArtifactHttpServer {
@@ -209,6 +209,7 @@ export async function startHttpServer(
 	options: HttpServerOptions,
 ): Promise<ArtifactHttpServer> {
 	let origin = "";
+	const canonicalRoot = await realpath(options.root);
 	const headers = securityHeaders(options.boot.streamUrl);
 	const server: Server = createServer(async (request, response) => {
 		for (const [name, value] of Object.entries(headers)) {
@@ -246,13 +247,14 @@ export async function startHttpServer(
 				).catch(() => null);
 				if (!absolutePath) return send(response, 404, "File not found.");
 				if (
-					!isWithin(options.root, absolutePath) &&
+					!isWithin(canonicalRoot, absolutePath) &&
 					!(await allowedSourcePaths(options.root)).has(absolutePath)
 				)
 					return send(response, 404, "File not found.");
-				const body = JSON.stringify(
-					await readExternalFileMetadata(absolutePath),
-				);
+				const metadata = isWithin(canonicalRoot, absolutePath)
+					? (await readFileMetadata(canonicalRoot, absolutePath, 1)).file
+					: await readExternalFileMetadata(absolutePath);
+				const body = JSON.stringify(metadata);
 				response.writeHead(200, {
 					"cache-control": "private, no-cache",
 					"content-type": "application/json; charset=utf-8",

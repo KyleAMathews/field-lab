@@ -1,6 +1,7 @@
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
 	acquireFieldLogLock,
@@ -210,6 +211,57 @@ describe("Field Log writer", () => {
 			kind: "publication-consent",
 			verbatim: "Include the private transcript in the published package.",
 		});
+	});
+
+	it("copies transient local sources into the Field Trip with provenance", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		const transientDirectory = await mkdtemp(
+			join(tmpdir(), "field-log-download-"),
+		);
+		const original = join(transientDirectory, "interview notes.md");
+		await writeFile(original, "# Interview notes\n\nA durable copy.");
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		await appendFieldLogEvents(directory, {
+			type: "source.collected",
+			actor,
+			payload: { title: "Interview notes", path: original },
+		});
+
+		const events = await validateFieldLog(directory);
+		expect(events[1]?.payload).toMatchObject({
+			path: "sources/1-interview notes.md",
+			originalPath: original,
+			origin: `local file: ${original}`,
+		});
+		await rm(original);
+		expect(
+			await readFile(join(directory, "sources/1-interview notes.md"), "utf8"),
+		).toContain("A durable copy.");
+	});
+
+	it("keeps stable external source paths as references", async () => {
+		const directory = await mkdtemp(join(tmpdir(), "field-log-writer-"));
+		const stableSource = fileURLToPath(import.meta.url);
+		await initializeFieldLog(directory, {
+			type: "trip.created",
+			actor,
+			authorization: artifactConsent,
+			payload: { title: "A trip", openingQuestion: "Why?" },
+		});
+		await appendFieldLogEvents(directory, {
+			type: "source.collected",
+			actor,
+			payload: { title: "Writer tests", path: stableSource },
+		});
+
+		const events = await validateFieldLog(directory);
+		expect(events[1]?.payload.path).toBe(stableSource);
+		expect(events[1]?.payload.originalPath).toBeUndefined();
 	});
 
 	it("requires one current question and an explicit handoff", async () => {

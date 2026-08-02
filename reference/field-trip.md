@@ -109,7 +109,10 @@ Keep the canonical router, selected queue, and authority boundary from
 - Register a source when it enters scope. Record examination separately and
   state the exact pages, sections, spans, query, or other coverage. Collection
   never implies reading. These events form the source record; the reader folds
-  consecutive source activity into one quiet journal item.
+  consecutive source activity into one quiet journal item. Give local sources
+  their absolute path. The writer makes a durable trip-local copy when that
+  path is under Desktop, Downloads, or the operating system's temporary
+  directory; do not copy those files by hand.
 - Record every selected instrument run. Add `prepared` or `started` events only
   when they preserve a meaningful baseline, control, execution boundary, or
   handoff.

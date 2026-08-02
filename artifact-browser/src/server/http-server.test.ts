@@ -1,4 +1,4 @@
-import { mkdir, mkdtemp, realpath, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -113,17 +113,22 @@ describe("artifact HTTP server", () => {
 			const metadata = await fetch(
 				`${server.origin}/api/metadata?cap=${capability}&path=${encodeURIComponent(externalPath)}`,
 			);
-			expect(metadata.status).toBe(200);
-			const externalFile = await metadata.json();
-			expect(externalFile).toMatchObject({
-				path: await realpath(externalPath),
-				name: "source.md",
+			expect(metadata.status).toBe(404);
+			const copiedPath = "sources/1-source.md";
+			const copiedMetadata = await fetch(
+				`${server.origin}/api/metadata?cap=${capability}&path=${encodeURIComponent(copiedPath)}`,
+			);
+			expect(copiedMetadata.status).toBe(200);
+			const copiedFile = await copiedMetadata.json();
+			expect(copiedFile).toMatchObject({
+				path: copiedPath,
+				name: "1-source.md",
 				rendererId: "markdown",
 			});
 			expect(
 				await (
 					await fetch(
-						`${server.origin}/api/content?cap=${capability}&path=${encodeURIComponent(externalPath)}`,
+						`${server.origin}/api/content?cap=${capability}&path=${encodeURIComponent(copiedPath)}`,
 					)
 				).text(),
 			).toBe("# External source");
