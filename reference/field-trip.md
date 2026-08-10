@@ -65,16 +65,45 @@ be overwritten during every successful append or recovery.
 
 ## Open the live reader
 
-After initialization, start the reader against the trip directory:
+After initialization, derive the reader session name from the Field Trip
+directory basename:
+
+```text
+artifact-browser-<field-trip-name>
+```
+
+Replace characters outside letters, numbers, underscores, and hyphens with
+hyphens. This name must follow the Field Trip name so a later session can find
+and reuse the right reader.
+
+Check whether `tmux` is installed. When it is, start the reader in a detached
+tmux session against the trip directory:
+
+```bash
+tmux new-session -d -s artifact-browser-<field-trip-name> \
+  "node <skill-root>/artifact-browser/dist/cli/index.js <trip-directory> --no-open"
+tmux capture-pane -p -t artifact-browser-<field-trip-name>
+```
+
+If the named tmux session already exists, do not start a duplicate. Capture its
+pane to recover the live URL and confirm that its reader still runs. Tell the
+user that tmux keeps the reader alive when the Codex terminal closes or the
+computer sleeps, but not across a reboot.
+
+When `tmux` is not installed, start the reader in the foreground:
 
 ```bash
 node <skill-root>/artifact-browser/dist/cli/index.js <trip-directory> --no-open
 ```
 
+Tell the user that this foreground reader must be relaunched whenever its
+terminal ends. Recommend tmux and offer to install or set it up for them. On
+native Windows, explain that tmux requires WSL before offering that setup.
+
 The server chooses open loopback ports and prints a capability-bearing URL.
-Keep that process running for the working session. In Codex, open the printed
-URL in the integrated browser when available; otherwise give the URL to the
-user. Never store its port or capability in the Field Log.
+In Codex, open the printed URL in the integrated browser when available;
+otherwise give the URL to the user. Never store its port or capability in the
+Field Log.
 
 The orchestrator owns the live URL. When a writer receipt returns `entryId`,
 `runId`, or `relativeHref`, preserve the printed URL's `cap` parameter and link
