@@ -75,6 +75,31 @@ function expectString(value, label, optional = false) {
   return value.trim();
 }
 
+function expectColor(value, label) {
+  const color = expectString(value, label);
+  if (!/^#[0-9a-fA-F]{6}$/.test(color)) {
+    throw new Error(`${label} must be a six-digit hex color such as #0072B2`);
+  }
+  return color;
+}
+
+function contrastTextColor(color) {
+  const channels = color
+    .slice(1)
+    .match(/.{2}/g)
+    .map((channel) => Number.parseInt(channel, 16) / 255)
+    .map((channel) =>
+      channel <= 0.04045
+        ? channel / 12.92
+        : ((channel + 0.055) / 1.055) ** 2.4,
+    );
+  const luminance =
+    channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+  const whiteContrast = 1.05 / (luminance + 0.05);
+  const blackContrast = (luminance + 0.05) / 0.05;
+  return whiteContrast >= blackContrast ? "#fff" : "#111";
+}
+
 function validateSpec(raw) {
   const spec = expectObject(raw, "frame");
   const axes = expectObject(spec.axes, "axes");
@@ -98,6 +123,7 @@ function validateSpec(raw) {
       },
     },
     quadrants: {},
+    categories: {},
     examples: [],
     calibration: {},
   };
@@ -121,6 +147,20 @@ function validateSpec(raw) {
     };
   }
 
+  if (spec.categories !== undefined) {
+    const categories = expectObject(spec.categories, "categories");
+    for (const [key, rawCategory] of Object.entries(categories)) {
+      if (!key.trim()) throw new Error("category keys must be non-empty strings");
+      const category = expectObject(rawCategory, `categories.${key}`);
+      const color = expectColor(category.color, `categories.${key}.color`);
+      normalized.categories[key] = {
+        label: expectString(category.label, `categories.${key}.label`),
+        color,
+        textColor: contrastTextColor(color),
+      };
+    }
+  }
+
   if (!Array.isArray(spec.examples)) throw new Error("examples must be an array");
   for (const [index, example] of spec.examples.entries()) {
     expectObject(example, `examples[${index}]`);
@@ -131,6 +171,16 @@ function validateSpec(raw) {
     }
     if (!Number.isFinite(yValue) || yValue < 0 || yValue > 1) {
       throw new Error(`examples[${index}].y must be a number from 0 to 1`);
+    }
+    const category = expectString(
+      example.category,
+      `examples[${index}].category`,
+      true,
+    );
+    if (category && !Object.hasOwn(normalized.categories, category)) {
+      throw new Error(
+        `examples[${index}].category must name a key from categories`,
+      );
     }
     normalized.examples.push({
       number: index + 1,
@@ -143,6 +193,7 @@ function validateSpec(raw) {
       ),
       source: expectString(example.source, `examples[${index}].source`),
       note: expectString(example.note, `examples[${index}].note`, true),
+      category,
     });
   }
 
@@ -169,6 +220,10 @@ function quadrantFor(example) {
   const horizontal = example.x < 0.5 ? "l" : "r";
   const vertical = example.y < 0.5 ? "b" : "t";
   return `${vertical}${horizontal}`;
+}
+
+function categoryFor(spec, example) {
+  return example.category ? spec.categories[example.category] : undefined;
 }
 
 function wrap(text, width) {
@@ -256,7 +311,14 @@ function renderAscii(spec, cellWidth) {
   output.push("", "Placements (normalized x, y):");
   if (!spec.examples.length) output.push("[none]");
   for (const example of spec.examples) {
-    const details = [example.provenance, example.source].filter(Boolean).join("; ");
+    const category = categoryFor(spec, example);
+    const details = [
+      category ? `category: ${category.label}` : "",
+      example.provenance,
+      example.source,
+    ]
+      .filter(Boolean)
+      .join("; ");
     output.push(
       `[${example.number}] ${example.label} (${example.x.toFixed(2)}, ${example.y.toFixed(2)})${details ? ` - ${details}` : ""}${example.note ? ` - ${example.note}` : ""}`,
     );
@@ -306,7 +368,13 @@ function renderSvg(spec) {
   const plotSize = 600;
   const half = plotSize / 2;
   const legendRows = spec.examples.map((example) => {
-    const detail = [example.provenance, example.source, example.note]
+    const category = categoryFor(spec, example);
+    const detail = [
+      category ? `category: ${category.label}` : "",
+      example.provenance,
+      example.source,
+      example.note,
+    ]
       .filter(Boolean)
       .join(" · ");
     return {
@@ -361,7 +429,7 @@ function renderSvg(spec) {
       .quadrant{font:700 22px "Source Serif 4",Georgia,serif;fill:#111}
       .quadrant-detail{font:19px "Source Serif 4",Georgia,serif;fill:#333}
       .empty{font:italic 18px "Source Serif 4",Georgia,serif;fill:#555}
-      .point-number{font:700 14px "Source Serif 4",Georgia,serif;fill:#fff}
+      .point-number{font:700 14px "Source Serif 4",Georgia,serif}
       .legend-label{font:700 20px "Source Serif 4",Georgia,serif;fill:#111}
       .legend-detail{font:18px "Source Serif 4",Georgia,serif;fill:#444}
       .calibration{font:19px "Source Serif 4",Georgia,serif;fill:#222}
@@ -442,9 +510,13 @@ function renderSvg(spec) {
   for (const example of spec.examples) {
     const cx = plotX + example.x * plotSize;
     const cy = plotY + (1 - example.y) * plotSize;
-    parts.push(`<g aria-label="${escapeXml(`${example.number}. ${example.label}, x ${example.x.toFixed(2)}, y ${example.y.toFixed(2)}`)}">`);
-    parts.push(`<circle cx="${cx}" cy="${cy}" r="13" fill="#111" stroke="#fff" stroke-width="2"/>`);
-    parts.push(`<text class="point-number" x="${cx}" y="${cy + 4}" text-anchor="middle">${example.number}</text></g>`);
+    const category = categoryFor(spec, example);
+    const fill = category ? category.color : "#111";
+    const textColor = category ? category.textColor : "#fff";
+    const categoryDescription = category ? `, category ${category.label}` : "";
+    parts.push(`<g aria-label="${escapeXml(`${example.number}. ${example.label}${categoryDescription}, x ${example.x.toFixed(2)}, y ${example.y.toFixed(2)}`)}">`);
+    parts.push(`<circle cx="${cx}" cy="${cy}" r="13" fill="${fill}" stroke="#111" stroke-width="1.5"/>`);
+    parts.push(`<text class="point-number" x="${cx}" y="${cy + 4}" text-anchor="middle" fill="${textColor}">${example.number}</text></g>`);
   }
 
   parts.push(`<text class="quadrant" x="${plotX}" y="${calibrationY}">Calibration</text>`);
@@ -464,8 +536,11 @@ function renderSvg(spec) {
   }
   for (const row of legendRows) {
     const { example, labelLines, detailLines } = row;
-    parts.push(`<circle cx="${plotX + 13}" cy="${legendY - 5}" r="13" fill="#111"/>`);
-    parts.push(`<text class="point-number" x="${plotX + 13}" y="${legendY - 1}" text-anchor="middle">${example.number}</text>`);
+    const category = categoryFor(spec, example);
+    const fill = category ? category.color : "#111";
+    const textColor = category ? category.textColor : "#fff";
+    parts.push(`<circle cx="${plotX + 13}" cy="${legendY - 5}" r="13" fill="${fill}" stroke="#111" stroke-width="1.5"/>`);
+    parts.push(`<text class="point-number" x="${plotX + 13}" y="${legendY - 1}" text-anchor="middle" fill="${textColor}">${example.number}</text>`);
     parts.push(svgTextLines(labelLines, plotX + 42, legendY, { className: "legend-label", lineHeight: 24 }));
     const detailY = legendY + labelLines.length * 24 + 2;
     if (detailLines.length) {
@@ -504,4 +579,11 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { quadrantFor, renderAscii, renderSvg, validateSpec };
+module.exports = {
+  categoryFor,
+  contrastTextColor,
+  quadrantFor,
+  renderAscii,
+  renderSvg,
+  validateSpec,
+};

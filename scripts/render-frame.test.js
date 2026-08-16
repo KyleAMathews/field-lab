@@ -64,6 +64,37 @@ test("renders one spec to ASCII and accessible SVG", () => {
   assert.ok(svg.indexOf(">Calibration<") < svg.indexOf(">Examples<"));
 });
 
+test("uses optional category colors while naming categories in both formats", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
+  const input = path.join(directory, "categories.json");
+  const output = path.join(directory, "result");
+  const categorized = structuredClone(SPEC);
+  categorized.categories = {
+    observed: { label: "Observed", color: "#0072B2" },
+    proposed: { label: "Proposed", color: "#F0E442" },
+  };
+  categorized.examples[0].category = "observed";
+  categorized.examples[1].category = "proposed";
+  fs.writeFileSync(input, JSON.stringify(categorized));
+
+  const result = spawnSync(process.execPath, [SCRIPT, "--out", output, input], {
+    encoding: "utf8",
+  });
+  assert.equal(result.status, 0, result.stderr);
+
+  const ascii = fs.readFileSync(`${output}.txt`, "utf8");
+  assert.match(ascii, /category: Observed; source claim; S1/);
+  assert.match(ascii, /category: Proposed; observation; I2/);
+
+  const svg = fs.readFileSync(`${output}.svg`, "utf8");
+  assert.match(svg, /fill="#0072B2"/);
+  assert.match(svg, /fill="#F0E442"/);
+  assert.match(svg, /category: Observed/);
+  assert.match(svg, /category: Proposed/);
+  assert.match(svg, /aria-label="1\. Community protocol, category Observed/);
+  assert.match(svg, /fill="#111">2<\/text>/);
+});
+
 test("rejects coordinates outside the normalized frame", () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
   const input = path.join(directory, "bad.json");
@@ -74,4 +105,25 @@ test("rejects coordinates outside the normalized frame", () => {
   const result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
   assert.equal(result.status, 1);
   assert.match(result.stderr, /examples\[0\]\.x must be a number from 0 to 1/);
+});
+
+test("rejects unknown categories and non-hex colors", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
+  const input = path.join(directory, "bad-category.json");
+  const badCategory = structuredClone(SPEC);
+  badCategory.categories = {
+    observed: { label: "Observed", color: "blue" },
+  };
+  fs.writeFileSync(input, JSON.stringify(badCategory));
+
+  let result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /must be a six-digit hex color/);
+
+  badCategory.categories.observed.color = "#0072B2";
+  badCategory.examples[0].category = "missing";
+  fs.writeFileSync(input, JSON.stringify(badCategory));
+  result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /must name a key from categories/);
 });

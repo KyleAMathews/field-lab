@@ -152,8 +152,12 @@ The command writes `<artifact-path>.txt` and `<artifact-path>.svg`. Keep the JSO
     "bl": { "name": "Improvisers", "description": "Fuzzy prototype" },
     "br": { "name": "Operators", "description": "Fuzzy prototype", "status": "under-occupied" }
   },
+  "categories": {
+    "observed": { "label": "Observed", "color": "#0072B2" },
+    "proposed": { "label": "Proposed", "color": "#D55E00" }
+  },
   "examples": [
-    { "label": "Case A", "x": 0.2, "y": 0.8, "provenance": "source claim", "source": "S1", "note": "Near the line" }
+    { "label": "Case A", "x": 0.2, "y": 0.8, "category": "observed", "provenance": "source claim", "source": "S1", "note": "Near the line" }
   ],
   "calibration": {
     "axisClaimType": "conceptual",
@@ -163,7 +167,9 @@ The command writes `<artifact-path>.txt` and `<artifact-path>.svg`. Keep the JSO
 }
 ```
 
-Use normalized `x` and `y` coordinates from `0` to `1`. Give every example its claim kind in `provenance` and an inventory or source pointer in `source`. Plot every representative example, including cases near a line, straddling regions, or moving over time; explain those qualifications in `note`. The ASCII diagram shows up to two examples in each cell and lists all placements below it. The SVG plots every example as a numbered point and carries its label, provenance, source pointer, and note in a side legend. This makes the SVG the detail view without making the ASCII unreadable. Use `status` only for an evidentially earned `empty` or `under-occupied` quadrant; the renderer marks a cell `empty` automatically when it has no plotted members.
+Color is optional. Omit `categories` and `category` for the default black-and-white rendering. Add categories only when they encode a distinction already present in the inventory—for example, observed versus proposed cases, two constituencies, or two source classes. Each category needs a short `label` and a six-digit hex `color`; assign its key to each relevant example with `category`. Prefer two to four colors that remain distinct on white, such as blue `#0072B2` and vermilion `#D55E00`. The renderer chooses black or white point numbers for contrast, repeats the category label in the SVG legend and ASCII placement list, and leaves uncategorized examples black. Never rely on color alone or use decorative color to imply an unsupported distinction.
+
+Use normalized `x` and `y` coordinates from `0` to `1`. Give every example its claim kind in `provenance` and an inventory or source pointer in `source`. Plot every representative example, including cases near a line, straddling regions, or moving over time; explain those qualifications in `note`. The ASCII diagram shows up to two examples in each cell and lists all placements below it. The SVG plots every example as a numbered point and carries its label, category when present, provenance, source pointer, and note in a side legend. This makes the SVG the detail view without making the ASCII unreadable. Use `status` only for an evidentially earned `empty` or `under-occupied` quadrant; the renderer marks a cell `empty` automatically when it has no plotted members.
 
 Every candidate map must show:
 
