@@ -91,7 +91,7 @@ Honesty rule (it bites hardest here, where the pull toward a tidy reframe is str
 - [ ] 4.2 shared assumptions (N-way + any pairwise, with 3+ monks)
 - [ ] 4.2.5 position protection per monk, with citations, written to the misfit register; watchlist checked
 - [ ] 4.3 determinate negation per monk (specific + complementary); enrichment guard run (sharp vs. homogenized)
-- [ ] 4.4 hidden question articulated **and** the frame-projector formation trace preserved—typed phenomenology, candidate clusters, tested separators, and label workshop—followed by a complete ASCII/box-drawing diagram with both named axes and poles, four evocatively labeled cells, and relevant examples; or `frame-projector` recorded as not called with its specific contraindication
+- [ ] 4.4 hidden question articulated **and** the frame-projector formation trace preserved—typed phenomenology, candidate clusters, tested separators, and label workshop—followed by paired ASCII and SVG diagrams with both named axes and poles, four evocatively labeled cells, and relevant examples; or `frame-projector` recorded as not called with its specific contraindication
 - [ ] All 4.0–4.4 output written to `round_N_determinate_negation.md`
 - [ ] Instrument ledger contains complete `fracture-scan`, Stage-A `residue-collect`, and conditional `frame-projector` raw readouts with authorization, actual seats, access deltas, typed readings, calibration or controls, artifact risks, unmeasured remainders, and trace paths; stage interpretation is separate, a contraindicated frame projector is recorded as not called, and user-facing correction remains pending until the 4.9 checkpoint
 
