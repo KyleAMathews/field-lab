@@ -2,13 +2,17 @@
   "name": "artifact-browser",
   "private": true,
   "type": "module",
-  "scripts": {
-    "artifact-browser": "tsx src/cli/index.ts",
-    "field-log": "tsx src/field-log-cli/index.ts",
-    "dev": "vite dev",
-    "build": "vite build && pnpm build:cli && pnpm build:field-log",
-    "build:cli": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/cli/index.js",
-    "build:field-log": "esbuild src/field-log-cli/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/field-log-cli/index.js",
+	"scripts": {
+		"artifact-browser": "tsx src/cli/index.ts",
+		"field-lab": "tsx src/field-lab-cli/index.ts",
+		"field-log": "tsx src/field-log-cli/index.ts",
+		"expedition-log": "tsx src/expedition-log-cli/index.ts",
+		"dev": "vite dev",
+		"build": "vite build && pnpm build:cli && pnpm build:field-lab && pnpm build:field-log && pnpm build:expedition-log",
+		"build:cli": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/cli/index.js",
+		"build:field-lab": "esbuild src/field-lab-cli/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/field-lab-cli/index.js",
+		"build:field-log": "esbuild src/field-log-cli/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/field-log-cli/index.js",
+		"build:expedition-log": "esbuild src/expedition-log-cli/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/expedition-log-cli/index.js",
     "preview": "vite preview",
     "format": "biome format --write",
     "lint": "biome lint",
@@ -17,9 +21,11 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "bin": {
-    "artifact-browser": "./dist/cli/index.js",
-    "field-log": "./dist/field-log-cli/index.js"
+	"bin": {
+		"artifact-browser": "./dist/cli/index.js",
+		"field-lab": "./dist/field-lab-cli/index.js",
+		"field-log": "./dist/field-log-cli/index.js",
+		"expedition-log": "./dist/expedition-log-cli/index.js"
   },
   "dependencies": {
     "@capsizecss/metrics": "^4.2.0",

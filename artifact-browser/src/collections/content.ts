@@ -7,7 +7,8 @@ const MAX_TEXT_BYTES = 8 * 1024 * 1024;
 const MAX_STRUCTURED_BYTES = 2 * 1024 * 1024;
 
 export function contentByteLimit(path: string, mimeType: string): number {
-	if (/(?:^|\/)field_log\.jsonl$/i.test(path)) return Number.POSITIVE_INFINITY;
+	if (/(?:^|\/)(?:field|expedition)_log\.jsonl$/i.test(path))
+		return Number.POSITIVE_INFINITY;
 	return isStructuredContent(path, mimeType)
 		? MAX_STRUCTURED_BYTES
 		: MAX_TEXT_BYTES;

@@ -326,7 +326,31 @@ When several Field Logs now share a question, place, system, lineage, or planned
 
 > We've got three related trails now. Want me to give them a shared index, with a separate Field Log for each? That will keep the threads linked without mixing their evidence.
 
-This shared index is an **Expedition**. After agreement, read [expedition.md](reference/expedition.md), then create [expedition-log-template.md](reference/expedition-log-template.md). Treat it as a container and shared record, not a method.
+This shared index is an **Expedition**. After agreement, read
+[expedition.md](reference/expedition.md) and
+[expedition-log-events.md](reference/expedition-log-events.md). Use the bundled
+Expedition writer as the only mutation path; never create or edit
+`expedition_log.jsonl` or `expedition_log.md` directly. Treat it as a container
+and shared record, not a method.
+
+For every new Field Trip inside an Expedition, read `expedition_log.md` as the
+first tool call. The log is a compact briefing. Inspect, search, or read older
+Field Logs and their readouts or sources when the current inquiry needs more
+depth. A promotion must point to an entry that already exists in the promoting
+Field Log and must say why it was promoted. Replacement and removal change only
+the current projection; do not present superseded or removed promotions as
+current.
+
+When the destination Expedition, scope, initiating comment, and inherited
+context are already chosen, use `field-lab trip start` as described in
+[field-trip.md](reference/field-trip.md). Give it the prepared choices; do not
+let the orchestration command choose the Expedition, scope, prior comments, or
+plan. Retry the same input when its recovery receipt reports a partial start.
+
+To migrate a hand-written Expedition, treat reconstruction as an agent task:
+read the old Markdown, initialize the compound log, append the events needed to
+reconstruct its current briefing, render, and compare before moving the old
+file. Do not look for a migration CLI command.
 
 ## Rubric Builder workflow
 

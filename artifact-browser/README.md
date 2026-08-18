@@ -65,6 +65,10 @@ pnpm field-log append ./field-trip-topic --json '[{"type":"comment.recorded",...
 pnpm field-log validate ./field-trip-topic
 pnpm field-log render ./field-trip-topic
 pnpm field-log link ./field-trip-topic --entry 4 --readout 3
+pnpm field-log inspect ./field-trip-topic
+pnpm field-log search ./field-trip-topic --query 'custody'
+pnpm field-log read ./field-trip-topic --entry 4
+pnpm field-log rename ./field-trip-topic 'Sharper title'
 ```
 
 The writer assigns event, entity, entry, and run IDs plus timestamps. It uses
@@ -80,6 +84,49 @@ User-gated events also require their allowed authorization kind, a user-turn
 pointer, and the user's exact authorizing words in `authorization.verbatim`.
 See `reference/field-log-events.md` for the event-to-kind mapping.
 
+When those choices are already prepared, one command can start a member Field
+Trip without hand-coordinating both writers:
+
+```bash
+pnpm field-lab trip start \
+  --expedition ./expedition \
+  --slug reactive-api-design \
+  --input ./trip-start.json \
+  --reader
+```
+
+The input supplies the `trip` metadata, artifact-consent authorization, and an
+`events` array whose first item is the initiating `comment.recorded`. The
+command initializes the Field Log in `field-trips/<slug>`, appends the prepared
+context, records membership in both logs, rebuilds and validates both
+projections, and returns a recovery receipt. Repeating the same command resumes
+a partial start without duplicating events. `--open` also opens the persistent
+reader in the system browser.
+
+## Expeditions and corpus search
+
+An Expedition uses `expedition_log.jsonl` as canonical history and generates
+`expedition_log.md` as its current briefing. It keeps member Field Trips and a
+small ordered list of promoted Field Log entries. Replaced and removed
+promotions remain in canonical history but do not appear in the current
+projection or promotion search.
+
+```bash
+pnpm expedition-log init ./expedition --json '{"type":"expedition.created",...}'
+pnpm expedition-log join ./expedition ./field-trip-topic --json '{"actor":...,"authorization":...}'
+pnpm expedition-log promote ./expedition --trip 1 --entry 4 --rationale 'Key findings'
+pnpm expedition-log replace ./expedition --promotion 1 --trip 1 --entry 5 --rationale 'Sharper account'
+pnpm expedition-log remove ./expedition --promotion 2
+pnpm expedition-log inspect ./expedition
+pnpm expedition-log search ./expedition --query 'custody'
+pnpm expedition-log read ./expedition --trip 1 --entry 5
+```
+
+The browser search button searches notes, readouts, and collected source files
+across the open Field Trip or Expedition. It returns structured hits and opens
+the selected Field Log item. The generated Expedition Markdown links each
+member and promotion to its authoritative Field Log.
+
 ## Security boundary
 
 Both servers bind to loopback. Each run gets a random capability. The file tree
@@ -90,8 +137,8 @@ temporary directory into the Field Trip and records their original locations.
 Copying does not grant publication rights: static builds omit those bytes until
 the user authorizes publication. Other absolute files are rejected. External
 files pass through the same capability-protected, read-only content server.
-Unexpected browser origins are rejected. The separate `field-log` CLI is the
-sole Field Log mutation path.
+Unexpected browser origins are rejected. The separate `field-log` and
+`expedition-log` CLIs are the sole mutation paths for their logs.
 
 The first release does not defend against an attacker who can swap filesystem
 entries during a single open operation. It also treats unknown semantic schemas

@@ -506,7 +506,8 @@ export function projectFieldLogEvents(
 			projection.currentQuestion = projection.openingQuestion;
 			projection.scope = payloadString(payload, "scope");
 			projection.reason = payloadString(payload, "reason", "whyOpened");
-			projection.openedAt = event.recordedAt;
+			projection.openedAt =
+				payloadString(payload, "openedAt") || event.recordedAt;
 		}
 
 		if (type === "trip.context.recorded") {
@@ -520,6 +521,18 @@ export function projectFieldLogEvents(
 					detail: note,
 				});
 			}
+		}
+
+		if (type === "trip.title.updated") {
+			projection.title = payloadString(payload, "title") || projection.title;
+		}
+
+		if (type === "trip.expedition.joined") {
+			projection.lineage.push({
+				id: `lineage-${event.eventId ?? projection.lineage.length + 1}`,
+				title: "Expedition",
+				detail: payloadString(payload, "path"),
+			});
 		}
 
 		if (type === "comment.recorded") {

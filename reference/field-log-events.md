@@ -22,7 +22,17 @@ node <skill-root>/artifact-browser/dist/field-log-cli/index.js append <trip-dire
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js validate <trip-directory>
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js render <trip-directory>
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js link <trip-directory> --entry <entry-id> [--readout <run-id>]
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js inspect <trip-directory>
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js search <trip-directory> --query '<text>'
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js read <trip-directory> (--entry <ID> | --readout <ID> | --source <ID>)
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js rename <trip-directory> '<new title>'
 ```
+
+`inspect` returns current metadata, questions, sources, runs, and compact
+journal entries; it omits full readouts. `search` returns structured hits from
+all events, full readouts, and collected source files. Source hits distinguish
+`collected` from `examined`. `read` returns one selected entry, readout, or
+source in full.
 
 Use `--json` for normal writes, including long Markdown serialized as a JSON
 string. `--file` and stdin are available only when shell quoting or an unusually
@@ -145,7 +155,8 @@ appending. Batch related facts when they must succeed or fail together.
 ## Event transitions
 
 `trip.created` opens the stream once. After it, the trip stream accepts
-`trip.context.recorded`, `comment.recorded`, `note.recorded`,
+`trip.context.recorded`, `trip.title.updated`, `trip.expedition.joined`,
+`comment.recorded`, `note.recorded`,
 `synthesis.recorded`, and legacy `engine.result.recorded` events.
 
 Sources:
@@ -222,7 +233,11 @@ Use these keys for the shared dashboard and journal.
 
 ### Trip, comments, notes, and synthesis
 
-- `trip.created`: `title`, `openingQuestion`, `scope`, `reason`
+- `trip.created`: `title`, `openingQuestion`, `scope`, `reason`; migration may
+  preserve an old log's exact ISO 8601 timestamp in `openedAt`
+- `trip.title.updated`: `title`; use `field-log rename` rather than rewriting
+  the opening event
+- `trip.expedition.joined`: relative `path` to the Expedition's generated log
 - `trip.context.recorded`: optional `title` plus `text` or `context`; use
   `scope` (or `aim`) to replace the dashboard's current overall aim
 - `comment.recorded`: `speaker`, exact `text`; optional `context`, `role`, and

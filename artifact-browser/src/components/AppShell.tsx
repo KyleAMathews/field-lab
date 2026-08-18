@@ -1,13 +1,15 @@
 import { eq, useLiveQuery } from "@tanstack/react-db";
-import { Info, PanelLeft, TextQuote } from "lucide-react";
+import { Info, PanelLeft, Search, TextQuote } from "lucide-react";
 import type { BrowserData } from "../collections/stream-db";
 import type { BrowserSearch } from "../protocol/search";
 import { encodeExpanded } from "../protocol/search";
 import { ArtifactIndex } from "./ArtifactIndex";
+import { ExpeditionLogReader } from "./ExpeditionLogReader";
 import { FieldLogReader } from "./FieldLogReader";
 import { FileTree } from "./FileTree";
 import { Inspector } from "./Inspector";
 import { Reader } from "./Reader";
+import { SearchPage } from "./SearchPage";
 import { ThemePicker } from "./ThemePicker";
 
 export function AppShell({
@@ -35,7 +37,9 @@ export function AppShell({
 	const file = selected[0];
 	const view = search.view ?? "rendered";
 	const fieldLog = file?.name === "field_log.md";
+	const expeditionLog = file?.name === "expedition_log.md";
 	const artifacts = search.page === "artifacts";
+	const searching = search.page === "search";
 	const defaultExpanded = new Set<string>(["."]);
 	if (selectedPath) {
 		const parts = selectedPath.split("/");
@@ -66,6 +70,20 @@ export function AppShell({
 					</span>
 				</div>
 				<div className="header-actions">
+					<button
+						className={`icon-button${searching ? " is-active" : ""}`}
+						type="button"
+						aria-label={searching ? "Close search" : "Search Field Logs"}
+						onClick={() =>
+							navigate({
+								page: searching ? undefined : "search",
+								readout: undefined,
+								source: undefined,
+							})
+						}
+					>
+						<Search size={16} />
+					</button>
 					<button
 						className={`header-text-button${artifacts ? " is-active" : ""}`}
 						type="button"
@@ -111,14 +129,22 @@ export function AppShell({
 			>
 				<FileTree db={data.db} search={treeSearch} navigate={navigate} />
 				<main
-					className={`reader-panel${fieldLog || artifacts ? " reader-panel-wide" : ""}`}
+					className={`reader-panel${fieldLog || expeditionLog || artifacts || searching ? " reader-panel-wide" : ""}`}
 				>
 					<div className="reader-toolbar">
 						<div className="selected-file">
 							<span>
-								{artifacts ? "Artifacts" : (file?.name ?? "Workspace")}
+								{searching
+									? "Search"
+									: artifacts
+										? "Artifacts"
+										: (file?.name ?? "Workspace")}
 							</span>
-							{artifacts ? (
+							{searching ? (
+								<span className="selected-path">
+									Current Field Log projections
+								</span>
+							) : artifacts ? (
 								<span className="selected-path">Workspace index</span>
 							) : file ? (
 								<span className="selected-path">{file.path}</span>
@@ -148,10 +174,21 @@ export function AppShell({
 					</div>
 					<div className="reader-scroll">
 						<div
-							className={`reader-canvas${fieldLog || artifacts ? " reader-canvas-wide" : ""}`}
+							className={`reader-canvas${fieldLog || expeditionLog || artifacts || searching ? " reader-canvas-wide" : ""}`}
 						>
-							{fieldLog && view === "rendered" ? (
+							{searching ? (
+								<SearchPage search={search} navigate={navigate} />
+							) : fieldLog && view === "rendered" ? (
 								<FieldLogReader
+									db={data.db}
+									file={file}
+									capability={search.cap}
+									staticContents={data.staticContents}
+									search={search}
+									navigate={navigate}
+								/>
+							) : expeditionLog && view === "rendered" ? (
+								<ExpeditionLogReader
 									db={data.db}
 									file={file}
 									capability={search.cap}

@@ -19,6 +19,7 @@ const DEFAULT_IGNORES = [
 	"**/.worktrees/**",
 	"**/node_modules/**",
 	"**/.DS_Store",
+	"**/.field-lab-trip-start.json",
 	"**/dist/**",
 	"**/.output/**",
 ];

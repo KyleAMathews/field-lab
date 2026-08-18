@@ -19,6 +19,9 @@ vi.mock("./ArtifactIndex", () => ({
 vi.mock("./FieldLogReader", () => ({
 	FieldLogReader: () => <div>Projection-aware Field Log reader</div>,
 }));
+vi.mock("./ExpeditionLogReader", () => ({
+	ExpeditionLogReader: () => <div>Projection-aware Expedition Log reader</div>,
+}));
 vi.mock("./FileTree", () => ({ FileTree: () => <aside>Files</aside> }));
 vi.mock("./Inspector", () => ({ Inspector: () => <aside>Inspector</aside> }));
 vi.mock("./Reader", () => ({ Reader: () => <div>Generic reader</div> }));
@@ -37,6 +40,13 @@ const fieldLog: FileRecord = {
 	revision: "1",
 	rendererId: "markdown",
 	readable: true,
+};
+
+const expeditionLog: FileRecord = {
+	...fieldLog,
+	id: "expedition_log.md",
+	path: "expedition_log.md",
+	name: "expedition_log.md",
 };
 
 const data = {
@@ -70,5 +80,26 @@ describe("AppShell Field Log routing", () => {
 			screen.getByText("Projection-aware Field Log reader"),
 		).toBeInTheDocument();
 		expect(screen.queryByText("Standalone artifact index")).toBeNull();
+	});
+
+	it("routes an Expedition Log to its projection-aware reader", () => {
+		vi.mocked(useLiveQuery).mockReset();
+		vi.mocked(useLiveQuery)
+			.mockReturnValueOnce({ data: [expeditionLog] } as never)
+			.mockReturnValueOnce({
+				data: [{ status: "ready", fileCount: 2 }],
+			} as never);
+		render(
+			<AppShell
+				data={data}
+				search={{ cap: "test", file: "expedition_log.md" }}
+				navigate={vi.fn()}
+			/>,
+		);
+
+		expect(
+			screen.getByText("Projection-aware Expedition Log reader"),
+		).toBeInTheDocument();
+		expect(screen.queryByText("Generic reader")).toBeNull();
 	});
 });

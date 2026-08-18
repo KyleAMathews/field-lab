@@ -55,9 +55,10 @@ export function FileTree({
 					aria-label="Search files"
 					value={search.q ?? ""}
 					placeholder="Find a file"
-					onChange={(event) =>
-						navigate({ q: event.target.value || undefined }, true)
-					}
+					onChange={(event) => {
+						const query = event.target.value || undefined;
+						navigate({ q: query, page: query ? "search" : undefined }, true);
+					}}
 				/>
 			</div>
 			<nav className="file-tree">
@@ -82,6 +83,7 @@ export function FileTree({
 													panel: undefined,
 													page: undefined,
 													entry: undefined,
+													promotion: undefined,
 													readout: undefined,
 												},
 												false,

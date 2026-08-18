@@ -26,4 +26,11 @@ describe("browser search", () => {
 		const paths = new Set([".", "notes", "notes/archive"]);
 		expect(decodeExpanded(encodeExpanded(paths))).toEqual(paths);
 	});
+
+	it("keeps numeric promotion and readout IDs from parsed URLs", () => {
+		expect(parseBrowserSearch({ promotion: 3, readout: 7 })).toMatchObject({
+			promotion: "3",
+			readout: "7",
+		});
+	});
 });

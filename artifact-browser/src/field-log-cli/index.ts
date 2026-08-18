@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 import { readFile } from "node:fs/promises";
 import {
+	inspectFieldLog,
+	readFieldLogItem,
+	searchFieldLog,
+} from "../field-log/reader";
+import {
 	appendFieldLogEvents,
 	fieldLogLink,
 	initializeFieldLog,
@@ -33,7 +38,7 @@ async function main() {
 	const [, , command, directory, ...args] = process.argv;
 	if (!command || !directory) {
 		throw new Error(
-			"Usage: field-log <init|append|validate|render|link> <trip-directory> [options]",
+			"Usage: field-log <init|append|validate|render|link|inspect|search|read|rename> <trip-directory> [options]",
 		);
 	}
 	if (command === "init") {
@@ -62,6 +67,48 @@ async function main() {
 		const entry = Number(option(args, "--entry"));
 		const runValue = option(args, "--readout");
 		console.log(fieldLogLink(entry, runValue ? Number(runValue) : undefined));
+		return;
+	}
+	if (command === "inspect") {
+		console.log(JSON.stringify(await inspectFieldLog(directory)));
+		return;
+	}
+	if (command === "search") {
+		const query =
+			option(args, "--query") ??
+			args.filter((arg) => !arg.startsWith("--")).join(" ");
+		console.log(
+			JSON.stringify({ query, hits: await searchFieldLog(directory, query) }),
+		);
+		return;
+	}
+	if (command === "read") {
+		const entry = option(args, "--entry");
+		const run = option(args, "--readout") ?? option(args, "--run");
+		const source = option(args, "--source");
+		console.log(
+			JSON.stringify(
+				await readFieldLogItem(directory, {
+					entryId: entry ? Number(entry) : undefined,
+					runId: run ? Number(run) : undefined,
+					sourceId: source ? Number(source) : undefined,
+				}),
+			),
+		);
+		return;
+	}
+	if (command === "rename") {
+		const title = args.join(" ").trim();
+		if (!title) throw new Error("rename requires a title.");
+		console.log(
+			JSON.stringify(
+				await appendFieldLogEvents(directory, {
+					type: "trip.title.updated",
+					actor: { kind: "orchestrator", pointer: "field-log-cli" },
+					payload: { title },
+				}),
+			),
+		);
 		return;
 	}
 	throw new Error(`Unknown command: ${command}.`);

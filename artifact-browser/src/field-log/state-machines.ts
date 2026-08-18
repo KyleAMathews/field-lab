@@ -8,6 +8,8 @@ const fieldLogMachine = createMachine({
 		open: {
 			on: {
 				"trip.context.recorded": "open",
+				"trip.title.updated": "open",
+				"trip.expedition.joined": "open",
 				"comment.recorded": "open",
 				"note.recorded": "open",
 				"synthesis.recorded": "open",

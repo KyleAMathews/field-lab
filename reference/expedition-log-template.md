@@ -1,56 +1,46 @@
-# Expedition Log Template
+# Expedition Log projection
 
-Create this when the user starts an Expedition: a directory that holds several related Field Trips and their field logs.
+The writer generates `expedition_log.md` from `expedition_log.jsonl`. Do not
+copy this template by hand or edit the result.
+
+Its shape is:
 
 ```markdown
 ---
 type: expedition-log
-title: <short Expedition title>
-opened-at: <YYYY-MM-DDTHH:MM:SS±HH:MM>
-opened-by: <verbatim user request or turn pointer>
-updated-at: <YYYY-MM-DDTHH:MM:SS±HH:MM>
-status: <active|paused|complete>
-session-provenance: <task/thread pointer and useful turn span, if available>
+format: expedition-log/v1
+event-stream: ./expedition_log.jsonl
+generated-through: <event ID>
+title: <Expedition title>
+opened-at: <ISO 8601 timestamp>
+updated-at: <ISO 8601 timestamp>
 ---
 
 # <Expedition title>
 
-## About
-
-<The broader question, place, system, or line of discovery that connects the Field Trips.>
+<territory>
 
 ## Field Trips
 
-Append one record when a Field Trip joins the Expedition. Its field log remains authoritative.
+### <current Field Trip title>
 
-### <Field Trip title> — <active / paused / complete>
+- **Opened at:** <Field Log opening timestamp>
+- **Latest event:** <latest Field Log event ID and timestamp>
+- **Field Log:** <relative link>
+- **Scope:** <current Field Log scope>
 
-- **Recorded at:** <ISO 8601>
-- **Opened at:** <ISO 8601>
-- **Field log:** <path>
-- **Scope:** <bounded operation>
+## Promoted entries
 
-## Expedition entries
+<a id="promotion-<ID>"></a>
+### <current source-entry title>
 
-Append only changes, conclusions, or significant findings copied from a named Field Trip log. Preserve the source wording, claim kind, confidence, and downgrade. Do not create an Expedition-level interpretation or copy whole raw readouts.
+<compact summary resolved from the Field Log>
 
-### <change / conclusion / significant finding>
-
-- **Recorded at:** <ISO 8601>
-- **Observed or occurred at:** <ISO 8601 / unknown / not-applicable>
-- **Copied entry:** <faithful copy or close marked paraphrase>
-- **Source Field Trip:** <title>
-- **Source log entry:** <path and entry pointer>
-- **Claim status:** <kind, confidence, and downgrade>
+- **Read:** <link that opens the full entry or readout in the Expedition reader>
+- **Why promoted:** <promotion rationale>
+- **Source:** <separate link to the authoritative Field Log entry or readout>
 ```
 
-## Integrity rules
-
-- Keep the Expedition log sparse: opening metadata, what the Expedition is about, Field Trip entries, and copied Field Trip changes, conclusions, or significant findings.
-- Keep each field log authoritative for its own readings, workflows, choices, and provenance.
-- Preserve the exact opening date, time, timezone, user-authorization pointer, and session provenance.
-- Give every appended record a `recorded-at` timestamp with timezone. Preserve `observed-at` or `occurred-at` from the source Field Trip when known; write `unknown` rather than inventing it.
-- Use vertical record blocks for prose-bearing entries. Do not turn the Expedition log into a wide table.
-- Update frontmatter `updated-at` and `status` when the Expedition changes; record that change as an Expedition entry copied from the responsible Field Trip.
-- Preserve source pointers, claim kinds, confidence, disagreement, and every downgrade.
-- Never authorize or record instrument execution, workflow execution, engine transitions, or independent analysis in the Expedition log.
+The projection shows only current promotions. Replacement inherits the old
+item's position. Removal hides the item. The JSONL stream keeps the events that
+produced that projection.

@@ -3,12 +3,10 @@ import {
 	access,
 	copyFile,
 	mkdir,
-	open,
 	readFile,
 	realpath,
 	rename,
 	rm,
-	writeFile,
 } from "node:fs/promises";
 import { homedir, tmpdir } from "node:os";
 import {
@@ -23,6 +21,11 @@ import { fileURLToPath } from "node:url";
 import Ajv from "ajv";
 import matter from "gray-matter";
 import { z } from "zod";
+import {
+	acquireLogLock,
+	appendJsonLines,
+	stageTextReplacement,
+} from "../log/filesystem";
 import { groupFieldLogEntries } from "./journal";
 import {
 	type FieldLogProjection,
@@ -204,55 +207,7 @@ function paths(directory: string) {
 export async function acquireFieldLogLock(
 	path: string,
 ): Promise<() => Promise<void>> {
-	const nonce = randomUUID();
-	const ownerPath = resolve(path, "owner.json");
-	const owner = JSON.stringify({ pid: process.pid, nonce });
-	let staleQuarantine: string | null = null;
-	try {
-		await mkdir(path);
-		await writeFile(ownerPath, owner, { flag: "wx" });
-	} catch (error) {
-		if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
-		const observed = await readFile(ownerPath, "utf8").catch(() => "");
-		let observedOwner: { pid?: number; nonce?: string } = {};
-		try {
-			observedOwner = JSON.parse(observed) as typeof observedOwner;
-		} catch {
-			throw new Error(`Field Log has a legacy or damaged lock at ${path}.`);
-		}
-		const observedPid = observedOwner.pid;
-		let live = false;
-		if (Number.isInteger(observedPid) && Number(observedPid) > 0) {
-			try {
-				process.kill(Number(observedPid), 0);
-				live = true;
-			} catch (ownerError) {
-				live = (ownerError as NodeJS.ErrnoException).code === "EPERM";
-			}
-		}
-		if (live) throw new Error(`Field Log is locked by process ${observedPid}.`);
-		if (!observedOwner.nonce)
-			throw new Error(`Field Log has a damaged lock at ${path}.`);
-		staleQuarantine = `${path}.stale-${observedOwner.nonce}`;
-		await rename(path, staleQuarantine).catch((takeoverError) => {
-			throw new Error("Another writer changed the Field Log lock.", {
-				cause: takeoverError,
-			});
-		});
-		await mkdir(path);
-		await writeFile(ownerPath, owner, { flag: "wx" });
-	}
-	const confirmed = await readFile(ownerPath, "utf8").catch(() => "");
-	if (confirmed !== owner) {
-		throw new Error("Another writer replaced the Field Log lock.");
-	}
-	return async () => {
-		const current = await readFile(ownerPath, "utf8").catch(() => "");
-		if (current !== owner) return;
-		await rm(path, { recursive: true });
-		if (staleQuarantine)
-			await rm(staleQuarantine, { recursive: true, force: true });
-	};
+	return acquireLogLock(path, "Field Log");
 }
 
 async function readStoredEvents(path: string): Promise<StoredEvent[]> {
@@ -276,6 +231,23 @@ function requireString(
 		);
 }
 
+function validateImportedTimestamp(
+	payload: Record<string, unknown>,
+	type: string,
+	key: string,
+): void {
+	const value = payload[key];
+	if (value === undefined) return;
+	if (
+		typeof value !== "string" ||
+		!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(
+			value,
+		) ||
+		Number.isNaN(Date.parse(value))
+	)
+		throw new Error(`${type} has an invalid payload.${key}.`);
+}
+
 function validateEventSemantics(event: StoredEvent): void {
 	const { type, payload } = event;
 	const instrumentId = payload.instrumentId;
@@ -294,9 +266,16 @@ function validateEventSemantics(event: StoredEvent): void {
 		case "trip.created":
 			requireString(payload, type, "title");
 			requireString(payload, type, "openingQuestion");
+			validateImportedTimestamp(payload, type, "openedAt");
 			break;
 		case "trip.context.recorded":
 			requireString(payload, type, "scope", "aim", "text", "context");
+			break;
+		case "trip.title.updated":
+			requireString(payload, type, "title");
+			break;
+		case "trip.expedition.joined":
+			requireString(payload, type, "path");
 			break;
 		case "comment.recorded":
 			requireString(payload, type, "text");
@@ -696,9 +675,7 @@ async function stageProjection(
 ): Promise<() => Promise<void>> {
 	const projection = projectFieldLogEvents(events);
 	const markdown = renderProjection(projection, events.at(-1)?.eventId ?? 0);
-	const temporary = `${path}.${process.pid}.tmp`;
-	await writeFile(temporary, markdown, "utf8");
-	return () => rename(temporary, path);
+	return stageTextReplacement(path, markdown);
 }
 
 function isWithin(directory: string, path: string): boolean {
@@ -810,16 +787,7 @@ async function appendStoredEvents(
 	path: string,
 	events: StoredEvent[],
 ): Promise<void> {
-	const handle = await open(path, "a");
-	try {
-		await handle.writeFile(
-			`${events.map((event) => JSON.stringify(event)).join("\n")}\n`,
-			"utf8",
-		);
-		await handle.sync();
-	} finally {
-		await handle.close();
-	}
+	await appendJsonLines(path, events);
 }
 
 async function writeProjection(

@@ -1,49 +1,98 @@
 # Expedition
 
-An Expedition is a directory and sparse shared index for several related Field Trips. It records when the Expedition began, what it is about, which Field Trips belong to it, and selected changes, conclusions, or significant findings copied from those Field Trip logs.
+An Expedition is a directory and a small shared briefing for related Field
+Trips. It records the Expedition's territory, its member trips, and a few
+Field Log entries that a trip chose to promote for later trips.
 
-An Expedition is not a workflow and does not authorize instruments, conclusions, or actions. It may contain ad hoc Field Trips, repeated observations, several different workflows, or no named workflow at all.
+An Expedition is not a workflow. It does not authorize instruments,
+synthesis, conclusions, plans, or actions.
 
 ## Entry
 
-Enter only after `SKILL.md` routes the inquiry here and the user agrees to create the shared directory and index. Record that authorization. Do not infer it from one difficult Field Trip or a large workflow.
+Create an Expedition only after `SKILL.md` routes the inquiry here and the user
+agrees to the shared directory and log. Record that artifact consent. Keep it
+separate from Field Trip, instrument, workflow, and synthesis authority.
 
-## Directory
+Before writing, read [expedition-log-events.md](expedition-log-events.md) in
+full.
 
-Use a narrow descriptive directory:
+## Directory and files
 
 ```text
 <expedition>/
+├── expedition_log.jsonl
 ├── expedition_log.md
 └── field-trips/
     └── <trip>/
+        ├── field_log.jsonl
         └── field_log.md
 ```
 
-Read [expedition-log-template.md](expedition-log-template.md) before creating `expedition_log.md`. Record the exact user-authorization pointer, an ISO 8601 opening timestamp with timezone, and session provenance. Keep this artifact consent separate from Field Trip, instrument, workflow, and engine authorization.
+`expedition_log.jsonl` is the canonical append-only event stream.
+`expedition_log.md` is its generated current projection. Use the bundled
+`expedition-log` CLI for every write. Never edit either file by hand.
 
-An existing standalone Field Trip may join by link or careful adoption. Preserve its original path and session lineage; do not duplicate readings in a way that hides which record is authoritative.
+Joining moves a standalone Field Trip under `field-trips/`, then records the
+membership in both logs. The Expedition points to the trip; the Field Trip
+points back to `expedition_log.md`. The Field Log stays authoritative for all
+of its entries and sources.
 
-## Expedition log
+## First read in a member trip
 
-The Expedition log tracks only:
+At the start of every new Field Trip inside an Expedition, make reading
+`expedition_log.md` the first tool call. This is a skill rule, not a writer
+event or a runtime gate. Use the briefing to find prior trips and promoted
+entries, then inspect, search, or read their Field Logs when more depth helps.
 
-- its opening timestamp, authorization, and broad territory;
-- every Field Trip, its opening timestamp, field-log path, bounded scope, and status;
-- changes, conclusions, or significant findings copied from a named Field Trip log, with timestamp and source pointer.
+## Promotion
 
-Add a Field Trip row when a trip joins. Add an Expedition entry only when a Field Trip records a change, conclusion, or significant finding worth surfacing across the Expedition. Copy faithfully or mark a close paraphrase; preserve claim kind, confidence, disagreement, and downgrade. The Expedition log performs no independent analysis or synthesis.
+A member trip may promote one of its existing Field Log entries. A promotion
+stores:
 
-## Authority and plans
+- its stable promotion ID;
+- the member trip, entry, and optional readout pointer;
+- a short note saying why the entry matters to later trips.
 
-Creating or joining an Expedition authorizes only the directory and sparse index described above. Each Field Trip still needs its own opening consent and instrument plan. Instruments, workflows, engine transitions, sources, raw readings, and detailed status history remain in the authoritative Field Trip logs.
+The Expedition stores no second copy of the entry text. Its Markdown renderer
+resolves the pointer and shows the Field Log's current title and compact
+summary. The Expedition reader opens the full note or readout in place and
+keeps a separate link to the authoritative Field Log entry. Long notes and
+readouts follow the normal Field Log drawer rule.
 
-Controls scale with uncertainty and consequence, not with the number of trips. Several light trips may need no special apparatus; one costly claim may need independent evidence or hostile testing.
+A later promotion may replace an earlier promotion by ID. It takes the old
+promotion's place in display order. A trip may also remove a promotion by ID.
+Replacement and removal append events to canonical history, but the generated
+Markdown, inspection output, manifest, and promotion search show current
+promotions only.
 
-## Other artifacts
+The Expedition performs no automatic synthesis and never auto-promotes a
+finding. A Field Trip makes each promotion, replacement, or removal explicitly.
 
-Keep sources, atlases, wikis, workflow files, and detailed logs under their owning Field Trip. The Expedition root contains only the Expedition log and its Field Trip directories. The Expedition log may point to a significant Field Trip entry but must not become a second instrument ledger, workflow log, or wiki.
+## Reading
 
-## Exit
+Both `field-log` and `expedition-log` use the same read verbs:
 
-An Expedition may remain active, pause, or close without reconciling its Field Trips. Update its timestamped status and retain the Field Trip index and copied entries as the complete record.
+- `inspect` returns a compact structured overview. Full readouts are omitted.
+- `search` searches entries, readouts, and collected source files and returns
+  structured hits. Source hits say whether the source was only collected or
+  also examined.
+- `read` returns one selected entry, readout, or source in full.
+
+`expedition-log inspect` includes the member trips and current promotions.
+`expedition-log search` searches the current promotion projection and every
+member Field Log. `expedition-log read` addresses an item through its member
+trip ID.
+
+## Existing Markdown Expeditions
+
+Migration is an agent task, not a CLI command. Read the old Markdown, initialize
+the compound Expedition Log, append events that reconstruct its members and
+current promoted items, render it, and compare the generated briefing with the
+old file. Keep the old file until the comparison is complete.
+
+## Scope
+
+Keep sources, instruments, workflow state, raw readings, and detailed history
+in their Field Trips. Expedition-to-Expedition references are ordinary links
+inside a note. There is no Expedition status, member status, formal nested
+Expedition relation, or `leave` operation.

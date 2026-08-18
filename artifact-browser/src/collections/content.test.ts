@@ -17,9 +17,12 @@ describe("content classification", () => {
 		).toBe(true);
 	});
 
-	it("does not stop rendering a Field Log at the structured-data ceiling", () => {
+	it("does not stop rendering a compound log at the structured-data ceiling", () => {
 		expect(
 			contentByteLimit("field_log.jsonl", "application/x-ndjson"),
+		).toBeGreaterThan(2 * 1024 * 1024);
+		expect(
+			contentByteLimit("expedition_log.jsonl", "application/x-ndjson"),
 		).toBeGreaterThan(2 * 1024 * 1024);
 	});
 

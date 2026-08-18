@@ -17,6 +17,10 @@ import {
 } from "node:path";
 import mime from "mime";
 import { validateFieldLog } from "../field-log/writer";
+import {
+	findFieldLogDirectories,
+	searchWorkspace,
+} from "../log/workspace-search";
 import { sourceCodeMimeType } from "../protocol/content-types";
 import type { BootConfig } from "../protocol/types";
 import { readExternalFileMetadata, readFileMetadata } from "./metadata";
@@ -44,15 +48,18 @@ function isWithin(root: string, candidate: string): boolean {
 
 async function allowedSourcePaths(root: string): Promise<Set<string>> {
 	const paths = new Set<string>();
-	const events = await validateFieldLog(root).catch(() => []);
-	for (const event of events) {
-		if (event.type !== "source.collected") continue;
-		const path = event.payload.path;
-		if (typeof path !== "string" || !isAbsolute(path)) continue;
-		const canonical = await resolveExternalFilePath(root, root, path).catch(
-			() => null,
-		);
-		if (canonical) paths.add(canonical);
+	const directories = new Set([root, ...(await findFieldLogDirectories(root))]);
+	for (const directory of directories) {
+		const events = await validateFieldLog(directory).catch(() => []);
+		for (const event of events) {
+			if (event.type !== "source.collected") continue;
+			const path = event.payload.path;
+			if (typeof path !== "string" || !isAbsolute(path)) continue;
+			const canonical = await resolveExternalFilePath(root, root, path).catch(
+				() => null,
+			);
+			if (canonical) paths.add(canonical);
+		}
 	}
 	return paths;
 }
@@ -150,15 +157,16 @@ async function serveContent(
 	let absolutePath: string;
 	try {
 		if (isAbsolute(path)) {
-			const canonical = await resolveExternalFilePath(
+			absolutePath = await resolveExternalFilePath(
 				options.root,
 				options.launchDirectory ?? process.cwd(),
 				path,
 			);
-			if (!(await allowedSourcePaths(options.root)).has(canonical))
+			if (!(await allowedSourcePaths(options.root)).has(absolutePath))
 				throw new Error("Absolute path is not a collected source.");
+		} else {
+			absolutePath = await resolveContentPath(options.root, path);
 		}
-		absolutePath = await resolveContentPath(options.root, path);
 	} catch {
 		return send(response, 400, "Invalid content path.");
 	}
@@ -255,6 +263,21 @@ export async function startHttpServer(
 					? (await readFileMetadata(canonicalRoot, absolutePath, 1)).file
 					: await readExternalFileMetadata(absolutePath);
 				const body = JSON.stringify(metadata);
+				response.writeHead(200, {
+					"cache-control": "private, no-cache",
+					"content-type": "application/json; charset=utf-8",
+					"content-length": Buffer.byteLength(body).toString(),
+				});
+				return response.end(body);
+			}
+			if (requestUrl.pathname === "/api/search") {
+				if (request.method !== "GET")
+					return send(response, 405, "Method not allowed.", { allow: "GET" });
+				const query = requestUrl.searchParams.get("q")?.trim();
+				if (!query) return send(response, 400, "A search query is required.");
+				const body = JSON.stringify(
+					await searchWorkspace(canonicalRoot, query),
+				);
 				response.writeHead(200, {
 					"cache-control": "private, no-cache",
 					"content-type": "application/json; charset=utf-8",

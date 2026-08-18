@@ -613,6 +613,8 @@ h6 {
 .source-scroll {
   align-content: start;
   gap: 30px;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 .source-record {
@@ -643,6 +645,7 @@ h6 {
   color: #514c45;
   font-family: var(--heading-font);
   font-size: 15px;
+  overflow-wrap: anywhere;
 }
 
 .source-open {
@@ -658,6 +661,23 @@ h6 {
   font-size: 12px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.expedition-source-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  color: var(--quiet);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration-color: color-mix(in srgb, currentcolor 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+.expedition-source-link:hover {
+  color: var(--ink);
+  text-decoration-color: currentcolor;
 }
 
 .source-scroll > .source-open,
@@ -679,7 +699,22 @@ h6 {
 
 .source-preview-canvas {
   width: min(760px, 100%);
+  min-width: 0;
   min-height: 0;
+  overflow: hidden;
+}
+
+.source-preview-canvas .markdown {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.source-preview-canvas .markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
 }
 
 .source-missing {
@@ -1253,6 +1288,175 @@ h6 {
 
 .artifact-result:hover {
   background: #f5f0e7;
+}
+
+.workspace-search-page {
+  display: grid;
+  gap: 28px;
+}
+
+.workspace-search-page > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 560px);
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 22px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.workspace-search-page :where(h1, p) {
+  margin: 0;
+}
+
+.workspace-search-page h1 {
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.workspace-search-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: #fbf9f4;
+}
+
+.workspace-search-input:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgb(130 92 45 / 10%);
+}
+
+.workspace-search-input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
+.workspace-search-results {
+  display: grid;
+  border-top: 1px solid var(--hairline);
+}
+
+.workspace-search-result {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) minmax(160px, 0.45fr);
+  gap: 16px;
+  align-items: start;
+  padding: 17px 10px;
+  border-bottom: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  min-width: 0;
+}
+
+.workspace-search-result.is-openable {
+  cursor: pointer;
+}
+
+.workspace-search-result.is-openable:hover {
+  background: #f5f0e7;
+}
+
+.search-result-copy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.search-result-open {
+  justify-self: start;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.search-result-open:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.search-result-open.is-static {
+  cursor: default;
+}
+
+.search-result-open.is-static:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.search-result-snippet .markdown {
+  gap: 0.45rem;
+  color: #5f5a52;
+  font-family: var(--body-font);
+  font-size: 15px;
+  line-height: 1.65;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.search-match {
+  padding: 0 0.12em;
+  border-radius: 2px;
+  background: #f0d990;
+  color: inherit;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.search-result-snippet .markdown :where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+  font-size: 1em;
+}
+
+.search-result-snippet .markdown :where(ul, ol) {
+  gap: 0.2rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.workspace-search-results small,
+.search-result-kind {
+  color: var(--quiet);
+  font-size: 10px;
+}
+
+.workspace-search-results small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.search-result-kind {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 950px) {
+	.workspace-search-page > header,
+	.workspace-search-result {
+		grid-template-columns: 1fr;
+	}
 }
 
 .artifact-result-copy {

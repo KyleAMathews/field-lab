@@ -47,6 +47,8 @@ describe("MarkdownRenderer", () => {
 
 [Next](../README.md)
 
+[Entry](?file=../field-trips/trip/field_log.md&entry=entry-4&readout=2)
+
 <script>window.bad = true</script>
 
 \`\`\`ts
@@ -80,6 +82,10 @@ flowchart LR
 			"href",
 			"?file=README.md&cap=secret",
 		);
+		expect(screen.getByRole("link", { name: "Entry" })).toHaveAttribute(
+			"href",
+			"?file=field-trips%2Ftrip%2Ffield_log.md&entry=entry-4&readout=2&cap=secret",
+		);
 		expect(container.querySelector("script")).toBeNull();
 		expect(container.querySelector(".th-code--ts")).toBeInTheDocument();
 		expect(container.querySelector(".th-keyword")).toHaveTextContent("const");
@@ -96,5 +102,21 @@ flowchart LR
 			/>,
 		);
 		expect(screen.getByText("# Source")).toBeInTheDocument();
+	});
+
+	it("highlights prose matches without changing code", () => {
+		const { container } = render(
+			<MarkdownRenderer
+				file={file}
+				content={content("Branch and BRANCH but `branch`")}
+				view="rendered"
+				capability="secret"
+				highlight="branch"
+			/>,
+		);
+
+		expect(container.querySelectorAll("mark.search-match")).toHaveLength(2);
+		expect(container.querySelector("code")).toHaveTextContent("branch");
+		expect(container.querySelector("code mark")).toBeNull();
 	});
 });
