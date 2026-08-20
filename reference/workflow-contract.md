@@ -211,5 +211,11 @@ Before treating it as reusable:
 5. Record the failure shape and revise the workflow as a new version.
 6. Keep the older trace so later success does not erase the first miss.
 
+Judge each calibration trajectory against the standing behavior specs in
+`.agents/behaviors/`. A behavior failure may belong to the workflow, runtime
+instructions, trace instrumentation, fixture, or judge; repair the owning layer.
+A conforming trajectory shows that the route preserved the Field Lab's conduct
+rules. It does not prove that an instrument or workflow is epistemically valid.
+
 Do not call a workflow a protocol merely because several runs succeeded.
 Autonomous use needs a separate commissioning process and stricter contract.

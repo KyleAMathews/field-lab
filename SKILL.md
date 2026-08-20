@@ -211,6 +211,10 @@ Return the closest practical equivalent of raw data for that operation:
 - what the operation may have induced or hidden; and
 - what remains unmeasured.
 
+Do not leave possible distortion implicit in the control or limitations. Every
+completed instrument return must name at least one way the operation itself may
+have added, selected, flattened, or hidden structure.
+
 Keep observation, measurement, user testimony, source claim, elicited response, generated sample, controlled comparison, test result, inference, analogy, value judgment, and hypothesis distinct. Do not turn one kind into another later.
 
 Do not use one instrument result to explain the whole subject, select the most important finding, synthesize across instruments, recommend an action, or silently replace the user's term. Keep any later user-requested interpretation or workflow-authorized analysis separate.

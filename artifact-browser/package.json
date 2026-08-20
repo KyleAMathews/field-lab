@@ -18,6 +18,8 @@
     "lint": "biome lint",
     "check": "biome check",
     "test": "vitest run",
+    "test:conformance": "vitest run src/field-lab/conformance",
+    "test:skill-live": "FIELD_LAB_LIVE=1 vitest run src/field-lab/conformance/live-skill.test.ts",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },

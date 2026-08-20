@@ -96,6 +96,10 @@ A future protocol contract will likely need the following.
   exceptions, spent budget, and pending human choices.
 - Notifications that link to the new entry rather than retelling the work in
   chat.
+- Standing behavior specs for the small set of recurring choices important
+  enough to judge across every station trajectory. Keep these specs distinct
+  from the runtime prompt and grade each applicable behavior from visible trace
+  evidence.
 
 ### Closure boundary
 
@@ -158,6 +162,11 @@ Replay the protocol against archived inputs without revealing the historical
 human branch choices to the executor. Compare its states, readings, abstentions,
 and escalations with the frozen trace. Treat divergence as data, not an error to
 patch during the run.
+
+Judge the replay against the station's behavior specs as well as its state
+transitions. Include positive, negative, lucky-correct negative, outside-scope,
+and allowed-boundary trajectories. Keep expected labels out of the judge's
+evidence and require verdicts to cite visible trace events.
 
 Likely controls:
 
