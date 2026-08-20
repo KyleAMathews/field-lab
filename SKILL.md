@@ -71,6 +71,12 @@ Reduce choice load. Recommend one path and add at most one meaningfully differen
 
 Changing one axis does not change another. More instruments do not force a Field Trip. A Field Trip does not select a workflow. An Expedition adds navigation, not permission.
 
+Treat every workflow as a human-operated route. It may schedule instruments,
+declare checkpoints, and show which branches fit the returned evidence. The
+human chooses every branch that changes the question, specimen, method, stakes,
+or kind of result. Workflow completion means the named route ran; it never
+closes the inquiry.
+
 ## Instrument-only authority gate
 
 Treat authority to examine and authority to interpret or act as absent by default.
@@ -176,7 +182,7 @@ Use the bench below to choose what to offer. After the user selects an instrumen
 
 - Let the user select an instrument by direct request, choice from an offer, agreement to a Field Trip plan that names it, or selection of a workflow whose schedule names it.
 - Preserve any user-selected sequence. “Run A and B, then C” selects all three: A and B are the current batch and C is queued next. Completion of the current batch does not cancel or reopen the choice of C.
-- Distinguish the **selected queue** from mere offers. For ad hoc work, only the user may add, remove, replace, or reorder queued instruments. A user-selected workflow may advance its declared schedule but may not add unscheduled instruments. Keep the queue in conversation during a Walk and in the collection plan during a Field Trip.
+- Distinguish the **selected queue** from mere offers. For ad hoc work, only the user may add, remove, replace, or reorder queued instruments. A user-selected workflow may advance its declared fixed schedule but may not choose a conditional branch or add an unscheduled instrument. Keep the queue in conversation during a Walk and in the collection plan during a Field Trip.
 - Treat the Focus interview as the sole selection exception: ask its questions directly without an instrument announcement; the user authorizes completion by answering.
 - Treat a workflow schedule as selection, not phase-start permission. Obey any separate phase-opening gate.
 - Treat the explanation of a selected instrument as identification, not permission.
@@ -222,6 +228,41 @@ After every instrument result:
 7. If no instrument would add much, say that plainly and stop offering tools.
 
 If the user selects a workflow, enter it directly instead of showing another instrument menu.
+
+## Workflow routing
+
+Order instruments by epistemic dependency and the risk that an early operation
+will contaminate a later observation, not by bench taxonomy. Confirm the aim;
+collect or freeze material that later probes could alter; establish baselines
+and context boundaries; run prerequisites; then move from observation and
+distinction toward generation, interpretation, or synthesis only when the
+selected method and requested task allow it. Reduce avoidable order effects and
+name the correlation that remains; do not let an impossible standard of purity
+stall useful work.
+
+Match route size to inquiry clarity:
+
+- For a clear aim and known use case, offer a named workflow or one proposed
+  route with its important checkpoints and branches.
+- For an open-ended inquiry, offer one instrument or a short sequence. Let later
+  readings narrow the next branch.
+- Use the Focus interview and instruments that expose competing assumptions or
+  internal failures early when the user's model may be inconsistent.
+- Filter from the current inquiry state. Recommend one fit and at most one route
+  that examines a different uncertainty.
+
+At a branch, state what each option would examine, what evidence made it
+relevant, and its main cost or distortion. Let the human choose, including to
+reframe, pause, stop, or take a route the workflow did not anticipate. No
+reading definitively ends a line of inquiry.
+
+Keep stable operating method in instrument cards, reusable order and gates in
+workflow files, and the current aim, sources, readings, selected queue, user
+comments, and branch history in the Field Log. When creating or changing a
+workflow, read [workflow-contract.md](reference/workflow-contract.md). Do not
+add automation fields to an ordinary workflow. Autonomous branching belongs to
+the future Field Station protocol described in
+[field-station-protocol.md](reference/field-station-protocol.md).
 
 ## Instrument bench
 
@@ -389,6 +430,12 @@ Use one owner for each rule:
 - Instrument cards: operating range, input, procedure, execution placement, control, result, likely distortions, fallback, required work, and stop rule.
 - [instrument-contract.md](reference/instrument-contract.md): card-authoring and saved-result schemas; read it only when creating or changing an instrument card.
 - [instrument-usage-audit.md](reference/instrument-usage-audit.md): conservative completed-use counts and maturity evidence; read it when changing a card's maturity.
+- [workflow-contract.md](reference/workflow-contract.md): workflow-authoring,
+  sequencing, branch, authority, and test rules; read it only when creating or
+  changing a workflow.
+- [field-station-protocol.md](reference/field-station-protocol.md): deferred
+  design for autonomous protocols and their commissioning workflow; read it
+  only when designing scheduled or autonomous Field Lab work.
 - Field Trip and Expedition files: materialization procedures and log schemas.
 - [dialectic-workflow.md](reference/dialectic-workflow.md): all workflow-wide gates and safeguards.
 - Phase and stage files: only their local work, deliverables, and checklist.

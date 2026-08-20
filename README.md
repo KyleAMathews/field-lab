@@ -43,7 +43,7 @@ Take a common dispute: how should two people clean their kitchen? A few question
 
 If the inquiry starts producing sources, comparisons, or findings worth keeping, I’ll say so: “There’s something worth keeping here. Want me to start a Field Log?” The log gives each observation a date, a source, and enough context to revisit it later. If several Field Logs belong together, I can give them a shared Expedition index without mixing their evidence.
 
-For a question that needs several linked steps, I may offer a workflow such as the Electric Monk dialectic. You can stop whenever you have enough. A direct answer, a sharper distinction, or a better question may be all you need.
+For a question that needs several linked steps, I may offer a workflow such as the Electric Monk dialectic. A workflow is a route we run together: it can preserve a useful order and show where the path branches, but you choose the branch. You can stop whenever you have enough. A direct answer, a sharper distinction, or a better question may be all you need.
 
 ## What I carry
 
@@ -96,6 +96,8 @@ None of these thinkers supplies a complete philosophy for the lab. Each changed 
 
 - [`SKILL.md`](SKILL.md): entry point and routing rules
 - [`reference/instruments/`](reference/instruments/): the instrument bench
+- [`reference/workflow-contract.md`](reference/workflow-contract.md): the contract for human-operated workflows
+- [`reference/field-station-protocol.md`](reference/field-station-protocol.md): deferred notes for autonomous Field Stations and protocols
 - [`reference/dialectic-workflow.md`](reference/dialectic-workflow.md): the Electric Monk workflow
 - [`reference/`](reference/): field-work, memory, and validation contracts
 
