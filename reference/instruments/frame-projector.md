@@ -96,7 +96,15 @@ For each cluster, show 2–3 label candidates, the naming mode, and why the reta
 
 ### 5. Render, repopulate, and test
 
-Draw the complete diagram, then place the inventory items back into it. Every occupied cell needs at least one relevant member or example; use 1–2 representative examples in the diagram and list additional members below. Mark a cell `[empty]` or `[under-occupied]` only after searching the inventory and relevant source material, not because no example came immediately to mind.
+Draw the complete diagram, then select a small featured set from the inventory. The plot is an annotated argument, not an inventory dump. Plot no more than eight cases total and no more than four in any quadrant. Each plotted case must earn its space as one of these:
+
+- the strongest prototype for a region;
+- a boundary or straddling case that tests a separator;
+- an outlier or counterexample that strains the label;
+- a moving case that makes a trajectory visible; or
+- another case with a specific, stated reason it changes how the frame is read.
+
+Give each plotted case a short `plotReason`. Do not plot repetitive members merely to prove coverage. Keep every unplotted member in the phenomenology inventory and candidate-cluster trace. Every occupied cell should normally contribute one strong prototype or diagnostic case. Add more only when they carry different information or when their concentration in one quadrant is itself an important feature of the map; a meaningful cluster may use up to four of the eight slots. Mark a cell `[empty]` or `[under-occupied]` only after searching the inventory and relevant source material, not because no example came immediately to mind.
 
 If the examples do not fit their labels, several items sit near or cross the watersheds, or the labels collapse when examples are removed, return to clustering or the separating lines. Near-line and moving cases may be faithful readings rather than defects; revise the map only when its clusters or separators fail to clarify them. Do not polish the names around a broken structure.
 
@@ -157,7 +165,7 @@ The command writes `<artifact-path>.txt` and `<artifact-path>.svg`. Keep the JSO
     "proposed": { "label": "Proposed", "color": "#D55E00" }
   },
   "examples": [
-    { "label": "Case A", "x": 0.2, "y": 0.8, "category": "observed", "provenance": "source claim", "source": "S1", "note": "Near the line" }
+    { "label": "Case A", "x": 0.2, "y": 0.8, "category": "observed", "plotReason": "boundary case that tests the control line", "provenance": "source claim", "source": "S1", "note": "Near the line" }
   ],
   "calibration": {
     "axisClaimType": "conceptual",
@@ -169,14 +177,16 @@ The command writes `<artifact-path>.txt` and `<artifact-path>.svg`. Keep the JSO
 
 Color is optional. Omit `categories` and `category` for the default black-and-white rendering. Add categories only when they encode a distinction already present in the inventory—for example, observed versus proposed cases, two constituencies, or two source classes. Each category needs a short `label` and a six-digit hex `color`; assign its key to each relevant example with `category`. Prefer two to four colors that remain distinct on white, such as blue `#0072B2` and vermilion `#D55E00`. The renderer chooses black or white point numbers for contrast, repeats the category label in the SVG legend and ASCII placement list, and leaves uncategorized examples black. Never rely on color alone or use decorative color to imply an unsupported distinction.
 
-Use normalized `x` and `y` coordinates from `0` to `1`. Give every example its claim kind in `provenance` and an inventory or source pointer in `source`. Plot every representative example, including cases near a line, straddling regions, or moving over time; explain those qualifications in `note`. The ASCII diagram shows up to two examples in each cell and lists all placements below it. The SVG plots every example as a numbered point and carries its label, category when present, provenance, source pointer, and note in a side legend. This makes the SVG the detail view without making the ASCII unreadable. Use `status` only for an evidentially earned `empty` or `under-occupied` quadrant; the renderer marks a cell `empty` automatically when it has no plotted members.
+The JSON `examples` array is the featured plot set, not the full phenomenology inventory. Use four to eight cases when the material supports them, never more than eight total or four per quadrant. Fewer is better when the added points repeat the same information, but do not flatten a meaningful cluster merely to distribute points evenly across the frame. Give each case a short `plotReason` that says what makes it diagnostic; the renderer rejects an unjustified or crowded set. If a statistical map needs a full data cloud, use a statistical chart rather than this presentation renderer.
+
+Use normalized `x` and `y` coordinates from `0` to `1`. Give every featured example its claim kind in `provenance` and an inventory or source pointer in `source`. Use `note` for a placement qualification such as proximity to a line, straddling, or movement over time. The ASCII diagram shows up to two featured examples in each cell and lists all placements below it. The SVG plots the same curated set as numbered points and carries each label, selection reason, category when present, provenance, source pointer, and note in its legend. Keep all other members in the inventory and cluster trace outside the frame. Use `status` only for an evidentially earned `empty` or `under-occupied` quadrant; the renderer marks a cell `empty` automatically when it has no plotted members.
 
 Every candidate map must show:
 
 1. both named axes and both semantic poles of each axis;
 2. visible horizontal and vertical directions;
 3. four visibly divided cells, each with its own label, treated as fuzzy regions rather than exclusive bins;
-4. at least one relevant example or observed member in every occupied cell—normally 1–2 representative placements—or an explicit `[empty]` / `[under-occupied]` mark;
+4. at least one diagnostic example or strong prototype in every occupied cell—never more than four placements per cell or eight total—or an explicit `[empty]` / `[under-occupied]` mark;
 5. the axis claim type, second-axis confidence, source pointers for placements, and orthogonality result immediately below the diagram.
 
 If several candidate maps are generated, render **every map separately in both formats**. Do not compress the set into one-line summaries. If labels are too long, shorten the cell names and preserve the fuller descriptions in the SVG; never remove the axes, boxes, or placements to save space.

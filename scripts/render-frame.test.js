@@ -23,9 +23,9 @@ const SPEC = {
     br: { name: "Operators", description: "Local and directed.", status: "under-occupied" },
   },
   examples: [
-    { label: "Community protocol", x: 0.2, y: 0.8, provenance: "source claim", source: "S1" },
-    { label: "A & B <pilot>", x: 0.8, y: 0.75, provenance: "observation", source: "I2", note: "Moves left over time" },
-    { label: "Local workaround", x: 0.25, y: 0.2, provenance: "user testimony", source: "U1" },
+    { label: "Community protocol", x: 0.2, y: 0.8, plotReason: "strongest prototype", provenance: "source claim", source: "S1" },
+    { label: "A & B <pilot>", x: 0.8, y: 0.75, plotReason: "movement case", provenance: "observation", source: "I2", note: "Moves left over time" },
+    { label: "Local workaround", x: 0.25, y: 0.2, plotReason: "tests the near-term pole", provenance: "user testimony", source: "U1" },
   ],
   calibration: {
     axisClaimType: "conceptual",
@@ -49,6 +49,7 @@ test("renders one spec to ASCII and accessible SVG", () => {
   const ascii = fs.readFileSync(`${output}.txt`, "utf8");
   assert.match(ascii, /Control and horizon/);
   assert.match(ascii, /\[1\] Community protocol/);
+  assert.match(ascii, /why plotted: strongest prototype/);
   assert.match(ascii, /\[under-occupied\]/);
   assert.match(ascii, /Axis claim type: conceptual/);
 
@@ -57,6 +58,7 @@ test("renders one spec to ASCII and accessible SVG", () => {
   assert.match(svg, /<title id="frame-title">Control and horizon<\/title>/);
   assert.match(svg, /A &amp; B &lt;pilot&gt;/);
   assert.match(svg, /aria-label="2\. A &amp; B &lt;pilot&gt;/);
+  assert.match(svg, /featured because movement case/);
   assert.match(svg, /Second-axis confidence/);
   assert.match(svg, /viewBox="0 0 840 /);
   assert.match(svg, /Source Serif 4/);
@@ -83,8 +85,14 @@ test("uses optional category colors while naming categories in both formats", ()
   assert.equal(result.status, 0, result.stderr);
 
   const ascii = fs.readFileSync(`${output}.txt`, "utf8");
-  assert.match(ascii, /category: Observed; source claim; S1/);
-  assert.match(ascii, /category: Proposed; observation; I2/);
+  assert.match(
+    ascii,
+    /category: Observed; why plotted: strongest prototype; source claim; S1/,
+  );
+  assert.match(
+    ascii,
+    /category: Proposed; why plotted: movement case; observation; I2/,
+  );
 
   const svg = fs.readFileSync(`${output}.svg`, "utf8");
   assert.match(svg, /fill="#0072B2"/);
@@ -126,4 +134,50 @@ test("rejects unknown categories and non-hex colors", () => {
   result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
   assert.equal(result.status, 1);
   assert.match(result.stderr, /must name a key from categories/);
+});
+
+test("rejects an exhaustive or quadrant-crowded example list", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
+  const input = path.join(directory, "crowded.json");
+  const crowded = structuredClone(SPEC);
+  crowded.examples = Array.from({ length: 9 }, (_, index) => ({
+    label: `Case ${index + 1}`,
+    x: index % 2 ? 0.75 : 0.25,
+    y: index % 4 < 2 ? 0.75 : 0.25,
+    plotReason: "generated density test",
+    provenance: "generated sample",
+    source: `G${index + 1}`,
+  }));
+  fs.writeFileSync(input, JSON.stringify(crowded));
+
+  let result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /at most 8 featured cases/);
+
+  crowded.examples = crowded.examples.slice(0, 5).map((example, index) => ({
+    ...example,
+    x: 0.2 + index * 0.05,
+    y: 0.8 - index * 0.05,
+  }));
+  fs.writeFileSync(input, JSON.stringify(crowded));
+  result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /plot at most 4 featured cases per quadrant/);
+
+  crowded.examples = crowded.examples.slice(0, 4);
+  fs.writeFileSync(input, JSON.stringify(crowded));
+  result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
+  assert.equal(result.status, 0, result.stderr);
+});
+
+test("requires a reason for every plotted example", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
+  const input = path.join(directory, "unjustified.json");
+  const unjustified = structuredClone(SPEC);
+  delete unjustified.examples[0].plotReason;
+  fs.writeFileSync(input, JSON.stringify(unjustified));
+
+  const result = spawnSync(process.execPath, [SCRIPT, input], { encoding: "utf8" });
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /examples\[0\]\.plotReason must be a non-empty string/);
 });

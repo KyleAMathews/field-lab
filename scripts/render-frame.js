@@ -7,6 +7,8 @@ const path = require("node:path");
 
 const QUADRANTS = ["tl", "tr", "bl", "br"];
 const DEFAULT_CELL_WIDTH = 40;
+const MAX_FEATURED_EXAMPLES = 8;
+const MAX_EXAMPLES_PER_QUADRANT = 4;
 
 function usage() {
   return `Usage: node scripts/render-frame.js [options] <frame.json>
@@ -162,6 +164,11 @@ function validateSpec(raw) {
   }
 
   if (!Array.isArray(spec.examples)) throw new Error("examples must be an array");
+  if (spec.examples.length > MAX_FEATURED_EXAMPLES) {
+    throw new Error(
+      `examples may contain at most ${MAX_FEATURED_EXAMPLES} featured cases; keep the full inventory in the readout and plot only cases that clarify or test the frame`,
+    );
+  }
   for (const [index, example] of spec.examples.entries()) {
     expectObject(example, `examples[${index}]`);
     const xValue = Number(example.x);
@@ -192,9 +199,24 @@ function validateSpec(raw) {
         `examples[${index}].provenance`,
       ),
       source: expectString(example.source, `examples[${index}].source`),
+      plotReason: expectString(
+        example.plotReason,
+        `examples[${index}].plotReason`,
+      ),
       note: expectString(example.note, `examples[${index}].note`, true),
       category,
     });
+  }
+
+  for (const key of QUADRANTS) {
+    const count = normalized.examples.filter(
+      (example) => quadrantFor(example) === key,
+    ).length;
+    if (count > MAX_EXAMPLES_PER_QUADRANT) {
+      throw new Error(
+        `quadrant ${key} has ${count} examples; plot at most ${MAX_EXAMPLES_PER_QUADRANT} featured cases per quadrant and keep the rest in the readout`,
+      );
+    }
   }
 
   const calibration = expectObject(spec.calibration, "calibration");
@@ -314,6 +336,7 @@ function renderAscii(spec, cellWidth) {
     const category = categoryFor(spec, example);
     const details = [
       category ? `category: ${category.label}` : "",
+      `why plotted: ${example.plotReason}`,
       example.provenance,
       example.source,
     ]
@@ -371,6 +394,7 @@ function renderSvg(spec) {
     const category = categoryFor(spec, example);
     const detail = [
       category ? `category: ${category.label}` : "",
+      `why plotted: ${example.plotReason}`,
       example.provenance,
       example.source,
       example.note,
@@ -514,8 +538,8 @@ function renderSvg(spec) {
     const fill = category ? category.color : "#111";
     const textColor = category ? category.textColor : "#fff";
     const categoryDescription = category ? `, category ${category.label}` : "";
-    parts.push(`<g aria-label="${escapeXml(`${example.number}. ${example.label}${categoryDescription}, x ${example.x.toFixed(2)}, y ${example.y.toFixed(2)}`)}">`);
-    parts.push(`<circle cx="${cx}" cy="${cy}" r="13" fill="${fill}" stroke="#111" stroke-width="1.5"/>`);
+    parts.push(`<g aria-label="${escapeXml(`${example.number}. ${example.label}${categoryDescription}, featured because ${example.plotReason}, x ${example.x.toFixed(2)}, y ${example.y.toFixed(2)}`)}">`);
+    parts.push(`<circle cx="${cx}" cy="${cy}" r="11" fill="${fill}" stroke="#111" stroke-width="1.5"/>`);
     parts.push(`<text class="point-number" x="${cx}" y="${cy + 4}" text-anchor="middle" fill="${textColor}">${example.number}</text></g>`);
   }
 
