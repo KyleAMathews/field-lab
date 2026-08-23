@@ -11,8 +11,8 @@ fresh_context: optional
 effort: low
 persistence: "A brief pass; can be completed here."
 artifact_risk: "A convenient fact dissolves the conflict, or a dramatic edge case is mistaken for an in-range boundary condition."
-maturity: trialed
-documented_uses: 6
+maturity: practiced
+documented_uses: 13
 ---
 
 # Ground-condition probe (`ground-condition`)

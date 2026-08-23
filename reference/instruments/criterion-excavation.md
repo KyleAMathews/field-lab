@@ -12,7 +12,7 @@ effort: medium
 persistence: "One example at a time plus a cross-example comparison; keep the corrected example records when another operation will use them."
 artifact_risk: "Leading probes or a small example set can turn the model's categories into apparent user criteria."
 maturity: trialed
-documented_uses: 1
+documented_uses: 2
 ---
 
 # Criterion Excavation (`criterion-excavation`)

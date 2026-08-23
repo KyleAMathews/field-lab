@@ -1,18 +1,18 @@
 ---
 id: candidate-spectrograph
 name: "Candidate spectrograph"
-summary: "Unranked candidates with different structural claims and losses"
-use_when: "Several structurally distinct landings remain possible"
-avoid_when: "Do not run before the tension, support, and residue earn more than one structurally distinct landing."
-access_target: "Unranked candidates with different structural claims and losses"
-requires: "a mature tension and earned residue"
+summary: "Late-stage dialectical landings with distinct structural claims and losses"
+use_when: "A mature dialectical inquiry has earned more than one way to preserve, negate, dissolve, or hold its tension"
+avoid_when: "Do not run during orientation or to inventory existing alternatives; it generates late-stage dialectical landings"
+access_target: "Generated dialectical landings, each with support, preserved material, residue, and a failure test"
+requires: "A frozen mature tension, source trace, supported links, and earned residue"
 execution_seat: hybrid
 fresh_context: preferred
 effort: high
 persistence: "Several deep drafts; usually the dialectic workflow, but a small Field Trip may keep a short palette in its field log."
-artifact_risk: "Preset bands bound the visible spectrum, candidates differ only in tone, or synthesis receives hidden priority."
+artifact_risk: "Preset structural bands bound the visible spectrum, generated landings differ only in tone, or synthesis receives hidden priority."
 maturity: trialed
-documented_uses: 1
+documented_uses: 2
 ---
 
 # Candidate spectrograph (`candidate-spectrograph`)

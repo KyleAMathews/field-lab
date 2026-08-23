@@ -11,8 +11,8 @@ fresh_context: required
 effort: high
 persistence: "A quick scout can be done here. A full atlas usually needs 6–12 probes; offer a Field Log for the raw traces."
 artifact_risk: "Shared model lineage, prompt leakage, and adaptive sampling can make expected basins look independent or socially prevalent."
-maturity: trialed
-documented_uses: 1
+maturity: practiced
+documented_uses: 10
 ---
 
 # Blind Possibility-Space Cartography (`blind-cartography`)

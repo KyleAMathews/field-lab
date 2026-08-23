@@ -11,8 +11,8 @@ fresh_context: required
 effort: high
 persistence: "Several research agents; offer a Field Log to keep sources, mappings, and donor pages together."
 artifact_risk: "Elegant false isomorphism, cherry-picked fields, and home concepts smuggled into the donor brief."
-maturity: trialed
-documented_uses: 8
+maturity: practiced
+documented_uses: 12
 ---
 
 # Donor perturbation rig (`donor-perturb`)

@@ -12,7 +12,7 @@ effort: low
 persistence: "A brief conversation; can be completed here."
 artifact_risk: "A partial account looks like a neutral full baseline."
 maturity: trialed
-documented_uses: 6
+documented_uses: 9
 ---
 
 # Substrate map (`substrate-map`)

@@ -11,8 +11,8 @@ fresh_context: optional
 effort: high
 persistence: "One short mapping pass; can be done here unless the maps must be compared or resumed later."
 artifact_risk: "Favored axes can create false orthogonality, tidy boxes, or unsupported empty quadrants."
-maturity: trialed
-documented_uses: 4
+maturity: practiced
+documented_uses: 15
 ---
 
 # Frame Projector (`frame-projector`)

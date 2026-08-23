@@ -12,7 +12,7 @@ effort: low
 persistence: "A brief pass; can be completed here."
 artifact_risk: "A decorative third way created to make the map look rich."
 maturity: practiced
-documented_uses: 16
+documented_uses: 19
 ---
 
 # Third-pole probe (`third-pole`)

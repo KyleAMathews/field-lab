@@ -11,8 +11,8 @@ fresh_context: preferred
 effort: medium
 persistence: "One pass per source; preserve with the comparison it audits."
 artifact_risk: "“Interesting” substitutes for supported and useful; every dropped item is rescued."
-maturity: practiced
-documented_uses: 22
+maturity: established
+documented_uses: 27
 ---
 
 # Hidden-signal recovery assay (`loss-audit`)

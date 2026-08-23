@@ -204,6 +204,11 @@ Keep the canonical router, selected queue, and authority boundary from
   their absolute path. The writer makes a durable trip-local copy when that
   path is under Desktop, Downloads, or the operating system's temporary
   directory; do not copy those files by hand.
+- When the user supplies a source during an authorized operation, register it,
+  inspect the relevant supplied material before the next substantive question,
+  and record the examination coverage. Let that reading guide later questions
+  inside the operation. A supplied source authorizes reading that source, not
+  wider research. If access fails, state the limit before continuing.
 - Record every selected instrument run. Add `prepared` or `started` events only
   when they preserve a meaningful baseline, control, execution boundary, or
   handoff.

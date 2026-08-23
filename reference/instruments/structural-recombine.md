@@ -12,7 +12,7 @@ effort: high
 persistence: "Deep analysis; offer a Field Log for a bounded map, or keep it in the round file and wiki during the dialectic workflow."
 artifact_risk: "The analyst invents “atoms,” imports a hidden taxonomy, or treats reach connections as solid."
 maturity: established
-documented_uses: 100
+documented_uses: 105
 ---
 
 # Structural recombinator (`structural-recombine`)

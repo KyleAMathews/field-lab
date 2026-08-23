@@ -12,7 +12,7 @@ effort: low
 persistence: "One blind probe per pass; can be done here or kept as a frontier-ledger entry in a workflow."
 artifact_risk: "A fluent match may be mistaken for low value, while vague divergence may be mistaken for novelty."
 maturity: trialed
-documented_uses: 1
+documented_uses: 3
 ---
 
 # Frontier Rheometer (`frontier-rheometer`)

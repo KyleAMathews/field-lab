@@ -27,6 +27,21 @@ Announce each instrument just before its first operation. An inherited reading m
 
 Phase 1 is not one batch. Use these user-visible stops:
 
+Throughout the interview, treat sources the user supplies as interview
+substrate. Examine the relevant supplied material as it arrives, before asking
+the next substantive question, and let it guide the remaining elenctic work.
+The separate research go-ahead below applies to discovering or gathering new
+sources and to an open-ended research batch; it does not delay reading sources
+the user has supplied for the active phase.
+
+Treat the elenctic interview as a responsive conversation for establishing the
+right frame, not a fixed sequence of questions. The user may answer, redirect,
+add a source, ask for a bounded comparison or generated possibilities, or
+challenge the current line of inquiry. Use each move to update what the frame
+must include, and distinguish generated probes from the user's testimony and
+from evidence. The one-question rule limits questions the orchestrator asks; it
+does not constrain how the user may move the inquiry.
+
 1. **Open and focus.** After the phase-start go-ahead, open the declared records, start the atlas, dispatch the gardener in the background, inherit prior material, and run only the missing focus interview and first elenctic questions. Do not wait for the gardener. Return the provisional aim, stakes, and provenance inventory for correction without naming a real or deepest tension.
 2. **Burst and choose—or stop.** After that correction, finish the needed elenctic probing and run `tension-statement`. If no live collision is supported, return that result and stop Phase 1. Otherwise present the 2–4 unranked, interview-traced options and stop for the user to choose, combine, rewrite, or reject them. Treat the choice as the current direction, not a promise to keep it. Do not test axes, research a pole, or draft the briefing before this choice.
 3. **Test the chosen frame.** Run the third-pole probe on the user-selected working tension. If the specimen supports it, preview and then run the frame projector as its own substantial exposure. Return the possible poles or maps and ask what is misplaced or missing. If either operation may have changed the collision, use the 1c.4 whole-inquiry recheck; do not let its newest or most vivid output replace the working tension on its own.

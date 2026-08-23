@@ -11,8 +11,8 @@ fresh_context: required
 effort: medium
 persistence: "One fresh agent plus analysis; can be done here, or use a Field Log when the prompt and output will be reused."
 artifact_risk: "Abstraction erases the field's epistemic or moral register; generic structural patterns look profound."
-maturity: draft
-documented_uses: 0
+maturity: trialed
+documented_uses: 1
 ---
 
 # Home-frame leak detector (`home-frame-leak`)

@@ -11,8 +11,8 @@ fresh_context: none
 effort: low
 persistence: "Usually 1–3 exchanges and can be completed in the current conversation."
 artifact_risk: "Leading questions manufacture the tension; a long questionnaire front-loads the orchestrator's taxonomy; rapport questions add ceremony without information; a “provisional” recommendation anchors the user before the question is answered."
-maturity: trialed
-documented_uses: 9
+maturity: practiced
+documented_uses: 12
 ---
 
 # Focus interview (`focus-interview`)

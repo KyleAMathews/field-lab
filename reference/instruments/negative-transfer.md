@@ -12,7 +12,7 @@ effort: medium
 persistence: "One targeted research or analysis pass; preserve with any donor claim used later."
 artifact_risk: "The negative case is too distant, exceptions are explained away, or the mapping shifts after failure."
 maturity: trialed
-documented_uses: 3
+documented_uses: 8
 ---
 
 # Negative-control transfer assay (`negative-transfer`)

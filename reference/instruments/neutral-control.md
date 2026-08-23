@@ -12,7 +12,7 @@ effort: low
 persistence: "One short pass; keep beside the stressed readout when stakes are moderate or high."
 artifact_risk: "“Neutral” wording carries the orchestrator's frame or lacks enough detail to compare."
 maturity: trialed
-documented_uses: 2
+documented_uses: 5
 ---
 
 # Neutral control (`neutral-control`)

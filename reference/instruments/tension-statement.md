@@ -11,8 +11,8 @@ fresh_context: optional
 effort: low
 persistence: "A brief conversation; can be completed here."
 artifact_risk: "The syntax manufactures conflict, or the orchestrator presents its own inference as the user's tension."
-maturity: trialed
-documented_uses: 2
+maturity: established
+documented_uses: 29
 ---
 
 # Tension statement (`tension-statement`)

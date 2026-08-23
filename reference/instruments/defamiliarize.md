@@ -12,7 +12,7 @@ effort: medium
 persistence: "One short pass or several probes; can be done here unless the result will be reused later."
 artifact_risk: "Verbal resonance is mistaken for causal or structural fit."
 maturity: trialed
-documented_uses: 2
+documented_uses: 4
 ---
 
 # Defamiliarization probe (`defamiliarize`)

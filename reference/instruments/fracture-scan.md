@@ -12,7 +12,7 @@ effort: medium
 persistence: "One deep analysis; can be done here for one position, while the dialectic workflow keeps it in the round file."
 artifact_risk: "Every weakness is made self-sublating, or a vivid exception is passed off as internal despite violating the position's premises or scope."
 maturity: practiced
-documented_uses: 10
+documented_uses: 12
 ---
 
 # Fracture scanner (`fracture-scan`)

@@ -12,7 +12,7 @@ effort: high
 persistence: "Two or more agents; a short run can be done here, while the dialectic workflow keeps full essays and position pages."
 artifact_risk: "Forced polarization creates a contradiction, agents hedge, or they share one frame with opposite conclusions."
 maturity: trialed
-documented_uses: 1
+documented_uses: 4
 ---
 
 # Belief-stress rig (`belief-stress`)

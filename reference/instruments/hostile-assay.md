@@ -12,7 +12,7 @@ effort: high
 persistence: "One strong agent per candidate; preserve for high-cost decisions."
 artifact_risk: "Criticism becomes consequence-free cleverness, generic pessimism, or an attack from an irrelevant standard."
 maturity: trialed
-documented_uses: 2
+documented_uses: 8
 ---
 
 # Hostile failure assay (`hostile-assay`)

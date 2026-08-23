@@ -1,0 +1,40 @@
+---
+id: disruption-path-test
+name: "Disruption path test"
+summary: "Test whether an entrant follows a low-end or new-market disruption path instead of merely being novel, successful, or threatening"
+use_when: "A user-confirmed claim concerns whether a defined entrant or innovation is disrupting a defined incumbent business over time"
+avoid_when: "Do not use to predict a winner, rate general innovation, or label a case without a fixed incumbent, value network, entry point, and timeline"
+access_target: "Foothold type, value-network contrast, asymmetric motivation, enabling improvement, retained advantage, and mainstream movement"
+requires: "A confirmed entrant, incumbent business, customer groups, value-network boundary, dates, performance basis, entry evidence, business-model evidence, and a sustaining-entry control"
+execution_seat: orchestrator
+fresh_context: optional
+effort: medium
+persistence: "Can be done here with a compact dated corpus; use a Field Log when the trajectory, sources, or value-network boundary need to remain traceable"
+artifact_risk: "Hindsight labeling, treating growth as disruption, moving the market boundary, and inventing incumbent irrationality from an entrant's success"
+maturity: draft
+documented_uses: 0
+---
+
+# Disruption path test (`disruption-path-test`)
+
+- **Phenomenon / range / input:** A competitive process in which an entrant begins in a low-end or new-market foothold that a defined incumbent is structurally motivated to neglect, then improves toward mainstream sufficiency while retaining the advantage created by its first value network. Disruption is relative to an incumbent business and unfolds over time; it is not an attribute of a technology or company.
+- **Why use it:** Ordinary strategy talk calls almost every novel or fast-growing entrant disruptive. This operation separates a qualifying foothold and asymmetric incumbent response from head-on competition, sustaining innovation, and later success with no disruptive path.
+- **Procedure:**
+  0. Make a readiness record before testing the label. Confirm the question, entrant or innovation, incumbent business, customer groups, value-network boundary, entry date, assessment date, mainstream performance basis, entry offer, business model, subsequent movement, contrary evidence, and a high-end or head-on control. Ask the user to confirm the direction. Return **Ready**, **Provisional**, or **Not runnable**. A Provisional run may return a trajectory hypothesis and evidence gaps but no disruption classification. If the incumbent, value network, foothold, or timeline cannot be fixed, stop as Not runnable.
+  1. Freeze the confirmed unit and time state. Do not switch among product, company, category, or technology levels. If the incumbent, customer group, value network, or assessment date changes materially after preparation, stop and ask whether the user wants a new run under the corrected boundary.
+  2. Build the incumbent value-network baseline: customers served, ranked performance measures, price and margin expectations, cost structure, channel, resource-allocation thresholds, and improvements the best customers reward. Keep this external commercial context distinct from an ecosystem or stakeholder map.
+  3. Test the entrant's first foothold. A **low-end foothold** serves overserved customers with a simpler or lower-cost offer that is good enough for their priority measures. A **new-market foothold** enables nonconsumers or a new context of use with greater access or simplicity. If neither is supported, return `no qualifying foothold`, `head-on entry`, or `unresolved` rather than stretching the label.
+  4. Compare entry performance. Record where the entrant was inferior on the incumbent market's mainstream measures and where it introduced a different basis of value. A high-end entrant that is better on the incumbent's prized measures is a sustaining or head-on control unless separate foothold evidence exists.
+  5. Test the business-model difference. State the cost structure, profit formula, processes, priorities, channel, or asset use that made the foothold viable. A low price or novel technology without enabling economics does not establish the mechanism.
+  6. Test asymmetric motivation from evidence. Ask why serving the foothold would have been unattractive or self-defeating for the incumbent at the time: lower margins, smaller transactions, different channels, uncertain market size, or conflict with priority rules. Do not infer rational neglect merely because the incumbent responded late.
+  7. Trace the enabling improvement. Show which performance dimensions improved, by what mechanism, and when the offer became good enough for customers nearer the mainstream. Separate sourced movement from forecasts.
+  8. Test retained advantage and movement. Record whether the entrant kept the accessibility, cost, convenience, or model advantage of its foothold as it moved, whether it abandoned that advantage, and whether incumbents retreated, copied, acquired, or competed directly.
+  9. Test mainstream adoption with behavior, not acclaim. Look for actual switching, use, revenue mix, customer migration, or incumbent displacement. Growth inside the original foothold is not by itself mainstream disruption.
+  10. Freeze the negative control: a successful high-end or head-on entrant serving the incumbent's best customers with superior mainstream performance. Confirm that the procedure returns sustaining, head-on, or unresolved for that case. If it also returns disruption, the boundary is too loose.
+  11. Return readiness plus one bounded status: `no qualifying foothold`, `early disruptive path supported`, `disruptive movement supported`, `mainstream disruption observed`, `sustaining or head-on entry`, or `indeterminate`. State the evidence for each link, the first broken link, rival explanations, and what later evidence could change the status. Do not turn a supported path into a prediction of victory or a response plan.
+- **Readout / control:** A dated trajectory table covering incumbent value network, foothold, entry inferiority, different value basis, business model, asymmetric motivation, enabling improvement, retained advantage, and mainstream movement. Include the sustaining-entry control, contrary evidence, boundary changes, and the first unsupported link. A null or non-disruptive result is valid.
+- **Common artifacts:** Using disruption as a synonym for innovation or threat; starting from eventual success; selecting the incumbent after seeing the outcome; treating any cheap product as low-end; calling all new technology a new market; inventing incumbent blindness; omitting the business model; treating growth as mainstream adoption; and predicting an outcome from an early trajectory.
+- **Escalate / stop:** Stop when the incumbent, value network, foothold, timeline, or performance basis cannot be fixed, when readiness is Not runnable, or when the case boundary changes after preparation. Return a Provisional hypothesis when later movement is undocumented. The card does not forecast success, choose an incumbent response, or prescribe an organization design.
+- **What it requires:** A dated competitive record from both entrant and incumbent contexts, customer and business-model evidence, a negative case, and care with relative market boundaries. Outside research requires separate authority.
+- **Execution placement:** **Orchestrator.** Live correction helps keep the incumbent, value network, and period stable. A fresh researcher may test the sustaining-entry control or incumbent context when authorized, but must receive the frozen boundary without the desired label. Without that separation, mark the control as same-context.
+- **Donor basis:** Clayton Christensen's mature disruption theory, including low-end and new-market footholds, asymmetric motivation, value networks, enabling improvement, and the warning that successful entrants such as Uber or Tesla are not disruptive merely because they threaten incumbents.

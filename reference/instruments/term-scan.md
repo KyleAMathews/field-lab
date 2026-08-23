@@ -11,8 +11,8 @@ fresh_context: optional
 effort: low
 persistence: "One brief pass; can be completed here."
 artifact_risk: "Clever semantics distract from a material conflict."
-maturity: trialed
-documented_uses: 5
+maturity: practiced
+documented_uses: 17
 ---
 
 # Term scan (`term-scan`)

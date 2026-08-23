@@ -1,41 +1,43 @@
 ---
 id: formation-section
 name: "Formation section"
-summary: "Source units, direct ordering relations, branches, overwrites, formation processes, and uncertain phases"
-use_when: "An artifact, belief, project, or dispute accumulated through additions, deletions, reuse, and branching"
+summary: "Source units, direct formation relations, branches, recursive assemblies, and uncertain lineage"
+use_when: "An artifact or idea accumulated through additions, deletions, reuse, branching, or combinations of earlier building blocks"
 avoid_when: "Do not use when the material is one event sequence or lacks recoverable units and relations."
-access_target: "How accumulated material formed without forcing it into one smooth timeline"
-requires: "Versioned or accumulated material with source-linked units and some direct relations"
+access_target: "How accumulated material formed, including supported component, enabling, and principle lineages, without forcing one smooth timeline"
+requires: "Versioned or accumulated material with source-linked units and some direct formation or lineage relations"
 execution_seat: orchestrator
 fresh_context: optional
 effort: high
 persistence: "A bounded corpus and relation register; use a Field Log when sources or revisions must remain traceable."
-artifact_risk: "A partial order becomes false chronology, layers imply progress, or inferred phases replace source units."
-maturity: draft
-documented_uses: 0
+artifact_risk: "A partial order becomes false chronology, or resemblance and functional decomposition are mistaken for historical ancestry."
+maturity: trialed
+documented_uses: 7
 ---
 
 # Formation section (`formation-section`)
 
-- **Phenomenon sought:** How an accumulated artifact, belief, project, or dispute formed through additions, cuts, overwrites, reuse, and branches whose order may be only partly known.
-- **Why use it:** A current state hides discarded work, residual parts, maintenance, and unrelated branches. A simple timeline forces all units into one order. A formation section preserves units and direct relations before proposing phases.
-- **Operating range:** Use with drafts, commits, notes, records, oral history, or other accumulated material that supports recoverable units and relations. Do not use for one bounded event sequence, a polished artifact with no trace of formation, or a story whose “layers” are only a metaphor.
-- **Input:** Freeze one bounded corpus. Each unit needs an identifier, content or description, and a source pointer. Relations may include earlier than, later than, cuts, overwrites, contains, reuses, or no established order.
+- **Phenomenon sought:** How an accumulated artifact, belief, project, dispute, or technology formed through additions, cuts, overwrites, reuse, branches, and combinations whose order or lineage may be only partly known.
+- **Why use it:** A current state hides discarded work, residual parts, maintenance, unrelated branches, and earlier building blocks nested inside later assemblies. A simple timeline forces all units into one order; a flat parts list can also confuse what the artifact contains with what historically enabled it. A formation section preserves units and direct relations before proposing phases or ancestry.
+- **Operating range:** Use with drafts, commits, notes, records, oral history, technical documentation, or other accumulated material that supports recoverable units and relations. For technology lineage, require evidence about actual components, predecessors, enabling technologies, or operating principles. Do not use for one bounded event sequence, a polished artifact with no trace of formation, or a story whose “layers” or “ancestors” are only metaphors.
+- **Input:** Freeze one bounded corpus. Each unit needs an identifier, content or description, and a source pointer. Record a unit's formation date only when the source supports it; the date of a document that mentions a unit is not automatically the unit's date. Relations may include earlier than, later than, cuts, overwrites, contains, reuses, or no established order.
 - **What changes:** The operation decomposes the current whole into units and projects their direct relations as a partial order. It can expose hidden work but may also invent clean layers or progress.
 - **Procedure:**
   1. **Freeze the corpus.** State what is included, excluded, and missing.
-  2. **Register units.** Give each source unit a stable ID and record its content, source, and survival state: present, removed, overwritten, reused, or uncertain.
-  3. **Record direct relations only.** Add earlier/later, cut, overwrite, containment, reuse, and branch relations supported by the sources. Leave unrelated units unordered.
+  2. **Register units.** Give each source unit a stable ID and record its content, source, survival state—present, removed, overwritten, reused, or uncertain—and level when the corpus contains nested assemblies. Keep the source or mention date separate from the unit's supported formation date or range; leave the latter unknown when the record does not establish it.
+  3. **Record direct relations only.** Add earlier/later, cut, overwrite, containment, reuse, combination, adaptation, and branch relations supported by the sources. Leave unrelated units unordered.
   4. **Check the relation graph.** Flag cycles, contradictions, and relations inferred only from current position. Do not convert horizontal placement into time.
   5. **Name formation processes.** Describe additions, deletions, reuse, compression, maintenance, and residual survival that the direct relations support.
-  6. **Propose phases separately.** Group units into one or more candidate phases only when useful. Mark the rule for each grouping, preserve alternative groupings, and never replace the unit register with the phase story.
-  7. **Render the section.** Return a readable cross-section or partial-order diagram beside the unit and relation registers. Show gaps and branches.
-  8. **Run reconstruction.** Check that the registered operations can produce the current artifact without erasing surviving units or inventing order.
-- **Result:** Return the frozen corpus, unit register, direct relation register, branches, contradictions, formation processes, candidate phases, visual section, reconstruction result, missing sources, and unresolved order.
-- **Control:** Source pointers and direct relations are the baseline. The graph check catches impossible order; reconstruction checks whether the account can produce the current state. Keep phase inference beside, never instead of, the unit register.
-- **Common distortions:** Units are chosen to fit a story; later means better; adjacency becomes chronology; deletion becomes absence of influence; hidden work is romanticized; or a clean phase scheme overwrites branches and uncertainty.
+  6. **Run the optional technology-lineage pass.** State the focal technology's purpose and any sourced phenomenon or operating principle it exploits. Recursively open a component only while sources support its subassemblies. Classify every lineage edge as **contained component**, **adapted component**, **supporting or enabling technology**, **shared or inherited operating principle**, or **challenge–solution dependency**. Keep these relations distinct: an enabler need not be contained, a shared principle need not establish descent, and a present-day decomposition does not prove historical ancestry.
+  7. **Trace recursive reuse.** Where sources permit, mark when a combination became a reusable building block for a later unit. Preserve both need-first formation—an unmet purpose led to a sought principle—and phenomenon-first formation—a discovered effect suggested a use—without inventing which route occurred.
+  8. **Propose phases separately.** Group units into one or more candidate phases only when useful. Mark the rule for each grouping, preserve alternative groupings, and never replace the unit or lineage register with the phase story.
+  9. **Render the section.** Return a readable cross-section or partial-order diagram beside the unit and relation registers. Show nested assemblies, gaps, and branches without turning every enabling relation into containment.
+  10. **Run reconstruction.** Check that the registered operations can produce the current artifact without erasing surviving units, inventing order, or supplying an undocumented ancestor. For technology lineage, also check whether the documented assembly and principle could perform the stated purpose; mark missing support rather than repairing it.
+- **Result:** Return the frozen corpus, unit register, direct relation register, branches, contradictions, formation processes, candidate phases, visual section, reconstruction result, missing sources, and unresolved order. When the technology-lineage pass runs, also return purpose, sourced phenomena or principles, recursive assembly levels, typed lineage edges, challenge–solution dependencies, reusable building blocks, and unresolved ancestry.
+- **Control:** Source pointers and direct relations are the baseline. The graph check catches impossible order; reconstruction checks whether the account can produce the current state. Audit every date against what it dates—the unit, the document, or only the mention. Keep functional decomposition separate from historical lineage, and phase inference beside, never instead of, the unit register. Reject ancestry based only on resemblance, shared purpose, or a plausible engineering story.
+- **Common distortions:** Units are chosen to fit a story; later means better; a mention date becomes a formation date; adjacency becomes chronology; deletion becomes absence of influence; a current component tree becomes a historical genealogy; a shared principle becomes proof of descent; every enabler is drawn as a contained part; hidden work is romanticized; or a clean phase scheme overwrites branches and uncertainty.
 - **Escalate / stop:** Stop when the corpus cannot support distinct units or direct relations. A causal, value, or decision claim requires another chosen operation.
 - **What it requires:** Source extraction, relation checking, and a readable rendering. Use a Field Log when the corpus, corrections, and diagram need to persist.
 - **Execution placement:** **Orchestrator.** One executor must hold the frozen corpus, unit IDs, relation register, and reconstruction control together. A fresh agent may audit a bounded relation graph, but it may not infer missing order from a summary.
-- **Distinctness:** Unlike [`substrate-map`](substrate-map.md), this instrument represents accumulation and partial order rather than one event sequence. Unlike [`atlas`](atlas.md), it seeks formation processes rather than session memory and navigation. Unlike [`design-grammar`](design-grammar.md), it reconstructs how one state formed rather than the language of adjacent possible forms.
-- **Provenance:** The operation adapts archaeological single-context recording, stratigraphic relations, Harris matrices, and formation-process analysis to source-traceable human artifacts. See [Historic England's Archaeological Recording Manual](https://historicengland.org.uk/content/docs/research/historic-england-archaeological-recording-manual-2018/). The transfer beyond archaeology remains a Field Lab hypothesis.
+- **Distinctness:** Unlike [`substrate-map`](substrate-map.md), this instrument represents accumulation and partial order rather than one event sequence. Unlike [`atlas`](atlas.md), it seeks formation processes rather than session memory and navigation. Unlike [`design-grammar`](design-grammar.md), it reconstructs supported formation and lineage of one state rather than generating the language of adjacent possible forms.
+- **Provenance:** The core operation adapts archaeological single-context recording, stratigraphic relations, Harris matrices, and formation-process analysis to source-traceable human artifacts. See [Historic England's Archaeological Recording Manual](https://historicengland.org.uk/content/docs/research/historic-england-archaeological-recording-manual-2018/). The optional technology-lineage pass adapts W. Brian Arthur's account of technologies as recursive combinations of earlier building blocks that harness phenomena, while distinguishing a purpose-led search for a principle from a phenomenon-led discovery of use. See Arthur's [overview of *The Nature of Technology*](https://sites.santafe.edu/~wbarthur/thenatureoftechnology.htm), [“The Structure of Invention”](https://sites.santafe.edu/~wbarthur/Papers/Invention-Arthur.pdf), and Arthur and Polak's [“The Evolution of Technology within a Simple Computer Model”](https://doi.org/10.1002/cplx.20130). The transfer beyond archaeology and documented technology history remains a Field Lab hypothesis.
