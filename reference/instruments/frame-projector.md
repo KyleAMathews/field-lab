@@ -136,7 +136,7 @@ When using an abstract label for experienced and specific material, map it back 
 
 ## Rendering contract
 
-Whenever a phase or instrument says to draw, produce, present, or return a 2×2, render **both** a plain ASCII diagram and an SVG from one shared JSON spec. Put the ASCII diagram inline for the user and in any saved artifact. Save the SVG beside it and embed or link it when the client supports images. A title followed by `axis A × axis B: label, label, label, label`, four bullets, a Markdown table, or only one of the two required formats does not satisfy a completion gate.
+Whenever a phase or instrument says to draw, produce, present, or return a 2×2, render **both** a plain ASCII diagram and a self-contained interactive HTML page from one shared JSON spec. Put the ASCII diagram inline for the user and in any saved artifact. Save the HTML beside it and link or preview it when the client supports HTML. A title followed by `axis A × axis B: label, label, label, label`, four bullets, a Markdown table, or only one of the two required formats does not satisfy a completion gate.
 
 Use the bundled renderer; do not spend context hand-authoring either format:
 
@@ -144,7 +144,7 @@ Use the bundled renderer; do not spend context hand-authoring either format:
 node scripts/render-frame.js --out <artifact-path-without-extension> <frame.json>
 ```
 
-The command writes `<artifact-path>.txt` and `<artifact-path>.svg`. Keep the JSON input as the source trace. Give it this shape:
+The command writes `<artifact-path>.txt`, `<artifact-path>.html`, and `<artifact-path>.svg`. The TXT and HTML files are the required pair. The SVG is a static compatibility fallback while clients adopt the HTML preview. Keep the JSON input as the source trace. Give it this shape:
 
 ```json
 {
@@ -175,11 +175,11 @@ The command writes `<artifact-path>.txt` and `<artifact-path>.svg`. Keep the JSO
 }
 ```
 
-Color is optional. Omit `categories` and `category` for the default black-and-white rendering. Add categories only when they encode a distinction already present in the inventory—for example, observed versus proposed cases, two constituencies, or two source classes. Each category needs a short `label` and a six-digit hex `color`; assign its key to each relevant example with `category`. Prefer two to four colors that remain distinct on white, such as blue `#0072B2` and vermilion `#D55E00`. The renderer chooses black or white point numbers for contrast, repeats the category label in the SVG legend and ASCII placement list, and leaves uncategorized examples black. Never rely on color alone or use decorative color to imply an unsupported distinction.
+Color is optional. Omit `categories` and `category` for the default black-and-white rendering. Add categories only when they encode a distinction already present in the inventory—for example, observed versus proposed cases, two constituencies, or two source classes. Each category needs a short `label` and a six-digit hex `color`; assign its key to each relevant example with `category`. Prefer two to four colors that remain distinct on white, such as blue `#0072B2` and vermilion `#D55E00`. The renderer chooses black or white point numbers for contrast, names categories in the HTML filters and example details as well as the ASCII placement list, and leaves uncategorized examples black. Never rely on color alone or use decorative color to imply an unsupported distinction.
 
 The JSON `examples` array is the featured plot set, not the full phenomenology inventory. Use four to eight cases when the material supports them, never more than eight total or four per quadrant. Fewer is better when the added points repeat the same information, but do not flatten a meaningful cluster merely to distribute points evenly across the frame. Give each case a short `plotReason` that says what makes it diagnostic; the renderer rejects an unjustified or crowded set. If a statistical map needs a full data cloud, use a statistical chart rather than this presentation renderer.
 
-Use normalized `x` and `y` coordinates from `0` to `1`. Give every featured example its claim kind in `provenance` and an inventory or source pointer in `source`. Use `note` for a placement qualification such as proximity to a line, straddling, or movement over time. The ASCII diagram shows up to two featured examples in each cell and lists all placements below it. The SVG plots the same curated set as numbered points and carries each label, selection reason, category when present, provenance, source pointer, and note in its legend. Keep all other members in the inventory and cluster trace outside the frame. Use `status` only for an evidentially earned `empty` or `under-occupied` quadrant; the renderer marks a cell `empty` automatically when it has no plotted members.
+Use normalized `x` and `y` coordinates from `0` to `1`. Give every featured example its claim kind in `provenance` and an inventory or source pointer in `source`. Use `note` for a placement qualification such as proximity to a line, straddling, or movement over time. The ASCII diagram shows up to two featured examples in each cell and lists all placements below it. The HTML plots the same curated set as numbered points. Hovering, focusing, or tapping a point reveals its label, selection reason, category when present, provenance, source pointer, and note in a tooltip; quadrant names and the calibration control expose their own details the same way. The **Read quadrants** control opens an on-demand reader with all four quadrant names, descriptions, statuses, and featured examples in 2×2 order; use it when someone wants to scan the map as prose. Keep the main screen dense, with no repeated region, example, or calibration sections below the plot. Its filters may help inspect categories, but every substantive field must remain in the document and expand into the print view so the evidence survives printing, script failure, and text extraction. Keep all other members in the inventory and cluster trace outside the frame. Use `status` only for an evidentially earned `empty` or `under-occupied` quadrant; the renderer marks a cell `empty` automatically when it has no plotted members.
 
 Every candidate map must show:
 
@@ -187,9 +187,9 @@ Every candidate map must show:
 2. visible horizontal and vertical directions;
 3. four visibly divided cells, each with its own label, treated as fuzzy regions rather than exclusive bins;
 4. at least one diagnostic example or strong prototype in every occupied cell—never more than four placements per cell or eight total—or an explicit `[empty]` / `[under-occupied]` mark;
-5. the axis claim type, second-axis confidence, source pointers for placements, and orthogonality result immediately below the diagram.
+5. the axis claim type, second-axis confidence, source pointers for placements, and orthogonality result available from clearly labeled point and calibration controls adjacent to the diagram, and expanded in print.
 
-If several candidate maps are generated, render **every map separately in both formats**. Do not compress the set into one-line summaries. If labels are too long, shorten the cell names and preserve the fuller descriptions in the SVG; never remove the axes, boxes, or placements to save space.
+If several candidate maps are generated, render **every map separately in both required formats**. Do not compress the set into one-line summaries. If labels are too long, shorten the cell names and preserve the fuller descriptions in the HTML quadrant tooltips; never remove the axes, boxes, or placements to save space.
 
 Name the axes with real poles, not bare “high/low”—for example, `control: centralized ↔ emergent`. Use high/low only when the measured variable itself is named.
 

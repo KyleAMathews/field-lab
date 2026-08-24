@@ -34,7 +34,7 @@ const SPEC = {
   },
 };
 
-test("renders one spec to ASCII and accessible SVG", () => {
+test("renders one spec to ASCII, interactive HTML, and accessible SVG", () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
   const input = path.join(directory, "frame.json");
   const output = path.join(directory, "result");
@@ -44,7 +44,10 @@ test("renders one spec to ASCII and accessible SVG", () => {
     encoding: "utf8",
   });
   assert.equal(result.status, 0, result.stderr);
-  assert.equal(result.stdout, `${output}.txt\n${output}.svg\n`);
+  assert.equal(
+    result.stdout,
+    `${output}.txt\n${output}.html\n${output}.svg\n`,
+  );
 
   const ascii = fs.readFileSync(`${output}.txt`, "utf8");
   assert.match(ascii, /Control and horizon/);
@@ -52,6 +55,35 @@ test("renders one spec to ASCII and accessible SVG", () => {
   assert.match(ascii, /why plotted: strongest prototype/);
   assert.match(ascii, /\[under-occupied\]/);
   assert.match(ascii, /Axis claim type: conceptual/);
+
+  const html = fs.readFileSync(`${output}.html`, "utf8");
+  assert.match(html, /^<!doctype html>/);
+  assert.match(html, /Content-Security-Policy/);
+  assert.match(html, /data-tooltip-trigger/);
+  assert.match(html, /role="tooltip"/);
+  assert.match(html, /data-calibration-trigger/);
+  assert.match(html, /data-quadrants-trigger/);
+  assert.match(html, /<dialog class="quadrant-dialog"[^>]*aria-labelledby="quadrant-dialog-title"/);
+  assert.match(html, /quadrantDialog\.showModal\(\)/);
+  assert.match(html, /quadrantDialog\.addEventListener\('close', \(\) => quadrantTrigger\.focus\(\)\)/);
+  assert.match(html, /Community protocol<\/strong>/);
+  assert.match(html, /Patient and distributed\./);
+  assert.match(html, /data-filter="all"/);
+  assert.match(html, /data-select="2"/);
+  assert.match(html, /\.region \{[\s\S]*?z-index: 4;/);
+  assert.match(html, /\.region:hover[^}]*z-index: 70;/);
+  assert.match(html, /\.point-cluster \{[^}]*z-index: auto;/);
+  assert.match(html, /\.tooltip-details div \{[^}]*align-items: baseline;/);
+  assert.match(html, /\.tooltip-details div \{[^}]*grid-template-columns: 110px minmax\(0, 1fr\);/);
+  assert.match(html, /\.tooltip-details dt \{[^}]*overflow-wrap: anywhere;/);
+  assert.match(html, /\.tooltip-details dd \{[^}]*overflow-wrap: anywhere;/);
+  assert.match(html, /A &amp; B &lt;pilot&gt;/);
+  assert.match(html, /Why plotted/);
+  assert.match(html, /print-ledger/);
+  assert.doesNotMatch(html, /Fuzzy center of gravity|exclusive bin/);
+  assert.doesNotMatch(html, /Why these cases|Selected example|Centers of gravity/);
+  assert.doesNotMatch(html, /<link\b|src="https?:/);
+  assert.doesNotMatch(html, /[ \t]+$/m);
 
   const svg = fs.readFileSync(`${output}.svg`, "utf8");
   assert.match(svg, /<svg[^>]+role="img"/);
@@ -66,7 +98,7 @@ test("renders one spec to ASCII and accessible SVG", () => {
   assert.ok(svg.indexOf(">Calibration<") < svg.indexOf(">Examples<"));
 });
 
-test("uses optional category colors while naming categories in both formats", () => {
+test("uses optional category colors while naming categories in every format", () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "frame-renderer-"));
   const input = path.join(directory, "categories.json");
   const output = path.join(directory, "result");
@@ -101,6 +133,12 @@ test("uses optional category colors while naming categories in both formats", ()
   assert.match(svg, /category: Proposed/);
   assert.match(svg, /aria-label="1\. Community protocol, category Observed/);
   assert.match(svg, /fill="#111">2<\/text>/);
+
+  const html = fs.readFileSync(`${output}.html`, "utf8");
+  assert.match(html, /--swatch:#0072B2/);
+  assert.match(html, /--point:#F0E442/);
+  assert.match(html, />Observed </);
+  assert.match(html, />Proposed </);
 });
 
 test("rejects coordinates outside the normalized frame", () => {

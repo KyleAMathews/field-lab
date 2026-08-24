@@ -2,6 +2,28 @@ import Papa from "papaparse";
 import { contentUrl } from "../collections/content";
 import type { RendererProps } from "./registry";
 
+const HTML_PREVIEW_CSP = [
+	"default-src 'none'",
+	"img-src data:",
+	"style-src 'unsafe-inline'",
+	"script-src 'unsafe-inline'",
+	"font-src data:",
+	"connect-src 'none'",
+	"media-src data:",
+	"frame-src 'none'",
+	"base-uri 'none'",
+	"form-action 'none'",
+].join("; ");
+
+function sandboxHtml(source: string) {
+	const policy = `<meta http-equiv="Content-Security-Policy" content="${HTML_PREVIEW_CSP}">`;
+	const head = /<head(?:\s[^>]*)?>/i;
+	if (head.test(source)) {
+		return source.replace(head, (match) => `${match}\n${policy}`);
+	}
+	return `${policy}\n${source}`;
+}
+
 export function MediaRenderer({
 	file,
 	content,
@@ -20,6 +42,16 @@ export function MediaRenderer({
 	if (file.rendererId === "pdf")
 		return <iframe className="media-frame" src={url} title={file.name} />;
 	if (file.rendererId === "html") {
+		if (content.text !== null) {
+			return (
+				<iframe
+					className="media-frame"
+					sandbox="allow-scripts"
+					srcDoc={sandboxHtml(content.text)}
+					title={file.name}
+				/>
+			);
+		}
 		return (
 			<iframe className="media-frame" sandbox="" src={url} title={file.name} />
 		);
