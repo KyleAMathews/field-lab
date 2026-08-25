@@ -179,6 +179,23 @@ Surface an exception only when the case suggests it, it is common enough to alte
 
 Use the bench below to choose what to offer. After the user selects an instrument, read its card in full before running it. Obey its operating range, input, execution seat, context boundary, fallback, control, readout, artifact risk, and stop rule.
 
+### Parallel execution
+
+Treat parallel work as the default for any lengthy authorized operation. Before
+starting, split the work into independent units and launch every ready unit at
+once. Batch independent tool calls; use separate subagents when their clean
+contexts, distinct expertise, or independent readings improve the result. While
+one unit runs, continue any other useful work that does not depend on it. Wait
+only at the first real dependency barrier, and only for the result that the next
+step needs.
+
+Parallelism changes scheduling, not scope or authority. Preserve user gates,
+declared instrument order, execution-seat and context-isolation rules,
+epistemic dependencies, shared-state safety, and single-writer contracts. Do
+not run steps concurrently when one can contaminate another's observation or
+when one needs the other's output. When a selected batch contains independent
+instruments whose cards allow concurrent execution, run that batch in parallel.
+
 ### Selection and lifecycle
 
 - Let the user select an instrument by direct request, choice from an offer, agreement to a Field Trip plan that names it, or selection of a workflow whose schedule names it.
