@@ -67,6 +67,8 @@ describe("Field Log journal entries", () => {
 					id: "instrument-1",
 					kind: "instrument",
 					recordedAt: "2026-07-30T08:00:00-06:00",
+					runId: 17,
+					instrumentId: "design-grammar",
 					title: "Design Grammar",
 					summary:
 						"Read in this order:\n\n1. **Frozen baseline**\n2. [Primitives](notes.md)",
@@ -82,6 +84,7 @@ describe("Field Log journal entries", () => {
 		);
 
 		expect(screen.getByText("Frozen baseline").tagName).toBe("STRONG");
+		expect(screen.getByText(/design-grammar · Run 17/)).toBeInTheDocument();
 		expect(screen.getByRole("list")).toBeInTheDocument();
 		expect(screen.getByRole("link", { name: "Primitives" })).toHaveAttribute(
 			"href",

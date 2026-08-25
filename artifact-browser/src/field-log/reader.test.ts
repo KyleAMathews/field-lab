@@ -98,6 +98,13 @@ describe("Field Log reader", () => {
 				}),
 			]),
 		);
+		const referencedRunHits = await searchFieldLog(directory, "run id 1");
+		expect(referencedRunHits).toHaveLength(1);
+		expect(referencedRunHits[0]).toMatchObject({
+			kind: "readout",
+			entryId: 1,
+			runId: 1,
+		});
 		const sourceHits = await searchFieldLog(directory, "hidden fracture");
 		expect(sourceHits).toEqual(
 			expect.arrayContaining([

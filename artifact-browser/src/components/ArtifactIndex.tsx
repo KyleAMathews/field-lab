@@ -69,7 +69,7 @@ export function ArtifactIndex({
 			entry.kind === "instrument" &&
 			entry.readoutMarkdown &&
 			(!query ||
-				`${entry.title} ${entry.summary} ${entry.instrumentId}`
+				`${entry.title} ${entry.summary} ${entry.instrumentId} run ${entry.runId} run id ${entry.runId}`
 					.toLocaleLowerCase()
 					.includes(query)) &&
 			(selectedKind === "all" || selectedKind === "readout") &&
@@ -121,7 +121,7 @@ export function ArtifactIndex({
 					<Search size={15} aria-hidden="true" />
 					<input
 						aria-label="Search artifacts"
-						placeholder="Search titles, paths, and readouts"
+						placeholder="Search titles, run IDs, and readouts"
 						value={search.aq ?? ""}
 						onChange={(event) =>
 							navigate({ aq: event.target.value || undefined }, true)
@@ -200,7 +200,8 @@ export function ArtifactIndex({
 							<strong>{entry.title}</strong>
 							<span>{entry.summary}</span>
 							<small>
-								Readout · {entry.instrumentId} · {entry.status}
+								Readout · Run {entry.runId} · {entry.instrumentId} ·{" "}
+								{entry.status}
 							</small>
 						</span>
 					</button>

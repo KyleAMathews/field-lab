@@ -382,7 +382,10 @@ function FieldLogDashboard({
 						<p>
 							{activeRuns.length
 								? activeRuns
-										.map((run) => `${run.instrumentId} · ${run.status}`)
+										.map(
+											(run) =>
+												`${run.instrumentId} · Run ${run.runId} · ${run.status}`,
+										)
 										.join(", ")
 								: (projection.plan.find(
 										(item) => !/complete|removed/i.test(item.status ?? ""),
@@ -584,7 +587,7 @@ function FieldLogDashboard({
 							<div>
 								<span className="eyebrow">
 									{selectedReadout
-										? `${selectedReadout.instrumentId} · ${selectedReadout.status}`
+										? `${selectedReadout.instrumentId} · Run ${selectedReadout.runId} · ${selectedReadout.status}`
 										: selectedDrawerEntry?.kind === "comment"
 											? "User comment"
 											: selectedDrawerEntry?.kind === "note"
@@ -785,6 +788,7 @@ export function JournalEntry({
 				<span className="journal-meta">
 					{formatDate(entry.recordedAt)}
 					{entry.instrumentId ? ` · ${entry.instrumentId}` : ""}
+					{entry.runId != null ? ` · Run ${entry.runId}` : ""}
 				</span>
 				{entry.kind === "comment" ? (
 					<>

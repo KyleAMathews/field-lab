@@ -158,7 +158,9 @@ export function SearchPage({
 								/>
 							</div>
 							<small>
-								{hit.tripTitle} · {hit.coverage ?? hit.file}
+								{hit.tripTitle} ·{" "}
+								{hit.runId != null ? `Run ${hit.runId} · ` : ""}
+								{hit.coverage ?? hit.file}
 							</small>
 						</article>
 					);

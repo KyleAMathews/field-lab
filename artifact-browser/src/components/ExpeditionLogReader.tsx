@@ -453,7 +453,7 @@ function ResolvedPromotion({
 				title={entry.title}
 				eyebrow={
 					entry.instrumentId
-						? `${entry.instrumentId} · ${entry.status ?? "complete"}`
+						? `${entry.instrumentId}${entry.runId != null ? ` · Run ${entry.runId}` : ""} · ${entry.status ?? "complete"}`
 						: "Expedition promotion"
 				}
 				sourceHref={fieldLogHref(fieldLogPath, promotion, capability)}

@@ -242,10 +242,26 @@ export async function searchFieldLog(
 	if (!trimmed) throw new Error("Search requires a non-empty query.");
 	const model = await readFieldLog(directory);
 	const needle = trimmed.toLocaleLowerCase();
+	const referencedRunId = /^(?:run(?:\s+id)?\s*[:#-]?\s*|#)(\d+)$/i.exec(
+		trimmed,
+	)?.[1];
+	const canonicalRunEvent = referencedRunId
+		? model.events.find(
+				(event) =>
+					event.type === "instrument.run.completed" &&
+					String(numberValue(event.payload.runId)) === referencedRunId,
+			)
+		: undefined;
 	const hits: FieldLogSearchHit[] = [];
 	for (const event of model.events) {
 		const searchable = JSON.stringify(event.payload);
-		if (!searchable.toLocaleLowerCase().includes(needle)) continue;
+		if (referencedRunId) {
+			if (
+				String(numberValue(event.payload.runId)) !== referencedRunId ||
+				(canonicalRunEvent != null && event !== canonicalRunEvent)
+			)
+				continue;
+		} else if (!searchable.toLocaleLowerCase().includes(needle)) continue;
 		const candidateEntryId = entryId(event);
 		const runId = numberValue(event.payload.runId);
 		const projectedEntry = eventEntry(event, model);
