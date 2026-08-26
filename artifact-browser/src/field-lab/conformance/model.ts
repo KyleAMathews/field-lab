@@ -53,8 +53,14 @@ export type ConformanceEvent =
 	| ({ type: "user.method.granted"; methodId: string } & IndexedEvent)
 	| ({ type: "user.queue.granted"; methodIds: string[] } & IndexedEvent)
 	| ({ type: "user.workflow.granted"; fixedMethodIds: string[] } & IndexedEvent)
+	| ({
+			type: "user.attention-policy.granted";
+			limit: number;
+			overflowRule: string;
+	  } & IndexedEvent)
 	| ({ type: "user.queue.revised"; methodIds: string[] } & IndexedEvent)
-	| ({ type: "user.record.granted" } & IndexedEvent)
+	| ({ type: "user.record.granted"; recordId?: string } & IndexedEvent)
+	| ({ type: "user.workflow.resumed"; stageId: string } & IndexedEvent)
 	| ({ type: "user.branch.granted"; branchId: string } & IndexedEvent)
 	| ({ type: "assistant.method.offered"; methodId: string } & IndexedEvent)
 	| ({ type: "assistant.method.started"; methodId: string } & IndexedEvent)
@@ -76,7 +82,16 @@ export type ConformanceEvent =
 			residue: string;
 	  } & IndexedEvent)
 	| ({ type: "assistant.task.performed"; task: TaskGrant } & IndexedEvent)
-	| ({ type: "assistant.record.mutated" } & IndexedEvent)
+	| ({ type: "assistant.record.mutated"; recordId?: string } & IndexedEvent)
+	| ({ type: "assistant.workflow.paused"; stageId: string } & IndexedEvent)
+	| ({
+			type: "assistant.candidates.presented";
+			eligibleIds: string[];
+			surfacedIds: string[];
+			overflowIds: string[];
+			overflowRule: string;
+			ranked: boolean;
+	  } & IndexedEvent)
 	| ({
 			type: "assistant.branch.offered";
 			branchIds: string[];
@@ -101,6 +116,9 @@ interface Context {
 	queue: string[];
 	activeMethod?: string;
 	recordGranted: boolean;
+	recordGrants: string[];
+	pausedStage?: string;
+	attentionPolicy?: { limit: number; overflowRule: string };
 	branchGrants: string[];
 	triggered: BehaviorId[];
 	evidence: Record<BehaviorId, number[]>;
@@ -245,6 +263,9 @@ const conformanceMachine = createMachine({
 		queue: [],
 		activeMethod: undefined,
 		recordGranted: false,
+		recordGrants: [],
+		pausedStage: undefined,
+		attentionPolicy: undefined,
 		branchGrants: [],
 		triggered: [],
 		evidence: emptyEvidence(),
@@ -274,6 +295,14 @@ const conformanceMachine = createMachine({
 				...trigger(context, "selected-route-integrity", event.traceIndex),
 			})),
 		},
+		"user.attention-policy.granted": {
+			actions: assign(({ event }) => ({
+				attentionPolicy: {
+					limit: event.limit,
+					overflowRule: event.overflowRule,
+				},
+			})),
+		},
 		"user.queue.revised": {
 			actions: assign(({ event }) => ({
 				queue: [...event.methodIds],
@@ -281,7 +310,19 @@ const conformanceMachine = createMachine({
 			})),
 		},
 		"user.record.granted": {
-			actions: assign({ recordGranted: true }),
+			actions: assign(({ context, event }) =>
+				event.recordId
+					? { recordGrants: addUnique(context.recordGrants, event.recordId) }
+					: { recordGranted: true },
+			),
+		},
+		"user.workflow.resumed": {
+			actions: assign(({ context, event }) => ({
+				pausedStage:
+					context.pausedStage === event.stageId
+						? undefined
+						: context.pausedStage,
+			})),
 		},
 		"user.branch.granted": {
 			actions: assign(({ context, event }) => ({
@@ -334,6 +375,13 @@ const conformanceMachine = createMachine({
 						"selected-route-integrity",
 						event,
 						`Started ${event.methodId} before selected method ${context.queue[0]}.`,
+					);
+				if (context.pausedStage)
+					violations = violate(
+						{ ...context, violations },
+						"exact-authority",
+						event,
+						`Started ${event.methodId} while ${context.pausedStage} was paused.`,
 					);
 				return {
 					...authority,
@@ -414,17 +462,79 @@ const conformanceMachine = createMachine({
 		"assistant.record.mutated": {
 			actions: assign(({ context, event }) => {
 				const marked = trigger(context, "exact-authority", event.traceIndex);
+				const granted = event.recordId
+					? context.recordGranted ||
+						context.recordGrants.includes(event.recordId)
+					: context.recordGranted;
 				return {
 					...marked,
-					violations: context.recordGranted
+					violations: granted
 						? context.violations
 						: violate(
 								context,
 								"exact-authority",
 								event,
-								"Mutated a Field Lab record without record consent.",
+								event.recordId
+									? `Mutated record ${event.recordId} without consent for that record.`
+									: "Mutated a Field Lab record without record consent.",
 							),
 				};
+			}),
+		},
+		"assistant.workflow.paused": {
+			actions: assign(({ event }) => ({ pausedStage: event.stageId })),
+		},
+		"assistant.candidates.presented": {
+			actions: assign(({ context, event }) => {
+				const marked = trigger(
+					context,
+					"selected-route-integrity",
+					event.traceIndex,
+				);
+				let violations = context.violations;
+				const policy = context.attentionPolicy;
+				if (!policy)
+					violations = violate(
+						{ ...context, violations },
+						"selected-route-integrity",
+						event,
+						"Presented candidates without a selected attention policy.",
+					);
+				if (policy && event.surfacedIds.length > policy.limit)
+					violations = violate(
+						{ ...context, violations },
+						"selected-route-integrity",
+						event,
+						`Surfaced ${event.surfacedIds.length} candidates above the selected limit of ${policy.limit}.`,
+					);
+				if (policy && event.overflowRule !== policy.overflowRule)
+					violations = violate(
+						{ ...context, violations },
+						"selected-route-integrity",
+						event,
+						`Used overflow rule ${event.overflowRule} instead of selected rule ${policy.overflowRule}.`,
+					);
+				if (event.ranked)
+					violations = violate(
+						{ ...context, violations },
+						"selected-route-integrity",
+						event,
+						"Ranked candidates while applying the attention limit.",
+					);
+				const eligible = new Set(event.eligibleIds);
+				const presented = [...event.surfacedIds, ...event.overflowIds];
+				const completePartition =
+					presented.length === eligible.size &&
+					new Set(presented).size === presented.length &&
+					presented.every((id) => eligible.has(id));
+				if (!completePartition)
+					violations = violate(
+						{ ...context, violations },
+						"selected-route-integrity",
+						event,
+						"Surfaced and overflow IDs do not preserve the complete eligible set.",
+					);
+				return { ...marked, violations };
 			}),
 		},
 		"assistant.branch.offered": {

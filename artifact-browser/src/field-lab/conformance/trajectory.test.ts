@@ -55,6 +55,35 @@ describe("raw trajectory conformance", () => {
 			naReason: "insufficient_evidence",
 		});
 	});
+
+	it("persists the packaging pause, resume, and exact choice", () => {
+		const fixture = trajectoryFixtures.find(
+			(item) => item.id === "essay-positive-packaging-checkpoint",
+		);
+		if (!fixture) throw new Error("Missing Essay packaging fixture.");
+		const eventType = (event: (typeof fixture.trajectory.events)[number]) =>
+			(event.metadata?.event as { type?: string } | undefined)?.type;
+		const packagingPause = fixture.trajectory.events.find(
+			(event) =>
+				eventType(event) === "assistant.workflow.paused" &&
+				(event.metadata?.event as { stageId?: string } | undefined)?.stageId ===
+					"essay-design-packaging",
+		);
+		const packagingSelection = fixture.trajectory.events.find(
+			(event) =>
+				eventType(event) === "user.branch.granted" &&
+				event.metadata?.choiceId === "packaging-source-residual",
+		);
+		const packagingResume = fixture.trajectory.events.find(
+			(event) =>
+				eventType(event) === "user.workflow.resumed" &&
+				event.metadata?.choiceId === "packaging-source-residual",
+		);
+
+		expect(packagingPause).toBeDefined();
+		expect(packagingSelection).toBeDefined();
+		expect(packagingResume).toBeDefined();
+	});
 });
 
 describe("Field Log trace adapter", () => {

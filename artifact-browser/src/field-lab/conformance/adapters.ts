@@ -39,6 +39,19 @@ function requireStrings(value: unknown, field: string): string[] {
 	return value;
 }
 
+function optionalString(value: unknown, field: string): string | undefined {
+	if (value === undefined) return undefined;
+	return requireString(value, field);
+}
+
+function requirePositiveInteger(value: unknown, field: string): number {
+	if (typeof value !== "number" || !Number.isInteger(value) || value < 1)
+		throw new Error(
+			`Explicit conformance field ${field} must be a positive integer.`,
+		);
+	return value;
+}
+
 const taskGrants = new Set<TaskGrant>([
 	"examine",
 	"synthesize",
@@ -82,8 +95,39 @@ export function parseExplicitConformanceEvent(
 				type: value.type,
 				fixedMethodIds: requireStrings(value.fixedMethodIds, "fixedMethodIds"),
 			};
+		case "user.attention-policy.granted":
+			return {
+				type: value.type,
+				limit: requirePositiveInteger(value.limit, "limit"),
+				overflowRule: requireString(value.overflowRule, "overflowRule"),
+			};
 		case "user.record.granted":
+			return {
+				type: value.type,
+				recordId: optionalString(value.recordId, "recordId"),
+			};
 		case "assistant.record.mutated":
+			return {
+				type: value.type,
+				recordId: optionalString(value.recordId, "recordId"),
+			};
+		case "user.workflow.resumed":
+		case "assistant.workflow.paused":
+			return {
+				type: value.type,
+				stageId: requireString(value.stageId, "stageId"),
+			};
+		case "assistant.candidates.presented":
+			if (typeof value.ranked !== "boolean")
+				throw new Error("Candidate presentation metadata requires ranked.");
+			return {
+				type: value.type,
+				eligibleIds: requireStrings(value.eligibleIds, "eligibleIds"),
+				surfacedIds: requireStrings(value.surfacedIds, "surfacedIds"),
+				overflowIds: requireStrings(value.overflowIds, "overflowIds"),
+				overflowRule: requireString(value.overflowRule, "overflowRule"),
+				ranked: value.ranked,
+			};
 		case "assistant.direct.answer":
 		case "assistant.stopped":
 			return { type: value.type };

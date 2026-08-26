@@ -1,6 +1,6 @@
 ---
 name: field-lab
-description: "An always-available field lab for thinking with AI, guided by Kit: a lively field caddy who knows the instrument case and helps the user use it on material they choose. Use it for any question, from a factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when enough. Treat open-ended requests to understand, explain, or make sense of conceptual or interpretive material as caddying prompts, not permission for a long explanation: recommend a concrete way to examine the material and run only what the user selects. For other nontrivial inquiries, ask what the user hopes to accomplish when that would change the instrument. Return only what each operation supports; synthesize, recommend, decide, plan, or act only when asked. Offer a Field Log when sources, findings, and open questions need to stay together; collect related logs in an Expedition; run the Electric Monk dialectic only as a selected workflow."
+description: "An always-available field lab for thinking with AI, guided by Kit. Use it for any question, from a factual query or practical problem to a genuine tension, hostile thesis test, high-stakes decision, or full recursive dialectic. Give direct answers when enough. Treat open-ended requests to understand, explain, or make sense of conceptual or interpretive material as caddying prompts, not permission for a long explanation: recommend a concrete way to examine the material and run only what the user selects. For other nontrivial inquiries, ask what the user hopes to accomplish when that would change the instrument. Return only what each operation supports; synthesize, recommend, decide, plan, or act only when asked. Offer a Field Log when sources, findings, and open questions need to stay together; collect related logs in an Expedition; use Essay to find and develop source-grounded essays from completed Field Logs; run the Electric Monk dialectic only as a selected workflow."
 ---
 
 # Field Lab
@@ -318,6 +318,7 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | ID                                                                            | Offer when                                                                            | Access target                                                                               |
 | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | [`focus-interview`](reference/instruments/focus-interview.md)                 | The stated request may not be the actual inquiry                                      | Confirmed aim, stakes, prior, and highest-value unknown                                     |
+| [`research-survey`](reference/instruments/research-survey.md)                 | Later inquiry needs a broad, source-traced evidence landscape                         | Current searchable evidence, major positions and conflicts, coverage limits, and a portable Markdown record |
 | [`open-page`](reference/instruments/open-page.md)                             | Repeated analytic questions would constrain what a person can express                 | An uninterrupted, source-preserved account in the person's own order and language           |
 | [`substrate-map`](reference/instruments/substrate-map.md)                     | Events are mixed with motives or explanations                                         | Observable sequence, handoffs, and missing observations                                     |
 | [`behavior-chain`](reference/instruments/behavior-chain.md)                   | A person wants to understand how one specific action or lapse came about              | Reported conditions, links, consequences, and competing functions                           |
@@ -352,6 +353,19 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`neutral-control`](reference/instruments/neutral-control.md)                 | A strong probe may add structure that was not present before                          | A frozen pre-perturbation baseline and the later delta                                      |
 | [`framing-sensitivity`](reference/instruments/framing-sensitivity.md)         | A result may depend on wording, order, or model                                       | Stable and frame-sensitive components under controlled variants                             |
 | [`negative-transfer`](reference/instruments/negative-transfer.md)             | A donor mapping may fit everything                                                    | Its prediction and failure boundary on a nearby negative case                               |
+| [`editorial-source-survey`](reference/instruments/editorial-source-survey.md) | Completed inquiry material may contain useful editorial signals beyond its headline  | Traceable seams, shadows, particulars, gaps, source topology, and honest editorial scale     |
+| [`editorial-candidate-map`](reference/instruments/editorial-candidate-map.md) | A frozen source survey supports several possible essays                              | A varied, unranked map of source-grounded essay candidates                                   |
+| [`prior-art-subtraction`](reference/instruments/prior-art-subtraction.md)     | A candidate may be a familiar argument in new language                               | Its supported remainder after the nearest established arguments are removed                 |
+| [`source-transfer-assay`](reference/instruments/source-transfer-assay.md)     | A source or donor domain carries part of an essay's argument                         | Source validity, assigned role, transfer warrant, and category-error risk                    |
+| [`mechanism-discriminator`](reference/instruments/mechanism-discriminator.md) | An essay claims to explain why or how something happens                              | Its explanatory sequence and evidence that separates it from nearby accounts                |
+| [`evidence-sufficiency`](reference/instruments/evidence-sufficiency.md)       | A candidate's claim may exceed the source evidence                                   | Claim-level support, confidence, scale fit, adverse evidence, and gaps                       |
+| [`reader-promise`](reference/instruments/reader-promise.md)                   | A candidate's value to a named reader remains vague                                  | The evidence-mediated change the essay could honestly promise                               |
+| [`candidate-collision`](reference/instruments/candidate-collision.md)         | Several candidates may be alternate phrasings or sections of one essay               | Whether candidates are distinct, nested, sequential, or duplicates                          |
+| [`editorial-design`](reference/instruments/editorial-design.md)               | A validated candidate needs an outline fitted to its source shape and reader goal    | Outline families, source-preserving designs, and the losses of each                          |
+| [`outcome-ablation`](reference/instruments/outcome-ablation.md)               | One component is claimed to cause a named reader outcome                             | The controlled outcome difference when that component changes                               |
+| [`reader-assay`](reference/instruments/reader-assay.md)                       | A draft needs a fresh test of what readers recover                                   | Reader reconstruction, confusion, memory, usable change, and genericity                      |
+| [`semantic-drift`](reference/instruments/semantic-drift.md)                   | Editing may have changed claim, confidence, causality, scope, or attribution         | Substantive meaning changes between frozen versions                                          |
+| [`source-bound-drafting`](reference/instruments/source-bound-drafting.md)     | An approved design must become prose without silently adding theory or support       | A source-traced draft, transformation failures, and draft-generated return questions          |
 
 When the user names an instrument, skip search and read that card. After any selection, read the entire card before explaining or preparing the operation. The card body owns the complete procedure and controls; search results and frontmatter are not substitutes.
 
@@ -415,6 +429,29 @@ read the old Markdown, initialize the compound log, append the events needed to
 reconstruct its current briefing, render, and compare before moving the old
 file. Do not look for a migration CLI command.
 
+## Essay workflow
+
+Treat Essay as a selected six-stage workflow for finding, testing, designing,
+and drafting essays from one or more completed Field Logs. During design, it
+first returns source- and goal-fit outline families, then waits for the user to
+choose the organizing logic before it drafts concrete outlines. A direct request to
+“use Essay,” “find the essay in this Field Log,” or run the full editorial
+discovery-and-development route selects it. A request to transform fixed
+sources, claim, and structure into prose does not require the workflow.
+
+Every Essay run creates its own Field Log. It registers the originating Field
+Logs as read-only sources and never joins, resumes, or mutates them. That Essay
+Field Log owns the brief, source survey, candidate map, validation readings,
+design choices, draft questions, branches, and workflow trace. Do not create
+`essay_space.md`, per-essay logs, candidate logs, or any other special essay
+log.
+
+Before entering Essay, read [essay-workflow.md](reference/essay-workflow.md).
+Then read [essay-instrument-map.md](reference/essay-instrument-map.md) and only
+the current stage file named by the workflow. Follow its source boundary,
+attention policy, stage-opening gates, human branch points, return-work rule,
+and separate publication authorization.
+
 ## Rubric Builder workflow
 
 Treat Rubric Builder as a selected six-stage workflow for a paced preference
@@ -458,6 +495,9 @@ Use one owner for each rule:
 - [field-station-protocol.md](reference/field-station-protocol.md): deferred
   design for autonomous protocols and their commissioning workflow; read it
   only when designing scheduled or autonomous Field Lab work.
+- [essay-workflow.md](reference/essay-workflow.md): Essay entry, stage order,
+  read-only source boundary, attention policy, branch authority, return work,
+  artifacts, completion, and re-entry.
 - Field Trip and Expedition files: materialization procedures and log schemas.
 - [dialectic-workflow.md](reference/dialectic-workflow.md): all workflow-wide gates and safeguards.
 - Phase and stage files: only their local work, deliverables, and checklist.
