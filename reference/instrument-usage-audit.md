@@ -37,12 +37,17 @@ home-domain uses.
 | `behavior-chain`          | 0              | `draft`       |
 | `belief-stress`           | 4              | `trialed`     |
 | `blind-cartography`       | 10             | `practiced`   |
+| `candidate-collision`     | 0              | `draft`       |
 | `candidate-spectrograph`  | 2              | `trialed`     |
 | `criterion-excavation`    | 2              | `trialed`     |
 | `defamiliarize`           | 4              | `trialed`     |
 | `design-grammar`          | 25             | `established` |
 | `donor-perturb`           | 12             | `practiced`   |
 | `elenchus`                | 11             | `practiced`   |
+| `editorial-candidate-map` | 0              | `draft`       |
+| `editorial-design`        | 0              | `draft`       |
+| `editorial-source-survey` | 0              | `draft`       |
+| `evidence-sufficiency`    | 0              | `draft`       |
 | `focus-interview`         | 12             | `practiced`   |
 | `formation-section`       | 7              | `trialed`     |
 | `fracture-scan`           | 12             | `practiced`   |
@@ -53,13 +58,22 @@ home-domain uses.
 | `home-frame-leak`         | 1              | `trialed`     |
 | `hostile-assay`           | 8              | `trialed`     |
 | `loss-audit`              | 27             | `established` |
+| `mechanism-discriminator` | 0              | `draft`       |
 | `negative-transfer`       | 8              | `trialed`     |
 | `neutral-control`         | 5              | `trialed`     |
 | `open-page`               | 0              | `draft`       |
+| `outcome-ablation`        | 0              | `draft`       |
 | `position-preservation`   | 2              | `trialed`     |
+| `prior-art-subtraction`   | 0              | `draft`       |
 | `real-world-check`        | 0              | `draft`       |
+| `reader-assay`            | 0              | `draft`       |
+| `reader-promise`          | 0              | `draft`       |
+| `research-survey`         | 0              | `draft`       |
 | `residue-collect`         | 8              | `trialed`     |
 | `self-distanced-replay`   | 0              | `draft`       |
+| `semantic-drift`          | 0              | `draft`       |
+| `source-bound-drafting`   | 0              | `draft`       |
+| `source-transfer-assay`   | 0              | `draft`       |
 | `stake-map`               | 0              | `draft`       |
 | `structural-recombine`    | 105            | `established` |
 | `substrate-map`           | 9              | `trialed`     |
@@ -70,6 +84,11 @@ home-domain uses.
 
 ## Material qualifications
 
+- The thirteen Essay instruments begin at zero. Older Dialectic Press artifacts
+  shaped their admission and controls, but those workflow outputs do not prove
+  that the new standalone cards completed their own operations.
+- `research-survey` was added after the dated corpus audit with zero completed
+  home-domain uses. Its structural validator tests do not count as uses.
 - `behavior-chain` remains at zero. One prior agent-failure comparison helped
   with card admission, but the shipped card targets human material and that
   trial does not test it. The later synthetic comparator run also does not

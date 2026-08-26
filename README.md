@@ -27,6 +27,7 @@ Then call Field Lab with whatever is on your mind:
 /field-lab Keep a Field Log for three weeks of deployment observations.
 /field-lab Link our Field Logs on AI-assisted code review.
 /field-lab Put the case for our framework owning deployment through the full Electric Monk dialectic.
+/field-lab Use Essay to find and develop publishable ideas in this completed Field Log.
 ```
 
 ## What I do
@@ -45,11 +46,18 @@ If the inquiry starts producing sources, comparisons, or findings worth keeping,
 
 For a question that needs several linked steps, I may offer a workflow such as the Electric Monk dialectic. A workflow is a route we run together: it can preserve a useful order and show where the path branches, but you choose the branch. You can stop whenever you have enough. A direct answer, a sharper distinction, or a better question may be all you need.
 
+The Essay workflow starts a new Field Log for the editorial work and reads the
+originating Field Log as a source. It surveys what the inquiry can support,
+maps and tests possible essays, and can carry one user-selected candidate
+through a user-selected outline family, detailed design, and drafting. The
+source log stays unchanged, and publication still needs a separate request.
+
 ## What I carry
 
 Here are some of the instruments:
 
 - *Term scan:* hold up words like _clean_, _fair_, or _safe_ and see where their meanings split;
+- *Research survey:* build a source-traced Markdown landscape of a question, with disputes, coverage limits, and open gaps;
 - *Substrate map:* reconstruct what happened step by step before guessing why;
 - *Real-world check:* try one safe, reversible change and compare what happens with what you expected;
 - *Exploratory 2×2:* collect and cluster concrete examples before drawing the axes;
@@ -98,6 +106,7 @@ None of these thinkers supplies a complete philosophy for the lab. Each changed 
 - [`.agents/behaviors/`](.agents/behaviors/): sparse, authoritative standards for reviewing Field Lab trajectories
 - [`reference/instruments/`](reference/instruments/): the instrument bench
 - [`reference/workflow-contract.md`](reference/workflow-contract.md): the contract for human-operated workflows
+- [`reference/essay-workflow.md`](reference/essay-workflow.md): the Essay workflow for completed Field Logs
 - [`reference/field-station-protocol.md`](reference/field-station-protocol.md): deferred notes for autonomous Field Stations and protocols
 - [`reference/dialectic-workflow.md`](reference/dialectic-workflow.md): the Electric Monk workflow
 - [`reference/conformance-suite.md`](reference/conformance-suite.md): behavior-spec calibration and raw-trace boundaries
