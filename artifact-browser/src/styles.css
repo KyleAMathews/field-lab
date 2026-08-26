@@ -1161,11 +1161,14 @@ h6 {
 .readout-drawer > header > div {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   gap: 7px;
 }
 
 .readout-drawer > header h2 {
   margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-size: clamp(23px, 2.5vw, 36px);
   font-weight: 500;
 }
@@ -1177,13 +1180,21 @@ h6 {
 }
 
 .readout-scroll {
-  overflow: auto;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: clamp(28px, 5vw, 72px);
 }
 
 .readout-scroll .markdown {
+  width: 100%;
+  min-width: 0;
   max-width: 780px;
   margin: 0 auto;
+}
+
+.readout-scroll .markdown h1 {
+  font-size: clamp(28px, 4.5vw, 40px);
 }
 
 .artifact-index {
@@ -1485,6 +1496,8 @@ h6 {
 .markdown {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
   gap: 1.05rem;
   font-family: var(--heading-font);
   color: #2f2b27;
@@ -1502,6 +1515,8 @@ h6 {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-family: var(--heading-font);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1523,6 +1538,7 @@ h6 {
 .markdown p,
 .markdown li {
   max-width: 68ch;
+  overflow-wrap: anywhere;
 }
 
 .markdown a {
@@ -1532,10 +1548,12 @@ h6 {
 }
 
 .markdown blockquote {
+  max-width: 100%;
   padding-left: 20px;
   border-left: 2px solid #bda18c;
   color: #675f57;
   font-style: italic;
+  overflow-wrap: anywhere;
 }
 
 .markdown img {
@@ -1549,6 +1567,12 @@ h6 {
   border-collapse: collapse;
   font-family: var(--body-font);
   font-size: 13px;
+}
+
+.readout-scroll .markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .markdown th,
