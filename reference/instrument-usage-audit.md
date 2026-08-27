@@ -4,7 +4,7 @@ This ledger supports the `maturity` and `documented_uses` fields on canonical
 instrument cards. It records completed Field Lab uses, not efficacy,
 correctness, user benefit, or donor-field evidence.
 
-**Audited:** 2026-08-23
+**Audited:** 2026-08-27
 
 **Corpus:** this repository, `/Users/kylemathews/programs/dialectics`, and
 `/Users/kylemathews/programs/scripture-study`
@@ -48,6 +48,7 @@ home-domain uses.
 | `editorial-design`        | 0              | `draft`       |
 | `editorial-source-survey` | 0              | `draft`       |
 | `evidence-sufficiency`    | 0              | `draft`       |
+| `evidence-to-claim`       | 3              | `trialed`     |
 | `focus-interview`         | 12             | `practiced`   |
 | `formation-section`       | 7              | `trialed`     |
 | `fracture-scan`           | 12             | `practiced`   |
@@ -55,16 +56,19 @@ home-domain uses.
 | `framing-sensitivity`     | 0              | `draft`       |
 | `frontier-rheometer`      | 3              | `trialed`     |
 | `ground-condition`        | 13             | `practiced`   |
+| `guide-word-sweep`        | 0              | `draft`       |
 | `home-frame-leak`         | 1              | `trialed`     |
 | `hostile-assay`           | 8              | `trialed`     |
 | `loss-audit`              | 27             | `established` |
 | `mechanism-discriminator` | 0              | `draft`       |
+| `morphological-field`     | 0              | `draft`       |
 | `negative-transfer`       | 8              | `trialed`     |
 | `neutral-control`         | 5              | `trialed`     |
 | `open-page`               | 0              | `draft`       |
 | `outcome-ablation`        | 0              | `draft`       |
 | `position-preservation`   | 2              | `trialed`     |
 | `prior-art-subtraction`   | 0              | `draft`       |
+| `process-grammar`         | 0              | `draft`       |
 | `real-world-check`        | 0              | `draft`       |
 | `reader-assay`            | 0              | `draft`       |
 | `reader-promise`          | 0              | `draft`       |
@@ -74,6 +78,7 @@ home-domain uses.
 | `semantic-drift`          | 0              | `draft`       |
 | `source-bound-drafting`   | 0              | `draft`       |
 | `source-transfer-assay`   | 0              | `draft`       |
+| `situated-discourse`      | 5              | `trialed`     |
 | `stake-map`               | 0              | `draft`       |
 | `structural-recombine`    | 105            | `established` |
 | `substrate-map`           | 9              | `trialed`     |
@@ -87,8 +92,31 @@ home-domain uses.
 - The thirteen Essay instruments begin at zero. Older Dialectic Press artifacts
   shaped their admission and controls, but those workflow outputs do not prove
   that the new standalone cards completed their own operations.
+- `morphological-field`, `process-grammar`, and `guide-word-sweep` were added
+  after the dated corpus audit with zero
+  completed home-domain uses. Their donor-method comparison and Design grammar
+  extraction do not count as runs of the new standalone cards.
+- `evidence-to-claim` has three completed uses across two Neon inquiries. In
+  the 2026-08-24 programming-value-shift inquiry, run 8 produced three linked
+  exact charts over one bounded Research Survey corpus; that campaign counts
+  once, not once per chart. Run 19 separately audited the verification claim.
+  In the Neon product API catalog, run 14 audited the whole-backend create and
+  lifecycle-symmetry claim. These runs exercised target freezing, chart-key
+  synchronization, rival paths, explicit gaps, and the no-weighing stop.
+  Forecast probability and strategic choice remained outside the runs, and
+  maturity remains `trialed`.
 - `research-survey` was added after the dated corpus audit with zero completed
   home-domain uses. Its structural validator tests do not count as uses.
+- `situated-discourse` has five completed fresh-context uses across three
+  inquiries. Native PostgreSQL sync-spine runs 40 and 41 reconstructed
+  Supabase's 2020–2022 public category-making episode from narrow and expanded
+  corpora; run 43 then produced the source-linked 18-episode dossier without
+  choosing a story. Separate 2026-08-26 Field Trips produced dossiers for
+  PostgreSQL JSONB and LISTEN/NOTIFY. Runs 40 and 41 used the predecessor form,
+  which joined evidence collection to narrative construction. Their evidence
+  work still exercises the current dossier's core, while their user feedback
+  motivated the explicit handoff to a separate editorial workflow. The later
+  three runs exercised that separation. Maturity remains `trialed`.
 - `behavior-chain` remains at zero. One prior agent-failure comparison helped
   with card admission, but the shipped card targets human material and that
   trial does not test it. The later synthetic comparator run also does not
@@ -133,6 +161,8 @@ Representative current-card evidence appears in:
 - `dialectics/expedition-databricks-neon-product-fieldwork/field-trips/agentic-infrastructure-neon/field_log.jsonl`
 - `dialectics/expedition-databricks-neon-product-fieldwork/field-trips/neon-reactivity-api-design/field_log.jsonl`
 - `dialectics/expedition-databricks-neon-product-fieldwork/field-trips/product-strategy-tensions/field_log.jsonl`
+- `dialectics/field-trip-postgres-jsonb-situated-discourse/field_log.jsonl`
+- `dialectics/field-trip-postgres-listen-notify-situated-discourse/field_log.jsonl`
 - `dialectics/field-trip-orthostatic-readiness/field_log.jsonl`
 - `scripture-study/dialectics/providence-life-plan/field-trip/field_log.jsonl`
 - `scripture-study/field-trip-buddhist-grasping-and-lds-doctrine/field_log.jsonl`

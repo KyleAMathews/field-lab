@@ -5,7 +5,7 @@ summary: "A varied, unranked set of essay candidates grounded in frozen source s
 use_when: "A source survey supports several possible essays and one headline result would narrow the field"
 avoid_when: "Do not run before the source map and editorial brief are frozen or after expectation samples have contaminated generation."
 access_target: "Source-grounded essay possibilities across distinct editorial coordinates"
-requires: "A corrected source survey, frozen editorial brief, and expectation outputs hidden from every generator"
+requires: "A corrected source survey, every completed omission or remainder control ledger with item statuses intact, recorded control waivers, a frozen editorial brief, and expectation outputs hidden from every generator"
 execution_seat: hybrid
 fresh_context: preferred
 effort: high
@@ -20,22 +20,22 @@ documented_uses: 0
 - **Phenomenon sought:** Structurally distinct essays already supportable by a frozen source survey when source, reader, intervention, form, scale, and method disclosure vary independently.
 - **Why use it:** Sequential ideation converges on the synthesis, first thesis, or preferred audience. Controlled editorial variation exposes alternatives while source trace prevents free invention.
 - **Operating range:** Use after source survey and before expectation-map exposure. Do not use it to rank, validate novelty, repair missing theory, or generate from sparse topic prompts.
-- **Input:** Frozen source-signal register, editorial brief, source statuses, constraints, and named empty regions. Blind expectation outputs and desired winners must remain hidden.
+- **Input:** The complete typed source handoff: frozen `editorial-source-survey` source-signal register; every completed `loss-audit` and `residue-collect` ledger; control waivers; editorial brief; source statuses and boundaries; constraints; and named empty regions. Preserve recovered-omission status and dropping rules; residue lenses and evidence status; protected claims, limits, and missing-input labels; and explicit rejection or exclusion. Blind expectation outputs and desired winners must remain hidden.
 - **What changes:** The operation rotates editorial coordinates while holding source support fixed. It produces generated samples, not discovered facts.
 
 ## Procedure
 
-1. Freeze the candidate grammar: allowed source signals, possible readers, interventions, forms and scales, disclosure levels, and exclusions.
+1. Freeze the candidate grammar from the complete typed handoff. Read every completed omission or remainder control ledger before generation. Distinguish allowed survey signals; supported recovered omissions; sourced remainder; protected claims and limits; analyst interests; incompatible terms; missing input; and rejected, excluded, or out-of-bound material. A recovered item may remain available with its omission status intact; sourced residue may remain available as remainder; constraints and gaps may shape coordinates but are not positive evidence; unavailable material may not support a candidate unless the user changes its status or boundary.
 2. Generate across at least three coordinates. Include smaller pieces, failed moves, unresolved but honest questions, method pieces, and candidates in tension with the author's current view when the source supports them.
-3. Use separate sibling-hidden generators for different coordinate assignments when available. Each sees only the frozen brief, allowed source signals, and its assignment—not expectation probes, sibling candidates, rankings, or desired results.
-4. Give every candidate a stable ID and record: public question or claim; source signal and exact support; intervention; reader promise hypothesis; form and scale; theory and evidence gaps; source status; injected choices; risks; and related candidates.
+3. Use separate sibling-hidden generators for different coordinate assignments when available. Each sees the frozen brief, the same complete typed source handoff, and its assignment—not expectation probes, sibling candidates, rankings, or desired results.
+4. Give every candidate a stable ID and record: public question or claim; upstream item IDs; source signal and exact support; control-ledger status where applicable; intervention; reader promise hypothesis; form and scale; theory and evidence gaps; source status; injected choices; risks; and related candidates.
 5. Reject samples that lack a named source signal, depend on new theory, or differ only in wording. Preserve the rejection reason as a generated-sample control, not a validation verdict.
 6. Cluster relationships without ranking: competing accounts, different scales, possible sequence, shared evidence, or likely duplicate.
 7. Freeze the map before any blind expectation output reaches the orchestrator.
 
-- **Result:** Frozen candidate cards, coordinate coverage, generation traces, relationship clusters, rejected prompt-only samples, injected choices, and empty regions. Every candidate remains unvalidated.
-- **Control:** Source pointers and frozen brief constrain generation. Sibling-hidden contexts reduce convergence. A reconstruction check must show that each card can be rebuilt from allowed source signals without new theory.
-- **Common distortions:** Coverage quotas inflate weak candidates; audience changes look like new claims; polish hides sameness; generators import remembered expectation basins; or inferred source signals are presented as evidence.
+- **Result:** Frozen candidate cards, typed handoff coverage, coordinate coverage, generation traces, relationship clusters, rejected prompt-only samples, injected choices, and empty regions. Every candidate remains unvalidated.
+- **Control:** Source pointers, upstream item IDs, preserved handoff statuses, and the frozen brief constrain generation. Record every input item as used, constraint or gap, unavailable, or unused without treating coverage as merit. Sibling-hidden contexts reduce convergence. A reconstruction check must show that each card can be rebuilt from allowed source material without new theory.
+- **Common distortions:** Audit findings are ignored because they were not merged into the survey; recovered or residual items are silently promoted; explicit exclusions re-enter as evidence; coverage quotas inflate weak candidates; audience changes look like new claims; polish hides sameness; generators import remembered expectation basins; or inferred source signals are presented as evidence.
 - **Escalate / stop:** Escalate to `blind-cartography` only after the freeze. Offer another run only for a user-selected empty coordinate. Stop when additional samples differ only in phrasing or unsupported ambition.
 - **What it requires:** Usually several fresh generators plus orchestration. A small map may be orchestrator-only but must be labeled correlated.
 - **Execution placement:** **Hybrid.** The orchestrator freezes source support, assignments, and candidate IDs. Fresh sibling-hidden generators produce samples; the orchestrator performs only source reconstruction and relationship clustering. Without fresh contexts, return a correlated provisional map and do not claim broad coverage.

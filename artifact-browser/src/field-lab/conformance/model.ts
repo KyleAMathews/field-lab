@@ -54,9 +54,8 @@ export type ConformanceEvent =
 	| ({ type: "user.queue.granted"; methodIds: string[] } & IndexedEvent)
 	| ({ type: "user.workflow.granted"; fixedMethodIds: string[] } & IndexedEvent)
 	| ({
-			type: "user.attention-policy.granted";
-			limit: number;
-			overflowRule: string;
+			type: "user.validation-set.granted";
+			candidateIds: string[];
 	  } & IndexedEvent)
 	| ({ type: "user.queue.revised"; methodIds: string[] } & IndexedEvent)
 	| ({ type: "user.record.granted"; recordId?: string } & IndexedEvent)
@@ -85,12 +84,13 @@ export type ConformanceEvent =
 	| ({ type: "assistant.record.mutated"; recordId?: string } & IndexedEvent)
 	| ({ type: "assistant.workflow.paused"; stageId: string } & IndexedEvent)
 	| ({
-			type: "assistant.candidates.presented";
-			eligibleIds: string[];
-			surfacedIds: string[];
-			overflowIds: string[];
-			overflowRule: string;
+			type: "assistant.candidate-map.presented";
+			candidateIds: string[];
 			ranked: boolean;
+	  } & IndexedEvent)
+	| ({
+			type: "assistant.candidates.validated";
+			candidateIds: string[];
 	  } & IndexedEvent)
 	| ({
 			type: "assistant.branch.offered";
@@ -118,7 +118,8 @@ interface Context {
 	recordGranted: boolean;
 	recordGrants: string[];
 	pausedStage?: string;
-	attentionPolicy?: { limit: number; overflowRule: string };
+	candidateMap?: string[];
+	validationSet?: string[];
 	branchGrants: string[];
 	triggered: BehaviorId[];
 	evidence: Record<BehaviorId, number[]>;
@@ -265,7 +266,8 @@ const conformanceMachine = createMachine({
 		recordGranted: false,
 		recordGrants: [],
 		pausedStage: undefined,
-		attentionPolicy: undefined,
+		candidateMap: undefined,
+		validationSet: undefined,
 		branchGrants: [],
 		triggered: [],
 		evidence: emptyEvidence(),
@@ -295,13 +297,35 @@ const conformanceMachine = createMachine({
 				...trigger(context, "selected-route-integrity", event.traceIndex),
 			})),
 		},
-		"user.attention-policy.granted": {
-			actions: assign(({ event }) => ({
-				attentionPolicy: {
-					limit: event.limit,
-					overflowRule: event.overflowRule,
-				},
-			})),
+		"user.validation-set.granted": {
+			actions: assign(({ context, event }) => {
+				const marked = trigger(
+					context,
+					"selected-route-integrity",
+					event.traceIndex,
+				);
+				const map = new Set(context.candidateMap ?? []);
+				const invalidIds = event.candidateIds.filter((id) => !map.has(id));
+				const hasDuplicates =
+					new Set(event.candidateIds).size !== event.candidateIds.length;
+				return {
+					...marked,
+					validationSet: [...event.candidateIds],
+					violations:
+						context.candidateMap && invalidIds.length === 0 && !hasDuplicates
+							? context.violations
+							: violate(
+									context,
+									"selected-route-integrity",
+									event,
+									context.candidateMap
+										? hasDuplicates
+											? "Selected a validation set with duplicate candidate IDs."
+											: `Selected candidates outside the frozen map: ${invalidIds.join(", ")}.`
+										: "Selected a validation set before the candidate map was presented.",
+								),
+				};
+			}),
 		},
 		"user.queue.revised": {
 			actions: assign(({ event }) => ({
@@ -484,7 +508,7 @@ const conformanceMachine = createMachine({
 		"assistant.workflow.paused": {
 			actions: assign(({ event }) => ({ pausedStage: event.stageId })),
 		},
-		"assistant.candidates.presented": {
+		"assistant.candidate-map.presented": {
 			actions: assign(({ context, event }) => {
 				const marked = trigger(
 					context,
@@ -492,47 +516,56 @@ const conformanceMachine = createMachine({
 					event.traceIndex,
 				);
 				let violations = context.violations;
-				const policy = context.attentionPolicy;
-				if (!policy)
+				if (new Set(event.candidateIds).size !== event.candidateIds.length)
 					violations = violate(
 						{ ...context, violations },
 						"selected-route-integrity",
 						event,
-						"Presented candidates without a selected attention policy.",
-					);
-				if (policy && event.surfacedIds.length > policy.limit)
-					violations = violate(
-						{ ...context, violations },
-						"selected-route-integrity",
-						event,
-						`Surfaced ${event.surfacedIds.length} candidates above the selected limit of ${policy.limit}.`,
-					);
-				if (policy && event.overflowRule !== policy.overflowRule)
-					violations = violate(
-						{ ...context, violations },
-						"selected-route-integrity",
-						event,
-						`Used overflow rule ${event.overflowRule} instead of selected rule ${policy.overflowRule}.`,
+						"Presented a candidate map with duplicate IDs.",
 					);
 				if (event.ranked)
 					violations = violate(
 						{ ...context, violations },
 						"selected-route-integrity",
 						event,
-						"Ranked candidates while applying the attention limit.",
+						"Ranked candidates before the user selected a validation set.",
 					);
-				const eligible = new Set(event.eligibleIds);
-				const presented = [...event.surfacedIds, ...event.overflowIds];
-				const completePartition =
-					presented.length === eligible.size &&
-					new Set(presented).size === presented.length &&
-					presented.every((id) => eligible.has(id));
-				if (!completePartition)
+				return {
+					...marked,
+					candidateMap: [...event.candidateIds],
+					violations,
+				};
+			}),
+		},
+		"assistant.candidates.validated": {
+			actions: assign(({ context, event }) => {
+				const marked = trigger(
+					context,
+					"selected-route-integrity",
+					event.traceIndex,
+				);
+				const selected = new Set(context.validationSet ?? []);
+				const validated = new Set(event.candidateIds);
+				const exactSet =
+					selected.size === validated.size &&
+					[...validated].every((id) => selected.has(id));
+				let violations =
+					context.validationSet && exactSet
+						? context.violations
+						: violate(
+								context,
+								"selected-route-integrity",
+								event,
+								context.validationSet
+									? "Validated candidates outside or short of the user-selected set."
+									: "Validated candidates before the user selected a validation set.",
+							);
+				if (new Set(event.candidateIds).size !== event.candidateIds.length)
 					violations = violate(
 						{ ...context, violations },
 						"selected-route-integrity",
 						event,
-						"Surfaced and overflow IDs do not preserve the complete eligible set.",
+						"Recorded duplicate candidate IDs in the validation result.",
 					);
 				return { ...marked, violations };
 			}),

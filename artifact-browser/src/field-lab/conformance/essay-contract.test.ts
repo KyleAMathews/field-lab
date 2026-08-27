@@ -8,6 +8,10 @@ const instrumentMapPath = resolve(
 	"reference/essay-instrument-map.md",
 );
 const workflowPath = resolve(skillRoot, "reference/essay-workflow.md");
+const candidateMapPath = resolve(
+	skillRoot,
+	"reference/instruments/editorial-candidate-map.md",
+);
 const stagePaths = [
 	"reference/essay-stage-1-frame.md",
 	"reference/essay-stage-2-survey.md",
@@ -133,5 +137,49 @@ describe("Essay workflow contract", () => {
 		const stageTwoBranches = parseStageBranches(stageSources[1] ?? "");
 		expect(stageTwoBranches).toContain("select-candidate-bodies");
 		expect(workflowSource).toContain("`select-candidate-bodies`");
+	});
+
+	it("carries every completed Stage 2 reading into the Stage 3 candidate map", async () => {
+		const [mapSource, stageThreeSource, candidateMapSource] = await Promise.all(
+			[
+				readFile(instrumentMapPath, "utf8"),
+				readFile(resolve(skillRoot, stagePaths[2] ?? ""), "utf8"),
+				readFile(candidateMapPath, "utf8"),
+			],
+		);
+		const stageTwoSchedule = parseMapSchedule(mapSource, 2);
+		const expectedInputs = [
+			...stageTwoSchedule.required,
+			...stageTwoSchedule.conditional,
+		];
+
+		expect(
+			new Set(parseStageList(stageThreeSource, "completed-stage-2")),
+		).toEqual(new Set(expectedInputs));
+		for (const instrumentId of expectedInputs)
+			expect(candidateMapSource).toContain(`\`${instrumentId}\``);
+	});
+
+	it("requires a user-selected set before expensive candidate validation", async () => {
+		const [workflowSource, stageThreeSource, stageFourSource] =
+			await Promise.all([
+				readFile(workflowPath, "utf8"),
+				readFile(resolve(skillRoot, stagePaths[2] ?? ""), "utf8"),
+				readFile(resolve(skillRoot, stagePaths[3] ?? ""), "utf8"),
+			]);
+
+		expect(parseStageBranches(stageThreeSource)).toContain(
+			"select-validation-set",
+		);
+		expect(parseStageBranches(stageFourSource)).toContain(
+			"select-validation-set",
+		);
+		expect(workflowSource).toContain("`select-validation-set`");
+		expect(stageFourSource).toMatch(
+			/^requires: .*explicit user-selected validation set/m,
+		);
+		expect(stageFourSource).toContain(
+			"For every candidate in the user-selected validation set",
+		);
 	});
 });

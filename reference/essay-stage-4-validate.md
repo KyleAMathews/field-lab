@@ -2,17 +2,17 @@
 
 ```yaml
 id: essay-validate
-aim: Test every candidate in the frozen source-grounded map under the attention and validation policy, then return only eligible candidates within the user's attention limit—or none.
-requires: A frozen source candidate map, completed expectation atlas, user-selected validation policy, and bounded research authorization.
+aim: Test the candidates the user selected from the frozen source-grounded map, then return each selected candidate's evidence-bound state.
+requires: A frozen source candidate map, completed expectation atlas, an explicit user-selected validation set, user-selected validation policy, and bounded research authorization.
 scheduled-instruments:
   required: [blind-cartography, prior-art-subtraction, source-transfer-assay, mechanism-discriminator, evidence-sufficiency, reader-promise, hostile-assay, candidate-collision]
   conditional: [negative-transfer when a cross-domain mapping carries argumentative support, research-survey when the user selects expanded validation research for a broad evidence landscape]
 order-rationale: Cartography records expectedness and collapse risk before research without ranking or eliminating candidates; prior art and source validity precede mechanism, evidence, reader value, hostility, and collision; motive applies only after evidence-bearing gates.
-operations: Apply the user-selected attention policy without changing it; record one eligibility state and binding trace per candidate; relate but do not rank eligible candidates.
-outputs: Candidate-specific gate traces, eligibility states, unranked eligible candidates, held and returned gaps, and a no-essay result when applicable.
-return-point: The user sees zero to the selected maximum eligible candidates and chooses development, more research, theory return, full-map inspection, map-only completion, or stop.
-completion-gate: Every surfaced candidate has completed every applicable card; every relevant negative-transfer offer is selected or declined; every hidden candidate has a preserved state and binding reason; no held or returned candidate is presented as eligible.
-branches: [run-negative-transfer, develop-candidate, expand-validation-research, return-for-theory, inspect-internal-map, finish-with-map, stop]
+operations: Preserve the exact validation-set choice; record one eligibility state and binding trace per selected candidate; relate but do not rank eligible candidates; leave unselected map entries unvalidated and recoverable.
+outputs: Candidate-specific gate traces and states for the selected set, unranked eligible candidates, held and returned gaps, preserved unvalidated candidates, and a no-essay result when applicable.
+return-point: The user sees every selected candidate's state and chooses development, another validation set, more research, theory return, full-map inspection, map-only completion, or stop.
+completion-gate: Every selected candidate completed every applicable card; every relevant negative-transfer offer is selected or declined; every unselected candidate remains preserved as unvalidated; no held, returned, or unvalidated candidate is presented as eligible.
+branches: [run-negative-transfer, develop-candidate, select-validation-set, expand-validation-research, return-for-theory, inspect-internal-map, finish-with-map, stop]
 ```
 
 ## Local order
@@ -24,7 +24,7 @@ branches: [run-negative-transfer, develop-candidate, expand-validation-research,
    source-specific residuals, and collapse risk. Expected recurrence is not
    historical novelty, quality, or eligibility; this reading cannot rank,
    eliminate, clear, or fail a candidate.
-2. For every candidate in the frozen source-grounded map, run
+2. For every candidate in the user-selected validation set, run
    [`prior-art-subtraction`](instruments/prior-art-subtraction.md),
    [`source-transfer-assay`](instruments/source-transfer-assay.md),
    [`mechanism-discriminator`](instruments/mechanism-discriminator.md),
@@ -108,19 +108,11 @@ a standalone essay under this brief is `orientation only`; all remaining
 candidates are `eligible`. Preserve every underlying result. Classification
 does not erase or settle conflicts.
 
-After collision mapping, apply the frozen overflow rule to eligible candidates.
-The recommended rule is coverage-first: take one candidate from each distinct
-collision group and candidate-map region in frozen map order, then continue in
-stable candidate-ID order until the attention limit is reached. Do not use
-novelty, promise, evidence strength, prose appeal, motive, or Kit's preference
-to choose the surfaced set. Record the eligible count, surfaced IDs, overflow
-IDs, sampling steps, and full-map inspection branch.
-
 ## Gate and return
 
-For each surfaced candidate, return its public claim, remainder after prior-art
+For each selected candidate, return its public claim, remainder after prior-art
 subtraction, mechanism and evidence, reader promise, why it remains eligible,
-chief unresolved risk, and sampling reason. State how many eligible candidates
-remain in overflow without implying that surfaced candidates are better.
-Return relationships without ranking. If none remain, say so directly and
-preserve the internal map. Pause for the user's branch choice.
+and chief unresolved risk. Return relationships without ranking. List the
+unselected candidate IDs as preserved and unvalidated, without assigning them a
+failure state. If none of the selected candidates remain eligible, say so
+directly and preserve the full map. Pause for the user's branch choice.

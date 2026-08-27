@@ -22,7 +22,7 @@ the workflow are separate user permissions.
 ## Compact map
 
 1. **Frame the search** — confirm why the essay might matter, possible readers,
-   source boundaries, success standard, attention and validation policies, and
+   source boundaries, success standard, map-review and validation policies, and
    research budget after an orienting full read of the source Field Logs.
    The user sees the frozen editorial brief before source interpretation begins.
 2. **Survey the source** — inspect the source Field Logs for traceable editorial
@@ -30,12 +30,14 @@ the workflow are separate user permissions.
    omissions, particulars, and unresolved gaps before generation begins.
 3. **Map the essay space** — generate a varied, source-grounded candidate map,
    freeze it, and only then compare it with blind expectation samples. The user
-   sees coverage and gaps, not candidate exhaust, unless they ask for it.
-4. **Validate and select** — test candidates against reconstruction, prior art,
+   sees a compact sketch of every candidate and chooses which ones merit the
+   expensive validation pass.
+4. **Validate and select** — test only the user-selected candidates against reconstruction, prior art,
    source transfer, mechanism, evidence, reader value, hostile failure, and
    collision. Reconstruction reports expectedness and collapse risk but never
-   ranks or eliminates. The user sees no more than the attention policy allows
-   and chooses whether any candidate continues.
+   ranks or eliminates. The user sees every selected candidate's state and
+   chooses whether any candidate continues. Unselected map entries remain
+   available for later validation.
 5. **Design the essay** — compare outline families that fit the source shape and
    reader goal, let the user choose one, then develop and test concrete
    source-preserving outlines and public packaging within it. The user chooses
@@ -98,7 +100,7 @@ and hand-written decision ledgers. Record in it:
 - source collection and examination coverage;
 - every instrument lifecycle and bounded reading;
 - candidate IDs, typed source support, validation results, and unresolved gaps;
-- the selected attention and validation policies and every later branch choice;
+- the selected map-review and validation policies and every later branch choice;
 - user corrections, design choices, draft-generated questions, and approval;
 - workflow pauses, resumptions, completion gates, failures, and downgrades.
 
@@ -168,13 +170,16 @@ For each gate:
 4. preserve failures, residue, and unmeasured material; and
 5. proceed only after the human selects the next declared branch.
 
-## Attention and validation policy
+## Map review and validation policy
 
-Stage 1 asks the user to select an attention policy before candidates exist.
-The recommended policy is: keep unvalidated candidate exhaust in instrument
-readouts, apply the declared validation stack to every candidate that reaches
-it, and show no more than three candidates that remain eligible under the
-selected brief—or report that none remain.
+Do not ask the user to set an abstract candidate cap before candidates exist.
+The recommended map-review policy is: keep complete candidate cards in the
+instrument readout, show a compact sketch of every frozen candidate at the
+Stage 3 return, and let the user select the IDs that merit the expensive
+validation stack. The selection may contain any number of candidates. It is a
+work budget chosen from concrete material, not a ranking or eligibility claim.
+Unselected candidates remain preserved and unvalidated; the user may add them
+to a later validation pass.
 
 Stage 1 also freezes how gate readings become workflow states. The recommended
 validation policy requires complete applicable gates for eligibility, treats a
@@ -185,29 +190,24 @@ theory or interpretation, and does not resolve conflicting decision-bearing
 readings by vote or model confidence. Stage 4 records the exact result and
 predeclared rule that bind every state.
 
-When eligible candidates exceed the attention limit, use a predeclared
-non-ranking sample. The recommended rule covers distinct collision groups and
-candidate-map regions in frozen map order, then uses stable candidate IDs. Keep
-the complete eligible set and sampling trace in the Field Log. Surface order is
-not a judgment of worth, novelty, or evidence strength.
-
 This policy protects attention without giving Kit authority to abandon an
-inquiry. A candidate may be recorded as ineligible under the selected gates,
+inquiry. A selected candidate may be recorded as ineligible under the selected gates,
 held for evidence, returned for theory, useful only as orientation, or eligible
-for user choice. The user may inspect the full map, change the policy for a
-later pass, revive a candidate, or stop. Never change the frozen policy during
+for user choice. The user may inspect the full map, select another validation
+set, revive a candidate, or stop. Never change the frozen policy during
 validation to preserve a favored candidate.
 
 ## Branch contract
 
 | Branch | Observable condition | What it examines or changes | Added work and likely distortion | Rejoin or exit | Human checkpoint |
 | --- | --- | --- | --- | --- | --- |
-| Revise the brief | The user corrects audience, source boundary, success standard, attention policy, or validation policy | Whether the route is solving the intended editorial problem | Re-run only affected framing; early wording may anchor later work | Stage 1 | Stage 1 return |
+| Revise the brief | The user corrects audience, source boundary, success standard, map-review policy, or validation policy | Whether the route is solving the intended editorial problem | Re-run only affected framing; early wording may anchor later work | Stage 1 | Stage 1 return |
 | Select candidate bodies (`select-candidate-bodies`) | A completed dialectic contains candidate artifacts not already authorized as sources | Which named bodies enter Stage 2 examination coverage | Reading polished candidates may anchor the survey to prior synthesis | Stage 2 survey | Stage 2 source-inclusion checkpoint before body reading |
 | Run a loss audit (`run-loss-audit`) | A frozen reduction may have erased useful material carried by one source | Which sourced items vanished and which reduction rule dropped them | Separate source scans add work and may rescue material merely because it was omitted | Stage 2 return | Stage 2 conditional-instrument offer |
 | Collect residue (`run-residue-collect`) | A named frame may have dropped sourced material it cannot absorb | What sourced remainder the frame leaves and why | A remainder pass may mistake interest or missing input for residue | Stage 2 return | Stage 2 conditional-instrument offer |
 | Expand the source survey | A named source region remains unexamined and could change coverage | Whether omitted source material contains a distinct signal | More source reading may reward volume or salience | Stage 2 | Stage 2 return |
 | Expand the candidate map | A named source, reader, form, or intervention region is empty | Whether the map missed a candidate family | More generation may create cosmetic variety | Stage 3 | Stage 3 return |
+| Select candidates for validation (`select-validation-set`) | Stage 3 has returned compact sketches of the frozen candidate map | Which concrete candidates merit the expensive validation stack now | A small set can miss a quieter candidate; a large set increases research and fresh-agent cost | Stage 4 | Stage 3 return |
 | Run negative transfer (`run-negative-transfer`) | A candidate uses a cross-domain mapping as argumentative support | Whether the same mapping discriminates on a preselected nearby negative case | Control selection may be self-serving or the negative case may be too distant | Stage 4 before candidate classification | Per-candidate transfer checkpoint |
 | Expand validation research (`expand-validation-research`) | A candidate is held because the bounded prior-art or evidence pass is incomplete | Whether a user-bounded Research Survey or a wider rerun of the affected gate changes its result | Search availability may privilege documented fields; a broad survey may look conclusive | Stage 4, rerunning only affected gates | Stage 4 return |
 | Return for theory or evidence | A candidate depends on a new mechanism, interpretation, synthesis, or out-of-scope fact | The load-bearing gap | Another Field Trip may widen the inquiry or delay the essay | Pause; register returned Field Log as a new source | Any stage return |
@@ -225,7 +225,7 @@ validation to preserve a favored candidate.
 | Publish or share | An approved essay exists | External distribution | Irreversible exposure and publication rights | Separate action outside workflow completion | Post-completion request |
 
 Kit may explain why a branch fits the returned evidence. Kit never chooses a
-conditional branch, changes the attention or validation policy, abandons a
+conditional branch, changes the map-review or validation policy, abandons a
 candidate, or publishes by inference.
 
 A conditional calling signal authorizes only an offer. At the named checkpoint,
@@ -239,7 +239,7 @@ declared point.
 
 On a later session, validate and inspect the Essay Field Log before reading
 working artifacts. Recover the active workflow ID, lifecycle, stage, promised
-return, selected attention and validation policies, source list and examination
+return, selected map-review and validation policies, source list and examination
 coverage, instrument states, branch history, open questions, and artifact
 paths. Validate source Field Logs before reading them, but do not resume or
 modify their workflows. Ask only for state that the Essay log does not contain.

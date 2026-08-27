@@ -321,6 +321,8 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`research-survey`](reference/instruments/research-survey.md)                 | Later inquiry needs a broad, source-traced evidence landscape                         | Current searchable evidence, major positions and conflicts, coverage limits, and a portable Markdown record |
 | [`open-page`](reference/instruments/open-page.md)                             | Repeated analytic questions would constrain what a person can express                 | An uninterrupted, source-preserved account in the person's own order and language           |
 | [`substrate-map`](reference/instruments/substrate-map.md)                     | Events are mixed with motives or explanations                                         | Observable sequence, handoffs, and missing observations                                     |
+| [`situated-discourse`](reference/instruments/situated-discourse.md)           | A bounded digital history needs situated evidence rich enough to support several later stories | A reusable dossier of episodes, participant horizons, local codes, interactions, contradictions, and gaps |
+| [`process-grammar`](reference/instruments/process-grammar.md)                 | A grounded sequence may hide reusable prerequisite and replay structure               | Typed prerequisites, replay failures, repairs, and bounded alternate sequences               |
 | [`behavior-chain`](reference/instruments/behavior-chain.md)                   | A person wants to understand how one specific action or lapse came about              | Reported conditions, links, consequences, and competing functions                           |
 | [`self-distanced-replay`](reference/instruments/self-distanced-replay.md)     | A person wants another view of one event without disputing or analyzing their account | A source-traced observer-view rendering and its limits                                      |
 | [`stake-map`](reference/instruments/stake-map.md)                             | Feelings, needs, standards, constraints, or people remain implicit                    | Reported, inferred, aligned, conflicting, and unknown stakes                                |
@@ -333,11 +335,13 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`frame-projector`](reference/instruments/frame-projector.md)                 | Concrete examples may support several useful 2×2 projections                          | Candidate clusters, separating axes, missing quadrants, and projection loss                 |
 | [`home-frame-leak`](reference/instruments/home-frame-leak.md)                 | Home vocabulary may hide assumptions                                                  | Structure a fresh reader can see without the home frame                                     |
 | [`belief-stress`](reference/instruments/belief-stress.md)                     | Incompatible positions need full-strength, separated advocacy                         | What each committed position reveals or induces                                             |
+| [`evidence-to-claim`](reference/instruments/evidence-to-claim.md)             | One consequential factual claim or exact forecast rests on mixed support               | Its proposition-level support, rival paths, gaps, and explicit assumptions                   |
 | [`fracture-scan`](reference/instruments/fracture-scan.md)                     | A coherent position may fail by its own rule                                          | Its immanent fracture, preserved insight, and weakening evidence                            |
 | [`defamiliarize`](reference/instruments/defamiliarize.md)                     | Current vocabulary blocks new distinctions                                            | Foreign forms, translated distinctions, and their breakpoints                               |
 | [`donor-perturb`](reference/instruments/donor-perturb.md)                     | The home field lacks a needed mechanism                                               | Distant donor mechanisms, mappings, fit, and transfer limits                                |
 | [`structural-recombine`](reference/instruments/structural-recombine.md)       | Whole arguments hide possible cross-links among parts                                 | Decomposed parts, proposed links, calibration, and source trace                             |
 | [`design-grammar`](reference/instruments/design-grammar.md)                   | A fixed artifact or system may hide a reusable language of possible forms             | Primitives, overlaps, legal transformations, supported range, adjacent forms, and loss       |
+| [`morphological-field`](reference/instruments/morphological-field.md)         | A bounded problem has several interacting dimensions and familiar bundles dominate    | Compatible configurations, typed exclusions, wild cards, and model pathologies               |
 | [`formation-section`](reference/instruments/formation-section.md)             | Accumulated material contains additions, deletion, reuse, overwrites, or branches     | Source units, direct relations, formation processes, and uncertain phases                   |
 | [`attribute-interpolation`](reference/instruments/attribute-interpolation.md) | One specimen may change character as one meaningful quality varies                    | Generated thresholds, collateral changes, and invariants along one declared attribute       |
 | [`criterion-excavation`](reference/instruments/criterion-excavation.md)       | A person can recognize good and bad examples more easily than they can name why       | Candidate hidden but observable criteria exposed through corrected example records          |
@@ -349,6 +353,7 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`candidate-spectrograph`](reference/instruments/candidate-spectrograph.md)   | Several structurally distinct landings remain possible                                | Unranked candidates with different structural claims and losses                             |
 | [`position-preservation`](reference/instruments/position-preservation.md)     | A candidate may have erased a source position's real insight                          | Committed preservation, defeat, and repair readings                                         |
 | [`hostile-assay`](reference/instruments/hostile-assay.md)                     | A candidate needs a blind failure test                                                | Defeaters, broken links, failure scenes, and repair conditions                              |
+| [`guide-word-sweep`](reference/instruments/guide-word-sweep.md)               | A stable system intent needs systematic deviation coverage and owned follow-up         | Deviations, causes, consequences, safeguards, actions, closure, and revalidation             |
 | [`atlas`](reference/instruments/atlas.md)                                     | Session memory cannot expose drift, provenance, or cross-links                        | Searchable state, lineage, linked tensions, and gaps                                        |
 | [`neutral-control`](reference/instruments/neutral-control.md)                 | A strong probe may add structure that was not present before                          | A frozen pre-perturbation baseline and the later delta                                      |
 | [`framing-sensitivity`](reference/instruments/framing-sensitivity.md)         | A result may depend on wording, order, or model                                       | Stable and frame-sensitive components under controlled variants                             |
@@ -449,8 +454,8 @@ log.
 Before entering Essay, read [essay-workflow.md](reference/essay-workflow.md).
 Then read [essay-instrument-map.md](reference/essay-instrument-map.md) and only
 the current stage file named by the workflow. Follow its source boundary,
-attention policy, stage-opening gates, human branch points, return-work rule,
-and separate publication authorization.
+map-review and validation-selection policy, stage-opening gates, human branch
+points, return-work rule, and separate publication authorization.
 
 ## Rubric Builder workflow
 
@@ -496,8 +501,8 @@ Use one owner for each rule:
   design for autonomous protocols and their commissioning workflow; read it
   only when designing scheduled or autonomous Field Lab work.
 - [essay-workflow.md](reference/essay-workflow.md): Essay entry, stage order,
-  read-only source boundary, attention policy, branch authority, return work,
-  artifacts, completion, and re-entry.
+  read-only source boundary, map-review and validation-selection policy, branch
+  authority, return work, artifacts, completion, and re-entry.
 - Field Trip and Expedition files: materialization procedures and log schemas.
 - [dialectic-workflow.md](reference/dialectic-workflow.md): all workflow-wide gates and safeguards.
 - Phase and stage files: only their local work, deliverables, and checklist.
