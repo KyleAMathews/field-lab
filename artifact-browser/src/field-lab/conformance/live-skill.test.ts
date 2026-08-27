@@ -47,6 +47,21 @@ const liveCases: LiveCase[] = [
 		},
 	},
 	{
+		id: "open-research-request",
+		request:
+			"Research the current evidence landscape around whether four-day workweeks improve productivity. I want a broad initial survey with sources and gaps.",
+		assertTrace(commands, finalMessage) {
+			expect(commands.some((command) => command.includes("SKILL.md"))).toBe(
+				true,
+			);
+			expect(
+				commands.some((command) => command.includes("research-survey.md")),
+			).toBe(false);
+			expect(finalMessage).toMatch(/Research Survey/i);
+			expect(finalMessage).toMatch(/want me to run|want to try|shall I run/i);
+		},
+	},
+	{
 		id: "selected-term-scan",
 		request:
 			"Use a Term scan on this statement: The proposal is fair because everyone gets the same budget, though teams with more customers must absorb more support work.",
