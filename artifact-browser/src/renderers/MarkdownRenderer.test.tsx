@@ -119,4 +119,49 @@ flowchart LR
 		expect(container.querySelector("code")).toHaveTextContent("branch");
 		expect(container.querySelector("code mark")).toBeNull();
 	});
+
+	it("links only indexed local paths outside links and code blocks", () => {
+		const source = `Read ../probes/ledger.md, then \`../probes/ledger.md\`.
+
+Missing paths/missing.md and \`../probes/missing.md\` stay plain.
+
+Absolute \`/Users/example/ledger.md\` and escape \`../../secret.md\` stay plain.
+
+[Existing \`../probes/ledger.md\`](../README.md)
+
+\`\`\`
+../probes/ledger.md
+\`\`\`
+`;
+		const { container } = render(
+			<MarkdownRenderer
+				file={file}
+				content={content(source)}
+				view="rendered"
+				capability="secret"
+				knownPaths={new Set(["probes/ledger.md", "README.md"])}
+			/>,
+		);
+
+		const autoLinks = screen.getAllByRole("link", {
+			name: "../probes/ledger.md",
+		});
+		expect(autoLinks).toHaveLength(2);
+		for (const link of autoLinks) {
+			expect(link).toHaveAttribute(
+				"href",
+				"?file=probes%2Fledger.md&cap=secret",
+			);
+		}
+		expect(screen.getByRole("link", { name: /Existing/ })).toHaveAttribute(
+			"href",
+			"?file=README.md&cap=secret",
+		);
+		expect(container.querySelectorAll("pre a")).toHaveLength(0);
+		expect(screen.getByText("../probes/missing.md").closest("a")).toBeNull();
+		expect(
+			screen.getByText("/Users/example/ledger.md").closest("a"),
+		).toBeNull();
+		expect(screen.getByText("../../secret.md").closest("a")).toBeNull();
+	});
 });

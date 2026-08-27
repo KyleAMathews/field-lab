@@ -92,6 +92,37 @@ describe("Field Log journal entries", () => {
 		);
 	});
 
+	it("links an indexed artifact path in a journal summary", () => {
+		render(
+			<JournalEntry
+				entry={{
+					id: "instrument-2",
+					kind: "instrument",
+					recordedAt: "2026-07-30T08:00:00-06:00",
+					runId: 18,
+					instrumentId: "evidence-sufficiency",
+					title: "Validation",
+					summary: "Saved in `probes/validation-ledger.md`.",
+				}}
+				selected={false}
+				openReadout={vi.fn()}
+				markdownContext={{
+					file,
+					content,
+					capability: "test-cap",
+					knownPaths: new Set(["trip/probes/validation-ledger.md"]),
+				}}
+			/>,
+		);
+
+		expect(
+			screen.getByRole("link", { name: "probes/validation-ledger.md" }),
+		).toHaveAttribute(
+			"href",
+			"?file=trip%2Fprobes%2Fvalidation-ledger.md&cap=test-cap",
+		);
+	});
+
 	it("offers the full drawer for long journal entries", () => {
 		const openReadout = vi.fn();
 		render(

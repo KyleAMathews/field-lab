@@ -15,6 +15,111 @@ interface MarkdownTreeNode {
 	children?: MarkdownTreeNode[];
 }
 
+const PROSE_LOCAL_PATH =
+	/(^|[\s([{])((?:\.\.?\/)*(?:[A-Za-z0-9_@.+-]+\/)+[A-Za-z0-9_@.+-]+\.[A-Za-z0-9_-]+)(?=$|[\s)\]},;:!?])/g;
+
+function supportedLocalPath(
+	filePath: string,
+	target: string,
+	knownPaths: ReadonlySet<string>,
+): string | null {
+	if (
+		!target ||
+		target.includes("\0") ||
+		target.includes("\\") ||
+		target.startsWith("/") ||
+		target.startsWith("~/") ||
+		target.startsWith("?") ||
+		target.startsWith("#") ||
+		/^[a-z][a-z0-9+.-]*:/i.test(target)
+	)
+		return null;
+	const resolved = localPath(filePath, target);
+	return resolved && knownPaths.has(resolved) ? target : null;
+}
+
+function pathLink(
+	target: string,
+	children: MarkdownTreeNode[],
+): MarkdownTreeNode {
+	return {
+		type: "element",
+		tagName: "a",
+		properties: { href: target },
+		children,
+	};
+}
+
+function linkedProse(
+	value: string,
+	filePath: string,
+	knownPaths: ReadonlySet<string>,
+): MarkdownTreeNode[] | null {
+	const nodes: MarkdownTreeNode[] = [];
+	let offset = 0;
+	let linked = false;
+	for (const match of value.matchAll(PROSE_LOCAL_PATH)) {
+		const boundary = match[1] ?? "";
+		const target = match[2] ?? "";
+		if (!supportedLocalPath(filePath, target, knownPaths)) continue;
+		const start = match.index + boundary.length;
+		if (start > offset)
+			nodes.push({ type: "text", value: value.slice(offset, start) });
+		nodes.push(pathLink(target, [{ type: "text", value: target }]));
+		offset = start + target.length;
+		linked = true;
+	}
+	if (!linked) return null;
+	if (offset < value.length)
+		nodes.push({ type: "text", value: value.slice(offset) });
+	return nodes;
+}
+
+function rehypeAutolinkLocalPaths(options: {
+	filePath: string;
+	knownPaths?: ReadonlySet<string>;
+}) {
+	return (tree: MarkdownTreeNode) => {
+		const knownPaths = options.knownPaths;
+		if (!knownPaths?.size) return;
+		const visit = (node: MarkdownTreeNode, blocked = false) => {
+			const nextBlocked =
+				blocked ||
+				["a", "code", "pre", "script", "style"].includes(node.tagName ?? "");
+			if (!node.children || nextBlocked) return;
+			const children: MarkdownTreeNode[] = [];
+			for (const child of node.children) {
+				const inlineCode =
+					child.type === "element" &&
+					child.tagName === "code" &&
+					child.children?.length === 1 &&
+					child.children[0]?.type === "text"
+						? child.children[0].value
+						: undefined;
+				if (
+					inlineCode &&
+					!inlineCode.includes("\n") &&
+					supportedLocalPath(options.filePath, inlineCode, knownPaths)
+				) {
+					children.push(pathLink(inlineCode, [child]));
+					continue;
+				}
+				if (child.type === "text" && child.value) {
+					const linked = linkedProse(child.value, options.filePath, knownPaths);
+					if (linked) {
+						children.push(...linked);
+						continue;
+					}
+				}
+				visit(child, nextBlocked);
+				children.push(child);
+			}
+			node.children = children;
+		};
+		visit(tree);
+	};
+}
+
 function highlightedText(value: string, query: string): MarkdownTreeNode[] {
 	const lowerValue = value.toLocaleLowerCase();
 	const lowerQuery = query.toLocaleLowerCase();
@@ -151,7 +256,11 @@ export function MarkdownRenderer({
 	capability,
 	staticContents,
 	highlight,
-}: RendererProps & { highlight?: string }) {
+	knownPaths,
+}: RendererProps & {
+	highlight?: string;
+	knownPaths?: ReadonlySet<string>;
+}) {
 	if (view === "source")
 		return <pre className="source-view">{content.text}</pre>;
 	const transform: UrlTransform = (url, key) => {
@@ -184,6 +293,7 @@ export function MarkdownRenderer({
 				rehypePlugins={[
 					rehypeRaw,
 					rehypeSanitize,
+					[rehypeAutolinkLocalPaths, { filePath: file.path, knownPaths }],
 					[rehypeHighlight, { query: highlight }],
 				]}
 				urlTransform={transform}
