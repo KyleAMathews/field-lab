@@ -61,6 +61,7 @@ home-domain uses.
 | `hostile-assay`           | 8              | `trialed`     |
 | `loss-audit`              | 27             | `established` |
 | `mechanism-discriminator` | 0              | `draft`       |
+| `meso-density-assay`      | 0              | `draft`       |
 | `morphological-field`     | 0              | `draft`       |
 | `negative-transfer`       | 8              | `trialed`     |
 | `neutral-control`         | 5              | `trialed`     |
@@ -89,7 +90,7 @@ home-domain uses.
 
 ## Material qualifications
 
-- The thirteen Essay instruments begin at zero. Older Dialectic Press artifacts
+- The fourteen Essay instruments begin at zero. Older Dialectic Press artifacts
   shaped their admission and controls, but those workflow outputs do not prove
   that the new standalone cards completed their own operations.
 - `morphological-field`, `process-grammar`, and `guide-word-sweep` were added

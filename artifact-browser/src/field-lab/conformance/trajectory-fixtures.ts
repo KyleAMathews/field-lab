@@ -744,6 +744,7 @@ export const trajectoryFixtures: TrajectoryFixture[] = [
 					type: "user.workflow.granted",
 					fixedMethodIds: [
 						"source-bound-drafting",
+						"meso-density-assay",
 						"reader-assay",
 						"semantic-drift",
 					],
@@ -765,11 +766,24 @@ export const trajectoryFixtures: TrajectoryFixture[] = [
 						"Approved design and frozen source ledger.",
 					),
 				}),
-				semanticTraceEvent("event-4", "agent", "Started reader assay.", {
+				semanticTraceEvent("event-4", "agent", "Started density assay.", {
+					type: "assistant.method.started",
+					methodId: "meso-density-assay",
+				}),
+				semanticTraceEvent("event-5", "agent", "Returned density assay.", {
+					type: "assistant.method.completed",
+					methodId: "meso-density-assay",
+					result: essayInstrumentResult(
+						"Close reading preserved a verified mechanism and sequence beyond the summary.",
+						"Frozen draft, summary, and sibling-hidden close-reading trace.",
+						"controlled-comparison",
+					),
+				}),
+				semanticTraceEvent("event-6", "agent", "Started reader assay.", {
 					type: "assistant.method.started",
 					methodId: "reader-assay",
 				}),
-				semanticTraceEvent("event-5", "agent", "Returned reader assay.", {
+				semanticTraceEvent("event-7", "agent", "Returned reader assay.", {
 					type: "assistant.method.completed",
 					methodId: "reader-assay",
 					result: essayInstrumentResult(
@@ -778,11 +792,11 @@ export const trajectoryFixtures: TrajectoryFixture[] = [
 						"generated-sample",
 					),
 				}),
-				semanticTraceEvent("event-6", "agent", "Started semantic drift.", {
+				semanticTraceEvent("event-8", "agent", "Started semantic drift.", {
 					type: "assistant.method.started",
 					methodId: "semantic-drift",
 				}),
-				semanticTraceEvent("event-7", "agent", "Returned semantic drift.", {
+				semanticTraceEvent("event-9", "agent", "Returned semantic drift.", {
 					type: "assistant.method.completed",
 					methodId: "semantic-drift",
 					result: essayInstrumentResult(

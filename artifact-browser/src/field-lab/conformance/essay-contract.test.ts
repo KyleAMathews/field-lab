@@ -8,6 +8,11 @@ const instrumentMapPath = resolve(
 	"reference/essay-instrument-map.md",
 );
 const workflowPath = resolve(skillRoot, "reference/essay-workflow.md");
+const writingGuidePath = resolve(skillRoot, "reference/writing-guide.md");
+const voiceProfilesPath = resolve(
+	skillRoot,
+	"reference/writer-voice-profiles.md",
+);
 const candidateMapPath = resolve(
 	skillRoot,
 	"reference/instruments/editorial-candidate-map.md",
@@ -181,5 +186,25 @@ describe("Essay workflow contract", () => {
 		expect(stageFourSource).toContain(
 			"For every candidate in the user-selected validation set",
 		);
+	});
+
+	it("keeps personal voice external while applying shared writing rules", async () => {
+		const [writingGuide, voiceProfiles, stageFive, stageSix] =
+			await Promise.all([
+				readFile(writingGuidePath, "utf8"),
+				readFile(voiceProfilesPath, "utf8"),
+				readFile(resolve(skillRoot, stagePaths[4] ?? ""), "utf8"),
+				readFile(resolve(skillRoot, stagePaths[5] ?? ""), "utf8"),
+			]);
+
+		expect(writingGuide).not.toMatch(/Kyle/i);
+		expect(voiceProfiles).toMatch(/does not bundle a\s+personal profile/);
+		expect(voiceProfiles).toContain("Do not reconstruct it from memory");
+		expect(stageFive).toContain("no external profile");
+		expect(stageSix).toContain("general writing guide");
+		expect(stageSix).toContain("external writer-voice profile contract");
+		await expect(
+			access(resolve(skillRoot, "reference/kyle-voice.md")),
+		).rejects.toThrow();
 	});
 });
