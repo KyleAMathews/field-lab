@@ -8,6 +8,11 @@ const instrumentMapPath = resolve(
 	"reference/essay-instrument-map.md",
 );
 const workflowPath = resolve(skillRoot, "reference/essay-workflow.md");
+const writingGuidePath = resolve(skillRoot, "reference/writing-guide.md");
+const voiceProfilesPath = resolve(
+	skillRoot,
+	"reference/writer-voice-profiles.md",
+);
 const candidateMapPath = resolve(
 	skillRoot,
 	"reference/instruments/editorial-candidate-map.md",
@@ -181,5 +186,16 @@ describe("Essay workflow contract", () => {
 		expect(stageFourSource).toContain(
 			"For every candidate in the user-selected validation set",
 		);
+	});
+
+	it("wires the shared writing references into drafting", async () => {
+		const stageSix = await readFile(
+			resolve(skillRoot, stagePaths[5] ?? ""),
+			"utf8",
+		);
+
+		await Promise.all([access(writingGuidePath), access(voiceProfilesPath)]);
+		expect(stageSix).toContain("(writing-guide.md)");
+		expect(stageSix).toContain("(writer-voice-profiles.md)");
 	});
 });

@@ -43,8 +43,10 @@ the workflow are separate user permissions.
    source-preserving outlines and public packaging within it. The user chooses
    the organizing logic, detailed outline, and packaging before prose begins.
 6. **Draft and validate** — transform the frozen evidence and approved design
-   into prose, test reader response and semantic drift, then return the draft for
-   approval. Publication remains a separate user-authorized action.
+   into prose under the general writing guide and any explicitly selected
+   writer-voice profile; test close-reading value, reader response, and
+   semantic drift; then return the draft for approval. Publication remains a
+   separate user-authorized action.
 
 The workflow may complete after Stage 4 with a validated map or a no-essay
 result. It may also complete after Stage 6 with an approved draft. Completion
@@ -102,6 +104,8 @@ and hand-written decision ledgers. Record in it:
 - candidate IDs, typed source support, validation results, and unresolved gaps;
 - the selected map-review and validation policies and every later branch choice;
 - user corrections, design choices, draft-generated questions, and approval;
+- the writer-voice profile selection and essay-specific applied constraints,
+  when used;
 - workflow pauses, resumptions, completion gates, failures, and downgrades.
 
 Keep only ordinary working artifacts beside the log:
