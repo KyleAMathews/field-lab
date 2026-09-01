@@ -368,7 +368,7 @@ When the script marks a query weak, do not trust its ranking as a shortlist. Rew
 | [`candidate-collision`](reference/instruments/candidate-collision.md)         | Several candidates may be alternate phrasings or sections of one essay               | Whether candidates are distinct, nested, sequential, or duplicates                          |
 | [`editorial-design`](reference/instruments/editorial-design.md)               | A validated candidate needs an outline fitted to its source shape and reader goal    | Outline families, source-preserving designs, and the losses of each                          |
 | [`outcome-ablation`](reference/instruments/outcome-ablation.md)               | One component is claimed to cause a named reader outcome                             | The controlled outcome difference when that component changes                               |
-| [`meso-density-assay`](reference/instruments/meso-density-assay.md)           | A complete draft should reward close reading beyond an accurate short summary        | Verified mechanisms, sequences, evidence, particulars, and connections lost in compression   |
+| [`meso-density-assay`](reference/instruments/meso-density-assay.md)           | A complete draft needs a close-reading versus summary check                          | Text-supported differences, their function, and a null result when present                    |
 | [`reader-assay`](reference/instruments/reader-assay.md)                       | A draft needs a fresh test of what readers recover                                   | Reader reconstruction, confusion, memory, usable change, and genericity                      |
 | [`semantic-drift`](reference/instruments/semantic-drift.md)                   | Editing may have changed claim, confidence, causality, scope, or attribution         | Substantive meaning changes between frozen versions                                          |
 | [`source-bound-drafting`](reference/instruments/source-bound-drafting.md)     | An approved design must become prose without silently adding theory or support       | A source-traced draft, transformation failures, and draft-generated return questions          |
@@ -507,7 +507,7 @@ Use one owner for each rule:
 - [writing-guide.md](reference/writing-guide.md): shared source-preserving prose
   rules for Essay drafts.
 - [writer-voice-profiles.md](reference/writer-voice-profiles.md): optional
-  external personal-profile selection, provenance, precedence, and fallback.
+  writer-voice profile selection and application.
 - Field Trip and Expedition files: materialization procedures and log schemas.
 - [dialectic-workflow.md](reference/dialectic-workflow.md): all workflow-wide gates and safeguards.
 - Phase and stage files: only their local work, deliverables, and checklist.

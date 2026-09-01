@@ -1,55 +1,43 @@
-# External Writer-Voice Profiles
+# Optional Writer-Voice Profiles
 
-A writer-voice profile is optional, user-controlled input to Essay drafting. It
-describes the user's own recurring prose choices. Field Lab does not bundle a
-personal profile, infer one from the user's identity, scan the filesystem for
-one, or default to a named writer's voice.
+A writer-voice profile is an explicitly selected set of observable prose
+constraints. It may describe a person's habits, an organization's house voice,
+a publication, or a deliberate composite. Field Lab bundles no personal
+default and does not infer one from identity.
 
-## Selection contract
+## Selection
 
-Use a profile only when the user explicitly selects it or the frozen editorial
-brief already records that selection. Otherwise use the
-[general writing guide](writing-guide.md) alone and do not interrupt drafting
-to ask for a profile.
+Use a profile only when the user selects it or the frozen editorial brief
+already records that selection. Otherwise use the
+[general writing guide](writing-guide.md) alone without adding another intake
+question.
 
-Record the selected profile's exact path or repository URL and, when available,
-its version, commit, or content hash. Keep the profile itself outside the Essay
-Field Log. The log holds only the pointer, version, applied constraints, and any
-user corrections.
+Record how to find the selected profile and, when useful, its version. A named
+writer or publication may be useful shorthand, but translate the reference into
+observable constraints before drafting. Do not turn frequencies in prior work
+into quotas.
 
-If the selected profile cannot be read, say so and fall back to the general
-guide. Do not reconstruct it from memory or from scattered examples. Never
-copy a private profile into a shared repository or published essay package.
+## Useful contents
 
-## Profile shape
+A profile may contain:
 
-A useful profile may contain:
-
-- identity, owner, intended uses, and version;
+- identity, intended uses, and version;
 - a short voice description;
 - observable axes such as distance, formality, pace, density, humor, and
   explicitness;
 - favored patterns and the jobs they perform;
-- anti-patterns and common failure modes;
-- annotated excerpts written or approved by the owner; and
-- provenance and revision notes.
-
-Treat all rules as constraints to test against the present audience and source.
-Do not turn frequencies in old writing into quotas. Do not use imitation of a
-named writer as a substitute for observable instructions.
+- anti-patterns and common failure modes; and
+- annotated excerpts and revision notes.
 
 ## Application
 
-Before drafting, translate the selected profile into a short constraint set for
-this essay. Preserve any tensions with the audience, publication, or evidence
-boundary. Apply the governing order in the general guide:
+At the Stage 6 drafting boundary, translate the selected profile into a short
+constraint set for this essay. If the profile cannot be read, pause and let the
+user replace it, continue without it, or stop. Do not substitute another profile
+silently.
 
-1. current user instruction;
-2. selected external profile;
-3. audience and publication constraints;
-4. general writing guide;
-5. model defaults.
-
+Resolve stylistic conflicts through the
+[governing order in the general writing guide](writing-guide.md#governing-order).
 After cleanup, compare the draft with the applied constraints. Report material
-departures and risky proposed rewrites. Do not silently change meaning to make
-the prose sound more like the profile.
+departures and risky proposed rewrites without changing meaning merely to match
+the profile.

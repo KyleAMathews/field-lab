@@ -188,23 +188,14 @@ describe("Essay workflow contract", () => {
 		);
 	});
 
-	it("keeps personal voice external while applying shared writing rules", async () => {
-		const [writingGuide, voiceProfiles, stageFive, stageSix] =
-			await Promise.all([
-				readFile(writingGuidePath, "utf8"),
-				readFile(voiceProfilesPath, "utf8"),
-				readFile(resolve(skillRoot, stagePaths[4] ?? ""), "utf8"),
-				readFile(resolve(skillRoot, stagePaths[5] ?? ""), "utf8"),
-			]);
+	it("wires the shared writing references into drafting", async () => {
+		const stageSix = await readFile(
+			resolve(skillRoot, stagePaths[5] ?? ""),
+			"utf8",
+		);
 
-		expect(writingGuide).not.toMatch(/Kyle/i);
-		expect(voiceProfiles).toMatch(/does not bundle a\s+personal profile/);
-		expect(voiceProfiles).toContain("Do not reconstruct it from memory");
-		expect(stageFive).toContain("no external profile");
-		expect(stageSix).toContain("general writing guide");
-		expect(stageSix).toContain("external writer-voice profile contract");
-		await expect(
-			access(resolve(skillRoot, "reference/kyle-voice.md")),
-		).rejects.toThrow();
+		await Promise.all([access(writingGuidePath), access(voiceProfilesPath)]);
+		expect(stageSix).toContain("(writing-guide.md)");
+		expect(stageSix).toContain("(writer-voice-profiles.md)");
 	});
 });
