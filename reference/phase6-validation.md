@@ -14,7 +14,7 @@ Phase 6 coordinates three instrument contracts:
 | B     | `hostile-assay`                                    |
 | C     | conditional `framing-sensitivity` plus integration |
 
-Read each card before its stage. Keep each candidate isolated throughout validation. Instrument readouts enter the control log and point to the full candidate-specific validation files.
+Read each card before its stage. Keep each candidate isolated throughout validation. Instrument readouts enter the Field Log and point to the full candidate-specific validation files.
 
 **No tournament, no winner, no Borda count.** The user judges which candidate fits their situation. The monks and auditor produce structural critiques per candidate, not rankings across candidates.
 
@@ -52,6 +52,6 @@ Use the strongest available model with extended thinking for all validation agen
 
 - [ ] 6.0: user has selected which candidate(s) go into validation (not the orchestrator's guess — the user's pick, or an explicit deferral you resolved by the stated default)
 - [ ] 6.1: strongest model with extended thinking set for validation agents
-- [ ] Instrument ledger has one prepared `position-preservation` and one prepared `hostile-assay` entry per selected candidate, with allowed contexts, executor assignments, candidate trace, and sibling-isolation rule
+- [ ] Field Log instrument records have one prepared `position-preservation` and one prepared `hostile-assay` entry per selected candidate, with allowed contexts, executor assignments, candidate trace, and sibling-isolation rule
 
 Like Phase 4, Phase 6 is staged — **run the completion gate at each A→B→C stage boundary**, not only at the end. Once 6.0 and 6.1 are ✅, read `reference/phase6-stage-a-monk-validation.md` and begin.

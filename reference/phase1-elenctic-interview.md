@@ -4,7 +4,7 @@ This is the most important phase. Everything downstream depends on it.
 
 **⛔ Phase-opening check:** Do not inherit records, create files, spawn the gardener, or run the Phase 1 cluster until the workflow has shown the seven-phase overview and the Phase 1 opening card, and the user has said to start Phase 1. See `reference/dialectic-workflow.md` → Phase-opening gate.
 
-**Entry — inherit the field record.** If this dialectic workflow grew from a Walk or Field Trip, first read the session record, field log, and Expedition log when one exists. Copy their lineage, original question, goal, typed observations, instrument readings, loaded terms, tensions, gaps, and working question into the control log. For every inherited instrument, retain the actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace pointer. Do not replace the historical execution record with the card's preferred seat; a correlated fallback stays correlated unless rerun under the full contract. Treat this as interview and research substrate. Ask only for missing material; do not make the user restate it or rewrite ordinary chat as a scripted interview.
+**Entry — inherit the field record.** If this dialectic workflow grew from a Walk or Field Trip, first read the session record, field log, and Expedition log when one exists. Preserve their lineage, original question, goal, typed observations, instrument readings, loaded terms, tensions, gaps, and working question in the Field Log. Reference existing events; import only missing material. For every inherited instrument, retain the actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace pointer. Do not replace the historical execution record with the card's preferred seat; a correlated fallback stays correlated unless rerun under the full contract. Treat this as interview and research substrate. Ask only for missing material; do not make the user restate it or rewrite ordinary chat as a scripted interview.
 
 **Setup — dispatch the gardener in the background before new research.** The full dialectic workflow crosses the wiki threshold: it uses several agents, durable cross-links, and usually recursion. Create the workflow and staging directories, dispatch the persistent **gardener** subagent (`reference/dialectic-wiki.md`) to initialize the wiki, and immediately continue the interview and framing work. Do not wait for a startup or readiness response. You still read the research yourself; the gardener handles wiki bookkeeping asynchronously.
 
@@ -21,7 +21,7 @@ Read `reference/dialectic-instrument-map.md` and the relevant cards before runni
 - `neutral-control`, frozen after the user confirms the framing and before any Monk output exists;
 - the persistent `atlas`, started with the gardener.
 
-Announce each instrument just before its first operation. An inherited reading may satisfy an instrument only when its full readout and execution trace survive promotion; otherwise rerun it or record the named gap. Append each consequential reading to the control log's instrument ledger. Phase 1 closes only when the user has corrected the integrated framing and the neutral pre-belief baseline is frozen.
+Announce each instrument just before its first operation. An inherited reading may satisfy an instrument only when its full readout and execution trace survive promotion; otherwise rerun it or record the named gap. Append each consequential reading through the Field Log writer once. Phase 1 closes only when the user has corrected the integrated framing and the neutral pre-belief baseline is frozen.
 
 ## Phase 1 cadence
 
@@ -62,7 +62,7 @@ Recover what the user is thinking about from the inherited field record, then as
 - **Mode A (Stress-Test):** User has one idea they want to challenge. You need to identify the strongest possible antithesis.
 - **Mode B (Opposition):** User has two positions in tension. You need to refine both to their steelman forms.
 
-**Also capture the _broader goal_, not just the tension.** Reuse it from the field log when present; otherwise ask what the user is ultimately trying to _do_ with this dialectic — the deliverable and audience (e.g., "a skill to help people design X," "material for a blog post," "a decision I have to make," "a mental model I want to build"). The specific tension is in service of this larger purpose. Capture it in the control log's **Goals & context** (written at 1f; see `reference/dialectic-wiki.md`).
+**Also capture the _broader goal_, not just the tension.** Reuse it from the field log when present; otherwise ask what the user is ultimately trying to _do_ with this dialectic — the deliverable and audience (e.g., "a skill to help people design X," "material for a blog post," "a decision I have to make," "a mental model I want to build"). The specific tension is in service of this larger purpose. Keep it in the Field Log scope/context; update it only when the user changes the aim.
 
 **Default monk count is 2 after the user selects a live tension.** Binary contradiction is the core structural unit of the dialectic and produces the tightest analysis. But 2 monks sometimes leaves a valid big perspective on the table — a position that can't be reached as a blend of the two poles, or that's arguing on a different axis entirely. If the interview surfaces such a position, add a third (or fourth) monk. See 1c.2.
 
@@ -236,7 +236,7 @@ Before proceeding, summarize back:
 
 Get the user's confirmation or correction. If the user identifies gaps, run a supplementary research agent to fill them and update the briefing before proceeding. Then run the 1c.4 recheck; do not silently edit the selected tension or promote a fresh source into the frame. **State the final monk count, what each monk will believe, and that this freezes only the next Monk specimen** before moving to Phase 2.
 
-**Write the frozen Anchor and the Goals & context.** Once framing is confirmed, write two things to `round_1_dialectic_log.md` (see `reference/dialectic-wiki.md` → the control log):
+**Write the frozen Anchor and the Goals & context.** Once framing is confirmed, record the anchor as a Field Log workflow checkpoint and reuse or update the trip context (see `reference/dialectic-wiki.md`):
 
 - **Anchor** — the original felt tension or question in the user's own words, never overwritten. It is a historical bearing for measuring movement, not a command to keep working a tension that has thinned, dissolved, or ceased to serve the goal.
 - **Goals & context** — the user's broader purpose from 1b: intended deliverables, audience, and what a useful outcome looks like. This is _dialectic-level_ — it frames every round, not just this tension — and the user can update it. Re-read it with the Anchor at each loop-top so the synthesis stays aimed at what the user actually needs, not just at resolving the tension.
@@ -247,7 +247,7 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 
 **Completion gate — enumerate and attest before Phase 2.** Apply the [workflow completion gate](dialectic-workflow.md#completion-gate), mark each item ✅ or ❌ with evidence, and stop on any ❌ unless the user explicitly waives it:
 
-- [ ] Phase 1 opening card, promised first checkpoint, and later user phase-start pointer recorded in the phase-start ledger
+- [ ] Phase 1 opening card, promised first checkpoint, and later user phase-start pointer recorded in the Field Log phase-start checkpoints
 - [ ] 1a–1b: prior field record inherited; every consequential instrument retains its authorization, actual seat, context boundary, fallback or downgrade, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, and trace; needed orientation given; elenctic gaps filled; the provenance inventory preserves the user's account without preselecting a contradiction
 - [ ] 1c: belief burden identified (see `reference/belief-burden-catalog.md`)
 - [ ] 1c.1: `tension-statement` tested whether a live collision exists; a 5–8 item burst was generated before clustering, 2–4 unranked traced options were presented, and the user's provisional choice, combination, or rewrite was recorded with a message pointer
@@ -261,8 +261,8 @@ Get the user's confirmation or correction. If the user identifies gaps, run a su
 - [ ] Research ingested into the wiki by the gardener (durable organized memory for monks / future rounds / re-grounding)
 - [ ] Context briefing written to `round_N_context_briefing.md`
 - [ ] Context briefing contains frame provenance for the selected tension and every Monk position, with user testimony, supplied material, outside sources, and orchestrator inferences kept distinct
-- [ ] Frozen Anchor written to `round_1_dialectic_log.md` (original felt tension, verbatim)
-- [ ] Goals & context written to the control log — the user's broader purpose, deliverables, and audience (NOT just the narrow tension)
+- [ ] Frozen Anchor recorded once in a Field Log `anchor` checkpoint (original felt tension, verbatim)
+- [ ] Field Log context preserves the user's broader purpose, deliverables, and audience (not just the narrow tension)
 - [ ] 1f: the current tension, its status and trail, and its roots summarized back; "what are we missing?" + third-pole questions asked; final monk count, each monk's belief, and the limited scope of the frozen Monk specimen stated to the user
-- [ ] Instrument ledger attests `focus-interview` (inherited or run), `elenchus`, initial and post-grounding `tension-statement`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with authorization, actual seats, contexts, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, trace paths, and user-feedback state; the tension trail preserves generated menus, side trails, statuses, and user choices separately; phase analysis is separate, a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
+- [ ] Field Log instrument records attest `focus-interview` (inherited or run), `elenchus`, initial and post-grounding `tension-statement`, `third-pole`, conditional `frame-projector`, `home-frame-leak`, and `atlas` with authorization, actual seats, contexts, typed raw readings, calibration or controls, access deltas, artifact risks, unmeasured remainders, trace paths, and user-feedback state; the tension trail preserves generated menus, side trails, statuses, and user choices separately; phase analysis is separate, a contraindicated frame projector is recorded as not called rather than given a fabricated readout, and every fallback remains labeled
 - [ ] `neutral-control` frozen from the user-confirmed specimen before any Monk output is read; baseline trace recorded for the Phase 3 comparison

@@ -4,7 +4,7 @@ The wiki is the full dialectic workflow's persistent, compounding research memor
 
 It is a Karpathy-style ["LLM Wiki"](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): interlinked markdown pages, each a typed unit, cross-linked to the others. It is a **graph, not a hierarchy** — the cross-links between pages _are_ the semi-lattice the skill is trying to build ("A City is Not a Tree"), and a graph can hold contradictions a tree cannot. The wiki is written by **one agent only — the gardener** — and it **compounds across rounds**: Round 2 builds on Round 1's pages, it does not reset. It lives in the dialectic's output directory alongside the existing `round_N_*.md` files.
 
-This doc defines the wiki's page types, its special files, the three agent roles, the gardener's operations, the orchestrator↔gardener protocol, and the per-round control log.
+This doc defines the wiki's page types, its special files, the three agent roles, the gardener's operations, the orchestrator↔gardener protocol, and the Field Log checkpoints for each round.
 
 ## Page types
 
@@ -39,7 +39,7 @@ updated-at: 2026-07-10T09:30:00-06:00
 ## Special files
 
 - **`index.md`** — the catalog of pages, plus a **current-focus pointer**: which tension is being worked right now. (This is the one thing "rounds" gave for free — a sense of "where am I" — made explicit.)
-- **`log.md`** — a chronological operations record for the whole dialectic: every ingest, lint, monk spawn, negation, synthesis, and loop decision, in order. Every entry begins with `recorded-at`; add `observed-at` or `occurred-at` when different and known. The per-round control log (below) is `log.md` specialized to a single contradiction.
+- **`log.md`** — a chronological operations record for the whole dialectic: wiki ingests and maintenance, with references to the Field Log for inquiry events. Every entry begins with `recorded-at`; add `observed-at` or `occurred-at` when different and known. Do not duplicate instrument readings or round decisions here.
 
 ## The three roles
 
@@ -59,7 +59,7 @@ The wiki is durable, organized background memory: it lets the orchestrator offlo
 - **Staging directory.** Research drafts land in `<dialectic-dir>/staging/` — transient handoff space, not the wiki. The orchestrator moves only paths through its context; the gardener reads and ingests, then clears (or archives) the staged drafts so staging never masquerades as the wiki.
 - **The gardener enforces the firewall.** Because it owns page types, it is the natural place to assemble monk briefs: on request it returns `concept`/`source` pages only — never `position` (decorrelation: a monk must not see another monk's stance), `donor`, `tension`, or `synthesis`. It **filters on the frontmatter `type` field deterministically** (the firewall is a decorrelation boundary — don't rely on scanning prose; a mistagged or bold-header page can leak). Firewall enforcement lives in one place (see `reference/refinement-loop.md`).
 - **Two levels of contradiction-spotting.** The gardener flags _surface_ contradictions from research ("source X ⊥ source Y") as candidate `tension` pages — seeds. The orchestrator does the _deep_ determinate negation (Phase 4). Gardener seeds, orchestrator deepens.
-- **The blind-expectation probe is orchestrator-facing and ephemeral** (`reference/instruments/frontier-rheometer.md`), like `donor`/`tension`/`synthesis`: it runs after the monks, feeds only the orchestrator's frontier reading, and is **never** placed in a monk brief. It is not a wiki page — its output lives in the frontier-ledger.
+- **The blind-expectation probe is orchestrator-facing and ephemeral** (`reference/instruments/frontier-rheometer.md`), like `donor`/`tension`/`synthesis`: it runs after the monks, feeds only the orchestrator's frontier reading, and is **never** placed in a monk brief. It is not a wiki page — its output lives in the Field Log readout and frontier checkpoints.
 - **Signal division.** The gardener maintains the _coverage_ state (did this ingest add new pages? what is still flagged unknown?) → this feeds the "new facts" signal of the maturity gate. The orchestrator keeps the hidden-question ledger. Cross-edges are shared.
 - **Cost, honestly.** The gardener is a second long-running agent on an already token-heavy skill. The trade — clean orchestrator context over tokens — is deliberate, not free.
 
@@ -95,30 +95,50 @@ The orchestrator coordinates with the gardener through a small set of asynchrono
 - **Ingest** — "here are these staged draft paths; ingest them." → gardener returns a short summary of pages created/updated and any **candidate tensions** it spotted (for the orchestrator to confirm and deepen).
 - **Re-ground the orchestrator** — "summarize the current wiki state" or "give me the pages on «topic»." → gardener returns an organized summary so the orchestrator can page context back in after compaction, without re-reading everything. Durable memory the orchestrator can reload is one of the wiki's main jobs.
 - **Assemble a monk brief** — "give me pole A's monk-safe brief, plus the evidence pole A walked past last round." → gardener returns a firewall-clean brief (`concept`/`source` pages only — never `position`/`donor`/`tension`/`synthesis`; per-pole ignored-evidence surfaced).
-- **Record** — "record this as a `tension` / `synthesis` page" or "append this loop-ledger entry." → gardener writes it and updates `log.md`.
+- **Record** — "record this as a `tension` / `synthesis` page, citing these Field Log events." → gardener writes the page and records that wiki operation in `log.md`. The orchestrator records round decisions in the Field Log.
 - **Report coverage** — "what's the current open-gaps / coverage state?" → gardener reports what's still flagged unknown (feeds the "new facts" signal).
 
-## The per-round control log
+## Round state in the Field Log
 
-`round_N_dialectic_log.md` — the loop-control state for one contradiction. Mostly **pointers into the wiki**; it is `log.md` specialized to the round's contradiction.
+The Field Log is the sole inquiry record. Do not create or update a separate
+`round_N_dialectic_log.md`. Use `workflow.checkpoint.recorded` from
+[field-log-events.md](field-log-events.md#workflow-checkpoints) for facts that
+ordinary Field Log events do not already preserve.
 
-Begin each round log with `opened-at`, `opened-by`, and `updated-at` ISO 8601 timestamps with timezone. Every append-only ledger entry records `recorded-at`; add `observed-at` or `occurred-at` when different and known. Every living section records `updated-at`. Never use recording time as a guessed event time.
+- `lineage`: the round's origin and references to inherited records or the
+  prior round. Keep original sources and actual execution boundaries intact.
+- `anchor`: the user's confirmed original question or launch contradiction,
+  verbatim. Record once per round; later movement never overwrites it.
+- `phase-start`: the numbered phase, opening-card pointer, promised checkpoint,
+  and exact later user authorization. Record before phase work.
+- `tension`: the complete current set of working and parked tensions, their
+  stable labels, statuses, roots, and user choices. Preserve the history of
+  movement; a new round gets a new round number and lineage checkpoint.
+- `hidden-question`, `frontier`, and `loop`: the pass number, result or chosen
+  route, supporting run/event references, and the reason for any change.
+- `gaps`: unresolved workflow gaps when they are not already in questions or
+  plan events. `context` holds a needed workflow-specific fact or interpretation.
 
-Render each per-round ledger as headed vertical record blocks under its section. The table below documents section semantics only; it is not an output template. Never place prose-bearing audit fields into a wide table. A compact comparison table is allowed only when it has no more than four short columns.
+These are sections of an event history, not extra files or a per-turn checklist.
+Each checkpoint updates only its section for its workflow and round. Keep a
+complete current section where recovery needs it; older versions remain in
+JSONL. Batch related changes. Ordinary interview answers usually need no
+checkpoint at all.
 
-| Section                    | Lifecycle                                         | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| -------------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Field lineage**          | frozen; imported at workflow start                | The session/task pointer, original question, field-log path, Expedition-log path if any, workflow-selection pointer, and every inherited instrument's actual execution seat, context boundary, fallback or downgrade, access delta, control, artifact risk, and trace pointer. Preserve what ran rather than the card's preferred seat. This prevents the workflow from inventing a clean start, repeating prior work, or laundering a correlated fallback into independent evidence.                     |
-| **Goals & context**        | **dialectic-level**; frozen, user updates         | _Why_ the user is running this dialectic — the broader purpose beyond the specific tension: intended **deliverables** (a skill, a blog post, a decision, a mental model), **audience**, and what a useful outcome looks like. Written once at the start and **carried into every round's log**. Frames what "positioned to synthesize" and "useful output" mean — a synthesis that resolves the tension but doesn't serve these goals has missed the point. Re-read it (with the Anchor) at each loop-top. |
-| **Anchor**                 | frozen, never overwritten                         | The round's starting contradiction as the user confirmed it. Round 1 retains the original felt tension or question in the user's own words; later rounds retain the selected launch tension plus a lineage pointer from a synthesis or redirected round. The Anchor is a historical bearing for drift checks, not a command to keep working a tension that has moved, thinned, or dissolved.                                                                                                                                                                                                                                                           |
-| **Observation ledger**     | append-only                                       | Readings carried from Walks, Field Trips, research, and instruments with their kinds (`observation`, `measurement`, `user-testimony`, `source-claim`, `elicited-response`, `generated-sample`, `controlled-comparison`, `test-result`, `inference`, `analogy`, `normative-judgment`, `hypothesis`), support, confidence, and artifact risk. Later analysis may transform claims but not erase provenance.                                                                                                           |
-| **Phase-start ledger**     | append-only                                       | One entry per numbered phase: opening-card timestamp, aim, scheduled and conditional instruments, expected artifacts and execution seats, actual work and useful time estimate, promised next return point, and the later user-message pointer that started the phase. Workflow selection and prior completion gates are recorded separately and never stand in for this pointer.                                                                                                                                                |
-| **Instrument ledger**      | append-only; lifecycle state may advance          | One entry per offered, selected, prepared, or completed instrument: authorization, lifecycle state, actual execution seat and contexts, fallback, access delta, typed raw readings, calibration or control, artifact risk, unmeasured remainder, trace paths, user-feedback state, and caddy result. Keep phase interpretation outside this ledger. Preparation never masquerades as a completed reading. The phase gate cites these entries.                                                                    |
-| **Tension trail**          | append-only                                       | The initial burst; clustered unranked options; roots and labeled inferences; every later whole-inquiry recheck; and the user's choices with pointers. Give each tension or side trail a stable identifier and timestamped status: `working`, `parked`, `thin`, `dissolved`, `superseded`, or `redirected`. Record what changed, which new items were mere side trails, and why a movement threshold did or did not clear. Keep at most one `working` tension. Generated candidates never overwrite the user's original question or silently become the working question. |
-| **Working question**       | living; revisions are **diffs the user ratifies** | The current evolved framing and its tension-trail identifier. The orchestrator never silently rewrites it. Carries the current status (`live`, `sharpened`, `moved`, `thin`, or `dissolved`) and the closure flag: "still a live two-sided contradiction? Y/N".                                                                                                                                                                                                                                                                                                               |
-| **Hidden-question ledger** | append-only                                       | One line per pass: what the hidden question was (from 4.4), whether it moved vs. last pass, on which axis. The settledness signal made legible.                                                                                                                                                                                                                                                                                                                                                            |
-| **Frontier-ledger**        | append-only                                       | One line per pass: the groove/frontier reading, the blind-expectation probe's expected resolution, where the negation/candidate actually landed, and any frontier→groove collapse. The precommodification overlay made legible over time. See `reference/instruments/frontier-rheometer.md`.                                                                                                                                                                                                                             |
-| **Loop ledger**            | append-only                                       | One line per inner-loop pass: operator used (Research / Refine / Re-split / Redirect), what it added, iteration count. Feeds the diminishing-returns read.                                                                                                                                                                                                                                                                                                                                                            |
-| **Open gaps**              | living                                            | Current reading of the three signals: what's unknown (coverage), what cross-edges are still forming (structure), whether the hidden question is still moving (framing). Distinct from the cross-round Phase-7 queue.                                                                                                                                                                                                                                                                                       |
+Comments, scope and purpose, questions, sources, instrument lifecycle, typed
+readings, controls, actual seats, fallback, and feedback already belong to the
+Field Log. Cite their event/run IDs at gates; do not rewrite an observation or
+instrument ledger. Full instrument readouts remain intact. Goals and audience
+belong in the trip scope/context and carry across rounds without copying.
 
-**Drift protocol (the scent fix).** At the top of each loop pass the orchestrator (1) reads the control log + the last pass's negation + the user's corrections and writes the **delta**, then (2) **re-reads the whole control log fresh** as grounding before continuing. The second read is the actual scent-fix — re-injection at loop-top counteracts the context-window pressure that caused drift in the first place. Writing without re-reading builds the anchor and then never looks at it.
+At an actual refinement-loop boundary, read `field-log state`, the active
+round's checkpoint entries, the latest negation, and the user's corrections.
+Record the changed checkpoint sections and use the committed result to ground
+the next pass. Read truncated sections in full through `read --entry` or
+`read --event`. Do not reread the whole inquiry after every interview answer.
+
+On re-entry to an older dialectic, read its existing control log once. Preserve
+it as a historical source. Import only unique round state missing from the
+Field Log, with the original path and known provenance in a `context`
+checkpoint. Never invent historical authorization or timestamps; a historical
+checkpoint does not authorize the next phase. Stop updating the old file.

@@ -60,6 +60,7 @@ export interface FieldLogProjection {
 	scope: string;
 	reason: string;
 	currentQuestion: string;
+	currentQuestionId?: string;
 	synthesis: string | null;
 	questions: FieldLogItem[];
 	terms: FieldLogItem[];
@@ -437,7 +438,8 @@ export function parseEventStream(
 	},
 ): EventEnvelope[] {
 	const lines = jsonl.split(/\r?\n/);
-	const lastNonempty = lines.findLastIndex((line) => line.trim());
+	let lastNonempty = lines.length - 1;
+	while (lastNonempty >= 0 && !lines[lastNonempty].trim()) lastNonempty--;
 	const events: EventEnvelope[] = [];
 	for (const [index, line] of lines.entries()) {
 		if (!line.trim()) continue;
@@ -549,6 +551,20 @@ export function projectFieldLogEvents(
 			});
 		}
 
+		if (type === "workflow.checkpoint.recorded") {
+			const markdown = payloadString(payload, "markdown");
+			projection.entries.push({
+				id: `entry-${payloadNumber(payload, "entryId") ?? event.eventId}`,
+				kind: "context",
+				recordedAt: event.recordedAt ?? null,
+				title:
+					payloadString(payload, "title") ||
+					`Round ${payload.round}: ${payload.section}`,
+				summary: markdown,
+				readoutMarkdown: markdown,
+			});
+		}
+
 		if (type === "note.recorded") {
 			projection.entries.push({
 				id: `entry-${payloadNumber(payload, "entryId") ?? event.eventId}`,
@@ -607,7 +623,10 @@ export function projectFieldLogEvents(
 			});
 		}
 
-		if (type.startsWith("workflow.")) {
+		if (
+			type.startsWith("workflow.") &&
+			type !== "workflow.checkpoint.recorded"
+		) {
 			const workflowId = payloadNumber(payload, "workflowId");
 			if (workflowId) {
 				const prior = workflows.get(workflowId);
@@ -854,6 +873,7 @@ export function projectFieldLogEvents(
 	projection.currentQuestion = hasCurrentQuestionRecord
 		? (current?.title ?? "")
 		: projection.openingQuestion;
+	projection.currentQuestionId = current?.id;
 	projection.terms = [...terms.values()].filter(
 		(item) => item.status !== "removed",
 	);

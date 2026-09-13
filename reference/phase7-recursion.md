@@ -93,7 +93,7 @@ The dialectic is an _open-ended_ engine — the value is divergence, not converg
 
 ## Running Recursive Rounds
 
-**The wiki compounds across rounds; the control log is per-round.** The research wiki does **not** reset between rounds — Round 2 builds on Round 1's pages (the space is interconnected; see `reference/dialectic-wiki.md`). But each new round opens a **new control log** (`round_N_dialectic_log.md`) whose **Anchor** is the contradiction this round launched from, carrying a one-line **lineage pointer** back to the synthesis that spawned it. Write that anchor at the start of the round, before re-spawning monks. This is also why later rounds get sharper rather than merely different — the walk deepens as the wiki compounds.
+**The wiki and Field Log compound across rounds.** The research wiki does **not** reset between rounds — Round 2 builds on Round 1's pages (the space is interconnected; see `reference/dialectic-wiki.md`). Each new round records a new round number, a frozen **anchor** checkpoint, and a **lineage** checkpoint back to the synthesis that spawned it, all in the same Field Log. Write that anchor at the start of the round, before re-spawning monks. This is also why later rounds get sharper rather than merely different — the walk deepens as the wiki compounds.
 
 Every recursive round starts again at Phase 1 and runs the full dialectic instrument map and completion gates. Inherit valid prior readings with their actual execution traces, rerun instruments whose specimen or required context changed, and never jump from a chosen Phase 7 direction straight to Monk spawning.
 

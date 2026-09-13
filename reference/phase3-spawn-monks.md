@@ -43,7 +43,7 @@ If decorrelation is low — the monks are in "same framework, different conclusi
 
 **If a monk's output hedges or is off-base:** Prefer restarting with a revised prompt over nudging. Fresh context with better instructions produces better results than correcting a monk that's lost its conviction.
 
-**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener in the background → `position` pages** (`reference/dialectic-wiki.md`), then immediately continue the structural comparison and user checkpoint: each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Do not wait at dispatch; check the ingest when the Phase 3 gate becomes the next dependency. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. The essays and position pages are the raw `belief-stress` reading. Keep the next structural summary labeled as Phase 3 interpretation outside the instrument ledger. Give the user a quick orientation instead of dumping the essays (scale to N monks):
+**Save each monk's essay to a file** (e.g., `round_1_monk_a.md`, `round_1_monk_b.md`, `round_1_monk_c.md`). **Hand the essays to the gardener in the background → `position` pages** (`reference/dialectic-wiki.md`), then immediately continue the structural comparison and user checkpoint: each monk's committed stance becomes an immutable per-round `position` page — its core claim, key atomic parts, and a pointer to the essay file — cross-linked to the `concept`/`source` pages it draws on. Do not wait at dispatch; check the ingest when the Phase 3 gate becomes the next dependency. Immutable per-round snapshots make monk _drift_ visible when you re-run monks in the refinement loop. The essays and position pages are the raw `belief-stress` reading. Keep the next structural summary labeled as Phase 3 interpretation outside the Field Log instrument records. Give the user a quick orientation instead of dumping the essays (scale to N monks):
 
 > Both cases are back, and I’ve saved the full essays if you want them. Here’s the short trail map:
 >
@@ -62,7 +62,7 @@ Then ask:
 1. Does this capture the positions, or did either case miss something important about how this works?
 2. Is there a claim worth checking against evidence neither case considered? This is the second key place for the user to correct the route. A plausible claim can fail against a comparison class both Monks missed; check it before later analysis builds on it.
 
-If the user identifies a testable claim, offer a targeted research pass and state what it would measure. Run it only if the user selects it. Its sourced findings remain a raw reading; later synthesis may cite them but must not be folded into the instrument ledger.
+If the user identifies a testable claim, offer a targeted research pass and state what it would measure. Run it only if the user selects it. Its sourced findings remain a raw reading; later synthesis may cite them but must not be folded into the Field Log instrument records.
 
 After the user's correction and any selected claim check, run `tension-statement` in recheck mode. Reread the whole inquiry and tension trail; do not let the most vivid Monk move or newest source take over. Treat Monk output as testimony about the belief burdens, not evidence that a new tension is true.
 

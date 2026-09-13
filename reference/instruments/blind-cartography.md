@@ -104,4 +104,4 @@ If no independent source track is available, stop or explicitly downgrade the ru
 
 - **Quick scout:** One small frozen source map plus three fresh core probes using a fixed prompt and two meaning-preserving variants; can be done here; directional findings only.
 - **Atlas:** Usually 6–12 probes plus clustering and overlay; Field-Trip scale; preserve raw probes, sampling plan, frozen source map, atlas, and overlay.
-- **Dialectic-workflow use:** Link the atlas to the round control log or frontier ledger. Keep it distinct from Monk belief outputs and validation judgments.
+- **Dialectic-workflow use:** Link the atlas to the round or frontier checkpoint in the Field Log. Keep it distinct from Monk belief outputs and validation judgments.

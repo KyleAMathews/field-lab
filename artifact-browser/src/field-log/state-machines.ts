@@ -161,12 +161,14 @@ const workflowMachine = createMachine({
 		missing: { on: { "workflow.selected": "selected" } },
 		selected: {
 			on: {
+				"workflow.checkpoint.recorded": "selected",
 				"workflow.started": "running",
 				"workflow.failed": "failed",
 			},
 		},
 		running: {
 			on: {
+				"workflow.checkpoint.recorded": "running",
 				"workflow.paused": "paused",
 				"workflow.completed": "completed",
 				"workflow.failed": "failed",
@@ -174,6 +176,7 @@ const workflowMachine = createMachine({
 		},
 		paused: {
 			on: {
+				"workflow.checkpoint.recorded": "paused",
 				"workflow.resumed": "running",
 				"workflow.failed": "failed",
 			},

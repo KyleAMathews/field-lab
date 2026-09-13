@@ -26,6 +26,8 @@ import {
 	appendJsonLines,
 	stageTextReplacement,
 } from "../log/filesystem";
+import { checkpointSchema, validateCheckpoints } from "./checkpoints";
+import { mutationReminder } from "./guidance";
 import { groupFieldLogEntries } from "./journal";
 import {
 	type FieldLogProjection,
@@ -109,6 +111,7 @@ const generatedIds = {
 	"tension.added": "tensionId",
 	"plan.item.added": "planItemId",
 	"workflow.selected": "workflowId",
+	"workflow.checkpoint.recorded": "entryId",
 } as const;
 
 const idKeys = [
@@ -184,10 +187,14 @@ function validateCurrentQuestionInvariant(events: StoredEvent[]): void {
 function validateHistory(events: StoredEvent[]): void {
 	validateTransitions(events);
 	validateCurrentQuestionInvariant(events);
+	validateCheckpoints(events);
 }
 
 export interface MutationReceipt {
 	eventIds: number[];
+	reminder?: string;
+	latestEventId?: number;
+	entities?: Array<Record<string, string | number>>;
 	runId?: number;
 	entryId?: number;
 	relativeHref?: string;
@@ -263,6 +270,17 @@ function validateEventSemantics(event: StoredEvent): void {
 	if (requiredKind && event.authorization?.kind !== requiredKind)
 		throw new Error(`${type} requires authorization.kind ${requiredKind}.`);
 	switch (type) {
+		case "workflow.checkpoint.recorded": {
+			const checkpoint = checkpointSchema.parse(payload);
+			if (
+				["anchor", "phase-start"].includes(checkpoint.section) &&
+				event.authorization?.kind !== "user-selection"
+			)
+				throw new Error(
+					`${checkpoint.section} checkpoint requires authorization.kind user-selection.`,
+				);
+			break;
+		}
 		case "trip.created":
 			requireString(payload, type, "title");
 			requireString(payload, type, "openingQuestion");
@@ -827,10 +845,16 @@ export async function initializeFieldLog(
 		await appendStoredEvents(target.events, [event]);
 		try {
 			await commitProjection();
-			return { eventIds: [event.eventId] };
+			return {
+				eventIds: [event.eventId],
+				latestEventId: event.eventId,
+				reminder: mutationReminder(),
+			};
 		} catch (error) {
 			return {
 				eventIds: [event.eventId],
+				latestEventId: event.eventId,
+				reminder: mutationReminder("projection failed"),
 				projectionWarning:
 					error instanceof Error ? error.message : "Projection update failed.",
 			};
@@ -843,12 +867,25 @@ export async function initializeFieldLog(
 export async function appendFieldLogEvents(
 	directory: string,
 	input: unknown | unknown[],
+	options: { expectedEventId?: number } = {},
 ): Promise<MutationReceipt> {
+	if (
+		options.expectedEventId !== undefined &&
+		(!Number.isInteger(options.expectedEventId) || options.expectedEventId < 0)
+	)
+		throw new Error("expectedEventId must be a non-negative integer.");
 	const target = paths(directory);
 	const release = await acquireFieldLogLock(target.lock);
 	try {
 		const existing = await readStoredEvents(target.events);
 		if (!existing.length) throw new Error("Initialize the Field Log first.");
+		if (
+			options.expectedEventId !== undefined &&
+			options.expectedEventId !== existing.length
+		)
+			throw new Error(
+				`Field Log changed: expected event ${options.expectedEventId}, latest event ${existing.length}. Read the delta before retrying.`,
+			);
 		const submitted = Array.isArray(input) ? input : [input];
 		if (!submitted.length) throw new Error("No events supplied.");
 		const assigned = assignEvents(existing, submitted);
@@ -884,6 +921,28 @@ export async function appendFieldLogEvents(
 					: undefined;
 		const receipt: MutationReceipt = {
 			eventIds: assigned.map((event) => event.eventId),
+			latestEventId: assigned.at(-1)?.eventId,
+			entities: assigned.map((event) => {
+				const entity: Record<string, string | number> = {
+					eventId: event.eventId,
+					type: event.type,
+				};
+				for (const key of idKeys) {
+					const value =
+						key === "entryId" &&
+						event.payload.entry &&
+						typeof event.payload.entry === "object"
+							? (event.payload.entry as Record<string, unknown>).entryId
+							: event.payload[key];
+					if (typeof value === "number") entity[key] = value;
+				}
+				if (typeof entity.entryId === "number")
+					entity.relativeHref = fieldLogLink(
+						entity.entryId,
+						typeof entity.runId === "number" ? entity.runId : undefined,
+					);
+				return entity;
+			}),
 			runId,
 			entryId,
 			relativeHref: entryId
@@ -896,6 +955,7 @@ export async function appendFieldLogEvents(
 			receipt.projectionWarning =
 				error instanceof Error ? error.message : "Projection update failed.";
 		}
+		receipt.reminder = mutationReminder(receipt.projectionWarning);
 		return receipt;
 	} finally {
 		await release();

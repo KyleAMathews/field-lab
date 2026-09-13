@@ -47,11 +47,11 @@ Re-running monks is where the skill's decorrelation apparatus (blind parallel sp
 
 The loop does not bypass instrument contracts:
 
-- **Research** is a tool operation. Type its findings in the observation ledger, update the `atlas`, and rerun only the instruments whose inputs changed.
+- **Research** is a tool operation. Record its typed findings in the Field Log, update the `atlas`, and rerun only the instruments whose inputs changed.
 - **Refine** prepares and reruns `belief-stress` through Phases 2–3 with per-pole isolated briefs, then repeats the Phase 4 instrument sequence. Refresh `neutral-control` when the specimen or framing changed materially.
 - **Re-split** first runs `tension-statement` on the proposed working question. Rerun only after the user selects or rewrites a live split. A supported none-found result or rejection of the whole menu returns to the router without new Monks. Otherwise prepare and rerun `belief-stress` through Phases 2–3 with the selected poles, followed by the Phase 4 instrument sequence. Refresh `neutral-control` before the new Monks run.
-- **Redirect** records the current tension as `thin`, `dissolved`, or `redirected`, preserves its artifacts and side trails, and presents still-supported parked options plus any movement-threshold-clearing new direction. After the user chooses, open a new round control log with a lineage pointer and return to Phase 1. Reuse valid readings; do not jump straight to Monk preparation.
-- **Proceed** carries the completed Phase 4 instrument ledger into `candidate-spectrograph`; it does not invent a new reading.
+- **Redirect** records the current tension as `thin`, `dissolved`, or `redirected`, preserves its artifacts and side trails, and presents still-supported parked options plus any movement-threshold-clearing new direction. After the user chooses, record a new round number and lineage checkpoint in the same Field Log and return to Phase 1. Reuse valid readings; do not jump straight to Monk preparation.
+- **Proceed** carries the completed Phase 4 Field Log instrument records into `candidate-spectrograph`; it does not invent a new reading.
 
 Append new lifecycle entries rather than overwriting the prior pass. This preserves whether a later result came from new evidence, new belief burdens, or repeated exposure.
 
@@ -76,10 +76,12 @@ Append new lifecycle entries rather than overwriting the prior pass. This preser
 
 At the top of **each** loop pass:
 
-1. Read the control log + the last pass's negation + the user's corrections, and write the **delta** (what changed: working question, hidden-question ledger line, frontier-ledger line, loop-ledger line, open gaps).
-2. **Re-read the whole control log fresh** as grounding before continuing.
+1. Read the Field Log's active-round checkpoints, the last pass's negation, and the user's corrections. Append only changed checkpoint sections (working tension, hidden question, frontier, loop decision, gaps); update the question through its normal event.
+2. **Ground the next pass in the committed checkpoints.** Use the receipt and known content; read any missing or truncated referenced entries. A whole-log reread is not required.
 
-The second read is the actual scent-fix — re-injection at loop-top counteracts the context-window pressure that causes drift. Writing the log without re-reading it builds the anchor and then never looks at it.
+This grounding is for actual loop boundaries. Recover the original anchor and
+current purpose alongside changed state so a recent finding cannot silently
+replace the inquiry. Ordinary interview turns do not need this reread.
 
 ---
 
@@ -89,7 +91,7 @@ The second read is the actual scent-fix — re-injection at loop-top counteracts
 - [ ] The three maturity signals computed and **shown to the user** (hidden-question movement, new cross-edges, new facts)
 - [ ] The gap diagnosed and an exit recommended, including how the next pass would be framed
 - [ ] The **user chose the exit** — not the orchestrator (this user-decision item is not self-waivable)
-- [ ] Control log updated this pass: hidden-question ledger line + frontier-ledger line + loop-ledger line + open gaps (drift protocol run: delta written, then whole log re-read)
+- [ ] Field Log checkpoints updated for this pass: hidden question, frontier, chosen loop route, and changed gaps; active-round anchor and current purpose recovered under the drift protocol
 - [ ] On a Refine/Re-split exit: the monk brief was assembled by the gardener (firewall-clean; per-pole ignored-evidence for Refine); on Re-split, the working question passed the closure test
 - [ ] On a Redirect exit: the old round status, new user choice, lineage, and Phase 1 return are recorded
-- [ ] Instrument ledger updated for the chosen exit: Research names affected reruns; Refine/Re-split records fresh `neutral-control` when needed plus prepared/completed `belief-stress` and repeated Phase 4 readings; Redirect records the recheck and preserves prior traces; Proceed points to the completed Phase 4 entries
+- [ ] Field Log instrument records updated for the chosen exit: Research names affected reruns; Refine/Re-split records fresh `neutral-control` when needed plus prepared/completed `belief-stress` and repeated Phase 4 readings; Redirect records the recheck and preserves prior traces; Proceed points to the completed Phase 4 entries

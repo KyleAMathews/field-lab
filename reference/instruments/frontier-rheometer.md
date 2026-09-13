@@ -9,7 +9,7 @@ requires: "A working question, committed poles, a frozen actual landing, and a b
 execution_seat: hybrid
 fresh_context: required
 effort: low
-persistence: "One blind probe per pass; can be done here or kept as a frontier-ledger entry in a workflow."
+persistence: "One blind probe per pass; can be done here or kept as a Field Log frontier checkpoint in a workflow."
 artifact_risk: "A fluent match may be mistaken for low value, while vague divergence may be mistaken for novelty."
 maturity: trialed
 documented_uses: 3
@@ -49,12 +49,12 @@ The router already computes these; this layer only _re-labels_ them. Per-tension
 An **ephemeral subagent that sees only the setup** — the current working question and the poles — and predicts the resolution(s) it would expect. Fired once per refinement pass (serves both the negation and the palette, since the setup is constant within a pass).
 
 - **Input:** the working question + the two (or more) committed poles, verbatim.
-- **Blind to:** monk essays, the determinate negation, donor research, the palette, the control log. (This blindness is the whole point — a probe that has seen the dialectic's work can't measure whether the work was expected.)
+- **Blind to:** monk essays, the determinate negation, donor research, the palette, the Field Log and its workflow checkpoints. (This blindness is the whole point — a probe that has seen the dialectic's work can't measure whether the work was expected.)
 - **Task:** "Given this question and these committed positions, what resolution(s) would you expect a competent analysis to land on? Give the 1–3 most likely." Neutral; no access to the actual work.
 - **Return:** the 1–3 expected resolutions, concise.
 - **Comparison:** the belief-free **orchestrator** (which already holds the negation/palette and the probe's return in context — no extra judge agent) reads each actual negation move / palette candidate against the expected set. **Match → groove. Divergence → frontier.**
 
-**Firewall.** The probe runs _after_ the monks and its output goes **only to the orchestrator's frontier reading** — never into a monk brief. It is orchestrator-facing like `donor` / `tension` / `synthesis` material, and ephemeral (recorded in the reading + frontier-ledger, not a wiki page).
+**Firewall.** The probe runs _after_ the monks and its output goes **only to the orchestrator's frontier reading** — never into a monk brief. It is orchestrator-facing like `donor` / `tension` / `synthesis` material, and ephemeral (recorded in the Field Log reading and frontier checkpoint, not a wiki page).
 
 **Copy-paste skeleton** (instantiate one per pass, fill the brackets):
 
@@ -104,9 +104,9 @@ When the orchestrator presents the determinate negation (Phase 4, 4.9), it appen
 
 At Phase 5 (5.7), each drafted S/J/G/F/U candidate gets a one-line groove/frontier flag from the same blind expectation, e.g. `[frontier — diverges from the expected "just balance A and B"]`. Lets the user scan which candidate is off the worn surface. (S often reads groove; U/F often frontier — the flag makes it visible per-run rather than assumed. Do not treat the flag as a ranking.)
 
-### 3. Control log — a frontier-ledger (cross-pass tracker)
+### 3. Field Log — frontier checkpoints across passes
 
-One line per refinement pass in `round_N_dialectic_log.md`, so redirect _over time_ is visible. Schema:
+Record one `frontier` workflow checkpoint per refinement pass in the Field Log, citing the run that holds the full reading. Preserve these facts in its Markdown so redirect _over time_ is visible:
 
 ```
 frontier-ledger:

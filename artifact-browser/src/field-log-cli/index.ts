@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import { readFile } from "node:fs/promises";
 import {
+	fieldLogDelta,
+	fieldLogState,
 	inspectFieldLog,
 	readFieldLogItem,
 	searchFieldLog,
@@ -21,6 +23,8 @@ async function readStdin(): Promise<string> {
 
 function option(args: string[], name: string): string | undefined {
 	const index = args.indexOf(name);
+	if (index >= 0 && args[index + 1] === undefined)
+		throw new Error(`${name} requires a value.`);
 	return index >= 0 ? args[index + 1] : undefined;
 }
 
@@ -38,7 +42,7 @@ async function main() {
 	const [, , command, directory, ...args] = process.argv;
 	if (!command || !directory) {
 		throw new Error(
-			"Usage: field-log <init|append|validate|render|link|inspect|search|read|rename> <trip-directory> [options]",
+			"Usage: field-log <init|append|validate|render|link|inspect|state|delta|search|read|rename> <trip-directory> [options]",
 		);
 	}
 	if (command === "init") {
@@ -49,7 +53,14 @@ async function main() {
 	}
 	if (command === "append") {
 		console.log(
-			JSON.stringify(await appendFieldLogEvents(directory, await input(args))),
+			JSON.stringify(
+				await appendFieldLogEvents(directory, await input(args), {
+					expectedEventId:
+						option(args, "--expected-event") === undefined
+							? undefined
+							: Number(option(args, "--expected-event")),
+				}),
+			),
 		);
 		return;
 	}
@@ -73,6 +84,34 @@ async function main() {
 		console.log(JSON.stringify(await inspectFieldLog(directory)));
 		return;
 	}
+	if (command === "state") {
+		const numberOption = (name: string) =>
+			option(args, name) === undefined ? undefined : Number(option(args, name));
+		console.log(
+			JSON.stringify(
+				await fieldLogState(directory, {
+					limit: numberOption("--limit"),
+					workflowId: numberOption("--workflow"),
+					round: numberOption("--round"),
+				}),
+			),
+		);
+		return;
+	}
+	if (command === "delta") {
+		console.log(
+			JSON.stringify(
+				await fieldLogDelta(
+					directory,
+					Number(option(args, "--since")),
+					option(args, "--limit") === undefined
+						? undefined
+						: Number(option(args, "--limit")),
+				),
+			),
+		);
+		return;
+	}
 	if (command === "search") {
 		const query =
 			option(args, "--query") ??
@@ -89,6 +128,10 @@ async function main() {
 		console.log(
 			JSON.stringify(
 				await readFieldLogItem(directory, {
+					eventId:
+						option(args, "--event") === undefined
+							? undefined
+							: Number(option(args, "--event")),
 					entryId: entry ? Number(entry) : undefined,
 					runId: run ? Number(run) : undefined,
 					sourceId: source ? Number(source) : undefined,

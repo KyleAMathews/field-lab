@@ -104,6 +104,19 @@ If question 2, 3, or 4 has no answer, do not perform the operation. Offer the fi
 
 **Regression case:** After an uninstrumented source survey, do not write: “The first pass is producing a useful split. Strong candidates…” That sentence evaluates candidates and synthesizes a cross-source pattern. No amount of source reading makes it a bounded reading. Instead, state that no instrument has run, recommend the named instrument that could produce the desired comparison, and wait for selection.
 
+## Continue an existing interview
+
+When a saved Field Trip is already in a started interview and the user is
+answering or correcting its current question, reuse known state or run
+`node <skill-root>/artifact-browser/dist/field-log-cli/index.js state <trip-directory>`.
+The result includes the active run, scope, IDs, and the writer's `writeHelp`
+contract. Read the active instrument card if missing and continue that operation;
+append receipts carry the next recording reminder. This replaces setup-document
+reads for this exchange, including the full workflow, phase map, and event
+catalog. If the saved record cannot establish the active operation, or the next
+action completes it, changes method, starts research, or crosses a phase gate,
+load the relevant full procedure.
+
 ## Examine before concluding
 
 For open, ambiguous, interpretive, personal, strategic, creative, or high-stakes inquiry, first ask for missing context when needed, offer a concrete way to examine the case, and return what that operation shows.
@@ -400,6 +413,11 @@ the only mutation path; never create or edit `field_log.jsonl` or
 answered questions. When the user sharpens or redirects the inquiry, update the
 Field Log's displayed aim in the same write as their exact comment; do not
 leave the opening placeholder as the trip's overview.
+
+The Field Log is the sole inquiry record, including dialectic round checkpoints.
+Do not create or maintain a separate dialectic control log. Batch changed facts,
+reuse receipt IDs during an uninterrupted exchange, and use compact `state`
+for recovery instead of rereading the full history on every turn.
 
 For every user-gated Field Log event, give the writer the specific allowed
 authorization kind, the user-turn pointer, and the user's exact authorizing

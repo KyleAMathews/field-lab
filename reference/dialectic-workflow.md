@@ -23,7 +23,7 @@ Selecting the workflow reserves its scheduled instruments and declared artifacts
 6. If no Field Log exists, read [field-trip.md](field-trip.md) and
    [field-log-events.md](field-log-events.md), then initialize the compound log
    through its bundled writer as part of the workflow's declared files.
-7. Preserve these fields into the Field Trip log and `round_1_dialectic_log.md`:
+7. Preserve these fields once in the Field Log; reference records already present rather than copying them. Use workflow checkpoints for unique round state:
    - original question, session provenance, and field lineage;
    - goal, audience, and useful outcome;
    - workflow-selection pointer;
@@ -33,7 +33,7 @@ Selecting the workflow reserves its scheduled instruments and declared artifacts
 8. Ask only for gaps. Do not repeat answered interview questions.
 9. Create a narrow workflow artifact directory and staging directory within the Field Trip. Dispatch the gardener to initialize the wiki in the background before new research, then continue Phase 1 without waiting for its startup response; the workflow's several agents, cross-links, validation trace, and likely recursion cross the graph-memory threshold.
 
-If the workflow inherits prior readings, copy what actually ran. A correlated fallback remains correlated unless rerun under the full card. Adoption never launders an old reading into a stronger epistemic state.
+If the workflow inherits prior readings, preserve references to what actually ran. A correlated fallback remains correlated unless rerun under the full card. Adoption never launders an old reading into a stronger epistemic state.
 
 ## Non-linear workflow
 
@@ -60,7 +60,7 @@ Run this gate before **every numbered phase**, including Phase 1. A passed compl
 3. **Show the work.** Name what the user will receive, any files or logs that will be created, and any fresh agents or outside research involved. Give a useful estimate of time or effort only when it is known; describe the actual work, not a generic cost band.
 4. **Describe the next return point.** Say what the user will see before more work runs. Never describe the entire phase as one uninterrupted batch.
 5. **Pause.** Ask whether to start this phase and stop. A prior workflow choice, completion gate, or “continue” given before this card is not the phase-start go-ahead.
-6. **Record the start.** After the user agrees, record the opening card, promised checkpoint, and user-message pointer in the round control log before doing phase work.
+6. **Record the start.** After the user agrees, record the opening card, promised checkpoint, and user-message pointer in a Field Log `phase-start` workflow checkpoint before doing phase work.
 
 After the user starts the phase, explain each instrument or tightly coupled cluster in plain language just before it runs. Return its bounded result at the phase's stated return point. Do not compress the opening card and the first instrument run into one response.
 
@@ -75,7 +75,7 @@ Read [dialectic-instrument-map.md](dialectic-instrument-map.md) for the sole pha
 - **Research agents:** answer narrow gaps and write staging drafts when research needs to be kept for later phases.
 - **Gardener:** background, sole writer of the dialectic wiki; ingests, links, lints, re-grounds, and assembles firewall-clean Monk briefs from disk. Its dispatch is asynchronous unless the very next operation needs one of those outputs.
 
-Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or round control logs. Keep immutable position snapshots, typed page classes, staged handoffs, append-only ledgers, and the rule that workflow gates cannot pass until required material is ingested.
+Read [dialectic-wiki.md](dialectic-wiki.md) before creating the wiki or recording round checkpoints. Keep immutable position snapshots, typed page classes, staged handoffs, append-only ledgers, and the rule that workflow gates cannot pass until required material is ingested.
 
 ## Structural safeguards
 
@@ -122,7 +122,7 @@ Read each file in full immediately before executing it. Run its completion gate 
 The workflow leaves a navigable trace rather than a single forced answer:
 
 - committed positions and their evidence;
-- an instrument ledger with authorization, lifecycle, execution, controls, typed readings, artifacts, and unmeasured remainders;
+- Field Log instrument records with authorization, lifecycle, execution, controls, typed readings, artifacts, and unmeasured remainders;
 - determinate negation and hidden questions;
 - decomposition, cross-links, residue, loss-audit dispositions, and transfer controls;
 - a plural candidate palette and candidate-local validation;

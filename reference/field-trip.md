@@ -12,7 +12,10 @@ up a Field Log. Do not infer agreement from the inquiry's length, cost, or
 importance. Preserve the original question and every answer already available;
 ask only for missing facts that would change setup.
 
-Before writing, read [field-log-events.md](field-log-events.md) in full.
+For setup or a new operation, read [field-log-events.md](field-log-events.md).
+For an answer within an already-started interview, reuse known state and the
+recording contract. If either is missing, `state` returns both; successful
+append receipts include reminders.
 
 ## Runtime
 
@@ -183,6 +186,12 @@ query string with `relativeHref`, because that would discard the capability.
 Keep the canonical router, selected queue, and authority boundary from
 `SKILL.md`.
 
+Keep writes small: batch the facts that changed and reuse writer receipts for
+IDs and links. Do not inspect the whole log on every user message, rewrite an
+unchanged scope, or create extra lifecycle events without an execution reason.
+For the dialectic workflow, record unique round state as Field Log workflow
+checkpoints; never maintain a separate round control log.
+
 - Record every substantive user comment, correction, choice, observation, or
   reaction exactly. When it causes a state change, append the comment and
   related domain event in one batch.
@@ -279,11 +288,11 @@ Electric Monk dialectic.
 A Field Trip has no terminal status. The user may return whenever new evidence,
 questions, or purposes arise.
 
-On re-entry, read `field_log.jsonl` through the writer's validation command to
-reconstruct every state machine:
+On re-entry after context loss or a resumed session, use the compact validated
+state view. A new user message in the same exchange does not require re-entry:
 
 ```bash
-node <skill-root>/artifact-browser/dist/field-log-cli/index.js validate <trip-directory>
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js state <trip-directory>
 ```
 
 If the JSONL stream is valid but the Markdown projection is missing or stale,
@@ -293,8 +302,10 @@ overwrite it from canonical history:
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js render <trip-directory>
 ```
 
-Then launch a fresh reader session. Historical browser ports and capabilities
-do not matter.
+Read truncated or needed historical entries through `read`. When another
+writer may have changed the log, append with the last known `--expected-event`
+and use `delta --since` if it reports a changed version. Do not blindly retry.
+Reuse the named reader session if it is alive; otherwise launch it again.
 
 ## Expedition membership
 

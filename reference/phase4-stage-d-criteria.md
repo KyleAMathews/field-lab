@@ -59,7 +59,7 @@ Then ask:
 
 **Anti-sycophancy at this checkpoint:** When the user provides input here, evaluate it structurally, not socially. Do NOT say "this is excellent material." Instead: What does this material do to the decomposition? Does it challenge the hidden question? Does it open a new domain for cross-connection? Does it actually change anything, or is it confirming what the analysis already found? If the user shares a framework they're excited about, it enters the mix as one more input to be shattered and recombined — not as the answer the synthesis should converge on. The user is in the belief-free seat. Do not try to locate their position and build toward it.
 
-**After the user responds, route — do not default to Phase 5.** Write this pass's hidden question to the control log's **hidden-question ledger** and this pass's frontier reading to the **frontier-ledger** (`reference/instruments/frontier-rheometer.md`), then read `reference/refinement-loop.md`, run the whole-inquiry tension recheck, and use the **five-exit router**: Proceed / Research / Refine / Re-split / Redirect. Phase 5 is only the _Proceed_ exit. Redirect preserves a thin or abandoned round and returns a user-selected different direction to Phase 1 without forcing synthesis. You recommend an exit; the user chooses.
+**After the user responds, route — do not default to Phase 5.** Record this pass's hidden question and frontier reading as Field Log `hidden-question` and `frontier` workflow checkpoints, citing their instrument run IDs (`reference/instruments/frontier-rheometer.md`), then read `reference/refinement-loop.md`, run the whole-inquiry tension recheck, and use the **five-exit router**: Proceed / Research / Refine / Re-split / Redirect. Phase 5 is only the _Proceed_ exit. Redirect preserves a thin or abandoned round and returns a user-selected different direction to Phase 1 without forcing synthesis. You recommend an exit; the user chooses.
 
 ---
 
@@ -70,9 +70,9 @@ Then ask:
 - [ ] 4.9 concise summary prepared: hidden question, key negations, decomposition readings, sublation criteria, and a pointer to the full raw misfit register; no agent-only surprise or importance ranking controls what the user can inspect
 - [ ] A gentle, personalized on-ramp presented for each distant donor that materially supports the summary (familiar bridge → concrete scene → plain mechanism → ≤3 defined terms → transfer + limit); no raw donor-page prose or dense multi-donor table used as the introduction
 - [ ] **HARD STOP honored** — summary presented to the user and their response received (this item is NOT self-waivable; only the user can release it)
-- [ ] Hidden question written to the control log's hidden-question ledger this pass
+- [ ] Hidden question recorded in a Field Log workflow checkpoint for this pass
 - [ ] Frontier Overlay run: blind-expectation probe spawned (blind to essays/negation/donors), companion block appended to the negation summary, collapse checked
-- [ ] Frontier-ledger line written this pass (reading / expected / actual / collapse)
+- [ ] Field Log frontier checkpoint recorded this pass (reading / expected / actual / collapse)
 - [ ] `reference/refinement-loop.md` read, whole-inquiry tension status recorded, and the five-exit router run (Phase 5 only on the Proceed exit)
 - [ ] `frontier-rheometer` raw readout records authorization, actual blind context, fallback, expected/actual access delta, typed readings, collapse control, artifact risk, unmeasured remainder, and trace; interpretation remains separate and the user response updates the specimen before the router exit
 

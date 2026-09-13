@@ -499,6 +499,7 @@ describe("Field Log writer", () => {
 		expect(receipt).toMatchObject({
 			eventIds: [2],
 			projectionWarning: expect.stringContaining("field_log.md"),
+			reminder: expect.stringContaining("Do not repeat the append"),
 		});
 		expect(
 			await readFile(join(directory, "field_log.jsonl"), "utf8"),

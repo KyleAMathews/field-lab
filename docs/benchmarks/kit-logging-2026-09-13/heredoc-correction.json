@@ -1,0 +1,51 @@
+{
+  "traceDirectory": "/var/folders/m3/r413t_qj4kxg1mdnmk1zb8q80000gn/T/kit-logging-ab-5uUOGy",
+  "environment": {
+    "baselineCommit": "3dcf44825752fdfce3d05bf3214f7509cb382878",
+    "codexVersion": "codex-cli 0.153.3",
+    "pairs": 1,
+    "selectedCase": "correction",
+    "selectedVariant": "candidate",
+    "warm": false,
+    "startedAt": "2026-09-13T14:56:52.449Z"
+  },
+  "trials": [
+    {
+      "phase": "cold",
+      "fixtureDirectory": "/var/folders/m3/r413t_qj4kxg1mdnmk1zb8q80000gn/T/kit-logging-ab-5uUOGy/correction-1-candidate/field-trip-teaching",
+      "threadId": "01a09b45-6c9c-78f3-b172-9d8ec279b65d",
+      "variant": "candidate",
+      "caseName": "correction",
+      "iteration": 1,
+      "code": 0,
+      "elapsedMs": 50469,
+      "valid": true,
+      "exactComment": true,
+      "currentQuestion": "What would be an example of unhelpful teaching, in any setting?",
+      "questionMatchesFinal": true,
+      "commands": 5,
+      "commandBytes": 1573,
+      "loggingCommandBytes": 901,
+      "controlLogChanged": false,
+      "toolOutputBytes": 66852,
+      "fileChangeBytes": 0,
+      "eventsAdded": [
+        "comment.recorded",
+        "trip.context.recorded",
+        "question.revised"
+      ],
+      "usage": {
+        "input_tokens": 103801,
+        "cached_input_tokens": 81280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 804,
+        "reasoning_output_tokens": 133
+      },
+      "final": "Understood. I\u2019ve updated the aim to teaching generally.\n\nWhat would be an example of unhelpful teaching, in any setting?",
+      "files": [
+        "field_log.jsonl",
+        "field_log.md"
+      ]
+    }
+  ]
+}

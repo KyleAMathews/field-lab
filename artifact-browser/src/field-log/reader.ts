@@ -1,5 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { isAbsolute, resolve } from "node:path";
+import { checkpointIndex } from "./checkpoints";
+import { stateWriteHelp } from "./guidance";
 import { projectFieldLogEvents } from "./projection";
 import { type StoredEvent, validateFieldLog } from "./writer";
 
@@ -103,6 +105,7 @@ function eventEntry(event: StoredEvent, model: FieldLogReadModel) {
 			break;
 		case "note.recorded":
 		case "synthesis.recorded":
+		case "workflow.checkpoint.recorded":
 			id = `entry-${entryId(event) ?? eventId}`;
 			break;
 		case "source.collected":
@@ -164,25 +167,175 @@ export async function inspectFieldLog(directory: string) {
 		openedAt: model.projection.openedAt,
 		updatedAt: model.projection.updatedAt,
 		latestEventId: model.events.at(-1)?.eventId,
+		checkpoints: checkpointIndex(model.events),
 		scope: model.projection.scope,
+		openingQuestion: model.projection.openingQuestion,
+		reason: model.projection.reason,
+		lineage: model.projection.lineage,
 		currentQuestion: model.projection.currentQuestion,
+		currentQuestionId: model.projection.currentQuestionId,
 		questions: model.projection.questions,
 		sources: model.projection.sources,
 		terms: model.projection.terms,
 		tensions: model.projection.tensions,
 		plan: model.projection.plan,
 		runs: model.projection.runs,
+		workflows: model.projection.workflow,
 		entries: model.projection.entries.map(
 			({ readoutMarkdown: _readoutMarkdown, ...entry }) => entry,
 		),
 	};
 }
 
+function pageLimit(limit = 10): number {
+	if (!Number.isInteger(limit) || limit < 1 || limit > 100)
+		throw new Error("limit must be an integer from 1 to 100.");
+	return limit;
+}
+
+/** Compact recovery view. Full content is always available through read/inspect. */
+export async function fieldLogState(
+	directory: string,
+	options: { limit?: number; workflowId?: number; round?: number } = {},
+) {
+	const limit = pageLimit(options.limit);
+	for (const key of ["workflowId", "round"] as const) {
+		const value = options[key];
+		if (value !== undefined && (!Number.isInteger(value) || value < 1))
+			throw new Error(`${key} must be a positive integer.`);
+	}
+	const { events, projection } = await readFieldLog(directory);
+	const clip = (text: string, length = 500) => ({
+		text: text.slice(0, length),
+		truncated: text.length > length,
+	});
+	const page = <T>(items: T[]) => ({
+		items: items.slice(-limit),
+		total: items.length,
+		omitted: Math.max(0, items.length - limit),
+	});
+	const checkpoints = checkpointIndex(events);
+	const lastCheckpoint = [...events]
+		.reverse()
+		.find((event) => event.type === "workflow.checkpoint.recorded");
+	const workflowId =
+		options.workflowId ?? numberValue(lastCheckpoint?.payload.workflowId);
+	const workflowCheckpoints = checkpoints.filter(
+		(item) => item.workflowId === workflowId,
+	);
+	const round =
+		options.round ??
+		Math.max(0, ...workflowCheckpoints.map((item) => item.round));
+	return {
+		format: "field-log-state/v1",
+		writeHelp: stateWriteHelp,
+		latestEventId: events.at(-1)?.eventId,
+		title: clip(projection.title),
+		scope: clip(projection.scope, 1200),
+		openingQuestion: clip(projection.openingQuestion),
+		currentQuestion: clip(projection.currentQuestion),
+		currentQuestionId: projection.currentQuestionId,
+		questions: page(
+			projection.questions.map((item) => ({
+				id: item.id,
+				title: clip(item.title),
+				detail: clip(item.detail ?? ""),
+			})),
+		),
+		runs: page(
+			projection.runs
+				.filter((item) =>
+					["selected", "prepared", "running"].includes(item.status),
+				)
+				.map(({ feedback: _, ...item }) => item),
+		),
+		workflows: page(
+			projection.workflow.map((item) => ({
+				...item,
+				title: clip(item.title),
+				detail: undefined,
+			})),
+		),
+		sourceCount: projection.sources.length,
+		plan: page(
+			projection.plan.map((item) => ({
+				...item,
+				title: clip(item.title),
+				detail: clip(item.detail ?? ""),
+			})),
+		),
+		tensions: page(
+			projection.tensions.map((item) => ({
+				...item,
+				title: clip(item.title),
+				detail: clip(item.detail ?? ""),
+			})),
+		),
+		termCount: projection.terms.length,
+		checkpoints: {
+			workflowId,
+			round: round || undefined,
+			total: checkpoints.length,
+			items: workflowCheckpoints
+				.filter((item) => item.round === round)
+				.map((item) => ({
+					...item,
+					markdown: clip(
+						textValue(events[(item.eventId ?? 0) - 1]?.payload.markdown),
+						1200,
+					),
+				})),
+		},
+		entries: page(
+			projection.entries.map((item) => ({
+				id: item.id,
+				kind: item.kind,
+				title: clip(item.title),
+				summary: clip(item.summary),
+			})),
+		),
+	};
+}
+
+export async function fieldLogDelta(
+	directory: string,
+	since: number,
+	limit = 50,
+) {
+	pageLimit(limit);
+	if (!Number.isInteger(since) || since < 0)
+		throw new Error("since must be a non-negative event ID.");
+	const events = await validateFieldLog(directory);
+	const latestEventId = events.at(-1)?.eventId ?? 0;
+	if (since > latestEventId)
+		throw new Error(`since exceeds latest event ${latestEventId}.`);
+	const items = events.slice(since, since + limit);
+	const nextEventId = items.at(-1)?.eventId ?? since;
+	return {
+		events: items,
+		latestEventId,
+		nextEventId,
+		hasMore: nextEventId < latestEventId,
+	};
+}
+
 export async function readFieldLogItem(
 	directory: string,
-	selector: { entryId?: number; runId?: number; sourceId?: number },
+	selector: {
+		entryId?: number;
+		runId?: number;
+		sourceId?: number;
+		eventId?: number;
+	},
 ) {
 	const model = await readFieldLog(directory);
+	if (selector.eventId !== undefined) {
+		const event = model.events.find(
+			(event) => event.eventId === selector.eventId,
+		);
+		if (!event) throw new Error(`Event ${selector.eventId} was not found.`);
+		return { kind: "event" as const, event };
+	}
 	if (selector.sourceId) {
 		const collected = model.events.find(
 			(event) =>

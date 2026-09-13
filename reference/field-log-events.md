@@ -1,16 +1,19 @@
 # Field Log writer and events
 
-Read this file before creating or mutating a compound Field Log.
+Read this file for Field Log setup or a new operation. During an already-started
+interview, reuse the known recording contract or the CLI's `state.writeHelp`;
+append receipts carry reminders without another read.
 
 ## Contents
 
 1. [Commands](#commands)
 2. [Submitted event envelope](#submitted-event-envelope)
 3. [IDs, batching, and receipts](#ids-batching-and-receipts)
-4. [Event transitions](#event-transitions)
-5. [Payloads the reader projects](#payloads-the-reader-projects)
-6. [Instrument completion](#instrument-completion)
-7. [Custom instrument validation](#custom-instrument-validation)
+4. [Workflow checkpoints](#workflow-checkpoints)
+5. [Event transitions](#event-transitions)
+6. [Payloads the reader projects](#payloads-the-reader-projects)
+7. [Instrument completion](#instrument-completion)
+8. [Custom instrument validation](#custom-instrument-validation)
 
 ## Commands
 
@@ -23,6 +26,8 @@ node <skill-root>/artifact-browser/dist/field-log-cli/index.js validate <trip-di
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js render <trip-directory>
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js link <trip-directory> --entry <entry-id> [--readout <run-id>]
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js inspect <trip-directory>
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js state <trip-directory> [--workflow <ID>] [--round <N>] [--limit 10]
+node <skill-root>/artifact-browser/dist/field-log-cli/index.js delta <trip-directory> --since <event-ID> [--limit 50]
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js search <trip-directory> --query '<text>'
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js read <trip-directory> (--entry <ID> | --readout <ID> | --source <ID>)
 node <skill-root>/artifact-browser/dist/field-log-cli/index.js rename <trip-directory> '<new title>'
@@ -34,9 +39,31 @@ all events, full readouts, and collected source files. Source hits distinguish
 `collected` from `examined`. `read` returns one selected entry, readout, or
 source in full.
 
-Use `--json` for normal writes, including long Markdown serialized as a JSON
-string. `--file` and stdin are available only when shell quoting or an unusually
-large event makes inline JSON unsafe.
+For re-entry, prefer `state`: current scope/question and IDs, active runs,
+workflow status, recent entries, and the latest checkpoint sections for one
+round. Text fields report truncation; read needed content in full through
+`read --entry <ID>` or `read --event <ID>`. Lists report omitted counts; use
+`inspect` for the full index. `--workflow` and `--round` select older records.
+`delta` returns canonical events after a known ID, with `nextEventId` and
+`hasMore`; follow pages until caught up. These commands already validate the
+history. Do not run `validate` before them as a routine extra step.
+
+`state.writeHelp` returns the small write contract for continuing an active
+interview. Append receipts include a `reminder` tailored to successful rendering
+or a projection warning. Reuse these instructions and IDs; they remove the
+need for a separate instruction read or verification call. A normal new user
+reply is not re-entry and needs no log read when the relevant state is in context.
+
+During an uninterrupted exchange, reuse known state and successful receipts.
+Append with `--expected-event <latestEventId>` when relying on that state. A
+stale version fails before mutation; read the delta and reassess the batch
+before retrying. This detects another writer without a full-log read per turn.
+
+For prose, prefer JSON on stdin through a quoted heredoc in the same shell
+call (`<<'JSON'`, the event array, then `JSON` on its own line). This avoids
+shell interpolation and apostrophe escaping. Preserve the user's exact text;
+never change punctuation to fit shell quotes. `--json` remains useful for
+simple inputs, and `--file` accepts an existing payload file.
 
 The CLI prints one JSON receipt on success and one JSON error on failure.
 Validation and staging errors happen before the canonical append: correct the
@@ -151,6 +178,59 @@ receipt may contain:
 
 The writer validates the old stream plus the whole proposed batch before
 appending. Batch related facts when they must succeed or fail together.
+
+Append receipts also return `latestEventId` and an `entities` array: one item
+per event, with its type, event ID, relevant entity IDs, and an entry link when
+available. Use these links even when a completion is not the last event in the
+batch. Existing top-level `runId`/`entryId` still describe only the last event.
+
+## Workflow checkpoints
+
+Use `workflow.checkpoint.recorded` for unique dialectic round state. It replaces
+the separate round control log. Do not duplicate comments, scope, questions,
+source activity, or instrument readouts that already have Field Log events.
+
+```json
+{
+  "type": "workflow.checkpoint.recorded",
+  "actor": {"kind": "orchestrator"},
+  "payload": {
+    "workflowId": 1,
+    "round": 1,
+    "section": "gaps",
+    "markdown": "Need a concrete case that distinguishes the two working tensions. See run 3.",
+    "eventRefs": [12]
+  }
+}
+```
+
+Required payload fields: `workflowId`, positive integer `round`, `section`,
+and nonempty `markdown`. Optional `title` names the entry; `eventRefs` names
+earlier events in this log. The writer assigns `entryId`. The workflow must
+already be selected, running, or paused. Checkpoints never advance its lifecycle.
+
+Sections: `lineage`, `anchor`, `phase-start`, `tension`, `hidden-question`,
+`frontier`, `loop`, `gaps`, `context`. Each event replaces the current reading
+of that section for its workflow and round, while retaining every earlier
+version. Write a complete current section when needed for recovery, and cite
+run/event IDs for the detailed evidence. Keep pass numbers and prior phase
+references in the relevant text. No checkpoint is required on an ordinary
+interview turn unless unique round state changes.
+
+An `anchor` is immutable: only one is accepted per workflow/round. Both
+`anchor` and `phase-start` require `authorization.kind: "user-selection"`
+with the exact supporting user turn and quote. A `phase-start` describes the
+numbered phase, opening-card pointer and timestamp, aim, scheduled and
+conditional instruments, expected artifacts and execution seats, useful time
+estimate, promised return, and later go-ahead. A `loop`
+checkpoint records the chosen route and its user pointer; it does not grant
+permission for later phases. Preserve any historical state whose authority
+cannot be recovered as attributed `context`, never as invented authorization.
+
+On cold re-entry or at an actual loop boundary, use `state`, then read any
+needed full checkpoint entries. Old round control logs are historical sources:
+read once, import only unique missing facts, and stop updating them. Do not
+create a replacement control-log file.
 
 ## Event transitions
 
