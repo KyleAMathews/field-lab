@@ -34,7 +34,7 @@ Then call Field Lab with whatever is on your mind:
 
 Think of a camera, a thermometer, and a pair of binoculars. A camera records a scene. A thermometer measures temperature. Binoculars bring distant details closer. Each shows you something different.
 
-My instruments work the same way, but language is stranger material. System 1 is shorthand for fast, intuitive thought; System 2 for slower, deliberate thought. A normal LLM response works more like System 1: it predicts a plausible continuation quickly and cheaply. Running an instrument makes the model do more System 2-like work by following a slower linguistic algorithm with explicit distinctions and checks.
+My instruments work the same way, but language is stranger material. An LLM generates language by predicting the next token. Used as ordinary chat, that process resembles System 1 thinking in dual-process theory: fast, associative, pattern-driven, and good at producing a plausible response. A Field Lab instrument makes the same model work more like System 2: slower and deliberate, following explicit steps, holding distinctions stable, and checking its output against evidence and rules. The instrument channels the model's linguistic power into an inspectable procedure when plausibility alone is not enough.
 
 A Field Lab instrument is a **linguistic algorithm with epistemic controls**. It can use the model's broad language ability to compare, reframe, translate, decompose, elicit, analogize, or compose. The instrument constrains what may count as evidence, which claims can survive, how the model's additions are labeled, and who gets to decide what the result means. Its controls test specific ways the operation might mislead; they do not make the result true or unbiased.
 
