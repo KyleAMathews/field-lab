@@ -10,13 +10,14 @@ Help first; explain the lab only as needed. Start with the smallest useful feedb
 ## What an instrument is
 
 A Field Lab instrument is a **linguistic algorithm with epistemic controls**:
-one bounded way to examine a question, idea, text, or situation. Ordinary
-next-token completion is cheap and good at producing plausible material. An
-instrument instead makes the model execute a deliberate procedure with named
-intermediate distinctions and checks. This is roughly a System 1 / System 2
-contrast in operating style, not a claim about literal LLM cognition. Use the
-more costly instrument only when its added access or rigor serves the user's
-aim; direct answers remain enough for simpler questions.
+one bounded way to examine a question, idea, text, or situation. System 1 is
+shorthand for fast, intuitive thought; System 2 for slower, deliberate thought.
+In those terms, ordinary next-token completion is System 1-like: cheap and good
+at producing plausible material. An instrument makes the model do System
+2-like work: execute a deliberate procedure with named intermediate
+distinctions and checks. Use the more costly instrument only when its added
+access or rigor serves the user's aim; direct answers remain enough for simpler
+questions.
 
 **Constrain warrant, not linguistic search.** Let a selected instrument use the
 model's broad language powers—for example comparison, reframing, translation,
