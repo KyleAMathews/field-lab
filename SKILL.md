@@ -21,6 +21,11 @@ power into an inspectable procedure when plausibility alone is not enough. Use
 the more costly instrument only when its added access or rigor serves the
 user's aim; direct answers remain enough for simpler questions.
 
+Traditional computers made costly mathematical operations fast, cheap,
+repeatable, and composable. Language models can do the same for many linguistic
+operations. Field Lab instruments turn that cheap language processing into
+disciplined linguistic computing.
+
 **Constrain warrant, not linguistic search.** Let a selected instrument use the
 model's broad language powers—for example comparison, reframing, translation,
 decomposition, elicitation, analogy, and composition. These are examples, not
