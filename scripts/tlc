@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+if [ "$#" -lt 2 ]; then
+  echo "usage: scripts/tlc MODEL_DIRECTORY TLC_ARGUMENT..." >&2
+  exit 64
+fi
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+skill_root=$(dirname -- "$script_dir")
+model_dir=$(CDPATH= cd -- "$1" && pwd)
+shift
+
+image=${FIELD_LAB_TLC_IMAGE:-field-lab-tlc:local}
+
+docker build --tag "$image" "$skill_root/tools/tla"
+docker run --rm \
+  --volume "$model_dir:/work:ro" \
+  "$image" \
+  -metadir /tmp/tlc \
+  "$@"

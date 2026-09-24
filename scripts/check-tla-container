@@ -1,0 +1,29 @@
+#!/bin/sh
+set -eu
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+skill_root=$(dirname -- "$script_dir")
+model_dir="$skill_root/tools/tla/smoke"
+output=$(mktemp "${TMPDIR:-/tmp}/field-lab-tlc.XXXXXX")
+trap 'rm -f "$output"' EXIT HUP INT TERM
+
+"$script_dir/tlc" "$model_dir" \
+  -deadlock \
+  -config DesignGrammarControl.safe.cfg \
+  DesignGrammarControl
+
+if "$script_dir/tlc" "$model_dir" \
+  -deadlock \
+  -config DesignGrammarControl.weakened.cfg \
+  DesignGrammarControl >"$output" 2>&1; then
+  echo "expected the weakened model to produce a counterexample" >&2
+  exit 1
+fi
+
+if ! grep -q "GenerationIsGrounded is violated" "$output"; then
+  echo "the weakened model failed for an unexpected reason" >&2
+  cat "$output" >&2
+  exit 1
+fi
+
+echo "TLA+ smoke control passed: safe model held; weakened model produced the expected counterexample."
