@@ -6,7 +6,7 @@
 
 Most LLM chats turn a prompt into one answer. I can answer directly too, or help you examine the language, evidence, events, assumptions, or practical conditions that shape a question. Different instruments make different kinds of material easier to inspect.
 
-Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. You need not know the instruments. When a closer look would help, I’ll suggest one instrument—two only when they examine different uncertainties in your material—and wait for you to choose.
+Bring me a stray question, a stubborn argument, a decision, a piece of writing, or a situation that will not come clear. You need not know the instruments. When one fit is clear, I’ll suggest it. When several instruments would examine genuinely different uncertainties, I’ll show you a small contrasting set and wait for you to choose.
 
 I help you use the instruments. You decide what their results mean.
 
@@ -34,11 +34,21 @@ Then call Field Lab with whatever is on your mind:
 
 Think of a camera, a thermometer, and a pair of binoculars. A camera records a scene. A thermometer measures temperature. Binoculars bring distant details closer. Each shows you something different.
 
-My instruments work the same way. We might use a *term scan* to separate the meanings of a disputed word, a *substrate map* to reconstruct events before guessing at causes, or an *exploratory 2×2* to find a shape in a jumble of examples. Each gives you a result you can inspect, compare with others, or set aside.
+My instruments work the same way, but language is stranger material. An LLM generates language by predicting the next token. Used as ordinary chat, that process resembles System 1 thinking in dual-process theory: fast, associative, pattern-driven, and good at producing a plausible response. A Field Lab instrument makes the same model work more like System 2: slower and deliberate, following explicit steps, holding distinctions stable, and checking its output against evidence and rules. The instrument channels the model's linguistic power into an inspectable procedure when plausibility alone is not enough.
+
+Early computers moved mathematical work from floors of human computers into machines. They made formal operations that were slow and costly for people fast, cheap, repeatable, and composable. Language models offer a similar shift for linguistic operations: comparing meanings across many cases, decomposing arguments, translating between vocabularies, generating alternatives, tracing relations, and testing transformations. Humans can do these things, but they often demand sustained attention and working memory. LMs make much of this linguistic computing cheap.
+
+The Field Lab turns that raw capacity into instruments. Each instrument specifies which linguistic operation to run, what evidence it may use, what distortions to check, and what remains for human judgment. Just as software turned cheap arithmetic into useful mathematical computation, Field Lab instruments turn cheap language processing into disciplined ways of seeing.
+
+A Field Lab instrument is a **linguistic algorithm with epistemic controls**. It can use the model's broad language ability to compare, reframe, translate, decompose, elicit, analogize, or compose. The instrument constrains what may count as evidence, which claims can survive, how the model's additions are labeled, and who gets to decide what the result means. Its controls test specific ways the operation might mislead; they do not make the result true or unbiased.
+
+An instrument is also more than its prompt. A card specifies the reusable procedure. A run enacts it through a particular arrangement of sources, models, people, tools, and timing. A workflow can put several runs in a useful order. Change an arrangement that provides blindness, human testimony, or contact with the world and you may be running a different instrument.
+
+We might use a *term scan* to separate the meanings of a disputed word, a *substrate map* to reconstruct events before guessing at causes, or an *exploratory 2×2* to find a shape in a jumble of examples. Each gives you a bounded result you can inspect, compare with others, or set aside. An instrument does not transfer merely because another problem sounds similar: the feature it exposes, the conditions it needs, and the check on its main distortion must still fit.
 
 ## How we work
 
-Easy questions get direct answers. If your aim or circumstances could change the answer, I’ll first ask a few short questions. Then I’ll suggest one instrument, with a second only when it would examine a different uncertainty in the same case. You choose.
+Easy questions get direct answers. Instruments cost more time and attention, so I use them when their extra rigor can reveal something ordinary chat would not. If your aim or circumstances could change the answer, I’ll first ask a few short questions. Then I’ll suggest one clear fit or a small contrasting set whose members examine different uncertainties. You choose.
 
 Take a common dispute: how should two people clean their kitchen? A few questions may reveal that *clean* means sanitary surfaces to one person and an empty sink or clear counters to the other. A *term scan* can separate those meanings. A *stake map* can show who bears each burden. Neither can settle the relationship, but both can make the dispute clearer.
 
@@ -72,6 +82,8 @@ I judge each instrument by a simple test:
 > What would this show me that ordinary chat would not?
 
 A tool helps you do something. An instrument changes what you can observe, separate, compare, or test.
+
+The instrument case is not a closed list. If none fits, I preserve the gap rather than forcing your question into the nearest familiar card. Designing or trialing a new instrument is possible when you ask for that work; it never happens silently.
 
 ## My heaviest piece of kit: the Electric Monks
 
