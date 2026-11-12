@@ -1,0 +1,26 @@
+{
+  "title": "2 Nephi 2 — opposition, agency, and redemption",
+  "source": "https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2?lang=eng",
+  "status": "Interpretive model; bounded consistency checks do not establish doctrinal truth or source fidelity.",
+  "mappings": [
+    {"verses":"5–10", "kind":"Source claim", "claim":"Law does not itself justify; redemption is through the Messiah. All come before God for judgment.", "model":"Mediator provision is background; judgment accepts every represented response."},
+    {"verses":"11–16", "kind":"Source claim", "claim":"Opposition and enticement are conditions for the agency Lehi describes.", "model":"Shown as dependencies, not successive historical stages. Agency in Eden is retained."},
+    {"verses":"19–21", "kind":"Source sequence", "claim":"Fall and exile precede descendants and a period for repentance.", "model":"Eden → Exile → Probation changes from the first parents to their descendants."},
+    {"verses":"22–25", "kind":"Source counterfactual", "claim":"Without the Fall, the Eden condition persists without children or experienced joy.", "model":"Eden has a self-loop; no descendants are introduced there. Joy is not a guaranteed outcome of falling."},
+    {"verses":"26–29", "kind":"Source distinction", "claim":"Redemption makes agency possible; the stated alternatives are life through the Mediator or captivity and death.", "model":"Both orientations remain possible during probation; terminal outcomes follow judgment."}
+  ],
+  "assumptions": [
+    {"id":"A1", "text":"One path represents a conceptual story, not the biography of one person: the subject changes at descendants."},
+    {"id":"A2", "text":"Toward the Mediator compresses belief, contrition, repentance and faithfulness into an orientation. It is not one act that earns salvation."},
+    {"id":"A3", "text":"Choices remain revisable during probation. This reads the repentance period in v. 21 together with vv. 27–29."},
+    {"id":"A4", "text":"Judgment freezes the represented orientation. The chapter does not provide a full judgment algorithm or settle postmortem possibilities."},
+    {"id":"A5", "text":"An unspecified response receives no inferred final verdict. The gray endpoint marks missing model knowledge, not a third destination."},
+    {"id":"A6", "text":"Resurrection, grace and intercession are background provisions. No timing, population, degrees of glory, or modern philosophical definition of freedom is supplied."},
+    {"id":"A7", "text":"choseCaptivity is a witness-only history flag. It enables a concrete repentance trace and does not affect legal actions or verdicts."}
+  ],
+  "limits": "The diagram leaves out the address to Jacob and its promised blessing (vv. 1–4), does not formalize the full reductio in vv. 11–14, and does not resolve the meanings of law, freedom, joy or punishment. Logical-dependency arrows are not temporal transitions. No fairness or eventual-salvation theorem is assumed.",
+  "controls": [
+    {"constant":"CollapseJudgmentIntoLife", "mistake":"Treat appearing before God as sufficient for eternal life.", "expected":"LifeRequiresMediatorResponse must fail."},
+    {"constant":"FreezeCaptivityChoice", "mistake":"Make the captivity choice irreversible during probation.", "expected":"ProbationOffersBothChoices must fail under assumption A3."}
+  ]
+}

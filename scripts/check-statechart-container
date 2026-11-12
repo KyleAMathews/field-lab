@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+skill_root=$(dirname -- "$script_dir")
+model_dir="$skill_root/tools/tla/smoke"
+if [ "$#" -gt 1 ]; then echo "usage: scripts/check-statechart-container [NEW_OUTPUT_DIRECTORY]" >&2; exit 2; fi
+output=${1:-$(mktemp -d "${TMPDIR:-/tmp}/field-lab-statechart-control.XXXXXX")}
+mkdir -p -- "$output"
+if [ -n "$(ls -A "$output")" ]; then echo "output must be empty: $output" >&2; exit 2; fi
+
+"$script_dir/statechart" "$model_dir/DesignGrammarControl.tla" \
+  --config "$model_dir/DesignGrammarControl.safe.cfg" \
+  --view "$model_dir/DesignGrammarControl.view.mjs" --out "$output/safe"
+status=0
+"$script_dir/statechart" "$model_dir/DesignGrammarControl.tla" \
+  --config "$model_dir/DesignGrammarControl.weakened.cfg" \
+  --view "$model_dir/DesignGrammarControl.view.mjs" --out "$output/weakened" || status=$?
+if [ "$status" -ne 1 ]; then
+  echo "expected a checker counterexample (exit 1), got $status" >&2
+  exit 1
+fi
+node "$script_dir/check-statechart-results.mjs" "$output"

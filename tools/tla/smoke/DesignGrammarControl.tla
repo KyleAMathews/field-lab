@@ -40,12 +40,18 @@ PrematureGenerate ==
   /\ phase' = "generated"
   /\ UNCHANGED <<reconstructed, preservationChecked>>
 
+\* A correct end state may keep the generated result without more work.
+Done ==
+  /\ phase = "generated"
+  /\ UNCHANGED vars
+
 Next ==
   \/ Reconstruct
   \/ CheckPreservation
   \/ Freeze
   \/ Generate
   \/ PrematureGenerate
+  \/ Done
 
 Spec == Init /\ [][Next]_vars
 

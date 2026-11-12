@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2 Nephi 2 — an agency model</title>
+  <link rel="stylesheet" href="study.css" />
+  <header>
+    <div class="eyebrow">
+      <span>Field Lab / chart studies</span
+      ><span>Interpretation 01 · 3 November 2026</span>
+    </div>
+    <h1>An opposition<br /><i>in all things.</i></h1>
+    <div class="header-end">
+      <p>
+        A model of 2 Nephi 2.<br />Story, conditions, and the freedom to choose.
+      </p>
+      <a
+        href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2?lang=eng"
+        target="_blank"
+        rel="noopener"
+        >Read the chapter ↗</a
+      >
+    </div>
+  </header>
+  <main>
+    <div class="study-bar">
+      <nav class="tabs" aria-label="Model view">
+        <button data-tab="story" aria-pressed="true">01 · Statechart</button
+        ><button data-tab="argument" aria-pressed="false">02 · Argument</button
+        ><button data-tab="limits" aria-pressed="false">
+          03 · Model & limits
+        </button>
+      </nav>
+      <label class="theme-label"
+        >Drawing
+        <select id="theme">
+          <option value="atlas">Editorial atlas</option>
+          <option value="blueprint">Blueprint</option>
+          <option value="notebook">Field notebook</option>
+        </select></label
+      >
+    </div>
+    <section id="story" class="tab-panel">
+      <div class="section-intro">
+        <p>
+          The Fall opens a mortal setting for repentance and choice. Judgment is
+          shared; the model keeps the responses and outcomes distinct.
+        </p>
+        <span class="stamp" id="counts">Checking evidence…</span>
+      </div>
+      <div class="workspace">
+        <section
+          class="chart-sheet atlas"
+          id="story-sheet"
+          aria-label="Checked statechart"
+        >
+          <div class="sheet-title">
+            <span class="eyebrow">Figure 01 / temporal transitions</span
+            ><span>Interpretive abstraction</span>
+          </div>
+          <div id="story-chart" class="diagram"></div>
+          <div class="sheet-foot">
+            <span id="projection-counts"></span
+            ><span>Zoom + / − · drag to pan</span>
+          </div>
+        </section>
+        <aside class="reader">
+          <div class="eyebrow">Concrete paths / found by TLC</div>
+          <h2>Follow a possibility.</h2>
+          <label class="path-select"
+            >Path
+            <select id="path">
+              <option value="repentance">A choice can be revised</option>
+              <option value="life">Toward life</option>
+              <option value="captivity">Toward captivity</option>
+            </select></label
+          >
+          <p class="path-description" id="path-description"></p>
+          <div class="transport">
+            <button id="play" class="primary">Next state</button
+            ><button id="previous" aria-label="Previous state">←</button
+            ><button id="next" aria-label="Next state">→</button
+            ><button id="overview">Overview</button>
+          </div>
+          <div class="playback-settings">
+            <label><input type="checkbox" id="motion" /> Animate</label
+            ><label
+              >Speed
+              <select id="speed">
+                <option value="0.5">½×</option>
+                <option value="1" selected>1×</option>
+                <option value="2">2×</option>
+              </select></label
+            >
+          </div>
+          <div class="playhead">
+            <label for="position" id="position-label">State 0 of 6</label
+            ><input
+              id="position"
+              type="range"
+              min="0"
+              max="6"
+              value="0"
+              step="1"
+            />
+          </div>
+          <div id="path-status" role="status" aria-live="polite">
+            Choose a path to inspect its states.
+          </div>
+          <ol id="trace"></ol>
+          <div class="valuation">
+            <div class="eyebrow">Current model values</div>
+            <dl id="values"></dl>
+          </div>
+          <p class="small-note">
+            Pacing is illustrative. The model has no durations. A path shows one
+            possibility, not a required life history.
+          </p>
+          <p class="small-note">
+            <a id="raw-trace">Raw concrete trace</a> ·
+            <a id="generated-chart">Generated chart</a>
+          </p>
+        </aside>
+      </div>
+      <div class="notes-grid">
+        <article>
+          <span class="note-number">01</span>
+          <h3>The Fall is not the evil-choice branch.</h3>
+          <p>
+            It leads to the setting in which descendants can choose. Eden
+            already contains opposition and action in vv. 15–16.
+          </p>
+        </article>
+        <article>
+          <span class="note-number">02</span>
+          <h3>Probation keeps a return open.</h3>
+          <p>
+            The highlighted path visits captivity-facing choice, then turns
+            toward the Mediator. This is the model’s reading of repentance in v.
+            21 with vv. 27–29.
+          </p>
+        </article>
+        <article>
+          <span class="note-number">03</span>
+          <h3>The gray endpoint is a gap.</h3>
+          <p>
+            “Unspecified” records what this model declines to decide for an
+            unspecified response. It does not add a third theological
+            destination.
+          </p>
+        </article>
+      </div>
+    </section>
+    <section id="argument" class="tab-panel" hidden>
+      <div class="section-intro">
+        <p>
+          These arrows show conditions, provisions, and counterfactual claims.
+          Read their labels as “requires” or “enables,” rather than “happens
+          next.”
+        </p>
+        <span class="stamp">Interpretive map · not TLC checked</span>
+      </div>
+      <section class="chart-sheet atlas" id="argument-sheet">
+        <div class="sheet-title">
+          <span class="eyebrow">Figure 02 / logical relations</span
+          ><span>Separate from historical sequence</span>
+        </div>
+        <div id="argument-chart" class="diagram argument-diagram"></div>
+        <div class="sheet-foot">
+          The dependency map is a partial reading, not a full formalization of
+          the chapter’s argument.
+        </div>
+      </section>
+    </section>
+    <section id="limits" class="tab-panel" hidden>
+      <div class="section-intro">
+        <p>
+          TLC checks whether the encoded transitions preserve the encoded rules.
+          The verse mapping and the assumptions remain open to challenge.
+        </p>
+        <span class="stamp">Model consistency ≠ source fidelity</span>
+      </div>
+      <div class="audit-grid">
+        <section>
+          <h2>What was checked</h2>
+          <div id="checks"></div>
+          <h2>Deliberately wrong models</h2>
+          <div id="controls"></div>
+          <p class="small-note">
+            Both rejected controls are mistakes introduced into the model, not
+            bugs discovered in scripture.
+          </p>
+        </section>
+        <section>
+          <h2>What the model adds</h2>
+          <div id="assumptions"></div>
+        </section>
+      </div>
+      <section class="mapping">
+        <h2>Trace each rule back to the chapter.</h2>
+        <div id="mapping"></div>
+      </section>
+      <p class="limit-note" id="limits-text"></p>
+      <p class="file-links">
+        <a href="Nephi2.tla">TLA+ model</a> ·
+        <a href="Nephi2.cfg">Configuration</a> ·
+        <a href="Nephi2.view.mjs">Display projection</a> ·
+        <a id="checker-report">Checker report</a> ·
+        <a href="evidence.json">All evidence</a> ·
+        <a href="interpretation.json">Verse mapping & assumptions</a>
+      </p>
+    </section>
+    <footer>
+      <span>FIELD LAB / AN EXECUTABLE READING, OPEN TO REVISION.</span
+      ><span
+        >No fairness assumption. No claim of inevitable progress or
+        salvation.</span
+      >
+    </footer>
+  </main>
+  <script type="module" src="study.js"></script>
+</html>
