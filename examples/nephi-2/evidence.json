@@ -1,0 +1,444 @@
+{
+  "model": "Nephi2.tla",
+  "modelStates": 14,
+  "modelSteps": 23,
+  "chartStates": 11,
+  "omittedSteps": 8,
+  "passingRules": [
+    "TypeOK",
+    "NoFallNoChildren",
+    "OutcomeFollowsJudgment",
+    "LifeRequiresMediatorResponse",
+    "ProbationOffersBothChoices",
+    "NoDeadlock"
+  ],
+  "chart": "---\ntitle: \"2 Nephi 2: an interpretive agency model\"\n---\nstateDiagram-v2\n  s0: Eden #183; no fall counterfactual\n  s1: Fall and exile #183; v. 19\n  state \"Probation #183; vv. 21, 26#8211;29\" as s2 {\n    s3: Response unspecified\n    s4: Choosing captivity\n    s5: Turning toward the Mediator\n  }\n  state \"Judgment #183; v. 10\" as s6 {\n    s7: Unspecified response\n    s8: Captivity-facing response\n    s9: Mediator-facing response\n  }\n  s10: Disposition left unspecified by this model\n  s11: Captivity and death #183; vv. 27#8211;29\n  s12: Liberty and eternal life #183; v. 27\n  [*] --> s0\n  s0 --> s1: partake and leave Eden #183; v. 19\n  s1 --> s3: descendants enter probation #183; vv. 20#8211;21\n  s3 --> s7: come before God #183; v. 10\n  s3 --> s4: choose captivity #183; vv. 27#8211;29\n  s3 --> s5: turn toward the Mediator #183; vv. 21, 27#8211;28\n  s7 --> s10: no verdict inferred for an unspecified response\n  s4 --> s8: come before God #183; v. 10\n  s4 --> s5: turn toward the Mediator #183; vv. 21, 27#8211;28\n  s5 --> s4: choose captivity #183; vv. 27#8211;29\n  s5 --> s9: come before God #183; v. 10\n  s8 --> s11: captivity and death #183; vv. 27#8211;29\n  s9 --> s12: life through the Mediator #183; vv. 8, 27\n",
+  "report": "# Nephi2\n\nTLC reached 14 states and 23 steps. The chart draws 11 states and 12 arrows.\nThe chart does not draw 8 steps that stay in one chart state.\n\n## Rules that hold\nTypeOK, NoFallNoChildren, OutcomeFollowsJudgment, LifeRequiresMediatorResponse, ProbationOffersBothChoices, NoDeadlock\n",
+  "baselineOutput": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nWarning: Please run the Java VM which executes TLC with a throughput optimized garbage collector by passing the \"-XX:+UseParallelGC\" property.\n(Use the -nowarning option to disable this warning.)\nRunning breadth-first search Model-Checking with fp 0 and seed 7332500825639720497 with 1 worker on 10 cores with 1984MB heap and 64MB offheap memory [pid: 43] (Linux 7.0.14-linuxkit aarch64, Eclipse Adoptium 21.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /model/Nephi2.tla\nParsing file /tmp/statechart-AJjGOi/statechart-kNBDbn/tmp-verdict-1/TLC.tla\nParsing file /tmp/statechart-AJjGOi/statechart-kNBDbn/tmp-verdict-1/Naturals.tla\nParsing file /tmp/statechart-AJjGOi/statechart-kNBDbn/tmp-verdict-1/Sequences.tla\nParsing file /tmp/statechart-AJjGOi/statechart-kNBDbn/tmp-verdict-1/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Nephi2\nStarting... (2026-11-04 06:48:22)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-11-04 06:48:27.\nModel checking completed. No error has been found.\n  Estimates of the probability that TLC did not check all reachable states\n  because two distinct states had the same fingerprint:\n  calculated (optimistic):  val = 7.6E-18\n24 states generated, 14 distinct states found, 0 states left on queue.\nThe depth of the complete state graph search is 7.\nThe average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).\nFinished in 05s at (2026-11-04 06:48:27)\n",
+  "cases": [
+    {
+      "id": "life",
+      "title": "Toward life",
+      "goal": "AvoidLife",
+      "expected": "Life",
+      "verses": "19–21, 27–28",
+      "kind": "reachability-witness",
+      "exitCode": 12,
+      "trace": [
+        {
+          "index": 0,
+          "action": "Init",
+          "actionLabel": "Initial condition",
+          "label": "Eden · no fall counterfactual",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Eden"
+          }
+        },
+        {
+          "index": 1,
+          "action": "FallAndExile",
+          "actionLabel": "partake and leave Eden · v. 19",
+          "label": "Fall and exile · v. 19",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Exile"
+          }
+        },
+        {
+          "index": 2,
+          "action": "DescendantsAndProbation",
+          "actionLabel": "descendants enter probation · vv. 20–21",
+          "label": "Response unspecified",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 3,
+          "action": "ChooseLiberty",
+          "actionLabel": "turn toward the Mediator · vv. 21, 27–28",
+          "label": "Turning toward the Mediator",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Mediator",
+            "choseCaptivity": false,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 4,
+          "action": "ComeToJudgment",
+          "actionLabel": "come before God · v. 10",
+          "label": "Mediator-facing response",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Mediator",
+            "choseCaptivity": false,
+            "stage": "Judgment"
+          }
+        },
+        {
+          "index": 5,
+          "action": "ReceiveLife",
+          "actionLabel": "life through the Mediator · vv. 8, 27",
+          "label": "Liberty and eternal life · v. 27",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Mediator",
+            "choseCaptivity": false,
+            "stage": "Life"
+          }
+        }
+      ],
+      "raw": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 107 and seed -1058723022124848820 with 1 worker on 10 cores with 1764MB heap and 64MB offheap memory [pid: 1] (Linux 7.0.14-linuxkit aarch64, Eclipse Adoptium 21.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /work/Nephi2.tla\nParsing file /tmp/TLC.tla\nParsing file /tmp/Naturals.tla\nParsing file /tmp/Sequences.tla\nParsing file /tmp/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Nephi2\nStarting... (2026-11-04 06:49:26)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-11-04 06:49:31.\nError: Invariant AvoidLife is violated.\nError: The behavior up to this point is:\nState 1: <Initial predicate>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Eden\"\n\nState 2: <FallAndExile line 24, col 3 to line 26, col 64 of module Nephi2>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Exile\"\n\nState 3: <DescendantsAndProbation line 31, col 3 to line 34, col 51 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Probation\"\n\nState 4: <ChooseLiberty line 41, col 3 to line 44, col 61 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Mediator\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Probation\"\n\nState 5: <ComeToJudgment line 54, col 3 to line 57, col 56 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Mediator\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Judgment\"\n\nState 6: <ReceiveLife line 61, col 3 to line 64, col 64 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Mediator\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Life\"\n\n15 states generated, 11 distinct states found, 3 states left on queue.\nThe depth of the complete state graph search is 6.\nThe average outdegree of the complete state graph is 2 (minimum is 1, the maximum 3 and the 95th percentile is 3).\nFinished in 05s at (2026-11-04 06:49:31)\n"
+    },
+    {
+      "id": "captivity",
+      "title": "Toward captivity",
+      "goal": "AvoidCaptivity",
+      "expected": "Captivity",
+      "verses": "19–21, 27–29",
+      "kind": "reachability-witness",
+      "exitCode": 12,
+      "trace": [
+        {
+          "index": 0,
+          "action": "Init",
+          "actionLabel": "Initial condition",
+          "label": "Eden · no fall counterfactual",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Eden"
+          }
+        },
+        {
+          "index": 1,
+          "action": "FallAndExile",
+          "actionLabel": "partake and leave Eden · v. 19",
+          "label": "Fall and exile · v. 19",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Exile"
+          }
+        },
+        {
+          "index": 2,
+          "action": "DescendantsAndProbation",
+          "actionLabel": "descendants enter probation · vv. 20–21",
+          "label": "Response unspecified",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 3,
+          "action": "ChooseCaptivity",
+          "actionLabel": "choose captivity · vv. 27–29",
+          "label": "Choosing captivity",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Captivity",
+            "choseCaptivity": true,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 4,
+          "action": "ComeToJudgment",
+          "actionLabel": "come before God · v. 10",
+          "label": "Captivity-facing response",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Captivity",
+            "choseCaptivity": true,
+            "stage": "Judgment"
+          }
+        },
+        {
+          "index": 5,
+          "action": "ReceiveCaptivity",
+          "actionLabel": "captivity and death · vv. 27–29",
+          "label": "Captivity and death · vv. 27–29",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Captivity",
+            "choseCaptivity": true,
+            "stage": "Captivity"
+          }
+        }
+      ],
+      "raw": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 121 and seed 4236283071481528622 with 1 worker on 10 cores with 1764MB heap and 64MB offheap memory [pid: 1] (Linux 7.0.14-linuxkit aarch64, Eclipse Adoptium 21.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /work/Nephi2.tla\nParsing file /tmp/TLC.tla\nParsing file /tmp/Naturals.tla\nParsing file /tmp/Sequences.tla\nParsing file /tmp/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Nephi2\nStarting... (2026-11-04 06:49:26)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-11-04 06:49:31.\nError: Invariant AvoidCaptivity is violated.\nError: The behavior up to this point is:\nState 1: <Initial predicate>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Eden\"\n\nState 2: <FallAndExile line 24, col 3 to line 26, col 64 of module Nephi2>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Exile\"\n\nState 3: <DescendantsAndProbation line 31, col 3 to line 34, col 51 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Probation\"\n\nState 4: <ChooseCaptivity line 47, col 3 to line 50, col 45 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Captivity\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Probation\"\n\nState 5: <ComeToJudgment line 54, col 3 to line 57, col 56 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Captivity\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Judgment\"\n\nState 6: <ReceiveCaptivity line 67, col 3 to line 70, col 64 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Captivity\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Captivity\"\n\n19 states generated, 13 distinct states found, 3 states left on queue.\nThe depth of the complete state graph search is 6.\nThe average outdegree of the complete state graph is 1 (minimum is 1, the maximum 3 and the 95th percentile is 3).\nFinished in 05s at (2026-11-04 06:49:31)\n"
+    },
+    {
+      "id": "repentance",
+      "title": "A choice can be revised",
+      "goal": "AvoidRepentance",
+      "expected": "Life",
+      "verses": "21, 27–28",
+      "assumption": "A3",
+      "kind": "reachability-witness",
+      "exitCode": 12,
+      "trace": [
+        {
+          "index": 0,
+          "action": "Init",
+          "actionLabel": "Initial condition",
+          "label": "Eden · no fall counterfactual",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Eden"
+          }
+        },
+        {
+          "index": 1,
+          "action": "FallAndExile",
+          "actionLabel": "partake and leave Eden · v. 19",
+          "label": "Fall and exile · v. 19",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Exile"
+          }
+        },
+        {
+          "index": 2,
+          "action": "DescendantsAndProbation",
+          "actionLabel": "descendants enter probation · vv. 20–21",
+          "label": "Response unspecified",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 3,
+          "action": "ChooseCaptivity",
+          "actionLabel": "choose captivity · vv. 27–29",
+          "label": "Choosing captivity",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Captivity",
+            "choseCaptivity": true,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 4,
+          "action": "ChooseLiberty",
+          "actionLabel": "turn toward the Mediator · vv. 21, 27–28",
+          "label": "Turning toward the Mediator",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Mediator",
+            "choseCaptivity": true,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 5,
+          "action": "ComeToJudgment",
+          "actionLabel": "come before God · v. 10",
+          "label": "Mediator-facing response",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Mediator",
+            "choseCaptivity": true,
+            "stage": "Judgment"
+          }
+        },
+        {
+          "index": 6,
+          "action": "ReceiveLife",
+          "actionLabel": "life through the Mediator · vv. 8, 27",
+          "label": "Liberty and eternal life · v. 27",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Mediator",
+            "choseCaptivity": true,
+            "stage": "Life"
+          }
+        }
+      ],
+      "raw": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 105 and seed 1727001807349964535 with 1 worker on 10 cores with 1764MB heap and 64MB offheap memory [pid: 1] (Linux 7.0.14-linuxkit aarch64, Eclipse Adoptium 21.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /work/Nephi2.tla\nParsing file /tmp/TLC.tla\nParsing file /tmp/Naturals.tla\nParsing file /tmp/Sequences.tla\nParsing file /tmp/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Nephi2\nStarting... (2026-11-04 06:49:26)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-11-04 06:49:31.\nError: Invariant AvoidRepentance is violated.\nError: The behavior up to this point is:\nState 1: <Initial predicate>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Eden\"\n\nState 2: <FallAndExile line 24, col 3 to line 26, col 64 of module Nephi2>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Exile\"\n\nState 3: <DescendantsAndProbation line 31, col 3 to line 34, col 51 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Probation\"\n\nState 4: <ChooseCaptivity line 47, col 3 to line 50, col 45 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Captivity\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Probation\"\n\nState 5: <ChooseLiberty line 41, col 3 to line 44, col 61 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Mediator\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Probation\"\n\nState 6: <ComeToJudgment line 54, col 3 to line 57, col 56 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Mediator\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Judgment\"\n\nState 7: <ReceiveLife line 61, col 3 to line 64, col 64 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Mediator\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Life\"\n\n22 states generated, 14 distinct states found, 1 states left on queue.\nThe depth of the complete state graph search is 7.\nThe average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).\nFinished in 05s at (2026-11-04 06:49:31)\n"
+    },
+    {
+      "id": "collapse",
+      "title": "Mistake: judgment means salvation",
+      "goal": "LifeRequiresMediatorResponse",
+      "constant": "CollapseJudgmentIntoLife",
+      "kind": "negative-control",
+      "exitCode": 12,
+      "trace": [
+        {
+          "index": 0,
+          "action": "Init",
+          "actionLabel": "Initial condition",
+          "label": "Eden · no fall counterfactual",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Eden"
+          }
+        },
+        {
+          "index": 1,
+          "action": "FallAndExile",
+          "actionLabel": "partake and leave Eden · v. 19",
+          "label": "Fall and exile · v. 19",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Exile"
+          }
+        },
+        {
+          "index": 2,
+          "action": "DescendantsAndProbation",
+          "actionLabel": "descendants enter probation · vv. 20–21",
+          "label": "Response unspecified",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 3,
+          "action": "ComeToJudgment",
+          "actionLabel": "come before God · v. 10",
+          "label": "Unspecified response",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Judgment"
+          }
+        },
+        {
+          "index": 4,
+          "action": "ReceiveLife",
+          "actionLabel": "life through the Mediator · vv. 8, 27",
+          "label": "Liberty and eternal life · v. 27",
+          "values": {
+            "descendants": true,
+            "judged": true,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Life"
+          }
+        }
+      ],
+      "raw": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 117 and seed -3647202565781436693 with 1 worker on 10 cores with 1764MB heap and 64MB offheap memory [pid: 1] (Linux 7.0.14-linuxkit aarch64, Eclipse Adoptium 21.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /work/Nephi2.tla\nParsing file /tmp/TLC.tla\nParsing file /tmp/Naturals.tla\nParsing file /tmp/Sequences.tla\nParsing file /tmp/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Nephi2\nStarting... (2026-11-04 06:49:26)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-11-04 06:49:31.\nError: Invariant LifeRequiresMediatorResponse is violated.\nError: The behavior up to this point is:\nState 1: <Initial predicate>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Eden\"\n\nState 2: <FallAndExile line 24, col 3 to line 26, col 64 of module Nephi2>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Exile\"\n\nState 3: <DescendantsAndProbation line 31, col 3 to line 34, col 51 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Probation\"\n\nState 4: <ComeToJudgment line 54, col 3 to line 57, col 56 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Judgment\"\n\nState 5: <ReceiveLife line 61, col 3 to line 64, col 64 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = TRUE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Life\"\n\n14 states generated, 10 distinct states found, 3 states left on queue.\nThe depth of the complete state graph search is 5.\nThe average outdegree of the complete state graph is 2 (minimum is 1, the maximum 3 and the 95th percentile is 3).\nFinished in 05s at (2026-11-04 06:49:31)\n"
+    },
+    {
+      "id": "freeze",
+      "title": "Mistake: captivity choice is irreversible",
+      "goal": "ProbationOffersBothChoices",
+      "constant": "FreezeCaptivityChoice",
+      "assumption": "A3",
+      "kind": "negative-control",
+      "exitCode": 12,
+      "trace": [
+        {
+          "index": 0,
+          "action": "Init",
+          "actionLabel": "Initial condition",
+          "label": "Eden · no fall counterfactual",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Eden"
+          }
+        },
+        {
+          "index": 1,
+          "action": "FallAndExile",
+          "actionLabel": "partake and leave Eden · v. 19",
+          "label": "Fall and exile · v. 19",
+          "values": {
+            "descendants": false,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Exile"
+          }
+        },
+        {
+          "index": 2,
+          "action": "DescendantsAndProbation",
+          "actionLabel": "descendants enter probation · vv. 20–21",
+          "label": "Response unspecified",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Uncommitted",
+            "choseCaptivity": false,
+            "stage": "Probation"
+          }
+        },
+        {
+          "index": 3,
+          "action": "ChooseCaptivity",
+          "actionLabel": "choose captivity · vv. 27–29",
+          "label": "Choosing captivity",
+          "values": {
+            "descendants": true,
+            "judged": false,
+            "response": "Captivity",
+            "choseCaptivity": true,
+            "stage": "Probation"
+          }
+        }
+      ],
+      "raw": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 48 and seed -6894942486486073171 with 1 worker on 10 cores with 1764MB heap and 64MB offheap memory [pid: 1] (Linux 7.0.14-linuxkit aarch64, Eclipse Adoptium 21.0.12 x86_64, MSBDiskFPSet, DiskStateQueue).\nParsing file /work/Nephi2.tla\nParsing file /tmp/TLC.tla\nParsing file /tmp/Naturals.tla\nParsing file /tmp/Sequences.tla\nParsing file /tmp/FiniteSets.tla\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Nephi2\nStarting... (2026-11-04 06:49:26)\nComputing initial states...\nFinished computing initial states: 1 distinct state generated at 2026-11-04 06:49:31.\nError: Invariant ProbationOffersBothChoices is violated.\nError: The behavior up to this point is:\nState 1: <Initial predicate>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Eden\"\n\nState 2: <FallAndExile line 24, col 3 to line 26, col 64 of module Nephi2>\n/\\ descendants = FALSE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Exile\"\n\nState 3: <DescendantsAndProbation line 31, col 3 to line 34, col 51 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Uncommitted\"\n/\\ choseCaptivity = FALSE\n/\\ stage = \"Probation\"\n\nState 4: <ChooseCaptivity line 47, col 3 to line 50, col 45 of module Nephi2>\n/\\ descendants = TRUE\n/\\ judged = FALSE\n/\\ response = \"Captivity\"\n/\\ choseCaptivity = TRUE\n/\\ stage = \"Probation\"\n\n6 states generated, 5 distinct states found, 1 states left on queue.\nThe depth of the complete state graph search is 4.\nThe average outdegree of the complete state graph is 1 (minimum is 1, the maximum 1 and the 95th percentile is 1).\nFinished in 05s at (2026-11-04 06:49:31)\n"
+    }
+  ]
+}
